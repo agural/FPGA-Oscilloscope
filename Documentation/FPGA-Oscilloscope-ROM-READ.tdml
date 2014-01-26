@@ -12,9 +12,24 @@
       <connection id="TT6" conn.type="O">
         <conn.name id="TT7">clk</conn.name>
       </connection>
+      <connection id="TT10" conn.type="O">
+        <conn.name id="TT18">FPGA_ROMCS</conn.name>
+      </connection>
+      <connection id="TT45" conn.type="O">
+        <conn.name id="TT46">ROMCS</conn.name>
+      </connection>
+      <connection id="TT38" conn.type="O">
+        <conn.name id="TT39">OutputEnable</conn.name>
+      </connection>
+      <connection id="TT23" conn.type="O">
+        <conn.name id="TT24">ADDRESS_OUT</conn.name>
+      </connection>
+      <connection id="TT32" conn.type="O">
+        <conn.name id="TT33">DATA_IN</conn.name>
+      </connection>
     </conn.source>
   </sources>
-  <signal id="TT9" clock="1" falling.slope.degrees="80" rising.slope.degrees="80" show="1" show.grid="0">
+  <signal id="TT9" clock="1" falling.slope.degrees="80" rising.slope.degrees="80" show="1" show.grid="0" show.uncertainty="ALL">
     <conn.ptr conn.id="TT6">clk</conn.ptr>
     <clock.info>
       <period>
@@ -39,10 +54,45 @@
         <number id="TT17">0</number>
       </uncertainty.rising>
     </clock.info>
-    <waveform id="TT8" locked="0"/>
+    <waveform id="TT8" e.label.type="default" locked="0" show.uncertainty="ALL"/>
+  </signal>
+  <signal id="TT20" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT10">FPGA_ROMCS</conn.ptr>
+    <waveform id="TT19" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT21" driven="1" s="X" show.uncertainty="ALL"/>
+      <e id="TT22" driven="1" s="0" show.uncertainty="ALL" te="10000" tl="300000"/>
+    </waveform>
+  </signal>
+  <signal id="TT48" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT45">ROMCS</conn.ptr>
+    <waveform id="TT47" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT49" driven="1" s="1" show.uncertainty="ALL"/>
+      <e id="TT50" driven="1" s="0" show.uncertainty="ALL" te="340000"/>
+    </waveform>
+  </signal>
+  <signal id="TT41" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT38">OutputEnable</conn.ptr>
+    <waveform id="TT40" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT42" driven="1" s="0" show.uncertainty="ALL"/>
+      <e id="TT43" driven="1" s="1" show.uncertainty="ALL" te="10000" tl="300000"/>
+    </waveform>
+  </signal>
+  <signal id="TT26" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT23">ADDRESS_OUT</conn.ptr>
+    <waveform id="TT25" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT27" driven="1" s="X" show.uncertainty="ALL"/>
+      <e id="TT28" driven="1" s="V" show.uncertainty="ALL" te="10000" tl="300000"/>
+    </waveform>
+  </signal>
+  <signal id="TT35" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT32">DATA_IN</conn.ptr>
+    <waveform id="TT34" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT36" driven="1" s="1" show.uncertainty="ALL"/>
+      <e id="TT37" driven="1" s="0" show.uncertainty="ALL" te="10000"/>
+    </waveform>
   </signal>
   <view.group>
-    <view begin.time="0" end.time="1000000"/>
+    <view begin.time="-40610" end.time="959390"/>
   </view.group>
   <font.list>
     <font id="TT1" color="ff000080" face.name="Lucida Sans" point.size="11"/>
