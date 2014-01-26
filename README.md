@@ -2,7 +2,7 @@ FPGA-Oscilloscope
 =================
 
 This repository contains all files related to the design and creation of my FPGA Oscilloscope.
-The oscilloscope is based on the Altera Cyclone III EPC340 FPGA as part of my Caltech EE 052 class project.
+The oscilloscope is based on the Altera Cyclone III EP3C40 FPGA as part of my Caltech EE 052 class project.
 
 Included documents:
 -------------------
