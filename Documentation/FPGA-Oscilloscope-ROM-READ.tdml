@@ -13,19 +13,16 @@
         <conn.name id="TT7">clk</conn.name>
       </connection>
       <connection id="TT10" conn.type="O">
-        <conn.name id="TT18">FPGA_ROMCS</conn.name>
+        <conn.name id="TT18">CE#</conn.name>
+      </connection>
+      <connection id="TT52" conn.type="O">
+        <conn.name id="TT53">WE#</conn.name>
       </connection>
       <connection id="TT45" conn.type="O">
-        <conn.name id="TT46">ROMCS</conn.name>
+        <conn.name id="TT46">Address</conn.name>
       </connection>
       <connection id="TT38" conn.type="O">
-        <conn.name id="TT39">OutputEnable</conn.name>
-      </connection>
-      <connection id="TT23" conn.type="O">
-        <conn.name id="TT24">ADDRESS_OUT</conn.name>
-      </connection>
-      <connection id="TT32" conn.type="O">
-        <conn.name id="TT33">DATA_IN</conn.name>
+        <conn.name id="TT39">Data</conn.name>
       </connection>
     </conn.source>
   </sources>
@@ -54,45 +51,132 @@
         <number id="TT17">0</number>
       </uncertainty.rising>
     </clock.info>
-    <waveform id="TT8" e.label.type="default" locked="0" show.uncertainty="ALL"/>
+    <waveform id="TT8" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT66" driven="1" s="1" show.uncertainty="ALL" te="0" tl="0"/>
+      <e id="TT78" driven="1" s="1" show.uncertainty="ALL" te="111112" tl="111112"/>
+      <e id="TT89" driven="1" s="1" show.uncertainty="ALL" te="222224" tl="222224"/>
+    </waveform>
   </signal>
   <signal id="TT20" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
-    <conn.ptr conn.id="TT10">FPGA_ROMCS</conn.ptr>
+    <conn.ptr conn.id="TT10">CE#</conn.ptr>
     <waveform id="TT19" e.label.type="default" locked="0" show.uncertainty="ALL">
-      <e id="TT21" driven="1" s="X" show.uncertainty="ALL"/>
-      <e id="TT22" driven="1" s="0" show.uncertainty="ALL" te="10000" tl="300000"/>
+      <e id="TT21" driven="1" s="1" show.uncertainty="ALL"/>
+      <e id="TT22" driven="1" s="0" show.uncertainty="ALL" te="0" tl="7000"/>
+      <e id="TT90" driven="1" s="1" show.uncertainty="ALL" te="222224" tl="229224"/>
+    </waveform>
+  </signal>
+  <signal id="TT55" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT52">WE#</conn.ptr>
+    <waveform id="TT54" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT56" driven="1" s="X" show.uncertainty="ALL"/>
+      <e id="TT64" driven="1" s="1" show.uncertainty="ALL" te="0" tl="7000"/>
     </waveform>
   </signal>
   <signal id="TT48" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
-    <conn.ptr conn.id="TT45">ROMCS</conn.ptr>
+    <conn.ptr conn.id="TT45">Address</conn.ptr>
     <waveform id="TT47" e.label.type="default" locked="0" show.uncertainty="ALL">
-      <e id="TT49" driven="1" s="1" show.uncertainty="ALL"/>
-      <e id="TT50" driven="1" s="0" show.uncertainty="ALL" te="340000"/>
+      <e id="TT49" driven="1" s="X" show.uncertainty="ALL"/>
+      <e id="TT50" driven="1" s="V" show.uncertainty="ALL" te="0" tl="7000"/>
+      <e id="TT79" driven="1" locked="0" s="V" show.uncertainty="ALL" te="111112" tl="118112"/>
+      <e id="TT88" driven="1" s="X" show.uncertainty="ALL" te="222224" tl="229224"/>
     </waveform>
   </signal>
   <signal id="TT41" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
-    <conn.ptr conn.id="TT38">OutputEnable</conn.ptr>
+    <conn.ptr conn.id="TT38">Data</conn.ptr>
     <waveform id="TT40" e.label.type="default" locked="0" show.uncertainty="ALL">
-      <e id="TT42" driven="1" s="0" show.uncertainty="ALL"/>
-      <e id="TT43" driven="1" s="1" show.uncertainty="ALL" te="10000" tl="300000"/>
+      <e id="TT42" driven="1" s="X" show.uncertainty="ALL"/>
+      <e id="TT51" driven="1" s="Z" show.uncertainty="ALL" te="0" tl="7000"/>
+      <e id="TT71" driven="1" s="X" show.uncertainty="ALL" te="10000"/>
+      <e id="TT74" driven="1" s="X" show.uncertainty="ALL" te="77000"/>
+      <e id="TT76" driven="1" s="V" show.uncertainty="ALL" te="84000"/>
+      <e id="TT80" driven="1" s="V" show.uncertainty="ALL" te="118112"/>
+      <e id="TT81" driven="1" s="X" show.uncertainty="ALL" te="122000"/>
+      <e id="TT82" driven="1" s="X" show.uncertainty="ALL" te="188112"/>
+      <e id="TT85" driven="1" s="V" show.uncertainty="ALL" te="195000"/>
+      <e id="TT91" driven="1" s="V" show.uncertainty="ALL" te="229224"/>
+      <e id="TT92" driven="1" s="X" show.uncertainty="ALL" te="233014"/>
     </waveform>
   </signal>
-  <signal id="TT26" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
-    <conn.ptr conn.id="TT23">ADDRESS_OUT</conn.ptr>
-    <waveform id="TT25" e.label.type="default" locked="0" show.uncertainty="ALL">
-      <e id="TT27" driven="1" s="X" show.uncertainty="ALL"/>
-      <e id="TT28" driven="1" s="V" show.uncertainty="ALL" te="10000" tl="300000"/>
-    </waveform>
-  </signal>
-  <signal id="TT35" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
-    <conn.ptr conn.id="TT32">DATA_IN</conn.ptr>
-    <waveform id="TT34" e.label.type="default" locked="0" show.uncertainty="ALL">
-      <e id="TT36" driven="1" s="1" show.uncertainty="ALL"/>
-      <e id="TT37" driven="1" s="0" show.uncertainty="ALL" te="10000"/>
-    </waveform>
-  </signal>
+  <edge.relationships>
+    <relationship id="TT68" containing.signal.ptr="TT20" show="1" slot="1" type="delay" user.created="0">
+      <two.edge source.e="TT66" target.e="TT22"/>
+      <relationship.label label.type="text">t_FPGA + t_prop</relationship.label>
+      <user.defined>
+        <key>target.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
+    </relationship>
+    <relationship id="TT72" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
+      <two.edge source.e="TT51" target.e="TT71"/>
+      <relationship.label label.type="text">t_CLZ</relationship.label>
+      <user.defined>
+        <key>source.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
+      <user.defined>
+        <key>target.tick.mark</key>
+        <user.value>1</user.value>
+      </user.defined>
+    </relationship>
+    <relationship id="TT75" containing.signal.ptr="TT41" show="1" slot="1" type="delay" user.created="1">
+      <two.edge source.e="TT22" target.e="TT74"/>
+      <relationship.label label.type="text">t_CE</relationship.label>
+      <user.defined>
+        <key>source.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
+    </relationship>
+    <relationship id="TT77" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
+      <two.edge source.e="TT74" target.e="TT76"/>
+      <relationship.label label.type="text">t_FPGA + t_PROP</relationship.label>
+    </relationship>
+    <relationship id="TT83" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
+      <two.edge source.e="TT79" target.e="TT81"/>
+      <relationship.label label.type="text">t_OH</relationship.label>
+      <user.defined>
+        <key>source.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
+    </relationship>
+    <relationship id="TT84" containing.signal.ptr="TT41" show="1" slot="1" type="delay" user.created="0">
+      <two.edge source.e="TT79" target.e="TT82"/>
+      <relationship.label label.type="text">t_AA</relationship.label>
+      <user.defined>
+        <key>source.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
+    </relationship>
+    <relationship id="TT86" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
+      <two.edge source.e="TT82" target.e="TT85"/>
+      <relationship.label label.type="text">t_FPGA + t_PROP</relationship.label>
+    </relationship>
+    <relationship id="TT93" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
+      <two.edge source.e="TT88" target.e="TT92"/>
+      <relationship.label label.type="text">t_OH</relationship.label>
+      <user.defined>
+        <key>source.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
+    </relationship>
+    <relationship id="TT94" containing.signal.ptr="TT48" show="1" slot="1" type="delay" user.created="0">
+      <two.edge source.e="TT78" target.e="TT79"/>
+      <relationship.label label.type="text">t_FPGA + t_PROP</relationship.label>
+      <user.defined>
+        <key>target.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
+    </relationship>
+    <relationship id="TT95" containing.signal.ptr="TT48" show="1" slot="1" type="delay" user.created="0">
+      <two.edge source.e="TT89" target.e="TT88"/>
+      <relationship.label label.type="text">t_FPGA + t_PROP</relationship.label>
+      <user.defined>
+        <key>target.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
+    </relationship>
+  </edge.relationships>
   <view.group>
-    <view begin.time="-40610" end.time="959390"/>
+    <view begin.time="-30000" end.time="310000"/>
   </view.group>
   <font.list>
     <font id="TT1" color="ff000080" face.name="Lucida Sans" point.size="11"/>
