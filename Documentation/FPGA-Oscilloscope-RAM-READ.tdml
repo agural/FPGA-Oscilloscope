@@ -13,7 +13,7 @@
         <conn.name id="TT7">clk</conn.name>
       </connection>
       <connection id="TT10" conn.type="O">
-        <conn.name id="TT18">CE#</conn.name>
+        <conn.name id="TT18">CE1#</conn.name>
       </connection>
       <connection id="TT52" conn.type="O">
         <conn.name id="TT53">WE#</conn.name>
@@ -53,24 +53,24 @@
     </clock.info>
     <waveform id="TT8" e.label.type="default" locked="0" show.uncertainty="ALL">
       <e id="TT66" driven="1" s="1" show.uncertainty="ALL" te="0" tl="0"/>
-      <e id="TT78" driven="1" s="1" show.uncertainty="ALL" te="111112" tl="111112"/>
-      <e id="TT89" driven="1" s="1" show.uncertainty="ALL" te="222224" tl="222224"/>
+      <e id="TT101" driven="1" s="1" show.uncertainty="ALL" te="27778" tl="27778"/>
+      <e id="TT104" driven="1" s="1" show.uncertainty="ALL" te="55556" tl="55556"/>
     </waveform>
   </signal>
   <signal id="TT20" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
-    <conn.ptr conn.id="TT10">CE#</conn.ptr>
+    <conn.ptr conn.id="TT10">CE1#</conn.ptr>
     <waveform id="TT19" e.label.type="default" locked="0" show.uncertainty="ALL">
       <e id="TT21" driven="1" s="1" show.uncertainty="ALL"/>
       <e id="TT22" driven="1" s="0" show.uncertainty="ALL" te="0" tl="7000"/>
-      <e id="TT90" driven="1" s="1" show.uncertainty="ALL" te="222224" tl="229224"/>
+      <e id="TT106" driven="1" s="1" show.uncertainty="ALL" te="55556" tl="62556"/>
     </waveform>
   </signal>
   <signal id="TT55" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
     <conn.ptr conn.id="TT52">WE#</conn.ptr>
     <waveform id="TT54" e.label.type="default" locked="0" show.uncertainty="ALL">
       <e id="TT56" driven="1" s="X" show.uncertainty="ALL"/>
-      <e id="TT64" driven="1" locked="0" s="1" show.uncertainty="ALL" te="0" tl="7000"/>
-      <e id="TT25" driven="1" s="X" show.uncertainty="ALL" te="222224" tl="229224"/>
+      <e id="TT64" driven="1" s="1" show.uncertainty="ALL" te="0" tl="7000"/>
+      <e id="TT23" driven="1" s="X" show.uncertainty="ALL" te="55556" tl="62556"/>
     </waveform>
   </signal>
   <signal id="TT48" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
@@ -78,8 +78,8 @@
     <waveform id="TT47" e.label.type="default" locked="0" show.uncertainty="ALL">
       <e id="TT49" driven="1" s="X" show.uncertainty="ALL"/>
       <e id="TT50" driven="1" s="V" show.uncertainty="ALL" te="0" tl="7000"/>
-      <e id="TT79" driven="1" locked="0" s="V" show.uncertainty="ALL" te="111112" tl="118112"/>
-      <e id="TT88" driven="1" s="X" show.uncertainty="ALL" te="222224" tl="229224"/>
+      <e id="TT100" driven="1" s="V" show.uncertainty="ALL" te="27778" tl="34778"/>
+      <e id="TT105" driven="1" s="X" show.uncertainty="ALL" te="55556" tl="62556"/>
     </waveform>
   </signal>
   <signal id="TT41" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
@@ -87,28 +87,25 @@
     <waveform id="TT40" e.label.type="default" locked="0" show.uncertainty="ALL">
       <e id="TT42" driven="1" s="X" show.uncertainty="ALL"/>
       <e id="TT51" driven="1" s="Z" show.uncertainty="ALL" te="0" tl="7000"/>
-      <e id="TT71" driven="1" s="X" show.uncertainty="ALL" te="10000"/>
-      <e id="TT74" driven="1" s="X" show.uncertainty="ALL" te="77000"/>
-      <e id="TT76" driven="1" s="V" show.uncertainty="ALL" te="84000"/>
-      <e id="TT80" driven="1" s="V" show.uncertainty="ALL" te="118112"/>
-      <e id="TT81" driven="1" s="X" show.uncertainty="ALL" te="122000"/>
-      <e id="TT82" driven="1" s="X" show.uncertainty="ALL" te="188112"/>
-      <e id="TT85" driven="1" s="V" show.uncertainty="ALL" te="195000"/>
-      <e id="TT91" driven="1" s="Z" show.uncertainty="ALL" te="229224" tl="254224"/>
+      <e id="TT71" driven="1" locked="0" s="X" show.uncertainty="ALL" te="10000" tl="19000"/>
+      <e id="TT99" driven="1" s="V" show.uncertainty="ALL" te="26000"/>
+      <e id="TT102" driven="1" s="X" show.uncertainty="ALL" te="37778" tl="46778"/>
+      <e id="TT103" driven="1" s="V" show.uncertainty="ALL" te="53778"/>
+      <e id="TT108" driven="1" s="Z" show.uncertainty="ALL" te="62556" tl="65556"/>
     </waveform>
   </signal>
   <edge.relationships>
-    <relationship id="TT68" containing.signal.ptr="TT20" show="1" slot="1" type="delay" user.created="0">
-      <two.edge source.e="TT66" target.e="TT22"/>
-      <relationship.label label.type="text">t_FPGA + t_PROP</relationship.label>
+    <relationship id="TT68" containing.signal.ptr="TT20" show="1" slot="1" type="delay" user.created="1">
+      <two.edge source.e="TT66" target.e="TT51"/>
+      <relationship.label label.type="text">t_FPGA+t_PROP</relationship.label>
       <user.defined>
         <key>target.tick.mark</key>
         <user.value>16</user.value>
       </user.defined>
     </relationship>
-    <relationship id="TT72" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
-      <two.edge source.e="TT51" target.e="TT71"/>
-      <relationship.label label.type="text">t_CLZ</relationship.label>
+    <relationship id="TT77" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
+      <two.edge source.e="TT71" target.e="TT99"/>
+      <relationship.label label.type="text">t_FPGA + t_PROP</relationship.label>
       <user.defined>
         <key>source.tick.mark</key>
         <user.value>16</user.value>
@@ -118,41 +115,65 @@
         <user.value>1</user.value>
       </user.defined>
     </relationship>
-    <relationship id="TT75" containing.signal.ptr="TT41" show="1" slot="1" type="delay" user.created="1">
-      <two.edge source.e="TT22" target.e="TT74"/>
-      <relationship.label label.type="text">t_CE</relationship.label>
-      <user.defined>
-        <key>source.tick.mark</key>
-        <user.value>16</user.value>
-      </user.defined>
-    </relationship>
-    <relationship id="TT77" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
-      <two.edge source.e="TT74" target.e="TT76"/>
+    <relationship id="TT94" containing.signal.ptr="TT48" show="1" slot="1" type="delay" user.created="0">
+      <two.edge source.e="TT101" target.e="TT100"/>
       <relationship.label label.type="text">t_FPGA + t_PROP</relationship.label>
+      <user.defined>
+        <key>target.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
     </relationship>
-    <relationship id="TT83" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
-      <two.edge source.e="TT79" target.e="TT81"/>
-      <relationship.label label.type="text">t_OH</relationship.label>
+    <relationship id="TT97" containing.signal.ptr="TT55" show="1" slot="1" type="delay" user.created="1">
+      <two.edge source.e="TT22" target.e="TT71"/>
+      <relationship.label label.type="text">t_ACE1</relationship.label>
       <user.defined>
         <key>source.tick.mark</key>
         <user.value>16</user.value>
       </user.defined>
+      <user.defined>
+        <key>target.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
     </relationship>
-    <relationship id="TT84" containing.signal.ptr="TT41" show="1" slot="1" type="delay" user.created="0">
-      <two.edge source.e="TT79" target.e="TT82"/>
+    <relationship id="TT98" containing.signal.ptr="TT41" show="1" slot="1" type="delay" user.created="1">
+      <two.edge source.e="TT50" target.e="TT71"/>
       <relationship.label label.type="text">t_AA</relationship.label>
       <user.defined>
         <key>source.tick.mark</key>
         <user.value>16</user.value>
       </user.defined>
+      <user.defined>
+        <key>target.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
     </relationship>
-    <relationship id="TT86" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
-      <two.edge source.e="TT82" target.e="TT85"/>
+    <relationship id="TT107" containing.signal.ptr="TT20" show="1" slot="1" type="delay" user.created="1">
+      <two.edge source.e="TT104" target.e="TT108"/>
       <relationship.label label.type="text">t_FPGA + t_PROP</relationship.label>
+      <user.defined>
+        <key>target.tick.mark</key>
+        <user.value>1</user.value>
+      </user.defined>
+      <user.defined>
+        <key>source.tick.mark</key>
+        <user.value>1</user.value>
+      </user.defined>
     </relationship>
-    <relationship id="TT93" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
-      <two.edge source.e="TT88" target.e="TT91"/>
-      <relationship.label label.type="text">t_CHZ</relationship.label>
+    <relationship id="TT109" containing.signal.ptr="TT41" show="1" slot="2" type="delay" user.created="1">
+      <two.edge source.e="TT100" target.e="TT102"/>
+      <relationship.label label.type="text">t_OH</relationship.label>
+      <user.defined>
+        <key>source.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
+      <user.defined>
+        <key>target.tick.mark</key>
+        <user.value>1</user.value>
+      </user.defined>
+    </relationship>
+    <relationship id="TT110" containing.signal.ptr="TT41" show="1" slot="1" type="delay" user.created="1">
+      <two.edge source.e="TT100" target.e="TT102"/>
+      <relationship.label label.type="text">t_AA</relationship.label>
       <user.defined>
         <key>source.tick.mark</key>
         <user.value>16</user.value>
@@ -162,31 +183,51 @@
         <user.value>16</user.value>
       </user.defined>
     </relationship>
-    <relationship id="TT94" containing.signal.ptr="TT20" show="1" slot="1" type="delay" user.created="1">
-      <two.edge source.e="TT78" target.e="TT79"/>
+    <relationship id="TT111" containing.signal.ptr="TT41" show="1" slot="-1" type="delay" user.created="1">
+      <two.edge source.e="TT102" target.e="TT103"/>
       <relationship.label label.type="text">t_FPGA + t_PROP</relationship.label>
+      <user.defined>
+        <key>source.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
+      <user.defined>
+        <key>target.tick.mark</key>
+        <user.value>1</user.value>
+      </user.defined>
+    </relationship>
+    <relationship id="TT112" containing.signal.ptr="TT41" show="1" slot="2" type="delay" user.created="1">
+      <two.edge source.e="TT105" target.e="TT108"/>
+      <relationship.label label.type="text">t_CHZ1</relationship.label>
+      <user.defined>
+        <key>source.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
       <user.defined>
         <key>target.tick.mark</key>
         <user.value>16</user.value>
       </user.defined>
     </relationship>
-    <relationship id="TT95" containing.signal.ptr="TT20" show="1" slot="1" type="delay" user.created="1">
-      <two.edge source.e="TT89" target.e="TT88"/>
-      <relationship.label label.type="text">t_FPGA + t_PROP</relationship.label>
+    <relationship id="TT113" containing.signal.ptr="TT41" show="1" slot="2" type="delay" user.created="1">
+      <two.edge source.e="TT22" target.e="TT71"/>
+      <relationship.label label.type="text">t_CLZ1</relationship.label>
+      <user.defined>
+        <key>source.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
       <user.defined>
         <key>target.tick.mark</key>
-        <user.value>16</user.value>
+        <user.value>1</user.value>
       </user.defined>
     </relationship>
   </edge.relationships>
   <view.group>
-    <view begin.time="-20000" end.time="300000"/>
+    <view begin.time="-10000" end.time="100000"/>
   </view.group>
   <font.list>
     <font id="TT1" color="ff000080" face.name="Lucida Sans" point.size="11"/>
   </font.list>
   <user.defined>
     <key>document.title</key>
-    <user.value>FPGA-Oscilloscope-ROM-READ</user.value>
+    <user.value>FPGA-Oscilloscope-RAM-READ</user.value>
   </user.defined>
 </timing.diagram>
