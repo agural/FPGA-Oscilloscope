@@ -1,1 +1,4 @@
+Record=SheetSymbol|SourceDocument=FPGA-Oscilloscope.SchDoc|Designator=Sheet2|SchDesignator=Sheet2|FileName=FPGA-Oscilloscope-Memory.SchDoc|SymbolType=Normal|RawFileName=FPGA-Oscilloscope-Memory.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=FPGA-Oscilloscope.SchDoc|Designator=Sheet3|SchDesignator=Sheet3|FileName=FPGA-Oscilloscope-UI.SchDoc|SymbolType=Normal|RawFileName=FPGA-Oscilloscope-UI.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=SheetSymbol|SourceDocument=FPGA-Oscilloscope.SchDoc|Designator=Sheet4|SchDesignator=Sheet4|FileName=FPGA-Oscilloscope-Analog.SchDoc|SymbolType=Normal|RawFileName=FPGA-Oscilloscope-Analog.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
 Record=TopLevelDocument|FileName=FPGA-Oscilloscope.SchDoc
