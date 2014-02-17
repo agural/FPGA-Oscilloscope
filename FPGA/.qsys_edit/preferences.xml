@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="47" />
+   <connections preferredWidth="111" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
@@ -14,6 +14,6 @@
    <frequency preferredWidth="163" />
   </columns>
  </clocktable>
- <window width="1100" height="800" x="2371" y="129" />
+ <window width="1100" height="928" x="444" y="164" />
  <library expandedCategories="Library/Embedded Processors,Library,Project" />
 </preferences>
