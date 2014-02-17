@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<!DOCTYPE timing.diagram PUBLIC "-//TDML WorkingGroup//DTD XML-PCISTDML.DTD 1.1//EN" "xml-pcistdml.dtd">
+<timing.diagram default.time.units="1e-12" delay.rule="first" font.ptr="TT1" line.thickness="1" show.delays="1" show.holds="1" show.samples="1" show.setups="1" show.uncertainty="ALL">
+  <tdml.admin.info>
+    <tool.info id="TT2">
+      <tool.name id="TT3">TimingTool from www.timingtool.com</tool.name>
+      <tool.type id="TT4">Timing Diagram Editor</tool.type>
+    </tool.info>
+  </tdml.admin.info>
+  <sources>
+    <conn.source id="TT5">
+      <connection id="TT6" conn.type="O">
+        <conn.name id="TT7">clk</conn.name>
+      </connection>
+      <connection id="TT19" conn.type="O">
+        <conn.name id="TT20">SC</conn.name>
+      </connection>
+      <connection id="TT33" conn.type="O">
+        <conn.name id="TT34"><not>SE</not></conn.name>
+      </connection>
+      <connection id="TT38" conn.type="O">
+        <conn.name id="TT39">SDQ0-15</conn.name>
+      </connection>
+    </conn.source>
+  </sources>
+  <signal id="TT9" clock="1" falling.slope.degrees="80" rising.slope.degrees="80" show="1" show.grid="0">
+    <conn.ptr conn.id="TT6">clk</conn.ptr>
+    <clock.info>
+      <period>
+        <number id="TT11">27778</number>
+      </period>
+      <duty.cycle>
+        <number id="TT12">50</number>
+      </duty.cycle>
+      <time.offset>
+        <number id="TT13">0</number>
+      </time.offset>
+      <jitter.falling>
+        <number id="TT14">0</number>
+      </jitter.falling>
+      <jitter.rising>
+        <number id="TT15">0</number>
+      </jitter.rising>
+      <uncertainty.falling>
+        <number id="TT16">0</number>
+      </uncertainty.falling>
+      <uncertainty.rising>
+        <number id="TT17">0</number>
+      </uncertainty.rising>
+    </clock.info>
+    <waveform id="TT8" locked="0">
+      <e id="TT10" driven="1" s="0"/>
+      <e id="TT18" driven="1" s="1" te="0" tl="0"/>
+    </waveform>
+  </signal>
+  <signal id="TT22" clock="1" falling.slope.degrees="80" rising.slope.degrees="80" show="1" show.grid="0">
+    <conn.ptr conn.id="TT19">SC</conn.ptr>
+    <clock.info>
+      <period>
+        <number id="TT24">27778</number>
+      </period>
+      <duty.cycle>
+        <number id="TT25">50</number>
+      </duty.cycle>
+      <time.offset>
+        <number id="TT26">7000</number>
+      </time.offset>
+      <jitter.falling>
+        <number id="TT27">0</number>
+      </jitter.falling>
+      <jitter.rising>
+        <number id="TT28">0</number>
+      </jitter.rising>
+      <uncertainty.falling>
+        <number id="TT29">0</number>
+      </uncertainty.falling>
+      <uncertainty.rising>
+        <number id="TT30">0</number>
+      </uncertainty.rising>
+    </clock.info>
+    <waveform id="TT21" locked="0">
+      <e id="TT23" driven="1" s="0"/>
+      <e id="TT31" driven="1" s="1" te="7000" tl="7000"/>
+      <e id="TT55" driven="1" s="1" te="34778" tl="34778"/>
+      <e id="TT77" driven="1" s="0" te="48667" tl="48667"/>
+      <e id="TT58" driven="1" s="1" te="62556" tl="62556"/>
+    </waveform>
+  </signal>
+  <signal id="TT36" clock="0" show="1" show.grid="0">
+    <conn.ptr conn.id="TT33"><not>SE</not></conn.ptr>
+    <waveform id="TT35" locked="0">
+      <e id="TT37" driven="1" s="1"/>
+      <e id="TT54" driven="1" s="0" te="0" tl="7000"/>
+    </waveform>
+  </signal>
+  <signal id="TT41" clock="0" show="1" show.grid="0">
+    <conn.ptr conn.id="TT38">SDQ0-15</conn.ptr>
+    <waveform id="TT40" locked="0">
+      <e id="TT42" driven="1" s="Z"/>
+      <e id="TT56" driven="1" s="V" te="24000"/>
+      <e id="TT43" driven="1" s="V" te="44000"/>
+      <e id="TT57" driven="1" s="V" te="73054"/>
+    </waveform>
+  </signal>
+  <edge.relationships>
+    <relationship id="TT32" containing.signal.ptr="TT22" show="1" slot="1" type="delay" user.created="0">
+      <two.edge source.e="TT18" target.e="TT31"/>
+      <relationship.label label.type="text">t<sub>FPGA+PROP</sub></relationship.label>
+    </relationship>
+    <relationship id="TT44" containing.signal.ptr="TT41" show="1" slot="1" tdml.cc.ptr="TT46" type="hold" user.created="0">
+      <two.edge source.e="TT55" target.e="TT43"/>
+      <relationship.label label.type="text">t<sub>SOH</sub>,t<sub>SCA</sub></relationship.label>
+    </relationship>
+    <relationship id="TT59" containing.signal.ptr="TT41" show="1" slot="1" tdml.cc.ptr="TT46" type="hold" user.created="0">
+      <two.edge source.e="TT58" target.e="TT57"/>
+      <relationship.label label.type="text">t<sub>SOH</sub>,t<sub>SCA</sub></relationship.label>
+    </relationship>
+    <relationship id="TT64" containing.signal.ptr="TT41" show="1" slot="1" tdml.cc.ptr="TT65" type="constraint" user.created="0">
+      <two.edge source.e="TT54" target.e="TT56"/>
+      <relationship.label label.type="text">t<sub>SEA</sub></relationship.label>
+      <user.defined>
+        <key>source.tick.mark</key>
+        <user.value>16</user.value>
+      </user.defined>
+    </relationship>
+    <relationship id="TT74" containing.signal.ptr="TT22" show="1" slot="1" type="measure" user.created="1">
+      <two.edge source.e="TT55" target.e="TT77"/>
+      <relationship.label label.type="text">t<sub>SC</sub></relationship.label>
+    </relationship>
+    <relationship id="TT75" containing.signal.ptr="TT22" show="1" slot="1" type="measure" user.created="0">
+      <two.edge source.e="TT77" target.e="TT58"/>
+      <relationship.label label.type="text">t<sub>SCP</sub></relationship.label>
+    </relationship>
+    <relationship id="TT76" containing.signal.ptr="TT22" show="1" slot="2" type="measure" user.created="1">
+      <two.edge source.e="TT55" target.e="TT58"/>
+      <relationship.label label.type="text">t<sub>SCC</sub></relationship.label>
+    </relationship>
+  </edge.relationships>
+  <view.group>
+    <view begin.time="-20000" end.time="120000"/>
+  </view.group>
+  <cc.list>
+    <title id="TT45">General Data</title>
+    <tdml.cc id="TT46" show="1" static="1">
+      <parm id="P47">
+        <parm.symbol id="TT48">th</parm.symbol>
+        <parm.desc id="TT49">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT50" value.type="MIN">
+        <number id="TT51">5</number>
+        <order.of.mag id="TT52">n</order.of.mag>
+        <unit id="TT53">s</unit>
+      </tdml.value>
+      <tdml.value id="TT60" value.type="MAX">
+        <number id="TT61">17</number>
+        <order.of.mag id="TT62">n</order.of.mag>
+        <unit id="TT63">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT65" show="1" static="1">
+      <parm id="P66">
+        <parm.symbol id="TT67">tc</parm.symbol>
+        <parm.desc id="TT68">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT69" value.type="MIN">
+        <number id="TT70">17</number>
+        <order.of.mag id="TT71">n</order.of.mag>
+        <unit id="TT72">s</unit>
+      </tdml.value>
+    </tdml.cc>
+  </cc.list>
+  <font.list>
+    <font id="TT1" color="ff000080" face.name="Lucida Sans" point.size="11"/>
+  </font.list>
+  <user.defined>
+    <key>document.title</key>
+    <user.value>FPGA-Oscilloscope-VRAM-SERIAL-READ</user.value>
+  </user.defined>
+</timing.diagram>
