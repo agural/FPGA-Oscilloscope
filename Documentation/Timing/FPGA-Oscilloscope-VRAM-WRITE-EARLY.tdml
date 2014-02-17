@@ -1,0 +1,703 @@
+<?xml version="1.0"?>
+<!DOCTYPE timing.diagram PUBLIC "-//TDML WorkingGroup//DTD XML-PCISTDML.DTD 1.1//EN" "xml-pcistdml.dtd">
+<timing.diagram default.time.units="1e-12" delay.rule="first" font.ptr="TT1" line.thickness="1" show.delays="1" show.holds="1" show.samples="1" show.setups="1" show.uncertainty="ALL">
+  <tdml.admin.info>
+    <tool.info id="TT2">
+      <tool.name id="TT3">TimingTool from www.timingtool.com</tool.name>
+      <tool.type id="TT4">Timing Diagram Editor</tool.type>
+    </tool.info>
+  </tdml.admin.info>
+  <sources>
+    <conn.source id="TT5">
+      <connection id="TT16" conn.type="O">
+        <conn.name id="TT17">clk</conn.name>
+      </connection>
+      <connection id="TT6" conn.type="O">
+        <conn.name id="TT7"><not>RAS</not></conn.name>
+      </connection>
+      <connection id="TT11" conn.type="O">
+        <conn.name id="TT12"><not>CAS</not></conn.name>
+      </connection>
+      <connection id="TT20" conn.type="O">
+        <conn.name id="TT28">Addr</conn.name>
+      </connection>
+      <connection id="TT32" conn.type="O">
+        <conn.name id="TT33">DSF</conn.name>
+      </connection>
+      <connection id="TT37" conn.type="O">
+        <conn.name id="TT38"><not>WEL</not></conn.name>
+      </connection>
+      <connection id="TT42" conn.type="O">
+        <conn.name id="TT43"><not>WEU</not></conn.name>
+      </connection>
+      <connection id="TT47" conn.type="O">
+        <conn.name id="TT48">DQ0-15</conn.name>
+      </connection>
+      <connection id="TT52" conn.type="O">
+        <conn.name id="TT53"><not>TRG</not></conn.name>
+      </connection>
+    </conn.source>
+  </sources>
+  <signal id="TT19" clock="1" falling.slope.degrees="80" rising.slope.degrees="80" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT16">clk</conn.ptr>
+    <clock.info>
+      <period>
+        <number id="TT21">27778</number>
+      </period>
+      <duty.cycle>
+        <number id="TT22">50</number>
+      </duty.cycle>
+      <time.offset>
+        <number id="TT23">0</number>
+      </time.offset>
+      <jitter.falling>
+        <number id="TT24">0</number>
+      </jitter.falling>
+      <jitter.rising>
+        <number id="TT25">0</number>
+      </jitter.rising>
+      <uncertainty.falling>
+        <number id="TT26">0</number>
+      </uncertainty.falling>
+      <uncertainty.rising>
+        <number id="TT27">0</number>
+      </uncertainty.rising>
+    </clock.info>
+    <waveform id="TT18" e.label.type="default" locked="0" show.uncertainty="ALL"/>
+  </signal>
+  <signal id="TT9" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT6"><not>RAS</not></conn.ptr>
+    <waveform id="TT8" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT10" driven="1" s="1" show.uncertainty="ALL"/>
+      <e id="TT61" driven="1" s="0" show.uncertainty="ALL" te="27778" tl="34778"/>
+      <e id="TT79" driven="1" locked="0" s="1" show.uncertainty="ALL" te="138889" tl="145889"/>
+      <e id="TT82" driven="1" s="0" show.uncertainty="ALL" te="222224" tl="229224"/>
+    </waveform>
+  </signal>
+  <signal id="TT14" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT11"><not>CAS</not></conn.ptr>
+    <waveform id="TT13" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT15" driven="1" s="0" show.uncertainty="ALL"/>
+      <e id="TT64" driven="1" s="1" show.uncertainty="ALL" te="0" tl="7000"/>
+      <e id="TT66" driven="1" s="0" show.uncertainty="ALL" te="55556" tl="62556"/>
+      <e id="TT80" driven="1" s="1" show.uncertainty="ALL" te="138889" tl="145889"/>
+    </waveform>
+  </signal>
+  <signal id="TT30" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT20">Addr</conn.ptr>
+    <waveform id="TT29" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT31" driven="1" s="X" show.uncertainty="ALL"/>
+      <e id="TT57" driven="1" s="V" show.uncertainty="ALL" te="27778" tl="34778"/>
+      <e id="TT58" driven="1" s="V" show.uncertainty="ALL" te="55556" tl="62556"/>
+      <e id="TT60" driven="1" s="X" show.uncertainty="ALL" te="83334"/>
+    </waveform>
+  </signal>
+  <signal id="TT35" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT32">DSF</conn.ptr>
+    <waveform id="TT34" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT36" driven="1" s="X" show.uncertainty="ALL"/>
+      <e id="TT69" driven="1" s="V" show.uncertainty="ALL" te="0" tl="7000"/>
+      <e id="TT377" driven="1" s="V" show.uncertainty="ALL" te="55556" tl="62556"/>
+      <e id="TT70" driven="1" s="X" show.uncertainty="ALL" te="83334" tl="90334"/>
+    </waveform>
+  </signal>
+  <signal id="TT40" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT37"><not>WEL</not></conn.ptr>
+    <waveform id="TT39" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT41" driven="1" s="X" show.uncertainty="ALL"/>
+      <e id="TT71" driven="1" s="V" show.uncertainty="ALL" te="0" tl="7000"/>
+      <e id="TT378" driven="1" s="0" show.uncertainty="ALL" te="55556" tl="62556"/>
+      <e id="TT83" driven="1" s="X" show.uncertainty="ALL" te="166668" tl="173668"/>
+    </waveform>
+  </signal>
+  <signal id="TT45" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT42"><not>WEU</not></conn.ptr>
+    <waveform id="TT44" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT46" driven="1" s="X" show.uncertainty="ALL"/>
+      <e id="TT72" driven="1" s="V" show.uncertainty="ALL" te="0" tl="7000"/>
+      <e id="TT379" driven="1" s="0" show.uncertainty="ALL" te="55556" tl="62556"/>
+      <e id="TT84" driven="1" s="X" show.uncertainty="ALL" te="166668" tl="173668"/>
+    </waveform>
+  </signal>
+  <signal id="TT50" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT47">DQ0-15</conn.ptr>
+    <waveform id="TT49" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT51" driven="1" s="Z" show.uncertainty="ALL"/>
+      <e id="TT75" driven="1" locked="0" s="V" show.uncertainty="ALL" te="0" tl="7000"/>
+      <e id="TT77" driven="1" locked="0" s="V" show.uncertainty="ALL" te="55556" tl="62556"/>
+      <e id="TT398" driven="1" s="X" show.uncertainty="ALL" te="94000" tl="101000"/>
+    </waveform>
+  </signal>
+  <signal id="TT55" clock="0" show="1" show.grid="0" show.uncertainty="ALL">
+    <conn.ptr conn.id="TT52"><not>TRG</not></conn.ptr>
+    <waveform id="TT54" e.label.type="default" locked="0" show.uncertainty="ALL">
+      <e id="TT56" driven="1" s="0" show.uncertainty="ALL"/>
+      <e id="TT67" driven="1" s="1" show.uncertainty="ALL" te="0" tl="7000"/>
+      <e id="TT68" driven="1" s="0" show.uncertainty="ALL" te="55556" tl="62556"/>
+      <e id="TT78" driven="1" s="1" show.uncertainty="ALL" te="138889" tl="145889"/>
+    </waveform>
+  </signal>
+  <edge.relationships>
+    <relationship id="TT85" containing.signal.ptr="TT14" show="1" slot="1" tdml.cc.ptr="TT90" type="constraint" user.created="0">
+      <two.edge source.e="TT64" target.e="TT61"/>
+      <relationship.label label.type="text">t<sub>CRP</sub></relationship.label>
+    </relationship>
+    <relationship id="TT98" containing.signal.ptr="TT14" show="1" slot="1" tdml.cc.ptr="TT99" type="constraint" user.created="0">
+      <two.edge source.e="TT61" target.e="TT66"/>
+      <relationship.label label.type="text">t<sub>RCD</sub></relationship.label>
+    </relationship>
+    <relationship id="TT111" containing.signal.ptr="TT14" show="1" slot="1" tdml.cc.ptr="TT112" type="constraint" user.created="0">
+      <two.edge source.e="TT66" target.e="TT80"/>
+      <relationship.label label.type="text">t<sub>CAS</sub></relationship.label>
+    </relationship>
+    <relationship id="TT143" containing.signal.ptr="TT9" show="1" slot="1" tdml.cc.ptr="TT144" type="constraint" user.created="0">
+      <two.edge source.e="TT61" target.e="TT79"/>
+      <relationship.label label.type="text">t<sub>RAS</sub></relationship.label>
+    </relationship>
+    <relationship id="TT152" containing.signal.ptr="TT9" show="1" slot="1" tdml.cc.ptr="TT153" type="constraint" user.created="0">
+      <two.edge source.e="TT79" target.e="TT82"/>
+      <relationship.label label.type="text">t<sub>RP</sub></relationship.label>
+    </relationship>
+    <relationship id="TT162" containing.signal.ptr="TT14" show="1" slot="2" tdml.cc.ptr="TT163" type="constraint" user.created="0">
+      <two.edge source.e="TT61" target.e="TT80"/>
+      <relationship.label label.type="text">t<sub>CSH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT171" containing.signal.ptr="TT9" show="1" slot="2" tdml.cc.ptr="TT172" type="constraint" user.created="0">
+      <two.edge source.e="TT61" target.e="TT82"/>
+      <relationship.label label.type="text">t<sub>RC</sub></relationship.label>
+    </relationship>
+    <relationship id="TT180" containing.signal.ptr="TT14" show="1" slot="3" tdml.cc.ptr="TT181" type="constraint" user.created="0">
+      <two.edge source.e="TT66" target.e="TT79"/>
+      <relationship.label label.type="text">t<sub>RSH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT189" containing.signal.ptr="TT30" show="1" slot="1" tdml.cc.ptr="TT190" type="setup" user.created="0">
+      <two.edge source.e="TT61" target.e="TT57"/>
+      <relationship.label label.type="text">t<sub>ASR</sub></relationship.label>
+    </relationship>
+    <relationship id="TT198" containing.signal.ptr="TT30" show="1" slot="1" tdml.cc.ptr="TT199" type="hold" user.created="0">
+      <two.edge source.e="TT61" target.e="TT58"/>
+      <relationship.label label.type="text">t<sub>RAH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT207" containing.signal.ptr="TT30" show="1" slot="2" tdml.cc.ptr="TT208" type="setup" user.created="0">
+      <two.edge source.e="TT66" target.e="TT58"/>
+      <relationship.label label.type="text">t<sub>ASC</sub></relationship.label>
+    </relationship>
+    <relationship id="TT216" containing.signal.ptr="TT30" show="1" slot="1" tdml.cc.ptr="TT217" type="hold" user.created="0">
+      <two.edge source.e="TT66" target.e="TT60"/>
+      <relationship.label label.type="text">t<sub>CAH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT225" containing.signal.ptr="TT35" show="1" slot="2" tdml.cc.ptr="TT226" type="setup" user.created="1">
+      <two.edge source.e="TT61" target.e="TT69"/>
+      <relationship.label label.type="text">t<sub>FSR</sub></relationship.label>
+    </relationship>
+    <relationship id="TT234" containing.signal.ptr="TT35" show="1" slot="1" tdml.cc.ptr="TT235" type="hold" user.created="0">
+      <two.edge source.e="TT66" target.e="TT70"/>
+      <relationship.label label.type="text">t<sub>CFH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT243" containing.signal.ptr="TT35" show="1" slot="1" tdml.cc.ptr="TT244" type="setup" user.created="1">
+      <two.edge source.e="TT66" target.e="TT377"/>
+      <relationship.label label.type="text">t<sub>FSC</sub></relationship.label>
+    </relationship>
+    <relationship id="TT252" containing.signal.ptr="TT35" show="1" slot="2" tdml.cc.ptr="TT253" type="hold" user.created="0">
+      <two.edge source.e="TT61" target.e="TT377"/>
+      <relationship.label label.type="text">t<sub>RFH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT261" containing.signal.ptr="TT55" show="1" slot="1" tdml.cc.ptr="TT262" type="setup" user.created="0">
+      <two.edge source.e="TT61" target.e="TT67"/>
+      <relationship.label label.type="text">t<sub>THS</sub></relationship.label>
+    </relationship>
+    <relationship id="TT268" containing.signal.ptr="TT55" show="1" slot="1" tdml.cc.ptr="TT269" type="hold" user.created="0">
+      <two.edge source.e="TT61" target.e="TT68"/>
+      <relationship.label label.type="text">t<sub>THH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT348" containing.signal.ptr="TT40" show="1" slot="1" tdml.cc.ptr="TT349" type="setup" user.created="1">
+      <two.edge source.e="TT61" target.e="TT72"/>
+      <relationship.label label.type="text">t<sub>RCS</sub></relationship.label>
+    </relationship>
+    <relationship id="TT357" containing.signal.ptr="TT40" show="1" slot="1" tdml.cc.ptr="TT358" type="hold" user.created="1">
+      <two.edge source.e="TT80" target.e="TT84"/>
+      <relationship.label label.type="text">t<sub>RCH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT366" containing.signal.ptr="TT45" show="1" slot="2" tdml.cc.ptr="TT367" type="hold" user.created="0">
+      <two.edge source.e="TT79" target.e="TT84"/>
+      <relationship.label label.type="text">t<sub>RRH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT380" containing.signal.ptr="TT45" show="1" slot="1" tdml.cc.ptr="TT381" type="setup" user.created="0">
+      <two.edge source.e="TT66" target.e="TT379"/>
+      <relationship.label label.type="text">t<sub>WCS</sub></relationship.label>
+    </relationship>
+    <relationship id="TT389" containing.signal.ptr="TT45" show="1" slot="1" tdml.cc.ptr="TT390" type="hold" user.created="0">
+      <two.edge source.e="TT66" target.e="TT84"/>
+      <relationship.label label.type="text">t<sub>WCH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT399" containing.signal.ptr="TT50" show="1" slot="1" tdml.cc.ptr="TT400" type="setup" user.created="0">
+      <two.edge source.e="TT61" target.e="TT75"/>
+      <relationship.label label.type="text">t<sub>MS</sub></relationship.label>
+    </relationship>
+    <relationship id="TT408" containing.signal.ptr="TT50" show="1" slot="1" tdml.cc.ptr="TT409" type="hold" user.created="0">
+      <two.edge source.e="TT61" target.e="TT77"/>
+      <relationship.label label.type="text">t<sub>MH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT417" containing.signal.ptr="TT50" show="1" slot="3" tdml.cc.ptr="TT418" type="setup" user.created="0">
+      <two.edge source.e="TT66" target.e="TT77"/>
+      <relationship.label label.type="text">t<sub>DS</sub></relationship.label>
+    </relationship>
+    <relationship id="TT426" containing.signal.ptr="TT50" show="1" slot="1" tdml.cc.ptr="TT427" type="hold" user.created="0">
+      <two.edge source.e="TT66" target.e="TT398"/>
+      <relationship.label label.type="text">t<sub>DH</sub></relationship.label>
+    </relationship>
+    <relationship id="TT435" containing.signal.ptr="TT50" show="1" slot="2" tdml.cc.ptr="TT436" type="hold" user.created="0">
+      <two.edge source.e="TT61" target.e="TT398"/>
+      <relationship.label label.type="text">t<sub>DHR</sub></relationship.label>
+    </relationship>
+  </edge.relationships>
+  <view.group>
+    <view begin.time="-20000" end.time="240000"/>
+  </view.group>
+  <cc.list>
+    <title id="TT117">General Data</title>
+    <tdml.cc id="TT118" show="1" static="1">
+      <parm id="P119">
+        <parm.symbol id="TT120">tg</parm.symbol>
+        <parm.desc id="TT121">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT122" value.type="MIN">
+        <number id="TT123">4.3</number>
+        <order.of.mag id="TT124">n</order.of.mag>
+        <unit id="TT125">s</unit>
+      </tdml.value>
+      <tdml.value id="TT126" value.type="MAX">
+        <number id="TT127">1000</number>
+        <order.of.mag id="TT128">n</order.of.mag>
+        <unit id="TT129">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT131" show="1" static="1">
+      <parm id="P132">
+        <parm.symbol id="TT133">tg<sub>1</sub></parm.symbol>
+        <parm.desc id="TT134">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT135" value.type="MIN">
+        <number id="TT136">4.3</number>
+        <order.of.mag id="TT137">n</order.of.mag>
+        <unit id="TT138">s</unit>
+      </tdml.value>
+      <tdml.value id="TT139" value.type="MAX">
+        <number id="TT140">1000</number>
+        <order.of.mag id="TT141">n</order.of.mag>
+        <unit id="TT142">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT86" show="1" static="1">
+      <parm id="P87">
+        <parm.symbol id="TT88">td</parm.symbol>
+        <parm.desc id="TT89">to be defined</parm.desc>
+      </parm>
+    </tdml.cc>
+    <tdml.cc id="TT90" show="1" static="1">
+      <parm id="P91">
+        <parm.symbol id="TT92">tc</parm.symbol>
+        <parm.desc id="TT93">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT94" value.type="MIN">
+        <number id="TT95">10</number>
+        <order.of.mag id="TT96">n</order.of.mag>
+        <unit id="TT97">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT99" show="1" static="1">
+      <parm id="P100">
+        <parm.symbol id="TT101">tc<sub>1</sub></parm.symbol>
+        <parm.desc id="TT102">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT103" value.type="MIN">
+        <number id="TT104">15</number>
+        <order.of.mag id="TT107">n</order.of.mag>
+        <unit id="TT108">s</unit>
+      </tdml.value>
+      <tdml.value id="TT105" value.type="MAX">
+        <number id="TT106">50</number>
+        <order.of.mag id="TT109">n</order.of.mag>
+        <unit id="TT110">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT112" show="1" static="1">
+      <parm id="P113">
+        <parm.symbol id="TT114">tc<sub>2</sub></parm.symbol>
+        <parm.desc id="TT115">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT116" value.type="MIN">
+        <number id="TT119">10</number>
+        <order.of.mag id="TT130">n</order.of.mag>
+        <unit id="TT132">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT144" show="1" static="1">
+      <parm id="P145">
+        <parm.symbol id="TT146">tc<sub>3</sub></parm.symbol>
+        <parm.desc id="TT147">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT148" value.type="MIN">
+        <number id="TT149">70</number>
+        <order.of.mag id="TT150">n</order.of.mag>
+        <unit id="TT151">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT153" show="1" static="1">
+      <parm id="P154">
+        <parm.symbol id="TT155">tc<sub>4</sub></parm.symbol>
+        <parm.desc id="TT156">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT157" value.type="MIN">
+        <number id="TT158">50</number>
+        <order.of.mag id="TT159">n</order.of.mag>
+        <unit id="TT160">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT163" show="1" static="1">
+      <parm id="P164">
+        <parm.symbol id="TT165">tc<sub>5</sub></parm.symbol>
+        <parm.desc id="TT166">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT167" value.type="MIN">
+        <number id="TT168">55</number>
+        <order.of.mag id="TT169">n</order.of.mag>
+        <unit id="TT170">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT172" show="1" static="1">
+      <parm id="P173">
+        <parm.symbol id="TT174">tc<sub>6</sub></parm.symbol>
+        <parm.desc id="TT175">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT176" value.type="MIN">
+        <number id="TT177">124</number>
+        <order.of.mag id="TT178">n</order.of.mag>
+        <unit id="TT179">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT181" show="1" static="1">
+      <parm id="P182">
+        <parm.symbol id="TT183">tc<sub>7</sub></parm.symbol>
+        <parm.desc id="TT184">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT185" value.type="MIN">
+        <number id="TT186">20</number>
+        <order.of.mag id="TT187">n</order.of.mag>
+        <unit id="TT188">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT190" show="1" static="1">
+      <parm id="P191">
+        <parm.symbol id="TT192">ts</parm.symbol>
+        <parm.desc id="TT193">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT194" value.type="MIN">
+        <number id="TT195">0</number>
+        <order.of.mag id="TT196">n</order.of.mag>
+        <unit id="TT197">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT199" show="1" static="1">
+      <parm id="P200">
+        <parm.symbol id="TT201">th</parm.symbol>
+        <parm.desc id="TT202">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT203" value.type="MIN">
+        <number id="TT204">10</number>
+        <order.of.mag id="TT205">n</order.of.mag>
+        <unit id="TT206">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT208" show="1" static="1">
+      <parm id="P209">
+        <parm.symbol id="TT210">ts<sub>1</sub></parm.symbol>
+        <parm.desc id="TT211">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT212" value.type="MIN">
+        <number id="TT213">0</number>
+        <order.of.mag id="TT214">n</order.of.mag>
+        <unit id="TT215">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT217" show="1" static="1">
+      <parm id="P218">
+        <parm.symbol id="TT219">th<sub>1</sub></parm.symbol>
+        <parm.desc id="TT220">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT221" value.type="MIN">
+        <number id="TT222">10</number>
+        <order.of.mag id="TT223">n</order.of.mag>
+        <unit id="TT224">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT226" show="1" static="1">
+      <parm id="P227">
+        <parm.symbol id="TT228">ts<sub>2</sub></parm.symbol>
+        <parm.desc id="TT229">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT230" value.type="MIN">
+        <number id="TT231">0</number>
+        <order.of.mag id="TT232">p</order.of.mag>
+        <unit id="TT233">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT235" show="1" static="1">
+      <parm id="P236">
+        <parm.symbol id="TT237">th<sub>2</sub></parm.symbol>
+        <parm.desc id="TT238">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT239" value.type="MIN">
+        <number id="TT240">0</number>
+        <order.of.mag id="TT241">n</order.of.mag>
+        <unit id="TT242">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT244" show="1" static="1">
+      <parm id="P245">
+        <parm.symbol id="TT246">ts<sub>3</sub></parm.symbol>
+        <parm.desc id="TT247">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT248" value.type="MIN">
+        <number id="TT249">0</number>
+        <order.of.mag id="TT250">n</order.of.mag>
+        <unit id="TT251">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT253" show="1" static="1">
+      <parm id="P254">
+        <parm.symbol id="TT255">th<sub>3</sub></parm.symbol>
+        <parm.desc id="TT256">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT257" value.type="MIN">
+        <number id="TT258">10</number>
+        <order.of.mag id="TT259">n</order.of.mag>
+        <unit id="TT260">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT262" show="1" static="1">
+      <parm id="P263">
+        <parm.symbol id="TT264">ts<sub>4</sub></parm.symbol>
+        <parm.desc id="TT265">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT266" value.type="MIN">
+        <number id="TT267">0</number>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT269" show="1" static="1">
+      <parm id="P270">
+        <parm.symbol id="TT271">th<sub>4</sub></parm.symbol>
+        <parm.desc id="TT272">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT273" value.type="MIN">
+        <number id="TT274">10</number>
+        <order.of.mag id="TT275">n</order.of.mag>
+        <unit id="TT276">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT278" show="1" static="1">
+      <parm id="P279">
+        <parm.symbol id="TT280">tc<sub>8</sub></parm.symbol>
+        <parm.desc id="TT281">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT282" value.type="MIN">
+        <number id="TT283">20</number>
+        <order.of.mag id="TT284">n</order.of.mag>
+        <unit id="TT285">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT287" show="1" static="1">
+      <parm id="P288">
+        <parm.symbol id="TT289">tc<sub>9</sub></parm.symbol>
+        <parm.desc id="TT290">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT291" value.type="MIN">
+        <number id="TT292">15</number>
+        <order.of.mag id="TT293">n</order.of.mag>
+        <unit id="TT294">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT296" show="1" static="1">
+      <parm id="P297">
+        <parm.symbol id="TT298">tc<sub>10</sub></parm.symbol>
+        <parm.desc id="TT299">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT300" value.type="MIN">
+        <number id="TT301">70</number>
+        <order.of.mag id="TT302">n</order.of.mag>
+        <unit id="TT303">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT305" show="1" static="1">
+      <parm id="P306">
+        <parm.symbol id="TT307">tc<sub>11</sub></parm.symbol>
+        <parm.desc id="TT308">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT309" value.type="MIN">
+        <number id="TT310">35</number>
+        <order.of.mag id="TT311">n</order.of.mag>
+        <unit id="TT312">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT314" show="1" static="1">
+      <parm id="P315">
+        <parm.symbol id="TT316">tc<sub>12</sub></parm.symbol>
+        <parm.desc id="TT317">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT318" value.type="MIN">
+        <number id="TT319">20</number>
+        <order.of.mag id="TT320">n</order.of.mag>
+        <unit id="TT321">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT323" show="1" static="1">
+      <parm id="P324">
+        <parm.symbol id="TT325">tc<sub>13</sub></parm.symbol>
+        <parm.desc id="TT326">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT327" value.type="MIN">
+        <number id="TT328">0</number>
+        <order.of.mag id="TT329">n</order.of.mag>
+        <unit id="TT330">s</unit>
+      </tdml.value>
+      <tdml.value id="TT331" value.type="MAX">
+        <number id="TT332">15</number>
+        <order.of.mag id="TT333">n</order.of.mag>
+        <unit id="TT334">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT336" show="1" static="1">
+      <parm id="P337">
+        <parm.symbol id="TT338">tc<sub>14</sub></parm.symbol>
+        <parm.desc id="TT339">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT340" value.type="MIN">
+        <number id="TT341">0</number>
+        <order.of.mag id="TT342">n</order.of.mag>
+        <unit id="TT343">s</unit>
+      </tdml.value>
+      <tdml.value id="TT344" value.type="MAX">
+        <number id="TT345">17</number>
+        <order.of.mag id="TT346">n</order.of.mag>
+        <unit id="TT347">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT349" show="1" static="1">
+      <parm id="P350">
+        <parm.symbol id="TT351">ts<sub>5</sub></parm.symbol>
+        <parm.desc id="TT352">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT353" value.type="MIN">
+        <number id="TT354">0</number>
+        <order.of.mag id="TT355">p</order.of.mag>
+        <unit id="TT356">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT358" show="1" static="1">
+      <parm id="P359">
+        <parm.symbol id="TT360">th<sub>5</sub></parm.symbol>
+        <parm.desc id="TT361">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT362" value.type="MIN">
+        <number id="TT363">0</number>
+        <order.of.mag id="TT364">n</order.of.mag>
+        <unit id="TT365">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT367" show="1" static="1">
+      <parm id="P368">
+        <parm.symbol id="TT369">th<sub>6</sub></parm.symbol>
+        <parm.desc id="TT370">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT371" value.type="MIN">
+        <number id="TT372">0</number>
+        <order.of.mag id="TT373">n</order.of.mag>
+        <unit id="TT374">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT381" show="1" static="1">
+      <parm id="P382">
+        <parm.symbol id="TT383">ts<sub>6</sub></parm.symbol>
+        <parm.desc id="TT384">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT385" value.type="MIN">
+        <number id="TT386">0</number>
+        <order.of.mag id="TT387">n</order.of.mag>
+        <unit id="TT388">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT390" show="1" static="1">
+      <parm id="P391">
+        <parm.symbol id="TT392">th<sub>7</sub></parm.symbol>
+        <parm.desc id="TT393">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT394" value.type="MIN">
+        <number id="TT395">10</number>
+        <order.of.mag id="TT396">n</order.of.mag>
+        <unit id="TT397">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT400" show="1" static="1">
+      <parm id="P401">
+        <parm.symbol id="TT402">ts<sub>7</sub></parm.symbol>
+        <parm.desc id="TT403">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT404" value.type="MIN">
+        <number id="TT405">0</number>
+        <order.of.mag id="TT406">n</order.of.mag>
+        <unit id="TT407">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT409" show="1" static="1">
+      <parm id="P410">
+        <parm.symbol id="TT411">th<sub>8</sub></parm.symbol>
+        <parm.desc id="TT412">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT413" value.type="MIN">
+        <number id="TT414">10</number>
+        <order.of.mag id="TT415">n</order.of.mag>
+        <unit id="TT416">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT418" show="1" static="1">
+      <parm id="P419">
+        <parm.symbol id="TT420">ts<sub>8</sub></parm.symbol>
+        <parm.desc id="TT421">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT422" value.type="MIN">
+        <number id="TT423">0</number>
+        <order.of.mag id="TT424">n</order.of.mag>
+        <unit id="TT425">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT427" show="1" static="1">
+      <parm id="P428">
+        <parm.symbol id="TT429">th<sub>9</sub></parm.symbol>
+        <parm.desc id="TT430">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT431" value.type="MIN">
+        <number id="TT432">12</number>
+        <order.of.mag id="TT433">n</order.of.mag>
+        <unit id="TT434">s</unit>
+      </tdml.value>
+    </tdml.cc>
+    <tdml.cc id="TT436" show="1" static="1">
+      <parm id="P437">
+        <parm.symbol id="TT438">th<sub>10</sub></parm.symbol>
+        <parm.desc id="TT439">to be defined</parm.desc>
+      </parm>
+      <tdml.value id="TT440" value.type="MIN">
+        <number id="TT441">55</number>
+        <order.of.mag id="TT442">n</order.of.mag>
+        <unit id="TT443">s</unit>
+      </tdml.value>
+    </tdml.cc>
+  </cc.list>
+  <font.list>
+    <font id="TT1" color="ff000080" face.name="Lucida Sans" point.size="11"/>
+  </font.list>
+  <user.defined>
+    <key>document.title</key>
+    <user.value>FPGA-Oscilloscope-VRAM-WRITE-EARLY</user.value>
+  </user.defined>
+</timing.diagram>
