@@ -29,7 +29,7 @@ PowerPortNamesTakePriority=0
 PushECOToAnnotationFile=1
 DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
-OutputPath=Project Outputs for FPGA-Oscilloscope
+OutputPath=
 
 [Document1]
 DocumentPath=FPGA-Oscilloscope.PcbDoc
@@ -64,7 +64,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 
 [Document3]
-DocumentPath=D:\Downloads\ProteLib\EECS5X.LIB
+DocumentPath=D:\Downloads\proschlib (1)\EECS5X.LIB
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -80,7 +80,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 
 [Document4]
-DocumentPath=FPGA-Oscilloscope.OutJob
+DocumentPath=D:\Downloads\ProteLib\EECS5X.LIB
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -96,7 +96,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 
 [Document5]
-DocumentPath=D:\Downloads\propcblib\EECS5X.PcbLib
+DocumentPath=FPGA-Oscilloscope.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -112,6 +112,38 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 
 [Document6]
+DocumentPath=D:\Downloads\propcblib (1)\eecs5x.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+
+[Document7]
+DocumentPath=D:\Downloads\propcblib\EECS5X.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+
+[Document8]
 DocumentPath=FPGA-Oscilloscope-Memory.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -127,7 +159,7 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 
-[Document7]
+[Document9]
 DocumentPath=FPGA-Oscilloscope-UI.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -143,7 +175,7 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 
-[Document8]
+[Document10]
 DocumentPath=FPGA-Oscilloscope-Analog.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -208,7 +240,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=Project Outputs for FPGA-Oscilloscope
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs
