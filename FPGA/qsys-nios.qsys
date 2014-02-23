@@ -6,9 +6,12 @@
    version="1.0"
    description=""
    tags=""
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element $${FILENAME}
+   {
+   }
    element clk_0
    {
       datum _sortIndex
@@ -50,14 +53,13 @@
  <parameter name="globalResetBus" value="false" />
  <parameter name="hdlLanguage" value="VERILOG" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="" />
+ <parameter name="projectName">FPGA-Oscilloscope.qpf</parameter>
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="0" />
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
- <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
  <module kind="clock_source" version="13.1" enabled="1" name="clk_0">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -218,6 +220,16 @@
    start="clk_0.clk_reset"
    end="nios2_qsys_0.reset_n" />
  <connection kind="clock" version="13.1" start="clk_0.clk" end="nios2_qsys_0.clk" />
+ <connection
+   kind="reset"
+   version="13.1"
+   start="nios2_qsys_0.jtag_debug_module_reset"
+   end="nios2_qsys_0.reset_n" />
+ <connection
+   kind="reset"
+   version="13.1"
+   start="nios2_qsys_0.jtag_debug_module_reset"
+   end="clk_0.clk_in_reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="false" />

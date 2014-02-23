@@ -57,3 +57,14 @@ set_global_assignment -name SMART_RECOMPILE ON
 set_global_assignment -name QSYS_FILE "qsys-nios.qsys"
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name BDF_FILE "FPGA-Oscilloscope.bdf"
+set_global_assignment -name QIP_FILE lpm_counter0.qip
+set_global_assignment -name QIP_FILE lpm_counter1.qip
+set_global_assignment -name QIP_FILE lpm_counter2.qip
+set_global_assignment -name QIP_FILE lpm_compare0.qip
+set_global_assignment -name QIP_FILE lpm_compare1.qip
+set_global_assignment -name QIP_FILE lpm_compare2.qip
+set_global_assignment -name QIP_FILE lpm_counter3.qip
+set_global_assignment -name QIP_FILE lpm_compare3.qip
+set_global_assignment -name QIP_FILE lpm_compare4.qip
+set_global_assignment -name QIP_FILE lpm_compare5.qip
