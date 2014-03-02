@@ -1,5 +1,5 @@
 Flow report for FPGA-Oscilloscope
-Sun Mar 02 12:56:47 2014
+Sun Mar 02 13:33:12 2014
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Sun Mar 02 12:56:47 2014      ;
+; Flow Status                        ; Successful - Sun Mar 02 13:33:12 2014      ;
 ; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; FPGA-Oscilloscope                          ;
 ; Top-level Entity Name              ; oscilloscope                               ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/02/2014 12:56:44 ;
+; Start date & time ; 03/02/2014 13:33:10 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FPGA-Oscilloscope   ;
 +-------------------+---------------------+
@@ -75,13 +75,13 @@ applicable agreement for further details.
 +------------------------------------------------+------------------------------------------------------------------+-------------------+--------------+----------------+
 ; Assignment Name                                ; Value                                                            ; Default Value     ; Entity Name  ; Section Id     ;
 +------------------------------------------------+------------------------------------------------------------------+-------------------+--------------+----------------+
-; COMPILER_SIGNATURE_ID                          ; 163683362755794.139379380406740                                  ; --                ; --           ; --             ;
+; COMPILER_SIGNATURE_ID                          ; 163683362755794.139379599013852                                  ; --                ; --           ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME                       ; NA                                                               ; --                ; --           ; a              ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST                ; On                                                               ; --                ; --           ; eda_simulation ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH           ; a                                                                ; --                ; --           ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT                         ; Vhdl                                                             ; --                ; --           ; eda_simulation ;
-; EDA_SIMULATION_TOOL                            ; ModelSim-Altera (VHDL)                                           ; <None>            ; --           ; --             ;
-; EDA_TEST_BENCH_ENABLE_STATUS                   ; TEST_BENCH_MODE                                                  ; --                ; --           ; eda_simulation ;
+; EDA_SIMULATION_TOOL                            ; ModelSim (VHDL)                                                  ; <None>            ; --           ; --             ;
+; EDA_TEST_BENCH_ENABLE_STATUS                   ; NOT_USED                                                         ; --                ; --           ; eda_simulation ;
 ; EDA_TEST_BENCH_FILE                            ; test_modelsim.vht                                                ; --                ; --           ; a              ;
 ; EDA_TEST_BENCH_MODULE_NAME                     ; a                                                                ; --                ; --           ; a              ;
 ; EDA_TEST_BENCH_NAME                            ; a                                                                ; --                ; --           ; eda_simulation ;

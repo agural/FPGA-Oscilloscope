@@ -1,6 +1,6 @@
 # do temp_simlib_comp.tmp 
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:57:23 on Mar 02,2014
+# Start time: 13:37:36 on Mar 02,2014
 # vcom -work cycloneiii -93 d:/program files/quartus/eda/sim_lib/cycloneiii_atoms.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -100,10 +100,10 @@
 # -- Compiling architecture architecture_crcblock of cycloneiii_crcblock
 # -- Compiling entity cycloneiii_oscillator
 # -- Compiling architecture architecture_oscillator of cycloneiii_oscillator
-# End time: 12:57:24 on Mar 02,2014
+# End time: 13:37:37 on Mar 02,2014
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:57:24 on Mar 02,2014
+# Start time: 13:37:37 on Mar 02,2014
 # vcom -work cycloneiii -93 d:/program files/quartus/eda/sim_lib/cycloneiii_components.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -112,5 +112,5 @@
 # -- Loading package VITAL_Primitives
 # -- Loading package cycloneiii_atom_pack
 # -- Compiling package cycloneiii_components
-# End time: 12:57:24 on Mar 02,2014
+# End time: 13:37:37 on Mar 02,2014
 # Errors: 0, Warnings: 0

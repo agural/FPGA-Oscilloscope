@@ -19,4 +19,5 @@ Sim dir               :  simulation\modelsim
 
 Info: Starting NativeLink simulation with ModelSim software
 Sourced NativeLink script d:/program files/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File FPGA-Oscilloscope_run_msim_rtl_vhdl.do already exists - backing up current file as FPGA-Oscilloscope_run_msim_rtl_vhdl.do.bak
 Info: Spawning ModelSim Simulation software 
