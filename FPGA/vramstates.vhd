@@ -206,7 +206,7 @@ begin
 
         end case;
 
-        if  reset = '0'  then           -- reset overrides everything
+        if  reset = '1'  then           -- reset overrides everything
             NextState <= IDLE;          --   go to idle on reset
         end if;
 
