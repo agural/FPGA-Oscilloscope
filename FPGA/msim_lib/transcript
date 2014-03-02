@@ -1,0 +1,116 @@
+# do temp_simlib_comp.tmp 
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 12:57:23 on Mar 02,2014
+# vcom -work cycloneiii -93 d:/program files/quartus/eda/sim_lib/cycloneiii_atoms.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Compiling package cycloneiii_atom_pack
+# -- Compiling package body cycloneiii_atom_pack
+# -- Loading package cycloneiii_atom_pack
+# -- Compiling package cycloneiii_pllpack
+# -- Compiling package body cycloneiii_pllpack
+# -- Loading package cycloneiii_pllpack
+# -- Loading package cycloneiii_atom_pack
+# -- Compiling entity cycloneiii_dffe
+# -- Compiling architecture behave of cycloneiii_dffe
+# -- Compiling entity cycloneiii_mux21
+# -- Compiling architecture AltVITAL of cycloneiii_mux21
+# -- Compiling entity cycloneiii_mux41
+# -- Compiling architecture AltVITAL of cycloneiii_mux41
+# -- Compiling entity cycloneiii_and1
+# -- Compiling architecture AltVITAL of cycloneiii_and1
+# -- Compiling entity cycloneiii_lcell_comb
+# -- Compiling architecture vital_lcell_comb of cycloneiii_lcell_comb
+# -- Compiling entity cycloneiii_routing_wire
+# ** Warning: [6] d:/program files/quartus/eda/sim_lib/cycloneiii_atoms.vhd(1639): (vcom-1288) VITAL timing generic "tpd_datainglitch_dataout" port specification "datainglitch" does not denote a port.
+# 
+# (1076.4 section 4.3.2.1.3)
+# 
+# -- Compiling architecture behave of cycloneiii_routing_wire
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity cycloneiii_mn_cntr
+# -- Compiling architecture behave of cycloneiii_mn_cntr
+# -- Compiling entity cycloneiii_scale_cntr
+# -- Compiling architecture behave of cycloneiii_scale_cntr
+# -- Compiling entity cycloneiii_pll_reg
+# -- Compiling architecture behave of cycloneiii_pll_reg
+# -- Loading package cycloneiii_pllpack
+# -- Loading entity cycloneiii_mn_cntr
+# -- Loading entity cycloneiii_scale_cntr
+# -- Loading entity cycloneiii_dffe
+# -- Loading entity cycloneiii_pll_reg
+# -- Compiling entity cycloneiii_pll
+# -- Compiling architecture vital_pll of cycloneiii_pll
+# -- Loading entity cycloneiii_and1
+# -- Compiling entity cycloneiii_ff
+# -- Compiling architecture vital_lcell_ff of cycloneiii_ff
+# -- Compiling entity cycloneiii_ram_register
+# -- Compiling architecture reg_arch of cycloneiii_ram_register
+# -- Compiling entity cycloneiii_ram_pulse_generator
+# -- Compiling architecture pgen_arch of cycloneiii_ram_pulse_generator
+# -- Loading entity cycloneiii_ram_register
+# -- Loading entity cycloneiii_ram_pulse_generator
+# -- Compiling entity cycloneiii_ram_block
+# -- Compiling architecture block_arch of cycloneiii_ram_block
+# -- Compiling entity cycloneiii_mac_data_reg
+# -- Compiling architecture vital_cycloneiii_mac_data_reg of cycloneiii_mac_data_reg
+# -- Compiling entity cycloneiii_mac_sign_reg
+# -- Compiling architecture cycloneiii_mac_sign_reg of cycloneiii_mac_sign_reg
+# -- Compiling entity cycloneiii_mac_mult_internal
+# -- Compiling architecture vital_cycloneiii_mac_mult_internal of cycloneiii_mac_mult_internal
+# -- Loading entity cycloneiii_mac_data_reg
+# -- Loading entity cycloneiii_mac_sign_reg
+# -- Loading entity cycloneiii_mac_mult_internal
+# -- Compiling entity cycloneiii_mac_mult
+# -- Compiling architecture vital_cycloneiii_mac_mult of cycloneiii_mac_mult
+# -- Compiling entity cycloneiii_mac_out
+# -- Compiling architecture vital_cycloneiii_mac_out of cycloneiii_mac_out
+# -- Compiling entity cycloneiii_io_ibuf
+# -- Compiling architecture arch of cycloneiii_io_ibuf
+# -- Compiling entity cycloneiii_io_obuf
+# -- Compiling architecture arch of cycloneiii_io_obuf
+# -- Compiling entity cycloneiii_ddio_oe
+# -- Compiling architecture arch of cycloneiii_ddio_oe
+# -- Compiling entity cycloneiii_latch
+# -- Compiling architecture vital_latch of cycloneiii_latch
+# -- Compiling entity cycloneiii_ddio_out
+# -- Compiling architecture arch of cycloneiii_ddio_out
+# -- Compiling entity cycloneiii_pseudo_diff_out
+# -- Compiling architecture arch of cycloneiii_pseudo_diff_out
+# -- Compiling entity cycloneiii_io_pad
+# -- Compiling architecture arch of cycloneiii_io_pad
+# -- Compiling entity cycloneiii_ena_reg
+# -- Compiling architecture behave of cycloneiii_ena_reg
+# -- Loading entity cycloneiii_ena_reg
+# -- Compiling entity cycloneiii_clkctrl
+# -- Compiling architecture vital_clkctrl of cycloneiii_clkctrl
+# -- Compiling entity cycloneiii_rublock
+# -- Compiling architecture architecture_rublock of cycloneiii_rublock
+# -- Compiling entity cycloneiii_apfcontroller
+# -- Compiling architecture architecture_apfcontroller of cycloneiii_apfcontroller
+# -- Compiling entity cycloneiii_termination
+# -- Compiling architecture cycloneiii_termination_arch of cycloneiii_termination
+# -- Compiling entity cycloneiii_jtag
+# -- Compiling architecture architecture_jtag of cycloneiii_jtag
+# -- Compiling entity cycloneiii_crcblock
+# -- Compiling architecture architecture_crcblock of cycloneiii_crcblock
+# -- Compiling entity cycloneiii_oscillator
+# -- Compiling architecture architecture_oscillator of cycloneiii_oscillator
+# End time: 12:57:24 on Mar 02,2014
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
+# Start time: 12:57:24 on Mar 02,2014
+# vcom -work cycloneiii -93 d:/program files/quartus/eda/sim_lib/cycloneiii_components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cycloneiii_atom_pack
+# -- Compiling package cycloneiii_components
+# End time: 12:57:24 on Mar 02,2014
+# Errors: 0, Warnings: 0

@@ -14,7 +14,7 @@
 
 -- PROGRAM		"Quartus II 32-bit"
 -- VERSION		"Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
--- CREATED		"Sun Mar 02 11:06:29 2014"
+-- CREATED		"Sun Mar 02 12:38:59 2014"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -134,7 +134,9 @@ COMPONENT lpm_counter0
 END COMPONENT;
 
 SIGNAL	ADDRESS :  STD_LOGIC_VECTOR(17 DOWNTO 0);
+SIGNAL	CS :  STD_LOGIC;
 SIGNAL	RESET :  STD_LOGIC;
+SIGNAL	RW :  STD_LOGIC;
 SIGNAL	SYS_CLK :  STD_LOGIC;
 SIGNAL	SYS_COUNT :  STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL	VRAM_CLK :  STD_LOGIC;
@@ -420,6 +422,8 @@ PORT MAP(		 result => SYNTHESIZED_WIRE_1);
 b2v_STATE_MACHINE : scopevram
 PORT MAP(clk => SYS_CLK,
 		 reset => RESET,
+		 cs => CS,
+		 rw => RW,
 		 srt => SRFF_inst3,
 		 RAS => RAS,
 		 CAS => CAS,

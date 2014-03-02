@@ -78,8 +78,8 @@ architecture  assign_statebits  of  ScopeVRAM  is
     constant  READ7     : states := "1111001101010";  -- read cycle
     constant  WRITE1    : states := "0111011001100";  -- write cycle
     constant  WRITE2    : states := "0000001101100";  -- write cycle
-    constant  WRITE3    : states := "0000001101100";  -- write cycle
-    constant  WRITE4    : states := "0000001101101";  -- write cycle
+    constant  WRITE3    : states := "0000001101101";  -- write cycle
+    constant  WRITE4    : states := "0000001101110";  -- write cycle
     constant  WRITE5    : states := "1110001101100";  -- write cycle
     constant  WRITE6    : states := "1111001101100";  -- write cycle
     constant  WRITE7    : states := "1111001101101";  -- write cycle
@@ -202,6 +202,9 @@ begin
                 NextState <= REFRESH6;  -- go to next part of refresh cycle
 
             when  REFRESH6 =>           -- refresh cycle
+                NextState <= IDLE;      -- go back to idle
+
+            when others =>              -- default
                 NextState <= IDLE;      -- go back to idle
 
         end case;

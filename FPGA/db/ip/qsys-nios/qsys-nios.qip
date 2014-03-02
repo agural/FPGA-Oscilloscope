@@ -1,0 +1,22 @@
+set_global_assignment -entity "qsys-nios" -library "qsys-nios" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "qsys-nios" -library "qsys-nios" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "qsys-nios" -library "qsys-nios" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "qsys-nios" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../../qsys-nios.sopcinfo"]
+set_global_assignment -entity "qsys-nios" -library "qsys-nios" -name SLD_INFO "QSYS_NAME qsys-nios HAS_SOPCINFO 1 GENERATION_ID 1393788512"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "qsys-nios" -name MISC_FILE [file join $::quartus(qip_path) "../../../qsys-nios.qsys"]
+
+set_global_assignment -library "qsys-nios" -name VERILOG_FILE [file join $::quartus(qip_path) "qsys-nios.v"]
+
+set_global_assignment -entity "altera_reset_controller" -library "qsys-nios" -name IP_TOOL_NAME "altera_reset_controller"
+set_global_assignment -entity "altera_reset_controller" -library "qsys-nios" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "altera_reset_controller" -library "qsys-nios" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "qsys-nios_irq_mapper" -library "qsys-nios" -name IP_TOOL_NAME "altera_irq_mapper"
+set_global_assignment -entity "qsys-nios_irq_mapper" -library "qsys-nios" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "qsys-nios_irq_mapper" -library "qsys-nios" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "qsys-nios_mm_interconnect_0" -library "qsys-nios" -name IP_TOOL_NAME "altera_merlin_interconnect_wrapper"
+set_global_assignment -entity "qsys-nios_mm_interconnect_0" -library "qsys-nios" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "qsys-nios_mm_interconnect_0" -library "qsys-nios" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "qsys-nios_nios2_qsys_0" -library "qsys-nios" -name IP_TOOL_NAME "altera_nios2_qsys"
+set_global_assignment -entity "qsys-nios_nios2_qsys_0" -library "qsys-nios" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "qsys-nios_nios2_qsys_0" -library "qsys-nios" -name IP_TOOL_ENV "Qsys"

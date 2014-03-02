@@ -1,16 +1,40 @@
-Analysis & Synthesis report for FPGA-Oscilloscope
-Sat Feb 08 20:33:23 2014
-Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Analysis & Elaboration report for FPGA-Oscilloscope
+Sun Mar 02 12:56:47 2014
+Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Synthesis Summary
-  3. Analysis & Synthesis Settings
-  4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration IP Cores Summary
+  5. Parameter Settings for User Entity Instance: lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component
+  6. Parameter Settings for User Entity Instance: lpm_counter2:b2v_HORIZONTAL_CNT|lpm_counter:LPM_COUNTER_component
+  7. Parameter Settings for User Entity Instance: lpm_compare0:b2v_inst|lpm_compare:LPM_COMPARE_component
+  8. Parameter Settings for User Entity Instance: lpm_compare3:b2v_inst14|lpm_compare:LPM_COMPARE_component
+  9. Parameter Settings for User Entity Instance: lpm_compare4:b2v_inst15|lpm_compare:LPM_COMPARE_component
+ 10. Parameter Settings for User Entity Instance: lpm_compare5:b2v_inst16|lpm_compare:LPM_COMPARE_component
+ 11. Parameter Settings for User Entity Instance: lpm_compare1:b2v_inst6|lpm_compare:LPM_COMPARE_component
+ 12. Parameter Settings for User Entity Instance: lpm_compare2:b2v_inst7|lpm_compare:LPM_COMPARE_component
+ 13. Parameter Settings for User Entity Instance: lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component
+ 14. Parameter Settings for User Entity Instance: lpm_constant0:b2v_SRT_COL_START|lpm_constant:LPM_CONSTANT_component
+ 15. Parameter Settings for User Entity Instance: lpm_counter3:b2v_VERTICAL_CNT|lpm_counter:LPM_COUNTER_component
+ 16. Parameter Settings for User Entity Instance: lpm_counter0:b2v_VRAM_CLOCK|lpm_counter:LPM_COUNTER_component
+ 17. Analysis & Elaboration Settings
+ 18. Port Connectivity Checks: "lpm_counter0:b2v_VRAM_CLOCK"
+ 19. Port Connectivity Checks: "lpm_counter3:b2v_VERTICAL_CNT"
+ 20. Port Connectivity Checks: "ScopeVRAM:b2v_STATE_MACHINE"
+ 21. Port Connectivity Checks: "lpm_counter1:b2v_ROW_TRANSFER_COUNTER"
+ 22. Port Connectivity Checks: "lpm_compare2:b2v_inst7"
+ 23. Port Connectivity Checks: "lpm_compare1:b2v_inst6"
+ 24. Port Connectivity Checks: "lpm_compare5:b2v_inst16"
+ 25. Port Connectivity Checks: "lpm_compare4:b2v_inst15"
+ 26. Port Connectivity Checks: "lpm_compare3:b2v_inst14"
+ 27. Port Connectivity Checks: "lpm_compare0:b2v_inst"
+ 28. Port Connectivity Checks: "lpm_counter2:b2v_HORIZONTAL_CNT"
+ 29. Analysis & Elaboration Messages
 
 
 
@@ -34,12 +58,12 @@ applicable agreement for further details.
 
 
 +---------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                    ;
+; Analysis & Elaboration Summary                                                  ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat Feb 08 20:33:23 2014          ;
-; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Analysis & Elaboration Status      ; Successful - Sun Mar 02 12:56:47 2014      ;
+; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; FPGA-Oscilloscope                          ;
-; Top-level Entity Name              ; FPGA-Oscilloscope                          ;
+; Top-level Entity Name              ; oscilloscope                               ;
 ; Family                             ; Cyclone III                                ;
 ; Total logic elements               ; N/A until Partition Merge                  ;
 ;     Total combinational functions  ; N/A until Partition Merge                  ;
@@ -53,15 +77,330 @@ applicable agreement for further details.
 +------------------------------------+--------------------------------------------+
 
 
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration IP Cores Summary                                                                                                                                                         ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------+---------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                     ; IP Include File                                                           ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------+---------------------------------------------------------------------------+
+; Altera ; LPM_MUX      ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_mux0:b2v_ADDR_MUX                 ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd      ;
+; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_counter2:b2v_HORIZONTAL_CNT       ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter2.vhd  ;
+; Altera ; LPM_COMPARE  ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_compare0:b2v_inst                 ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare0.vhd  ;
+; Altera ; LPM_COMPARE  ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_compare1:b2v_inst6                ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare1.vhd  ;
+; Altera ; LPM_COMPARE  ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_compare2:b2v_inst7                ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare2.vhd  ;
+; Altera ; LPM_COMPARE  ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_compare3:b2v_inst14               ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd  ;
+; Altera ; LPM_COMPARE  ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_compare4:b2v_inst15               ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare4.vhd  ;
+; Altera ; LPM_COMPARE  ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_compare5:b2v_inst16               ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare5.vhd  ;
+; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_counter1:b2v_ROW_TRANSFER_COUNTER ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter1.vhd  ;
+; Altera ; LPM_CONSTANT ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_constant0:b2v_SRT_COL_START       ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant0.vhd ;
+; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_counter3:b2v_VERTICAL_CNT         ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd  ;
+; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_counter0:b2v_VRAM_CLOCK           ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter0.vhd  ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------+---------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component ;
++------------------------+-------------+-------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                  ;
++------------------------+-------------+-------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                          ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                        ;
+; LPM_WIDTH              ; 9           ; Signed Integer                                        ;
+; LPM_SIZE               ; 4           ; Signed Integer                                        ;
+; LPM_WIDTHS             ; 2           ; Signed Integer                                        ;
+; LPM_PIPELINE           ; 0           ; Signed Integer                                        ;
+; CBXI_PARAMETER         ; mux_k6e     ; Untyped                                               ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                               ;
++------------------------+-------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_counter2:b2v_HORIZONTAL_CNT|lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+-------------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                    ;
++------------------------+-------------+-------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                            ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                          ;
+; LPM_WIDTH              ; 10          ; Signed Integer                                                          ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                                 ;
+; LPM_MODULUS            ; 525         ; Signed Integer                                                          ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                                 ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                                 ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                                 ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                                 ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                                 ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                      ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                      ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                                 ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                                 ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                                 ;
+; CBXI_PARAMETER         ; cntr_clj    ; Untyped                                                                 ;
++------------------------+-------------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_compare0:b2v_inst|lpm_compare:LPM_COMPARE_component ;
++------------------------+-------------+---------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                          ;
++------------------------+-------------+---------------------------------------------------------------+
+; lpm_width              ; 10          ; Signed Integer                                                ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                       ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                       ;
+; CHAIN_SIZE             ; 8           ; Untyped                                                       ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                                       ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                       ;
+; CASCADE_CHAIN          ; MANUAL      ; Untyped                                                       ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                            ;
+; CASCADE_CHAIN_LENGTH   ; 2           ; CASCADE_CHAIN_LENGTH                                          ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                       ;
+; CBXI_PARAMETER         ; cmpr_dfj    ; Untyped                                                       ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                  ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                ;
++------------------------+-------------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_compare3:b2v_inst14|lpm_compare:LPM_COMPARE_component ;
++------------------------+-------------+-----------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                            ;
++------------------------+-------------+-----------------------------------------------------------------+
+; lpm_width              ; 9           ; Signed Integer                                                  ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                         ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                         ;
+; CHAIN_SIZE             ; 8           ; Untyped                                                         ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                                         ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                         ;
+; CASCADE_CHAIN          ; MANUAL      ; Untyped                                                         ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                              ;
+; CASCADE_CHAIN_LENGTH   ; 2           ; CASCADE_CHAIN_LENGTH                                            ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                         ;
+; CBXI_PARAMETER         ; cmpr_5ej    ; Untyped                                                         ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                  ;
++------------------------+-------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_compare4:b2v_inst15|lpm_compare:LPM_COMPARE_component ;
++------------------------+-------------+-----------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                            ;
++------------------------+-------------+-----------------------------------------------------------------+
+; lpm_width              ; 9           ; Signed Integer                                                  ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                         ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                         ;
+; CHAIN_SIZE             ; 8           ; Untyped                                                         ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                                         ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                         ;
+; CASCADE_CHAIN          ; MANUAL      ; Untyped                                                         ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                              ;
+; CASCADE_CHAIN_LENGTH   ; 2           ; CASCADE_CHAIN_LENGTH                                            ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                         ;
+; CBXI_PARAMETER         ; cmpr_5ej    ; Untyped                                                         ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                  ;
++------------------------+-------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_compare5:b2v_inst16|lpm_compare:LPM_COMPARE_component ;
++------------------------+-------------+-----------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                            ;
++------------------------+-------------+-----------------------------------------------------------------+
+; lpm_width              ; 9           ; Signed Integer                                                  ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                         ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                         ;
+; CHAIN_SIZE             ; 8           ; Untyped                                                         ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                                         ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                         ;
+; CASCADE_CHAIN          ; MANUAL      ; Untyped                                                         ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                              ;
+; CASCADE_CHAIN_LENGTH   ; 2           ; CASCADE_CHAIN_LENGTH                                            ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                         ;
+; CBXI_PARAMETER         ; cmpr_5bj    ; Untyped                                                         ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                      ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                    ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                    ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                  ;
++------------------------+-------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_compare1:b2v_inst6|lpm_compare:LPM_COMPARE_component ;
++------------------------+-------------+----------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                           ;
++------------------------+-------------+----------------------------------------------------------------+
+; lpm_width              ; 10          ; Signed Integer                                                 ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                        ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                        ;
+; CHAIN_SIZE             ; 8           ; Untyped                                                        ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                                        ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                        ;
+; CASCADE_CHAIN          ; MANUAL      ; Untyped                                                        ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                             ;
+; CASCADE_CHAIN_LENGTH   ; 2           ; CASCADE_CHAIN_LENGTH                                           ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                        ;
+; CBXI_PARAMETER         ; cmpr_dfj    ; Untyped                                                        ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                   ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                 ;
++------------------------+-------------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_compare2:b2v_inst7|lpm_compare:LPM_COMPARE_component ;
++------------------------+-------------+----------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                           ;
++------------------------+-------------+----------------------------------------------------------------+
+; lpm_width              ; 10          ; Signed Integer                                                 ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                        ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                        ;
+; CHAIN_SIZE             ; 8           ; Untyped                                                        ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                                        ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                        ;
+; CASCADE_CHAIN          ; MANUAL      ; Untyped                                                        ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                             ;
+; CASCADE_CHAIN_LENGTH   ; 2           ; CASCADE_CHAIN_LENGTH                                           ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                        ;
+; CBXI_PARAMETER         ; cmpr_dcj    ; Untyped                                                        ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                   ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                 ;
++------------------------+-------------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                        ;
+; Parameter Settings for User Entity Instance: lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+-------------------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                          ;
++------------------------+-------------+-------------------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                                  ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                                ;
+; LPM_WIDTH              ; 9           ; Signed Integer                                                                ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                                       ;
+; LPM_MODULUS            ; 272         ; Signed Integer                                                                ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                                       ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                                       ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                                       ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                                       ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                                       ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                            ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                            ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                                       ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                                       ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                                       ;
+; CBXI_PARAMETER         ; cntr_3kj    ; Untyped                                                                       ;
++------------------------+-------------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_constant0:b2v_SRT_COL_START|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+--------------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                                     ;
++--------------------+------------------+--------------------------------------------------------------------------+
+; LPM_WIDTH          ; 9                ; Signed Integer                                                           ;
+; LPM_CVALUE         ; 0                ; Signed Integer                                                           ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                                  ;
+; CBXI_PARAMETER     ; lpm_constant_bh6 ; Untyped                                                                  ;
++--------------------+------------------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_counter3:b2v_VERTICAL_CNT|lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+-----------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                  ;
++------------------------+-------------+-----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                        ;
+; LPM_WIDTH              ; 9           ; Signed Integer                                                        ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                               ;
+; LPM_MODULUS            ; 286         ; Signed Integer                                                        ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                               ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                               ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                               ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                               ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                               ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                    ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                    ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                               ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                               ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                               ;
+; CBXI_PARAMETER         ; cntr_8kj    ; Untyped                                                               ;
++------------------------+-------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_counter0:b2v_VRAM_CLOCK|lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+---------------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                                ;
++------------------------+-------------+---------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                        ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                      ;
+; LPM_WIDTH              ; 2           ; Signed Integer                                                      ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                             ;
+; LPM_MODULUS            ; 0           ; Untyped                                                             ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                             ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                             ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                             ;
+; DEVICE_FAMILY          ; Cyclone III ; Untyped                                                             ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                             ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                                  ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                                  ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                             ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                             ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                             ;
+; CBXI_PARAMETER         ; cntr_j6i    ; Untyped                                                             ;
++------------------------+-------------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP3C25Q240C8       ;                    ;
-; Top-level entity name                                                      ; FPGA-Oscilloscope  ; FPGA-Oscilloscope  ;
+; Top-level entity name                                                      ; oscilloscope       ; FPGA-Oscilloscope  ;
 ; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
-; Use smart compilation                                                      ; Off                ; Off                ;
+; Use smart compilation                                                      ; On                 ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
 ; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
@@ -140,31 +479,320 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 8      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lpm_counter0:b2v_VRAM_CLOCK"                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; q    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------+
-; Analysis & Synthesis Messages ;
-+-------------------------------+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "lpm_counter3:b2v_VERTICAL_CNT" ;
++-------+-------+----------+--------------------------------+
+; Port  ; Type  ; Severity ; Details                        ;
++-------+-------+----------+--------------------------------+
+; clock ; Input ; Info     ; Stuck at GND                   ;
++-------+-------+----------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ScopeVRAM:b2v_STATE_MACHINE"                                                        ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; srt  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ack  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; busy ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "lpm_counter1:b2v_ROW_TRANSFER_COUNTER" ;
++-------+-------+----------+----------------------------------------+
+; Port  ; Type  ; Severity ; Details                                ;
++-------+-------+----------+----------------------------------------+
+; clock ; Input ; Info     ; Stuck at GND                           ;
++-------+-------+----------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lpm_compare2:b2v_inst7"                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; alb  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lpm_compare1:b2v_inst6"                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; ageb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lpm_compare5:b2v_inst16"                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; alb  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lpm_compare4:b2v_inst15"                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; ageb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lpm_compare3:b2v_inst14"                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; ageb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lpm_compare0:b2v_inst"                                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; ageb ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "lpm_counter2:b2v_HORIZONTAL_CNT" ;
++-------+-------+----------+----------------------------------+
+; Port  ; Type  ; Severity ; Details                          ;
++-------+-------+----------+----------------------------------+
+; clock ; Input ; Info     ; Stuck at GND                     ;
++-------+-------+----------+----------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 32-bit Analysis & Elaboration
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat Feb 08 20:33:22 2014
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA-Oscilloscope -c FPGA-Oscilloscope
+    Info: Processing started: Sun Mar 02 12:56:43 2014
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA-Oscilloscope -c FPGA-Oscilloscope --analysis_and_elaboration
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Error (12007): Top-level design entity "FPGA-Oscilloscope" is undefined
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 452 megabytes
-    Error: Processing ended: Sat Feb 08 20:33:23 2014
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info (12021): Found 2 design units, including 1 entities, in source file oscilloscope.vhd
+    Info (12022): Found design unit 1: oscilloscope-bdf_type
+    Info (12023): Found entity 1: oscilloscope
+Info (12021): Found 2 design units, including 1 entities, in source file vramstates.vhd
+    Info (12022): Found design unit 1: ScopeVRAM-assign_statebits
+    Info (12023): Found entity 1: ScopeVRAM
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_counter0.vhd
+    Info (12022): Found design unit 1: lpm_counter0-SYN
+    Info (12023): Found entity 1: lpm_counter0
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_counter1.vhd
+    Info (12022): Found design unit 1: lpm_counter1-SYN
+    Info (12023): Found entity 1: lpm_counter1
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_counter2.vhd
+    Info (12022): Found design unit 1: lpm_counter2-SYN
+    Info (12023): Found entity 1: lpm_counter2
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_compare0.vhd
+    Info (12022): Found design unit 1: lpm_compare0-SYN
+    Info (12023): Found entity 1: lpm_compare0
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_compare1.vhd
+    Info (12022): Found design unit 1: lpm_compare1-SYN
+    Info (12023): Found entity 1: lpm_compare1
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_compare2.vhd
+    Info (12022): Found design unit 1: lpm_compare2-SYN
+    Info (12023): Found entity 1: lpm_compare2
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_counter3.vhd
+    Info (12022): Found design unit 1: lpm_counter3-SYN
+    Info (12023): Found entity 1: lpm_counter3
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_compare3.vhd
+    Info (12022): Found design unit 1: lpm_compare3-SYN
+    Info (12023): Found entity 1: lpm_compare3
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_compare4.vhd
+    Info (12022): Found design unit 1: lpm_compare4-SYN
+    Info (12023): Found entity 1: lpm_compare4
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_compare5.vhd
+    Info (12022): Found design unit 1: lpm_compare5-SYN
+    Info (12023): Found entity 1: lpm_compare5
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_mux0.vhd
+    Info (12022): Found design unit 1: lpm_mux0-SYN
+    Info (12023): Found entity 1: lpm_mux0
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_constant0.vhd
+    Info (12022): Found design unit 1: lpm_constant0-SYN
+    Info (12023): Found entity 1: lpm_constant0
+Info (12127): Elaborating entity "oscilloscope" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at oscilloscope.vhd(136): used implicit default value for signal "ADDRESS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at oscilloscope.vhd(137): used implicit default value for signal "CS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at oscilloscope.vhd(138): used implicit default value for signal "RESET" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at oscilloscope.vhd(139): used implicit default value for signal "RW" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at oscilloscope.vhd(140): used implicit default value for signal "SYS_CLK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10631): VHDL Process Statement warning at oscilloscope.vhd(232): inferring latch(es) for signal or variable "SYNTHESIZED_WIRE_44", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at oscilloscope.vhd(244): inferring latch(es) for signal or variable "DFF_inst13", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at oscilloscope.vhd(271): inferring latch(es) for signal or variable "VRAM_CLK", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at oscilloscope.vhd(283): inferring latch(es) for signal or variable "DFF_inst18", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at oscilloscope.vhd(300): inferring latch(es) for signal or variable "VSYNC", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at oscilloscope.vhd(312): inferring latch(es) for signal or variable "SC", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at oscilloscope.vhd(331): inferring latch(es) for signal or variable "DCLK", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at oscilloscope.vhd(343): inferring latch(es) for signal or variable "synthesized_var_for_SRFF_inst3", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at oscilloscope.vhd(371): inferring latch(es) for signal or variable "DFF_inst39", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at oscilloscope.vhd(386): inferring latch(es) for signal or variable "DFF_inst42", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "synthesized_var_for_SRFF_inst3" at oscilloscope.vhd(346)
+Info (10041): Inferred latch for "DCLK" at oscilloscope.vhd(331)
+Info (10041): Inferred latch for "SC" at oscilloscope.vhd(312)
+Info (10041): Inferred latch for "VSYNC" at oscilloscope.vhd(300)
+Info (10041): Inferred latch for "DFF_inst18" at oscilloscope.vhd(283)
+Info (10041): Inferred latch for "VRAM_CLK" at oscilloscope.vhd(271)
+Info (10041): Inferred latch for "SYNTHESIZED_WIRE_44" at oscilloscope.vhd(232)
+Info (12128): Elaborating entity "lpm_mux0" for hierarchy "lpm_mux0:b2v_ADDR_MUX"
+Info (12128): Elaborating entity "LPM_MUX" for hierarchy "lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component"
+Info (12130): Elaborated megafunction instantiation "lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component"
+Info (12133): Instantiated megafunction "lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "9"
+    Info (12134): Parameter "LPM_SIZE" = "4"
+    Info (12134): Parameter "LPM_WIDTHS" = "2"
+    Info (12134): Parameter "LPM_PIPELINE" = "0"
+    Info (12134): Parameter "LPM_TYPE" = "LPM_MUX"
+    Info (12134): Parameter "LPM_HINT" = "UNUSED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_k6e.tdf
+    Info (12023): Found entity 1: mux_k6e
+Info (12128): Elaborating entity "mux_k6e" for hierarchy "lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component|mux_k6e:auto_generated"
+Info (12128): Elaborating entity "lpm_counter2" for hierarchy "lpm_counter2:b2v_HORIZONTAL_CNT"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "lpm_counter2:b2v_HORIZONTAL_CNT|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "lpm_counter2:b2v_HORIZONTAL_CNT|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "lpm_counter2:b2v_HORIZONTAL_CNT|lpm_counter:LPM_COUNTER_component" with the following parameter:
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_modulus" = "525"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "10"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_clj.tdf
+    Info (12023): Found entity 1: cntr_clj
+Info (12128): Elaborating entity "cntr_clj" for hierarchy "lpm_counter2:b2v_HORIZONTAL_CNT|lpm_counter:LPM_COUNTER_component|cntr_clj:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ugc.tdf
+    Info (12023): Found entity 1: cmpr_ugc
+Info (12128): Elaborating entity "cmpr_ugc" for hierarchy "lpm_counter2:b2v_HORIZONTAL_CNT|lpm_counter:LPM_COUNTER_component|cntr_clj:auto_generated|cmpr_ugc:cmpr1"
+Info (12128): Elaborating entity "lpm_compare0" for hierarchy "lpm_compare0:b2v_inst"
+Info (12128): Elaborating entity "lpm_compare" for hierarchy "lpm_compare0:b2v_inst|lpm_compare:LPM_COMPARE_component"
+Info (12130): Elaborated megafunction instantiation "lpm_compare0:b2v_inst|lpm_compare:LPM_COMPARE_component"
+Info (12133): Instantiated megafunction "lpm_compare0:b2v_inst|lpm_compare:LPM_COMPARE_component" with the following parameter:
+    Info (12134): Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=YES"
+    Info (12134): Parameter "lpm_representation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_type" = "LPM_COMPARE"
+    Info (12134): Parameter "lpm_width" = "10"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_dfj.tdf
+    Info (12023): Found entity 1: cmpr_dfj
+Info (12128): Elaborating entity "cmpr_dfj" for hierarchy "lpm_compare0:b2v_inst|lpm_compare:LPM_COMPARE_component|cmpr_dfj:auto_generated"
+Info (12128): Elaborating entity "lpm_compare3" for hierarchy "lpm_compare3:b2v_inst14"
+Info (12128): Elaborating entity "lpm_compare" for hierarchy "lpm_compare3:b2v_inst14|lpm_compare:LPM_COMPARE_component"
+Info (12130): Elaborated megafunction instantiation "lpm_compare3:b2v_inst14|lpm_compare:LPM_COMPARE_component"
+Info (12133): Instantiated megafunction "lpm_compare3:b2v_inst14|lpm_compare:LPM_COMPARE_component" with the following parameter:
+    Info (12134): Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=YES"
+    Info (12134): Parameter "lpm_representation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_type" = "LPM_COMPARE"
+    Info (12134): Parameter "lpm_width" = "9"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_5ej.tdf
+    Info (12023): Found entity 1: cmpr_5ej
+Info (12128): Elaborating entity "cmpr_5ej" for hierarchy "lpm_compare3:b2v_inst14|lpm_compare:LPM_COMPARE_component|cmpr_5ej:auto_generated"
+Info (12128): Elaborating entity "lpm_compare4" for hierarchy "lpm_compare4:b2v_inst15"
+Info (12128): Elaborating entity "lpm_compare" for hierarchy "lpm_compare4:b2v_inst15|lpm_compare:LPM_COMPARE_component"
+Info (12130): Elaborated megafunction instantiation "lpm_compare4:b2v_inst15|lpm_compare:LPM_COMPARE_component"
+Info (12133): Instantiated megafunction "lpm_compare4:b2v_inst15|lpm_compare:LPM_COMPARE_component" with the following parameter:
+    Info (12134): Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=YES"
+    Info (12134): Parameter "lpm_representation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_type" = "LPM_COMPARE"
+    Info (12134): Parameter "lpm_width" = "9"
+Info (12128): Elaborating entity "lpm_compare5" for hierarchy "lpm_compare5:b2v_inst16"
+Info (12128): Elaborating entity "lpm_compare" for hierarchy "lpm_compare5:b2v_inst16|lpm_compare:LPM_COMPARE_component"
+Info (12130): Elaborated megafunction instantiation "lpm_compare5:b2v_inst16|lpm_compare:LPM_COMPARE_component"
+Info (12133): Instantiated megafunction "lpm_compare5:b2v_inst16|lpm_compare:LPM_COMPARE_component" with the following parameter:
+    Info (12134): Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=YES"
+    Info (12134): Parameter "lpm_representation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_type" = "LPM_COMPARE"
+    Info (12134): Parameter "lpm_width" = "9"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_5bj.tdf
+    Info (12023): Found entity 1: cmpr_5bj
+Info (12128): Elaborating entity "cmpr_5bj" for hierarchy "lpm_compare5:b2v_inst16|lpm_compare:LPM_COMPARE_component|cmpr_5bj:auto_generated"
+Info (12128): Elaborating entity "lpm_compare1" for hierarchy "lpm_compare1:b2v_inst6"
+Info (12128): Elaborating entity "lpm_compare" for hierarchy "lpm_compare1:b2v_inst6|lpm_compare:LPM_COMPARE_component"
+Info (12130): Elaborated megafunction instantiation "lpm_compare1:b2v_inst6|lpm_compare:LPM_COMPARE_component"
+Info (12133): Instantiated megafunction "lpm_compare1:b2v_inst6|lpm_compare:LPM_COMPARE_component" with the following parameter:
+    Info (12134): Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=YES"
+    Info (12134): Parameter "lpm_representation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_type" = "LPM_COMPARE"
+    Info (12134): Parameter "lpm_width" = "10"
+Info (12128): Elaborating entity "lpm_compare2" for hierarchy "lpm_compare2:b2v_inst7"
+Info (12128): Elaborating entity "lpm_compare" for hierarchy "lpm_compare2:b2v_inst7|lpm_compare:LPM_COMPARE_component"
+Info (12130): Elaborated megafunction instantiation "lpm_compare2:b2v_inst7|lpm_compare:LPM_COMPARE_component"
+Info (12133): Instantiated megafunction "lpm_compare2:b2v_inst7|lpm_compare:LPM_COMPARE_component" with the following parameter:
+    Info (12134): Parameter "lpm_hint" = "ONE_INPUT_IS_CONSTANT=YES"
+    Info (12134): Parameter "lpm_representation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_type" = "LPM_COMPARE"
+    Info (12134): Parameter "lpm_width" = "10"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_dcj.tdf
+    Info (12023): Found entity 1: cmpr_dcj
+Info (12128): Elaborating entity "cmpr_dcj" for hierarchy "lpm_compare2:b2v_inst7|lpm_compare:LPM_COMPARE_component|cmpr_dcj:auto_generated"
+Info (12128): Elaborating entity "lpm_counter1" for hierarchy "lpm_counter1:b2v_ROW_TRANSFER_COUNTER"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component" with the following parameter:
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_modulus" = "272"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "9"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_3kj.tdf
+    Info (12023): Found entity 1: cntr_3kj
+Info (12128): Elaborating entity "cntr_3kj" for hierarchy "lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component|cntr_3kj:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_mfc.tdf
+    Info (12023): Found entity 1: cmpr_mfc
+Info (12128): Elaborating entity "cmpr_mfc" for hierarchy "lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component|cntr_3kj:auto_generated|cmpr_mfc:cmpr1"
+Info (12128): Elaborating entity "lpm_constant0" for hierarchy "lpm_constant0:b2v_SRT_COL_START"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "lpm_constant0:b2v_SRT_COL_START|lpm_constant:LPM_CONSTANT_component"
+Info (12130): Elaborated megafunction instantiation "lpm_constant0:b2v_SRT_COL_START|lpm_constant:LPM_CONSTANT_component"
+Info (12133): Instantiated megafunction "lpm_constant0:b2v_SRT_COL_START|lpm_constant:LPM_CONSTANT_component" with the following parameter:
+    Info (12134): Parameter "lpm_cvalue" = "0"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "9"
+Info (12128): Elaborating entity "ScopeVRAM" for hierarchy "ScopeVRAM:b2v_STATE_MACHINE"
+Info (12128): Elaborating entity "lpm_counter3" for hierarchy "lpm_counter3:b2v_VERTICAL_CNT"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "lpm_counter3:b2v_VERTICAL_CNT|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "lpm_counter3:b2v_VERTICAL_CNT|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "lpm_counter3:b2v_VERTICAL_CNT|lpm_counter:LPM_COUNTER_component" with the following parameter:
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_modulus" = "286"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "9"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_8kj.tdf
+    Info (12023): Found entity 1: cntr_8kj
+Info (12128): Elaborating entity "cntr_8kj" for hierarchy "lpm_counter3:b2v_VERTICAL_CNT|lpm_counter:LPM_COUNTER_component|cntr_8kj:auto_generated"
+Info (12128): Elaborating entity "lpm_counter0" for hierarchy "lpm_counter0:b2v_VRAM_CLOCK"
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "lpm_counter0:b2v_VRAM_CLOCK|lpm_counter:LPM_COUNTER_component"
+Info (12130): Elaborated megafunction instantiation "lpm_counter0:b2v_VRAM_CLOCK|lpm_counter:LPM_COUNTER_component"
+Info (12133): Instantiated megafunction "lpm_counter0:b2v_VRAM_CLOCK|lpm_counter:LPM_COUNTER_component" with the following parameter:
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "2"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_j6i.tdf
+    Info (12023): Found entity 1: cntr_j6i
+Info (12128): Elaborating entity "cntr_j6i" for hierarchy "lpm_counter0:b2v_VRAM_CLOCK|lpm_counter:LPM_COUNTER_component|cntr_j6i:auto_generated"
+Info: Quartus II 32-bit Analysis & Elaboration was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 408 megabytes
+    Info: Processing ended: Sun Mar 02 12:56:47 2014
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 
