@@ -45,139 +45,139 @@
 # 
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/oscilloscope.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:05 on Mar 02,2014
+# Start time: 13:14:21 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/oscilloscope.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity oscilloscope
 # -- Compiling architecture bdf_type of oscilloscope
-# End time: 12:48:06 on Mar 02,2014
+# End time: 13:14:22 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/vramstates.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:06 on Mar 02,2014
+# Start time: 13:14:22 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/vramstates.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity ScopeVRAM
 # -- Compiling architecture assign_statebits of ScopeVRAM
-# End time: 12:48:07 on Mar 02,2014
+# End time: 13:14:22 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter0.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:07 on Mar 02,2014
+# Start time: 13:14:22 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter0.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lpm_counter0
 # -- Compiling architecture SYN of lpm_counter0
-# End time: 12:48:08 on Mar 02,2014
+# End time: 13:14:23 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter1.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:10 on Mar 02,2014
+# Start time: 13:14:23 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lpm_counter1
 # -- Compiling architecture SYN of lpm_counter1
-# End time: 12:48:10 on Mar 02,2014
+# End time: 13:14:24 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter2.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:10 on Mar 02,2014
+# Start time: 13:14:24 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter2.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lpm_counter2
 # -- Compiling architecture SYN of lpm_counter2
-# End time: 12:48:11 on Mar 02,2014
+# End time: 13:14:25 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare0.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:11 on Mar 02,2014
+# Start time: 13:14:25 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare0.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lpm_compare0
 # -- Compiling architecture SYN of lpm_compare0
-# End time: 12:48:12 on Mar 02,2014
+# End time: 13:14:26 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare1.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:14 on Mar 02,2014
+# Start time: 13:14:26 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lpm_compare1
 # -- Compiling architecture SYN of lpm_compare1
-# End time: 12:48:15 on Mar 02,2014
+# End time: 13:14:26 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare2.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:15 on Mar 02,2014
+# Start time: 13:14:26 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare2.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lpm_compare2
 # -- Compiling architecture SYN of lpm_compare2
-# End time: 12:48:16 on Mar 02,2014
+# End time: 13:14:27 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:16 on Mar 02,2014
+# Start time: 13:14:27 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lpm_counter3
 # -- Compiling architecture SYN of lpm_counter3
-# End time: 12:48:17 on Mar 02,2014
+# End time: 13:14:28 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:17 on Mar 02,2014
+# Start time: 13:14:28 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lpm_compare3
 # -- Compiling architecture SYN of lpm_compare3
-# End time: 12:48:17 on Mar 02,2014
+# End time: 13:14:29 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare4.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:17 on Mar 02,2014
+# Start time: 13:14:29 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare4.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lpm_compare4
 # -- Compiling architecture SYN of lpm_compare4
-# End time: 12:48:18 on Mar 02,2014
+# End time: 13:14:30 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare5.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:18 on Mar 02,2014
+# Start time: 13:14:30 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare5.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lpm_compare5
 # -- Compiling architecture SYN of lpm_compare5
-# End time: 12:48:19 on Mar 02,2014
+# End time: 13:14:30 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:19 on Mar 02,2014
+# Start time: 13:14:30 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -185,23 +185,23 @@
 # -- Loading package LPM_COMPONENTS
 # -- Compiling entity lpm_mux0
 # -- Compiling architecture SYN of lpm_mux0
-# End time: 12:48:20 on Mar 02,2014
+# End time: 13:14:31 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant0.vhd}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:20 on Mar 02,2014
+# Start time: 13:14:31 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant0.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity lpm_constant0
 # -- Compiling architecture SYN of lpm_constant0
-# End time: 12:48:21 on Mar 02,2014
+# End time: 13:14:32 on Mar 02,2014
 # Errors: 0, Warnings: 0
 # 
 # vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht}
 # Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:48:21 on Mar 02,2014
+# Start time: 13:14:32 on Mar 02,2014
 # vcom -reportprogress 300 -93 -work work C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -225,40 +225,7 @@
 # D:/Program Files/Modeltech_pe_edu_10.3/win32pe_edu/vcom failed.
 #     while executing
 # "vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht}"
-vcom -93 -work work -O0 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/oscilloscope.vhd
-# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:49:04 on Mar 02,2014
-# vcom -reportprogress 300 -93 -work work -O0 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/oscilloscope.vhd 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Compiling entity oscilloscope
-# -- Compiling architecture bdf_type of oscilloscope
-# End time: 12:49:05 on Mar 02,2014
-# Errors: 0, Warnings: 0
-vcom -93 -work work -O0 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht
-# Model Technology ModelSim PE Student Edition vcom 10.3 Compiler 2014.01 Jan  6 2014
-# Start time: 12:49:05 on Mar 02,2014
-# vcom -reportprogress 300 -93 -work work -O0 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package ATTRIBUTES
-# -- Loading package std_logic_misc
-# -- Loading package MATH_REAL
-# -- Compiling entity test_modelsim_vhd_tst
-# -- Compiling architecture test_modelsim_arch of test_modelsim_vhd_tst
-# ** Error: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht(115): near "serverity": expecting ';'
-# ** Error: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht(137): Operator "=" is ambiguous.
-#    Feasible operators are:
-#       (explicit) NUMERIC_STD."="[UNRESOLVED_UNSIGNED, UNRESOLVED_UNSIGNED return BOOLEAN] at vhdl_src/ieee/mti_numeric_std.vhd(702)
-#       (explicit) NUMERIC_STD."="[UNRESOLVED_SIGNED, UNRESOLVED_SIGNED return BOOLEAN] at vhdl_src/ieee/mti_numeric_std.vhd(710)
-# ** Error: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht(137): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
-# ** Error: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht(144): VHDL Compiler exiting
-# Errors: 4, Warnings: 0
-# D:/Program Files/Modeltech_pe_edu_10.3/win32pe_edu/vcom failed.
-vsim +altera -do FPGA-Oscilloscope_run_msim_rtl_vhdl.do -l msim_transcript -gui work.test_modelsim_vhd_tst
+vsim work.oscilloscope
 # //  ModelSim PE Student Edition 10.3 Jan  6 2014 
 # //
 # //  Copyright 1991-2014 Mentor Graphics Corporation
@@ -272,9 +239,64 @@ vsim +altera -do FPGA-Oscilloscope_run_msim_rtl_vhdl.do -l msim_transcript -gui 
 # // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
 # // FOR HIGHER EDUCATION PURPOSES ONLY
 # //
-# vsim +altera -do "FPGA-Oscilloscope_run_msim_rtl_vhdl.do" -l msim_transcript -gui work.test_modelsim_vhd_tst 
-# Start time: 12:50:16 on Mar 02,2014
+# vsim work.oscilloscope 
+# Start time: 13:14:50 on Mar 02,2014
 # Loading std.standard
-# ** Error: (vsim-3173) Entity 'C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/simulation/modelsim/rtl_work.test_modelsim_vhd_tst' has no architecture.
-# 
-# Error loading design
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.oscilloscope(bdf_type)
+# Loading lpm.lpm_components
+# Loading work.lpm_mux0(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_mux(lpm_syn)
+# Loading work.lpm_counter2(syn)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_counter(lpm_syn)
+# Loading work.lpm_compare0(syn)
+# Loading ieee.std_logic_signed(body)
+# Loading lpm.lpm_compare(lpm_syn)
+# Loading lpm.lpm_compare_unsigned(lpm_syn)
+# Loading work.lpm_compare3(syn)
+# Loading work.lpm_compare4(syn)
+# Loading work.lpm_compare5(syn)
+# Loading work.lpm_compare1(syn)
+# Loading work.lpm_compare2(syn)
+# Loading work.lpm_counter1(syn)
+# Loading work.lpm_constant0(syn)
+# Loading lpm.lpm_constant(lpm_syn)
+# Loading work.scopevram(assign_statebits)
+# Loading work.lpm_counter3(syn)
+# Loading work.lpm_counter0(syn)
+vsim work.oscilloscope
+# vsim work.oscilloscope 
+# Start time: 13:15:14 on Mar 02,2014
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.oscilloscope(bdf_type)
+# Loading lpm.lpm_components
+# Loading work.lpm_mux0(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading lpm.lpm_mux(lpm_syn)
+# Loading work.lpm_counter2(syn)
+# Loading lpm.lpm_common_conversion(body)
+# Loading lpm.lpm_counter(lpm_syn)
+# Loading work.lpm_compare0(syn)
+# Loading ieee.std_logic_signed(body)
+# Loading lpm.lpm_compare(lpm_syn)
+# Loading lpm.lpm_compare_unsigned(lpm_syn)
+# Loading work.lpm_compare3(syn)
+# Loading work.lpm_compare4(syn)
+# Loading work.lpm_compare5(syn)
+# Loading work.lpm_compare1(syn)
+# Loading work.lpm_compare2(syn)
+# Loading work.lpm_counter1(syn)
+# Loading work.lpm_constant0(syn)
+# Loading lpm.lpm_constant(lpm_syn)
+# Loading work.scopevram(assign_statebits)
+# Loading work.lpm_counter3(syn)
+# Loading work.lpm_counter0(syn)
+# End time: 13:15:31 on Mar 02,2014
+# Errors: 0, Warnings: 0

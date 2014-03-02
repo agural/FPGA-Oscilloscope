@@ -21,9 +21,9 @@ Vg<JgH>OMDTc5c`OgHCE@L0
 !s100 zGJ7C?;nBPYC2gZ0]=J;U2
 Z6 OP;C;10.3;59
 31
-Z7 !s110 1393793291
+Z7 !s110 1393794865
 !i10b 1
-Z8 !s108 1393793291.788000
+Z8 !s108 1393794865.289000
 Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare0.vhd|
 Z10 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare0.vhd|
 Z11 o-93 -work work -O0
@@ -58,9 +58,9 @@ Vl[NlRlha]3]M[NO_IJ5cz2
 !s100 3MnbP@[OE^0G<;^FaLK@B2
 R6
 31
-Z16 !s110 1393793294
+Z16 !s110 1393794866
 !i10b 1
-Z17 !s108 1393793294.654000
+Z17 !s108 1393794866.100000
 Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare1.vhd|
 Z19 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare1.vhd|
 R11
@@ -95,11 +95,11 @@ VVf8R_YzaVk1RlAc5AO_]a0
 !s100 W0Nd;2l7fE`PP_8JgZHQ>3
 R6
 31
-Z23 !s110 1393793295
+R16
 !i10b 1
-Z24 !s108 1393793295.485000
-Z25 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare2.vhd|
-Z26 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare2.vhd|
+Z23 !s108 1393794866.905000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare2.vhd|
+Z25 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare2.vhd|
 R11
 R12
 Asyn
@@ -112,31 +112,31 @@ VVVkn5@PcRZd2J?XEil`Kj0
 !s100 N[5TKTe<:ALh1GL=giOSG0
 R6
 31
-R23
+R16
 !i10b 1
+R23
 R24
 R25
-R26
 R11
 R12
 Elpm_compare3
-Z27 w1393194375
+Z26 w1393194375
 R2
 R3
 R0
-Z28 8C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd
-Z29 FC:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd
+Z27 8C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd
+Z28 FC:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd
 l0
 L42
 V^bF`j>lek4jR9Y3eRdoV81
 !s100 f9l1znFooV4zQ63Rl40IP1
 R6
 31
-Z30 !s110 1393793297
+Z29 !s110 1393794868
 !i10b 1
-Z31 !s108 1393793297.102000
-Z32 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd|
-Z33 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd|
+Z30 !s108 1393794868.504000
+Z31 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd|
+Z32 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd|
 R11
 R12
 Asyn
@@ -149,29 +149,29 @@ V8jUONZ:GnUPjU?SOXNoNI1
 !s100 e?=FgU8D^=>XHlb9gVl7_3
 R6
 31
-R30
+R29
 !i10b 1
+R30
 R31
 R32
-R33
 R11
 R12
 Elpm_compare4
-Z34 w1393194419
+Z33 w1393194419
 R2
 R3
 R0
-Z35 8C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare4.vhd
-Z36 FC:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare4.vhd
+Z34 8C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare4.vhd
+Z35 FC:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare4.vhd
 l0
 L42
 VdUeW=d;;gJ4BXS_G7Tik_3
 !s100 0Z_0?Kb6M?nQ7D;zzZmB53
 R6
 31
-R30
+Z36 !s110 1393794869
 !i10b 1
-Z37 !s108 1393793297.923000
+Z37 !s108 1393794869.315000
 Z38 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare4.vhd|
 Z39 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare4.vhd|
 R11
@@ -186,7 +186,7 @@ VV1=>DB<d9_h99E]EL6Tka0
 !s100 ?eKSYk2NiG@6>QS<Dk4=h2
 R6
 31
-R30
+R36
 !i10b 1
 R37
 R38
@@ -206,9 +206,9 @@ V5LKC;VnKDV0gK;n1hWCNB1
 !s100 YY>X584l<dJ9I2h?=zZ2]3
 R6
 31
-Z43 !s110 1393793298
+Z43 !s110 1393794870
 !i10b 1
-Z44 !s108 1393793298.748000
+Z44 !s108 1393794870.164000
 Z45 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare5.vhd|
 Z46 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare5.vhd|
 R11
@@ -243,9 +243,9 @@ VJL<L1Yj5LX;oQ<4]cn?:R2
 !s100 zP^dIRRfn:a=dWZ7Ez<9_0
 R6
 31
-Z50 !s110 1393793300
+Z50 !s110 1393794871
 !i10b 1
-Z51 !s108 1393793300.476000
+Z51 !s108 1393794871.832000
 Z52 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant0.vhd|
 Z53 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant0.vhd|
 R11
@@ -280,9 +280,9 @@ VAi6jfcgjUVQzLSPoEh3N42
 !s100 J]nX73AaV3KBZdK@m;7kE2
 R6
 31
-Z57 !s110 1393793287
+Z57 !s110 1393794862
 !i10b 1
-Z58 !s108 1393793287.626000
+Z58 !s108 1393794862.917000
 Z59 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter0.vhd|
 Z60 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter0.vhd|
 R11
@@ -317,9 +317,9 @@ VPW5fFKb204<Re<6A5^1EV0
 !s100 OoG2bLCN7[Y7PNgMlRP`U0
 R6
 31
-Z64 !s110 1393793290
+Z64 !s110 1393794863
 !i10b 1
-Z65 !s108 1393793290.194000
+Z65 !s108 1393794863.710000
 Z66 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter1.vhd|
 Z67 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter1.vhd|
 R11
@@ -354,11 +354,11 @@ VL`[dH2]iHckX0YRHS3eR`0
 !s100 0KQCY_mFLlOYSCflinjgM1
 R6
 31
-R7
+Z71 !s110 1393794864
 !i10b 1
-Z71 !s108 1393793290.989000
-Z72 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter2.vhd|
-Z73 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter2.vhd|
+Z72 !s108 1393794864.502000
+Z73 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter2.vhd|
+Z74 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter2.vhd|
 R11
 R12
 Asyn
@@ -371,31 +371,31 @@ VfzXAK4;@JVA]mG;@4nPO73
 !s100 _zLzNX4;niW>Oa`b_954?2
 R6
 31
-R7
-!i10b 1
 R71
+!i10b 1
 R72
 R73
+R74
 R11
 R12
 Elpm_counter3
-Z74 w1393193849
+Z75 w1393193849
 R2
 R3
 R0
-Z75 8C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd
-Z76 FC:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd
+Z76 8C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd
+Z77 FC:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd
 l0
 L42
 VJ0nZ^h^BOibS@`zSD5=:A3
 !s100 <BGcio40l>5=GQVEXF@_z0
 R6
 31
-Z77 !s110 1393793296
+Z78 !s110 1393794867
 !i10b 1
-Z78 !s108 1393793296.304000
-Z79 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd|
-Z80 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd|
+Z79 !s108 1393794867.715000
+Z80 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd|
+Z81 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd|
 R11
 R12
 Asyn
@@ -408,36 +408,36 @@ VB>>H]of=fN]KzjZ1X1`5C1
 !s100 `CZFoZUKP8QJOWGCCOh;L2
 R6
 31
-R77
-!i10b 1
 R78
+!i10b 1
 R79
 R80
+R81
 R11
 R12
 Elpm_mux0
-Z81 w1393784282
-Z82 DPx3 lpm 14 lpm_components 0 22 BRbCmjN_8mR6KmNkB?GOW3
+Z82 w1393784282
+Z83 DPx3 lpm 14 lpm_components 0 22 BRbCmjN_8mR6KmNkB?GOW3
 R2
 R3
 R0
-Z83 8C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd
-Z84 FC:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd
+Z84 8C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd
+Z85 FC:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd
 l0
 L42
 V7F4Pzcc;I:mfH]L]<o0WC3
 !s100 CK_7;7gzW^nW9X0Z5OLZF0
 R6
 31
-Z85 !s110 1393793299
+R43
 !i10b 1
-Z86 !s108 1393793299.581000
+Z86 !s108 1393794870.966000
 Z87 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd|
 Z88 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd|
 R11
 R12
 Asyn
-R82
+R83
 R2
 R3
 DEx4 work 8 lpm_mux0 0 22 7F4Pzcc;I:mfH]L]<o0WC3
@@ -447,7 +447,7 @@ V2DmzIVAN34jz7Cfjo2z4I3
 !s100 CidgW=@K]4;7nE1E:hG4G0
 R6
 31
-R85
+R43
 !i10b 1
 R86
 R87
@@ -467,10 +467,10 @@ VFEHO`2DD[i>aYI<A2@Z:_0
 !s100 7E]hGbglZ;7j3JzYiAP^d2
 R6
 31
-Z92 !s110 1393793345
+Z92 !s110 1393794861
 !i10b 1
-Z93 !s108 1393793344.988000
-Z94 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/oscilloscope.vhd|
+Z93 !s108 1393794861.321000
+Z94 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/oscilloscope.vhd|
 Z95 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/oscilloscope.vhd|
 R11
 R12
@@ -504,11 +504,11 @@ V8N2319fhbQa9VmD=jh6Z?2
 !s100 mT4?:4CdOb[>VlLk8bnHl2
 R6
 31
-Z99 !s110 1393793286
+R57
 !i10b 1
-Z100 !s108 1393793286.833000
-Z101 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/vramstates.vhd|
-Z102 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/vramstates.vhd|
+Z99 !s108 1393794862.134000
+Z100 !s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/vramstates.vhd|
+Z101 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/vramstates.vhd|
 R11
 R12
 Aassign_statebits
@@ -521,11 +521,11 @@ VMXZIiocf6c8MF>nbi@hib2
 !s100 S3L:QaUNT5F2hA3SBNR^40
 R6
 31
-R99
+R57
 !i10b 1
+R99
 R100
 R101
-R102
 R11
 R12
 Etest_modelsim_vhd_tst
@@ -545,10 +545,10 @@ VEW5TXdOL=hFR8eaCV^TQ@3
 !s100 9o[92WlL@D;DhLHg2RCCc2
 R6
 31
-R92
+!s110 1393794872
 !i10b 1
-!s108 1393793345.821000
-!s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht|
+!s108 1393794872.664000
+!s90 -reportprogress|300|-93|-work|work|C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht|
 !s107 C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/test_modelsim.vht|
 R11
 R12
