@@ -40,9 +40,13 @@ entity  ScopeVRAM  is
         CAS        :  out std_logic;      -- col address select output
         TRG        :  out std_logic;      -- trigger output (active low)
         WE         :  out std_logic;      -- write enable output (active low)
-        AHS        :  out std_logic;      -- use high 9 bits of address
+        AS         :  out std_logic_vector(1 downto 0); -- address select
+                                                        -- 00 = low 9 bits
+                                                        -- 01 = high 9 bits
+                                                        -- 10 = row transfer
+                                                        -- 11 = col transfer (0)
         ACK        :  out std_logic;      -- send acknowledge back to display driver
-        BUSY       :  out std_logic;      -- busy signal to CPU for read/write
+        BUSY       :  out std_logic       -- busy signal to CPU for read/write
     );
 end  ScopeVRAM;
 
@@ -56,40 +60,40 @@ end  ScopeVRAM;
 --  logic).
 --
 
-architecture  assign_statebits  of  ScopeTrigger  is
+architecture  assign_statebits  of  ScopeVRAM  is
 
-    type  states  is  std_logic_vector(11 downto 0);     -- state type
+    subtype  states  is  std_logic_vector(12 downto 0);     -- state type
 
     -- define the actual states as constants
-    -- bits: [RAS][CAS][TRG][WE][AHS][ACK][BUSY]
+    -- bits: [RAS][CAS][TRG][WE][AS<2>][ACK][BUSY]
     --       [type <000 IDLE, 010 READ, 011 WRITE, 100 REFRESH, 101 TRANSFER>]
     --       [number <00, 01, ...>]
-    constant  IDLE      : states := "111101100000";  -- idle (can accept R/W)
-    constant  READ1     : states := "011111101000";  -- read cycle
-    constant  READ2     : states := "000101101000";  -- read cycle
-    constant  READ3     : states := "000101101001";  -- read cycle
-    constant  READ4     : states := "000101001010";  -- read cycle
-    constant  READ5     : states := "111101101000";  -- read cycle
-    constant  READ6     : states := "111101101001";  -- read cycle
-    constant  READ7     : states := "111101101010";  -- read cycle
-    constant  WRITE1    : states := "011111001100";  -- write cycle
-    constant  WRITE2    : states := "000001101100";  -- write cycle
-    constant  WRITE3    : states := "000001101100";  -- write cycle
-    constant  WRITE4    : states := "000001101101";  -- write cycle
-    constant  WRITE5    : states := "111001101100";  -- write cycle
-    constant  WRITE6    : states := "111101101100";  -- write cycle
-    constant  WRITE7    : states := "111101101101";  -- write cycle
-    constant  TRANSFER1 : states := "110111110100";  -- transfer cycle
-    constant  TRANSFER2 : states := "010111110100";  -- transfer cycle
-    constant  TRANSFER3 : states := "000111110100";  -- transfer cycle
-    constant  TRANSFER4 : states := "001111110100";  -- transfer cycle
-    constant  TRANSFER5 : states := "111110110100";  -- transfer cycle
-    constant  REFRESH1  : states := "011111110000";  -- refresh cycle
-    constant  REFRESH2  : states := "011111110001";  -- refresh cycle
-    constant  REFRESH3  : states := "011111110010";  -- refresh cycle
-    constant  REFRESH4  : states := "111101110000";  -- refresh cycle
-    constant  REFRESH5  : states := "111101110001";  -- refresh cycle
-    constant  REFRESH6  : states := "111101110010";  -- refresh cycle
+    constant  IDLE      : states := "1111001100000";  -- idle (can accept R/W)
+    constant  READ1     : states := "0111011101000";  -- read cycle
+    constant  READ2     : states := "0001001101000";  -- read cycle
+    constant  READ3     : states := "0001001101001";  -- read cycle
+    constant  READ4     : states := "0001001001010";  -- read cycle
+    constant  READ5     : states := "1111001101000";  -- read cycle
+    constant  READ6     : states := "1111001101001";  -- read cycle
+    constant  READ7     : states := "1111001101010";  -- read cycle
+    constant  WRITE1    : states := "0111011001100";  -- write cycle
+    constant  WRITE2    : states := "0000001101100";  -- write cycle
+    constant  WRITE3    : states := "0000001101100";  -- write cycle
+    constant  WRITE4    : states := "0000001101101";  -- write cycle
+    constant  WRITE5    : states := "1110001101100";  -- write cycle
+    constant  WRITE6    : states := "1111001101100";  -- write cycle
+    constant  WRITE7    : states := "1111001101101";  -- write cycle
+    constant  TRANSFER1 : states := "1101101110100";  -- transfer cycle
+    constant  TRANSFER2 : states := "0101101110100";  -- transfer cycle
+    constant  TRANSFER3 : states := "0001111110100";  -- transfer cycle
+    constant  TRANSFER4 : states := "0011111110100";  -- transfer cycle
+    constant  TRANSFER5 : states := "1111110110100";  -- transfer cycle
+    constant  REFRESH1  : states := "0111101110000";  -- refresh cycle
+    constant  REFRESH2  : states := "0111101110001";  -- refresh cycle
+    constant  REFRESH3  : states := "0111101110010";  -- refresh cycle
+    constant  REFRESH4  : states := "1111001110000";  -- refresh cycle
+    constant  REFRESH5  : states := "1111001110001";  -- refresh cycle
+    constant  REFRESH6  : states := "1111001110010";  -- refresh cycle
 
 
     signal  CurrentState  :  states;    -- current state
@@ -99,12 +103,13 @@ begin
 
 
     -- the output is always the high bit of the state encoding
-    RAS  <= CurrentState(11);
-    CAS  <= CurrentState(10);
-    TRG  <= CurrentState(9);
-    WE   <= CurrentState(8);
-    AHS  <= CurrentState(7);
-    BUSY <= CurrentState(6);
+    RAS  <= CurrentState(12);
+    CAS  <= CurrentState(11);
+    TRG  <= CurrentState(10);
+    WE   <= CurrentState(9);
+    AS   <= CurrentState(8 downto 7);
+    ACK  <= CurrentState(6);
+    BUSY <= CurrentState(5);
 
     -- compute the next state (function of current state and inputs)
 
@@ -121,83 +126,83 @@ begin
                 elsif  (srt = '0')  then
                     NextState <= TRANSFER1;     -- start serial row transfer
                 else
-                    NextState <= REFRESH1       -- start refresh cycle
+                    NextState <= REFRESH1;      -- start refresh cycle
                 end if;
 
             when  READ1 =>              -- read cycle
-                NextState <= READ2      -- go to next part of read cycle
+                NextState <= READ2;     -- go to next part of read cycle
 
             when  READ2 =>              -- read cycle
-                NextState <= READ3      -- go to next part of read cycle
+                NextState <= READ3;     -- go to next part of read cycle
 
             when  READ3 =>              -- read cycle
-                NextState <= READ4      -- go to next part of read cycle
+                NextState <= READ4;     -- go to next part of read cycle
 
             when  READ4 =>              -- read cycle
-                NextState <= READ5      -- go to next part of read cycle
+                NextState <= READ5;     -- go to next part of read cycle
 
             when  READ5 =>              -- read cycle
-                NextState <= READ6      -- go to next part of read cycle
+                NextState <= READ6;     -- go to next part of read cycle
 
             when  READ6 =>              -- read cycle
-                NextState <= READ7      -- go to next part of read cycle
+                NextState <= READ7;     -- go to next part of read cycle
 
             when  READ7 =>              -- read cycle
-                NextState <= IDLE       -- go back to idle
+                NextState <= IDLE;      -- go back to idle
 
             when  WRITE1 =>             -- write cycle
-                NextState <= WRITE2     -- go to next part of write cycle
+                NextState <= WRITE2;    -- go to next part of write cycle
 
             when  WRITE2 =>             -- write cycle
-                NextState <= WRITE3     -- go to next part of write cycle
+                NextState <= WRITE3;    -- go to next part of write cycle
 
             when  WRITE3 =>             -- write cycle
-                NextState <= WRITE4     -- go to next part of write cycle
+                NextState <= WRITE4;    -- go to next part of write cycle
 
             when  WRITE4 =>             -- write cycle
-                NextState <= WRITE5     -- go to next part of write cycle
+                NextState <= WRITE5;    -- go to next part of write cycle
 
             when  WRITE5 =>             -- write cycle
-                NextState <= WRITE6     -- go to next part of write cycle
+                NextState <= WRITE6;    -- go to next part of write cycle
 
             when  WRITE6 =>             -- write cycle
-                NextState <= WRITE7     -- go to next part of write cycle
+                NextState <= WRITE7;    -- go to next part of write cycle
 
             when  WRITE7 =>             -- write cycle
-                NextState <= IDLE       -- go back to idle
+                NextState <= IDLE;      -- go back to idle
 
             when  TRANSFER1 =>          -- transfer cycle
-                NextState <= TRANSFER2  -- go to next part of transfer cycle
+                NextState <= TRANSFER2; -- go to next part of transfer cycle
 
             when  TRANSFER2 =>          -- transfer cycle
-                NextState <= TRANSFER3  -- go to next part of transfer cycle
+                NextState <= TRANSFER3; -- go to next part of transfer cycle
 
             when  TRANSFER3 =>          -- transfer cycle
-                NextState <= TRANSFER4  -- go to next part of transfer cycle
+                NextState <= TRANSFER4; -- go to next part of transfer cycle
 
             when  TRANSFER4 =>          -- transfer cycle
-                NextState <= TRANSFER5  -- go to next part of transfer cycle
+                NextState <= TRANSFER5; -- go to next part of transfer cycle
 
             when  TRANSFER5 =>          -- transfer cycle
-                NextState <= IDLE       -- go back to idle
+                NextState <= IDLE;      -- go back to idle
 
             when  REFRESH1 =>           -- refresh cycle
-                NextState <= REFRESH2   -- go to next part of refresh cycle
+                NextState <= REFRESH2;  -- go to next part of refresh cycle
 
             when  REFRESH2 =>           -- refresh cycle
-                NextState <= REFRESH3   -- go to next part of refresh cycle
+                NextState <= REFRESH3;  -- go to next part of refresh cycle
 
             when  REFRESH3 =>           -- refresh cycle
-                NextState <= REFRESH4   -- go to next part of refresh cycle
+                NextState <= REFRESH4;  -- go to next part of refresh cycle
 
             when  REFRESH4 =>           -- refresh cycle
-                NextState <= REFRESH5   -- go to next part of refresh cycle
+                NextState <= REFRESH5;  -- go to next part of refresh cycle
 
             when  REFRESH5 =>           -- refresh cycle
-                NextState <= REFRESH6   -- go to next part of refresh cycle
+                NextState <= REFRESH6;  -- go to next part of refresh cycle
 
             when  REFRESH6 =>           -- refresh cycle
-                NextState <= IDLE       -- go back to idle
+                NextState <= IDLE;      -- go back to idle
 
         end case;
 

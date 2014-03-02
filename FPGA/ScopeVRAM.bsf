@@ -1,0 +1,113 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 168 192)
+	(text "ScopeVRAM" (rect 5 0 62 12)(font "Arial" ))
+	(text "inst" (rect 8 160 20 172)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 10 12)(font "Arial" ))
+		(text "clk" (rect 21 27 31 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 20 12)(font "Arial" ))
+		(text "reset" (rect 21 43 41 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "cs" (rect 0 0 9 12)(font "Arial" ))
+		(text "cs" (rect 21 59 30 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "rw" (rect 0 0 9 12)(font "Arial" ))
+		(text "rw" (rect 21 75 30 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "srt" (rect 0 0 10 12)(font "Arial" ))
+		(text "srt" (rect 21 91 31 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "RAS" (rect 0 0 22 12)(font "Arial" ))
+		(text "RAS" (rect 109 27 131 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32)(line_width 1))
+	)
+	(port
+		(pt 152 48)
+		(output)
+		(text "CAS" (rect 0 0 21 12)(font "Arial" ))
+		(text "CAS" (rect 110 43 131 55)(font "Arial" ))
+		(line (pt 152 48)(pt 136 48)(line_width 1))
+	)
+	(port
+		(pt 152 64)
+		(output)
+		(text "TRG" (rect 0 0 21 12)(font "Arial" ))
+		(text "TRG" (rect 110 59 131 71)(font "Arial" ))
+		(line (pt 152 64)(pt 136 64)(line_width 1))
+	)
+	(port
+		(pt 152 80)
+		(output)
+		(text "WE" (rect 0 0 17 12)(font "Arial" ))
+		(text "WE" (rect 114 75 131 87)(font "Arial" ))
+		(line (pt 152 80)(pt 136 80)(line_width 1))
+	)
+	(port
+		(pt 152 96)
+		(output)
+		(text "AS[1..0]" (rect 0 0 33 12)(font "Arial" ))
+		(text "AS[1..0]" (rect 98 91 131 103)(font "Arial" ))
+		(line (pt 152 96)(pt 136 96)(line_width 3))
+	)
+	(port
+		(pt 152 112)
+		(output)
+		(text "ACK" (rect 0 0 22 12)(font "Arial" ))
+		(text "ACK" (rect 109 107 131 119)(font "Arial" ))
+		(line (pt 152 112)(pt 136 112)(line_width 1))
+	)
+	(port
+		(pt 152 128)
+		(output)
+		(text "BUSY" (rect 0 0 25 12)(font "Arial" ))
+		(text "BUSY" (rect 106 123 131 135)(font "Arial" ))
+		(line (pt 152 128)(pt 136 128)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 160)(line_width 1))
+	)
+)
