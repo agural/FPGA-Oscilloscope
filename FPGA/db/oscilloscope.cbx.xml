@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="oscilloscope">
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_compare1:b2v_inst6|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_dfj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_k6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_compare0:b2v_inst|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_dfj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_compare3:b2v_inst14|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_5ej.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_compare4:b2v_inst15|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_5ej.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_compare5:b2v_inst16|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_5bj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_constant0:b2v_SRT_COL_START|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_bh6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_counter0:b2v_VRAM_CLOCK|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_j6i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_counter3:b2v_VERTICAL_CNT|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_8kj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_compare2:b2v_inst7|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_dcj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_3kj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_counter2:b2v_HORIZONTAL_CNT|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_clj.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
