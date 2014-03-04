@@ -7,7 +7,7 @@ Sim Mode              :  RTL
 Family                :  cycloneiii
 Quartus root          :  d:/program files/quartus/bin/
 Quartus sim root      :  d:/program files/quartus/eda/sim_lib
-Simulation Tool       :  modelsim
+Simulation Tool       :  modelsim-altera
 Simulation Language   :  vhdl
 Version               :  93
 Simulation Mode       :  GUI
@@ -17,6 +17,7 @@ Sim dir               :  simulation\modelsim
 
 =======================================================
 
-Info: Starting NativeLink simulation with ModelSim software
+Info: Starting NativeLink simulation with ModelSim-Altera software
 Sourced NativeLink script d:/program files/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Info: Spawning ModelSim Simulation software 
+Warning: File oscilloscope_run_msim_rtl_vhdl.do already exists - backing up current file as oscilloscope_run_msim_rtl_vhdl.do.bak11
+Info: Spawning ModelSim-Altera Simulation software 

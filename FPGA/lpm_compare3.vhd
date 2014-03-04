@@ -126,6 +126,6 @@ END SYN;
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare3.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare3.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare3.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare3.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare3.bsf TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare3_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: lpm

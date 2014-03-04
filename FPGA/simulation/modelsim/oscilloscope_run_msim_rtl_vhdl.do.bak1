@@ -1,0 +1,18 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/oscilloscope.vhd}
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter0.vhd}
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter2.vhd}
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare0.vhd}
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare1.vhd}
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare2.vhd}
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter3.vhd}
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare3.vhd}
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare4.vhd}
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_compare5.vhd}
+

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for oscilloscope
-Sun Mar 02 16:43:54 2014
+Tue Mar 04 10:46:13 2014
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -34,7 +34,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Mar 02 16:43:54 2014 ;
+; EDA Netlist Writer Status ; Successful - Tue Mar 04 10:46:13 2014 ;
 ; Revision Name             ; oscilloscope                          ;
 ; Top-level Entity Name     ; oscilloscope                          ;
 ; Family                    ; Cyclone III                           ;
@@ -47,13 +47,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit EDA Netlist Writer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun Mar 02 16:43:53 2014
+    Info: Processing started: Tue Mar 04 10:46:12 2014
 Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off oscilloscope -c oscilloscope --gen_testbench
 Info (119006): Selected device EP3C25Q240C8 for design "oscilloscope"
 Info (201002): Generated VHDL Test Bench File C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/simulation/modelsim/oscilloscope.vht for simulation
 Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 341 megabytes
-    Info: Processing ended: Sun Mar 02 16:43:54 2014
+    Info: Peak virtual memory: 342 megabytes
+    Info: Processing ended: Tue Mar 04 10:46:13 2014
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
