@@ -17,18 +17,18 @@
 -- suit user's needs .Comments are provided in each section to help the user  
 -- fill out necessary details.                                                
 -- ***************************************************************************
--- Generated on "03/04/2014 04:13:26"
+-- Generated on "03/04/2014 13:51:33"
                                                             
 -- Vhdl Test Bench template for design  :  oscilloscope
 -- 
--- Simulation tool : ModelSim (VHDL)
+-- Simulation tool : ModelSim-Altera (VHDL)
 -- 
 
 LIBRARY ieee;                                               
-USE ieee.std_logic_1164.all;    
+USE ieee.std_logic_1164.all;      
 USE ieee.numeric_std.all;                                
 USE ieee.std_logic_misc.all;
-USE ieee.math_real.all;                            
+USE ieee.math_real.all;                                   
 
 ENTITY oscilloscope_vhd_tst IS
 END oscilloscope_vhd_tst;
@@ -38,21 +38,30 @@ ARCHITECTURE oscilloscope_arch OF oscilloscope_vhd_tst IS
 	-- signals                                                   
 	SIGNAL CLK_IN 	: STD_LOGIC;
 	SIGNAL RESET_IN : STD_LOGIC;
-	SIGNAL DCLK 	: STD_LOGIC;
-	SIGNAL HSYNC 	: STD_LOGIC;
-	SIGNAL SC 		: STD_LOGIC;
-	SIGNAL SRT 		: STD_LOGIC;
-	SIGNAL VSYNC 	: STD_LOGIC;
+	SIGNAL CS_IN 	: STD_LOGIC;
+	SIGNAL RW_IN 	: STD_LOGIC;
+	SIGNAL HSYNC_IN : STD_LOGIC;
+	SIGNAL SRT_IN 	: STD_LOGIC;
+	SIGNAL ADDR 	: STD_LOGIC_VECTOR(8 DOWNTO 0);
+	SIGNAL RAS 		: STD_LOGIC;
+	SIGNAL CAS 		: STD_LOGIC;
+	SIGNAL TRG 		: STD_LOGIC;
+	SIGNAL WE 		: STD_LOGIC;
+	SIGNAL BUSY		: STD_LOGIC;
 
 	COMPONENT oscilloscope
 		PORT (
 			CLK_IN 		: IN  STD_LOGIC;
 			RESET_IN 	: IN  STD_LOGIC;
-			DCLK 		: OUT STD_LOGIC;
-			HSYNC 		: OUT STD_LOGIC;
-			SC 			: OUT STD_LOGIC;
-			SRT 		: OUT STD_LOGIC;
-			VSYNC 		: OUT STD_LOGIC
+			CS_IN 		: IN  STD_LOGIC;
+			RW_IN 		: IN  STD_LOGIC;
+			HSYNC_IN 	: IN  STD_LOGIC;
+			SRT_IN 		: IN  STD_LOGIC;
+			ADDR 		: OUT STD_LOGIC_VECTOR(8 DOWNTO 0);
+			RAS 		: OUT STD_LOGIC;
+			CAS 		: OUT STD_LOGIC;
+			TRG 		: OUT STD_LOGIC;
+			WE 			: OUT STD_LOGIC
 		);
 	END COMPONENT;
 
@@ -60,13 +69,17 @@ ARCHITECTURE oscilloscope_arch OF oscilloscope_vhd_tst IS
 		i1 : oscilloscope
 		PORT MAP (
 			-- list connections between master ports and signals
-			CLK_IN => CLK_IN,
-			RESET_IN => RESET_IN,
-			DCLK => DCLK,
-			HSYNC => HSYNC,
-			SC => SC,
-			SRT => SRT,
-			VSYNC => VSYNC
+			CLK_IN 		=> CLK_IN,
+			RESET_IN 	=> RESET_IN,
+			CS_IN 		=> CS_IN,
+			RW_IN 		=> RW_IN,
+			HSYNC_IN 	=> HSYNC_IN,
+			SRT_IN 		=> SRT_IN,
+			ADDR 		=> ADDR,
+			RAS 		=> RAS,
+			CAS 		=> CAS,
+			TRG 		=> TRG,
+			WE 			=> WE
 		);
 
 
@@ -88,76 +101,66 @@ ARCHITECTURE oscilloscope_arch OF oscilloscope_vhd_tst IS
 		-- variable declarations                                     
 		BEGIN                                                        
 		        -- code that executes only once                      
+		        CS_IN <= '0';
+		        RW_IN <= '0';
+		        HSYNC_IN <= '0';
+		        SRT_IN <= '0';
+
 		        RESET_IN <= '1';
-		        wait for 400 ps;
+		        wait for 100 ps;
 		        RESET_IN <= '0';
 		WAIT;                                                       
-	END PROCESS init;                                           
+	END PROCESS init;   
 
 
 	always : PROCESS                                              
 		-- optional sensitivity list                                  
 		-- (        )                                                 
-		-- variable declarations                                 
-		variable h_count		: integer := 0; -- For current horizontal display
-		variable h_pulse_cnt	: integer := 0; -- Counts horizontal pulses
-		variable v_count		: integer := 0; -- For current vertical display
-		variable v_pulse_cnt	: integer := 0; -- Counts vertical pulses
+		-- variable declarations                                      
+		constant crit_time_min	: integer := 0;
+		constant crit_time_max 	: integer := 15;
 
-		constant h_pulse		: integer :=  41; -- Expected horizontal pulse length
-		constant h_back_porch	: integer :=  43; -- Expected horizontal back porch
-		constant h_front_porch	: integer := 523; -- Expected horizontal front porch
-		constant v_pulse		: integer :=  10; -- Expected vertical pulse length
-		constant v_back_porch	: integer :=  12; -- Expected vertical back porch
-		constant v_front_porch	: integer := 284; -- Expected vertical front porch
-
-		--constant vramhalfclk	: integer := 200;
-		--constant offset			: integer := 400;
 
 		BEGIN                                                         
-		    -- code executes for every event on sensitivity list
-		    wait for 801 ps;
-		    while true loop
-			    for row in 0 to 285 loop
-			    	for col in 0 to 524 loop
-			    		if (row < v_pulse) then
-			    			assert(VSYNC = '0') report "VSYNC sync not low during vertical pulse";
-			    		else
-			    			assert(VSYNC = '1') report "VSYNC sync not high during non-pulse";
-			    		end if;
+		    -- code executes for every event on sensitivity list  
+		    CS_IN <= '0';
+		    RW_IN <= '0';
+		    HSYNC_IN <= '0';
+		    SRT_IN <= '0';
+		    
+		    for read_time in crit_time_min to crit_time_max loop
+		    	for write_time in crit_time_min to crit_time_max loop
+		       		for srt_time in crit_time_min to crit_time_max loop
+		       			for t in 0 to crit_time_max-1 loop
+		       				if (t = read_time) then
+		       					CS_IN <= '1';
+		       					RW_IN <= '1';
+		       				elsif (t = write_time) then
+		       					CS_IN <= '1';
+		       					RW_IN <= '0';
+		       				end if;
 
-			    		if (col < h_pulse) then
-			    			assert(HSYNC = '0') report "HSYNC sync not low during horizontal pulse";
-			    		else
-			    			assert(HSYNC = '1') report "HSYNC sync not high during non-pulse";
-			    		end if;
+		       				if (BUSY = '0') then -- Processor gets data and releases CS/RW
+		       					CS_IN <= '0';
+		       					RW_IN <= '0';
+		       				end if;
 
-			    		assert(DCLK = '1') report "DCLK not high when expected";
-			    		
-			    		if (v_back_porch <= row and row < v_front_porch and
-			    			h_back_porch <= col and col < h_front_porch) then
-			    			assert(SC = '1') report "SC not high when expected";
-			    		end if;
-			    		
-			    		if (v_back_porch <= row and row < v_front_porch and
-			    			col = h_front_porch) then
-			    			assert(SRT = '1') report "Serial transfer not triggering as expected";
-			    		else
-			    			assert(SRT = '0') report "Serial transfer triggering unexpectedly";
-			    		end if;
+		       				if (t = srt_time) then
+		       					SRT_IN <= '1';
+		       				else
+		       					SRT_IN <= '0';
+		       				end if;
 
-			    		wait for 200 ps;
+		       				wait for 100 ps;
+		       			end loop;
+		       			
+		       			HSYNC_IN <= '1'; -- Increment SRT address
+		       			wait for 100 ps;
+		       			HSYNC_IN <= '0';
+		       		end loop;
+		       	end loop;
+		    end loop;
 
-			    		
-			    		assert(DCLK = '0') report "DCLK not low when expected";
-			    		
-			    		assert(SC = '0') report "SC not low when expected";
-			    		
-			    		wait for 200 ps;
-			    	
-			    	end loop;
-			    end loop;
-			end loop;
-	END PROCESS always;                                          
+	END PROCESS always;
 
 END oscilloscope_arch;
