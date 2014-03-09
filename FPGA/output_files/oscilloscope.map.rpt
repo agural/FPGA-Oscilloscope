@@ -1,5 +1,5 @@
 Analysis & Synthesis report for oscilloscope
-Tue Mar 04 14:23:38 2014
+Sun Mar 09 12:12:43 2014
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -15,12 +15,14 @@ Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
   9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component
- 11. Parameter Settings for User Entity Instance: lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component
- 12. Parameter Settings for User Entity Instance: lpm_constant0:b2v_SRT_COL_START|lpm_constant:LPM_CONSTANT_component
- 13. Port Connectivity Checks: "ScopeVRAM:b2v_STATE_MACHINE"
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component
+ 12. Parameter Settings for User Entity Instance: lpm_constant1:b2v_inst|lpm_constant:LPM_CONSTANT_component
+ 13. Parameter Settings for User Entity Instance: lpm_constant2:b2v_inst4|lpm_constant:LPM_CONSTANT_component
+ 14. Parameter Settings for User Entity Instance: lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component
+ 15. Parameter Settings for User Entity Instance: lpm_constant0:b2v_SRT_COL_START|lpm_constant:LPM_CONSTANT_component
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -46,16 +48,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 04 14:23:38 2014      ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 09 12:12:43 2014      ;
 ; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; oscilloscope                               ;
 ; Top-level Entity Name              ; oscilloscope                               ;
 ; Family                             ; Cyclone III                                ;
-; Total logic elements               ; 107                                        ;
-;     Total combinational functions  ; 107                                        ;
+; Total logic elements               ; 106                                        ;
+;     Total combinational functions  ; 106                                        ;
 ;     Dedicated logic registers      ; 23                                         ;
 ; Total registers                    ; 23                                         ;
-; Total pins                         ; 19                                         ;
+; Total pins                         ; 20                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -171,12 +173,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; lpm_counter1.vhd                 ; yes             ; User Wizard-Generated File   ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter1.vhd  ;         ;
 ; lpm_mux0.vhd                     ; yes             ; User Wizard-Generated File   ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd      ;         ;
 ; lpm_constant0.vhd                ; yes             ; User Wizard-Generated File   ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant0.vhd ;         ;
+; lpm_constant1.vhd                ; yes             ; User Wizard-Generated File   ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant1.vhd ;         ;
+; lpm_constant2.vhd                ; yes             ; User Wizard-Generated File   ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant2.vhd ;         ;
 ; lpm_mux.tdf                      ; yes             ; Megafunction                 ; d:/program files/quartus/libraries/megafunctions/lpm_mux.tdf              ;         ;
 ; aglobal131.inc                   ; yes             ; Megafunction                 ; d:/program files/quartus/libraries/megafunctions/aglobal131.inc           ;         ;
 ; muxlut.inc                       ; yes             ; Megafunction                 ; d:/program files/quartus/libraries/megafunctions/muxlut.inc               ;         ;
 ; bypassff.inc                     ; yes             ; Megafunction                 ; d:/program files/quartus/libraries/megafunctions/bypassff.inc             ;         ;
 ; altshift.inc                     ; yes             ; Megafunction                 ; d:/program files/quartus/libraries/megafunctions/altshift.inc             ;         ;
 ; db/mux_k6e.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/db/mux_k6e.tdf    ;         ;
+; lpm_constant.tdf                 ; yes             ; Megafunction                 ; d:/program files/quartus/libraries/megafunctions/lpm_constant.tdf         ;         ;
 ; lpm_counter.tdf                  ; yes             ; Megafunction                 ; d:/program files/quartus/libraries/megafunctions/lpm_counter.tdf          ;         ;
 ; lpm_constant.inc                 ; yes             ; Megafunction                 ; d:/program files/quartus/libraries/megafunctions/lpm_constant.inc         ;         ;
 ; lpm_decode.inc                   ; yes             ; Megafunction                 ; d:/program files/quartus/libraries/megafunctions/lpm_decode.inc           ;         ;
@@ -188,7 +193,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; d:/program files/quartus/libraries/megafunctions/alt_counter_stratix.inc  ;         ;
 ; db/cntr_3kj.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/db/cntr_3kj.tdf   ;         ;
 ; db/cmpr_mfc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/db/cmpr_mfc.tdf   ;         ;
-; lpm_constant.tdf                 ; yes             ; Megafunction                 ; d:/program files/quartus/libraries/megafunctions/lpm_constant.tdf         ;         ;
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------+---------+
 
 
@@ -197,28 +201,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+---------------------------------------------+
 ; Resource                                    ; Usage                                       ;
 +---------------------------------------------+---------------------------------------------+
-; Estimated Total logic elements              ; 107                                         ;
+; Estimated Total logic elements              ; 106                                         ;
 ;                                             ;                                             ;
-; Total combinational functions               ; 107                                         ;
+; Total combinational functions               ; 106                                         ;
 ; Logic element usage by number of LUT inputs ;                                             ;
-;     -- 4 input functions                    ; 57                                          ;
-;     -- 3 input functions                    ; 31                                          ;
+;     -- 4 input functions                    ; 62                                          ;
+;     -- 3 input functions                    ; 25                                          ;
 ;     -- <=2 input functions                  ; 19                                          ;
 ;                                             ;                                             ;
 ; Logic elements by mode                      ;                                             ;
-;     -- normal mode                          ; 98                                          ;
+;     -- normal mode                          ; 97                                          ;
 ;     -- arithmetic mode                      ; 9                                           ;
 ;                                             ;                                             ;
 ; Total registers                             ; 23                                          ;
 ;     -- Dedicated logic registers            ; 23                                          ;
 ;     -- I/O registers                        ; 0                                           ;
 ;                                             ;                                             ;
-; I/O pins                                    ; 19                                          ;
+; I/O pins                                    ; 20                                          ;
 ; Embedded Multiplier 9-bit elements          ; 0                                           ;
-; Maximum fan-out node                        ; ScopeVRAM:b2v_STATE_MACHINE|CurrentState[7] ;
-; Maximum fan-out                             ; 17                                          ;
-; Total fan-out                               ; 451                                         ;
-; Average fan-out                             ; 2.68                                        ;
+; Maximum fan-out node                        ; ScopeVRAM:b2v_STATE_MACHINE|CurrentState[2] ;
+; Maximum fan-out                             ; 20                                          ;
+; Total fan-out                               ; 455                                         ;
+; Average fan-out                             ; 2.69                                        ;
 +---------------------------------------------+---------------------------------------------+
 
 
@@ -227,8 +231,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Library Name ;
 +--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |oscilloscope                              ; 107 (2)           ; 23 (1)       ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |oscilloscope                                                                                                                ; work         ;
-;    |ScopeVRAM:b2v_STATE_MACHINE|           ; 82 (82)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |oscilloscope|ScopeVRAM:b2v_STATE_MACHINE                                                                                    ; work         ;
+; |oscilloscope                              ; 106 (2)           ; 23 (1)       ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |oscilloscope                                                                                                                ; work         ;
+;    |ScopeVRAM:b2v_STATE_MACHINE|           ; 81 (81)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |oscilloscope|ScopeVRAM:b2v_STATE_MACHINE                                                                                    ; work         ;
 ;    |lpm_counter1:b2v_ROW_TRANSFER_COUNTER| ; 14 (0)            ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |oscilloscope|lpm_counter1:b2v_ROW_TRANSFER_COUNTER                                                                          ; work         ;
 ;       |lpm_counter:LPM_COUNTER_component|  ; 14 (0)            ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |oscilloscope|lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component                                        ; work         ;
 ;          |cntr_3kj:auto_generated|         ; 14 (11)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |oscilloscope|lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component|cntr_3kj:auto_generated                ; work         ;
@@ -246,6 +250,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                     ; IP Include File                                                           ;
 +--------+--------------+---------+--------------+--------------+-----------------------------------------------------+---------------------------------------------------------------------------+
 ; Altera ; LPM_MUX      ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_mux0:b2v_ADDR_MUX                 ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd      ;
+; Altera ; LPM_CONSTANT ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_constant1:b2v_inst                ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant1.vhd ;
+; Altera ; LPM_CONSTANT ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_constant2:b2v_inst4               ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant2.vhd ;
 ; Altera ; LPM_COUNTER  ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_counter1:b2v_ROW_TRANSFER_COUNTER ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter1.vhd  ;
 ; Altera ; LPM_CONSTANT ; 13.1    ; N/A          ; N/A          ; |oscilloscope|lpm_constant0:b2v_SRT_COL_START       ; C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant0.vhd ;
 +--------+--------------+---------+--------------+--------------+-----------------------------------------------------+---------------------------------------------------------------------------+
@@ -266,6 +272,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |oscilloscope|lpm_mux0:b2v_ADDR_MUX|lpm_mux:LPM_MUX_component|mux_k6e:auto_generated|result_node[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component ;
 +------------------------+-------------+-------------------------------------------------------+
@@ -282,6 +297,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; CBXI_PARAMETER         ; mux_k6e     ; Untyped                                               ;
 ; DEVICE_FAMILY          ; Cyclone III ; Untyped                                               ;
 +------------------------+-------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_constant1:b2v_inst|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+-----------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                            ;
++--------------------+------------------+-----------------------------------------------------------------+
+; LPM_WIDTH          ; 9                ; Signed Integer                                                  ;
+; LPM_CVALUE         ; 341              ; Signed Integer                                                  ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                         ;
+; CBXI_PARAMETER     ; lpm_constant_mh6 ; Untyped                                                         ;
++--------------------+------------------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_constant2:b2v_inst4|lpm_constant:LPM_CONSTANT_component ;
++--------------------+------------------+------------------------------------------------------------------+
+; Parameter Name     ; Value            ; Type                                                             ;
++--------------------+------------------+------------------------------------------------------------------+
+; LPM_WIDTH          ; 9                ; Signed Integer                                                   ;
+; LPM_CVALUE         ; 102              ; Signed Integer                                                   ;
+; ENABLE_RUNTIME_MOD ; NO               ; Untyped                                                          ;
+; CBXI_PARAMETER     ; lpm_constant_nh6 ; Untyped                                                          ;
++--------------------+------------------+------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -325,15 +366,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ScopeVRAM:b2v_STATE_MACHINE"                                                        ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; busy ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-------------------------------+
 ; Elapsed Time Per Partition    ;
 +----------------+--------------+
@@ -349,7 +381,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Tue Mar 04 14:23:34 2014
+    Info: Processing started: Sun Mar 09 12:12:39 2014
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off oscilloscope -c oscilloscope
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file vramstates.vhd
@@ -394,8 +426,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file lpm_mux
 Info (12021): Found 2 design units, including 1 entities, in source file lpm_constant0.vhd
     Info (12022): Found design unit 1: lpm_constant0-SYN
     Info (12023): Found entity 1: lpm_constant0
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_constant1.vhd
+    Info (12022): Found design unit 1: lpm_constant1-SYN
+    Info (12023): Found entity 1: lpm_constant1
+Info (12021): Found 2 design units, including 1 entities, in source file lpm_constant2.vhd
+    Info (12022): Found design unit 1: lpm_constant2-SYN
+    Info (12023): Found entity 1: lpm_constant2
 Info (12127): Elaborating entity "oscilloscope" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at oscilloscope.vhd(81): used implicit default value for signal "ADDRESS" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "lpm_mux0" for hierarchy "lpm_mux0:b2v_ADDR_MUX"
 Info (12128): Elaborating entity "LPM_MUX" for hierarchy "lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component"
 Info (12130): Elaborated megafunction instantiation "lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component"
@@ -409,6 +446,22 @@ Info (12133): Instantiated megafunction "lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_c
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_k6e.tdf
     Info (12023): Found entity 1: mux_k6e
 Info (12128): Elaborating entity "mux_k6e" for hierarchy "lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component|mux_k6e:auto_generated"
+Info (12128): Elaborating entity "lpm_constant1" for hierarchy "lpm_constant1:b2v_inst"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "lpm_constant1:b2v_inst|lpm_constant:LPM_CONSTANT_component"
+Info (12130): Elaborated megafunction instantiation "lpm_constant1:b2v_inst|lpm_constant:LPM_CONSTANT_component"
+Info (12133): Instantiated megafunction "lpm_constant1:b2v_inst|lpm_constant:LPM_CONSTANT_component" with the following parameter:
+    Info (12134): Parameter "lpm_cvalue" = "341"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "9"
+Info (12128): Elaborating entity "lpm_constant2" for hierarchy "lpm_constant2:b2v_inst4"
+Info (12128): Elaborating entity "lpm_constant" for hierarchy "lpm_constant2:b2v_inst4|lpm_constant:LPM_CONSTANT_component"
+Info (12130): Elaborated megafunction instantiation "lpm_constant2:b2v_inst4|lpm_constant:LPM_CONSTANT_component"
+Info (12133): Instantiated megafunction "lpm_constant2:b2v_inst4|lpm_constant:LPM_CONSTANT_component" with the following parameter:
+    Info (12134): Parameter "lpm_cvalue" = "102"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "LPM_CONSTANT"
+    Info (12134): Parameter "lpm_width" = "9"
 Info (12128): Elaborating entity "lpm_counter1" for hierarchy "lpm_counter1:b2v_ROW_TRANSFER_COUNTER"
 Info (12128): Elaborating entity "lpm_counter" for hierarchy "lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component"
 Info (12130): Elaborated megafunction instantiation "lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component"
@@ -438,11 +491,11 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 126 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 13 output pins
-    Info (21061): Implemented 107 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 106 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 411 megabytes
-    Info: Processing ended: Tue Mar 04 14:23:38 2014
+    Info: Processing ended: Sun Mar 09 12:12:43 2014
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 

@@ -14,7 +14,7 @@
 
 -- PROGRAM		"Quartus II 32-bit"
 -- VERSION		"Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
--- CREATED		"Tue Mar 04 13:50:49 2014"
+-- CREATED		"Sun Mar 09 12:12:32 2014"
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.all; 
@@ -34,6 +34,7 @@ ENTITY oscilloscope IS
 		CAS :  OUT  STD_LOGIC;
 		TRG :  OUT  STD_LOGIC;
 		WE :  OUT  STD_LOGIC;
+		BUSY :  OUT  STD_LOGIC;
 		ADDR :  OUT  STD_LOGIC_VECTOR(8 DOWNTO 0)
 	);
 END oscilloscope;
@@ -47,6 +48,16 @@ COMPONENT lpm_mux0
 		 data3x : IN STD_LOGIC_VECTOR(8 DOWNTO 0);
 		 sel : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
 		 result : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT lpm_constant1
+	PORT(		 result : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
+	);
+END COMPONENT;
+
+COMPONENT lpm_constant2
+	PORT(		 result : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
 	);
 END COMPONENT;
 
@@ -107,6 +118,10 @@ PORT MAP(data0x => ADDRESS(8 DOWNTO 0),
 		 result => ADDR);
 
 
+b2v_inst : lpm_constant1
+PORT MAP(		 result => ADDRESS(17 DOWNTO 9));
+
+
 
 PROCESS(SYS_CLK,SYNTHESIZED_WIRE_4,SYNTHESIZED_WIRE_3)
 VARIABLE synthesized_var_for_SRFF_inst3 : STD_LOGIC;
@@ -121,6 +136,10 @@ END IF;
 	SRFF_inst3 <= synthesized_var_for_SRFF_inst3;
 END PROCESS;
 
+
+
+b2v_inst4 : lpm_constant2
+PORT MAP(		 result => ADDRESS(8 DOWNTO 0));
 
 
 b2v_ROW_TRANSFER_COUNTER : lpm_counter1
@@ -144,6 +163,7 @@ PORT MAP(clk => SYS_CLK,
 		 TRG => TRG,
 		 WE => WE,
 		 ACK => SYNTHESIZED_WIRE_5,
+		 BUSY => BUSY,
 		 AS => SYNTHESIZED_WIRE_2);
 
 SYS_CLK <= CLK_IN;

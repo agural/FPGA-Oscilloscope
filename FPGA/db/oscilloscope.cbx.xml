@@ -1,8 +1,10 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="oscilloscope">
-		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_constant0:b2v_SRT_COL_START|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_bh6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_constant2:b2v_inst4|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_nh6.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_counter1:b2v_ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_3kj.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_mux0:b2v_ADDR_MUX|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_k6e.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_constant0:b2v_SRT_COL_START|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_bh6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|oscilloscope|lpm_constant1:b2v_inst|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_mh6.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

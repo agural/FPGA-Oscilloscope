@@ -61,7 +61,8 @@ ARCHITECTURE oscilloscope_arch OF oscilloscope_vhd_tst IS
 			RAS 		: OUT STD_LOGIC;
 			CAS 		: OUT STD_LOGIC;
 			TRG 		: OUT STD_LOGIC;
-			WE 			: OUT STD_LOGIC
+			WE 			: OUT STD_LOGIC;
+			BUSY		: OUT STD_LOGIC
 		);
 	END COMPONENT;
 
@@ -79,7 +80,8 @@ ARCHITECTURE oscilloscope_arch OF oscilloscope_vhd_tst IS
 			RAS 		=> RAS,
 			CAS 		=> CAS,
 			TRG 		=> TRG,
-			WE 			=> WE
+			WE 			=> WE,
+			BUSY		=> BUSY
 		);
 
 
@@ -100,12 +102,7 @@ ARCHITECTURE oscilloscope_arch OF oscilloscope_vhd_tst IS
 	init : PROCESS                                               
 		-- variable declarations                                     
 		BEGIN                                                        
-		        -- code that executes only once                      
-		        CS_IN <= '0';
-		        RW_IN <= '0';
-		        HSYNC_IN <= '0';
-		        SRT_IN <= '0';
-
+		        -- code that executes only once
 		        RESET_IN <= '1';
 		        wait for 100 ps;
 		        RESET_IN <= '0';
@@ -116,51 +113,98 @@ ARCHITECTURE oscilloscope_arch OF oscilloscope_vhd_tst IS
 	always : PROCESS                                              
 		-- optional sensitivity list                                  
 		-- (        )                                                 
-		-- variable declarations                                      
-		constant crit_time_min	: integer := 0;
-		constant crit_time_max 	: integer := 15;
-
+		-- variable declarations
 
 		BEGIN                                                         
 		    -- code executes for every event on sensitivity list  
-		    CS_IN <= '0';
+		    CS_IN <= '1';
 		    RW_IN <= '0';
 		    HSYNC_IN <= '0';
 		    SRT_IN <= '0';
+		    wait for 1 ps;
 		    
-		    for read_time in crit_time_min to crit_time_max loop
-		    	for write_time in crit_time_min to crit_time_max loop
-		       		for srt_time in crit_time_min to crit_time_max loop
-		       			for t in 0 to crit_time_max-1 loop
-		       				if (t = read_time) then
-		       					CS_IN <= '1';
-		       					RW_IN <= '1';
-		       				elsif (t = write_time) then
-		       					CS_IN <= '1';
-		       					RW_IN <= '0';
-		       				end if;
+		    -- Standard read cycle
+		    CS_IN <= '0';
+		    RW_IN <= '1';
+		    assert(RAS = '1' and CAS = '1' and TRG = '1' and BUSY = '1') 
+		    	report "READ0: Output signal to VRAM different from expected.";
 
-		       				if (BUSY = '0') then -- Processor gets data and releases CS/RW
-		       					CS_IN <= '0';
-		       					RW_IN <= '0';
-		       				end if;
+		    wait for 200 ps;
+		    assert(RAS = '0' and CAS = '1' and TRG = '1' and WE = '1' and BUSY = '1') 
+		    	report "READ1: Output signal to VRAM different from expected.";
+		    assert(ADDR = "101010101") report "READ1: Address different from expected.";
 
-		       				if (t = srt_time) then
-		       					SRT_IN <= '1';
-		       				else
-		       					SRT_IN <= '0';
-		       				end if;
+		    wait for 100 ps;
+		    assert(RAS = '0' and CAS = '0' and TRG = '0' and WE = '1' and BUSY = '1') 
+		    	report "READ2: Output signal to VRAM different from expected.";
+		    assert(ADDR = "001100110") report "READ2: Address different from expected.";
 
-		       				wait for 100 ps;
-		       			end loop;
-		       			
-		       			HSYNC_IN <= '1'; -- Increment SRT address
-		       			wait for 100 ps;
-		       			HSYNC_IN <= '0';
-		       		end loop;
-		       	end loop;
-		    end loop;
+		    wait for 100 ps;
+		    assert(RAS = '0' and CAS = '0' and TRG = '0' and WE = '1' and BUSY = '1') 
+		    	report "READ3: Output signal to VRAM different from expected.";
 
+		    wait for 100 ps;
+		    assert(RAS = '0' and CAS = '0' and TRG = '0' and WE = '1' and BUSY = '0') 
+		    	report "READ4: Output signal to VRAM different from expected.";
+
+		    wait for 100 ps;
+		    assert(RAS = '1' and CAS = '1' and TRG = '1' and WE = '1' and BUSY = '1') 
+		    	report "READ5: Output signal to VRAM different from expected.";
+
+		    wait for 100 ps;
+		    assert(RAS = '1' and CAS = '1' and TRG = '1' and WE = '1' and BUSY = '1') 
+		    	report "READ6: Output signal to VRAM different from expected.";
+
+		    wait for 100 ps;
+		    assert(RAS = '1' and CAS = '1' and TRG = '1' and WE = '1' and BUSY = '1') 
+		    	report "READ7: Output signal to VRAM different from expected.";
+
+		    wait for 100 ps;
+
+		    -- Standard write cycle
+		    CS_IN <= '0';
+		    RW_IN <= '0';
+		    assert(RAS = '1' and CAS = '1' and TRG = '1' and BUSY = '1') report "WRITE0: Output signal to VRAM different from expected.";
+
+		    wait for 100 ps;
+		    assert(RAS = '0' and CAS = '1' and TRG = '1' and WE = '1' and BUSY = '0') 
+		    	report "WRITE1: Output signal to VRAM different from expected.";
+		    assert(ADDR = "101010101") report "WRITE1: Address different from expected.";
+
+		    wait for 100 ps;
+		    assert(RAS = '0' and CAS = '0' and TRG = '0' and WE = '0' and BUSY = '1') 
+		    	report "WRITE2: Output signal to VRAM different from expected.";
+		    assert(ADDR = "001100110") report "WRITE2: Address different from expected.";
+
+		    wait for 100 ps;
+		    assert(RAS = '0' and CAS = '0' and TRG = '0' and WE = '0' and BUSY = '1') 
+		    	report "WRITE3: Output signal to VRAM different from expected.";
+
+		    wait for 100 ps;
+		    assert(RAS = '0' and CAS = '0' and TRG = '0' and WE = '0' and BUSY = '1') 
+		    	report "WRITE4: Output signal to VRAM different from expected.";
+
+		    wait for 100 ps;
+		    assert(RAS = '1' and CAS = '1' and TRG = '1' and WE = '0' and BUSY = '1') 
+		    	report "WRITE5: Output signal to VRAM different from expected.";
+
+		    wait for 100 ps;
+		    assert(RAS = '1' and CAS = '1' and TRG = '1' and WE = '1' and BUSY = '1') 
+		    	report "WRITE6: Output signal to VRAM different from expected.";
+
+		    wait for 100 ps;
+		    assert(RAS = '1' and CAS = '1' and TRG = '1' and WE = '1' and BUSY = '1') 
+		    	report "WRITE7: Output signal to VRAM different from expected.";
+
+		    -- Standard serial transfer cycle
+		    -- Standard refresh cycle
+		    -- read cycle with srt at beginning
+		    -- write cycle with srt at beginning
+		    -- refresh cycle with srt at beginning
+		    -- serial transfer with read at beginning
+		    -- refresh cycle with read at beginning
+
+		WAIT;
 	END PROCESS always;
 
 END oscilloscope_arch;

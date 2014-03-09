@@ -10,6 +10,8 @@ vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/osc
 vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_counter1.vhd}
 vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_mux0.vhd}
 vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant0.vhd}
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant1.vhd}
+vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/lpm_constant2.vhd}
 
 vcom -93 -work work {C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/FPGA/simulation/modelsim/oscilloscope.vht}
 

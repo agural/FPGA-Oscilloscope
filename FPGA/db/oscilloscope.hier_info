@@ -7,19 +7,20 @@ CLK_IN => synthesized_var_for_SRFF_inst3.CLK
 SRT_IN => synthesized_var_for_SRFF_inst3.IN1
 CS_IN => scopevram:b2v_STATE_MACHINE.cs
 RW_IN => scopevram:b2v_STATE_MACHINE.rw
-RAS << scopevram:b2v_STATE_MACHINE.RAS
-CAS << scopevram:b2v_STATE_MACHINE.CAS
-TRG << scopevram:b2v_STATE_MACHINE.TRG
-WE << scopevram:b2v_STATE_MACHINE.WE
-ADDR[0] << lpm_mux0:b2v_ADDR_MUX.result[0]
-ADDR[1] << lpm_mux0:b2v_ADDR_MUX.result[1]
-ADDR[2] << lpm_mux0:b2v_ADDR_MUX.result[2]
-ADDR[3] << lpm_mux0:b2v_ADDR_MUX.result[3]
-ADDR[4] << lpm_mux0:b2v_ADDR_MUX.result[4]
-ADDR[5] << lpm_mux0:b2v_ADDR_MUX.result[5]
-ADDR[6] << lpm_mux0:b2v_ADDR_MUX.result[6]
-ADDR[7] << lpm_mux0:b2v_ADDR_MUX.result[7]
-ADDR[8] << lpm_mux0:b2v_ADDR_MUX.result[8]
+RAS <= scopevram:b2v_STATE_MACHINE.RAS
+CAS <= scopevram:b2v_STATE_MACHINE.CAS
+TRG <= scopevram:b2v_STATE_MACHINE.TRG
+WE <= scopevram:b2v_STATE_MACHINE.WE
+BUSY <= scopevram:b2v_STATE_MACHINE.BUSY
+ADDR[0] <= lpm_mux0:b2v_ADDR_MUX.result[0]
+ADDR[1] <= lpm_mux0:b2v_ADDR_MUX.result[1]
+ADDR[2] <= lpm_mux0:b2v_ADDR_MUX.result[2]
+ADDR[3] <= lpm_mux0:b2v_ADDR_MUX.result[3]
+ADDR[4] <= lpm_mux0:b2v_ADDR_MUX.result[4]
+ADDR[5] <= lpm_mux0:b2v_ADDR_MUX.result[5]
+ADDR[6] <= lpm_mux0:b2v_ADDR_MUX.result[6]
+ADDR[7] <= lpm_mux0:b2v_ADDR_MUX.result[7]
+ADDR[8] <= lpm_mux0:b2v_ADDR_MUX.result[8]
 
 
 |oscilloscope|lpm_mux0:b2v_ADDR_MUX
@@ -279,6 +280,54 @@ sel[1] => _.IN0
 sel[1] => _.IN0
 sel[1] => _.IN0
 sel[1] => _.IN0
+
+
+|oscilloscope|lpm_constant1:b2v_inst
+result[0] <= lpm_constant:LPM_CONSTANT_component.result[0]
+result[1] <= lpm_constant:LPM_CONSTANT_component.result[1]
+result[2] <= lpm_constant:LPM_CONSTANT_component.result[2]
+result[3] <= lpm_constant:LPM_CONSTANT_component.result[3]
+result[4] <= lpm_constant:LPM_CONSTANT_component.result[4]
+result[5] <= lpm_constant:LPM_CONSTANT_component.result[5]
+result[6] <= lpm_constant:LPM_CONSTANT_component.result[6]
+result[7] <= lpm_constant:LPM_CONSTANT_component.result[7]
+result[8] <= lpm_constant:LPM_CONSTANT_component.result[8]
+
+
+|oscilloscope|lpm_constant1:b2v_inst|lpm_constant:LPM_CONSTANT_component
+result[0] <= <VCC>
+result[1] <= <GND>
+result[2] <= <VCC>
+result[3] <= <GND>
+result[4] <= <VCC>
+result[5] <= <GND>
+result[6] <= <VCC>
+result[7] <= <GND>
+result[8] <= <VCC>
+
+
+|oscilloscope|lpm_constant2:b2v_inst4
+result[0] <= lpm_constant:LPM_CONSTANT_component.result[0]
+result[1] <= lpm_constant:LPM_CONSTANT_component.result[1]
+result[2] <= lpm_constant:LPM_CONSTANT_component.result[2]
+result[3] <= lpm_constant:LPM_CONSTANT_component.result[3]
+result[4] <= lpm_constant:LPM_CONSTANT_component.result[4]
+result[5] <= lpm_constant:LPM_CONSTANT_component.result[5]
+result[6] <= lpm_constant:LPM_CONSTANT_component.result[6]
+result[7] <= lpm_constant:LPM_CONSTANT_component.result[7]
+result[8] <= lpm_constant:LPM_CONSTANT_component.result[8]
+
+
+|oscilloscope|lpm_constant2:b2v_inst4|lpm_constant:LPM_CONSTANT_component
+result[0] <= <GND>
+result[1] <= <VCC>
+result[2] <= <VCC>
+result[3] <= <GND>
+result[4] <= <GND>
+result[5] <= <VCC>
+result[6] <= <VCC>
+result[7] <= <GND>
+result[8] <= <GND>
 
 
 |oscilloscope|lpm_counter1:b2v_ROW_TRANSFER_COUNTER
