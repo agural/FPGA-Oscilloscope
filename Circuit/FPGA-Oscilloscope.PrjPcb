@@ -32,7 +32,7 @@ ReportSuppressedErrorsInMessages=0
 OutputPath=
 
 [Document1]
-DocumentPath=FPGA-Oscilloscope.PcbDoc
+DocumentPath=FPGA-Oscilloscope-route-01.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
