@@ -1,23 +1,23 @@
  x Capacitors for all chips: especially need 1uF + 0.1uF for VRAM
  - Analog frontend (variable gain)
- - Optimize pin-pin mappings to reduce crossing traces
- - Flash programmer
+ x Optimize pin-pin mappings to reduce crossing traces
+ x Flash programmer
  x Smaller voltage regulator?
  x Add IC socket section + power and wire-wrap holes
- - Add voltage sense pins
- - Add holes for standoffs
- - Increase board size
- - USB? Probably not...
- - Leave adequate space for JTAG connector
- - Add latching power switch
- - 5V Regulated supply for VRAM
+ x Add voltage sense pins
+ x Add holes for standoffs
+ x Increase board size
+ x USB? Probably not...
+ x Leave adequate space for JTAG connector
+ x Add latching power switch
+ x 5V Regulated supply for VRAM
  - Check footprints for:
     - diodes
     - pushbutton switches
     - latching pushbutton switches
     - display (correct spacing apart from each other?)
 
- - Autorouter:
-    - power trace 30 mil
-    - signal trace 10 mil
-    - via 30 mil outer x 15 mil inner
+ x Autorouter:
+    x power trace 30 mil
+    x signal trace 10 mil
+    x via 30 mil outer x 15 mil inner
