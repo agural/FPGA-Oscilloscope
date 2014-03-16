@@ -10,6 +10,7 @@
  - USB? Probably not...
  - Leave adequate space for JTAG connector
  - Add latching power switch
+ - 5V Regulated supply for VRAM
  - Check footprints for:
     - diodes
     - pushbutton switches
