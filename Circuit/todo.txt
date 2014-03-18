@@ -1,5 +1,4 @@
  x Capacitors for all chips: especially need 1uF + 0.1uF for VRAM
- - Analog frontend (variable gain)
  x Optimize pin-pin mappings to reduce crossing traces
  x Flash programmer
  x Smaller voltage regulator?
@@ -21,3 +20,7 @@
     x power trace 30 mil
     x signal trace 10 mil
     x via 30 mil outer x 15 mil inner
+
+
+ X Display connector footprint is backwards
+ X Analog frontend (variable gain)
