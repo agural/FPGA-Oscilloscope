@@ -1,382 +1,676 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\Circuit\FPGA-Oscilloscope-route-01.PcbDoc
-Date     : 3/16/2014
-Time     : 3:41:06 PM
-
-Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
-   Violation between Pad U18-(12685mil,8800mil)  Top Layer and 
-                     Pad U18-(12820mil,8800mil)  Top Layer
-   Violation between Pad U9-(12820mil,10600mil)  Top Layer and 
-                     Pad U9-(12685mil,10600mil)  Top Layer
-   Violation between Pad U12-(12820mil,9400mil)  Top Layer and 
-                     Pad U12-(12685mil,9400mil)  Top Layer
-   Violation between Pad U13-(12820mil,10000mil)  Top Layer and 
-                     Pad U13-(12685mil,10000mil)  Top Layer
-Rule Violations :4
-
-Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net NetD2_1 Between Pad U19-11 (18900,8896.85mil) And Pad D4-2 (19007.874,8011.418mil)
-   Violation between Un-Routed Net Constraint: Net AB5 Between Track on layer Top Layer (14869.8,9585.586mil) And Track on layer Bottom Layer (14869.8,9585.586mil)
-   Violation between Un-Routed Net Constraint: Net ADCCLK Between Pad U7-2 (18390,10880.316mil) And Pad U19-14 (18978.74,8975.59mil)
-   Violation between Un-Routed Net Constraint: Net VCC Between Pad U19-13 (18959.056,8975.59mil) And Pad U19-15 (18998.426,8975.59mil)
-Rule Violations :4
-
-Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
-Rule Violations :0
-
-Processing Rule : Hole Size Constraint (Min=1mil) (Max=200mil) (All)
-Rule Violations :0
-
-Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
-   Violation between Via (16283.466mil,9159mil) Top Layer to Bottom Layer and 
-                     Via (16283mil,9159mil) Top Layer to Bottom Layer
-   Violation between Via (15149mil,8173mil) Top Layer to Bottom Layer and 
-                     Via (15134.644mil,8163mil) Top Layer to Bottom Layer
-Rule Violations :2
-
-Processing Rule : Minimum Solder Mask Sliver (Gap=1.5mil) (All),(All)
-   Violation between Via (16227.56mil,9159mil) Top Layer to Bottom Layer and 
-                     Pad C4-1(16227.56mil,9200mil)  Top Layer
-   Violation between Via (18850mil,8580mil) Top Layer to Bottom Layer and 
-                     Pad C59-2(18877.56mil,8620mil)  Top Layer
-   Violation between Via (18850mil,8580mil) Top Layer to Bottom Layer and 
-                     Pad C59-1(18822.442mil,8620mil)  Top Layer
-   Violation between Via (14355mil,9077mil) Top Layer to Bottom Layer and 
-                     Pad U17-52(14311.81mil,9077.954mil)  Top Layer
-   Violation between Via (14842mil,9414mil) Top Layer to Bottom Layer and 
-                     Pad U17-24(14800mil,9424.41mil)  Top Layer
-   Violation between Via (14757mil,8734mil) Top Layer to Bottom Layer and 
-                     Pad U17-2(14800mil,8731.496mil)  Top Layer
-   Violation between Via (14806mil,8669mil) Top Layer to Bottom Layer and 
-                     Pad U17-1(14800mil,8700mil)  Top Layer
-   Violation between Via (15428mil,7466mil) Top Layer to Bottom Layer and 
-                     Pad R53-2(15400mil,7427.56mil)  Top Layer
-   Violation between Via (14118mil,9458mil) Top Layer to Bottom Layer and 
-                     Pad R62-1(14127.558mil,9500mil)  Top Layer
-   Violation between Via (17170mil,10295mil) Top Layer to Bottom Layer and 
-                     Pad C32-2(17197.56mil,10335mil)  Top Layer
-   Violation between Via (17170mil,10295mil) Top Layer to Bottom Layer and 
-                     Pad C32-1(17142.44mil,10335mil)  Top Layer
-   Violation between Via (16504mil,9984mil) Top Layer to Bottom Layer and 
-                     Pad C35-2(16545mil,9982.44mil)  Top Layer
-   Violation between Via (16915mil,11002.4mil) Top Layer to Bottom Layer and 
-                     Pad C25-2(16920mil,10962.56mil)  Top Layer
-   Violation between Via (16879mil,10985mil) Top Layer to Bottom Layer and 
-                     Pad C25-2(16920mil,10962.56mil)  Top Layer
-   Violation between Via (15222mil,8232mil) Top Layer to Bottom Layer and 
-                     Pad U16-26(15233.07mil,8291.338mil)  Top Layer
-   Violation between Via (15222mil,8232mil) Top Layer to Bottom Layer and 
-                     Pad U16-27(15213.384mil,8291.338mil)  Top Layer
-   Violation between Via (14949mil,8232mil) Top Layer to Bottom Layer and 
-                     Pad U16-40(14957.48mil,8291.338mil)  Top Layer
-   Violation between Via (14937.794mil,8352mil) Top Layer to Bottom Layer and 
-                     Pad U16-41(14937.794mil,8291.338mil)  Top Layer
-   Violation between Via (14949mil,8232mil) Top Layer to Bottom Layer and 
-                     Pad U16-41(14937.794mil,8291.338mil)  Top Layer
-   Violation between Via (14903mil,8231mil) Top Layer to Bottom Layer and 
-                     Pad U16-43(14898.424mil,8291.338mil)  Top Layer
-   Violation between Via (17143mil,10744mil) Top Layer to Bottom Layer and 
-                     Pad C19-1(17142.442mil,10785mil)  Top Layer
-   Violation between Via (16307mil,10074mil) Top Layer to Bottom Layer and 
-                     Pad C16-1(16272.558mil,10110mil)  Top Layer
-   Violation between Via (17288mil,12130mil) Top Layer to Bottom Layer and 
-                     Pad J7-9(17250mil,12100mil)  Multi-Layer
-   Violation between Via (14736mil,9741mil) Top Layer to Bottom Layer and 
-                     Pad C50-2(14727.558mil,9700mil)  Bottom Layer
-   Violation between Via (16843mil,7802mil) Top Layer to Bottom Layer and 
-                     Pad U15-20(16836.22mil,7844.094mil)  Bottom Layer
-   Violation between Via (16746mil,7802mil) Top Layer to Bottom Layer and 
-                     Pad U15-25(16737.794mil,7844.094mil)  Bottom Layer
-   Violation between Via (16628mil,8642mil) Top Layer to Bottom Layer and 
-                     Pad U15-2(16619.684mil,8600mil)  Bottom Layer
-   Violation between Via (17489mil,8003mil) Top Layer to Bottom Layer and 
-                     Pad U14-27(17498.426mil,7960.63mil)  Bottom Layer
-   Violation between Via (17489mil,8003mil) Top Layer to Bottom Layer and 
-                     Pad U14-28(17478.74mil,7960.63mil)  Bottom Layer
-   Violation between Via (16636mil,11061mil) Top Layer to Bottom Layer and 
-                     Pad U4-207(16647.56mil,11132.834mil)  Bottom Layer
-   Violation between Via (15991mil,11012mil) Top Layer to Bottom Layer and 
-                     Pad U4-178(16062.914mil,11020.63mil)  Bottom Layer
-   Violation between Via (15991mil,11012mil) Top Layer to Bottom Layer and 
-                     Pad U4-177(16062.914mil,11000.944mil)  Bottom Layer
-   Violation between Via (16135.844mil,10969.844mil) Top Layer to Bottom Layer and 
-                     Pad U4-175(16062.914mil,10961.574mil)  Bottom Layer
-   Violation between Via (16293.23mil,9899mil) Top Layer to Bottom Layer and 
-                     Pad U4-112(16293.23mil,9825.748mil)  Bottom Layer
-   Violation between Via (16380mil,9898mil) Top Layer to Bottom Layer and 
-                     Pad U4-108(16371.97mil,9825.748mil)  Bottom Layer
-   Violation between Via (16459mil,9753mil) Top Layer to Bottom Layer and 
-                     Pad U4-104(16450.71mil,9825.748mil)  Bottom Layer
-   Violation between Via (16470.394mil,9899mil) Top Layer to Bottom Layer and 
-                     Pad U4-103(16470.394mil,9825.748mil)  Bottom Layer
-   Violation between Via (16560mil,9754mil) Top Layer to Bottom Layer and 
-                     Pad U4-99(16549.134mil,9825.748mil)  Bottom Layer
-   Violation between Via (16560mil,9754mil) Top Layer to Bottom Layer and 
-                     Pad U4-98(16568.82mil,9825.748mil)  Bottom Layer
-   Violation between Via (16778mil,9898mil) Top Layer to Bottom Layer and 
-                     Pad U4-87(16785.356mil,9825.748mil)  Bottom Layer
-   Violation between Via (16777mil,9753mil) Top Layer to Bottom Layer and 
-                     Pad U4-87(16785.356mil,9825.748mil)  Bottom Layer
-   Violation between Via (16872.2mil,9898mil) Top Layer to Bottom Layer and 
-                     Pad U4-83(16864.096mil,9825.748mil)  Bottom Layer
-   Violation between Via (16915mil,9898mil) Top Layer to Bottom Layer and 
-                     Pad U4-80(16923.15mil,9825.748mil)  Bottom Layer
-   Violation between Via (17100.316mil,9899mil) Top Layer to Bottom Layer and 
-                     Pad U4-71(17100.316mil,9825.748mil)  Bottom Layer
-   Violation between Via (17145mil,9899mil) Top Layer to Bottom Layer and 
-                     Pad U4-69(17139.686mil,9825.748mil)  Bottom Layer
-   Violation between Via (17207mil,9898mil) Top Layer to Bottom Layer and 
-                     Pad U4-66(17198.74mil,9825.748mil)  Bottom Layer
-   Violation between Via (17207mil,9898mil) Top Layer to Bottom Layer and 
-                     Pad U4-65(17218.426mil,9825.748mil)  Bottom Layer
-   Violation between Via (17210mil,9753mil) Top Layer to Bottom Layer and 
-                     Pad U4-65(17218.426mil,9825.748mil)  Bottom Layer
-   Violation between Via (17298mil,10105mil) Top Layer to Bottom Layer and 
-                     Pad U4-50(17370mil,10095.434mil)  Bottom Layer
-   Violation between Via (17298mil,10105mil) Top Layer to Bottom Layer and 
-                     Pad U4-49(17370mil,10115.118mil)  Bottom Layer
-   Violation between Via (17297mil,10422mil) Top Layer to Bottom Layer and 
-                     Pad U4-33(17370mil,10430.078mil)  Bottom Layer
-   Violation between Via (17438mil,10431mil) Top Layer to Bottom Layer and 
-                     Pad U4-32(17370mil,10449.764mil)  Bottom Layer
-   Violation between Via (17298mil,10577mil) Top Layer to Bottom Layer and 
-                     Pad U4-26(17370mil,10567.874mil)  Bottom Layer
-   Violation between Via (17298mil,10577mil) Top Layer to Bottom Layer and 
-                     Pad U4-25(17370mil,10587.56mil)  Bottom Layer
-   Violation between Via (17297mil,10809mil) Top Layer to Bottom Layer and 
-                     Pad U4-14(17370mil,10804.094mil)  Bottom Layer
-   Violation between Via (18038mil,10461mil) Top Layer to Bottom Layer and 
-                     Pad U7-26(18098.662mil,10466.93mil)  Bottom Layer
-   Violation between Via (16413mil,9452mil) Top Layer to Bottom Layer and 
-                     Pad U2-44(16421.26mil,9391.338mil)  Bottom Layer
-   Violation between Via (16193mil,9451mil) Top Layer to Bottom Layer and 
-                     Pad U2-32(16185.04mil,9391.338mil)  Bottom Layer
-   Violation between Via (15307mil,10237mil) Top Layer to Bottom Layer and 
-                     Pad U6-44(15366.338mil,10228.74mil)  Bottom Layer
-   Violation between Via (15307mil,10237mil) Top Layer to Bottom Layer and 
-                     Pad U6-43(15366.338mil,10248.426mil)  Bottom Layer
-   Violation between Via (17251mil,9332mil) Top Layer to Bottom Layer and 
-                     Pad U5-41(17262.206mil,9391.338mil)  Bottom Layer
-   Violation between Via (17251mil,9332mil) Top Layer to Bottom Layer and 
-                     Pad U5-40(17242.52mil,9391.338mil)  Bottom Layer
-   Violation between Via (17192mil,9332mil) Top Layer to Bottom Layer and 
-                     Pad U5-38(17203.15mil,9391.338mil)  Bottom Layer
-   Violation between Via (17192mil,9332mil) Top Layer to Bottom Layer and 
-                     Pad U5-37(17183.466mil,9391.338mil)  Bottom Layer
-   Violation between Via (17132mil,9451mil) Top Layer to Bottom Layer and 
-                     Pad U5-34(17124.41mil,9391.338mil)  Bottom Layer
-   Violation between Via (17094mil,9332mil) Top Layer to Bottom Layer and 
-                     Pad U5-33(17104.726mil,9391.338mil)  Bottom Layer
-   Violation between Via (17094mil,9451mil) Top Layer to Bottom Layer and 
-                     Pad U5-33(17104.726mil,9391.338mil)  Bottom Layer
-   Violation between Via (17094mil,9332mil) Top Layer to Bottom Layer and 
-                     Pad U5-32(17085.04mil,9391.338mil)  Bottom Layer
-   Violation between Via (17094mil,9451mil) Top Layer to Bottom Layer and 
-                     Pad U5-32(17085.04mil,9391.338mil)  Bottom Layer
-   Violation between Via (17038mil,9331mil) Top Layer to Bottom Layer and 
-                     Pad U5-30(17045.67mil,9391.338mil)  Bottom Layer
-   Violation between Via (17313mil,9040mil) Top Layer to Bottom Layer and 
-                     Pad U5-5(17321.26mil,9100mil)  Bottom Layer
-   Violation between Via (17338mil,9161mil) Top Layer to Bottom Layer and 
-                     Pad U5-4(17340.946mil,9100mil)  Bottom Layer
-   Violation between Via (17369mil,9040mil) Top Layer to Bottom Layer and 
-                     Pad U5-3(17360.63mil,9100mil)  Bottom Layer
-   Violation between Via (16354mil,11600mil) Top Layer to Bottom Layer and 
-                     Pad U3-15(16345.59mil,11660mil)  Bottom Layer
-   Violation between Via (16196mil,11720mil) Top Layer to Bottom Layer and 
-                     Pad U3-7(16188.11mil,11660mil)  Bottom Layer
-   Violation between Via (17553.546mil,10749mil) Top Layer to Bottom Layer and 
-                     Pad R19-2(17592.442mil,10720mil)  Bottom Layer
-   Violation between Via (17313mil,9564.818mil) Top Layer to Bottom Layer and 
-                     Pad R27-2(17352.442mil,9540mil)  Bottom Layer
-   Violation between Via (19273mil,8863mil) Top Layer to Bottom Layer and 
-                     Pad U19-27(19234.646mil,8877.166mil)  Bottom Layer
-   Violation between Via (18931mil,8964mil) Top Layer to Bottom Layer and 
-                     Pad U19-13(18959.056mil,8975.59mil)  Bottom Layer
-   Violation between Via (14762mil,9450mil) Top Layer to Bottom Layer and 
-                     Via (14762mil,9489mil) Top Layer to Bottom Layer
-   Violation between Via (17038mil,9331mil) Top Layer to Bottom Layer and 
-                     Via (17065.8mil,9303.336mil) Top Layer to Bottom Layer
-   Violation between Via (16406mil,11054mil) Top Layer to Bottom Layer and 
-                     Via (16444mil,11057mil) Top Layer to Bottom Layer
-   Violation between Via (17547mil,11033mil) Top Layer to Bottom Layer and 
-                     Via (17526mil,11000.63mil) Top Layer to Bottom Layer
-   Violation between Via (15249mil,10557mil) Top Layer to Bottom Layer and 
-                     Via (15276.8mil,10584.8mil) Top Layer to Bottom Layer
-   Violation between Via (18198mil,9858mil) Top Layer to Bottom Layer and 
-                     Via (18197.464mil,9896.8mil) Top Layer to Bottom Layer
-   Violation between Via (17438mil,10431mil) Top Layer to Bottom Layer and 
-                     Via (17455mil,10466mil) Top Layer to Bottom Layer
-   Violation between Via (16777mil,9753mil) Top Layer to Bottom Layer and 
-                     Via (16764mil,9716mil) Top Layer to Bottom Layer
-   Violation between Via (14866mil,9340mil) Top Layer to Bottom Layer and 
-                     Via (14870mil,9378mil) Top Layer to Bottom Layer
-   Violation between Via (16266mil,9660mil) Top Layer to Bottom Layer and 
-                     Via (16301mil,9676mil) Top Layer to Bottom Layer
-   Violation between Via (18248mil,10513mil) Top Layer to Bottom Layer and 
-                     Via (18210mil,10506.3mil) Top Layer to Bottom Layer
-   Violation between Via (16380mil,9898mil) Top Layer to Bottom Layer and 
-                     Via (16345mil,9916mil) Top Layer to Bottom Layer
-Rule Violations :91
-
-Processing Rule : Silk To Solder Mask (Clearance=10mil) (Disabled)(IsPad),(All)
-Rule Violations :0
-
-Processing Rule : Silk to Silk (Clearance=10mil) (Disabled)(All),(All)
-Rule Violations :0
-
-Processing Rule : Net Antennae (Tolerance=0mil) (All)
-   Violation between Net Antennae: Track (14869.8mil,9585.586mil)(14869.8mil,9597.262mil)  Top Layer
-Rule Violations :1
-
-Processing Rule : Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)
-   Violation between Width Constraint: Track (18959.056mil,8950mil)(18959.056mil,8975.59mil)  Bottom Layer
-   Violation between Width Constraint: Track (18959.056mil,8640.944mil)(18959.056mil,8950mil)  Bottom Layer
-   Violation between Width Constraint: Track (19260mil,8857.48mil)(19267.48mil,8857.48mil)  Bottom Layer
-   Violation between Width Constraint: Track (19234.646mil,8857.48mil)(19260mil,8857.48mil)  Bottom Layer
-   Violation between Width Constraint: Track (19260mil,8857.48mil)(19273mil,8844.48mil)  Bottom Layer
-   Violation between Width Constraint: Track (18959.056mil,8612mil)(18959.056mil,8639mil)  Bottom Layer
-   Violation between Width Constraint: Track (18921mil,8639mil)(18959.056mil,8639mil)  Bottom Layer
-   Violation between Width Constraint: Track (19206mil,8824mil)(19206mil,8837.796mil)  Bottom Layer
-   Violation between Width Constraint: Track (19206mil,8778.74mil)(19206mil,8824mil)  Bottom Layer
-   Violation between Width Constraint: Track (18929mil,8739.37mil)(18929mil,8877.166mil)  Bottom Layer
-   Violation between Width Constraint: Track (18959.056mil,8612mil)(18998.426mil,8612mil)  Bottom Layer
-   Violation between Width Constraint: Track (18998.426mil,8612mil)(18998.426mil,8640.944mil)  Bottom Layer
-   Violation between Width Constraint: Track (18959.056mil,8639mil)(18959.056mil,8640.944mil)  Bottom Layer
-   Violation between Width Constraint: Track (18900mil,8877.166mil)(18929mil,8877.166mil)  Bottom Layer
-   Violation between Width Constraint: Track (18902mil,8702mil)(18929mil,8702mil)  Bottom Layer
-   Violation between Width Constraint: Track (18900mil,8700mil)(18902mil,8702mil)  Bottom Layer
-   Violation between Width Constraint: Track (19057.48mil,8975.59mil)(19057.48mil,9023.288mil)  Bottom Layer
-   Violation between Width Constraint: Track (19096.85mil,8975.59mil)(19096.85mil,9120mil)  Bottom Layer
-   Violation between Width Constraint: Track (19077.166mil,8600mil)(19077.166mil,8640.944mil)  Bottom Layer
-   Violation between Width Constraint: Track (19096.85mil,8567.85mil)(19096.85mil,8640.944mil)  Bottom Layer
-   Violation between Width Constraint: Track (19155.906mil,8480mil)(19155.906mil,8640.944mil)  Bottom Layer
-   Violation between Width Constraint: Track (18866mil,8719.686mil)(18900mil,8719.686mil)  Bottom Layer
-   Violation between Width Constraint: Track (19136.22mil,8975.59mil)(19136.22mil,9223.78mil)  Bottom Layer
-   Violation between Width Constraint: Track (19261mil,8818.11mil)(19273mil,8830.11mil)  Bottom Layer
-   Violation between Width Constraint: Track (19234.646mil,8818.11mil)(19261mil,8818.11mil)  Bottom Layer
-   Violation between Width Constraint: Track (19077.166mil,8975.59mil)(19077.166mil,9045.834mil)  Bottom Layer
-   Violation between Width Constraint: Track (19116.536mil,8975.59mil)(19116.536mil,9140mil)  Bottom Layer
-   Violation between Width Constraint: Track (19018.11mil,8640.944mil)(19018.11mil,8975.59mil)  Bottom Layer
-   Violation between Width Constraint: Track (19155.906mil,9003.906mil)(19166mil,9014mil)  Bottom Layer
-   Violation between Width Constraint: Track (19155.906mil,8975.59mil)(19155.906mil,9003.906mil)  Bottom Layer
-   Violation between Width Constraint: Track (19057.48mil,8660mil)(19077.48mil,8680mil)  Bottom Layer
-   Violation between Width Constraint: Track (19057.48mil,8640.944mil)(19057.48mil,8660mil)  Bottom Layer
-   Violation between Width Constraint: Track (19267.48mil,8857.48mil)(19273mil,8863mil)  Bottom Layer
-   Violation between Width Constraint: Track (19145mil,8937mil)(19154mil,8946mil)  Bottom Layer
-   Violation between Width Constraint: Track (19154mil,8946mil)(19175.59mil,8946mil)  Bottom Layer
-   Violation between Width Constraint: Track (19175.59mil,8946mil)(19175.59mil,8975.59mil)  Bottom Layer
-   Violation between Width Constraint: Track (18877.574mil,8798.426mil)(18900mil,8798.426mil)  Bottom Layer
-   Violation between Width Constraint: Track (18866mil,8810mil)(18877.574mil,8798.426mil)  Bottom Layer
-   Violation between Width Constraint: Track (18900mil,8739.37mil)(18929mil,8739.37mil)  Bottom Layer
-   Violation between Width Constraint: Track (18929mil,8702mil)(18929mil,8739.37mil)  Bottom Layer
-   Violation between Width Constraint: Track (18891mil,9005mil)(19037.796mil,9005mil)  Bottom Layer
-   Violation between Width Constraint: Track (19037.796mil,8975.59mil)(19037.796mil,9005mil)  Bottom Layer
-   Violation between Width Constraint: Track (19136.22mil,8545.298mil)(19136.22mil,8640.944mil)  Bottom Layer
-   Violation between Width Constraint: Track (19175.59mil,8332mil)(19175.59mil,8640.944mil)  Bottom Layer
-   Violation between Width Constraint: Track (19116.536mil,8560.078mil)(19116.536mil,8640.944mil)  Bottom Layer
-   Violation between Width Constraint: Track (18944.83mil,8935.774mil)(18959.056mil,8950mil)  Bottom Layer
-   Violation between Width Constraint: Track (19037.796mil,8640.944mil)(19037.796mil,8777.796mil)  Bottom Layer
-   Violation between Width Constraint: Track (19206mil,8778.74mil)(19234.646mil,8778.74mil)  Bottom Layer
-   Violation between Width Constraint: Track (19018.11mil,8594mil)(19018.11mil,8640.944mil)  Bottom Layer
-   Violation between Width Constraint: Track (18877.856mil,8609.098mil)(18877.856mil,8677.856mil)  Bottom Layer
-   Violation between Width Constraint: Track (18877.856mil,8677.856mil)(18900mil,8700mil)  Bottom Layer
-   Violation between Width Constraint: Track (18861.8mil,8759.056mil)(18900mil,8759.056mil)  Bottom Layer
-   Violation between Width Constraint: Track (19234.646mil,8798.426mil)(19261.69mil,8798.426mil)  Bottom Layer
-   Violation between Width Constraint: Track (19261.69mil,8798.426mil)(19263.116mil,8797mil)  Bottom Layer
-   Violation between Width Constraint: Track (19263.116mil,8761mil)(19263.116mil,8797mil)  Bottom Layer
-   Violation between Width Constraint: Track (19261.172mil,8759.056mil)(19263.116mil,8761mil)  Bottom Layer
-   Violation between Width Constraint: Track (19234.646mil,8759.056mil)(19261.172mil,8759.056mil)  Bottom Layer
-   Violation between Width Constraint: Track (18777.558mil,8837.796mil)(18900mil,8837.796mil)  Bottom Layer
-   Violation between Width Constraint: Track (18851.52mil,8857.48mil)(18900mil,8857.48mil)  Bottom Layer
-   Violation between Width Constraint: Track (19206mil,8837.796mil)(19234.646mil,8837.796mil)  Bottom Layer
-   Violation between Width Constraint: Track (19206mil,8739.37mil)(19206mil,8778.74mil)  Bottom Layer
-   Violation between Width Constraint: Track (19206mil,8739.37mil)(19234.646mil,8739.37mil)  Bottom Layer
-   Violation between Width Constraint: Track (19206mil,8837.796mil)(19206mil,8877.166mil)  Bottom Layer
-   Violation between Width Constraint: Track (19206mil,8877.166mil)(19234.646mil,8877.166mil)  Bottom Layer
-   Violation between Width Constraint: Track (18871mil,8877.166mil)(18900mil,8877.166mil)  Bottom Layer
-   Violation between Width Constraint: Track (18871mil,8877.166mil)(18871mil,8916.536mil)  Bottom Layer
-   Violation between Width Constraint: Track (18871mil,8916.536mil)(18900mil,8916.536mil)  Bottom Layer
-   Violation between Width Constraint: Track (15281.89mil,7534mil)(15281.89mil,7568.78mil)  Top Layer
-   Violation between Width Constraint: Track (15025.986mil,7600mil)(15025.986mil,7892.83mil)  Top Layer
-   Violation between Width Constraint: Track (15045.67mil,7600mil)(15045.67mil,7903.864mil)  Top Layer
-   Violation between Width Constraint: Track (15065.356mil,7600mil)(15065.356mil,7931.644mil)  Top Layer
-   Violation between Width Constraint: Track (15104.726mil,7600mil)(15104.726mil,7660.726mil)  Top Layer
-   Violation between Width Constraint: Track (15242.52mil,7600mil)(15242.52mil,7634.806mil)  Top Layer
-   Violation between Width Constraint: Track (15242.52mil,7634.806mil)(15261.534mil,7653.82mil)  Top Layer
-   Violation between Width Constraint: Track (15279.334mil,7639.904mil)(15279.334mil,7939.602mil)  Top Layer
-   Violation between Width Constraint: Track (15262.206mil,7622.776mil)(15279.334mil,7639.904mil)  Top Layer
-   Violation between Width Constraint: Track (15262.206mil,7600mil)(15262.206mil,7622.776mil)  Top Layer
-   Violation between Width Constraint: Track (15340.946mil,7600mil)(15340.946mil,7638mil)  Top Layer
-   Violation between Width Constraint: Track (15340.946mil,7638mil)(15420mil,7638mil)  Top Layer
-   Violation between Width Constraint: Track (14829.136mil,7556.864mil)(14838mil,7548mil)  Top Layer
-   Violation between Width Constraint: Track (14829.136mil,7556.864mil)(14829.136mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (14789.766mil,7552.298mil)(14789.766mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (14770.08mil,7600mil)(14770.08mil,7624.92mil)  Top Layer
-   Violation between Width Constraint: Track (14726mil,7669mil)(14770.08mil,7624.92mil)  Top Layer
-   Violation between Width Constraint: Track (15006.3mil,7560mil)(15006.3mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (15006.3mil,7560mil)(15016.89mil,7549.41mil)  Top Layer
-   Violation between Width Constraint: Track (15100mil,7549.41mil)(15124.41mil,7573.82mil)  Top Layer
-   Violation between Width Constraint: Track (15124.41mil,7573.82mil)(15124.41mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (14848.82mil,7600mil)(14848.82mil,7648.18mil)  Top Layer
-   Violation between Width Constraint: Track (14694.734mil,7652.292mil)(14711.026mil,7636mil)  Top Layer
-   Violation between Width Constraint: Track (14711.026mil,7600mil)(14711.026mil,7636mil)  Top Layer
-   Violation between Width Constraint: Track (15400mil,7567mil)(15400mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (15400mil,7567mil)(15440mil,7527mil)  Top Layer
-   Violation between Width Constraint: Track (15183.466mil,7600mil)(15183.466mil,7683.32mil)  Top Layer
-   Violation between Width Constraint: Track (15222.836mil,7600mil)(15222.836mil,7652.068mil)  Top Layer
-   Violation between Width Constraint: Track (15085.04mil,7600mil)(15085.04mil,7748.04mil)  Top Layer
-   Violation between Width Constraint: Track (15203.15mil,7600mil)(15203.15mil,7667.982mil)  Top Layer
-   Violation between Width Constraint: Track (14809.45mil,7510.454mil)(14809.45mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (14868.506mil,7600mil)(14868.506mil,7716.494mil)  Top Layer
-   Violation between Width Constraint: Track (14947.246mil,7600mil)(14947.246mil,7786.542mil)  Top Layer
-   Violation between Width Constraint: Track (14986.616mil,7600mil)(14986.616mil,7795mil)  Top Layer
-   Violation between Width Constraint: Track (14927.56mil,7600mil)(14927.56mil,7802.56mil)  Top Layer
-   Violation between Width Constraint: Track (14888.19mil,7600mil)(14888.19mil,7742.81mil)  Top Layer
-   Violation between Width Constraint: Track (14750.396mil,7550.396mil)(14750.396mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (14848.82mil,7575.18mil)(14848.82mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (14848.82mil,7575.18mil)(14860mil,7564mil)  Top Layer
-   Violation between Width Constraint: Track (14860mil,7564mil)(14966.93mil,7564mil)  Top Layer
-   Violation between Width Constraint: Track (14966.93mil,7564mil)(14966.93mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (15281.89mil,7568.78mil)(15281.89mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (15260mil,7546.89mil)(15281.89mil,7568.78mil)  Top Layer
-   Violation between Width Constraint: Track (15163.78mil,7560mil)(15176.89mil,7546.89mil)  Top Layer
-   Violation between Width Constraint: Track (15163.78mil,7560mil)(15163.78mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (15360.63mil,7574.63mil)(15360.63mil,7600mil)  Top Layer
-   Violation between Width Constraint: Track (15350mil,7564mil)(15360.63mil,7574.63mil)  Top Layer
-   Violation between Width Constraint: Track (15321.26mil,7564mil)(15350mil,7564mil)  Top Layer
-   Violation between Width Constraint: Track (15321.26mil,7564mil)(15321.26mil,7600mil)  Top Layer
-Rule Violations :116
-
-Processing Rule : Clearance Constraint (Gap=7.8mil) (All),(All)
-Rule Violations :0
-
-Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
-Rule Violations :0
-
-Processing Rule : Width Constraint (Min=30mil) (Max=30mil) (Preferred=30mil) ((InNet('GND') AND InNet('V12+') AND InNet('V12-') AND InNet('VCC') AND InNet('VCC5') AND InNet('VCCA') AND InNet('VCCINT')))
-Rule Violations :0
+Date     : 3/18/2014
+Time     : 4:26:06 AM
 
 Processing Rule : SMD Neck-Down Constraint (Percent=100%) (All)
    Violation between SMD Neck-Down Constraint Between Pad on TopLayer And Track on TopLayer
    Violation between SMD Neck-Down Constraint Between Pad on TopLayer And Track on TopLayer
-   Violation between SMD Neck-Down Constraint Between Pad on TopLayer And Track on TopLayer
-   Violation between SMD Neck-Down Constraint Between Pad on TopLayer And Track on TopLayer
-   Violation between SMD Neck-Down Constraint Between Pad on TopLayer And Track on TopLayer
-   Violation between SMD Neck-Down Constraint Between Pad on TopLayer And Track on TopLayer
-   Violation between SMD Neck-Down Constraint Between Pad on TopLayer And Track on TopLayer
-   Violation between SMD Neck-Down Constraint Between Pad on TopLayer And Track on TopLayer
-   Violation between SMD Neck-Down Constraint Between Pad on TopLayer And Track on TopLayer
-   Violation between SMD Neck-Down Constraint Between Pad on TopLayer And Track on TopLayer
-   Violation between SMD Neck-Down Constraint Between Pad on TopLayer And Track on TopLayer
    Violation between SMD Neck-Down Constraint Between Pad on BottomLayer And Track on BottomLayer
    Violation between SMD Neck-Down Constraint Between Pad on BottomLayer And Track on BottomLayer
    Violation between SMD Neck-Down Constraint Between Pad on BottomLayer And Track on BottomLayer
    Violation between SMD Neck-Down Constraint Between Pad on BottomLayer And Track on BottomLayer
-   Violation between SMD Neck-Down Constraint Between Pad on BottomLayer And Track on BottomLayer
-   Violation between SMD Neck-Down Constraint Between Pad on BottomLayer And Track on BottomLayer
+Rule Violations :6
+
+Processing Rule : Width Constraint (Min=30mil) (Max=30mil) (Preferred=30mil) ((InNet('GND') OR InNet('V12+') OR InNet('V12-') OR InNet('VCC') OR InNet('VCC5+') OR InNet('VCCA') OR InNet('VCCINT')))
+   Violation between Width Constraint: Track (14166.222mil,10840mil)(14176.222mil,10880.626mil)  Top Layer
+   Violation between Width Constraint: Pad J3-1(14176.222mil,10880.626mil)  Top Layer
+   Violation between Width Constraint: Track (14139mil,10840mil)(14166.222mil,10840mil)  Top Layer
+   Violation between Width Constraint: Track (13979mil,10680mil)(14139mil,10840mil)  Top Layer
+   Violation between Width Constraint: Track (19876.772mil,9250mil)(19876.772mil,9285mil)  Top Layer
+   Violation between Width Constraint: Track (19876.772mil,9285mil)(19893mil,9285mil)  Top Layer
+   Violation between Width Constraint: Track (19910.44mil,9302.44mil)(19930mil,9302.44mil)  Top Layer
+   Violation between Width Constraint: Pad U23-4(19876.772mil,9250mil)  Top Layer
+   Violation between Width Constraint: Track (19893mil,9285mil)(19910.44mil,9302.44mil)  Top Layer
+   Violation between Width Constraint: Track (19840.63mil,8767mil)(19840.63mil,8819.762mil)  Top Layer
+   Violation between Width Constraint: Track (20032.094mil,8246.842mil)(20032.094mil,8746mil)  Top Layer
+   Violation between Width Constraint: Track (19787.402mil,8767mil)(19787.402mil,8767.322mil)  Top Layer
+   Violation between Width Constraint: Pad U22-4(19787.402mil,8767.322mil)  Top Layer
+   Violation between Width Constraint: Track (19787.402mil,8767mil)(19840.63mil,8767mil)  Top Layer
+   Violation between Width Constraint: Track (19787.402mil,8714.598mil)(19787.402mil,8767mil)  Top Layer
+   Violation between Width Constraint: Pad D3-1(19984.252mil,8151.182mil)  Top Layer
+   Violation between Width Constraint: Track (20032.094mil,8199.024mil)(20032.094mil,8246.842mil)  Top Layer
+   Violation between Width Constraint: Track (19984.252mil,8151.182mil)(20032.094mil,8199.024mil)  Top Layer
+   Violation between Width Constraint: Pad U19-4(19177.402mil,9247.322mil)  Top Layer
+   Violation between Width Constraint: Track (19177.402mil,9199.598mil)(19177.402mil,9247.322mil)  Top Layer
+   Violation between Width Constraint: Track (19177.402mil,9282mil)(19230mil,9282mil)  Top Layer
+   Violation between Width Constraint: Track (19177.402mil,9247.322mil)(19177.402mil,9282mil)  Top Layer
+   Violation between Width Constraint: Track (19230mil,9282mil)(19230mil,9302.44mil)  Top Layer
+   Violation between Width Constraint: Track (19177.402mil,9199.598mil)(19203mil,9174mil)  Top Layer
+   Violation between Width Constraint Between Track on TopLayer And Track on TopLayer
+   Violation between Width Constraint: Track (19132.618mil,8732mil)(19196mil,8732mil)  Top Layer
+   Violation between Width Constraint: Pad U18-4(19086.772mil,8770mil)  Top Layer
+   Violation between Width Constraint: Track (19086.772mil,8794mil)(19130mil,8794mil)  Top Layer
+   Violation between Width Constraint: Track (19086.772mil,8732mil)(19132.618mil,8732mil)  Top Layer
+   Violation between Width Constraint: Track (19130mil,8794mil)(19140mil,8804mil)  Top Layer
+   Violation between Width Constraint: Track (19086.772mil,8732mil)(19086.772mil,8770mil)  Top Layer
+   Violation between Width Constraint: Track (19086.772mil,8770mil)(19086.772mil,8794mil)  Top Layer
+   Violation between Width Constraint: Track (19140mil,8804mil)(19140mil,8822.44mil)  Top Layer
+   Violation between Width Constraint: Pad D1-1(19084.252mil,8151.182mil)  Top Layer
+   Violation between Width Constraint: Track (19084.252mil,8151mil)(19084.252mil,8151.182mil)  Top Layer
+   Violation between Width Constraint: Track (19084.252mil,8151mil)(19117mil,8151mil)  Top Layer
+   Violation between Width Constraint Between Track on TopLayer And Track on TopLayer
+   Violation between Width Constraint Between Track on TopLayer And Track on TopLayer
+   Violation between Width Constraint Between Track on TopLayer And Track on TopLayer
+   Violation between Width Constraint: Track (19804.59mil,9481mil)(19825.59mil,9460mil)  Top Layer
+   Violation between Width Constraint: Track (19825.59mil,9460mil)(19825.59mil,9606.59mil)  Top Layer
+   Violation between Width Constraint: Pad U23-7(19825.59mil,9415.354mil)  Top Layer
+   Violation between Width Constraint: Track (19825.59mil,9415.354mil)(19825.59mil,9460mil)  Top Layer
+   Violation between Width Constraint: Track (19126.22mil,9452.78mil)(19126.22mil,9480mil)  Top Layer
+   Violation between Width Constraint: Pad U19-7(19126.22mil,9412.678mil)  Top Layer
+   Violation between Width Constraint: Track (19126.22mil,9412.678mil)(19126.22mil,9452.78mil)  Top Layer
+   Violation between Width Constraint: Track (19100mil,9479mil)(19126.22mil,9452.78mil)  Top Layer
+   Violation between Width Constraint: Pad U22-7(19736.22mil,8932.678mil)  Top Layer
+   Violation between Width Constraint: Track (19716.22mil,9000mil)(19736.22mil,8980mil)  Top Layer
+   Violation between Width Constraint: Track (19736.22mil,8932.678mil)(19736.22mil,8980mil)  Top Layer
+   Violation between Width Constraint: Track (19858.33mil,8104mil)(19905.512mil,8151.182mil)  Top Layer
+   Violation between Width Constraint: Track (19694.818mil,8151.182mil)(19905.512mil,8151.182mil)  Top Layer
+   Violation between Width Constraint: Pad D3-2(19905.512mil,8151.182mil)  Top Layer
+   Violation between Width Constraint: Track (19005.512mil,8151.182mil)(19052.694mil,8104mil)  Top Layer
+   Violation between Width Constraint: Track (19005.512mil,8165mil)(19045mil,8165mil)  Top Layer
+   Violation between Width Constraint: Track (19005.512mil,8151.182mil)(19005.512mil,8165mil)  Top Layer
+   Violation between Width Constraint: Pad D1-2(19005.512mil,8151.182mil)  Top Layer
+   Violation between Width Constraint: Pad U18-7(19035.59mil,8935.354mil)  Top Layer
+   Violation between Width Constraint: Track (19000mil,8982.75mil)(19022.84mil,8982.75mil)  Top Layer
+   Violation between Width Constraint: Track (19035.59mil,8935.354mil)(19035.59mil,8970mil)  Top Layer
+   Violation between Width Constraint: Track (18960mil,8942.75mil)(19000mil,8982.75mil)  Top Layer
+   Violation between Width Constraint: Track (19022.84mil,8982.75mil)(19035.59mil,8970mil)  Top Layer
+   Violation between Width Constraint: Track (18400mil,11490.552mil)(18470mil,11490.552mil)  Top Layer
+   Violation between Width Constraint: Pad U11-5(18470mil,11490.552mil)  Top Layer
+   Violation between Width Constraint: Track (18120mil,11460mil)(18120mil,11550mil)  Top Layer
+   Violation between Width Constraint: Track (18120mil,11550mil)(18120mil,11605mil)  Top Layer
+   Violation between Width Constraint: Track (18120mil,11605mil)(18140mil,11625mil)  Top Layer
+   Violation between Width Constraint: Pad U1-3(18120mil,11550mil)  Top Layer
+   Violation between Width Constraint: Track (18140mil,11625mil)(18360mil,11625mil)  Top Layer
+   Violation between Width Constraint: Pad U1-7(18170mil,11330mil)  Top Layer
+   Violation between Width Constraint: Pad U1-8(18220mil,11330mil)  Top Layer
+   Violation between Width Constraint: Track (18220mil,11392.44mil)(18240mil,11412.44mil)  Top Layer
+   Violation between Width Constraint: Track (18220mil,11330mil)(18220mil,11392.44mil)  Top Layer
+   Violation between Width Constraint: Pad U1-8(18220mil,11330mil)  Top Layer
+   Violation between Width Constraint: Track (18170mil,10663.442mil)(18170mil,11330mil)  Top Layer
+   Violation between Width Constraint: Pad U1-7(18170mil,11330mil)  Top Layer
+   Violation between Width Constraint: Track (14235.276mil,10880.626mil)(14235.276mil,11016mil)  Top Layer
+   Violation between Width Constraint: Pad J3-4(14235.276mil,10880.626mil)  Top Layer
+   Violation between Width Constraint: Track (15353mil,11010.626mil)(15416.222mil,10947.404mil)  Top Layer
+   Violation between Width Constraint: Pad J4-1(15416.222mil,10890.626mil)  Top Layer
+   Violation between Width Constraint: Track (15416.222mil,10890.626mil)(15416.222mil,10947.404mil)  Top Layer
+   Violation between Width Constraint: Track (16538.11mil,11530mil)(16538.11mil,11635.11mil)  Bottom Layer
+   Violation between Width Constraint: Pad U3-7(16538.11mil,11530mil)  Bottom Layer
+   Violation between Width Constraint: Track (16754.646mil,11478.354mil)(16754.646mil,11530mil)  Bottom Layer
+   Violation between Width Constraint: Track (16754.646mil,11478.354mil)(16763mil,11470mil)  Bottom Layer
+   Violation between Width Constraint: Track (16675.646mil,11669mil)(16754.646mil,11590mil)  Bottom Layer
+   Violation between Width Constraint: Track (16754.646mil,11530mil)(16754.646mil,11590mil)  Bottom Layer
+   Violation between Width Constraint: Pad U3-18(16754.646mil,11530mil)  Bottom Layer
+   Violation between Width Constraint: Track (16572mil,11669mil)(16675.646mil,11669mil)  Bottom Layer
+   Violation between Width Constraint: Track (14490.796mil,11430.868mil)(14625.132mil,11430.868mil)  Bottom Layer
+   Violation between Width Constraint: Track (13650.94mil,11430.868mil)(13770mil,11430.868mil)  Bottom Layer
+   Violation between Width Constraint: Pad U16-42(13650.94mil,11430.868mil)  Bottom Layer
+   Violation between Width Constraint: Track (14473.398mil,11413.47mil)(14490.796mil,11430.868mil)  Bottom Layer
+   Violation between Width Constraint: Pad U16-7(13942.278mil,11430.868mil)  Bottom Layer
+   Violation between Width Constraint: Track (13942.278mil,11430.868mil)(14456mil,11430.868mil)  Bottom Layer
+   Violation between Width Constraint: Track (14456mil,11430.868mil)(14473.398mil,11413.47mil)  Bottom Layer
+   Violation between Width Constraint: Track (14456mil,11430.868mil)(14490.796mil,11430.868mil)  Bottom Layer
+   Violation between Width Constraint: Track (13942.278mil,11214.334mil)(14021.594mil,11214.334mil)  Bottom Layer
+   Violation between Width Constraint: Pad U16-18(13942.278mil,11214.334mil)  Bottom Layer
+   Violation between Width Constraint: Track (16234.64mil,10724mil)(16326.226mil,10724mil)  Bottom Layer
+   Violation between Width Constraint: Track (16326.226mil,10724mil)(16335.376mil,10733.15mil)  Bottom Layer
+   Violation between Width Constraint: Track (16335.376mil,10733.15mil)(16412.914mil,10733.15mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-170(16412.914mil,10733.15mil)  Bottom Layer
+   Violation between Width Constraint: Pad U10-7(17338.11mil,11530mil)  Bottom Layer
+   Violation between Width Constraint: Track (17318mil,11601mil)(17338.11mil,11580.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17338.11mil,11530mil)(17338.11mil,11580.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17338.11mil,11413.89mil)(17338.11mil,11530mil)  Bottom Layer
+   Violation between Width Constraint: Track (17554.644mil,11398.644mil)(17554.644mil,11530mil)  Bottom Layer
+   Violation between Width Constraint: Pad U10-18(17554.644mil,11530mil)  Bottom Layer
+   Violation between Width Constraint: Pad U10-42(17338.11mil,11238.662mil)  Bottom Layer
+   Violation between Width Constraint: Track (17338.11mil,11238.662mil)(17338.11mil,11310.294mil)  Bottom Layer
+   Violation between Width Constraint: Track (17320mil,11328.404mil)(17338.11mil,11310.294mil)  Bottom Layer
+   Violation between Width Constraint: Track (16618.506mil,11333.882mil)(16708.118mil,11333.882mil)  Bottom Layer
+   Violation between Width Constraint: Track (16618.506mil,11326.494mil)(16618.506mil,11333.882mil)  Bottom Layer
+   Violation between Width Constraint: Pad U3-42(16538.11mil,11238.662mil)  Bottom Layer
+   Violation between Width Constraint: Track (16708.118mil,11333.882mil)(16754.646mil,11287.354mil)  Bottom Layer
+   Violation between Width Constraint: Track (16538.11mil,11280mil)(16584.605mil,11326.495mil)  Bottom Layer
+   Violation between Width Constraint: Track (16538.11mil,11238.662mil)(16538.11mil,11280mil)  Bottom Layer
+   Violation between Width Constraint: Track (16584.605mil,11326.495mil)(16618.506mil,11326.494mil)  Bottom Layer
+   Violation between Width Constraint: Track (16754.646mil,11238.662mil)(16754.646mil,11287.354mil)  Bottom Layer
+   Violation between Width Constraint: Pad U3-31(16754.646mil,11238.662mil)  Bottom Layer
+   Violation between Width Constraint: Track (16754.646mil,11287.354mil)(16754.646mil,11294.912mil)  Bottom Layer
+   Violation between Width Constraint: Track (16708.118mil,11333.882mil)(16754.646mil,11287.354mil)  Bottom Layer
+   Violation between Width Constraint: Track (16747.558mil,11302mil)(16754.646mil,11294.912mil)  Bottom Layer
+   Violation between Width Constraint: Pad U10-31(17554.644mil,11238.662mil)  Bottom Layer
+   Violation between Width Constraint: Track (17554.644mil,11238.662mil)(17554.644mil,11290.914mil)  Bottom Layer
+   Violation between Width Constraint: Track (17547.558mil,11298mil)(17554.644mil,11290.914mil)  Bottom Layer
+   Violation between Width Constraint: Track (13588mil,11195mil)(13607.334mil,11214.334mil)  Bottom Layer
+   Violation between Width Constraint: Pad U16-31(13650.94mil,11214.334mil)  Bottom Layer
+   Violation between Width Constraint: Track (13607.334mil,11214.334mil)(13650.94mil,11214.334mil)  Bottom Layer
+   Violation between Width Constraint: Track (13545mil,11195mil)(13588mil,11195mil)  Bottom Layer
+   Violation between Width Constraint: Track (17115.67mil,10935.01mil)(17115.67mil,11002.834mil)  Bottom Layer
+   Violation between Width Constraint: Track (17115.67mil,11002.834mil)(17115.67mil,11082.67mil)  Bottom Layer
+   Violation between Width Constraint: Track (17109mil,10928.34mil)(17115.67mil,10935.01mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-213(17115.67mil,11002.834mil)  Bottom Layer
+   Violation between Width Constraint: Track (16977.874mil,11002.834mil)(16977.874mil,11066.126mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-206(16977.874mil,11002.834mil)  Bottom Layer
+   Violation between Width Constraint: Track (16968mil,11076mil)(16977.874mil,11066.126mil)  Bottom Layer
+   Violation between Width Constraint: Track (16702.284mil,10893mil)(16702.284mil,11002.834mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-192(16702.284mil,11002.834mil)  Bottom Layer
+   Violation between Width Constraint: Track (17351.89mil,10910.114mil)(17351.89mil,11002.834mil)  Bottom Layer
+   Violation between Width Constraint: Track (17351.89mil,10839.588mil)(17351.89mil,10910.114mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-225(17351.89mil,11002.834mil)  Bottom Layer
+   Violation between Width Constraint: Track (17351.89mil,10910.114mil)(17370.706mil,10891.298mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-7(17720mil,10811.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17645mil,10811.89mil)(17653.11mil,10811.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17645mil,10820mil)(17653.11mil,10811.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17653.11mil,10811.89mil)(17720mil,10811.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17602.89mil,10811.89mil)(17645mil,10811.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17398.816mil,10811.89mil)(17602.89mil,10811.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17576.59mil,10654.41mil)(17720mil,10654.41mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-15(17720mil,10654.41mil)  Bottom Layer
+   Violation between Width Constraint Between Track on BottomLayer And Track on BottomLayer
+   Violation between Width Constraint: Track (18209.89mil,10801.89mil)(18300.392mil,10801.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18349.9mil,10797.788mil)(18354.002mil,10801.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18354.002mil,10801.89mil)(18420mil,10801.89mil)  Bottom Layer
+   Violation between Width Constraint: Pad U7-7(18420mil,10801.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18304.494mil,10797.788mil)(18349.9mil,10797.788mil)  Bottom Layer
+   Violation between Width Constraint: Pad U7-42(18128.662mil,10801.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18368mil,10597.356mil)(18368mil,10624.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18128.662mil,10801.89mil)(18191mil,10801.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18191mil,10801.89mil)(18368mil,10624.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18191mil,10801.89mil)(18209.89mil,10801.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18331mil,10632mil)(18380mil,10585.356mil)  Bottom Layer
+   Violation between Width Constraint: Pad U7-18(18420mil,10585.356mil)  Bottom Layer
+   Violation between Width Constraint: Track (18380mil,10585.356mil)(18420mil,10585.356mil)  Bottom Layer
+   Violation between Width Constraint: Track (18368mil,10597.356mil)(18368mil,10624.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18368mil,10597.356mil)(18380mil,10585.356mil)  Bottom Layer
+   Violation between Width Constraint: Pad U7-31(18128.662mil,10585.356mil)  Bottom Layer
+   Violation between Width Constraint: Track (18128.662mil,10585.356mil)(18380mil,10585.356mil)  Bottom Layer
+   Violation between Width Constraint: Track (16710.19mil,10418.19mil)(16870mil,10578mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-154(16412.914mil,10418.19mil)  Bottom Layer
+   Violation between Width Constraint: Track (16412.914mil,10418.19mil)(16710.19mil,10418.19mil)  Bottom Layer
+   Violation between Width Constraint: Track (16201.81mil,10418.19mil)(16412.914mil,10418.19mil)  Bottom Layer
+   Violation between Width Constraint: Track (15959.446mil,10184.646mil)(16055.354mil,10184.646mil)  Bottom Layer
+   Violation between Width Constraint: Track (16046mil,10194mil)(16055.354mil,10184.646mil)  Bottom Layer
+   Violation between Width Constraint: Pad U6-31(16106.338mil,10184.646mil)  Bottom Layer
+   Violation between Width Constraint: Track (16055.354mil,10184.646mil)(16106.338mil,10184.646mil)  Bottom Layer
+   Violation between Width Constraint: Track (15912.354mil,10184.646mil)(15959.446mil,10184.646mil)  Bottom Layer
+   Violation between Width Constraint: Track (15622.44mil,10048.732mil)(15758.354mil,10184.646mil)  Bottom Layer
+   Violation between Width Constraint: Track (15815mil,10184.646mil)(15896.646mil,10184.646mil)  Bottom Layer
+   Violation between Width Constraint: Track (15758.354mil,10184.646mil)(15815mil,10184.646mil)  Bottom Layer
+   Violation between Width Constraint: Pad U6-18(15815mil,10184.646mil)  Bottom Layer
+   Violation between Width Constraint: Track (15896.646mil,10184.646mil)(15912.354mil,10184.646mil)  Bottom Layer
+   Violation between Width Constraint: Pad U6-42(16106.338mil,9968.11mil)  Bottom Layer
+   Violation between Width Constraint: Track (16000mil,9968.11mil)(16106.338mil,9968.11mil)  Bottom Layer
+   Violation between Width Constraint: Pad U6-7(15815mil,9968.11mil)  Bottom Layer
+   Violation between Width Constraint: Track (15815mil,9968.11mil)(16000mil,9968.11mil)  Bottom Layer
+   Violation between Width Constraint: Track (17805mil,10260.708mil)(17820.292mil,10276mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-35(17720mil,10260.708mil)  Bottom Layer
+   Violation between Width Constraint: Track (17720mil,10260.708mil)(17805mil,10260.708mil)  Bottom Layer
+   Violation between Width Constraint: Track (18340mil,10091.89mil)(18420mil,10091.89mil)  Bottom Layer
+   Violation between Width Constraint: Pad U8-7(18420mil,10091.89mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-47(17720mil,10024.488mil)  Bottom Layer
+   Violation between Width Constraint: Track (17720mil,10024.488mil)(17800.512mil,10024.488mil)  Bottom Layer
+   Violation between Width Constraint: Track (17800.512mil,10024.488mil)(17875mil,10020mil)  Bottom Layer
+   Violation between Width Constraint: Track (16512.02mil,10037.838mil)(16551.858mil,9998mil)  Bottom Layer
+   Violation between Width Constraint: Track (16412.914mil,10063.858mil)(16475.858mil,10063.858mil)  Bottom Layer
+   Violation between Width Constraint: Track (16475.858mil,10063.858mil)(16480.929mil,10068.929mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-136(16412.914mil,10063.858mil)  Bottom Layer
+   Violation between Width Constraint: Track (16512.02mil,10037.838mil)(16647mil,10037.838mil)  Bottom Layer
+   Violation between Width Constraint: Track (16480.929mil,10068.929mil)(16486mil,10063.858mil)  Bottom Layer
+   Violation between Width Constraint: Track (16475.858mil,10063.858mil)(16486mil,10063.858mil)  Bottom Layer
+   Violation between Width Constraint: Track (16486mil,10063.858mil)(16512.02mil,10037.838mil)  Bottom Layer
+   Violation between Width Constraint: Pad U8-42(18128.662mil,10091.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18200mil,10091.89mil)(18243.4mil,10048.49mil)  Bottom Layer
+   Violation between Width Constraint: Track (18186.11mil,10091.89mil)(18200mil,10091.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18186.11mil,10091.89mil)(18236.256mil,10041.744mil)  Bottom Layer
+   Violation between Width Constraint: Track (18243.4mil,9882.442mil)(18243.4mil,10048.49mil)  Bottom Layer
+   Violation between Width Constraint: Track (18128.662mil,10091.89mil)(18186.11mil,10091.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (18128.662mil,9875.354mil)(18216.354mil,9875.354mil)  Bottom Layer
+   Violation between Width Constraint: Pad U8-31(18128.662mil,9875.354mil)  Bottom Layer
+   Violation between Width Constraint: Track (16488.638mil,9827.638mil)(16497mil,9836mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-124(16412.914mil,9827.638mil)  Bottom Layer
+   Violation between Width Constraint: Track (16412.914mil,9827.638mil)(16488.638mil,9827.638mil)  Bottom Layer
+   Violation between Width Constraint: Track (16766.966mil,9588.966mil)(16800.71mil,9588.966mil)  Bottom Layer
+   Violation between Width Constraint: Track (16800.71mil,9588.966mil)(16800.71mil,9695.748mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-104(16800.71mil,9695.748mil)  Bottom Layer
+   Violation between Width Constraint: Track (16760mil,9582mil)(16766.966mil,9588.966mil)  Bottom Layer
+   Violation between Width Constraint: Track (16958.19mil,9695.748mil)(16958.19mil,9772.19mil)  Bottom Layer
+   Violation between Width Constraint: Pad U2-42(16811.89mil,9321.338mil)  Bottom Layer
+   Violation between Width Constraint: Track (16811.89mil,9321.338mil)(16811.89mil,9452mil)  Bottom Layer
+   Violation between Width Constraint: Track (16811.89mil,9452mil)(16958.19mil,9598.3mil)  Bottom Layer
+   Violation between Width Constraint: Track (16958.19mil,9598.3mil)(16958.19mil,9695.748mil)  Bottom Layer
+   Violation between Width Constraint: Track (16958.19mil,9772.19mil)(16990mil,9804mil)  Bottom Layer
+   Violation between Width Constraint: Track (16811.89mil,9452mil)(16811.89mil,9490mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-96(16958.19mil,9695.748mil)  Bottom Layer
+   Violation between Width Constraint: Track (16595.356mil,9434.92mil)(16595.356mil,9482mil)  Bottom Layer
+   Violation between Width Constraint: Track (16595.356mil,9321.338mil)(16595.356mil,9434.92mil)  Bottom Layer
+   Violation between Width Constraint: Pad U2-31(16595.356mil,9321.338mil)  Bottom Layer
+   Violation between Width Constraint: Track (17548.74mil,9695.748mil)(17548.74mil,9759.74mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-66(17548.74mil,9695.748mil)  Bottom Layer
+   Violation between Width Constraint: Track (17548.74mil,9759.74mil)(17558mil,9769mil)  Bottom Layer
+   Violation between Width Constraint: Track (18420mil,9875.354mil)(18460mil,9875.354mil)  Bottom Layer
+   Violation between Width Constraint: Track (18467.852mil,9602.95mil)(18483mil,9852.354mil)  Bottom Layer
+   Violation between Width Constraint: Track (18339.6mil,9602.95mil)(18467.852mil,9602.95mil)  Bottom Layer
+   Violation between Width Constraint: Track (18460mil,9875.354mil)(18483mil,9852.354mil)  Bottom Layer
+   Violation between Width Constraint: Pad U8-18(18420mil,9875.354mil)  Bottom Layer
+   Violation between Width Constraint: Track (19310mil,8914mil)(19360mil,8914mil)  Bottom Layer
+   Violation between Width Constraint: Track (19360mil,8914mil)(19370mil,8904mil)  Bottom Layer
+   Violation between Width Constraint: Track (19310mil,8914mil)(19310mil,8933.228mil)  Bottom Layer
+   Violation between Width Constraint: Pad U21-8(19310mil,8933.228mil)  Bottom Layer
+   Violation between Width Constraint: Track (19310mil,8933.228mil)(19310mil,9342mil)  Bottom Layer
+   Violation between Width Constraint: Track (20010mil,8760mil)(20010mil,8900mil)  Bottom Layer
+   Violation between Width Constraint: Pad U24-8(20010mil,8933.228mil)  Bottom Layer
+   Violation between Width Constraint: Track (19987.56mil,8877.56mil)(20010mil,8900mil)  Bottom Layer
+   Violation between Width Constraint: Track (20010mil,8900mil)(20010mil,8933.228mil)  Bottom Layer
+   Violation between Width Constraint: Track (20010mil,8900mil)(20032.44mil,8877.56mil)  Bottom Layer
+   Violation between Width Constraint: Track (20032.44mil,8877.56mil)(20070mil,8877.56mil)  Bottom Layer
+   Violation between Width Constraint: Track (20010mil,8900mil)(20032.44mil,8877.56mil)  Bottom Layer
+   Violation between Width Constraint: Track (20010mil,8760mil)(20010mil,8900mil)  Bottom Layer
+   Violation between Width Constraint: Pad U24-1(20010mil,8760mil)  Bottom Layer
+   Violation between Width Constraint: Track (19370mil,8877.56mil)(19987.56mil,8877.56mil)  Bottom Layer
+   Violation between Width Constraint: Track (19987.56mil,8877.56mil)(20010mil,8900mil)  Bottom Layer
+   Violation between Width Constraint: Track (17332.206mil,9695.748mil)(17332.206mil,9764.794mil)  Bottom Layer
+   Violation between Width Constraint: Track (17332.206mil,9530.206mil)(17332.206mil,9695.748mil)  Bottom Layer
+   Violation between Width Constraint: Track (17332.706mil,9765.294mil)(17332.706mil,9843.294mil)  Bottom Layer
+   Violation between Width Constraint: Pad U4-77(17332.206mil,9695.748mil)  Bottom Layer
+   Violation between Width Constraint: Track (17332.206mil,9764.794mil)(17332.706mil,9765.294mil)  Bottom Layer
+   Violation between Width Constraint: Track (17309mil,9384mil)(17320mil,9373mil)  Bottom Layer
+   Violation between Width Constraint: Track (17331mil,9373mil)(17335.356mil,9368.644mil)  Bottom Layer
+   Violation between Width Constraint: Pad U5-31(17335.356mil,9321.338mil)  Bottom Layer
+   Violation between Width Constraint: Track (17309mil,9384mil)(17309mil,9507mil)  Bottom Layer
+   Violation between Width Constraint: Track (17320mil,9373mil)(17331mil,9373mil)  Bottom Layer
+   Violation between Width Constraint: Track (17335.356mil,9321.338mil)(17335.356mil,9368.644mil)  Bottom Layer
+   Violation between Width Constraint: Track (17544mil,9274mil)(17551.89mil,9274mil)  Bottom Layer
+   Violation between Width Constraint: Pad U5-42(17551.89mil,9321.338mil)  Bottom Layer
+   Violation between Width Constraint: Track (17531mil,9261mil)(17544mil,9274mil)  Bottom Layer
+   Violation between Width Constraint: Track (17551.89mil,9274mil)(17551.89mil,9321.338mil)  Bottom Layer
+   Violation between Width Constraint: Track (17335.356mil,9030mil)(17335.356mil,9083.356mil)  Bottom Layer
+   Violation between Width Constraint: Pad U5-18(17335.356mil,9030mil)  Bottom Layer
+   Violation between Width Constraint: Track (17335.356mil,9083.356mil)(17342.442mil,9090.442mil)  Bottom Layer
+   Violation between Width Constraint: Track (16823.256mil,9081.366mil)(16963.778mil,9081.366mil)  Bottom Layer
+   Violation between Width Constraint: Pad U2-7(16811.89mil,9030mil)  Bottom Layer
+   Violation between Width Constraint: Track (16811.89mil,9070mil)(16823.256mil,9081.366mil)  Bottom Layer
+   Violation between Width Constraint: Track (16811.89mil,9030mil)(16811.89mil,9070mil)  Bottom Layer
+   Violation between Width Constraint: Pad U2-18(16595.356mil,9030mil)  Bottom Layer
+   Violation between Width Constraint: Track (16595.356mil,9030mil)(16595.356mil,9072.204mil)  Bottom Layer
+   Violation between Width Constraint: Track (16539.76mil,9127.8mil)(16595.356mil,9072.204mil)  Bottom Layer
+   Violation between Width Constraint: Track (17551.89mil,9030mil)(17551.89mil,9115.11mil)  Bottom Layer
+   Violation between Width Constraint: Pad U5-7(17551.89mil,9030mil)  Bottom Layer
+   Violation between Width Constraint: Track (18131.574mil,8580mil)(18131.574mil,8599.056mil)  Bottom Layer
+   Violation between Width Constraint: Pad U20-48(18170.944mil,8599.056mil)  Bottom Layer
+   Violation between Width Constraint: Track (18121.574mil,8570mil)(18131.574mil,8580mil)  Bottom Layer
+   Violation between Width Constraint: Pad U20-46(18131.574mil,8599.056mil)  Bottom Layer
+   Violation between Width Constraint: Track (18131.574mil,8599.056mil)(18131.574mil,8628mil)  Bottom Layer
+   Violation between Width Constraint: Track (18170.944mil,8599.056mil)(18170.944mil,8628mil)  Bottom Layer
+   Violation between Width Constraint: Track (17866mil,8570mil)(18121.574mil,8570mil)  Bottom Layer
+   Violation between Width Constraint: Track (18131.574mil,8628mil)(18170.944mil,8628mil)  Bottom Layer
+   Violation between Width Constraint: Track (17850mil,8464.628mil)(17868.159mil,8482.787mil)  Bottom Layer
+   Violation between Width Constraint: Pad U20-31(17895.354mil,8441.576mil)  Bottom Layer
+   Violation between Width Constraint: Pad U20-30(17895.354mil,8421.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17856mil,8494.946mil)(17868.159mil,8482.787mil)  Bottom Layer
+   Violation between Width Constraint: Track (17868.159mil,8482.787mil)(17870mil,8480.946mil)  Bottom Layer
+   Violation between Width Constraint: Track (17895mil,8421.89mil)(17895mil,8441.576mil)  Bottom Layer
+   Violation between Width Constraint: Track (17895mil,8421.89mil)(17895.354mil,8421.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17895.354mil,8421.89mil)(17924mil,8421.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17924mil,8382.52mil)(17924mil,8421.89mil)  Bottom Layer
+   Violation between Width Constraint: Track (17873.052mil,8441.576mil)(17895mil,8441.576mil)  Bottom Layer
+   Violation between Width Constraint: Track (17895mil,8441.576mil)(17895.354mil,8441.576mil)  Bottom Layer
+   Violation between Width Constraint: Pad U20-33(17895.354mil,8480.946mil)  Bottom Layer
+   Violation between Width Constraint: Track (17850mil,8464.628mil)(17873.052mil,8441.576mil)  Bottom Layer
+   Violation between Width Constraint: Track (17870mil,8480.946mil)(17895.354mil,8480.946mil)  Bottom Layer
+   Violation between Width Constraint: Pad U20-28(17895.354mil,8382.52mil)  Bottom Layer
+   Violation between Width Constraint: Track (17895.354mil,8382.52mil)(17924mil,8382.52mil)  Bottom Layer
+   Violation between Width Constraint: Track (18170.944mil,8199mil)(18170.944mil,8235.738mil)  Bottom Layer
+   Violation between Width Constraint: Track (18170.944mil,8235.738mil)(18170.944mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Pad U20-13(18170.944mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Track (18131.574mil,8240mil)(18131.574mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Pad U20-15(18131.574mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Track (18135.836mil,8235.738mil)(18170.944mil,8235.738mil)  Bottom Layer
+Rule Violations :311
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=7.8mil) (All),(All)
+   Violation between Track (16666mil,11470mil)(16666mil,11529.6mil)  Top Layer and 
+                     Via (16653mil,11472mil) Top Layer to Bottom Layer
+   Violation between Via (16666mil,11470mil) Top Layer to Bottom Layer and 
+                     Via (16653mil,11472mil) Top Layer to Bottom Layer
+   Violation between Track (16636.536mil,11470mil)(16666mil,11470mil)  Bottom Layer and 
+                     Via (16653mil,11472mil) Top Layer to Bottom Layer
+   Violation between Track (16636.536mil,11470mil)(16636.536mil,11530mil)  Bottom Layer and 
+                     Via (16653mil,11472mil) Top Layer to Bottom Layer
+   Violation between Track (16587.2mil,11537.8mil)(16653mil,11472mil)  Top Layer and 
+                     Via (16666mil,11470mil) Top Layer to Bottom Layer
+   Violation between Track (16653mil,11472mil)(16656.22mil,11475.22mil)  Bottom Layer and 
+                     Via (16666mil,11470mil) Top Layer to Bottom Layer
+   Violation between Track (16656.22mil,11475.22mil)(16656.22mil,11530mil)  Bottom Layer and 
+                     Via (16666mil,11470mil) Top Layer to Bottom Layer
+   Violation between Track (16636.536mil,11470mil)(16666mil,11470mil)  Bottom Layer and 
+                     Track (16656.22mil,11475.22mil)(16656.22mil,11530mil)  Bottom Layer
+   Violation between Track (16636.536mil,11470mil)(16666mil,11470mil)  Bottom Layer and 
+                     Track (16653mil,11472mil)(16656.22mil,11475.22mil)  Bottom Layer
+   Violation between Track (16636.536mil,11470mil)(16636.536mil,11530mil)  Bottom Layer and 
+                     Track (16653mil,11472mil)(16656.22mil,11475.22mil)  Bottom Layer
+   Violation between Track (16666mil,11470mil)(16666mil,11529.6mil)  Top Layer and 
+                     Track (16587.2mil,11537.8mil)(16653mil,11472mil)  Top Layer
+   Violation between Track (15704mil,11573mil)(16225.414mil,11573mil)  Top Layer and 
+                     Track (16146.286mil,11573.514mil)(16182mil,11537.8mil)  Top Layer
+   Violation between Track (15704mil,11573mil)(16225.414mil,11573mil)  Top Layer and 
+                     Track (15717.688mil,11573.514mil)(16146.286mil,11573.514mil)  Top Layer
+   Violation between Track (15097mil,10966mil)(15704mil,11573mil)  Top Layer and 
+                     Track (15717.688mil,11573.514mil)(16146.286mil,11573.514mil)  Top Layer
+   Violation between Track (15704mil,11573mil)(16225.414mil,11573mil)  Top Layer and 
+                     Track (15128mil,10983.826mil)(15717.688mil,11573.514mil)  Top Layer
+   Violation between Track (15097mil,10966mil)(15704mil,11573mil)  Top Layer and 
+                     Track (15128mil,10983.826mil)(15717.688mil,11573.514mil)  Top Layer
+   Violation between Track (15097mil,10966mil)(15704mil,11573mil)  Top Layer and 
+                     Track (15128mil,10841.224mil)(15128mil,10983.826mil)  Top Layer
+Rule Violations :17
+
+Processing Rule : Width Constraint (Min=10mil) (Max=10mil) (Preferred=10mil) (All)
+   Violation between Width Constraint: Track (17760mil,8264mil)(17954.41mil,8264mil)  Bottom Layer
+   Violation between Width Constraint: Track (18151.26mil,8264.41mil)(18151.26mil,8513.26mil)  Bottom Layer
+   Violation between Width Constraint: Track (17954.41mil,8599.056mil)(17954.41mil,8700mil)  Bottom Layer
+   Violation between Width Constraint: Track (17954.41mil,8264mil)(17954.41mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Track (18033.15mil,8196.436mil)(18033.15mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Track (17974.094mil,8599.056mil)(17974.094mil,8722.816mil)  Bottom Layer
+   Violation between Width Constraint: Track (18151.26mil,8513.26mil)(18151.26mil,8599.056mil)  Bottom Layer
+   Violation between Width Constraint: Track (18092.204mil,8139.204mil)(18092.204mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Track (18072.52mil,8160mil)(18072.52mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Track (18033.15mil,8599.056mil)(18033.15mil,8931.85mil)  Bottom Layer
+   Violation between Width Constraint: Track (18052.834mil,8170.834mil)(18052.834mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Track (17993.78mil,8225.268mil)(17993.78mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Track (17974.094mil,8240mil)(17974.094mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Track (17968.956mil,8234.862mil)(17974.094mil,8240mil)  Bottom Layer
+   Violation between Width Constraint: Track (17566.234mil,8234.862mil)(17968.956mil,8234.862mil)  Bottom Layer
+   Violation between Width Constraint: Track (18013.464mil,8212.35mil)(18013.464mil,8264.41mil)  Bottom Layer
+   Violation between Width Constraint: Track (18052.834mil,8599.056mil)(18052.834mil,8942.966mil)  Bottom Layer
+   Violation between Width Constraint: Track (18210mil,8520.316mil)(18230mil,8520.316mil)  Bottom Layer
+   Violation between Width Constraint: Track (18200mil,8530.316mil)(18210mil,8520.316mil)  Bottom Layer
+   Violation between Width Constraint: Track (18200mil,8530.316mil)(18200mil,8663mil)  Bottom Layer
+   Violation between Width Constraint: Track (18230mil,8343.15mil)(18341.15mil,8343.15mil)  Bottom Layer
+   Violation between Width Constraint: Track (18072.52mil,8599.056mil)(18072.52mil,8960.48mil)  Bottom Layer
+   Violation between Width Constraint: Track (18092.204mil,8599.056mil)(18092.204mil,9000.796mil)  Bottom Layer
+   Violation between Width Constraint: Track (18013.464mil,8599.056mil)(18013.464mil,8880mil)  Bottom Layer
+   Violation between Width Constraint: Track (17993.78mil,8599.056mil)(17993.78mil,8800mil)  Bottom Layer
+   Violation between Width Constraint: Track (18230mil,8362.836mil)(18314mil,8362.836mil)  Bottom Layer
+   Violation between Width Constraint: Track (18260mil,8402.206mil)(18287.794mil,8430mil)  Bottom Layer
+   Violation between Width Constraint: Track (18230mil,8402.206mil)(18260mil,8402.206mil)  Bottom Layer
+   Violation between Width Constraint: Track (18230mil,8382.52mil)(18291.52mil,8382.52mil)  Bottom Layer
+   Violation between Width Constraint: Track (18230mil,8500.63mil)(18269.54mil,8500.63mil)  Bottom Layer
+   Violation between Width Constraint: Track (18230mil,8480.946mil)(18295.946mil,8480.946mil)  Bottom Layer
+   Violation between Width Constraint: Track (14806.142mil,10880.626mil)(14806.142mil,10927mil)  Top Layer
+   Violation between Width Constraint: Track (14795mil,10938.142mil)(14806.142mil,10927mil)  Top Layer
+   Violation between Width Constraint: Track (14786.456mil,10844mil)(14786.456mil,10880.626mil)  Top Layer
+   Violation between Width Constraint: Track (14786.456mil,10844mil)(14862mil,10844mil)  Top Layer
+   Violation between Width Constraint: Track (14747.086mil,10830.172mil)(14747.086mil,10880.626mil)  Top Layer
+   Violation between Width Constraint: Track (14314.016mil,10880.626mil)(14314.016mil,11000mil)  Top Layer
+   Violation between Width Constraint: Track (14471.496mil,10880.626mil)(14471.496mil,11207.504mil)  Top Layer
+   Violation between Width Constraint: Track (14491.182mil,10880.626mil)(14491.182mil,11252.818mil)  Top Layer
+   Violation between Width Constraint: Track (13916mil,11414mil)(14547mil,11414mil)  Top Layer
+   Violation between Width Constraint: Track (14547mil,11414mil)(14550.236mil,10880.626mil)  Top Layer
+   Violation between Width Constraint: Track (14707.716mil,10880.626mil)(14707.716mil,10917.716mil)  Top Layer
+   Violation between Width Constraint: Track (14707.716mil,10917.716mil)(14765mil,10975mil)  Top Layer
+   Violation between Width Constraint: Track (14333.702mil,10880.626mil)(14333.702mil,11009.298mil)  Top Layer
+   Violation between Width Constraint: Track (14373.072mil,10880.626mil)(14373.072mil,11149.928mil)  Top Layer
+   Violation between Width Constraint: Track (14353.386mil,10880.626mil)(14353.386mil,11080mil)  Top Layer
+   Violation between Width Constraint: Track (14668.346mil,10880.626mil)(14668.346mil,10941.346mil)  Top Layer
+   Violation between Width Constraint: Track (14825.826mil,10880.626mil)(14825.826mil,11170.826mil)  Top Layer
+   Violation between Width Constraint: Track (14628.976mil,10880.626mil)(14628.976mil,11427.024mil)  Top Layer
+   Violation between Width Constraint: Track (14530.552mil,10880.626mil)(14530.552mil,11336mil)  Top Layer
+   Violation between Width Constraint: Track (14688.032mil,10880.626mil)(14688.032mil,10928mil)  Top Layer
+   Violation between Width Constraint: Track (14648.662mil,10880.626mil)(14648.662mil,11016.662mil)  Top Layer
+   Violation between Width Constraint: Track (14510.866mil,10880.626mil)(14510.866mil,11310.334mil)  Top Layer
+   Violation between Width Constraint: Track (14392.756mil,10880.626mil)(14392.756mil,11192.244mil)  Top Layer
+   Violation between Width Constraint: Track (14766.772mil,10880.626mil)(14766.772mil,10936.772mil)  Top Layer
+   Violation between Width Constraint: Track (14195.906mil,10880.626mil)(14195.906mil,10931.906mil)  Top Layer
+Rule Violations :56
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+   Violation between Net Antennae: Track (15106.842mil,7595.842mil)(15145mil,7634mil)  Bottom Layer
+Rule Violations :1
+
+Processing Rule : Silk to Silk (Clearance=10mil) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (Disabled)(IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=1.5mil) (All),(All)
+   Violation between Via (15213mil,8814mil) Top Layer to Bottom Layer and 
+                     Pad SW6-2(15273.622mil,8798.426mil)  Top Layer
+   Violation between Via (14440mil,8680mil) Top Layer to Bottom Layer and 
+                     Pad SW5-1(14473.622mil,8601.574mil)  Top Layer
+   Violation between Via (18199mil,10127mil) Top Layer to Bottom Layer and 
+                     Pad R21-2(18240mil,10143.742mil)  Top Layer
+   Violation between Via (19790mil,8712mil) Top Layer to Bottom Layer and 
+                     Pad U22-4(19787.402mil,8767.322mil)  Top Layer
+   Violation between Via (19868mil,9043.228mil) Top Layer to Bottom Layer and 
+                     Pad R81-2(19850mil,9082.44mil)  Top Layer
+   Violation between Via (14971mil,10854mil) Top Layer to Bottom Layer and 
+                     Pad J3-40(14943.936mil,10880.626mil)  Top Layer
+   Violation between Via (15473.782mil,10819mil) Top Layer to Bottom Layer and 
+                     Pad J4-2(15455.592mil,10890.626mil)  Top Layer
+   Violation between Via (17466mil,11470mil) Top Layer to Bottom Layer and 
+                     Pad C8-1(17492.44mil,11430mil)  Top Layer
+   Violation between Via (16666mil,11470mil) Top Layer to Bottom Layer and 
+                     Pad C9-1(16692.44mil,11430mil)  Top Layer
+   Violation between Via (16602.442mil,9171mil) Top Layer to Bottom Layer and 
+                     Pad C4-2(16602.442mil,9130mil)  Top Layer
+   Violation between Via (15767.48mil,7700mil) Top Layer to Bottom Layer and 
+                     Pad R47-2(15727.56mil,7700mil)  Top Layer
+   Violation between Via (15135mil,7540mil) Top Layer to Bottom Layer and 
+                     Pad R51-1(15162.442mil,7580mil)  Top Layer
+   Violation between Via (14607.4mil,8531mil) Top Layer to Bottom Layer and 
+                     Pad SW5-(14581.89mil,8568.11mil)  Multi-Layer
+   Violation between Via (19033mil,10844mil) Top Layer to Bottom Layer and 
+                     Pad SW13-3(19000mil,10800mil)  Multi-Layer
+   Violation between Via (17221mil,12061mil) Top Layer to Bottom Layer and 
+                     Pad J7-9(17250mil,12100mil)  Multi-Layer
+   Violation between Via (18733mil,10737mil) Top Layer to Bottom Layer and 
+                     Pad R5-1(18772.442mil,10740mil)  Bottom Layer
+   Violation between Via (15769mil,10333mil) Top Layer to Bottom Layer and 
+                     Pad R31-1(15810mil,10352.44mil)  Bottom Layer
+   Violation between Via (16157mil,10326mil) Top Layer to Bottom Layer and 
+                     Pad U6-25(16106.338mil,10302.756mil)  Bottom Layer
+   Violation between Via (16046mil,10194mil) Top Layer to Bottom Layer and 
+                     Pad U6-31(16106.338mil,10184.646mil)  Bottom Layer
+   Violation between Via (13882mil,11225mil) Top Layer to Bottom Layer and 
+                     Pad U16-17(13942.278mil,11234.018mil)  Bottom Layer
+   Violation between Via (13882mil,11323mil) Top Layer to Bottom Layer and 
+                     Pad U16-12(13942.278mil,11332.444mil)  Bottom Layer
+   Violation between Via (14399mil,9727mil) Top Layer to Bottom Layer and 
+                     Pad R62-1(14440mil,9742.442mil)  Bottom Layer
+   Violation between Via (15261mil,9119mil) Top Layer to Bottom Layer and 
+                     Pad U17-1(15246.138mil,9076.222mil)  Bottom Layer
+   Violation between Via (14616.216mil,9119mil) Top Layer to Bottom Layer and 
+                     Pad U17-21(14616.216mil,9076.222mil)  Bottom Layer
+   Violation between Via (14994.17mil,9607.366mil) Top Layer to Bottom Layer and 
+                     Pad U17-56(14994.17mil,9564.412mil)  Bottom Layer
+   Violation between Via (17181mil,9271mil) Top Layer to Bottom Layer and 
+                     Pad R25-2(17140mil,9262.44mil)  Bottom Layer
+   Violation between Via (17792.44mil,11089mil) Top Layer to Bottom Layer and 
+                     Pad R1-1(17792.44mil,11130mil)  Bottom Layer
+   Violation between Via (17831mil,11271mil) Top Layer to Bottom Layer and 
+                     Pad R2-2(17847.56mil,11230mil)  Bottom Layer
+   Violation between Via (18425.654mil,9649mil) Top Layer to Bottom Layer and 
+                     Pad R40-1(18417.558mil,9690mil)  Bottom Layer
+   Violation between Via (16666mil,11470mil) Top Layer to Bottom Layer and 
+                     Pad U3-13(16656.22mil,11530mil)  Bottom Layer
+   Violation between Via (16666mil,11470mil) Top Layer to Bottom Layer and 
+                     Pad U3-14(16675.906mil,11530mil)  Bottom Layer
+   Violation between Via (16707mil,11470mil) Top Layer to Bottom Layer and 
+                     Pad U3-16(16715.276mil,11530mil)  Bottom Layer
+   Violation between Via (16763mil,11470mil) Top Layer to Bottom Layer and 
+                     Pad U3-18(16754.646mil,11530mil)  Bottom Layer
+   Violation between Via (16805mil,11470mil) Top Layer to Bottom Layer and 
+                     Pad U3-21(16813.7mil,11530mil)  Bottom Layer
+   Violation between Via (17342.442mil,9090.442mil) Top Layer to Bottom Layer and 
+                     Pad U5-18(17335.356mil,9030mil)  Bottom Layer
+   Violation between Via (17324mil,9262mil) Top Layer to Bottom Layer and 
+                     Pad U5-30(17315.67mil,9321.338mil)  Bottom Layer
+   Violation between Via (17324mil,9262mil) Top Layer to Bottom Layer and 
+                     Pad U5-31(17335.356mil,9321.338mil)  Bottom Layer
+   Violation between Via (17431.466mil,9382mil) Top Layer to Bottom Layer and 
+                     Pad U5-36(17433.78mil,9321.338mil)  Bottom Layer
+   Violation between Via (18069mil,9923mil) Top Layer to Bottom Layer and 
+                     Pad U8-33(18128.662mil,9914.724mil)  Bottom Layer
+   Violation between Via (18069mil,9923mil) Top Layer to Bottom Layer and 
+                     Pad U8-34(18128.662mil,9934.41mil)  Bottom Layer
+   Violation between Via (18189mil,9952mil) Top Layer to Bottom Layer and 
+                     Pad U8-35(18128.662mil,9954.094mil)  Bottom Layer
+   Violation between Via (18189mil,9978.6mil) Top Layer to Bottom Layer and 
+                     Pad U8-36(18128.662mil,9973.78mil)  Bottom Layer
+   Violation between Via (16526.378mil,9090mil) Top Layer to Bottom Layer and 
+                     Pad U2-21(16536.3mil,9030mil)  Bottom Layer
+   Violation between Via (16526.378mil,9090mil) Top Layer to Bottom Layer and 
+                     Pad U2-22(16516.616mil,9030mil)  Bottom Layer
+   Violation between Via (16585mil,9261mil) Top Layer to Bottom Layer and 
+                     Pad U2-30(16575.67mil,9321.338mil)  Bottom Layer
+   Violation between Via (16634mil,9382mil) Top Layer to Bottom Layer and 
+                     Pad U2-33(16634.726mil,9321.338mil)  Bottom Layer
+   Violation between Via (16759mil,9382mil) Top Layer to Bottom Layer and 
+                     Pad U2-39(16752.836mil,9321.338mil)  Bottom Layer
+   Violation between Via (17290mil,11470mil) Top Layer to Bottom Layer and 
+                     Pad U10-5(17298.74mil,11530mil)  Bottom Layer
+   Violation between Via (17466mil,11470mil) Top Layer to Bottom Layer and 
+                     Pad U10-13(17456.22mil,11530mil)  Bottom Layer
+   Violation between Via (17466mil,11470mil) Top Layer to Bottom Layer and 
+                     Pad U10-14(17475.904mil,11530mil)  Bottom Layer
+   Violation between Via (17648mil,10684mil) Top Layer to Bottom Layer and 
+                     Pad U4-13(17720mil,10693.78mil)  Bottom Layer
+   Violation between Via (17648mil,10684mil) Top Layer to Bottom Layer and 
+                     Pad U4-14(17720mil,10674.094mil)  Bottom Layer
+   Violation between Via (17648mil,10605mil) Top Layer to Bottom Layer and 
+                     Pad U4-17(17720mil,10615.04mil)  Bottom Layer
+   Violation between Via (17648mil,10605mil) Top Layer to Bottom Layer and 
+                     Pad U4-18(17720mil,10595.354mil)  Bottom Layer
+   Violation between Via (17648mil,10489mil) Top Layer to Bottom Layer and 
+                     Pad U4-23(17720mil,10496.93mil)  Bottom Layer
+   Violation between Via (17648mil,10489mil) Top Layer to Bottom Layer and 
+                     Pad U4-24(17720mil,10477.244mil)  Bottom Layer
+   Violation between Via (17757mil,9739mil) Top Layer to Bottom Layer and 
+                     Pad U4-60(17720mil,9768.582mil)  Bottom Layer
+   Violation between Via (17282mil,9623mil) Top Layer to Bottom Layer and 
+                     Pad U4-80(17273.15mil,9695.748mil)  Bottom Layer
+   Violation between Via (17222mil,9769mil) Top Layer to Bottom Layer and 
+                     Pad U4-83(17214.096mil,9695.748mil)  Bottom Layer
+   Violation between Via (17184mil,9768mil) Top Layer to Bottom Layer and 
+                     Pad U4-84(17194.41mil,9695.748mil)  Bottom Layer
+   Violation between Via (17184mil,9768mil) Top Layer to Bottom Layer and 
+                     Pad U4-85(17174.726mil,9695.748mil)  Bottom Layer
+   Violation between Via (16770mil,9623mil) Top Layer to Bottom Layer and 
+                     Pad U4-106(16761.34mil,9695.748mil)  Bottom Layer
+   Violation between Via (16750mil,9768mil) Top Layer to Bottom Layer and 
+                     Pad U4-106(16761.34mil,9695.748mil)  Bottom Layer
+   Violation between Via (16750mil,9768mil) Top Layer to Bottom Layer and 
+                     Pad U4-107(16741.654mil,9695.748mil)  Bottom Layer
+   Violation between Via (16691mil,9769mil) Top Layer to Bottom Layer and 
+                     Pad U4-110(16682.6mil,9695.748mil)  Bottom Layer
+   Violation between Via (16341mil,10154mil) Top Layer to Bottom Layer and 
+                     Pad U4-140(16412.914mil,10142.598mil)  Bottom Layer
+   Violation between Via (16341mil,10154mil) Top Layer to Bottom Layer and 
+                     Pad U4-141(16412.914mil,10162.284mil)  Bottom Layer
+   Violation between Via (17290mil,11071mil) Top Layer to Bottom Layer and 
+                     Pad U4-221(17273.15mil,11002.834mil)  Bottom Layer
+   Violation between Via (17223mil,10930mil) Top Layer to Bottom Layer and 
+                     Pad U4-218(17214.096mil,11002.834mil)  Bottom Layer
+   Violation between Via (16682.6mil,11076mil) Top Layer to Bottom Layer and 
+                     Pad U4-191(16682.6mil,11002.834mil)  Bottom Layer
+   Violation between Via (16667mil,10930mil) Top Layer to Bottom Layer and 
+                     Pad U4-190(16662.914mil,11002.834mil)  Bottom Layer
+   Violation between Via (18094mil,10438mil) Top Layer to Bottom Layer and 
+                     Pad R33-1(18132.44mil,10410mil)  Bottom Layer
+   Violation between Via (18094mil,10438mil) Top Layer to Bottom Layer and 
+                     Pad U7-25(18128.662mil,10467.246mil)  Bottom Layer
+   Violation between Via (18189mil,10504.234mil) Top Layer to Bottom Layer and 
+                     Pad U7-27(18128.662mil,10506.616mil)  Bottom Layer
+   Violation between Via (18069mil,10597mil) Top Layer to Bottom Layer and 
+                     Pad U7-32(18128.662mil,10605.04mil)  Bottom Layer
+   Violation between Via (15638mil,8088mil) Top Layer to Bottom Layer and 
+                     Pad U14-2(15629.686mil,8130mil)  Bottom Layer
+   Violation between Via (15703mil,7548mil) Top Layer to Bottom Layer and 
+                     Pad U14-27(15708.426mil,7590.63mil)  Bottom Layer
+   Violation between Via (15394mil,7431.7mil) Top Layer to Bottom Layer and 
+                     Pad U15-18(15385.59mil,7474.094mil)  Bottom Layer
+   Violation between Via (15913mil,7549mil) Top Layer to Bottom Layer and 
+                     Via (15941mil,7522mil) Top Layer to Bottom Layer
+   Violation between Via (16853mil,8925mil) Top Layer to Bottom Layer and 
+                     Via (16816mil,8935mil) Top Layer to Bottom Layer
+   Violation between Via (15751mil,11359.404mil) Top Layer to Bottom Layer and 
+                     Via (15717mil,11341mil) Top Layer to Bottom Layer
+   Violation between Via (17793mil,10733.15mil) Top Layer to Bottom Layer and 
+                     Via (17788mil,10694mil) Top Layer to Bottom Layer
+   Violation between Via (16585mil,9261mil) Top Layer to Bottom Layer and 
+                     Via (16622mil,9249mil) Top Layer to Bottom Layer
+   Violation between Via (18010mil,10276mil) Top Layer to Bottom Layer and 
+                     Via (18048mil,10283.4mil) Top Layer to Bottom Layer
+   Violation between Via (16314mil,7812.404mil) Top Layer to Bottom Layer and 
+                     Via (16352mil,7823mil) Top Layer to Bottom Layer
+   Violation between Via (17071mil,10935mil) Top Layer to Bottom Layer and 
+                     Via (17109mil,10928.34mil) Top Layer to Bottom Layer
+   Violation between Via (17184mil,9768mil) Top Layer to Bottom Layer and 
+                     Via (17222mil,9769mil) Top Layer to Bottom Layer
+   Violation between Via (17295.986mil,9234.2mil) Top Layer to Bottom Layer and 
+                     Via (17324mil,9262mil) Top Layer to Bottom Layer
+   Violation between Via (13882mil,11225mil) Top Layer to Bottom Layer and 
+                     Via (13855.052mil,11197.198mil) Top Layer to Bottom Layer
+   Violation between Via (18304mil,8395mil) Top Layer to Bottom Layer and 
+                     Via (18287.794mil,8430mil) Top Layer to Bottom Layer
+Rule Violations :90
+
+Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+   Violation between Via (16666mil,11470mil) Top Layer to Bottom Layer and 
+                     Via (16653mil,11472mil) Top Layer to Bottom Layer
+   Violation between Via (17548mil,11392mil) Top Layer to Bottom Layer and 
+                     Via (17547.558mil,11392mil) Top Layer to Bottom Layer
+Rule Violations :2
+
+Processing Rule : Hole Size Constraint (Min=1mil) (Max=200mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Violation between Pad U13-(12685mil,10000mil)  Top Layer and 
+                     Pad U13-(12820mil,10000mil)  Top Layer
+   Violation between Pad U12-(12685mil,9400mil)  Top Layer and 
+                     Pad U12-(12820mil,9400mil)  Top Layer
+   Violation between Pad U9-(12685mil,10600mil)  Top Layer and 
+                     Pad U9-(12820mil,10600mil)  Top Layer
+   Violation between Track (16666mil,11470mil)(16666mil,11529.6mil)  Top Layer and 
+                     Via (16653mil,11472mil) Top Layer to Bottom Layer
+   Violation between Via (16666mil,11470mil) Top Layer to Bottom Layer and 
+                     Via (16653mil,11472mil) Top Layer to Bottom Layer
+   Violation between Track (16636.536mil,11470mil)(16666mil,11470mil)  Bottom Layer and 
+                     Via (16653mil,11472mil) Top Layer to Bottom Layer
+   Violation between Track (16636.536mil,11470mil)(16636.536mil,11530mil)  Bottom Layer and 
+                     Via (16653mil,11472mil) Top Layer to Bottom Layer
+   Violation between Track (16587.2mil,11537.8mil)(16653mil,11472mil)  Top Layer and 
+                     Via (16666mil,11470mil) Top Layer to Bottom Layer
+   Violation between Track (16653mil,11472mil)(16656.22mil,11475.22mil)  Bottom Layer and 
+                     Via (16666mil,11470mil) Top Layer to Bottom Layer
+   Violation between Track (16656.22mil,11475.22mil)(16656.22mil,11530mil)  Bottom Layer and 
+                     Via (16666mil,11470mil) Top Layer to Bottom Layer
+   Violation between Track (16636.536mil,11470mil)(16666mil,11470mil)  Bottom Layer and 
+                     Track (16656.22mil,11475.22mil)(16656.22mil,11530mil)  Bottom Layer
+   Violation between Track (16636.536mil,11470mil)(16666mil,11470mil)  Bottom Layer and 
+                     Track (16653mil,11472mil)(16656.22mil,11475.22mil)  Bottom Layer
+   Violation between Track (15704mil,11573mil)(16225.414mil,11573mil)  Top Layer and 
+                     Track (16146.286mil,11573.514mil)(16182mil,11537.8mil)  Top Layer
+   Violation between Track (15704mil,11573mil)(16225.414mil,11573mil)  Top Layer and 
+                     Track (15717.688mil,11573.514mil)(16146.286mil,11573.514mil)  Top Layer
+   Violation between Track (15704mil,11573mil)(16225.414mil,11573mil)  Top Layer and 
+                     Track (15128mil,10983.826mil)(15717.688mil,11573.514mil)  Top Layer
+   Violation between Track (15097mil,10966mil)(15704mil,11573mil)  Top Layer and 
+                     Track (15128mil,10983.826mil)(15717.688mil,11573.514mil)  Top Layer
+   Violation between Track (15097mil,10966mil)(15704mil,11573mil)  Top Layer and 
+                     Track (15128mil,10841.224mil)(15128mil,10983.826mil)  Top Layer
 Rule Violations :17
 
 
-Violations Detected : 235
-Time Elapsed        : 00:00:06
+Violations Detected : 500
+Time Elapsed        : 00:00:09
