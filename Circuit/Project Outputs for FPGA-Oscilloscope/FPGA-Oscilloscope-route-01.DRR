@@ -1,0 +1,27 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: FPGA-Oscilloscope-route-01.PcbDoc   3/18/2014  2:07:13 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : FPGA-Oscilloscope-route-01.TXT
+EIA File   : FPGA-Oscilloscope-route-01.DRL
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        15mil (0.381mm)          Round          515              119.25 Inch (3028.95 mm)
+T2        25mil (0.635mm)          Round          400              49.90 Inch (1267.36 mm)
+T3        28mil (0.7112mm)         Round          15               5.19 Inch (131.82 mm)
+T4        35mil (0.889mm)          Round          4                0.90 Inch (22.86 mm)
+T5        35.43mil (0.89992mm)     Round          50               18.99 Inch (482.31 mm)
+T6        38mil (0.9652mm)         Round          4                1.10 Inch (27.94 mm)
+T7        43.31mil (1.10007mm)     Round          8                12.53 Inch (318.25 mm)
+T8        50mil (1.27mm)           Round          11               4.47 Inch (113.52 mm)
+T9        55.12mil (1.40005mm)     Round          6                1.00 Inch (25.28 mm)
+T10       62.99mil (1.59995mm)     Round          8                12.53 Inch (318.25 mm)
+T11       86mil (2.1844mm)         Round          4                1.40 Inch (35.56 mm)
+T12       125mil (3.175mm)         Round          4                25.23 Inch (640.94 mm)
+T13       157.48mil (3.99999mm)    Round          4                1.13 Inch (28.78 mm)
+---------------------------------------------------------------------------
+Totals                                            1033             253.62 Inch (6441.82 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:01

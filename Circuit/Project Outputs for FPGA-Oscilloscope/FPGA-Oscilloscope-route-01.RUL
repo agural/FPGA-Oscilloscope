@@ -1,0 +1,6 @@
+DRC Rules Export File for PCB: C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\Circuit\FPGA-Oscilloscope-route-01.PcbDoc
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=7.80
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=7.80
+RuleKind=Width|RuleName=Power|Scope=Board|Minimum=25.00
