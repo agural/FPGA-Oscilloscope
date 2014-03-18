@@ -1,0 +1,42 @@
+Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Footprint~String~Footprint~100|Field=LibRef~String~LibRef~100|Field=Quantity~Integer~Quantity~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~FPGA-Oscilloscope.PrjPcb|ReportField=ProjectFullPath~C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\Circuit\FPGA-Oscilloscope.PrjPcb|ReportField=Title~Bill of Materials For Project [FPGA-Oscilloscope.PrjPcb] (No PCB Document Selected)|ReportField=TotalQuantity~247|ReportField=ReportTime~2:59:45 AM|ReportField=ReportDate~3/18/2014|ReportField=ReportDateTime~3/18/2014 2:59:45 AM|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=ApprovedBy~|ReportField=Author~Albert Gural|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~3/18/2014|ReportField=CurrentTime~2:59:42 AM|ReportField=Date~|ReportField=DocumentFullPathAndName~C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\Circuit\FPGA-Oscilloscope.SchDoc|ReportField=DocumentName~FPGA-Oscilloscope.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~Albert Gural|ReportField=Engineer~Albert Gural|ReportField=ImagePath~|ReportField=ModifiedDate~3/18/2014|ReportField=Organization~|ReportField=ProjectName~FPGA-Oscilloscope.PrjPcb|ReportField=Revision~1|ReportField=Rule~|ReportField=SheetNumber~1|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~FPGA Oscilloscope|ReportField=DataSourceFileName~FPGA-Oscilloscope.PrjPcb|ReportField=DataSourceFullPath~C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\Circuit\FPGA-Oscilloscope.PrjPcb
+10uF|Capacitor (Semiconductor SIM Model)|C1, C2, C22, C23, C24, C37|1608[0603]|Cap Semi|6
+0.1uF|Capacitor (Semiconductor SIM Model)|C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36, C38, C39, C40, C41, C42, C43, C44, C45, C46, C47, C48, C49, C50, C51, C52|1608[0603]|Cap Semi|46
+1uF|Capacitor (Semiconductor SIM Model)|C53|1608[0603]|Cap Semi|1
+|Capacitor (Semiconductor SIM Model)|C54, C55, C56, C57, C58, C59, C60, C61, C62, C63, C64, C65, C66, C67, C68, C69, C70, C71, C72, C73, C74, C75, C76, C77|1608[0603]|Cap Semi|24
+SMP1307||D1, D2, D3, D4|SOT-23-3|SMP1307-005LF|4
+Header 5X2A|Header, 5-Pin, Dual row|J1|HDR2X5_CEN|Header 5X2A|1
+PS_CONN|Elpac Compatible Power Supply Connector|J2|DIN5|PS_CONN|1
+DISP_CONN||J3|MOLEX-40|NHD-4.3-Display-connector|1
+TOUCH_CONN||J4|MOLEX-6|NHD-4.3-Touch-connector|1
+BNC|BNC Connector|J5, J6|AMP31-5540|BNC|2
+Playground||J7, J8|20x20|Playground|2
+Header 3|Header, 3-Pin|JP1, JP2, JP3, JP5|HDR1X3|Header 3|4
+TestPoint||JP4, JP6, JP7, JP8|TestPoint|TestPoint|4
+Header 8|Header, 8-Pin|P1, P2, P3|HDR1X8|Header 8|3
+Potentiometer||POT1, POT2|POT-3|Potentiometer|2
+1K||R1, R2, R9, R70, R82|1608[0603]|RES1|5
+10K||R3, R4, R6, R7, R8, R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27, R28, R29, R30, R31, R32, R33, R34, R35, R36, R37, R38, R39, R40, R41, R42, R43, R44, R47, R48, R49, R50, R51, R52, R54, R55, R56, R57, R58, R59, R60, R61, R62, R63, R64, R65, R66, R89, R90, R91, R92, R93, R94, R95, R96, R97, R98, R99, R100, R101, R102, R103, R104, R105|1608[0603]|RES1|76
+25||R5, R74, R75|1608[0603]|RES1|3
+1||R45, R46|1608[0603]|RES1|2
+150||R53|1608[0603]|RES1|1
+887K||R67, R79|1608[0603]|RES1|2
+13K||R68, R80|1608[0603]|RES1|2
+1M||R69, R73, R76, R77, R81, R85, R86, R87|1608[0603]|RES1|8
+100K||R71, R83|1608[0603]|RES1|2
+15K||R72, R78, R84, R88|1608[0603]|RES1|4
+mom||SW1, SW4, SW5, SW6, SW7, SW8|SPDT|PVB4-MOM|6
+CL-SB-13B-02T||SW2, SW3|SP3T|CL-SB-13B-02T|2
+latch||SW9, SW10|SPDT|PVB4-LATCH|2
+SW-ROTARY|Rotary Encoder|SW11, SW12, SW13, SW14, SW15|VR4|SW-ROTARY|5
+EPCS1|Altera Serial Configuration Device|U1|SO-8|EPCS1|1
+74LVTH162245|16-Bit Bus Transceiver|U2, U3, U5, U6, U7, U8, U10, U16|TSSOP48|74LVTH162245|8
+EP3C25Q240|Cyclone III EP3C-25 FPGA PQFP240|U4|PQFP240|EP3C25Q240|1
+LM1086|1.5A Low Dropout Positive Regulator|U9, U12, U13|TO-263|LM1086|3
+ADM8316|Analog Devices Watchdog Timer and Reset IC|U11|SOT-23|ADM8316|1
+SST39VF020|Microchip 2 Mbit (256k x 8 bit) Multi-Purpose Flash|U14|TSOP-32 8x14mm|SST39VF020|1
+AS7C31024B|Alliance 1 Mbit (128k x 8bit) SRAM|U15|TSOP-32 8x20mm|AS7C31024B|1
+MSM5416283|256K x 16bit VRAM|U17|SSOP64|MSM5416283|1
+THS4631||U18, U19, U22, U23|DGN-8|THS4631|4
+AD9288|Dual Channel ADC|U20|QFP24-7x7|AD9288|1
+MCP4551||U21, U24|MSOP-8|MCP4551|2
+OSCOE|Oscillator with Active High Output Enable|X1|DIP8-4|OSCOE|1
