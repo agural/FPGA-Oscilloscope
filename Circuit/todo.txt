@@ -10,11 +10,11 @@
  x Leave adequate space for JTAG connector
  x Add latching power switch
  x 5V Regulated supply for VRAM
- - Check footprints for:
-    - diodes
-    - pushbutton switches
-    - latching pushbutton switches
-    - display (correct spacing apart from each other?)
+ x Check footprints for:
+    x diodes
+    x pushbutton switches
+    x latching pushbutton switches
+    x display (correct spacing apart from each other?)
 
  x Autorouter:
     x power trace 30 mil
