@@ -1,26 +1,15 @@
- x Capacitors for all chips: especially need 1uF + 0.1uF for VRAM
- x Optimize pin-pin mappings to reduce crossing traces
- x Flash programmer
- x Smaller voltage regulator?
- x Add IC socket section + power and wire-wrap holes
- x Add voltage sense pins
- x Add holes for standoffs
- x Increase board size
- x USB? Probably not...
- x Leave adequate space for JTAG connector
- x Add latching power switch
- x 5V Regulated supply for VRAM
- x Check footprints for:
-    x diodes
-    x pushbutton switches
-    x latching pushbutton switches
-    x display (correct spacing apart from each other?)
-
- x Autorouter:
-    x power trace 30 mil
-    x signal trace 10 mil
-    x via 30 mil outer x 15 mil inner
-
-
- X Display connector footprint is backwards
- X Analog frontend (variable gain)
+ - Fix oscillator footprint
+ - Ferrite bead separate Analog and Digital grounds
+ - Fix analog frontend (adopt new design)
+ - Higher bandwidth digital pots?
+ - Keep RF diodes for input from BNC; change to Schottky for input to ADC (lower Vf)
+ - Add jumpers for analog frontend: AGND, ADCA, ADCA#, ADCB, ADCB#, REFOUT
+ x Power LED
+ x Add 9bit address line for VRAM
+ x Add resistor to GND and VCC for S1 and S2 of ADC
+ x 47uF from 5V rail
+ x 1 ohm resistors to VREG need AXIAL0.7 footprint
+ x Remove MSEL pulldown resistors
+ x Add pullups for IO-driven buffer direction lines
+ x Move reset from WDT chip to other pin
+ x i2c int from touch display
