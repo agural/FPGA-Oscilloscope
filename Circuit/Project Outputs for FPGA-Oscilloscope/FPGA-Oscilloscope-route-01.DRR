@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------
-NCDrill File Report For: FPGA-Oscilloscope-route-01.PcbDoc   3/18/2014  2:07:13 PM
+NCDrill File Report For: FPGA-Oscilloscope-route-01.PcbDoc   3/28/2014  2:06:10 PM
 ---------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -8,20 +8,23 @@ EIA File   : FPGA-Oscilloscope-route-01.DRL
 
 Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
 ---------------------------------------------------------------------------
-T1        15mil (0.381mm)          Round          515              119.25 Inch (3028.95 mm)
-T2        25mil (0.635mm)          Round          400              49.90 Inch (1267.36 mm)
-T3        28mil (0.7112mm)         Round          15               5.19 Inch (131.82 mm)
-T4        35mil (0.889mm)          Round          4                0.90 Inch (22.86 mm)
-T5        35.43mil (0.89992mm)     Round          50               18.99 Inch (482.31 mm)
-T6        38mil (0.9652mm)         Round          4                1.10 Inch (27.94 mm)
-T7        43.31mil (1.10007mm)     Round          8                12.53 Inch (318.25 mm)
-T8        50mil (1.27mm)           Round          11               4.47 Inch (113.52 mm)
-T9        55.12mil (1.40005mm)     Round          6                1.00 Inch (25.28 mm)
-T10       62.99mil (1.59995mm)     Round          8                12.53 Inch (318.25 mm)
-T11       86mil (2.1844mm)         Round          4                1.40 Inch (35.56 mm)
-T12       125mil (3.175mm)         Round          4                25.23 Inch (640.94 mm)
-T13       157.48mil (3.99999mm)    Round          4                1.13 Inch (28.78 mm)
+T1        15mil (0.381mm)          Round          527              107.25 Inch (2724.13 mm)
+T2        25mil (0.635mm)          Round          400              49.54 Inch (1258.40 mm)
+T3        31.5mil (0.8001mm)       Round          2                0.20 Inch (5.00 mm)
+T4        33.46mil (0.84988mm)     Round          4                1.90 Inch (48.26 mm)
+T5        35.43mil (0.89992mm)     Round          66               23.48 Inch (596.28 mm)
+T6        38mil (0.9652mm)         Round          4                0.98 Inch (24.95 mm)
+T7        42mil (1.0668mm)         Round          25               7.09 Inch (180.09 mm)
+T8        43.31mil (1.10007mm)     Round          8                12.53 Inch (318.34 mm)
+T9        50mil (1.27mm)           Round          11               4.31 Inch (109.36 mm)
+T10       55.12mil (1.40005mm)     Round          6                1.00 Inch (25.28 mm)
+T11       62.99mil (1.59995mm)     Round          8                12.53 Inch (318.34 mm)
+T12       65mil (1.651mm)          Round          1                0.00 Inch (0.00 mm)
+T13       86mil (2.1844mm)         Round          4                1.28 Inch (32.57 mm)
+T14       100mil (2.54mm)          Round          10               4.88 Inch (123.95 mm)
+T15       125mil (3.175mm)         Round          4                25.23 Inch (640.94 mm)
+T16       157.48mil (3.99999mm)    Round          4                1.13 Inch (28.78 mm)
 ---------------------------------------------------------------------------
-Totals                                            1033             253.62 Inch (6441.82 mm)
+Totals                                            1084             253.33 Inch (6434.65 mm)
 
-Total Processing Time (hh:mm:ss) : 00:00:01
+Total Processing Time (hh:mm:ss) : 00:00:00
