@@ -1,9 +1,10 @@
- - Fix oscillator footprint
- - Ferrite bead separate Analog and Digital grounds
+ x Fix oscillator footprint
+ x Ferrite bead separate Analog and Digital grounds
+ - AGND w/ ground plane
  - Fix analog frontend (adopt new design)
  - Higher bandwidth digital pots?
  - Keep RF diodes for input from BNC; change to Schottky for input to ADC (lower Vf)
- - Add jumpers for analog frontend: AGND, ADCA, ADCA#, ADCB, ADCB#, REFOUT
+ - Add jumpers for analog frontend: AGND, ADCA, ADCA#, ADCB, ADCB#, REFOUT, +12, -12
 
  - Board labels (logic analyzer, vertical sensitivity, time sensitivity, vertical offset, trigger offset, trigger level)
 
