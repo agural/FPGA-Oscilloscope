@@ -1,5 +1,5 @@
 ---------------------------------------------------------------------------
-NCDrill File Report For: FPGA-Oscilloscope-route-01.PcbDoc   3/28/2014  2:06:10 PM
+NCDrill File Report For: FPGA-Oscilloscope-route-01.PcbDoc   3/28/2014  2:53:28 PM
 ---------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -27,4 +27,4 @@ T16       157.48mil (3.99999mm)    Round          4                1.13 Inch (28
 ---------------------------------------------------------------------------
 Totals                                            1084             253.33 Inch (6434.65 mm)
 
-Total Processing Time (hh:mm:ss) : 00:00:00
+Total Processing Time (hh:mm:ss) : 00:00:01

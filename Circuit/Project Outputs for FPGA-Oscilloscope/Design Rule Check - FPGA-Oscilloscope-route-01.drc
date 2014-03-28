@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\Circuit\FPGA-Oscilloscope-route-01.PcbDoc
 Date     : 3/28/2014
-Time     : 2:04:53 PM
+Time     : 2:52:08 PM
 
 Processing Rule : Minimum Annular Ring (Minimum=7mil) (All)
 Rule Violations :0
@@ -203,4 +203,4 @@ Rule Violations :3
 
 
 Violations Detected : 140
-Time Elapsed        : 00:00:26
+Time Elapsed        : 00:00:27
