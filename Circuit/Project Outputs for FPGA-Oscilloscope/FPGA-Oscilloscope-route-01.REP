@@ -7,6 +7,8 @@ Generating : Top Layer
 
     Adding Layer      : Top Layer
 
+    Adding Layer      : Mechanical 4
+
     Adding Layer      : Multi-Layer
 
 
@@ -69,13 +71,15 @@ Generating : Bottom Layer
 
     Adding Layer      : Bottom Layer
 
+    Adding Layer      : Mechanical 4
+
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D16
-    D17
-    D25
+    D10
+    D11
+    D19
     D26
     D27
     D29
@@ -120,7 +124,6 @@ Used DCodes :
     D76
     D77
     D78
-    D79
 *************************************************************
 
 *************************************************************
@@ -129,10 +132,12 @@ Generating : Top Overlay
 
     Adding Layer      : Top Overlay
 
+    Adding Layer      : Mechanical 4
+
 
 Used DCodes :
+    D26
     D27
-    D37
     D79
     D80
     D81
@@ -140,9 +145,6 @@ Used DCodes :
     D83
     D84
     D85
-    D86
-    D87
-    D88
 *************************************************************
 
 *************************************************************
@@ -151,14 +153,20 @@ Generating : Top Solder
 
     Adding Layer      : Top Solder
 
+    Adding Layer      : Mechanical 4
+
     Adding Layer      : Top Layer
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
+    D26
     D28
-    D79
+    D80
+    D86
+    D87
+    D88
     D89
     D90
     D91
@@ -196,9 +204,6 @@ Used DCodes :
     D123
     D124
     D125
-    D126
-    D127
-    D128
 *************************************************************
 
 *************************************************************
@@ -207,15 +212,21 @@ Generating : Bottom Solder
 
     Adding Layer      : Bottom Solder
 
+    Adding Layer      : Mechanical 4
+
     Adding Layer      : Bottom Layer
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
+    D26
+    D87
+    D88
     D96
-    D97
     D105
+    D106
+    D107
     D108
     D109
     D110
@@ -253,9 +264,6 @@ Used DCodes :
     D142
     D143
     D144
-    D145
-    D146
-    D147
 *************************************************************
 
 *************************************************************
@@ -264,8 +272,11 @@ Generating : Bottom Overlay
 
     Adding Layer      : Bottom Overlay
 
+    Adding Layer      : Mechanical 4
+
 
 Used DCodes :
+    D26
     D27
     D79
     D80
