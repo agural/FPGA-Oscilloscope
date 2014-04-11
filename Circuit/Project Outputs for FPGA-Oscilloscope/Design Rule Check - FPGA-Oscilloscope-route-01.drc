@@ -1,9 +1,9 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\Circuit\FPGA-Oscilloscope-route-01.PcbDoc
-Date     : 3/28/2014
-Time     : 2:52:08 PM
+Date     : 3/31/2014
+Time     : 6:22:00 PM
 
-Processing Rule : Minimum Annular Ring (Minimum=7mil) (All)
+Processing Rule : Minimum Annular Ring (Minimum=0.178mm) (All)
 Rule Violations :0
 
 Processing Rule : SMD Neck-Down Constraint (Percent=100%) (All)
@@ -90,117 +90,115 @@ Processing Rule : SMD Neck-Down Constraint (Percent=100%) (All)
    Violation between SMD Neck-Down Constraint Between Pad on BottomLayer And Track on BottomLayer
    Violation between SMD Neck-Down Constraint Between Pad on BottomLayer And Track on BottomLayer
    Violation between SMD Neck-Down Constraint Between Pad on BottomLayer And Track on BottomLayer
-   Violation between SMD Neck-Down Constraint Between Pad on BottomLayer And Track on BottomLayer
-   Violation between SMD Neck-Down Constraint Between Pad on BottomLayer And Track on BottomLayer
-Rule Violations :85
+Rule Violations :83
 
-Processing Rule : Width Constraint (Min=8mil) (Max=100mil) (Preferred=30mil) ((InNet('GND') OR InNet('V12+') OR InNet('V12-') OR InNet('VCC') OR InNet('VCC5+') OR InNet('VCCA') OR InNet('VCCINT')) OR InNet('AGND'))
-   Violation between Width Constraint: Pad J3-1(14176.222mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-1(14176.222mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-4(14235.277mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-4(14235.277mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-4(14235.277mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-29(14727.402mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-23(14609.292mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-22(14589.607mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-21(14569.922mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-15(14451.812mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-14(14432.127mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-13(14412.442mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-7(14294.332mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-5(14254.962mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-3(14215.592mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-29(14727.402mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-23(14609.292mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-22(14589.607mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-21(14569.922mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-15(14451.812mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-14(14432.127mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-13(14412.442mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-7(14294.332mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-5(14254.962mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-3(14215.592mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-5(14254.962mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-3(14215.592mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-23(14609.292mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-15(14451.812mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-7(14294.332mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-3(14215.592mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-5(14254.962mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-22(14589.607mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-14(14432.127mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-6(14274.647mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-21(14569.922mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-13(14412.442mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-23(14609.292mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-15(14451.812mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-7(14294.332mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-36(14865.197mil,10880.626mil)  Top Layer
-   Violation between Width Constraint: Pad J3-36(14865.197mil,10880.626mil)  Top Layer
+Processing Rule : Width Constraint (Min=0.203mm) (Max=2.54mm) (Preferred=0.762mm) ((InNet('GND') OR InNet('V12+') OR InNet('V12-') OR InNet('VCC') OR InNet('VCC5+') OR InNet('VCCA') OR InNet('VCCINT')) OR InNet('AGND'))
+   Violation between Width Constraint: Pad J3-1(360.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-1(360.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-4(361.576mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-4(361.576mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-4(361.576mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-29(374.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-23(371.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-22(370.576mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-21(370.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-15(367.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-14(366.576mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-13(366.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-7(363.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-5(362.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-3(361.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-29(374.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-23(371.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-22(370.576mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-21(370.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-15(367.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-14(366.576mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-13(366.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-7(363.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-5(362.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-3(361.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-5(362.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-3(361.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-23(371.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-15(367.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-7(363.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-3(361.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-5(362.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-22(370.576mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-14(366.576mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-6(362.576mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-21(370.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-13(366.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-23(371.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-15(367.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-7(363.076mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-36(377.576mm,276.368mm)  Top Layer
+   Violation between Width Constraint: Pad J3-36(377.576mm,276.368mm)  Top Layer
 Rule Violations :42
 
-Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=7.8mil) (All),(All)
+Processing Rule : Clearance Constraint (Gap=0.198mm) (All),(All)
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=7.8mil) (Max=30mil) (Preferred=7.8mil) (All)
+Processing Rule : Width Constraint (Min=0.198mm) (Max=0.762mm) (Preferred=0.198mm) (All)
 Rule Violations :0
 
-Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
 Rule Violations :0
 
-Processing Rule : Silk to Silk (Clearance=10mil) (Disabled)(All),(All)
+Processing Rule : Silk to Silk (Clearance=0.254mm) (Disabled)(All),(All)
 Rule Violations :0
 
-Processing Rule : Silk To Solder Mask (Clearance=10mil) (Disabled)(IsPad),(All)
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (Disabled)(IsPad),(All)
 Rule Violations :0
 
-Processing Rule : Minimum Solder Mask Sliver (Gap=1.5mil) (All),(All)
-   Violation between Via (16940mil,9770mil) Top Layer to Bottom Layer and 
-                     Pad U4-97(16938.504mil,9695.748mil)  Bottom Layer
-   Violation between Via (16840.08mil,9769.92mil) Top Layer to Bottom Layer and 
-                     Pad U4-102(16840.08mil,9695.748mil)  Bottom Layer
-   Violation between Via (18600mil,10052.52mil) Top Layer to Bottom Layer and 
-                     Via (18600mil,10013.15mil) Top Layer to Bottom Layer
-   Violation between Via (18600mil,10129.69mil) Top Layer to Bottom Layer and 
-                     Via (18600mil,10090.32mil) Top Layer to Bottom Layer
-   Violation between Via (18600mil,10206.86mil) Top Layer to Bottom Layer and 
-                     Via (18600mil,10167.49mil) Top Layer to Bottom Layer
-   Violation between Via (14031.89mil,9290mil) Top Layer to Bottom Layer and 
-                     Via (14071.26mil,9290mil) Top Layer to Bottom Layer
-   Violation between Via (14148.43mil,9290mil) Top Layer to Bottom Layer and 
-                     Via (14109.06mil,9290mil) Top Layer to Bottom Layer
-   Violation between Via (14092.2mil,10310mil) Top Layer to Bottom Layer and 
-                     Via (14052.83mil,10310mil) Top Layer to Bottom Layer
-   Violation between Via (13975.66mil,10310mil) Top Layer to Bottom Layer and 
-                     Via (14015.03mil,10310mil) Top Layer to Bottom Layer
-   Violation between Text "www.albertgural.com" (17100mil,7300mil)  Top Solder and 
-                     Text "Albert Gural   2014" (17100mil,7400mil)  Top Solder
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.038mm) (All),(All)
+   Violation between Via (430.276mm,248.158mm) Top Layer to Bottom Layer and 
+                     Pad U4-97(430.238mm,246.272mm)  Bottom Layer
+   Violation between Via (427.738mm,248.156mm) Top Layer to Bottom Layer and 
+                     Pad U4-102(427.738mm,246.272mm)  Bottom Layer
+   Violation between Via (472.44mm,255.334mm) Top Layer to Bottom Layer and 
+                     Via (472.44mm,254.334mm) Top Layer to Bottom Layer
+   Violation between Via (472.44mm,257.294mm) Top Layer to Bottom Layer and 
+                     Via (472.44mm,256.294mm) Top Layer to Bottom Layer
+   Violation between Via (472.44mm,259.254mm) Top Layer to Bottom Layer and 
+                     Via (472.44mm,258.254mm) Top Layer to Bottom Layer
+   Violation between Via (356.41mm,235.966mm) Top Layer to Bottom Layer and 
+                     Via (357.41mm,235.966mm) Top Layer to Bottom Layer
+   Violation between Via (359.37mm,235.966mm) Top Layer to Bottom Layer and 
+                     Via (358.37mm,235.966mm) Top Layer to Bottom Layer
+   Violation between Via (357.942mm,261.874mm) Top Layer to Bottom Layer and 
+                     Via (356.942mm,261.874mm) Top Layer to Bottom Layer
+   Violation between Via (354.982mm,261.874mm) Top Layer to Bottom Layer and 
+                     Via (355.982mm,261.874mm) Top Layer to Bottom Layer
+   Violation between Text "www.albertgural.com" (434.34mm,185.42mm)  Top Solder and 
+                     Text "Albert Gural   2014" (434.34mm,187.96mm)  Top Solder
 Rule Violations :10
 
-Processing Rule : Hole To Hole Clearance (Gap=10mil) (All),(All)
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
 Rule Violations :0
 
-Processing Rule : Hole Size Constraint (Min=1mil) (Max=200mil) (All)
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=5.08mm) (All)
 Rule Violations :0
 
-Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
-   Violation between Pad U14-(12685mil,10000mil)  Top Layer and 
-                     Pad U14-(12820mil,10000mil)  Top Layer
-   Violation between Pad U13-(12685mil,9400mil)  Top Layer and 
-                     Pad U13-(12820mil,9400mil)  Top Layer
-   Violation between Pad U9-(12685mil,10600mil)  Top Layer and 
-                     Pad U9-(12820mil,10600mil)  Top Layer
+   Violation between Pad U9-(322.199mm,269.24mm)  Top Layer and 
+                     Pad U9-(325.628mm,269.24mm)  Top Layer
+   Violation between Pad U14-(322.199mm,254mm)  Top Layer and 
+                     Pad U14-(325.628mm,254mm)  Top Layer
+   Violation between Pad U13-(322.199mm,238.76mm)  Top Layer and 
+                     Pad U13-(325.628mm,238.76mm)  Top Layer
 Rule Violations :3
 
 
-Violations Detected : 140
-Time Elapsed        : 00:00:27
+Violations Detected : 138
+Time Elapsed        : 00:00:20

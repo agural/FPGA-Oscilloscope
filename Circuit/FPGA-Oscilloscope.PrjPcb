@@ -29,7 +29,7 @@ PowerPortNamesTakePriority=0
 PushECOToAnnotationFile=1
 DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
-OutputPath=
+OutputPath=Project Outputs for FPGA-Oscilloscope
 
 [Document1]
 DocumentPath=FPGA-Oscilloscope-route-01.PcbDoc
@@ -305,7 +305,7 @@ AddNetPins=-1
 AddNetNetLabels=-1
 AddNetPorts=-1
 ShowComponentParameters=-1
-ExportBOM=0
+ExportBOM=-1
 TemplateFilename=BOM Default Template 95.xlt
 TemplateStoreRelative=-1
 PCB_PrintColor=0
@@ -328,7 +328,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=
+OutputDir=Project Outputs for FPGA-Oscilloscope
 
 [OutputGroup1]
 Name=Netlist Outputs
