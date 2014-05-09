@@ -1,5 +1,5 @@
 Flow report for oscilloscope
-Sun Mar 09 12:12:43 2014
+Tue Apr 29 10:47:01 2014
 Quartus II 32-bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Sun Mar 09 12:12:43 2014      ;
+; Flow Status                        ; Flow Failed - Tue Apr 29 10:47:01 2014     ;
 ; Quartus II 32-bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name                      ; oscilloscope                               ;
 ; Top-level Entity Name              ; oscilloscope                               ;
 ; Family                             ; Cyclone III                                ;
 ; Device                             ; EP3C25Q240C8                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 106                                        ;
-;     Total combinational functions  ; 106                                        ;
-;     Dedicated logic registers      ; 23                                         ;
-; Total registers                    ; 23                                         ;
-; Total pins                         ; 20                                         ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total PLLs                         ; 0                                          ;
+; Total logic elements               ; N/A until Partition Merge                  ;
+;     Total combinational functions  ; N/A until Partition Merge                  ;
+;     Dedicated logic registers      ; N/A until Partition Merge                  ;
+; Total registers                    ; N/A until Partition Merge                  ;
+; Total pins                         ; N/A until Partition Merge                  ;
+; Total virtual pins                 ; N/A until Partition Merge                  ;
+; Total memory bits                  ; N/A until Partition Merge                  ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
+; Total PLLs                         ; N/A until Partition Merge                  ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/09/2014 12:12:40 ;
+; Start date & time ; 04/29/2014 10:46:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; oscilloscope        ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +------------------------------------------------+------------------------------------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                                ; Value                                                            ; Default Value ; Entity Name ; Section Id       ;
 +------------------------------------------------+------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID                          ; 163683362755794.139439236003808                                  ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID                          ; 163683362755794.139879361810388                                  ; --            ; --          ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME                       ; NA                                                               ; --            ; --          ; vram_timing_test ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST                ; On                                                               ; --            ; --          ; eda_simulation   ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH           ; vram_timing_test                                                 ; --            ; --          ; eda_simulation   ;
@@ -145,7 +145,6 @@ applicable agreement for further details.
 ; MISC_FILE                                      ; lpm_constant1.cmp                                                ; --            ; --          ; --               ;
 ; MISC_FILE                                      ; lpm_constant2.bsf                                                ; --            ; --          ; --               ;
 ; MISC_FILE                                      ; lpm_constant2.cmp                                                ; --            ; --          ; --               ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE                    ; 1.2V                                                             ; --            ; --          ; --               ;
 ; PARTITION_COLOR                                ; 16764057                                                         ; --            ; --          ; Top              ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL            ; PLACEMENT_AND_ROUTING                                            ; --            ; --          ; Top              ;
 ; PARTITION_NETLIST_TYPE                         ; SOURCE                                                           ; --            ; --          ; Top              ;
@@ -161,8 +160,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:04     ; 1.0                     ; 411 MB              ; 00:00:04                           ;
-; Total                ; 00:00:04     ; --                      ; --                  ; 00:00:04                           ;
+; Analysis & Synthesis ; 00:00:03     ; 1.0                     ; 409 MB              ; 00:00:03                           ;
+; Total                ; 00:00:03     ; --                      ; --                  ; 00:00:03                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

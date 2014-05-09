@@ -1,0 +1,56 @@
+
+
+Edit Qsys
+ - "Tools" => "Qsys"
+ - Modify processor or other items
+ - "Generate..." and "Generate"
+
+Update BDF
+ - right click on nios block
+ - "Update Symbol or Block..."
+
+Compile
+ - "Start Compilation..."
+ - Check "Pin Planner"
+ - "Start Compilation..."
+
+Upload
+ - click "Upload"
+ - "Add file..."
+ - Search for "<dir>/output_files/osc.sof"
+ - "Start"
+
+Open Eclipse
+ - "Tools" => "Nios II Software Build Tools for Eclipse"
+ - Search for "<dir>/software"
+
+Update BSP
+ - Right click on "osc_bsp" (in Project Explorer in left panel)
+ - "Nios II" => "BSP Editor..."
+ - "Generate", "Exit"
+
+Compile
+ - "Project" => "Clean..."
+ - "OK"
+
+Program R/W memory
+ - Switch to Debug view
+ - "Run" => "Debug Configurations..."
+ - Create a new "Nios II Hardware" configuration
+ - Verify all settings
+ - "Apply", "Debug"
+
+Program Flash
+ - "Nios II" => "Flash Programmer"
+ - "File" => "New..."
+ - Select the "proc.sopcinfo" file
+ - "OK"
+ - "Add..."
+ - Select "<dir>/obj/osc.elf"
+ - "Start"
+
+
+
+
+
+

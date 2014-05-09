@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Apr 29 10:56:17 2014
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Revision Name : Test
+Top-level Entity Name : NIOS
+Family : Cyclone III
+Device : EP3C25Q240C8
+Timing Models : Final
+Total logic elements : 1,320 / 24,624 ( 5 % )
+    Total combinational functions : 1,232 / 24,624 ( 5 % )
+    Dedicated logic registers : 724 / 24,624 ( 3 % )
+Total registers : 724
+Total pins : 1 / 149 ( < 1 % )
+Total virtual pins : 0
+Total memory bits : 272,384 / 608,256 ( 45 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

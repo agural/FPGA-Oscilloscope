@@ -1,0 +1,183 @@
+Flow report for Test
+Tue Apr 29 10:56:33 2014
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Flow Summary                                                                    ;
++------------------------------------+--------------------------------------------+
+; Flow Status                        ; Successful - Tue Apr 29 10:56:33 2014      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; Test                                       ;
+; Top-level Entity Name              ; NIOS                                       ;
+; Family                             ; Cyclone III                                ;
+; Device                             ; EP3C25Q240C8                               ;
+; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 1,320 / 24,624 ( 5 % )                     ;
+;     Total combinational functions  ; 1,232 / 24,624 ( 5 % )                     ;
+;     Dedicated logic registers      ; 724 / 24,624 ( 3 % )                       ;
+; Total registers                    ; 724                                        ;
+; Total pins                         ; 1 / 149 ( < 1 % )                          ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 272,384 / 608,256 ( 45 % )                 ;
+; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                            ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
++------------------------------------+--------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 04/29/2014 10:55:46 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; Test                ;
++-------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                      ;
++-------------------------------------+--------------------------------------------------------+---------------+---------------------------------------+----------------+
+; Assignment Name                     ; Value                                                  ; Default Value ; Entity Name                           ; Section Id     ;
++-------------------------------------+--------------------------------------------------------+---------------+---------------------------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 163683362755794.139879414601344                        ; --            ; --                                    ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                   ; --            ; --                                    ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                                 ; <None>        ; --                                    ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; NIOS                                  ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; NIOS_irq_mapper                       ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; NIOS_mm_interconnect_0                ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; NIOS_mm_interconnect_0_addr_router    ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; NIOS_mm_interconnect_0_cmd_xbar_demux ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; NIOS_mm_interconnect_0_cmd_xbar_mux   ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; NIOS_mm_interconnect_0_id_router      ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; NIOS_mm_interconnect_0_rsp_xbar_mux   ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; NIOS_nios2_qsys_0                     ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; NIOS_onchip_memory2_0                 ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; altera_avalon_sc_fifo                 ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; altera_merlin_master_agent            ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; altera_merlin_master_translator       ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; altera_merlin_slave_agent             ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; altera_merlin_slave_translator        ; --             ;
+; IP_TOOL_ENV                         ; Qsys                                                   ; --            ; altera_reset_controller               ; --             ;
+; IP_TOOL_NAME                        ; Qsys                                                   ; --            ; NIOS                                  ; --             ;
+; IP_TOOL_NAME                        ; altera_irq_mapper                                      ; --            ; NIOS_irq_mapper                       ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_interconnect_wrapper                     ; --            ; NIOS_mm_interconnect_0                ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_router                                   ; --            ; NIOS_mm_interconnect_0_addr_router    ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_demultiplexer                            ; --            ; NIOS_mm_interconnect_0_cmd_xbar_demux ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_multiplexer                              ; --            ; NIOS_mm_interconnect_0_cmd_xbar_mux   ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_router                                   ; --            ; NIOS_mm_interconnect_0_id_router      ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_multiplexer                              ; --            ; NIOS_mm_interconnect_0_rsp_xbar_mux   ; --             ;
+; IP_TOOL_NAME                        ; altera_nios2_qsys                                      ; --            ; NIOS_nios2_qsys_0                     ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_onchip_memory2                           ; --            ; NIOS_onchip_memory2_0                 ; --             ;
+; IP_TOOL_NAME                        ; altera_avalon_sc_fifo                                  ; --            ; altera_avalon_sc_fifo                 ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_master_agent                             ; --            ; altera_merlin_master_agent            ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_master_translator                        ; --            ; altera_merlin_master_translator       ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_slave_agent                              ; --            ; altera_merlin_slave_agent             ; --             ;
+; IP_TOOL_NAME                        ; altera_merlin_slave_translator                         ; --            ; altera_merlin_slave_translator        ; --             ;
+; IP_TOOL_NAME                        ; altera_reset_controller                                ; --            ; altera_reset_controller               ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; NIOS                                  ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; NIOS_irq_mapper                       ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; NIOS_mm_interconnect_0                ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; NIOS_mm_interconnect_0_addr_router    ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; NIOS_mm_interconnect_0_cmd_xbar_demux ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; NIOS_mm_interconnect_0_cmd_xbar_mux   ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; NIOS_mm_interconnect_0_id_router      ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; NIOS_mm_interconnect_0_rsp_xbar_mux   ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; NIOS_nios2_qsys_0                     ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; NIOS_onchip_memory2_0                 ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; altera_avalon_sc_fifo                 ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; altera_merlin_master_agent            ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; altera_merlin_master_translator       ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; altera_merlin_slave_agent             ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; altera_merlin_slave_translator        ; --             ;
+; IP_TOOL_VERSION                     ; 13.1                                                   ; --            ; altera_reset_controller               ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                     ; --            ; --                                    ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                      ; --            ; --                                    ; --             ;
+; MISC_FILE                           ; NIOS/synthesis/../../NIOS.cmp                          ; --            ; --                                    ; --             ;
+; MISC_FILE                           ; NIOS/synthesis/../../NIOS.qsys                         ; --            ; --                                    ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                   ; --            ; --                                    ; --             ;
+; PARTITION_COLOR                     ; 16764057                                               ; --            ; NIOS                                  ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                  ; --            ; NIOS                                  ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                 ; --            ; NIOS                                  ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                           ; --            ; --                                    ; --             ;
+; SLD_FILE                            ; NIOS/synthesis/NIOS.debuginfo                          ; --            ; --                                    ; --             ;
+; SLD_INFO                            ; QSYS_NAME NIOS HAS_SOPCINFO 1 GENERATION_ID 1398793995 ; --            ; NIOS                                  ; --             ;
+; SOPCINFO_FILE                       ; NIOS/synthesis/../../NIOS.sopcinfo                     ; --            ; --                                    ; --             ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                     ; --            ; --                                    ; --             ;
+; TOP_LEVEL_ENTITY                    ; NIOS                                                   ; Test          ; --                                    ; --             ;
++-------------------------------------+--------------------------------------------------------+---------------+---------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:11     ; 1.0                     ; 556 MB              ; 00:00:11                           ;
+; Fitter                    ; 00:00:18     ; 1.0                     ; 766 MB              ; 00:00:16                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 440 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 504 MB              ; 00:00:04                           ;
+; EDA Netlist Writer        ; 00:00:04     ; 1.0                     ; 421 MB              ; 00:00:04                           ;
+; Total                     ; 00:00:40     ; --                      ; --                  ; 00:00:38                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; AG-HOME02        ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; AG-HOME02        ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; AG-HOME02        ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; AG-HOME02        ; Windows 7 ; 6.1        ; x86_64         ;
+; EDA Netlist Writer        ; AG-HOME02        ; Windows 7 ; 6.1        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off Test -c Test
+quartus_fit --read_settings_files=off --write_settings_files=off Test -c Test
+quartus_asm --read_settings_files=off --write_settings_files=off Test -c Test
+quartus_sta Test -c Test
+quartus_eda --read_settings_files=off --write_settings_files=off Test -c Test
+
+
+

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_23" class="java.beans.XMLDecoder"> 
+ <object class="com.altera.embeddedsw.utilities.bean.PersistModels"> 
+  <void property="filesModels"> 
+   <void method="add"> 
+    <object class="com.altera.embeddedsw.flash.model.internal.FileModel"> 
+     <void property="baseAddress"> 
+      <string>0x30000</string> 
+     </void> 
+     <void property="bootloader"> 
+      <string>D:/program files/nios2eds/components/altera_nios2/boot_loader_cfi.srec</string> 
+     </void> 
+     <void property="cpuResetAddress"> 
+      <string>0x30000</string> 
+     </void> 
+     <void property="endAddress"> 
+      <string>0x40000</string> 
+     </void> 
+     <void property="extraArgs"> 
+      <string></string> 
+     </void> 
+     <void property="fileType"> 
+      <object class="com.altera.embeddedsw.flash.model.IMemoryFilesModel$FileType" method="valueOf"> 
+       <string>ELF</string> 
+      </object> 
+     </void> 
+     <void property="filename"> 
+      <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\software\osc\osc.elf</string> 
+     </void> 
+     <void property="memoryName"> 
+      <string>ROM_ctrl</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+  <void id="LinkedHashMap0" property="map"> 
+   <void method="put"> 
+    <string>VERSION</string> 
+    <string>13.1</string> 
+   </void> 
+   <void method="put"> 
+    <string>BUILD</string> 
+    <string>162</string> 
+   </void> 
+   <void method="put"> 
+    <string>sopcinfoFile</string> 
+    <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\proc.sopcinfo</string> 
+   </void> 
+   <void method="put"> 
+    <string>physicalCpuName</string> 
+    <string>PROC</string> 
+   </void> 
+   <void method="put"> 
+    <string>generateFiles</string> 
+    <string>true</string> 
+   </void> 
+   <void method="put"> 
+    <string>programFlash</string> 
+    <string>true</string> 
+   </void> 
+   <void method="put"> 
+    <string>bspFile</string> 
+    <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\software\osc_bsp\settings.bsp</string> 
+   </void> 
+   <void method="put"> 
+    <string>flashFilesDir</string> 
+    <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\software\osc_bsp\flash</string> 
+   </void> 
+   <void method="put"> 
+    <string>scriptDir</string> 
+    <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\software\osc_bsp\script</string> 
+   </void> 
+   <void method="put"> 
+    <string>eraseAllEnabled</string> 
+    <string>false</string> 
+   </void> 
+   <void method="put"> 
+    <string>runFromResetEnabled</string> 
+    <string>false</string> 
+   </void> 
+   <void method="put"> 
+    <string>acceptBadSysId</string> 
+    <string>false</string> 
+   </void> 
+   <void method="put"> 
+    <string>acceptBadTimestamp</string> 
+    <string>false</string> 
+   </void> 
+   <void method="put"> 
+    <string>processorCableName</string> 
+    <string>ByteBlasterMV on localhost [LPT1]</string> 
+   </void> 
+   <void method="put"> 
+    <string>processorDeviceIndex</string> 
+    <string>1</string> 
+   </void> 
+   <void method="put"> 
+    <string>processorInstanceId</string> 
+    <string>0</string> 
+   </void> 
+   <void method="put"> 
+    <string>userQpfFile</string> 
+    <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\osc.qpf</string> 
+   </void> 
+  </void> 
+  <void property="map"> 
+   <object idref="LinkedHashMap0"/> 
+  </void> 
+ </object> 
+</java> 

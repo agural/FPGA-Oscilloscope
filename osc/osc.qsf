@@ -1,0 +1,128 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 32-bit
+# Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+# Date created = 13:30:20  May 04, 2014
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		osc_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name DEVICE EP3C25Q240C8
+set_global_assignment -name TOP_LEVEL_ENTITY osc
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:30:20  MAY 04, 2014"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE "ANY QFP"
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 240
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_162 -to data_dir
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to data_dir
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_NCE_PIN OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_global_assignment -name QIP_FILE proc/synthesis/proc.qip
+set_global_assignment -name BDF_FILE osc.bdf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_93 -to AB[15]
+set_location_assignment PIN_94 -to AB[14]
+set_location_assignment PIN_95 -to AB[13]
+set_location_assignment PIN_98 -to AB[12]
+set_location_assignment PIN_99 -to AB[11]
+set_location_assignment PIN_100 -to AB[10]
+set_location_assignment PIN_103 -to AB[9]
+set_location_assignment PIN_106 -to AB[8]
+set_location_assignment PIN_107 -to AB[7]
+set_location_assignment PIN_108 -to AB[6]
+set_location_assignment PIN_109 -to AB[5]
+set_location_assignment PIN_110 -to AB[4]
+set_location_assignment PIN_111 -to AB[3]
+set_location_assignment PIN_112 -to AB[2]
+set_location_assignment PIN_113 -to AB[1]
+set_location_assignment PIN_114 -to AB[0]
+set_location_assignment PIN_31 -to clk
+set_location_assignment PIN_166 -to DB[7]
+set_location_assignment PIN_167 -to DB[6]
+set_location_assignment PIN_168 -to DB[5]
+set_location_assignment PIN_169 -to DB[4]
+set_location_assignment PIN_171 -to DB[3]
+set_location_assignment PIN_173 -to DB[2]
+set_location_assignment PIN_176 -to DB[1]
+set_location_assignment PIN_177 -to DB[0]
+set_location_assignment PIN_134 -to ram_cs
+set_location_assignment PIN_135 -to rom_cs
+set_location_assignment PIN_128 -to rw
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rw
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ram_cs
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rom_cs
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[1]
+set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="osc">
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|proc:inst|proc_ONCHIP_mem:onchip_mem|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_el91.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|proc:inst|proc_PROC:proc|proc_PROC_nios2_oci:the_proc_PROC_nios2_oci|proc_PROC_nios2_ocimem:the_proc_PROC_nios2_ocimem|proc_PROC_ociram_sp_ram_module:proc_PROC_ociram_sp_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_b481.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|proc:inst|proc_PROC:proc|proc_PROC_register_bank_a_module:proc_PROC_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_otf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|proc:inst|proc_PROC:proc|proc_PROC_register_bank_b_module:proc_PROC_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_ptf1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

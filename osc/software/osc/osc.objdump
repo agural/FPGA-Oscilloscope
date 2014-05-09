@@ -1,0 +1,6475 @@
+
+osc.elf:     file format elf32-littlenios2
+osc.elf
+architecture: nios2, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00020000
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0x00020000 paddr 0x00020000 align 2**12
+         filesz 0x00004580 memsz 0x00004c54 flags rwx
+    LOAD off    0x00006000 vaddr 0x00048000 paddr 0x00048000 align 2**12
+         filesz 0x00000000 memsz 0x00000000 flags r-x
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .entry        00000000  00048000  00048000  00006000  2**5
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .text         000035cc  00020000  00020000  00001000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .rodata       000009ec  000235cc  000235cc  000045cc  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .rwdata       000005c8  00023fb8  00023fb8  00004fb8  2**2
+                  CONTENTS, ALLOC, LOAD, DATA, SMALL_DATA
+  4 .bss          000006d4  00024580  00024580  00005580  2**2
+                  ALLOC, SMALL_DATA
+  5 .comment      00000023  00000000  00000000  00006000  2**0
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000380  00000000  00000000  00006028  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   0000567a  00000000  00000000  000063a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 000019e1  00000000  00000000  0000ba22  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   00001c50  00000000  00000000  0000d403  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  00000c0c  00000000  00000000  0000f054  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    000014d6  00000000  00000000  0000fc60  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00001910  00000000  00000000  00011136  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_alt_sim_info 00000010  00000000  00000000  00012a48  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_ranges 00000018  00000000  00000000  00012a58  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 15 .thread_model 00000003  00000000  00000000  00014623  2**0
+                  CONTENTS, READONLY
+ 16 .cpu          00000004  00000000  00000000  00014626  2**0
+                  CONTENTS, READONLY
+ 17 .qsys         00000001  00000000  00000000  0001462a  2**0
+                  CONTENTS, READONLY
+ 18 .simulation_enabled 00000001  00000000  00000000  0001462b  2**0
+                  CONTENTS, READONLY
+ 19 .sysid_hash   00000004  00000000  00000000  0001462c  2**0
+                  CONTENTS, READONLY
+ 20 .sysid_base   00000004  00000000  00000000  00014630  2**0
+                  CONTENTS, READONLY
+ 21 .sysid_time   00000004  00000000  00000000  00014634  2**0
+                  CONTENTS, READONLY
+ 22 .stderr_dev   00000004  00000000  00000000  00014638  2**0
+                  CONTENTS, READONLY
+ 23 .stdin_dev    00000004  00000000  00000000  0001463c  2**0
+                  CONTENTS, READONLY
+ 24 .stdout_dev   00000004  00000000  00000000  00014640  2**0
+                  CONTENTS, READONLY
+ 25 .sopc_system_name 00000004  00000000  00000000  00014644  2**0
+                  CONTENTS, READONLY
+ 26 .quartus_project_dir 00000036  00000000  00000000  00014648  2**0
+                  CONTENTS, READONLY
+ 27 .sopcinfo     00041659  00000000  00000000  0001467e  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00048000 l    d  .entry	00000000 .entry
+00020000 l    d  .text	00000000 .text
+000235cc l    d  .rodata	00000000 .rodata
+00023fb8 l    d  .rwdata	00000000 .rwdata
+00024580 l    d  .bss	00000000 .bss
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_alt_sim_info	00000000 .debug_alt_sim_info
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    df *ABS*	00000000 ../osc_bsp//obj/HAL/src/crt0.o
+00020034 l       .text	00000000 alt_after_alt_main
+00000000 l    df *ABS*	00000000 char712.c
+00000000 l    df *ABS*	00000000 keyproc.c
+00000000 l    df *ABS*	00000000 lcdout.c
+00000000 l    df *ABS*	00000000 mainloop.c
+00000000 l    df *ABS*	00000000 menu.c
+00000000 l    df *ABS*	00000000 menuact.c
+00000000 l    df *ABS*	00000000 stubfncs.c
+00000000 l    df *ABS*	00000000 testcode.c
+00000000 l    df *ABS*	00000000 tracutil.c
+00000000 l    df *ABS*	00000000 lib2-divmod.c
+00022c8c l     F .text	00000074 udivmodsi4
+00000000 l    df *ABS*	00000000 lib2-mul.c
+00000000 l    df *ABS*	00000000 memcpy.c
+00000000 l    df *ABS*	00000000 alt_main.c
+00000000 l    df *ABS*	00000000 alt_sys_init.c
+00000000 l    df *ABS*	00000000 alt_close.c
+00022fd4 l     F .text	00000050 alt_get_errno
+00000000 l    df *ABS*	00000000 alt_dev.c
+000230f0 l     F .text	0000002c alt_dev_null_write
+00000000 l    df *ABS*	00000000 alt_do_ctors.c
+00000000 l    df *ABS*	00000000 alt_do_dtors.c
+00000000 l    df *ABS*	00000000 alt_errno.c
+00000000 l    df *ABS*	00000000 alt_release_fd.c
+00000000 l    df *ABS*	00000000 altera_nios2_qsys_irq.c
+00000000 l    df *ABS*	00000000 atexit.c
+00000000 l    df *ABS*	00000000 exit.c
+00000000 l    df *ABS*	00000000 impure.c
+00024160 l     O .rwdata	00000400 impure_data
+00000000 l    df *ABS*	00000000 int_errno.c
+00000000 l    df *ABS*	00000000 __atexit.c
+00000000 l    df *ABS*	00000000 __call_atexit.c
+00000000 l    df *ABS*	00000000 alt_exit.c
+00000000 l    df *ABS*	00000000 
+00022f24 g     F .text	0000005c alt_main
+00021590 g     F .text	00000048 trg_delay_down
+0002105c g     F .text	00000084 display_scale
+000245a0 g     O .bss	00000004 cur_scale
+00021e74 g     F .text	00000028 trace_rearm
+00021be0 g     F .text	00000020 sample_done
+00020de8 g     F .text	00000020 get_trigger_mode
+00023c04 g     O .rodata	00000070 menu
+00020d5c g     F .text	00000020 no_menu_action
+00021b98 g     F .text	00000024 set_delay
+00000000  w      *UND*	00000000 __errno
+00048000 g     F .entry	00000000 __reset
+00020038 g     F .text	00000024 no_action
+000245cc g     O .bss	00000004 errno
+00024588 g     O .bss	00000004 trigger_mode
+0002013c g     F .text	00000030 menu_right
+000212ac g     F .text	00000048 set_trg_level
+000245c4 g     O .bss	00000004 alt_argv
+00020828 g     F .text	00000064 init_menu
+0002c560 g       *ABS*	00000000 _gp
+00021ddc g     F .text	00000020 is_sampling
+00020000 g       *ABS*	00000000 __alt_mem_RAM_ctrl
+0002010c g     F .text	00000030 menu_left
+00023fe0 g     O .rwdata	00000180 alt_fd_list
+00022de4 g     F .text	00000140 memcpy
+00021344 g     F .text	00000054 trg_level_up
+000235cc g       *ABS*	00000000 __DTOR_END__
+00020da8 g     F .text	00000040 set_trigger_mode
+00021b20 g     F .text	0000002c plot_pixel
+00000000  w      *UND*	00000000 malloc
+00022dac g     F .text	00000008 __udivsi3
+00022674 g     F .text	00000120 restore_trace
+00021928 g     F .text	00000198 cvt_num_field
+000245a4 g     O .bss	00000004 trace_status
+0002259c g     F .text	000000d8 set_save_area
+00021bbc g     F .text	00000024 start_sample
+00020f94 g     F .text	00000064 scale_down
+00024570 g     O .rwdata	00000004 alt_max_fd
+00021ac0 g     F .text	00000020 key_available
+00024580 g     O .bss	00000004 menu_entry
+00030000 g       *ABS*	00000000 __alt_mem_ROM_ctrl
+00021244 g     F .text	00000068 display_sweep
+00021ec8 g     F .text	000003f8 set_display_scale
+00022794 g     F .text	00000048 do_trace
+00024578 g     O .rwdata	00000004 _global_impure_ptr
+00024c54 g       *ABS*	00000000 __bss_end
+00021d40 g     F .text	00000064 init_trace
+00021550 g     F .text	00000040 set_trg_delay
+000200dc g     F .text	00000030 menu_down
+00021c00 g     F .text	00000140 get_test_sample
+00023fb8 g     O .rwdata	00000028 alt_dev_null
+0002016c g     F .text	000000a8 clear_region
+000235cc g     O .rodata	00000600 char_patterns
+00020a48 g     F .text	0000006c previous_entry
+00024568 g     O .rwdata	00000008 alt_dev_list
+00021da4 g     F .text	00000038 set_mode
+00020c8c g     F .text	000000d0 display_entry
+000245a8 g     O .bss	00000004 saved_end_y
+00022db4 g     F .text	00000008 __umodsi3
+00020ed0 g     F .text	00000084 display_mode
+00024584 g     O .bss	00000004 menu_display
+00024c54 g       *ABS*	00000000 end
+00020d7c g     F .text	0000002c no_display
+00021398 g     F .text	000000a4 display_trg_level
+000211c0 g     F .text	00000084 sweep_up
+0002097c g     F .text	0000005c reset_menu
+0002088c g     F .text	00000038 clear_menu
+000215d8 g     F .text	0000004c trg_delay_up
+000235cc g       *ABS*	00000000 __CTOR_LIST__
+00030000 g       *ABS*	00000000 __alt_stack_pointer
+000233f0 g     F .text	000001a0 __call_exitprocs
+00020000 g     F .text	00000038 _start
+0002458c g     O .bss	00000004 level
+000245ac g     O .bss	00000004 saved_pos_y
+00021484 g     F .text	00000054 trg_slope_toggle
+00022fb4 g     F .text	00000020 alt_sys_init
+000232c0 g     F .text	00000130 __register_exitproc
+00022dbc g     F .text	00000028 __mulsi3
+000245b0 g     O .bss	00000004 sample_size
+00023cfc g     O .rodata	00000088 sweep_rates
+00021b00 g     F .text	00000020 clear_display
+000245b4 g     O .bss	00000004 saved_end_x
+00024c54 g       *ABS*	00000000 __alt_stack_base
+00022488 g     F .text	00000114 restore_menu_trace
+00021e9c g     F .text	0000002c set_trace_size
+000204e4 g     F .text	00000098 plot_string
+00024580 g       *ABS*	00000000 __bss_start
+000245b8 g     O .bss	00000004 saved_pos_x
+0002057c g     F .text	000001d0 main
+000245c8 g     O .bss	00000004 alt_envp
+00021624 g     F .text	000000d4 adjust_trg_delay
+000227dc g     F .text	000004b0 plot_trace
+00024ac4 g     O .bss	00000190 _atexit0
+00021140 g     F .text	00000080 sweep_down
+00024574 g     O .rwdata	00000004 alt_errno
+00024590 g     O .bss	00000004 sweep
+00020e08 g     F .text	00000064 mode_down
+00021b4c g     F .text	00000024 set_sample_rate
+00022d00 g     F .text	00000050 __divsi3
+00021b70 g     F .text	00000028 set_trigger
+000235cc g       *ABS*	00000000 __CTOR_END__
+00048000 g       *ABS*	00000000 __alt_mem_ONCHIP_mem
+00020944 g     F .text	00000038 refresh_menu
+000235cc g       *ABS*	00000000 __DTOR_LIST__
+000200ac g     F .text	00000030 menu_up
+00020ba0 g     F .text	000000ec menu_entry_right
+00024594 g     O .bss	00000004 delay
+00022f80 g     F .text	00000034 alt_irq_init
+000231d4 g     F .text	00000080 alt_release_fd
+00023274 g     F .text	00000014 atexit
+00021e34 g     F .text	00000040 trace_done
+0002457c g     O .rwdata	00000004 _impure_ptr
+000245c0 g     O .bss	00000004 alt_argc
+0002143c g     F .text	00000048 set_trg_slope
+000212f4 g     F .text	00000050 trg_level_down
+00023178 g     F .text	0000005c _do_dtors
+00021ae0 g     F .text	00000020 getkey
+0002036c g     F .text	00000178 plot_char
+000245d0 g     O .bss	000002a0 saved_menu
+00020ab4 g     F .text	000000ec menu_entry_left
+00024560 g     O .rwdata	00000008 alt_fs_list
+000222c0 g     F .text	000001c8 clear_saved_areas
+00020214 g     F .text	000000ac plot_hline
+00020f54 g     F .text	00000040 set_scale
+00024870 g     O .bss	000000b0 saved_axis_y
+00024580 g       *ABS*	00000000 _edata
+00024c54 g       *ABS*	00000000 _end
+00020e6c g     F .text	00000064 mode_up
+00024920 g     O .bss	000000b4 saved_axis_x
+00023254 g     F .text	00000020 altera_nios2_qsys_irq_init
+00023288 g     F .text	00000038 exit
+000216f8 g     F .text	00000230 display_trg_delay
+00022d50 g     F .text	0000005c __modsi3
+00030000 g       *ABS*	00000000 __alt_data_end
+000214d8 g     F .text	00000078 display_trg_slope
+000249d4 g     O .bss	000000f0 saved_area
+000245bc g     O .bss	00000004 sampling
+00023590 g     F .text	0000003c _exit
+00024598 g     O .bss	00000004 scale
+0002074c g     F .text	000000dc key_lookup
+000202c0 g     F .text	000000ac plot_vline
+000208c4 g     F .text	00000080 display_menu
+0002311c g     F .text	0000005c _do_ctors
+000209d8 g     F .text	00000070 next_entry
+00023024 g     F .text	000000cc close
+00021dfc g     F .text	00000038 trace_rdy
+0002459c g     O .bss	00000004 slope
+000210e0 g     F .text	00000060 set_sweep
+00020ff8 g     F .text	00000064 scale_up
+0002005c g     F .text	00000050 menu_key
+00000000  w      *UND*	00000000 free
+
+
+
+Disassembly of section .text:
+
+00020000 <_start>:
+
+    /*
+     * Now that the caches are initialized, set up the stack pointer and global pointer.
+     * The values provided by the linker are assumed to be correctly aligned.
+     */
+    movhi sp, %hi(__alt_stack_pointer)
+   20000:	06c000f4 	movhi	sp,3
+    ori sp, sp, %lo(__alt_stack_pointer)
+   20004:	dec00014 	ori	sp,sp,0
+    movhi gp, %hi(_gp)
+   20008:	068000b4 	movhi	gp,2
+    ori gp, gp, %lo(_gp)
+   2000c:	d6b15814 	ori	gp,gp,50528
+ */
+#ifndef ALT_SIM_OPTIMIZE
+    /* Log that the BSS is about to be cleared. */
+    ALT_LOG_PUTS(alt_log_msg_bss)
+
+    movhi r2, %hi(__bss_start)
+   20010:	008000b4 	movhi	r2,2
+    ori r2, r2, %lo(__bss_start)
+   20014:	10916014 	ori	r2,r2,17792
+
+    movhi r3, %hi(__bss_end)
+   20018:	00c000b4 	movhi	r3,2
+    ori r3, r3, %lo(__bss_end)
+   2001c:	18d31514 	ori	r3,r3,19540
+
+    beq r2, r3, 1f
+   20020:	10c00326 	beq	r2,r3,20030 <_start+0x30>
+
+0:
+    stw zero, (r2)
+   20024:	10000015 	stw	zero,0(r2)
+    addi r2, r2, 4
+   20028:	10800104 	addi	r2,r2,4
+    bltu r2, r3, 0b
+   2002c:	10fffd36 	bltu	r2,r3,20024 <_start+0x24>
+
+    /* Log that alt_main is about to be called. */
+    ALT_LOG_PUTS(alt_log_msg_alt_main)
+
+    /* Call the C entry point. It should never return. */
+    call alt_main
+   20030:	0022f240 	call	22f24 <alt_main>
+
+00020034 <alt_after_alt_main>:
+
+    /* Wait in infinite loop in case alt_main does return. */
+alt_after_alt_main:
+    br alt_after_alt_main
+   20034:	003fff06 	br	20034 <alt_after_alt_main>
+
+00020038 <no_action>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  no_action(enum status cur_state)
+{
+   20038:	defffe04 	addi	sp,sp,-8
+   2003c:	df000115 	stw	fp,4(sp)
+   20040:	df000104 	addi	fp,sp,4
+   20044:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* return the current state */
+    return  cur_state;
+   20048:	e0bfff17 	ldw	r2,-4(fp)
+
+}
+   2004c:	e037883a 	mov	sp,fp
+   20050:	df000017 	ldw	fp,0(sp)
+   20054:	dec00104 	addi	sp,sp,4
+   20058:	f800283a 	ret
+
+0002005c <menu_key>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  menu_key(enum status cur_state)
+{
+   2005c:	defffd04 	addi	sp,sp,-12
+   20060:	dfc00215 	stw	ra,8(sp)
+   20064:	df000115 	stw	fp,4(sp)
+   20068:	df000104 	addi	fp,sp,4
+   2006c:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* check if need to turn the menu on or off */
+    if (cur_state == MENU_ON)
+   20070:	e0bfff17 	ldw	r2,-4(fp)
+   20074:	1000021e 	bne	r2,zero,20080 <menu_key+0x24>
+        /* currently the menu is on, turn it off */
+	clear_menu();
+   20078:	002088c0 	call	2088c <clear_menu>
+   2007c:	00000106 	br	20084 <menu_key+0x28>
+    else
+        /* currently the menu is off, turn it on */
+	display_menu();
+   20080:	00208c40 	call	208c4 <display_menu>
+
+
+    /* all done, return the "opposite" of the current state */
+    if (cur_state == MENU_ON)
+   20084:	e0bfff17 	ldw	r2,-4(fp)
+   20088:	1000021e 	bne	r2,zero,20094 <menu_key+0x38>
+        /* state was MENU_ON, change it to MENU_OFF */
+        return  MENU_OFF;
+   2008c:	00800044 	movi	r2,1
+   20090:	00000106 	br	20098 <menu_key+0x3c>
+    else
+        /* state was MENU_OFF, change it to MENU_ON */
+        return  MENU_ON;
+   20094:	0005883a 	mov	r2,zero
+
+}
+   20098:	e037883a 	mov	sp,fp
+   2009c:	dfc00117 	ldw	ra,4(sp)
+   200a0:	df000017 	ldw	fp,0(sp)
+   200a4:	dec00204 	addi	sp,sp,8
+   200a8:	f800283a 	ret
+
+000200ac <menu_up>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  menu_up(enum status cur_state)
+{
+   200ac:	defffd04 	addi	sp,sp,-12
+   200b0:	dfc00215 	stw	ra,8(sp)
+   200b4:	df000115 	stw	fp,4(sp)
+   200b8:	df000104 	addi	fp,sp,4
+   200bc:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* go to the previous menu entry */
+    previous_entry();
+   200c0:	0020a480 	call	20a48 <previous_entry>
+
+
+    /* return the current state */
+    return  cur_state;
+   200c4:	e0bfff17 	ldw	r2,-4(fp)
+
+}
+   200c8:	e037883a 	mov	sp,fp
+   200cc:	dfc00117 	ldw	ra,4(sp)
+   200d0:	df000017 	ldw	fp,0(sp)
+   200d4:	dec00204 	addi	sp,sp,8
+   200d8:	f800283a 	ret
+
+000200dc <menu_down>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  menu_down(enum status cur_state)
+{
+   200dc:	defffd04 	addi	sp,sp,-12
+   200e0:	dfc00215 	stw	ra,8(sp)
+   200e4:	df000115 	stw	fp,4(sp)
+   200e8:	df000104 	addi	fp,sp,4
+   200ec:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* go to the next menu entry */
+    next_entry();
+   200f0:	00209d80 	call	209d8 <next_entry>
+
+
+    /* return the current state */
+    return  cur_state;
+   200f4:	e0bfff17 	ldw	r2,-4(fp)
+
+}
+   200f8:	e037883a 	mov	sp,fp
+   200fc:	dfc00117 	ldw	ra,4(sp)
+   20100:	df000017 	ldw	fp,0(sp)
+   20104:	dec00204 	addi	sp,sp,8
+   20108:	f800283a 	ret
+
+0002010c <menu_left>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  menu_left(enum status cur_state)
+{
+   2010c:	defffd04 	addi	sp,sp,-12
+   20110:	dfc00215 	stw	ra,8(sp)
+   20114:	df000115 	stw	fp,4(sp)
+   20118:	df000104 	addi	fp,sp,4
+   2011c:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* invoke the <Left> key function for the current menu entry */
+    menu_entry_left();
+   20120:	0020ab40 	call	20ab4 <menu_entry_left>
+
+
+    /* return the current state */
+    return  cur_state;
+   20124:	e0bfff17 	ldw	r2,-4(fp)
+
+}
+   20128:	e037883a 	mov	sp,fp
+   2012c:	dfc00117 	ldw	ra,4(sp)
+   20130:	df000017 	ldw	fp,0(sp)
+   20134:	dec00204 	addi	sp,sp,8
+   20138:	f800283a 	ret
+
+0002013c <menu_right>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  menu_right(enum status cur_state)
+{
+   2013c:	defffd04 	addi	sp,sp,-12
+   20140:	dfc00215 	stw	ra,8(sp)
+   20144:	df000115 	stw	fp,4(sp)
+   20148:	df000104 	addi	fp,sp,4
+   2014c:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* invoke the <Right> key function for the current menu entry */
+    menu_entry_right();
+   20150:	0020ba00 	call	20ba0 <menu_entry_right>
+
+
+    /* return the current state */
+    return  cur_state;
+   20154:	e0bfff17 	ldw	r2,-4(fp)
+
+}
+   20158:	e037883a 	mov	sp,fp
+   2015c:	dfc00117 	ldw	ra,4(sp)
+   20160:	df000017 	ldw	fp,0(sp)
+   20164:	dec00204 	addi	sp,sp,8
+   20168:	f800283a 	ret
+
+0002016c <clear_region>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  clear_region(int x_ul, int y_ul, int x_size, int y_size)
+{
+   2016c:	defff804 	addi	sp,sp,-32
+   20170:	dfc00715 	stw	ra,28(sp)
+   20174:	df000615 	stw	fp,24(sp)
+   20178:	df000604 	addi	fp,sp,24
+   2017c:	e13ffc15 	stw	r4,-16(fp)
+   20180:	e17ffd15 	stw	r5,-12(fp)
+   20184:	e1bffe15 	stw	r6,-8(fp)
+   20188:	e1ffff15 	stw	r7,-4(fp)
+    int  y;		/* y coordinate to clear */
+
+
+
+    /* loop, clearing the display */
+    for (x = x_ul; x < (x_ul + x_size); x++)  {
+   2018c:	e0bffc17 	ldw	r2,-16(fp)
+   20190:	e0bffa15 	stw	r2,-24(fp)
+   20194:	00001406 	br	201e8 <clear_region+0x7c>
+        for (y = y_ul; y < (y_ul + y_size); y++)  {
+   20198:	e0bffd17 	ldw	r2,-12(fp)
+   2019c:	e0bffb15 	stw	r2,-20(fp)
+   201a0:	00000906 	br	201c8 <clear_region+0x5c>
+
+	    /* clear this pixel */
+	    plot_pixel(x, y, PIXEL_WHITE);
+   201a4:	e0fffa17 	ldw	r3,-24(fp)
+   201a8:	e0bffb17 	ldw	r2,-20(fp)
+   201ac:	1809883a 	mov	r4,r3
+   201b0:	100b883a 	mov	r5,r2
+   201b4:	000d883a 	mov	r6,zero
+   201b8:	0021b200 	call	21b20 <plot_pixel>
+
+
+
+    /* loop, clearing the display */
+    for (x = x_ul; x < (x_ul + x_size); x++)  {
+        for (y = y_ul; y < (y_ul + y_size); y++)  {
+   201bc:	e0bffb17 	ldw	r2,-20(fp)
+   201c0:	10800044 	addi	r2,r2,1
+   201c4:	e0bffb15 	stw	r2,-20(fp)
+   201c8:	e0fffd17 	ldw	r3,-12(fp)
+   201cc:	e0bfff17 	ldw	r2,-4(fp)
+   201d0:	1885883a 	add	r2,r3,r2
+   201d4:	e0fffb17 	ldw	r3,-20(fp)
+   201d8:	18bff216 	blt	r3,r2,201a4 <clear_region+0x38>
+    int  y;		/* y coordinate to clear */
+
+
+
+    /* loop, clearing the display */
+    for (x = x_ul; x < (x_ul + x_size); x++)  {
+   201dc:	e0bffa17 	ldw	r2,-24(fp)
+   201e0:	10800044 	addi	r2,r2,1
+   201e4:	e0bffa15 	stw	r2,-24(fp)
+   201e8:	e0fffc17 	ldw	r3,-16(fp)
+   201ec:	e0bffe17 	ldw	r2,-8(fp)
+   201f0:	1885883a 	add	r2,r3,r2
+   201f4:	e0fffa17 	ldw	r3,-24(fp)
+   201f8:	18bfe716 	blt	r3,r2,20198 <clear_region+0x2c>
+        }
+    }
+
+
+    /* done clearing the display region - return */
+    return;
+   201fc:	0001883a 	nop
+
+}
+   20200:	e037883a 	mov	sp,fp
+   20204:	dfc00117 	ldw	ra,4(sp)
+   20208:	df000017 	ldw	fp,0(sp)
+   2020c:	dec00204 	addi	sp,sp,8
+   20210:	f800283a 	ret
+
+00020214 <plot_hline>:
+   Last Modified:    Mar. 7, 1994
+
+*/
+
+void  plot_hline(int start_x, int start_y, int length)
+{
+   20214:	defff804 	addi	sp,sp,-32
+   20218:	dfc00715 	stw	ra,28(sp)
+   2021c:	df000615 	stw	fp,24(sp)
+   20220:	df000604 	addi	fp,sp,24
+   20224:	e13ffd15 	stw	r4,-12(fp)
+   20228:	e17ffe15 	stw	r5,-8(fp)
+   2022c:	e1bfff15 	stw	r6,-4(fp)
+    int  end_x;		/* ending x position to plot */
+
+
+
+    /* check if a line to the "right" or "left" */
+    if (length > 0)  {
+   20230:	e0bfff17 	ldw	r2,-4(fp)
+   20234:	0080070e 	bge	zero,r2,20254 <plot_hline+0x40>
+
+        /* line to the "right" - start at start_x, end at start_x + length */
+	init_x = start_x;
+   20238:	e0bffd17 	ldw	r2,-12(fp)
+   2023c:	e0bffb15 	stw	r2,-20(fp)
+	end_x = start_x + length;
+   20240:	e0fffd17 	ldw	r3,-12(fp)
+   20244:	e0bfff17 	ldw	r2,-4(fp)
+   20248:	1885883a 	add	r2,r3,r2
+   2024c:	e0bffc15 	stw	r2,-16(fp)
+   20250:	00000606 	br	2026c <plot_hline+0x58>
+    }
+    else  {
+
+        /* line to the "left" - start at start_x + length, end at start_x */
+	init_x = start_x + length;
+   20254:	e0fffd17 	ldw	r3,-12(fp)
+   20258:	e0bfff17 	ldw	r2,-4(fp)
+   2025c:	1885883a 	add	r2,r3,r2
+   20260:	e0bffb15 	stw	r2,-20(fp)
+	end_x = start_x;
+   20264:	e0bffd17 	ldw	r2,-12(fp)
+   20268:	e0bffc15 	stw	r2,-16(fp)
+    }
+
+
+    /* loop, outputting points for the line (always draw to the "right") */
+    for (x = init_x; x < end_x; x++)
+   2026c:	e0bffb17 	ldw	r2,-20(fp)
+   20270:	e0bffa15 	stw	r2,-24(fp)
+   20274:	00000906 	br	2029c <plot_hline+0x88>
+        /* plot a point of the line */
+	plot_pixel(x, start_y, PIXEL_BLACK);
+   20278:	e0fffa17 	ldw	r3,-24(fp)
+   2027c:	e0bffe17 	ldw	r2,-8(fp)
+   20280:	1809883a 	mov	r4,r3
+   20284:	100b883a 	mov	r5,r2
+   20288:	01800044 	movi	r6,1
+   2028c:	0021b200 	call	21b20 <plot_pixel>
+	end_x = start_x;
+    }
+
+
+    /* loop, outputting points for the line (always draw to the "right") */
+    for (x = init_x; x < end_x; x++)
+   20290:	e0bffa17 	ldw	r2,-24(fp)
+   20294:	10800044 	addi	r2,r2,1
+   20298:	e0bffa15 	stw	r2,-24(fp)
+   2029c:	e0fffa17 	ldw	r3,-24(fp)
+   202a0:	e0bffc17 	ldw	r2,-16(fp)
+   202a4:	18bff416 	blt	r3,r2,20278 <plot_hline+0x64>
+        /* plot a point of the line */
+	plot_pixel(x, start_y, PIXEL_BLACK);
+
+
+    /* done plotting the line - return */
+    return;
+   202a8:	0001883a 	nop
+
+}
+   202ac:	e037883a 	mov	sp,fp
+   202b0:	dfc00117 	ldw	ra,4(sp)
+   202b4:	df000017 	ldw	fp,0(sp)
+   202b8:	dec00204 	addi	sp,sp,8
+   202bc:	f800283a 	ret
+
+000202c0 <plot_vline>:
+   Last Modified:    Mar. 7, 1994
+
+*/
+
+void  plot_vline(int start_x, int start_y, int length)
+{
+   202c0:	defff804 	addi	sp,sp,-32
+   202c4:	dfc00715 	stw	ra,28(sp)
+   202c8:	df000615 	stw	fp,24(sp)
+   202cc:	df000604 	addi	fp,sp,24
+   202d0:	e13ffd15 	stw	r4,-12(fp)
+   202d4:	e17ffe15 	stw	r5,-8(fp)
+   202d8:	e1bfff15 	stw	r6,-4(fp)
+    int  end_y;		/* ending y position to plot */
+
+
+
+    /* check if an "up" or "down" line */
+    if (length > 0)  {
+   202dc:	e0bfff17 	ldw	r2,-4(fp)
+   202e0:	0080070e 	bge	zero,r2,20300 <plot_vline+0x40>
+
+        /* line going "down" - start at start_y, end at start_y + length */
+	init_y = start_y;
+   202e4:	e0bffe17 	ldw	r2,-8(fp)
+   202e8:	e0bffb15 	stw	r2,-20(fp)
+	end_y = start_y + length;
+   202ec:	e0fffe17 	ldw	r3,-8(fp)
+   202f0:	e0bfff17 	ldw	r2,-4(fp)
+   202f4:	1885883a 	add	r2,r3,r2
+   202f8:	e0bffc15 	stw	r2,-16(fp)
+   202fc:	00000606 	br	20318 <plot_vline+0x58>
+    }
+    else  {
+
+        /* line going "up" - start at start_y + length, end at start_y */
+	init_y = start_y + length;
+   20300:	e0fffe17 	ldw	r3,-8(fp)
+   20304:	e0bfff17 	ldw	r2,-4(fp)
+   20308:	1885883a 	add	r2,r3,r2
+   2030c:	e0bffb15 	stw	r2,-20(fp)
+	end_y = start_y;
+   20310:	e0bffe17 	ldw	r2,-8(fp)
+   20314:	e0bffc15 	stw	r2,-16(fp)
+    }
+
+
+    /* loop, outputting points for the line (always draw "down") */
+    for (y = init_y; y < end_y; y++)
+   20318:	e0bffb17 	ldw	r2,-20(fp)
+   2031c:	e0bffa15 	stw	r2,-24(fp)
+   20320:	00000906 	br	20348 <plot_vline+0x88>
+        /* plot a point of the line */
+	plot_pixel(start_x, y, PIXEL_BLACK);
+   20324:	e0fffd17 	ldw	r3,-12(fp)
+   20328:	e0bffa17 	ldw	r2,-24(fp)
+   2032c:	1809883a 	mov	r4,r3
+   20330:	100b883a 	mov	r5,r2
+   20334:	01800044 	movi	r6,1
+   20338:	0021b200 	call	21b20 <plot_pixel>
+	end_y = start_y;
+    }
+
+
+    /* loop, outputting points for the line (always draw "down") */
+    for (y = init_y; y < end_y; y++)
+   2033c:	e0bffa17 	ldw	r2,-24(fp)
+   20340:	10800044 	addi	r2,r2,1
+   20344:	e0bffa15 	stw	r2,-24(fp)
+   20348:	e0fffa17 	ldw	r3,-24(fp)
+   2034c:	e0bffc17 	ldw	r2,-16(fp)
+   20350:	18bff416 	blt	r3,r2,20324 <plot_vline+0x64>
+        /* plot a point of the line */
+	plot_pixel(start_x, y, PIXEL_BLACK);
+
+
+    /* done plotting the line - return */
+    return;
+   20354:	0001883a 	nop
+
+}
+   20358:	e037883a 	mov	sp,fp
+   2035c:	dfc00117 	ldw	ra,4(sp)
+   20360:	df000017 	ldw	fp,0(sp)
+   20364:	dec00204 	addi	sp,sp,8
+   20368:	f800283a 	ret
+
+0002036c <plot_char>:
+   Last Modified:    May 27, 2008
+
+*/
+
+void  plot_char(int pos_x, int pos_y, char c, enum char_style style)
+{
+   2036c:	defff504 	addi	sp,sp,-44
+   20370:	dfc00a15 	stw	ra,40(sp)
+   20374:	df000915 	stw	fp,36(sp)
+   20378:	df000904 	addi	fp,sp,36
+   2037c:	e13ffc15 	stw	r4,-16(fp)
+   20380:	e17ffd15 	stw	r5,-12(fp)
+   20384:	3005883a 	mov	r2,r6
+   20388:	e1ffff15 	stw	r7,-4(fp)
+   2038c:	e0bffe05 	stb	r2,-8(fp)
+    int  y;		/* y pixel position for the character */
+
+
+
+    /* setup the pixel positions for the character */
+    x = pos_x * HORIZ_SIZE;
+   20390:	e13ffc17 	ldw	r4,-16(fp)
+   20394:	01400184 	movi	r5,6
+   20398:	0022dbc0 	call	22dbc <__mulsi3>
+   2039c:	e0bffb15 	stw	r2,-20(fp)
+    y = pos_y * VERT_SIZE;
+   203a0:	e0bffd17 	ldw	r2,-12(fp)
+   203a4:	100490fa 	slli	r2,r2,3
+   203a8:	e0bffa15 	stw	r2,-24(fp)
+
+
+    /* loop outputting the bits to the screen */
+    for (row = 0; row < VERT_SIZE; row++)  {
+   203ac:	e03ff915 	stw	zero,-28(fp)
+   203b0:	00004306 	br	204c0 <plot_char+0x154>
+
+        /* get the character bits for this row from the character table */
+	if (row == (VERT_SIZE - 1))
+   203b4:	e0bff917 	ldw	r2,-28(fp)
+   203b8:	108001d8 	cmpnei	r2,r2,7
+   203bc:	1000021e 	bne	r2,zero,203c8 <plot_char+0x5c>
+	    /* last row - blank it */
+	    bits = 0;
+   203c0:	e03ff715 	stw	zero,-36(fp)
+   203c4:	00000d06 	br	203fc <plot_char+0x90>
+	else
+	    /* in middle of character, get the row from the bit patterns */
+            bits = char_patterns[(c * (VERT_SIZE - 1)) + row];
+   203c8:	e0bffe07 	ldb	r2,-8(fp)
+   203cc:	1009883a 	mov	r4,r2
+   203d0:	014001c4 	movi	r5,7
+   203d4:	0022dbc0 	call	22dbc <__mulsi3>
+   203d8:	1007883a 	mov	r3,r2
+   203dc:	e0bff917 	ldw	r2,-28(fp)
+   203e0:	1885883a 	add	r2,r3,r2
+   203e4:	00c000b4 	movhi	r3,2
+   203e8:	18cd7304 	addi	r3,r3,13772
+   203ec:	1885883a 	add	r2,r3,r2
+   203f0:	10800003 	ldbu	r2,0(r2)
+   203f4:	10803fcc 	andi	r2,r2,255
+   203f8:	e0bff715 	stw	r2,-36(fp)
+
+	/* take care of "normal/reverse video" */
+	if (style == REVERSE)
+   203fc:	e0bfff17 	ldw	r2,-4(fp)
+   20400:	10800058 	cmpnei	r2,r2,1
+   20404:	1000031e 	bne	r2,zero,20414 <plot_char+0xa8>
+	    /* invert the bits for "reverse video" */
+	    bits = ~bits;
+   20408:	e0bff717 	ldw	r2,-36(fp)
+   2040c:	0084303a 	nor	r2,zero,r2
+   20410:	e0bff715 	stw	r2,-36(fp)
+
+        /* get the bits "in position" (high bit is output first */
+	bits <<= (8 - HORIZ_SIZE);
+   20414:	e0bff717 	ldw	r2,-36(fp)
+   20418:	1085883a 	add	r2,r2,r2
+   2041c:	1085883a 	add	r2,r2,r2
+   20420:	e0bff715 	stw	r2,-36(fp)
+
+
+	/* now output the row of the character, pixel by pixel */
+	for (col = 0; col < HORIZ_SIZE; col++)  {
+   20424:	e03ff815 	stw	zero,-32(fp)
+   20428:	00001c06 	br	2049c <plot_char+0x130>
+
+            /* output this pixel in the appropriate color */
+	    if ((bits & 0x80) == 0)
+   2042c:	e0bff717 	ldw	r2,-36(fp)
+   20430:	1080200c 	andi	r2,r2,128
+   20434:	10000a1e 	bne	r2,zero,20460 <plot_char+0xf4>
+	        /* blank pixel - output in PIXEL_WHITE */
+		plot_pixel(x + col, y, PIXEL_WHITE);
+   20438:	e0fffb17 	ldw	r3,-20(fp)
+   2043c:	e0bff817 	ldw	r2,-32(fp)
+   20440:	1885883a 	add	r2,r3,r2
+   20444:	1007883a 	mov	r3,r2
+   20448:	e0bffa17 	ldw	r2,-24(fp)
+   2044c:	1809883a 	mov	r4,r3
+   20450:	100b883a 	mov	r5,r2
+   20454:	000d883a 	mov	r6,zero
+   20458:	0021b200 	call	21b20 <plot_pixel>
+   2045c:	00000906 	br	20484 <plot_char+0x118>
+	    else
+	        /* black pixel - output in PIXEL_BLACK */
+		plot_pixel(x + col, y, PIXEL_BLACK);
+   20460:	e0fffb17 	ldw	r3,-20(fp)
+   20464:	e0bff817 	ldw	r2,-32(fp)
+   20468:	1885883a 	add	r2,r3,r2
+   2046c:	1007883a 	mov	r3,r2
+   20470:	e0bffa17 	ldw	r2,-24(fp)
+   20474:	1809883a 	mov	r4,r3
+   20478:	100b883a 	mov	r5,r2
+   2047c:	01800044 	movi	r6,1
+   20480:	0021b200 	call	21b20 <plot_pixel>
+
+	    /* shift the next bit into position */
+	    bits <<= 1;
+   20484:	e0bff717 	ldw	r2,-36(fp)
+   20488:	1085883a 	add	r2,r2,r2
+   2048c:	e0bff715 	stw	r2,-36(fp)
+        /* get the bits "in position" (high bit is output first */
+	bits <<= (8 - HORIZ_SIZE);
+
+
+	/* now output the row of the character, pixel by pixel */
+	for (col = 0; col < HORIZ_SIZE; col++)  {
+   20490:	e0bff817 	ldw	r2,-32(fp)
+   20494:	10800044 	addi	r2,r2,1
+   20498:	e0bff815 	stw	r2,-32(fp)
+   2049c:	e0bff817 	ldw	r2,-32(fp)
+   204a0:	10800190 	cmplti	r2,r2,6
+   204a4:	103fe11e 	bne	r2,zero,2042c <plot_char+0xc0>
+	    bits <<= 1;
+        }
+
+
+	/* next row - update the y position */
+	y++;
+   204a8:	e0bffa17 	ldw	r2,-24(fp)
+   204ac:	10800044 	addi	r2,r2,1
+   204b0:	e0bffa15 	stw	r2,-24(fp)
+    x = pos_x * HORIZ_SIZE;
+    y = pos_y * VERT_SIZE;
+
+
+    /* loop outputting the bits to the screen */
+    for (row = 0; row < VERT_SIZE; row++)  {
+   204b4:	e0bff917 	ldw	r2,-28(fp)
+   204b8:	10800044 	addi	r2,r2,1
+   204bc:	e0bff915 	stw	r2,-28(fp)
+   204c0:	e0bff917 	ldw	r2,-28(fp)
+   204c4:	10800210 	cmplti	r2,r2,8
+   204c8:	103fba1e 	bne	r2,zero,203b4 <plot_char+0x48>
+	y++;
+    }
+
+
+    /* all done, return */
+    return;
+   204cc:	0001883a 	nop
+
+}
+   204d0:	e037883a 	mov	sp,fp
+   204d4:	dfc00117 	ldw	ra,4(sp)
+   204d8:	df000017 	ldw	fp,0(sp)
+   204dc:	dec00204 	addi	sp,sp,8
+   204e0:	f800283a 	ret
+
+000204e4 <plot_string>:
+   Last Modified:    Mar. 17, 1997
+
+*/
+
+void  plot_string(int pos_x, int pos_y, const char *s, enum char_style style)
+{
+   204e4:	defffa04 	addi	sp,sp,-24
+   204e8:	dfc00515 	stw	ra,20(sp)
+   204ec:	df000415 	stw	fp,16(sp)
+   204f0:	df000404 	addi	fp,sp,16
+   204f4:	e13ffc15 	stw	r4,-16(fp)
+   204f8:	e17ffd15 	stw	r5,-12(fp)
+   204fc:	e1bffe15 	stw	r6,-8(fp)
+   20500:	e1ffff15 	stw	r7,-4(fp)
+      /* none */
+
+
+
+    /* loop, outputting characters from string s */
+    while (*s != '\0')
+   20504:	00001106 	br	2054c <plot_string+0x68>
+
+        /* output this character and move to the next character and screen position */
+	plot_char(pos_x++, pos_y, *s++, style);
+   20508:	e0fffc17 	ldw	r3,-16(fp)
+   2050c:	e0bffc17 	ldw	r2,-16(fp)
+   20510:	10800044 	addi	r2,r2,1
+   20514:	e0bffc15 	stw	r2,-16(fp)
+   20518:	e0bffe17 	ldw	r2,-8(fp)
+   2051c:	10800003 	ldbu	r2,0(r2)
+   20520:	10803fcc 	andi	r2,r2,255
+   20524:	1080201c 	xori	r2,r2,128
+   20528:	10bfe004 	addi	r2,r2,-128
+   2052c:	e13ffe17 	ldw	r4,-8(fp)
+   20530:	21000044 	addi	r4,r4,1
+   20534:	e13ffe15 	stw	r4,-8(fp)
+   20538:	1809883a 	mov	r4,r3
+   2053c:	e17ffd17 	ldw	r5,-12(fp)
+   20540:	100d883a 	mov	r6,r2
+   20544:	e1ffff17 	ldw	r7,-4(fp)
+   20548:	002036c0 	call	2036c <plot_char>
+      /* none */
+
+
+
+    /* loop, outputting characters from string s */
+    while (*s != '\0')
+   2054c:	e0bffe17 	ldw	r2,-8(fp)
+   20550:	10800003 	ldbu	r2,0(r2)
+   20554:	10803fcc 	andi	r2,r2,255
+   20558:	1080201c 	xori	r2,r2,128
+   2055c:	10bfe004 	addi	r2,r2,-128
+   20560:	103fe91e 	bne	r2,zero,20508 <plot_string+0x24>
+        /* output this character and move to the next character and screen position */
+	plot_char(pos_x++, pos_y, *s++, style);
+
+
+    /* all done, return */
+    return;
+   20564:	0001883a 	nop
+
+}
+   20568:	e037883a 	mov	sp,fp
+   2056c:	dfc00117 	ldw	ra,4(sp)
+   20570:	df000017 	ldw	fp,0(sp)
+   20574:	dec00204 	addi	sp,sp,8
+   20578:	f800283a 	ret
+
+0002057c <main>:
+   Last Modified:    May 27, 2008
+
+*/
+
+int  main()
+{
+   2057c:	deffec04 	addi	sp,sp,-80
+   20580:	dfc01315 	stw	ra,76(sp)
+   20584:	df001215 	stw	fp,72(sp)
+   20588:	df001204 	addi	fp,sp,72
+    char* srampt = (char*)0x48000;
+   2058c:	00800174 	movhi	r2,5
+   20590:	10a00004 	addi	r2,r2,-32768
+   20594:	e0bfee15 	stw	r2,-72(fp)
+    char c = 0;
+   20598:	e03fef05 	stb	zero,-68(fp)
+    int i = 0;
+   2059c:	e03ff015 	stw	zero,-64(fp)
+	for(; i < 0x10000; i++) {
+   205a0:	00001906 	br	20608 <main+0x8c>
+    	*srampt = c;
+   205a4:	e0bfee17 	ldw	r2,-72(fp)
+   205a8:	e0ffef03 	ldbu	r3,-68(fp)
+   205ac:	10c00005 	stb	r3,0(r2)
+    	if(*srampt != c) {
+   205b0:	e0bfee17 	ldw	r2,-72(fp)
+   205b4:	10800003 	ldbu	r2,0(r2)
+   205b8:	10c03fcc 	andi	r3,r2,255
+   205bc:	18c0201c 	xori	r3,r3,128
+   205c0:	18ffe004 	addi	r3,r3,-128
+   205c4:	e0bfef07 	ldb	r2,-68(fp)
+   205c8:	18800226 	beq	r3,r2,205d4 <main+0x58>
+    		return 1;
+   205cc:	00800044 	movi	r2,1
+   205d0:	00005906 	br	20738 <main+0x1bc>
+    	}
+    	srampt++;
+   205d4:	e0bfee17 	ldw	r2,-72(fp)
+   205d8:	10800044 	addi	r2,r2,1
+   205dc:	e0bfee15 	stw	r2,-72(fp)
+    	c++;
+   205e0:	e0bfef03 	ldbu	r2,-68(fp)
+   205e4:	10800044 	addi	r2,r2,1
+   205e8:	e0bfef05 	stb	r2,-68(fp)
+    	if(c >= 100) c = 0;
+   205ec:	e0bfef07 	ldb	r2,-68(fp)
+   205f0:	10801910 	cmplti	r2,r2,100
+   205f4:	1000011e 	bne	r2,zero,205fc <main+0x80>
+   205f8:	e03fef05 	stb	zero,-68(fp)
+int  main()
+{
+    char* srampt = (char*)0x48000;
+    char c = 0;
+    int i = 0;
+	for(; i < 0x10000; i++) {
+   205fc:	e0bff017 	ldw	r2,-64(fp)
+   20600:	10800044 	addi	r2,r2,1
+   20604:	e0bff015 	stw	r2,-64(fp)
+   20608:	e0bff017 	ldw	r2,-64(fp)
+   2060c:	00ffffd4 	movui	r3,65535
+   20610:	18bfe40e 	bge	r3,r2,205a4 <main+0x28>
+    }
+
+	/* variables */
+    enum keycode        key;		    /* an input key */
+
+    enum status         state = MENU_ON;    /* current program state */
+   20614:	e03ff115 	stw	zero,-60(fp)
+
+    unsigned char      *sample;		    /* a captured trace */
+
+    /* key processing functions (one for each system state type and key) */
+    enum status  (* const process_key[NUM_KEYCODES][NUM_STATES])(enum status) =
+   20618:	008000b4 	movhi	r2,2
+   2061c:	10801704 	addi	r2,r2,92
+   20620:	e0bff415 	stw	r2,-48(fp)
+   20624:	008000b4 	movhi	r2,2
+   20628:	10801704 	addi	r2,r2,92
+   2062c:	e0bff515 	stw	r2,-44(fp)
+   20630:	008000b4 	movhi	r2,2
+   20634:	10802b04 	addi	r2,r2,172
+   20638:	e0bff615 	stw	r2,-40(fp)
+   2063c:	008000b4 	movhi	r2,2
+   20640:	10800e04 	addi	r2,r2,56
+   20644:	e0bff715 	stw	r2,-36(fp)
+   20648:	008000b4 	movhi	r2,2
+   2064c:	10803704 	addi	r2,r2,220
+   20650:	e0bff815 	stw	r2,-32(fp)
+   20654:	008000b4 	movhi	r2,2
+   20658:	10800e04 	addi	r2,r2,56
+   2065c:	e0bff915 	stw	r2,-28(fp)
+   20660:	008000b4 	movhi	r2,2
+   20664:	10804304 	addi	r2,r2,268
+   20668:	e0bffa15 	stw	r2,-24(fp)
+   2066c:	008000b4 	movhi	r2,2
+   20670:	10800e04 	addi	r2,r2,56
+   20674:	e0bffb15 	stw	r2,-20(fp)
+   20678:	008000b4 	movhi	r2,2
+   2067c:	10804f04 	addi	r2,r2,316
+   20680:	e0bffc15 	stw	r2,-16(fp)
+   20684:	008000b4 	movhi	r2,2
+   20688:	10800e04 	addi	r2,r2,56
+   2068c:	e0bffd15 	stw	r2,-12(fp)
+   20690:	008000b4 	movhi	r2,2
+   20694:	10800e04 	addi	r2,r2,56
+   20698:	e0bffe15 	stw	r2,-8(fp)
+   2069c:	008000b4 	movhi	r2,2
+   206a0:	10800e04 	addi	r2,r2,56
+   206a4:	e0bfff15 	stw	r2,-4(fp)
+        {  no_action,   no_action   } }; /* illegal key */
+
+
+
+    /* first initialize everything */
+    clear_display();		/* clear the display */
+   206a8:	0021b000 	call	21b00 <clear_display>
+
+    init_trace();		/* initialize the trace routines */
+   206ac:	0021d400 	call	21d40 <init_trace>
+    init_menu();		/* initialize the menu system */
+   206b0:	00208280 	call	20828 <init_menu>
+   206b4:	00000106 	br	206bc <main+0x140>
+	    key = key_lookup();
+
+	    /* execute processing routine for that key */
+	    state = process_key[key][state](state);
+	}
+    }
+   206b8:	0001883a 	nop
+
+    /* infinite loop processing input */
+    while(TRUE)  {
+
+        /* check if ready to do a trace */
+	if (trace_rdy())
+   206bc:	0021dfc0 	call	21dfc <trace_rdy>
+   206c0:	10000126 	beq	r2,zero,206c8 <main+0x14c>
+	    /* ready for a trace - do it */
+	    do_trace();
+   206c4:	00227940 	call	22794 <do_trace>
+
+
+	/* check if have a trace to display */
+	if (is_sampling() && ((sample = sample_done()) != NULL))  {
+   206c8:	0021ddc0 	call	21ddc <is_sampling>
+   206cc:	10000726 	beq	r2,zero,206ec <main+0x170>
+   206d0:	0021be00 	call	21be0 <sample_done>
+   206d4:	e0bff215 	stw	r2,-56(fp)
+   206d8:	e0bff217 	ldw	r2,-56(fp)
+   206dc:	10000326 	beq	r2,zero,206ec <main+0x170>
+
+	    /* have a trace - output it */
+	    plot_trace(sample);
+   206e0:	e13ff217 	ldw	r4,-56(fp)
+   206e4:	00227dc0 	call	227dc <plot_trace>
+	    /* done processing this trace */
+	    trace_done();
+   206e8:	0021e340 	call	21e34 <trace_done>
+	}
+
+
+	/* now check for keypad input */
+	if (key_available())  {
+   206ec:	0021ac00 	call	21ac0 <key_available>
+   206f0:	10803fcc 	andi	r2,r2,255
+   206f4:	103ff026 	beq	r2,zero,206b8 <main+0x13c>
+
+	    /* have keypad input - get the key */
+	    key = key_lookup();
+   206f8:	002074c0 	call	2074c <key_lookup>
+   206fc:	e0bff315 	stw	r2,-52(fp)
+
+	    /* execute processing routine for that key */
+	    state = process_key[key][state](state);
+   20700:	e0bff317 	ldw	r2,-52(fp)
+   20704:	1087883a 	add	r3,r2,r2
+   20708:	e0bff117 	ldw	r2,-60(fp)
+   2070c:	1885883a 	add	r2,r3,r2
+   20710:	1085883a 	add	r2,r2,r2
+   20714:	1085883a 	add	r2,r2,r2
+   20718:	e0ffee04 	addi	r3,fp,-72
+   2071c:	1885883a 	add	r2,r3,r2
+   20720:	10800604 	addi	r2,r2,24
+   20724:	10800017 	ldw	r2,0(r2)
+   20728:	e13ff117 	ldw	r4,-60(fp)
+   2072c:	103ee83a 	callr	r2
+   20730:	e0bff115 	stw	r2,-60(fp)
+	}
+    }
+   20734:	003fe006 	br	206b8 <main+0x13c>
+
+
+    /* done with main (never should get here), return 0 */
+    return  0;
+
+}
+   20738:	e037883a 	mov	sp,fp
+   2073c:	dfc00117 	ldw	ra,4(sp)
+   20740:	df000017 	ldw	fp,0(sp)
+   20744:	dec00204 	addi	sp,sp,8
+   20748:	f800283a 	ret
+
+0002074c <key_lookup>:
+   Last Modified:    Mar. 17, 1997
+
+*/
+
+enum keycode  	key_lookup()
+{
+   2074c:	defff104 	addi	sp,sp,-60
+   20750:	dfc00e15 	stw	ra,56(sp)
+   20754:	df000d15 	stw	fp,52(sp)
+   20758:	df000d04 	addi	fp,sp,52
+    /* variables */
+
+    const enum keycode  keycodes[] = /* array of keycodes */
+   2075c:	e03ff515 	stw	zero,-44(fp)
+   20760:	00800044 	movi	r2,1
+   20764:	e0bff615 	stw	r2,-40(fp)
+   20768:	00800084 	movi	r2,2
+   2076c:	e0bff715 	stw	r2,-36(fp)
+   20770:	008000c4 	movi	r2,3
+   20774:	e0bff815 	stw	r2,-32(fp)
+   20778:	00800104 	movi	r2,4
+   2077c:	e0bff915 	stw	r2,-28(fp)
+   20780:	00800144 	movi	r2,5
+   20784:	e0bffa15 	stw	r2,-24(fp)
+	   KEYCODE_LEFT,      /* <Left>     */
+	   KEYCODE_RIGHT,     /* <Right>    */
+	   KEYCODE_ILLEGAL    /* other keys */
+        }; 
+
+    const int  keys[] =   /* array of key values */
+   20788:	e03ffb15 	stw	zero,-20(fp)
+   2078c:	00800044 	movi	r2,1
+   20790:	e0bffc15 	stw	r2,-16(fp)
+   20794:	00800084 	movi	r2,2
+   20798:	e0bffd15 	stw	r2,-12(fp)
+   2079c:	008000c4 	movi	r2,3
+   207a0:	e0bffe15 	stw	r2,-8(fp)
+   207a4:	00800104 	movi	r2,4
+   207a8:	e0bfff15 	stw	r2,-4(fp)
+    int  i;           	/* general loop index */
+
+
+
+    /* get a key */
+    key = getkey();
+   207ac:	0021ae00 	call	21ae0 <getkey>
+   207b0:	e0bff415 	stw	r2,-48(fp)
+
+
+    /* lookup key in keys array */
+    for (i = 0; ((i < (sizeof(keys)/sizeof(int))) && (key != keys[i])); i++);
+   207b4:	e03ff315 	stw	zero,-52(fp)
+   207b8:	00000306 	br	207c8 <key_lookup+0x7c>
+   207bc:	e0bff317 	ldw	r2,-52(fp)
+   207c0:	10800044 	addi	r2,r2,1
+   207c4:	e0bff315 	stw	r2,-52(fp)
+   207c8:	e0bff317 	ldw	r2,-52(fp)
+   207cc:	10800168 	cmpgeui	r2,r2,5
+   207d0:	1000091e 	bne	r2,zero,207f8 <key_lookup+0xac>
+   207d4:	e0bff317 	ldw	r2,-52(fp)
+   207d8:	1085883a 	add	r2,r2,r2
+   207dc:	1085883a 	add	r2,r2,r2
+   207e0:	e0fff304 	addi	r3,fp,-52
+   207e4:	1885883a 	add	r2,r3,r2
+   207e8:	10800804 	addi	r2,r2,32
+   207ec:	10c00017 	ldw	r3,0(r2)
+   207f0:	e0bff417 	ldw	r2,-48(fp)
+   207f4:	18bff11e 	bne	r3,r2,207bc <key_lookup+0x70>
+
+
+    /* return the appropriate key type */
+    return  keycodes[i];
+   207f8:	e0bff317 	ldw	r2,-52(fp)
+   207fc:	1085883a 	add	r2,r2,r2
+   20800:	1085883a 	add	r2,r2,r2
+   20804:	e0fff304 	addi	r3,fp,-52
+   20808:	1885883a 	add	r2,r3,r2
+   2080c:	10800204 	addi	r2,r2,8
+   20810:	10800017 	ldw	r2,0(r2)
+
+}
+   20814:	e037883a 	mov	sp,fp
+   20818:	dfc00117 	ldw	ra,4(sp)
+   2081c:	df000017 	ldw	fp,0(sp)
+   20820:	dec00204 	addi	sp,sp,8
+   20824:	f800283a 	ret
+
+00020828 <init_menu>:
+   Last Modified:    Mar. 17, 1997
+
+*/
+
+void  init_menu(void)
+{
+   20828:	defffe04 	addi	sp,sp,-8
+   2082c:	dfc00115 	stw	ra,4(sp)
+   20830:	df000015 	stw	fp,0(sp)
+   20834:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* set the menu parameters */
+    menu_entry = 0;		/* first menu entry */
+   20838:	d0200815 	stw	zero,-32736(gp)
+    menu_display = FALSE;	/* menu is not currently displayed (but it will be shortly) */
+   2083c:	d0200915 	stw	zero,-32732(gp)
+
+
+    /* set the scope (option) parameters */
+    set_trigger_mode(NORMAL_TRIGGER);	/* normal triggering */
+   20840:	0009883a 	mov	r4,zero
+   20844:	0020da80 	call	20da8 <set_trigger_mode>
+    set_scale(SCALE_AXES);		/* scale is axes */
+   20848:	01000044 	movi	r4,1
+   2084c:	0020f540 	call	20f54 <set_scale>
+    set_sweep(0);			/* first sweep rate */
+   20850:	0009883a 	mov	r4,zero
+   20854:	00210e00 	call	210e0 <set_sweep>
+    set_trg_level((MIN_TRG_LEVEL_SET + MAX_TRG_LEVEL_SET) / 2);	/* middle trigger level */
+   20858:	01000fc4 	movi	r4,63
+   2085c:	00212ac0 	call	212ac <set_trg_level>
+    set_trg_slope(SLOPE_POSITIVE);	/* positive slope */
+   20860:	0009883a 	mov	r4,zero
+   20864:	002143c0 	call	2143c <set_trg_slope>
+    set_trg_delay(MIN_DELAY);		/* minimum delay */
+   20868:	0009883a 	mov	r4,zero
+   2086c:	00215500 	call	21550 <set_trg_delay>
+
+
+    /* now display the menu */
+    display_menu();
+   20870:	00208c40 	call	208c4 <display_menu>
+
+
+    /* done initializing, return */
+    return;
+   20874:	0001883a 	nop
+
+}
+   20878:	e037883a 	mov	sp,fp
+   2087c:	dfc00117 	ldw	ra,4(sp)
+   20880:	df000017 	ldw	fp,0(sp)
+   20884:	dec00204 	addi	sp,sp,8
+   20888:	f800283a 	ret
+
+0002088c <clear_menu>:
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  clear_menu(void)
+{
+   2088c:	defffe04 	addi	sp,sp,-8
+   20890:	dfc00115 	stw	ra,4(sp)
+   20894:	df000015 	stw	fp,0(sp)
+   20898:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* check if the menu is currently being displayed */
+    if (menu_display)  {
+   2089c:	d0a00917 	ldw	r2,-32732(gp)
+   208a0:	10000126 	beq	r2,zero,208a8 <clear_menu+0x1c>
+
+        /* menu is being displayed - turn it off and restore the trace in that area */
+	restore_menu_trace();
+   208a4:	00224880 	call	22488 <restore_menu_trace>
+    }
+
+
+    /* no longer displaying the menu */
+    menu_display = FALSE;
+   208a8:	d0200915 	stw	zero,-32732(gp)
+
+
+    /* all done, return */
+    return;
+   208ac:	0001883a 	nop
+
+}
+   208b0:	e037883a 	mov	sp,fp
+   208b4:	dfc00117 	ldw	ra,4(sp)
+   208b8:	df000017 	ldw	fp,0(sp)
+   208bc:	dec00204 	addi	sp,sp,8
+   208c0:	f800283a 	ret
+
+000208c4 <display_menu>:
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  display_menu(void)
+{
+   208c4:	defffd04 	addi	sp,sp,-12
+   208c8:	dfc00215 	stw	ra,8(sp)
+   208cc:	df000115 	stw	fp,4(sp)
+   208d0:	df000104 	addi	fp,sp,4
+    int  i;		/* loop index */
+
+
+
+    /* check if the menu is currently being displayed */
+    if (!menu_display)  {
+   208d4:	d0a00917 	ldw	r2,-32732(gp)
+   208d8:	1000121e 	bne	r2,zero,20924 <display_menu+0x60>
+
+        /* menu is not being displayed - turn it on */
+	/* display it entry by entry */
+	for (i = 0; i < NO_MENU_ENTRIES; i++)  {
+   208dc:	e03fff15 	stw	zero,-4(fp)
+   208e0:	00000d06 	br	20918 <display_menu+0x54>
+
+	    /* display this entry - check if it should be highlighted */
+	    if (i == menu_entry)
+   208e4:	d0a00817 	ldw	r2,-32736(gp)
+   208e8:	e0ffff17 	ldw	r3,-4(fp)
+   208ec:	1880041e 	bne	r3,r2,20900 <display_menu+0x3c>
+	        /* currently selected entry - highlight it */
+	        display_entry(i, TRUE);
+   208f0:	e13fff17 	ldw	r4,-4(fp)
+   208f4:	01400044 	movi	r5,1
+   208f8:	0020c8c0 	call	20c8c <display_entry>
+   208fc:	00000306 	br	2090c <display_menu+0x48>
+	    else
+	        /* not the currently selected entry - "normal video" */
+	        display_entry(i, FALSE);
+   20900:	e13fff17 	ldw	r4,-4(fp)
+   20904:	000b883a 	mov	r5,zero
+   20908:	0020c8c0 	call	20c8c <display_entry>
+    /* check if the menu is currently being displayed */
+    if (!menu_display)  {
+
+        /* menu is not being displayed - turn it on */
+	/* display it entry by entry */
+	for (i = 0; i < NO_MENU_ENTRIES; i++)  {
+   2090c:	e0bfff17 	ldw	r2,-4(fp)
+   20910:	10800044 	addi	r2,r2,1
+   20914:	e0bfff15 	stw	r2,-4(fp)
+   20918:	e0bfff17 	ldw	r2,-4(fp)
+   2091c:	108001f0 	cmpltui	r2,r2,7
+   20920:	103ff01e 	bne	r2,zero,208e4 <display_menu+0x20>
+        }
+    }
+
+
+    /* now are displaying the menu */
+    menu_display = TRUE;
+   20924:	00800044 	movi	r2,1
+   20928:	d0a00915 	stw	r2,-32732(gp)
+
+
+    /* all done, return */
+    return;
+   2092c:	0001883a 	nop
+
+}
+   20930:	e037883a 	mov	sp,fp
+   20934:	dfc00117 	ldw	ra,4(sp)
+   20938:	df000017 	ldw	fp,0(sp)
+   2093c:	dec00204 	addi	sp,sp,8
+   20940:	f800283a 	ret
+
+00020944 <refresh_menu>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  refresh_menu(void)
+{
+   20944:	defffe04 	addi	sp,sp,-8
+   20948:	dfc00115 	stw	ra,4(sp)
+   2094c:	df000015 	stw	fp,0(sp)
+   20950:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* check if the menu is currently being displayed */
+    if (menu_display)  {
+   20954:	d0a00917 	ldw	r2,-32732(gp)
+   20958:	10000226 	beq	r2,zero,20964 <refresh_menu+0x20>
+
+    	/* menu is currently being displayed - need to refresh it */
+	/* do this by turning off the display, then forcing it back on */
+	menu_display = FALSE;
+   2095c:	d0200915 	stw	zero,-32732(gp)
+	display_menu();
+   20960:	00208c40 	call	208c4 <display_menu>
+    }
+
+
+    /* refreshed the menu if it was displayed, now return */
+    return;
+   20964:	0001883a 	nop
+
+}
+   20968:	e037883a 	mov	sp,fp
+   2096c:	dfc00117 	ldw	ra,4(sp)
+   20970:	df000017 	ldw	fp,0(sp)
+   20974:	dec00204 	addi	sp,sp,8
+   20978:	f800283a 	ret
+
+0002097c <reset_menu>:
+   Last Modified:    Mar. 17, 1997
+
+*/
+
+void  reset_menu(void)
+{
+   2097c:	defffe04 	addi	sp,sp,-8
+   20980:	dfc00115 	stw	ra,4(sp)
+   20984:	df000015 	stw	fp,0(sp)
+   20988:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* check if the menu is currently being displayed */
+    if (menu_display)  {
+   2098c:	d0a00917 	ldw	r2,-32732(gp)
+   20990:	10000426 	beq	r2,zero,209a4 <reset_menu+0x28>
+
+        /* menu is being displayed */
+	/* remove highlight from currently selected entry */
+	display_entry(menu_entry, FALSE);
+   20994:	d0a00817 	ldw	r2,-32736(gp)
+   20998:	1009883a 	mov	r4,r2
+   2099c:	000b883a 	mov	r5,zero
+   209a0:	0020c8c0 	call	20c8c <display_entry>
+    }
+
+
+    /* reset the currently selected entry */
+    menu_entry = 0;
+   209a4:	d0200815 	stw	zero,-32736(gp)
+
+
+    /* finally, highlight the first entry if the menu is being displayed */
+    if (menu_display)
+   209a8:	d0a00917 	ldw	r2,-32732(gp)
+   209ac:	10000426 	beq	r2,zero,209c0 <reset_menu+0x44>
+	display_entry(menu_entry, TRUE);
+   209b0:	d0a00817 	ldw	r2,-32736(gp)
+   209b4:	1009883a 	mov	r4,r2
+   209b8:	01400044 	movi	r5,1
+   209bc:	0020c8c0 	call	20c8c <display_entry>
+
+
+
+    /* all done, return */
+    return;
+   209c0:	0001883a 	nop
+
+}
+   209c4:	e037883a 	mov	sp,fp
+   209c8:	dfc00117 	ldw	ra,4(sp)
+   209cc:	df000017 	ldw	fp,0(sp)
+   209d0:	dec00204 	addi	sp,sp,8
+   209d4:	f800283a 	ret
+
+000209d8 <next_entry>:
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  next_entry(void)
+{
+   209d8:	defffe04 	addi	sp,sp,-8
+   209dc:	dfc00115 	stw	ra,4(sp)
+   209e0:	df000015 	stw	fp,0(sp)
+   209e4:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* only update if not at end of the menu */
+    if (menu_entry < (NO_MENU_ENTRIES - 1))  {
+   209e8:	d0a00817 	ldw	r2,-32736(gp)
+   209ec:	108001a8 	cmpgeui	r2,r2,6
+   209f0:	10000f1e 	bne	r2,zero,20a30 <next_entry+0x58>
+
+        /* not at the end of the menu */
+
+	/* turn off current entry if displaying */
+	if (menu_display)
+   209f4:	d0a00917 	ldw	r2,-32732(gp)
+   209f8:	10000426 	beq	r2,zero,20a0c <next_entry+0x34>
+            /* displaying menu - turn off currently selected entry */
+	    display_entry(menu_entry, FALSE);
+   209fc:	d0a00817 	ldw	r2,-32736(gp)
+   20a00:	1009883a 	mov	r4,r2
+   20a04:	000b883a 	mov	r5,zero
+   20a08:	0020c8c0 	call	20c8c <display_entry>
+
+	/* update the menu entry to the next one */
+	menu_entry++;
+   20a0c:	d0a00817 	ldw	r2,-32736(gp)
+   20a10:	10800044 	addi	r2,r2,1
+   20a14:	d0a00815 	stw	r2,-32736(gp)
+
+	/* now highlight this entry if displaying the menu */
+	if (menu_display)
+   20a18:	d0a00917 	ldw	r2,-32732(gp)
+   20a1c:	10000426 	beq	r2,zero,20a30 <next_entry+0x58>
+            /* displaying menu - highlight newly selected entry */
+	    display_entry(menu_entry, TRUE);
+   20a20:	d0a00817 	ldw	r2,-32736(gp)
+   20a24:	1009883a 	mov	r4,r2
+   20a28:	01400044 	movi	r5,1
+   20a2c:	0020c8c0 	call	20c8c <display_entry>
+    }
+
+
+    /* all done, return */
+    return;
+   20a30:	0001883a 	nop
+
+}
+   20a34:	e037883a 	mov	sp,fp
+   20a38:	dfc00117 	ldw	ra,4(sp)
+   20a3c:	df000017 	ldw	fp,0(sp)
+   20a40:	dec00204 	addi	sp,sp,8
+   20a44:	f800283a 	ret
+
+00020a48 <previous_entry>:
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  previous_entry(void)
+{
+   20a48:	defffe04 	addi	sp,sp,-8
+   20a4c:	dfc00115 	stw	ra,4(sp)
+   20a50:	df000015 	stw	fp,0(sp)
+   20a54:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* only update if not at the start of the menu */
+    if (menu_entry > 0)  {
+   20a58:	d0a00817 	ldw	r2,-32736(gp)
+   20a5c:	00800f0e 	bge	zero,r2,20a9c <previous_entry+0x54>
+
+        /* not at the start of the menu */
+
+	/* turn off current entry if displaying */
+	if (menu_display)
+   20a60:	d0a00917 	ldw	r2,-32732(gp)
+   20a64:	10000426 	beq	r2,zero,20a78 <previous_entry+0x30>
+            /* displaying menu - turn off currently selected entry */
+	    display_entry(menu_entry, FALSE);
+   20a68:	d0a00817 	ldw	r2,-32736(gp)
+   20a6c:	1009883a 	mov	r4,r2
+   20a70:	000b883a 	mov	r5,zero
+   20a74:	0020c8c0 	call	20c8c <display_entry>
+
+	/* update the menu entry to the previous one */
+	menu_entry--;
+   20a78:	d0a00817 	ldw	r2,-32736(gp)
+   20a7c:	10bfffc4 	addi	r2,r2,-1
+   20a80:	d0a00815 	stw	r2,-32736(gp)
+
+	/* now highlight this entry if displaying the menu */
+	if (menu_display)
+   20a84:	d0a00917 	ldw	r2,-32732(gp)
+   20a88:	10000426 	beq	r2,zero,20a9c <previous_entry+0x54>
+            /* displaying menu - highlight newly selected entry */
+	    display_entry(menu_entry, TRUE);
+   20a8c:	d0a00817 	ldw	r2,-32736(gp)
+   20a90:	1009883a 	mov	r4,r2
+   20a94:	01400044 	movi	r5,1
+   20a98:	0020c8c0 	call	20c8c <display_entry>
+
+    }
+
+
+    /* all done, return */
+    return;
+   20a9c:	0001883a 	nop
+
+}
+   20aa0:	e037883a 	mov	sp,fp
+   20aa4:	dfc00117 	ldw	ra,4(sp)
+   20aa8:	df000017 	ldw	fp,0(sp)
+   20aac:	dec00204 	addi	sp,sp,8
+   20ab0:	f800283a 	ret
+
+00020ab4 <menu_entry_left>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  menu_entry_left(void)
+{
+   20ab4:	defff704 	addi	sp,sp,-36
+   20ab8:	dfc00815 	stw	ra,32(sp)
+   20abc:	df000715 	stw	fp,28(sp)
+   20ac0:	df000704 	addi	fp,sp,28
+    /* variables */
+
+    /* key processing functions */
+    void  (* const process[])(void) =
+   20ac4:	008000b4 	movhi	r2,2
+   20ac8:	10838204 	addi	r2,r2,3592
+   20acc:	e0bff915 	stw	r2,-28(fp)
+   20ad0:	008000b4 	movhi	r2,2
+   20ad4:	1083e504 	addi	r2,r2,3988
+   20ad8:	e0bffa15 	stw	r2,-24(fp)
+   20adc:	008000b4 	movhi	r2,2
+   20ae0:	10845004 	addi	r2,r2,4416
+   20ae4:	e0bffb15 	stw	r2,-20(fp)
+   20ae8:	008000b4 	movhi	r2,2
+   20aec:	10879d04 	addi	r2,r2,7796
+   20af0:	e0bffc15 	stw	r2,-16(fp)
+   20af4:	008000b4 	movhi	r2,2
+   20af8:	1084bd04 	addi	r2,r2,4852
+   20afc:	e0bffd15 	stw	r2,-12(fp)
+   20b00:	008000b4 	movhi	r2,2
+   20b04:	10852104 	addi	r2,r2,5252
+   20b08:	e0bffe15 	stw	r2,-8(fp)
+   20b0c:	008000b4 	movhi	r2,2
+   20b10:	10856404 	addi	r2,r2,5520
+   20b14:	e0bfff15 	stw	r2,-4(fp)
+       /*  Level           Slope             Delay                        */
+
+
+
+    /* invoke the appropriate <Left> key function */
+    process[menu_entry]();
+   20b18:	d0a00817 	ldw	r2,-32736(gp)
+   20b1c:	1085883a 	add	r2,r2,r2
+   20b20:	1085883a 	add	r2,r2,r2
+   20b24:	e0fff904 	addi	r3,fp,-28
+   20b28:	1885883a 	add	r2,r3,r2
+   20b2c:	10800017 	ldw	r2,0(r2)
+   20b30:	103ee83a 	callr	r2
+
+    /* if displaying menu entries, display the new value */
+    /* note: since it is being changed - know this option is selected */
+    if (menu_display)  {
+   20b34:	d0a00917 	ldw	r2,-32732(gp)
+   20b38:	10001426 	beq	r2,zero,20b8c <menu_entry_left+0xd8>
+        menu[menu_entry].display((MENU_X + menu[menu_entry].opt_off),
+   20b3c:	d0a00817 	ldw	r2,-32736(gp)
+   20b40:	00c000b4 	movhi	r3,2
+   20b44:	18cf0104 	addi	r3,r3,15364
+   20b48:	1004913a 	slli	r2,r2,4
+   20b4c:	1885883a 	add	r2,r3,r2
+   20b50:	10800304 	addi	r2,r2,12
+   20b54:	11c00017 	ldw	r7,0(r2)
+   20b58:	d0a00817 	ldw	r2,-32736(gp)
+   20b5c:	00c000b4 	movhi	r3,2
+   20b60:	18cf0104 	addi	r3,r3,15364
+   20b64:	1004913a 	slli	r2,r2,4
+   20b68:	1885883a 	add	r2,r3,r2
+   20b6c:	10800204 	addi	r2,r2,8
+   20b70:	10800017 	ldw	r2,0(r2)
+   20b74:	10c00fc4 	addi	r3,r2,63
+   20b78:	d0a00817 	ldw	r2,-32736(gp)
+   20b7c:	1809883a 	mov	r4,r3
+   20b80:	100b883a 	mov	r5,r2
+   20b84:	000d883a 	mov	r6,zero
+   20b88:	383ee83a 	callr	r7
+
+
+    /* all done, return */
+    return;
+
+}
+   20b8c:	e037883a 	mov	sp,fp
+   20b90:	dfc00117 	ldw	ra,4(sp)
+   20b94:	df000017 	ldw	fp,0(sp)
+   20b98:	dec00204 	addi	sp,sp,8
+   20b9c:	f800283a 	ret
+
+00020ba0 <menu_entry_right>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  menu_entry_right(void)
+{
+   20ba0:	defff704 	addi	sp,sp,-36
+   20ba4:	dfc00815 	stw	ra,32(sp)
+   20ba8:	df000715 	stw	fp,28(sp)
+   20bac:	df000704 	addi	fp,sp,28
+    /* variables */
+
+    /* key processing functions */
+    void  (* const process[])(void) =
+   20bb0:	008000b4 	movhi	r2,2
+   20bb4:	10839b04 	addi	r2,r2,3692
+   20bb8:	e0bff915 	stw	r2,-28(fp)
+   20bbc:	008000b4 	movhi	r2,2
+   20bc0:	1083fe04 	addi	r2,r2,4088
+   20bc4:	e0bffa15 	stw	r2,-24(fp)
+   20bc8:	008000b4 	movhi	r2,2
+   20bcc:	10847004 	addi	r2,r2,4544
+   20bd0:	e0bffb15 	stw	r2,-20(fp)
+   20bd4:	008000b4 	movhi	r2,2
+   20bd8:	10879d04 	addi	r2,r2,7796
+   20bdc:	e0bffc15 	stw	r2,-16(fp)
+   20be0:	008000b4 	movhi	r2,2
+   20be4:	1084d104 	addi	r2,r2,4932
+   20be8:	e0bffd15 	stw	r2,-12(fp)
+   20bec:	008000b4 	movhi	r2,2
+   20bf0:	10852104 	addi	r2,r2,5252
+   20bf4:	e0bffe15 	stw	r2,-8(fp)
+   20bf8:	008000b4 	movhi	r2,2
+   20bfc:	10857604 	addi	r2,r2,5592
+   20c00:	e0bfff15 	stw	r2,-4(fp)
+       /*  Level         Slope             Delay                        */
+
+
+
+    /* invoke the appropriate <Right> key function */
+    process[menu_entry]();
+   20c04:	d0a00817 	ldw	r2,-32736(gp)
+   20c08:	1085883a 	add	r2,r2,r2
+   20c0c:	1085883a 	add	r2,r2,r2
+   20c10:	e0fff904 	addi	r3,fp,-28
+   20c14:	1885883a 	add	r2,r3,r2
+   20c18:	10800017 	ldw	r2,0(r2)
+   20c1c:	103ee83a 	callr	r2
+
+    /* if displaying menu entries, display the new value */
+    /* note: since it is being changed - know this option is selected */
+    if (menu_display)  {
+   20c20:	d0a00917 	ldw	r2,-32732(gp)
+   20c24:	10001426 	beq	r2,zero,20c78 <menu_entry_right+0xd8>
+        menu[menu_entry].display((MENU_X + menu[menu_entry].opt_off),
+   20c28:	d0a00817 	ldw	r2,-32736(gp)
+   20c2c:	00c000b4 	movhi	r3,2
+   20c30:	18cf0104 	addi	r3,r3,15364
+   20c34:	1004913a 	slli	r2,r2,4
+   20c38:	1885883a 	add	r2,r3,r2
+   20c3c:	10800304 	addi	r2,r2,12
+   20c40:	11c00017 	ldw	r7,0(r2)
+   20c44:	d0a00817 	ldw	r2,-32736(gp)
+   20c48:	00c000b4 	movhi	r3,2
+   20c4c:	18cf0104 	addi	r3,r3,15364
+   20c50:	1004913a 	slli	r2,r2,4
+   20c54:	1885883a 	add	r2,r3,r2
+   20c58:	10800204 	addi	r2,r2,8
+   20c5c:	10800017 	ldw	r2,0(r2)
+   20c60:	10c00fc4 	addi	r3,r2,63
+   20c64:	d0a00817 	ldw	r2,-32736(gp)
+   20c68:	1809883a 	mov	r4,r3
+   20c6c:	100b883a 	mov	r5,r2
+   20c70:	000d883a 	mov	r6,zero
+   20c74:	383ee83a 	callr	r7
+
+
+    /* all done, return */
+    return;
+
+}
+   20c78:	e037883a 	mov	sp,fp
+   20c7c:	dfc00117 	ldw	ra,4(sp)
+   20c80:	df000017 	ldw	fp,0(sp)
+   20c84:	dec00204 	addi	sp,sp,8
+   20c88:	f800283a 	ret
+
+00020c8c <display_entry>:
+   Last Modified:    Aug. 13, 2004
+
+*/
+
+void  display_entry(int entry, int selected)
+{
+   20c8c:	defffc04 	addi	sp,sp,-16
+   20c90:	dfc00315 	stw	ra,12(sp)
+   20c94:	df000215 	stw	fp,8(sp)
+   20c98:	df000204 	addi	fp,sp,8
+   20c9c:	e13ffe15 	stw	r4,-8(fp)
+   20ca0:	e17fff15 	stw	r5,-4(fp)
+      /* none */
+
+
+
+    /* output the menu entry with the appropriate color */
+    plot_string((MENU_X + menu[entry].h_off), (MENU_Y + entry), menu[entry].s,
+   20ca4:	00c000b4 	movhi	r3,2
+   20ca8:	18cf0104 	addi	r3,r3,15364
+   20cac:	e0bffe17 	ldw	r2,-8(fp)
+   20cb0:	1004913a 	slli	r2,r2,4
+   20cb4:	1885883a 	add	r2,r3,r2
+   20cb8:	10800104 	addi	r2,r2,4
+   20cbc:	10800017 	ldw	r2,0(r2)
+   20cc0:	11000fc4 	addi	r4,r2,63
+   20cc4:	00c000b4 	movhi	r3,2
+   20cc8:	18cf0104 	addi	r3,r3,15364
+   20ccc:	e0bffe17 	ldw	r2,-8(fp)
+   20cd0:	1004913a 	slli	r2,r2,4
+   20cd4:	1885883a 	add	r2,r3,r2
+   20cd8:	10c00017 	ldw	r3,0(r2)
+   20cdc:	e0bfff17 	ldw	r2,-4(fp)
+   20ce0:	1004c03a 	cmpne	r2,r2,zero
+   20ce4:	10803fcc 	andi	r2,r2,255
+   20ce8:	e17ffe17 	ldw	r5,-8(fp)
+   20cec:	180d883a 	mov	r6,r3
+   20cf0:	100f883a 	mov	r7,r2
+   20cf4:	00204e40 	call	204e4 <plot_string>
+    		(selected ? SELECTED : NORMAL));
+    /* also output the menu option with the appropriate color */
+    menu[entry].display((MENU_X + menu[entry].opt_off), (MENU_Y + entry),
+   20cf8:	00c000b4 	movhi	r3,2
+   20cfc:	18cf0104 	addi	r3,r3,15364
+   20d00:	e0bffe17 	ldw	r2,-8(fp)
+   20d04:	1004913a 	slli	r2,r2,4
+   20d08:	1885883a 	add	r2,r3,r2
+   20d0c:	10800304 	addi	r2,r2,12
+   20d10:	10c00017 	ldw	r3,0(r2)
+   20d14:	010000b4 	movhi	r4,2
+   20d18:	210f0104 	addi	r4,r4,15364
+   20d1c:	e0bffe17 	ldw	r2,-8(fp)
+   20d20:	1004913a 	slli	r2,r2,4
+   20d24:	2085883a 	add	r2,r4,r2
+   20d28:	10800204 	addi	r2,r2,8
+   20d2c:	10800017 	ldw	r2,0(r2)
+   20d30:	10800fc4 	addi	r2,r2,63
+   20d34:	1009883a 	mov	r4,r2
+   20d38:	e17ffe17 	ldw	r5,-8(fp)
+   20d3c:	000d883a 	mov	r6,zero
+   20d40:	183ee83a 	callr	r3
+    			(selected ? OPTION_SELECTED : OPTION_NORMAL));
+
+
+    /* all done outputting this menu entry - return */
+    return;
+   20d44:	0001883a 	nop
+
+}
+   20d48:	e037883a 	mov	sp,fp
+   20d4c:	dfc00117 	ldw	ra,4(sp)
+   20d50:	df000017 	ldw	fp,0(sp)
+   20d54:	dec00204 	addi	sp,sp,8
+   20d58:	f800283a 	ret
+
+00020d5c <no_menu_action>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  no_menu_action()
+{
+   20d5c:	deffff04 	addi	sp,sp,-4
+   20d60:	df000015 	stw	fp,0(sp)
+   20d64:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* nothing to do - return */
+    return;
+   20d68:	0001883a 	nop
+
+}
+   20d6c:	e037883a 	mov	sp,fp
+   20d70:	df000017 	ldw	fp,0(sp)
+   20d74:	dec00104 	addi	sp,sp,4
+   20d78:	f800283a 	ret
+
+00020d7c <no_display>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  no_display(int x_pos, int y_pos, int style)
+{
+   20d7c:	defffc04 	addi	sp,sp,-16
+   20d80:	df000315 	stw	fp,12(sp)
+   20d84:	df000304 	addi	fp,sp,12
+   20d88:	e13ffd15 	stw	r4,-12(fp)
+   20d8c:	e17ffe15 	stw	r5,-8(fp)
+   20d90:	e1bfff15 	stw	r6,-4(fp)
+      /* none */
+
+
+
+    /* nothing to do - return */
+    return;
+   20d94:	0001883a 	nop
+
+}
+   20d98:	e037883a 	mov	sp,fp
+   20d9c:	df000017 	ldw	fp,0(sp)
+   20da0:	dec00104 	addi	sp,sp,4
+   20da4:	f800283a 	ret
+
+00020da8 <set_trigger_mode>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  set_trigger_mode(enum trigger_type m)
+{
+   20da8:	defffd04 	addi	sp,sp,-12
+   20dac:	dfc00215 	stw	ra,8(sp)
+   20db0:	df000115 	stw	fp,4(sp)
+   20db4:	df000104 	addi	fp,sp,4
+   20db8:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* set the trigger mode */
+    trigger_mode = m;
+   20dbc:	e0bfff17 	ldw	r2,-4(fp)
+   20dc0:	d0a00a15 	stw	r2,-32728(gp)
+
+    /* set the new mode */
+    set_mode(trigger_mode);
+   20dc4:	d0a00a17 	ldw	r2,-32728(gp)
+   20dc8:	1009883a 	mov	r4,r2
+   20dcc:	0021da40 	call	21da4 <set_mode>
+
+
+    /* all done setting the trigger mode - return */
+    return;
+   20dd0:	0001883a 	nop
+
+}
+   20dd4:	e037883a 	mov	sp,fp
+   20dd8:	dfc00117 	ldw	ra,4(sp)
+   20ddc:	df000017 	ldw	fp,0(sp)
+   20de0:	dec00204 	addi	sp,sp,8
+   20de4:	f800283a 	ret
+
+00020de8 <get_trigger_mode>:
+   Last Modified:    May 9, 2006
+
+*/
+
+enum trigger_type  get_trigger_mode()
+{
+   20de8:	deffff04 	addi	sp,sp,-4
+   20dec:	df000015 	stw	fp,0(sp)
+   20df0:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* return the current trigger mode */
+    return  trigger_mode;
+   20df4:	d0a00a17 	ldw	r2,-32728(gp)
+
+}
+   20df8:	e037883a 	mov	sp,fp
+   20dfc:	df000017 	ldw	fp,0(sp)
+   20e00:	dec00104 	addi	sp,sp,4
+   20e04:	f800283a 	ret
+
+00020e08 <mode_down>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  mode_down()
+{
+   20e08:	defffe04 	addi	sp,sp,-8
+   20e0c:	dfc00115 	stw	ra,4(sp)
+   20e10:	df000015 	stw	fp,0(sp)
+   20e14:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* move to the "next" triggering mode */
+    if (trigger_mode == NORMAL_TRIGGER)
+   20e18:	d0a00a17 	ldw	r2,-32728(gp)
+   20e1c:	1000031e 	bne	r2,zero,20e2c <mode_down+0x24>
+        trigger_mode = AUTO_TRIGGER;
+   20e20:	00800044 	movi	r2,1
+   20e24:	d0a00a15 	stw	r2,-32728(gp)
+   20e28:	00000706 	br	20e48 <mode_down+0x40>
+    else if (trigger_mode == AUTO_TRIGGER)
+   20e2c:	d0a00a17 	ldw	r2,-32728(gp)
+   20e30:	10800058 	cmpnei	r2,r2,1
+   20e34:	1000031e 	bne	r2,zero,20e44 <mode_down+0x3c>
+        trigger_mode = ONESHOT_TRIGGER;
+   20e38:	00800084 	movi	r2,2
+   20e3c:	d0a00a15 	stw	r2,-32728(gp)
+   20e40:	00000106 	br	20e48 <mode_down+0x40>
+    else
+        trigger_mode = NORMAL_TRIGGER;
+   20e44:	d0200a15 	stw	zero,-32728(gp)
+
+    /* set the new mode */
+    set_mode(trigger_mode);
+   20e48:	d0a00a17 	ldw	r2,-32728(gp)
+   20e4c:	1009883a 	mov	r4,r2
+   20e50:	0021da40 	call	21da4 <set_mode>
+
+
+    /* all done with the trigger mode - return */
+    return;
+   20e54:	0001883a 	nop
+
+}
+   20e58:	e037883a 	mov	sp,fp
+   20e5c:	dfc00117 	ldw	ra,4(sp)
+   20e60:	df000017 	ldw	fp,0(sp)
+   20e64:	dec00204 	addi	sp,sp,8
+   20e68:	f800283a 	ret
+
+00020e6c <mode_up>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  mode_up()
+{
+   20e6c:	defffe04 	addi	sp,sp,-8
+   20e70:	dfc00115 	stw	ra,4(sp)
+   20e74:	df000015 	stw	fp,0(sp)
+   20e78:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* move to the "previous" triggering mode */
+    if (trigger_mode == NORMAL_TRIGGER)
+   20e7c:	d0a00a17 	ldw	r2,-32728(gp)
+   20e80:	1000031e 	bne	r2,zero,20e90 <mode_up+0x24>
+        trigger_mode = ONESHOT_TRIGGER;
+   20e84:	00800084 	movi	r2,2
+   20e88:	d0a00a15 	stw	r2,-32728(gp)
+   20e8c:	00000706 	br	20eac <mode_up+0x40>
+    else if (trigger_mode == AUTO_TRIGGER)
+   20e90:	d0a00a17 	ldw	r2,-32728(gp)
+   20e94:	10800058 	cmpnei	r2,r2,1
+   20e98:	1000021e 	bne	r2,zero,20ea4 <mode_up+0x38>
+        trigger_mode = NORMAL_TRIGGER;
+   20e9c:	d0200a15 	stw	zero,-32728(gp)
+   20ea0:	00000206 	br	20eac <mode_up+0x40>
+    else
+        trigger_mode = AUTO_TRIGGER;
+   20ea4:	00800044 	movi	r2,1
+   20ea8:	d0a00a15 	stw	r2,-32728(gp)
+
+    /* set the new mode */
+    set_mode(trigger_mode);
+   20eac:	d0a00a17 	ldw	r2,-32728(gp)
+   20eb0:	1009883a 	mov	r4,r2
+   20eb4:	0021da40 	call	21da4 <set_mode>
+
+
+    /* all done with the trigger mode - return */
+    return;
+   20eb8:	0001883a 	nop
+
+}
+   20ebc:	e037883a 	mov	sp,fp
+   20ec0:	dfc00117 	ldw	ra,4(sp)
+   20ec4:	df000017 	ldw	fp,0(sp)
+   20ec8:	dec00204 	addi	sp,sp,8
+   20ecc:	f800283a 	ret
+
+00020ed0 <display_mode>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  display_mode(int x_pos, int y_pos, int style)
+{
+   20ed0:	defff804 	addi	sp,sp,-32
+   20ed4:	dfc00715 	stw	ra,28(sp)
+   20ed8:	df000615 	stw	fp,24(sp)
+   20edc:	df000604 	addi	fp,sp,24
+   20ee0:	e13ffd15 	stw	r4,-12(fp)
+   20ee4:	e17ffe15 	stw	r5,-8(fp)
+   20ee8:	e1bfff15 	stw	r6,-4(fp)
+    /* variables */
+
+    /* the mode strings (must match enumerated type) */
+    const char * const  modes[] =  {  " Normal   ",
+   20eec:	008000b4 	movhi	r2,2
+   20ef0:	108f6104 	addi	r2,r2,15748
+   20ef4:	e0bffa15 	stw	r2,-24(fp)
+   20ef8:	008000b4 	movhi	r2,2
+   20efc:	108f6404 	addi	r2,r2,15760
+   20f00:	e0bffb15 	stw	r2,-20(fp)
+   20f04:	008000b4 	movhi	r2,2
+   20f08:	108f6704 	addi	r2,r2,15772
+   20f0c:	e0bffc15 	stw	r2,-16(fp)
+                                             " One-Shot "  };
+
+
+
+    /* display the trigger mode */
+    plot_string(x_pos, y_pos, modes[trigger_mode], style);
+   20f10:	d0a00a17 	ldw	r2,-32728(gp)
+   20f14:	1085883a 	add	r2,r2,r2
+   20f18:	1085883a 	add	r2,r2,r2
+   20f1c:	e0fffa04 	addi	r3,fp,-24
+   20f20:	1885883a 	add	r2,r3,r2
+   20f24:	10c00017 	ldw	r3,0(r2)
+   20f28:	e0bfff17 	ldw	r2,-4(fp)
+   20f2c:	e13ffd17 	ldw	r4,-12(fp)
+   20f30:	e17ffe17 	ldw	r5,-8(fp)
+   20f34:	180d883a 	mov	r6,r3
+   20f38:	100f883a 	mov	r7,r2
+   20f3c:	00204e40 	call	204e4 <plot_string>
+
+
+    /* all done displaying the trigger mode - return */
+    return;
+
+}
+   20f40:	e037883a 	mov	sp,fp
+   20f44:	dfc00117 	ldw	ra,4(sp)
+   20f48:	df000017 	ldw	fp,0(sp)
+   20f4c:	dec00204 	addi	sp,sp,8
+   20f50:	f800283a 	ret
+
+00020f54 <set_scale>:
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  set_scale(enum scale_type s)
+{
+   20f54:	defffd04 	addi	sp,sp,-12
+   20f58:	dfc00215 	stw	ra,8(sp)
+   20f5c:	df000115 	stw	fp,4(sp)
+   20f60:	df000104 	addi	fp,sp,4
+   20f64:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* set the scale type */
+    scale = s;
+   20f68:	e0bfff17 	ldw	r2,-4(fp)
+   20f6c:	d0a00e15 	stw	r2,-32712(gp)
+
+    /* output the scale appropriately */
+    set_display_scale(scale);
+   20f70:	d0a00e17 	ldw	r2,-32712(gp)
+   20f74:	1009883a 	mov	r4,r2
+   20f78:	0021ec80 	call	21ec8 <set_display_scale>
+
+
+    /* all done setting the scale type - return */
+    return;
+   20f7c:	0001883a 	nop
+
+}
+   20f80:	e037883a 	mov	sp,fp
+   20f84:	dfc00117 	ldw	ra,4(sp)
+   20f88:	df000017 	ldw	fp,0(sp)
+   20f8c:	dec00204 	addi	sp,sp,8
+   20f90:	f800283a 	ret
+
+00020f94 <scale_down>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  scale_down()
+{
+   20f94:	defffe04 	addi	sp,sp,-8
+   20f98:	dfc00115 	stw	ra,4(sp)
+   20f9c:	df000015 	stw	fp,0(sp)
+   20fa0:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* change to the "next" scale type */
+    if (scale == SCALE_NONE)
+   20fa4:	d0a00e17 	ldw	r2,-32712(gp)
+   20fa8:	1000031e 	bne	r2,zero,20fb8 <scale_down+0x24>
+        scale = SCALE_AXES;
+   20fac:	00800044 	movi	r2,1
+   20fb0:	d0a00e15 	stw	r2,-32712(gp)
+   20fb4:	00000706 	br	20fd4 <scale_down+0x40>
+    else if (scale == SCALE_AXES)
+   20fb8:	d0a00e17 	ldw	r2,-32712(gp)
+   20fbc:	10800058 	cmpnei	r2,r2,1
+   20fc0:	1000031e 	bne	r2,zero,20fd0 <scale_down+0x3c>
+        scale = SCALE_GRID;
+   20fc4:	00800084 	movi	r2,2
+   20fc8:	d0a00e15 	stw	r2,-32712(gp)
+   20fcc:	00000106 	br	20fd4 <scale_down+0x40>
+    else
+        scale = SCALE_NONE;
+   20fd0:	d0200e15 	stw	zero,-32712(gp)
+
+    /* set the scale type */
+    set_display_scale(scale);
+   20fd4:	d0a00e17 	ldw	r2,-32712(gp)
+   20fd8:	1009883a 	mov	r4,r2
+   20fdc:	0021ec80 	call	21ec8 <set_display_scale>
+
+
+    /* all done with toggling the scale type - return */
+    return;
+   20fe0:	0001883a 	nop
+
+}
+   20fe4:	e037883a 	mov	sp,fp
+   20fe8:	dfc00117 	ldw	ra,4(sp)
+   20fec:	df000017 	ldw	fp,0(sp)
+   20ff0:	dec00204 	addi	sp,sp,8
+   20ff4:	f800283a 	ret
+
+00020ff8 <scale_up>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  scale_up()
+{
+   20ff8:	defffe04 	addi	sp,sp,-8
+   20ffc:	dfc00115 	stw	ra,4(sp)
+   21000:	df000015 	stw	fp,0(sp)
+   21004:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* change to the "previous" scale type */
+    if (scale == SCALE_NONE)
+   21008:	d0a00e17 	ldw	r2,-32712(gp)
+   2100c:	1000031e 	bne	r2,zero,2101c <scale_up+0x24>
+        scale = SCALE_GRID;
+   21010:	00800084 	movi	r2,2
+   21014:	d0a00e15 	stw	r2,-32712(gp)
+   21018:	00000706 	br	21038 <scale_up+0x40>
+    else if (scale == SCALE_AXES)
+   2101c:	d0a00e17 	ldw	r2,-32712(gp)
+   21020:	10800058 	cmpnei	r2,r2,1
+   21024:	1000021e 	bne	r2,zero,21030 <scale_up+0x38>
+        scale = SCALE_NONE;
+   21028:	d0200e15 	stw	zero,-32712(gp)
+   2102c:	00000206 	br	21038 <scale_up+0x40>
+    else
+        scale = SCALE_AXES;
+   21030:	00800044 	movi	r2,1
+   21034:	d0a00e15 	stw	r2,-32712(gp)
+
+    /* set the scale type */
+    set_display_scale(scale);
+   21038:	d0a00e17 	ldw	r2,-32712(gp)
+   2103c:	1009883a 	mov	r4,r2
+   21040:	0021ec80 	call	21ec8 <set_display_scale>
+
+
+    /* all done with toggling the scale type - return */
+    return;
+   21044:	0001883a 	nop
+
+}
+   21048:	e037883a 	mov	sp,fp
+   2104c:	dfc00117 	ldw	ra,4(sp)
+   21050:	df000017 	ldw	fp,0(sp)
+   21054:	dec00204 	addi	sp,sp,8
+   21058:	f800283a 	ret
+
+0002105c <display_scale>:
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  display_scale(int x_pos, int y_pos, int style)
+{
+   2105c:	defff804 	addi	sp,sp,-32
+   21060:	dfc00715 	stw	ra,28(sp)
+   21064:	df000615 	stw	fp,24(sp)
+   21068:	df000604 	addi	fp,sp,24
+   2106c:	e13ffd15 	stw	r4,-12(fp)
+   21070:	e17ffe15 	stw	r5,-8(fp)
+   21074:	e1bfff15 	stw	r6,-4(fp)
+    /* variables */
+
+    /* the scale type strings (must match enumerated type) */
+    const char * const  scale_stat[] =  {  " None",
+   21078:	008000b4 	movhi	r2,2
+   2107c:	108f6a04 	addi	r2,r2,15784
+   21080:	e0bffa15 	stw	r2,-24(fp)
+   21084:	008000b4 	movhi	r2,2
+   21088:	108f6c04 	addi	r2,r2,15792
+   2108c:	e0bffb15 	stw	r2,-20(fp)
+   21090:	008000b4 	movhi	r2,2
+   21094:	108f6e04 	addi	r2,r2,15800
+   21098:	e0bffc15 	stw	r2,-16(fp)
+                                                  " Grid"  };
+
+
+
+    /* display the scale status */
+    plot_string(x_pos, y_pos, scale_stat[scale], style);
+   2109c:	d0a00e17 	ldw	r2,-32712(gp)
+   210a0:	1085883a 	add	r2,r2,r2
+   210a4:	1085883a 	add	r2,r2,r2
+   210a8:	e0fffa04 	addi	r3,fp,-24
+   210ac:	1885883a 	add	r2,r3,r2
+   210b0:	10c00017 	ldw	r3,0(r2)
+   210b4:	e0bfff17 	ldw	r2,-4(fp)
+   210b8:	e13ffd17 	ldw	r4,-12(fp)
+   210bc:	e17ffe17 	ldw	r5,-8(fp)
+   210c0:	180d883a 	mov	r6,r3
+   210c4:	100f883a 	mov	r7,r2
+   210c8:	00204e40 	call	204e4 <plot_string>
+
+
+    /* all done displaying the scale status - return */
+    return;
+
+}
+   210cc:	e037883a 	mov	sp,fp
+   210d0:	dfc00117 	ldw	ra,4(sp)
+   210d4:	df000017 	ldw	fp,0(sp)
+   210d8:	dec00204 	addi	sp,sp,8
+   210dc:	f800283a 	ret
+
+000210e0 <set_sweep>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  set_sweep(int s)
+{
+   210e0:	defffc04 	addi	sp,sp,-16
+   210e4:	dfc00315 	stw	ra,12(sp)
+   210e8:	df000215 	stw	fp,8(sp)
+   210ec:	df000204 	addi	fp,sp,8
+   210f0:	e13fff15 	stw	r4,-4(fp)
+    int  sample_size;		/* sample size for this sweep rate */
+
+
+
+    /* set the new sweep rate */
+    sweep = s;
+   210f4:	e0bfff17 	ldw	r2,-4(fp)
+   210f8:	d0a00c15 	stw	r2,-32720(gp)
+
+    /* set the sweep rate for the hardware */
+    sample_size = set_sample_rate(sweep_rates[sweep].sample_rate);
+   210fc:	d0a00c17 	ldw	r2,-32720(gp)
+   21100:	00c000b4 	movhi	r3,2
+   21104:	18cf3f04 	addi	r3,r3,15612
+   21108:	100490fa 	slli	r2,r2,3
+   2110c:	1885883a 	add	r2,r3,r2
+   21110:	10800017 	ldw	r2,0(r2)
+   21114:	1009883a 	mov	r4,r2
+   21118:	0021b4c0 	call	21b4c <set_sample_rate>
+   2111c:	e0bffe15 	stw	r2,-8(fp)
+    /* also set the sample size for the trace capture */
+    set_trace_size(sample_size);
+   21120:	e13ffe17 	ldw	r4,-8(fp)
+   21124:	0021e9c0 	call	21e9c <set_trace_size>
+
+
+    /* all done initializing the sweep rate - return */
+    return;
+   21128:	0001883a 	nop
+
+}
+   2112c:	e037883a 	mov	sp,fp
+   21130:	dfc00117 	ldw	ra,4(sp)
+   21134:	df000017 	ldw	fp,0(sp)
+   21138:	dec00204 	addi	sp,sp,8
+   2113c:	f800283a 	ret
+
+00021140 <sweep_down>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  sweep_down()
+{
+   21140:	defffd04 	addi	sp,sp,-12
+   21144:	dfc00215 	stw	ra,8(sp)
+   21148:	df000115 	stw	fp,4(sp)
+   2114c:	df000104 	addi	fp,sp,4
+    int  sample_size;		/* sample size for the new sweep rate */
+
+
+
+    /* decrease the sweep rate, if not already the minimum */
+    if (sweep > 0)  {
+   21150:	d0a00c17 	ldw	r2,-32720(gp)
+   21154:	0080090e 	bge	zero,r2,2117c <sweep_down+0x3c>
+        /* not at minimum, adjust delay for new sweep */
+	adjust_trg_delay(sweep, (sweep - 1));
+   21158:	d0e00c17 	ldw	r3,-32720(gp)
+   2115c:	d0a00c17 	ldw	r2,-32720(gp)
+   21160:	10bfffc4 	addi	r2,r2,-1
+   21164:	1809883a 	mov	r4,r3
+   21168:	100b883a 	mov	r5,r2
+   2116c:	00216240 	call	21624 <adjust_trg_delay>
+	/* now set new sweep rate */
+        sweep--;
+   21170:	d0a00c17 	ldw	r2,-32720(gp)
+   21174:	10bfffc4 	addi	r2,r2,-1
+   21178:	d0a00c15 	stw	r2,-32720(gp)
+    }
+
+    /* set the sweep rate for the hardware */
+    sample_size = set_sample_rate(sweep_rates[sweep].sample_rate);
+   2117c:	d0a00c17 	ldw	r2,-32720(gp)
+   21180:	00c000b4 	movhi	r3,2
+   21184:	18cf3f04 	addi	r3,r3,15612
+   21188:	100490fa 	slli	r2,r2,3
+   2118c:	1885883a 	add	r2,r3,r2
+   21190:	10800017 	ldw	r2,0(r2)
+   21194:	1009883a 	mov	r4,r2
+   21198:	0021b4c0 	call	21b4c <set_sample_rate>
+   2119c:	e0bfff15 	stw	r2,-4(fp)
+    /* also set the sample size for the trace capture */
+    set_trace_size(sample_size);
+   211a0:	e13fff17 	ldw	r4,-4(fp)
+   211a4:	0021e9c0 	call	21e9c <set_trace_size>
+
+
+    /* all done with lowering the sweep rate - return */
+    return;
+   211a8:	0001883a 	nop
+
+}
+   211ac:	e037883a 	mov	sp,fp
+   211b0:	dfc00117 	ldw	ra,4(sp)
+   211b4:	df000017 	ldw	fp,0(sp)
+   211b8:	dec00204 	addi	sp,sp,8
+   211bc:	f800283a 	ret
+
+000211c0 <sweep_up>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  sweep_up()
+{
+   211c0:	defffd04 	addi	sp,sp,-12
+   211c4:	dfc00215 	stw	ra,8(sp)
+   211c8:	df000115 	stw	fp,4(sp)
+   211cc:	df000104 	addi	fp,sp,4
+    int  sample_size;		/* sample size for the new sweep rate */
+
+
+
+    /* increase the sweep rate, if not already the maximum */
+    if (sweep < (NO_SWEEP_RATES - 1))  {
+   211d0:	d0a00c17 	ldw	r2,-32720(gp)
+   211d4:	10800428 	cmpgeui	r2,r2,16
+   211d8:	1000091e 	bne	r2,zero,21200 <sweep_up+0x40>
+        /* not at maximum, adjust delay for new sweep */
+	adjust_trg_delay(sweep, (sweep + 1));
+   211dc:	d0e00c17 	ldw	r3,-32720(gp)
+   211e0:	d0a00c17 	ldw	r2,-32720(gp)
+   211e4:	10800044 	addi	r2,r2,1
+   211e8:	1809883a 	mov	r4,r3
+   211ec:	100b883a 	mov	r5,r2
+   211f0:	00216240 	call	21624 <adjust_trg_delay>
+	/* now set new sweep rate */
+        sweep++;
+   211f4:	d0a00c17 	ldw	r2,-32720(gp)
+   211f8:	10800044 	addi	r2,r2,1
+   211fc:	d0a00c15 	stw	r2,-32720(gp)
+    }
+
+    /* set the sweep rate for the hardware */
+    sample_size = set_sample_rate(sweep_rates[sweep].sample_rate);
+   21200:	d0a00c17 	ldw	r2,-32720(gp)
+   21204:	00c000b4 	movhi	r3,2
+   21208:	18cf3f04 	addi	r3,r3,15612
+   2120c:	100490fa 	slli	r2,r2,3
+   21210:	1885883a 	add	r2,r3,r2
+   21214:	10800017 	ldw	r2,0(r2)
+   21218:	1009883a 	mov	r4,r2
+   2121c:	0021b4c0 	call	21b4c <set_sample_rate>
+   21220:	e0bfff15 	stw	r2,-4(fp)
+    /* also set the sample size for the trace capture */
+    set_trace_size(sample_size);
+   21224:	e13fff17 	ldw	r4,-4(fp)
+   21228:	0021e9c0 	call	21e9c <set_trace_size>
+
+
+    /* all done with raising the sweep rate - return */
+    return;
+   2122c:	0001883a 	nop
+
+}
+   21230:	e037883a 	mov	sp,fp
+   21234:	dfc00117 	ldw	ra,4(sp)
+   21238:	df000017 	ldw	fp,0(sp)
+   2123c:	dec00204 	addi	sp,sp,8
+   21240:	f800283a 	ret
+
+00021244 <display_sweep>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  display_sweep(int x_pos, int y_pos, int style)
+{
+   21244:	defffb04 	addi	sp,sp,-20
+   21248:	dfc00415 	stw	ra,16(sp)
+   2124c:	df000315 	stw	fp,12(sp)
+   21250:	df000304 	addi	fp,sp,12
+   21254:	e13ffd15 	stw	r4,-12(fp)
+   21258:	e17ffe15 	stw	r5,-8(fp)
+   2125c:	e1bfff15 	stw	r6,-4(fp)
+      /* none */
+
+
+
+    /* display the sweep rate */
+    plot_string(x_pos, y_pos, sweep_rates[sweep].s, style);
+   21260:	d0a00c17 	ldw	r2,-32720(gp)
+   21264:	00c000b4 	movhi	r3,2
+   21268:	18cf3f04 	addi	r3,r3,15612
+   2126c:	100490fa 	slli	r2,r2,3
+   21270:	1885883a 	add	r2,r3,r2
+   21274:	10800104 	addi	r2,r2,4
+   21278:	10c00017 	ldw	r3,0(r2)
+   2127c:	e0bfff17 	ldw	r2,-4(fp)
+   21280:	e13ffd17 	ldw	r4,-12(fp)
+   21284:	e17ffe17 	ldw	r5,-8(fp)
+   21288:	180d883a 	mov	r6,r3
+   2128c:	100f883a 	mov	r7,r2
+   21290:	00204e40 	call	204e4 <plot_string>
+
+
+    /* all done displaying the sweep rate - return */
+    return;
+   21294:	0001883a 	nop
+
+}
+   21298:	e037883a 	mov	sp,fp
+   2129c:	dfc00117 	ldw	ra,4(sp)
+   212a0:	df000017 	ldw	fp,0(sp)
+   212a4:	dec00204 	addi	sp,sp,8
+   212a8:	f800283a 	ret
+
+000212ac <set_trg_level>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  set_trg_level(int l)
+{
+   212ac:	defffd04 	addi	sp,sp,-12
+   212b0:	dfc00215 	stw	ra,8(sp)
+   212b4:	df000115 	stw	fp,4(sp)
+   212b8:	df000104 	addi	fp,sp,4
+   212bc:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* set the trigger level */
+    level = l;
+   212c0:	e0bfff17 	ldw	r2,-4(fp)
+   212c4:	d0a00b15 	stw	r2,-32724(gp)
+
+    /* set the trigger level in hardware too */
+    set_trigger(level, slope);
+   212c8:	d0e00b17 	ldw	r3,-32724(gp)
+   212cc:	d0a00f17 	ldw	r2,-32708(gp)
+   212d0:	1809883a 	mov	r4,r3
+   212d4:	100b883a 	mov	r5,r2
+   212d8:	0021b700 	call	21b70 <set_trigger>
+
+
+    /* all done initializing the trigger level - return */
+    return;
+   212dc:	0001883a 	nop
+
+}
+   212e0:	e037883a 	mov	sp,fp
+   212e4:	dfc00117 	ldw	ra,4(sp)
+   212e8:	df000017 	ldw	fp,0(sp)
+   212ec:	dec00204 	addi	sp,sp,8
+   212f0:	f800283a 	ret
+
+000212f4 <trg_level_down>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  trg_level_down()
+{
+   212f4:	defffe04 	addi	sp,sp,-8
+   212f8:	dfc00115 	stw	ra,4(sp)
+   212fc:	df000015 	stw	fp,0(sp)
+   21300:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* decrease the trigger level, if not already the minimum */
+    if (level > MIN_TRG_LEVEL_SET)
+   21304:	d0a00b17 	ldw	r2,-32724(gp)
+   21308:	0080030e 	bge	zero,r2,21318 <trg_level_down+0x24>
+        level--;
+   2130c:	d0a00b17 	ldw	r2,-32724(gp)
+   21310:	10bfffc4 	addi	r2,r2,-1
+   21314:	d0a00b15 	stw	r2,-32724(gp)
+
+    /* set the trigger level for the hardware */
+    set_trigger(level, slope);
+   21318:	d0e00b17 	ldw	r3,-32724(gp)
+   2131c:	d0a00f17 	ldw	r2,-32708(gp)
+   21320:	1809883a 	mov	r4,r3
+   21324:	100b883a 	mov	r5,r2
+   21328:	0021b700 	call	21b70 <set_trigger>
+
+
+    /* all done with lowering the trigger level - return */
+    return;
+   2132c:	0001883a 	nop
+
+}
+   21330:	e037883a 	mov	sp,fp
+   21334:	dfc00117 	ldw	ra,4(sp)
+   21338:	df000017 	ldw	fp,0(sp)
+   2133c:	dec00204 	addi	sp,sp,8
+   21340:	f800283a 	ret
+
+00021344 <trg_level_up>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  trg_level_up()
+{
+   21344:	defffe04 	addi	sp,sp,-8
+   21348:	dfc00115 	stw	ra,4(sp)
+   2134c:	df000015 	stw	fp,0(sp)
+   21350:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* increase the trigger level, if not already the maximum */
+    if (level < MAX_TRG_LEVEL_SET)
+   21354:	d0a00b17 	ldw	r2,-32724(gp)
+   21358:	10801fc8 	cmpgei	r2,r2,127
+   2135c:	1000031e 	bne	r2,zero,2136c <trg_level_up+0x28>
+        level++;
+   21360:	d0a00b17 	ldw	r2,-32724(gp)
+   21364:	10800044 	addi	r2,r2,1
+   21368:	d0a00b15 	stw	r2,-32724(gp)
+
+    /* tell the hardware the new trigger level */
+    set_trigger(level, slope);
+   2136c:	d0e00b17 	ldw	r3,-32724(gp)
+   21370:	d0a00f17 	ldw	r2,-32708(gp)
+   21374:	1809883a 	mov	r4,r3
+   21378:	100b883a 	mov	r5,r2
+   2137c:	0021b700 	call	21b70 <set_trigger>
+
+
+    /* all done raising the trigger level - return */
+    return;
+   21380:	0001883a 	nop
+
+}
+   21384:	e037883a 	mov	sp,fp
+   21388:	dfc00117 	ldw	ra,4(sp)
+   2138c:	df000017 	ldw	fp,0(sp)
+   21390:	dec00204 	addi	sp,sp,8
+   21394:	f800283a 	ret
+
+00021398 <display_trg_level>:
+   Last Modified:    Mar. 10, 1995
+
+*/
+
+void  display_trg_level(int x_pos, int y_pos, int style)
+{
+   21398:	defff704 	addi	sp,sp,-36
+   2139c:	dfc00815 	stw	ra,32(sp)
+   213a0:	df000715 	stw	fp,28(sp)
+   213a4:	df000704 	addi	fp,sp,28
+   213a8:	e13ffd15 	stw	r4,-12(fp)
+   213ac:	e17ffe15 	stw	r5,-8(fp)
+   213b0:	e1bfff15 	stw	r6,-4(fp)
+    /* variables */
+    char      level_str[] = "        "; /* string containing the trigger level */
+   213b4:	00880834 	movhi	r2,8224
+   213b8:	10880804 	addi	r2,r2,8224
+   213bc:	e0bffa15 	stw	r2,-24(fp)
+   213c0:	00880834 	movhi	r2,8224
+   213c4:	10880804 	addi	r2,r2,8224
+   213c8:	e0bffb15 	stw	r2,-20(fp)
+   213cc:	e03ffc05 	stb	zero,-16(fp)
+    long int  l;			/* trigger level in mV */
+
+
+
+    /* compute the trigger level in millivolts */
+    l = ((long int) MAX_LEVEL - MIN_LEVEL) * level / (MAX_TRG_LEVEL_SET - MIN_TRG_LEVEL_SET) + MIN_LEVEL;
+   213d0:	d0a00b17 	ldw	r2,-32724(gp)
+   213d4:	1009883a 	mov	r4,r2
+   213d8:	0144e204 	movi	r5,5000
+   213dc:	0022dbc0 	call	22dbc <__mulsi3>
+   213e0:	1009883a 	mov	r4,r2
+   213e4:	01401fc4 	movi	r5,127
+   213e8:	0022d000 	call	22d00 <__divsi3>
+   213ec:	e0bff915 	stw	r2,-28(fp)
+
+    /* convert the level to the string (leave first character blank) */
+    cvt_num_field(l, &level_str[1]);
+   213f0:	e0bffa04 	addi	r2,fp,-24
+   213f4:	10800044 	addi	r2,r2,1
+   213f8:	e13ff917 	ldw	r4,-28(fp)
+   213fc:	100b883a 	mov	r5,r2
+   21400:	00219280 	call	21928 <cvt_num_field>
+
+    /* add in the units */
+    level_str[7] = 'V';
+   21404:	00801584 	movi	r2,86
+   21408:	e0bffbc5 	stb	r2,-17(fp)
+
+
+    /* now finally display the trigger level */
+    plot_string(x_pos, y_pos, level_str, style);
+   2140c:	e0bfff17 	ldw	r2,-4(fp)
+   21410:	e0fffa04 	addi	r3,fp,-24
+   21414:	e13ffd17 	ldw	r4,-12(fp)
+   21418:	e17ffe17 	ldw	r5,-8(fp)
+   2141c:	180d883a 	mov	r6,r3
+   21420:	100f883a 	mov	r7,r2
+   21424:	00204e40 	call	204e4 <plot_string>
+
+
+    /* all done displaying the trigger level - return */
+    return;
+
+}
+   21428:	e037883a 	mov	sp,fp
+   2142c:	dfc00117 	ldw	ra,4(sp)
+   21430:	df000017 	ldw	fp,0(sp)
+   21434:	dec00204 	addi	sp,sp,8
+   21438:	f800283a 	ret
+
+0002143c <set_trg_slope>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  set_trg_slope(enum slope_type s)
+{
+   2143c:	defffd04 	addi	sp,sp,-12
+   21440:	dfc00215 	stw	ra,8(sp)
+   21444:	df000115 	stw	fp,4(sp)
+   21448:	df000104 	addi	fp,sp,4
+   2144c:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* set the slope type */
+    slope = s;
+   21450:	e0bfff17 	ldw	r2,-4(fp)
+   21454:	d0a00f15 	stw	r2,-32708(gp)
+
+    /* also tell the hardware what the slope is */
+    set_trigger(level, slope);
+   21458:	d0e00b17 	ldw	r3,-32724(gp)
+   2145c:	d0a00f17 	ldw	r2,-32708(gp)
+   21460:	1809883a 	mov	r4,r3
+   21464:	100b883a 	mov	r5,r2
+   21468:	0021b700 	call	21b70 <set_trigger>
+
+
+    /* all done setting the trigger slope - return */
+    return;
+   2146c:	0001883a 	nop
+
+}
+   21470:	e037883a 	mov	sp,fp
+   21474:	dfc00117 	ldw	ra,4(sp)
+   21478:	df000017 	ldw	fp,0(sp)
+   2147c:	dec00204 	addi	sp,sp,8
+   21480:	f800283a 	ret
+
+00021484 <trg_slope_toggle>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  trg_slope_toggle()
+{
+   21484:	defffe04 	addi	sp,sp,-8
+   21488:	dfc00115 	stw	ra,4(sp)
+   2148c:	df000015 	stw	fp,0(sp)
+   21490:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* toggle the trigger slope */
+    if (slope == SLOPE_POSITIVE)
+   21494:	d0a00f17 	ldw	r2,-32708(gp)
+   21498:	1000031e 	bne	r2,zero,214a8 <trg_slope_toggle+0x24>
+        slope = SLOPE_NEGATIVE;
+   2149c:	00800044 	movi	r2,1
+   214a0:	d0a00f15 	stw	r2,-32708(gp)
+   214a4:	00000106 	br	214ac <trg_slope_toggle+0x28>
+    else
+        slope = SLOPE_POSITIVE;
+   214a8:	d0200f15 	stw	zero,-32708(gp)
+
+    /* set the new trigger slope */
+    set_trigger(level, slope);
+   214ac:	d0e00b17 	ldw	r3,-32724(gp)
+   214b0:	d0a00f17 	ldw	r2,-32708(gp)
+   214b4:	1809883a 	mov	r4,r3
+   214b8:	100b883a 	mov	r5,r2
+   214bc:	0021b700 	call	21b70 <set_trigger>
+
+
+    /* all done with the trigger slope - return */
+    return;
+   214c0:	0001883a 	nop
+
+}
+   214c4:	e037883a 	mov	sp,fp
+   214c8:	dfc00117 	ldw	ra,4(sp)
+   214cc:	df000017 	ldw	fp,0(sp)
+   214d0:	dec00204 	addi	sp,sp,8
+   214d4:	f800283a 	ret
+
+000214d8 <display_trg_slope>:
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  display_trg_slope(int x_pos, int y_pos, int style)
+{
+   214d8:	defff904 	addi	sp,sp,-28
+   214dc:	dfc00615 	stw	ra,24(sp)
+   214e0:	df000515 	stw	fp,20(sp)
+   214e4:	df000504 	addi	fp,sp,20
+   214e8:	e13ffd15 	stw	r4,-12(fp)
+   214ec:	e17ffe15 	stw	r5,-8(fp)
+   214f0:	e1bfff15 	stw	r6,-4(fp)
+    /* variables */
+
+    /* the trigger slope strings (must match enumerated type) */
+    const char * const  slopes[] =  {  " +", " -"  };
+   214f4:	008000b4 	movhi	r2,2
+   214f8:	108f7004 	addi	r2,r2,15808
+   214fc:	e0bffb15 	stw	r2,-20(fp)
+   21500:	008000b4 	movhi	r2,2
+   21504:	108f7104 	addi	r2,r2,15812
+   21508:	e0bffc15 	stw	r2,-16(fp)
+
+
+
+    /* display the trigger slope */
+    plot_string(x_pos, y_pos, slopes[slope], style);
+   2150c:	d0a00f17 	ldw	r2,-32708(gp)
+   21510:	1085883a 	add	r2,r2,r2
+   21514:	1085883a 	add	r2,r2,r2
+   21518:	e0fffb04 	addi	r3,fp,-20
+   2151c:	1885883a 	add	r2,r3,r2
+   21520:	10c00017 	ldw	r3,0(r2)
+   21524:	e0bfff17 	ldw	r2,-4(fp)
+   21528:	e13ffd17 	ldw	r4,-12(fp)
+   2152c:	e17ffe17 	ldw	r5,-8(fp)
+   21530:	180d883a 	mov	r6,r3
+   21534:	100f883a 	mov	r7,r2
+   21538:	00204e40 	call	204e4 <plot_string>
+
+
+    /* all done displaying the trigger slope - return */
+    return;
+
+}
+   2153c:	e037883a 	mov	sp,fp
+   21540:	dfc00117 	ldw	ra,4(sp)
+   21544:	df000017 	ldw	fp,0(sp)
+   21548:	dec00204 	addi	sp,sp,8
+   2154c:	f800283a 	ret
+
+00021550 <set_trg_delay>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  set_trg_delay(long int d)
+{
+   21550:	defffd04 	addi	sp,sp,-12
+   21554:	dfc00215 	stw	ra,8(sp)
+   21558:	df000115 	stw	fp,4(sp)
+   2155c:	df000104 	addi	fp,sp,4
+   21560:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* set the trigger delay */
+    delay = d;
+   21564:	e0bfff17 	ldw	r2,-4(fp)
+   21568:	d0a00d15 	stw	r2,-32716(gp)
+
+    /* set the trigger delay in hardware too */
+    set_delay(delay);
+   2156c:	d0a00d17 	ldw	r2,-32716(gp)
+   21570:	1009883a 	mov	r4,r2
+   21574:	0021b980 	call	21b98 <set_delay>
+
+
+    /* all done initializing the trigger delay - return */
+    return;
+   21578:	0001883a 	nop
+
+}
+   2157c:	e037883a 	mov	sp,fp
+   21580:	dfc00117 	ldw	ra,4(sp)
+   21584:	df000017 	ldw	fp,0(sp)
+   21588:	dec00204 	addi	sp,sp,8
+   2158c:	f800283a 	ret
+
+00021590 <trg_delay_down>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  trg_delay_down()
+{
+   21590:	defffe04 	addi	sp,sp,-8
+   21594:	dfc00115 	stw	ra,4(sp)
+   21598:	df000015 	stw	fp,0(sp)
+   2159c:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* decrease the trigger delay, if not already the minimum */
+    if (delay > MIN_DELAY)
+   215a0:	d0a00d17 	ldw	r2,-32716(gp)
+   215a4:	0080030e 	bge	zero,r2,215b4 <trg_delay_down+0x24>
+        delay--;
+   215a8:	d0a00d17 	ldw	r2,-32716(gp)
+   215ac:	10bfffc4 	addi	r2,r2,-1
+   215b0:	d0a00d15 	stw	r2,-32716(gp)
+
+    /* set the trigger delay for the hardware */
+    set_delay(delay);
+   215b4:	d0a00d17 	ldw	r2,-32716(gp)
+   215b8:	1009883a 	mov	r4,r2
+   215bc:	0021b980 	call	21b98 <set_delay>
+
+
+    /* all done with lowering the trigger delay - return */
+    return;
+   215c0:	0001883a 	nop
+
+}
+   215c4:	e037883a 	mov	sp,fp
+   215c8:	dfc00117 	ldw	ra,4(sp)
+   215cc:	df000017 	ldw	fp,0(sp)
+   215d0:	dec00204 	addi	sp,sp,8
+   215d4:	f800283a 	ret
+
+000215d8 <trg_delay_up>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  trg_delay_up()
+{
+   215d8:	defffe04 	addi	sp,sp,-8
+   215dc:	dfc00115 	stw	ra,4(sp)
+   215e0:	df000015 	stw	fp,0(sp)
+   215e4:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* increase the trigger delay, if not already the maximum */
+    if (delay < MAX_DELAY)
+   215e8:	d0a00d17 	ldw	r2,-32716(gp)
+   215ec:	00f0d3d4 	movui	r3,49999
+   215f0:	18800316 	blt	r3,r2,21600 <trg_delay_up+0x28>
+        delay++;
+   215f4:	d0a00d17 	ldw	r2,-32716(gp)
+   215f8:	10800044 	addi	r2,r2,1
+   215fc:	d0a00d15 	stw	r2,-32716(gp)
+
+    /* tell the hardware the new trigger delay */
+    set_delay(delay);
+   21600:	d0a00d17 	ldw	r2,-32716(gp)
+   21604:	1009883a 	mov	r4,r2
+   21608:	0021b980 	call	21b98 <set_delay>
+
+
+    /* all done raising the trigger delay - return */
+    return;
+   2160c:	0001883a 	nop
+
+}
+   21610:	e037883a 	mov	sp,fp
+   21614:	dfc00117 	ldw	ra,4(sp)
+   21618:	df000017 	ldw	fp,0(sp)
+   2161c:	dec00204 	addi	sp,sp,8
+   21620:	f800283a 	ret
+
+00021624 <adjust_trg_delay>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  adjust_trg_delay(int old_sweep, int new_sweep)
+{
+   21624:	defffc04 	addi	sp,sp,-16
+   21628:	dfc00315 	stw	ra,12(sp)
+   2162c:	df000215 	stw	fp,8(sp)
+   21630:	df000204 	addi	fp,sp,8
+   21634:	e13ffe15 	stw	r4,-8(fp)
+   21638:	e17fff15 	stw	r5,-4(fp)
+      /* none */
+
+
+
+    /* multiply by 10 times the ratio of sweep rates */
+    delay *= (10 * sweep_rates[new_sweep].sample_rate) / sweep_rates[old_sweep].sample_rate;
+   2163c:	00c000b4 	movhi	r3,2
+   21640:	18cf3f04 	addi	r3,r3,15612
+   21644:	e0bfff17 	ldw	r2,-4(fp)
+   21648:	100490fa 	slli	r2,r2,3
+   2164c:	1885883a 	add	r2,r3,r2
+   21650:	10800017 	ldw	r2,0(r2)
+   21654:	1009883a 	mov	r4,r2
+   21658:	01400284 	movi	r5,10
+   2165c:	0022dbc0 	call	22dbc <__mulsi3>
+   21660:	1007883a 	mov	r3,r2
+   21664:	010000b4 	movhi	r4,2
+   21668:	210f3f04 	addi	r4,r4,15612
+   2166c:	e0bffe17 	ldw	r2,-8(fp)
+   21670:	100490fa 	slli	r2,r2,3
+   21674:	2085883a 	add	r2,r4,r2
+   21678:	10800017 	ldw	r2,0(r2)
+   2167c:	1809883a 	mov	r4,r3
+   21680:	100b883a 	mov	r5,r2
+   21684:	0022d000 	call	22d00 <__divsi3>
+   21688:	1007883a 	mov	r3,r2
+   2168c:	d0a00d17 	ldw	r2,-32716(gp)
+   21690:	1809883a 	mov	r4,r3
+   21694:	100b883a 	mov	r5,r2
+   21698:	0022dbc0 	call	22dbc <__mulsi3>
+   2169c:	d0a00d15 	stw	r2,-32716(gp)
+    /* now divide the factor of 10 back out */
+    delay /= 10;
+   216a0:	d0a00d17 	ldw	r2,-32716(gp)
+   216a4:	1009883a 	mov	r4,r2
+   216a8:	01400284 	movi	r5,10
+   216ac:	0022d000 	call	22d00 <__divsi3>
+   216b0:	d0a00d15 	stw	r2,-32716(gp)
+
+    /* make sure delay is not out of range */
+    if (delay > MAX_DELAY)
+   216b4:	d0a00d17 	ldw	r2,-32716(gp)
+   216b8:	00f0d414 	movui	r3,50000
+   216bc:	1880020e 	bge	r3,r2,216c8 <adjust_trg_delay+0xa4>
+        /* delay is too large - set to maximum */
+        delay = MAX_DELAY;
+   216c0:	00b0d414 	movui	r2,50000
+   216c4:	d0a00d15 	stw	r2,-32716(gp)
+    if (delay < MIN_DELAY)
+   216c8:	d0a00d17 	ldw	r2,-32716(gp)
+   216cc:	1000010e 	bge	r2,zero,216d4 <adjust_trg_delay+0xb0>
+        /* delay is too small - set to minimum */
+	delay = MIN_DELAY;
+   216d0:	d0200d15 	stw	zero,-32716(gp)
+
+
+    /* tell the hardware the new trigger delay */
+    set_delay(delay);
+   216d4:	d0a00d17 	ldw	r2,-32716(gp)
+   216d8:	1009883a 	mov	r4,r2
+   216dc:	0021b980 	call	21b98 <set_delay>
+
+
+    /* all done adjusting the trigger delay - return */
+    return;
+   216e0:	0001883a 	nop
+
+}
+   216e4:	e037883a 	mov	sp,fp
+   216e8:	dfc00117 	ldw	ra,4(sp)
+   216ec:	df000017 	ldw	fp,0(sp)
+   216f0:	dec00204 	addi	sp,sp,8
+   216f4:	f800283a 	ret
+
+000216f8 <display_trg_delay>:
+   Last Modified:    May 3, 2006
+
+*/
+
+void  display_trg_delay(int x_pos, int y_pos, int style)
+{
+   216f8:	defff604 	addi	sp,sp,-40
+   216fc:	dfc00915 	stw	ra,36(sp)
+   21700:	df000815 	stw	fp,32(sp)
+   21704:	df000804 	addi	fp,sp,32
+   21708:	e13ffd15 	stw	r4,-12(fp)
+   2170c:	e17ffe15 	stw	r5,-8(fp)
+   21710:	e1bfff15 	stw	r6,-4(fp)
+    /* variables */
+    char      delay_str[] = "         "; /* string containing the trigger delay */
+   21714:	00880834 	movhi	r2,8224
+   21718:	10880804 	addi	r2,r2,8224
+   2171c:	e0bffa15 	stw	r2,-24(fp)
+   21720:	00880834 	movhi	r2,8224
+   21724:	10880804 	addi	r2,r2,8224
+   21728:	e0bffb15 	stw	r2,-20(fp)
+   2172c:	00800804 	movi	r2,32
+   21730:	e0bffc0d 	sth	r2,-16(fp)
+    long int  d;                         /* delay in appropriate units */
+
+
+    /* compute the delay in the appropriate units */
+    /* have to watch out for overflow, so be careful */
+    if (sweep_rates[sweep].sample_rate > 1000000L)  {
+   21734:	d0a00c17 	ldw	r2,-32720(gp)
+   21738:	00c000b4 	movhi	r3,2
+   2173c:	18cf3f04 	addi	r3,r3,15612
+   21740:	100490fa 	slli	r2,r2,3
+   21744:	1885883a 	add	r2,r3,r2
+   21748:	10800017 	ldw	r2,0(r2)
+   2174c:	00c003f4 	movhi	r3,15
+   21750:	18d09004 	addi	r3,r3,16960
+   21754:	1880170e 	bge	r3,r2,217b4 <display_trg_delay+0xbc>
+        /* have a fast sweep rate, could overflow */
+        /* first compute in units of 100 ns */
+        d = delay * (10000000L / sweep_rates[sweep].sample_rate);
+   21758:	d0a00c17 	ldw	r2,-32720(gp)
+   2175c:	00c000b4 	movhi	r3,2
+   21760:	18cf3f04 	addi	r3,r3,15612
+   21764:	100490fa 	slli	r2,r2,3
+   21768:	1885883a 	add	r2,r3,r2
+   2176c:	10800017 	ldw	r2,0(r2)
+   21770:	01002674 	movhi	r4,153
+   21774:	2125a004 	addi	r4,r4,-27008
+   21778:	100b883a 	mov	r5,r2
+   2177c:	0022d000 	call	22d00 <__divsi3>
+   21780:	1007883a 	mov	r3,r2
+   21784:	d0a00d17 	ldw	r2,-32716(gp)
+   21788:	1809883a 	mov	r4,r3
+   2178c:	100b883a 	mov	r5,r2
+   21790:	0022dbc0 	call	22dbc <__mulsi3>
+   21794:	e0bff915 	stw	r2,-28(fp)
+	/* now convert to nanoseconds */
+	d *= 100L;
+   21798:	e13ff917 	ldw	r4,-28(fp)
+   2179c:	01401904 	movi	r5,100
+   217a0:	0022dbc0 	call	22dbc <__mulsi3>
+   217a4:	e0bff915 	stw	r2,-28(fp)
+	/* need to divide by 1000 to get to microseconds */
+	units_adj = 1000;
+   217a8:	0080fa04 	movi	r2,1000
+   217ac:	e0bff815 	stw	r2,-32(fp)
+   217b0:	00001206 	br	217fc <display_trg_delay+0x104>
+    }
+    else  {
+        /* slow sweep rate, don't have to worry about overflow */
+        d = delay * (1000000L / sweep_rates[sweep].sample_rate);
+   217b4:	d0a00c17 	ldw	r2,-32720(gp)
+   217b8:	00c000b4 	movhi	r3,2
+   217bc:	18cf3f04 	addi	r3,r3,15612
+   217c0:	100490fa 	slli	r2,r2,3
+   217c4:	1885883a 	add	r2,r3,r2
+   217c8:	10800017 	ldw	r2,0(r2)
+   217cc:	010003f4 	movhi	r4,15
+   217d0:	21109004 	addi	r4,r4,16960
+   217d4:	100b883a 	mov	r5,r2
+   217d8:	0022d000 	call	22d00 <__divsi3>
+   217dc:	1007883a 	mov	r3,r2
+   217e0:	d0a00d17 	ldw	r2,-32716(gp)
+   217e4:	1809883a 	mov	r4,r3
+   217e8:	100b883a 	mov	r5,r2
+   217ec:	0022dbc0 	call	22dbc <__mulsi3>
+   217f0:	e0bff915 	stw	r2,-28(fp)
+	/* already in microseconds, so adjustment is 1 */
+	units_adj = 1;
+   217f4:	00800044 	movi	r2,1
+   217f8:	e0bff815 	stw	r2,-32(fp)
+    }
+
+    /* convert it to the string (leave first character blank) */
+    cvt_num_field(d, &delay_str[1]);
+   217fc:	e0bffa04 	addi	r2,fp,-24
+   21800:	10800044 	addi	r2,r2,1
+   21804:	e13ff917 	ldw	r4,-28(fp)
+   21808:	100b883a 	mov	r5,r2
+   2180c:	00219280 	call	21928 <cvt_num_field>
+
+    /* add in the units */
+    if (((d / units_adj) < 1000) && ((d / units_adj) > -1000) && (units_adj == 1000)) {
+   21810:	e13ff917 	ldw	r4,-28(fp)
+   21814:	e17ff817 	ldw	r5,-32(fp)
+   21818:	0022d000 	call	22d00 <__divsi3>
+   2181c:	1080fa08 	cmpgei	r2,r2,1000
+   21820:	10000d1e 	bne	r2,zero,21858 <display_trg_delay+0x160>
+   21824:	e13ff917 	ldw	r4,-28(fp)
+   21828:	e17ff817 	ldw	r5,-32(fp)
+   2182c:	0022d000 	call	22d00 <__divsi3>
+   21830:	10bf0650 	cmplti	r2,r2,-999
+   21834:	1000081e 	bne	r2,zero,21858 <display_trg_delay+0x160>
+   21838:	e0bff817 	ldw	r2,-32(fp)
+   2183c:	1080fa18 	cmpnei	r2,r2,1000
+   21840:	1000051e 	bne	r2,zero,21858 <display_trg_delay+0x160>
+        /* delay is in microseconds */
+	delay_str[7] = '\004';
+   21844:	00800104 	movi	r2,4
+   21848:	e0bffbc5 	stb	r2,-17(fp)
+	delay_str[8] = 's';
+   2184c:	00801cc4 	movi	r2,115
+   21850:	e0bffc05 	stb	r2,-16(fp)
+   21854:	00002806 	br	218f8 <display_trg_delay+0x200>
+    }
+    else if (((d / units_adj) < 1000000) && ((d / units_adj) > -1000000)) {
+   21858:	e13ff917 	ldw	r4,-28(fp)
+   2185c:	e17ff817 	ldw	r5,-32(fp)
+   21860:	0022d000 	call	22d00 <__divsi3>
+   21864:	00c003f4 	movhi	r3,15
+   21868:	18d08fc4 	addi	r3,r3,16959
+   2186c:	18800c16 	blt	r3,r2,218a0 <display_trg_delay+0x1a8>
+   21870:	e13ff917 	ldw	r4,-28(fp)
+   21874:	e17ff817 	ldw	r5,-32(fp)
+   21878:	0022d000 	call	22d00 <__divsi3>
+   2187c:	1007883a 	mov	r3,r2
+   21880:	00bffc74 	movhi	r2,65521
+   21884:	10af7044 	addi	r2,r2,-16959
+   21888:	18800516 	blt	r3,r2,218a0 <display_trg_delay+0x1a8>
+        /* delay is in milliseconds */
+	delay_str[7] = 'm';
+   2188c:	00801b44 	movi	r2,109
+   21890:	e0bffbc5 	stb	r2,-17(fp)
+	delay_str[8] = 's';
+   21894:	00801cc4 	movi	r2,115
+   21898:	e0bffc05 	stb	r2,-16(fp)
+   2189c:	00001606 	br	218f8 <display_trg_delay+0x200>
+    }
+    else if (((d / units_adj) < 1000000000) && ((d / units_adj) > -1000000000))  {
+   218a0:	e13ff917 	ldw	r4,-28(fp)
+   218a4:	e17ff817 	ldw	r5,-32(fp)
+   218a8:	0022d000 	call	22d00 <__divsi3>
+   218ac:	00cee6f4 	movhi	r3,15259
+   218b0:	18f27fc4 	addi	r3,r3,-13825
+   218b4:	18800c16 	blt	r3,r2,218e8 <display_trg_delay+0x1f0>
+   218b8:	e13ff917 	ldw	r4,-28(fp)
+   218bc:	e17ff817 	ldw	r5,-32(fp)
+   218c0:	0022d000 	call	22d00 <__divsi3>
+   218c4:	1007883a 	mov	r3,r2
+   218c8:	00b11974 	movhi	r2,50277
+   218cc:	108d8044 	addi	r2,r2,13825
+   218d0:	18800516 	blt	r3,r2,218e8 <display_trg_delay+0x1f0>
+        /* delay is in seconds */
+	delay_str[7] = 's';
+   218d4:	00801cc4 	movi	r2,115
+   218d8:	e0bffbc5 	stb	r2,-17(fp)
+	delay_str[8] = ' ';
+   218dc:	00800804 	movi	r2,32
+   218e0:	e0bffc05 	stb	r2,-16(fp)
+   218e4:	00000406 	br	218f8 <display_trg_delay+0x200>
+    }
+    else  {
+        /* delay is in kiloseconds */
+	delay_str[7] = 'k';
+   218e8:	00801ac4 	movi	r2,107
+   218ec:	e0bffbc5 	stb	r2,-17(fp)
+	delay_str[8] = 's';
+   218f0:	00801cc4 	movi	r2,115
+   218f4:	e0bffc05 	stb	r2,-16(fp)
+    }
+
+
+    /* now actually display the trigger delay */
+    plot_string(x_pos, y_pos, delay_str, style);
+   218f8:	e0bfff17 	ldw	r2,-4(fp)
+   218fc:	e0fffa04 	addi	r3,fp,-24
+   21900:	e13ffd17 	ldw	r4,-12(fp)
+   21904:	e17ffe17 	ldw	r5,-8(fp)
+   21908:	180d883a 	mov	r6,r3
+   2190c:	100f883a 	mov	r7,r2
+   21910:	00204e40 	call	204e4 <plot_string>
+
+
+    /* all done displaying the trigger delay - return */
+    return;
+
+}
+   21914:	e037883a 	mov	sp,fp
+   21918:	dfc00117 	ldw	ra,4(sp)
+   2191c:	df000017 	ldw	fp,0(sp)
+   21920:	dec00204 	addi	sp,sp,8
+   21924:	f800283a 	ret
+
+00021928 <cvt_num_field>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  cvt_num_field(long int n, char *s)
+{
+   21928:	defff804 	addi	sp,sp,-32
+   2192c:	dfc00715 	stw	ra,28(sp)
+   21930:	df000615 	stw	fp,24(sp)
+   21934:	dc000515 	stw	r16,20(sp)
+   21938:	df000504 	addi	fp,sp,20
+   2193c:	e13ffe15 	stw	r4,-8(fp)
+   21940:	e17fff15 	stw	r5,-4(fp)
+    /* variables */
+    int  dp = 3;		/* digits to right of decimal point */
+   21944:	008000c4 	movi	r2,3
+   21948:	e0bffb15 	stw	r2,-20(fp)
+    int  d;			/* digit weight (power of 10) */
+
+    int  i = 0;			/* string index */
+   2194c:	e03ffd15 	stw	zero,-12(fp)
+
+
+
+    /* first get the sign (and make n positive for conversion) */
+    if (n < 0)  {
+   21950:	e0bffe17 	ldw	r2,-8(fp)
+   21954:	10000c0e 	bge	r2,zero,21988 <cvt_num_field+0x60>
+        /* n is negative, set sign and convert to positive */
+	s[i++] = '-';
+   21958:	e0bffd17 	ldw	r2,-12(fp)
+   2195c:	e0ffff17 	ldw	r3,-4(fp)
+   21960:	1885883a 	add	r2,r3,r2
+   21964:	00c00b44 	movi	r3,45
+   21968:	10c00005 	stb	r3,0(r2)
+   2196c:	e0bffd17 	ldw	r2,-12(fp)
+   21970:	10800044 	addi	r2,r2,1
+   21974:	e0bffd15 	stw	r2,-12(fp)
+	n = -n;
+   21978:	e0bffe17 	ldw	r2,-8(fp)
+   2197c:	0085c83a 	sub	r2,zero,r2
+   21980:	e0bffe15 	stw	r2,-8(fp)
+	s[i++] = '+';
+    }
+
+
+    /* make sure there are no more than 4 significant digits */
+    while (n > 9999)  {
+   21984:	00001106 	br	219cc <cvt_num_field+0xa4>
+	s[i++] = '-';
+	n = -n;
+    }
+    else  {
+        /* n is positive, set sign only */
+	s[i++] = '+';
+   21988:	e0bffd17 	ldw	r2,-12(fp)
+   2198c:	e0ffff17 	ldw	r3,-4(fp)
+   21990:	1885883a 	add	r2,r3,r2
+   21994:	00c00ac4 	movi	r3,43
+   21998:	10c00005 	stb	r3,0(r2)
+   2199c:	e0bffd17 	ldw	r2,-12(fp)
+   219a0:	10800044 	addi	r2,r2,1
+   219a4:	e0bffd15 	stw	r2,-12(fp)
+    }
+
+
+    /* make sure there are no more than 4 significant digits */
+    while (n > 9999)  {
+   219a8:	00000806 	br	219cc <cvt_num_field+0xa4>
+        /* have more than 4 digits - get rid of one */
+	n /= 10;
+   219ac:	e0bffe17 	ldw	r2,-8(fp)
+   219b0:	1009883a 	mov	r4,r2
+   219b4:	01400284 	movi	r5,10
+   219b8:	0022d000 	call	22d00 <__divsi3>
+   219bc:	e0bffe15 	stw	r2,-8(fp)
+	/* adjust the decimal point */
+	dp--;
+   219c0:	e0bffb17 	ldw	r2,-20(fp)
+   219c4:	10bfffc4 	addi	r2,r2,-1
+   219c8:	e0bffb15 	stw	r2,-20(fp)
+	s[i++] = '+';
+    }
+
+
+    /* make sure there are no more than 4 significant digits */
+    while (n > 9999)  {
+   219cc:	e0bffe17 	ldw	r2,-8(fp)
+   219d0:	1089c408 	cmpgei	r2,r2,10000
+   219d4:	103ff51e 	bne	r2,zero,219ac <cvt_num_field+0x84>
+	dp--;
+    }
+
+    /* if decimal point is non-positive, make positive */
+    /* (assume will take care of adjustment with output units in this case) */
+    while (dp <= 0)
+   219d8:	00000306 	br	219e8 <cvt_num_field+0xc0>
+       dp += 3;
+   219dc:	e0bffb17 	ldw	r2,-20(fp)
+   219e0:	108000c4 	addi	r2,r2,3
+   219e4:	e0bffb15 	stw	r2,-20(fp)
+	dp--;
+    }
+
+    /* if decimal point is non-positive, make positive */
+    /* (assume will take care of adjustment with output units in this case) */
+    while (dp <= 0)
+   219e8:	e0bffb17 	ldw	r2,-20(fp)
+   219ec:	00bffb0e 	bge	zero,r2,219dc <cvt_num_field+0xb4>
+       dp += 3;
+
+
+    /* adjust dp to be digits to the right of the decimal point */
+    /* (assuming 4 digits) */
+    dp = 4 - dp;
+   219f0:	00c00104 	movi	r3,4
+   219f4:	e0bffb17 	ldw	r2,-20(fp)
+   219f8:	1885c83a 	sub	r2,r3,r2
+   219fc:	e0bffb15 	stw	r2,-20(fp)
+
+
+    /* finally, loop getting and converting digits */
+    for (d = 1000; d > 0; d /= 10)  {
+   21a00:	0080fa04 	movi	r2,1000
+   21a04:	e0bffc15 	stw	r2,-16(fp)
+   21a08:	00002406 	br	21a9c <cvt_num_field+0x174>
+
+        /* check if need decimal the decimal point now */
+	if (dp-- == 0)
+   21a0c:	e0bffb17 	ldw	r2,-20(fp)
+   21a10:	1005003a 	cmpeq	r2,r2,zero
+   21a14:	e0fffb17 	ldw	r3,-20(fp)
+   21a18:	18ffffc4 	addi	r3,r3,-1
+   21a1c:	e0fffb15 	stw	r3,-20(fp)
+   21a20:	10803fcc 	andi	r2,r2,255
+   21a24:	10000826 	beq	r2,zero,21a48 <cvt_num_field+0x120>
+	    /* time for decimal point */
+	    s[i++] = '.';
+   21a28:	e0bffd17 	ldw	r2,-12(fp)
+   21a2c:	e0ffff17 	ldw	r3,-4(fp)
+   21a30:	1885883a 	add	r2,r3,r2
+   21a34:	00c00b84 	movi	r3,46
+   21a38:	10c00005 	stb	r3,0(r2)
+   21a3c:	e0bffd17 	ldw	r2,-12(fp)
+   21a40:	10800044 	addi	r2,r2,1
+   21a44:	e0bffd15 	stw	r2,-12(fp)
+
+	/* get and convert this digit */
+	s[i++] = (n / d) + '0';
+   21a48:	e0bffd17 	ldw	r2,-12(fp)
+   21a4c:	e0ffff17 	ldw	r3,-4(fp)
+   21a50:	18a1883a 	add	r16,r3,r2
+   21a54:	e13ffe17 	ldw	r4,-8(fp)
+   21a58:	e17ffc17 	ldw	r5,-16(fp)
+   21a5c:	0022d000 	call	22d00 <__divsi3>
+   21a60:	10800c04 	addi	r2,r2,48
+   21a64:	80800005 	stb	r2,0(r16)
+   21a68:	e0bffd17 	ldw	r2,-12(fp)
+   21a6c:	10800044 	addi	r2,r2,1
+   21a70:	e0bffd15 	stw	r2,-12(fp)
+	/* remove this digit from n */
+	n %= d;
+   21a74:	e0bffe17 	ldw	r2,-8(fp)
+   21a78:	1009883a 	mov	r4,r2
+   21a7c:	e17ffc17 	ldw	r5,-16(fp)
+   21a80:	0022d500 	call	22d50 <__modsi3>
+   21a84:	e0bffe15 	stw	r2,-8(fp)
+    /* (assuming 4 digits) */
+    dp = 4 - dp;
+
+
+    /* finally, loop getting and converting digits */
+    for (d = 1000; d > 0; d /= 10)  {
+   21a88:	e0bffc17 	ldw	r2,-16(fp)
+   21a8c:	1009883a 	mov	r4,r2
+   21a90:	01400284 	movi	r5,10
+   21a94:	0022d000 	call	22d00 <__divsi3>
+   21a98:	e0bffc15 	stw	r2,-16(fp)
+   21a9c:	e0bffc17 	ldw	r2,-16(fp)
+   21aa0:	00bfda16 	blt	zero,r2,21a0c <cvt_num_field+0xe4>
+	n %= d;
+    }
+
+
+    /* all done converting the number, return */
+    return;
+   21aa4:	0001883a 	nop
+
+}
+   21aa8:	e037883a 	mov	sp,fp
+   21aac:	dfc00217 	ldw	ra,8(sp)
+   21ab0:	df000117 	ldw	fp,4(sp)
+   21ab4:	dc000017 	ldw	r16,0(sp)
+   21ab8:	dec00304 	addi	sp,sp,12
+   21abc:	f800283a 	ret
+
+00021ac0 <key_available>:
+
+
+/* keypad functions */
+
+unsigned char  key_available()
+{
+   21ac0:	deffff04 	addi	sp,sp,-4
+   21ac4:	df000015 	stw	fp,0(sp)
+   21ac8:	d839883a 	mov	fp,sp
+    return  FALSE;
+   21acc:	0005883a 	mov	r2,zero
+}
+   21ad0:	e037883a 	mov	sp,fp
+   21ad4:	df000017 	ldw	fp,0(sp)
+   21ad8:	dec00104 	addi	sp,sp,4
+   21adc:	f800283a 	ret
+
+00021ae0 <getkey>:
+
+int  getkey()
+{
+   21ae0:	deffff04 	addi	sp,sp,-4
+   21ae4:	df000015 	stw	fp,0(sp)
+   21ae8:	d839883a 	mov	fp,sp
+    return  KEY_ILLEGAL;
+   21aec:	00800184 	movi	r2,6
+}
+   21af0:	e037883a 	mov	sp,fp
+   21af4:	df000017 	ldw	fp,0(sp)
+   21af8:	dec00104 	addi	sp,sp,4
+   21afc:	f800283a 	ret
+
+00021b00 <clear_display>:
+
+
+/* display functions  */
+
+void  clear_display()
+{
+   21b00:	deffff04 	addi	sp,sp,-4
+   21b04:	df000015 	stw	fp,0(sp)
+   21b08:	d839883a 	mov	fp,sp
+    return;
+   21b0c:	0001883a 	nop
+}
+   21b10:	e037883a 	mov	sp,fp
+   21b14:	df000017 	ldw	fp,0(sp)
+   21b18:	dec00104 	addi	sp,sp,4
+   21b1c:	f800283a 	ret
+
+00021b20 <plot_pixel>:
+
+void  plot_pixel(unsigned int x, unsigned int y, int p)
+{
+   21b20:	defffc04 	addi	sp,sp,-16
+   21b24:	df000315 	stw	fp,12(sp)
+   21b28:	df000304 	addi	fp,sp,12
+   21b2c:	e13ffd15 	stw	r4,-12(fp)
+   21b30:	e17ffe15 	stw	r5,-8(fp)
+   21b34:	e1bfff15 	stw	r6,-4(fp)
+    return;
+   21b38:	0001883a 	nop
+}
+   21b3c:	e037883a 	mov	sp,fp
+   21b40:	df000017 	ldw	fp,0(sp)
+   21b44:	dec00104 	addi	sp,sp,4
+   21b48:	f800283a 	ret
+
+00021b4c <set_sample_rate>:
+
+
+/* sampling parameter functions */
+
+int  set_sample_rate(long int rate)
+{
+   21b4c:	defffe04 	addi	sp,sp,-8
+   21b50:	df000115 	stw	fp,4(sp)
+   21b54:	df000104 	addi	fp,sp,4
+   21b58:	e13fff15 	stw	r4,-4(fp)
+    return  SIZE_X;
+   21b5c:	00807804 	movi	r2,480
+}
+   21b60:	e037883a 	mov	sp,fp
+   21b64:	df000017 	ldw	fp,0(sp)
+   21b68:	dec00104 	addi	sp,sp,4
+   21b6c:	f800283a 	ret
+
+00021b70 <set_trigger>:
+
+void  set_trigger(int level, int slope)
+{
+   21b70:	defffd04 	addi	sp,sp,-12
+   21b74:	df000215 	stw	fp,8(sp)
+   21b78:	df000204 	addi	fp,sp,8
+   21b7c:	e13ffe15 	stw	r4,-8(fp)
+   21b80:	e17fff15 	stw	r5,-4(fp)
+    return;
+   21b84:	0001883a 	nop
+}
+   21b88:	e037883a 	mov	sp,fp
+   21b8c:	df000017 	ldw	fp,0(sp)
+   21b90:	dec00104 	addi	sp,sp,4
+   21b94:	f800283a 	ret
+
+00021b98 <set_delay>:
+
+void  set_delay(long int delay)
+{
+   21b98:	defffe04 	addi	sp,sp,-8
+   21b9c:	df000115 	stw	fp,4(sp)
+   21ba0:	df000104 	addi	fp,sp,4
+   21ba4:	e13fff15 	stw	r4,-4(fp)
+    return;
+   21ba8:	0001883a 	nop
+}
+   21bac:	e037883a 	mov	sp,fp
+   21bb0:	df000017 	ldw	fp,0(sp)
+   21bb4:	dec00104 	addi	sp,sp,4
+   21bb8:	f800283a 	ret
+
+00021bbc <start_sample>:
+
+
+/* sampling functions */
+
+void  start_sample(int auto_trigger)
+{
+   21bbc:	defffe04 	addi	sp,sp,-8
+   21bc0:	df000115 	stw	fp,4(sp)
+   21bc4:	df000104 	addi	fp,sp,4
+   21bc8:	e13fff15 	stw	r4,-4(fp)
+    return;
+   21bcc:	0001883a 	nop
+}
+   21bd0:	e037883a 	mov	sp,fp
+   21bd4:	df000017 	ldw	fp,0(sp)
+   21bd8:	dec00104 	addi	sp,sp,4
+   21bdc:	f800283a 	ret
+
+00021be0 <sample_done>:
+
+unsigned char *sample_done()
+{
+   21be0:	deffff04 	addi	sp,sp,-4
+   21be4:	df000015 	stw	fp,0(sp)
+   21be8:	d839883a 	mov	fp,sp
+    return  NULL;
+   21bec:	0005883a 	mov	r2,zero
+}
+   21bf0:	e037883a 	mov	sp,fp
+   21bf4:	df000017 	ldw	fp,0(sp)
+   21bf8:	dec00104 	addi	sp,sp,4
+   21bfc:	f800283a 	ret
+
+00021c00 <get_test_sample>:
+   Last Modified:    May 3, 2006
+
+*/
+
+void  get_test_sample(long int sample_rate, int sample_size, unsigned char *sample)
+{
+   21c00:	deff8104 	addi	sp,sp,-508
+   21c04:	dfc07e15 	stw	ra,504(sp)
+   21c08:	df007d15 	stw	fp,500(sp)
+   21c0c:	df007d04 	addi	fp,sp,500
+   21c10:	e13ffd15 	stw	r4,-12(fp)
+   21c14:	e17ffe15 	stw	r5,-8(fp)
+   21c18:	e1bfff15 	stw	r6,-4(fp)
+    /* variables */
+
+    /* a half-cycle of the ringing square wave */
+    const unsigned char  waveform[] =
+   21c1c:	008000b4 	movhi	r2,2
+   21c20:	108f7204 	addi	r2,r2,15816
+   21c24:	e13f8504 	addi	r4,fp,-492
+   21c28:	1007883a 	mov	r3,r2
+   21c2c:	00807804 	movi	r2,480
+   21c30:	180b883a 	mov	r5,r3
+   21c34:	100d883a 	mov	r6,r2
+   21c38:	0022de40 	call	22de4 <memcpy>
+	    63,  63,  63,  63,  63,  63,  63,  63,  63,  63,  63,  63,  63,
+	    63,  63,  63,  63,  63,  63,  64,  64,  64,  64,  64,  64,  64,
+	    64,  64,  64,  64,  64,  64,  64,  64,  64,  64,  64,  64
+	  };
+
+    long int  sample_pt = 0;	/* current sample within the waveform */
+   21c3c:	e03f8315 	stw	zero,-500(fp)
+
+    int       sample_sign = 1;	/* sample waveform sign */
+   21c40:	00800044 	movi	r2,1
+   21c44:	e0bf8415 	stw	r2,-496(fp)
+
+
+
+    /* loop, getting sample points */
+    while (sample_size-- > 0)  {
+   21c48:	00003106 	br	21d10 <get_test_sample+0x110>
+
+        /* get this sample point (value based on sign) */
+	if (sample_sign > 0)
+   21c4c:	e0bf8417 	ldw	r2,-496(fp)
+   21c50:	00800f0e 	bge	zero,r2,21c90 <get_test_sample+0x90>
+	    *sample++ = waveform[sample_pt/20] + 127;
+   21c54:	e0bf8317 	ldw	r2,-500(fp)
+   21c58:	1009883a 	mov	r4,r2
+   21c5c:	01400504 	movi	r5,20
+   21c60:	0022d000 	call	22d00 <__divsi3>
+   21c64:	e0ff8504 	addi	r3,fp,-492
+   21c68:	1885883a 	add	r2,r3,r2
+   21c6c:	10800003 	ldbu	r2,0(r2)
+   21c70:	10801fc4 	addi	r2,r2,127
+   21c74:	1007883a 	mov	r3,r2
+   21c78:	e0bfff17 	ldw	r2,-4(fp)
+   21c7c:	10c00005 	stb	r3,0(r2)
+   21c80:	e0bfff17 	ldw	r2,-4(fp)
+   21c84:	10800044 	addi	r2,r2,1
+   21c88:	e0bfff15 	stw	r2,-4(fp)
+   21c8c:	00000f06 	br	21ccc <get_test_sample+0xcc>
+	else
+	    *sample++ = 128 - waveform[sample_pt/20];
+   21c90:	e0bf8317 	ldw	r2,-500(fp)
+   21c94:	1009883a 	mov	r4,r2
+   21c98:	01400504 	movi	r5,20
+   21c9c:	0022d000 	call	22d00 <__divsi3>
+   21ca0:	e0ff8504 	addi	r3,fp,-492
+   21ca4:	1885883a 	add	r2,r3,r2
+   21ca8:	10800003 	ldbu	r2,0(r2)
+   21cac:	00ffe004 	movi	r3,-128
+   21cb0:	1885c83a 	sub	r2,r3,r2
+   21cb4:	1007883a 	mov	r3,r2
+   21cb8:	e0bfff17 	ldw	r2,-4(fp)
+   21cbc:	10c00005 	stb	r3,0(r2)
+   21cc0:	e0bfff17 	ldw	r2,-4(fp)
+   21cc4:	10800044 	addi	r2,r2,1
+   21cc8:	e0bfff15 	stw	r2,-4(fp)
+
+	/* compute the time for the next sample point */
+	sample_pt += (10000000L / sample_rate);
+   21ccc:	01002674 	movhi	r4,153
+   21cd0:	2125a004 	addi	r4,r4,-27008
+   21cd4:	e17ffd17 	ldw	r5,-12(fp)
+   21cd8:	0022d000 	call	22d00 <__divsi3>
+   21cdc:	e0ff8317 	ldw	r3,-500(fp)
+   21ce0:	1885883a 	add	r2,r3,r2
+   21ce4:	e0bf8315 	stw	r2,-500(fp)
+	/* keep sample_pt within the waveform (need to scale it) */
+	while (sample_pt >= (20 * NO_TEST_PTS))  {
+   21ce8:	00000606 	br	21d04 <get_test_sample+0x104>
+	    /* keep sample_pt within the test waveform */
+	    sample_pt -= (20 * NO_TEST_PTS);
+   21cec:	e0bf8317 	ldw	r2,-500(fp)
+   21cf0:	10b6a004 	addi	r2,r2,-9600
+   21cf4:	e0bf8315 	stw	r2,-500(fp)
+	    /* each time through the waveform, invert it */
+	    sample_sign = -sample_sign;
+   21cf8:	e0bf8417 	ldw	r2,-496(fp)
+   21cfc:	0085c83a 	sub	r2,zero,r2
+   21d00:	e0bf8415 	stw	r2,-496(fp)
+	    *sample++ = 128 - waveform[sample_pt/20];
+
+	/* compute the time for the next sample point */
+	sample_pt += (10000000L / sample_rate);
+	/* keep sample_pt within the waveform (need to scale it) */
+	while (sample_pt >= (20 * NO_TEST_PTS))  {
+   21d04:	e0bf8317 	ldw	r2,-500(fp)
+   21d08:	10896028 	cmpgeui	r2,r2,9600
+   21d0c:	103ff71e 	bne	r2,zero,21cec <get_test_sample+0xec>
+    int       sample_sign = 1;	/* sample waveform sign */
+
+
+
+    /* loop, getting sample points */
+    while (sample_size-- > 0)  {
+   21d10:	e0bffe17 	ldw	r2,-8(fp)
+   21d14:	0084803a 	cmplt	r2,zero,r2
+   21d18:	e0fffe17 	ldw	r3,-8(fp)
+   21d1c:	18ffffc4 	addi	r3,r3,-1
+   21d20:	e0fffe15 	stw	r3,-8(fp)
+   21d24:	10803fcc 	andi	r2,r2,255
+   21d28:	103fc81e 	bne	r2,zero,21c4c <get_test_sample+0x4c>
+
+
+    /* done getting the sample - return */
+    return;
+
+}
+   21d2c:	e037883a 	mov	sp,fp
+   21d30:	dfc00117 	ldw	ra,4(sp)
+   21d34:	df000017 	ldw	fp,0(sp)
+   21d38:	dec00204 	addi	sp,sp,8
+   21d3c:	f800283a 	ret
+
+00021d40 <init_trace>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  init_trace()
+{
+   21d40:	defffe04 	addi	sp,sp,-8
+   21d44:	dfc00115 	stw	ra,4(sp)
+   21d48:	df000015 	stw	fp,0(sp)
+   21d4c:	d839883a 	mov	fp,sp
+
+
+    /* initialize system status variables */
+
+    /* ready for a trace */
+    trace_status = TRUE;
+   21d50:	00800044 	movi	r2,1
+   21d54:	d0a01115 	stw	r2,-32700(gp)
+
+    /* not currently sampling data */
+    sampling = FALSE;
+   21d58:	d0201715 	stw	zero,-32676(gp)
+
+    /* turn off the displayed scale */
+    cur_scale = SCALE_NONE;
+   21d5c:	d0201015 	stw	zero,-32704(gp)
+
+    /* sample size is the screen size */
+    sample_size = SIZE_X;
+   21d60:	00807804 	movi	r2,480
+   21d64:	d0a01415 	stw	r2,-32688(gp)
+
+
+    /* clear save areas */
+    clear_saved_areas();
+   21d68:	00222c00 	call	222c0 <clear_saved_areas>
+
+    /* also clear the general saved area location variables (off-screen) */
+    saved_pos_x = SIZE_X + 1;
+   21d6c:	00807844 	movi	r2,481
+   21d70:	d0a01615 	stw	r2,-32680(gp)
+    saved_pos_y = SIZE_Y + 1;
+   21d74:	00802044 	movi	r2,129
+   21d78:	d0a01315 	stw	r2,-32692(gp)
+    saved_end_x = SIZE_X + 1;
+   21d7c:	00807844 	movi	r2,481
+   21d80:	d0a01515 	stw	r2,-32684(gp)
+    saved_end_y = SIZE_Y + 1;
+   21d84:	00802044 	movi	r2,129
+   21d88:	d0a01215 	stw	r2,-32696(gp)
+
+
+    /* done initializing, return */
+    return;
+   21d8c:	0001883a 	nop
+
+}
+   21d90:	e037883a 	mov	sp,fp
+   21d94:	dfc00117 	ldw	ra,4(sp)
+   21d98:	df000017 	ldw	fp,0(sp)
+   21d9c:	dec00204 	addi	sp,sp,8
+   21da0:	f800283a 	ret
+
+00021da4 <set_mode>:
+   Last Modified:    May 27, 2008
+
+*/
+
+void  set_mode(enum trigger_type trigger_mode)
+{
+   21da4:	defffe04 	addi	sp,sp,-8
+   21da8:	df000115 	stw	fp,4(sp)
+   21dac:	df000104 	addi	fp,sp,4
+   21db0:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* if not one-shot triggering - ready for trace too */
+    trace_status = (trigger_mode != ONESHOT_TRIGGER);
+   21db4:	e0bfff17 	ldw	r2,-4(fp)
+   21db8:	10800098 	cmpnei	r2,r2,2
+   21dbc:	10803fcc 	andi	r2,r2,255
+   21dc0:	d0a01115 	stw	r2,-32700(gp)
+
+
+    /* turn off the sampling flag so will start a new sample */
+    sampling = FALSE;
+   21dc4:	d0201715 	stw	zero,-32676(gp)
+
+
+    /* all done, return */
+    return;
+   21dc8:	0001883a 	nop
+
+}
+   21dcc:	e037883a 	mov	sp,fp
+   21dd0:	df000017 	ldw	fp,0(sp)
+   21dd4:	dec00104 	addi	sp,sp,4
+   21dd8:	f800283a 	ret
+
+00021ddc <is_sampling>:
+   Last Modified:    May 27, 2008
+
+*/
+
+int  is_sampling()
+{
+   21ddc:	deffff04 	addi	sp,sp,-4
+   21de0:	df000015 	stw	fp,0(sp)
+   21de4:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* currently sampling if sampling flag is set */
+    return  sampling;
+   21de8:	d0a01717 	ldw	r2,-32676(gp)
+
+}
+   21dec:	e037883a 	mov	sp,fp
+   21df0:	df000017 	ldw	fp,0(sp)
+   21df4:	dec00104 	addi	sp,sp,4
+   21df8:	f800283a 	ret
+
+00021dfc <trace_rdy>:
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+int  trace_rdy()
+{
+   21dfc:	deffff04 	addi	sp,sp,-4
+   21e00:	df000015 	stw	fp,0(sp)
+   21e04:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* ready for another trace if not sampling and trace is ready */
+    return  (!sampling && trace_status);
+   21e08:	d0a01717 	ldw	r2,-32676(gp)
+   21e0c:	1000041e 	bne	r2,zero,21e20 <trace_rdy+0x24>
+   21e10:	d0a01117 	ldw	r2,-32700(gp)
+   21e14:	10000226 	beq	r2,zero,21e20 <trace_rdy+0x24>
+   21e18:	00800044 	movi	r2,1
+   21e1c:	00000106 	br	21e24 <trace_rdy+0x28>
+   21e20:	0005883a 	mov	r2,zero
+
+}
+   21e24:	e037883a 	mov	sp,fp
+   21e28:	df000017 	ldw	fp,0(sp)
+   21e2c:	dec00104 	addi	sp,sp,4
+   21e30:	f800283a 	ret
+
+00021e34 <trace_done>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  trace_done()
+{
+   21e34:	defffe04 	addi	sp,sp,-8
+   21e38:	dfc00115 	stw	ra,4(sp)
+   21e3c:	df000015 	stw	fp,0(sp)
+   21e40:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* done with a trace - if retriggering, ready for another one */
+    if (get_trigger_mode() != ONESHOT_TRIGGER)
+   21e44:	0020de80 	call	20de8 <get_trigger_mode>
+   21e48:	108000a0 	cmpeqi	r2,r2,2
+   21e4c:	1000021e 	bne	r2,zero,21e58 <trace_done+0x24>
+        /* in a retriggering mode - set trace_status to TRUE (ready) */
+	trace_status = TRUE;
+   21e50:	00800044 	movi	r2,1
+   21e54:	d0a01115 	stw	r2,-32700(gp)
+
+    /* no longer sampling data */
+    sampling = FALSE;
+   21e58:	d0201715 	stw	zero,-32676(gp)
+
+
+    /* done so return */
+    return;
+   21e5c:	0001883a 	nop
+
+}
+   21e60:	e037883a 	mov	sp,fp
+   21e64:	dfc00117 	ldw	ra,4(sp)
+   21e68:	df000017 	ldw	fp,0(sp)
+   21e6c:	dec00204 	addi	sp,sp,8
+   21e70:	f800283a 	ret
+
+00021e74 <trace_rearm>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  trace_rearm()
+{
+   21e74:	deffff04 	addi	sp,sp,-4
+   21e78:	df000015 	stw	fp,0(sp)
+   21e7c:	d839883a 	mov	fp,sp
+      /* none */
+
+
+
+    /* rearm the trace - set status to ready (TRUE) */
+    trace_status = TRUE;
+   21e80:	00800044 	movi	r2,1
+   21e84:	d0a01115 	stw	r2,-32700(gp)
+
+
+    /* all done - return */
+    return;
+   21e88:	0001883a 	nop
+
+}
+   21e8c:	e037883a 	mov	sp,fp
+   21e90:	df000017 	ldw	fp,0(sp)
+   21e94:	dec00104 	addi	sp,sp,4
+   21e98:	f800283a 	ret
+
+00021e9c <set_trace_size>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  set_trace_size(int size)
+{
+   21e9c:	defffe04 	addi	sp,sp,-8
+   21ea0:	df000115 	stw	fp,4(sp)
+   21ea4:	df000104 	addi	fp,sp,4
+   21ea8:	e13fff15 	stw	r4,-4(fp)
+      /* none */
+
+
+
+    /* set the locally global sample size */
+    sample_size = size;
+   21eac:	e0bfff17 	ldw	r2,-4(fp)
+   21eb0:	d0a01415 	stw	r2,-32688(gp)
+
+
+    /* all done, return */
+    return;
+   21eb4:	0001883a 	nop
+
+}
+   21eb8:	e037883a 	mov	sp,fp
+   21ebc:	df000017 	ldw	fp,0(sp)
+   21ec0:	dec00104 	addi	sp,sp,4
+   21ec4:	f800283a 	ret
+
+00021ec8 <set_display_scale>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  set_display_scale(enum scale_type scale)
+{
+   21ec8:	defff804 	addi	sp,sp,-32
+   21ecc:	dfc00715 	stw	ra,28(sp)
+   21ed0:	df000615 	stw	fp,24(sp)
+   21ed4:	dc400515 	stw	r17,20(sp)
+   21ed8:	dc000415 	stw	r16,16(sp)
+   21edc:	df000404 	addi	fp,sp,16
+   21ee0:	e13fff15 	stw	r4,-4(fp)
+
+
+
+    /* whenever change scale type, need to clear out previous scale */
+    /* unnecessary if going to SCALE_GRID or from SCALE_NONE or not changing the scale */
+    if ((scale != SCALE_GRID) && (cur_scale != SCALE_NONE) && (scale != cur_scale))  {
+   21ee4:	e0bfff17 	ldw	r2,-4(fp)
+   21ee8:	108000a0 	cmpeqi	r2,r2,2
+   21eec:	1000921e 	bne	r2,zero,22138 <set_display_scale+0x270>
+   21ef0:	d0a01017 	ldw	r2,-32704(gp)
+   21ef4:	10009026 	beq	r2,zero,22138 <set_display_scale+0x270>
+   21ef8:	d0a01017 	ldw	r2,-32704(gp)
+   21efc:	e0ffff17 	ldw	r3,-4(fp)
+   21f00:	18808d26 	beq	r3,r2,22138 <set_display_scale+0x270>
+
+        /* need to restore the trace under the lines (tick, grid, or axis) */
+
+	/* go through all points on horizontal lines */
+	for (j = -Y_TICK_CNT; j <= Y_TICK_CNT; j++)  {
+   21f04:	00bfffc4 	movi	r2,-1
+   21f08:	e0bffe15 	stw	r2,-8(fp)
+   21f0c:	00004206 	br	22018 <set_display_scale+0x150>
+
+	    /* get y position of the line */
+	    p = X_AXIS_POS + j * Y_TICK_SIZE;
+   21f10:	e13ffe17 	ldw	r4,-8(fp)
+   21f14:	01400c04 	movi	r5,48
+   21f18:	0022dbc0 	call	22dbc <__mulsi3>
+   21f1c:	10801004 	addi	r2,r2,64
+   21f20:	e0bffc15 	stw	r2,-16(fp)
+	    /* make sure it is in range */
+	    if (p >= PLOT_SIZE_Y)
+   21f24:	e0bffc17 	ldw	r2,-16(fp)
+   21f28:	10802010 	cmplti	r2,r2,128
+   21f2c:	1000021e 	bne	r2,zero,21f38 <set_display_scale+0x70>
+	        p = PLOT_SIZE_Y - 1;
+   21f30:	00801fc4 	movi	r2,127
+   21f34:	e0bffc15 	stw	r2,-16(fp)
+	    if (p < 0)
+   21f38:	e0bffc17 	ldw	r2,-16(fp)
+   21f3c:	1000010e 	bge	r2,zero,21f44 <set_display_scale+0x7c>
+	        p = 0;
+   21f40:	e03ffc15 	stw	zero,-16(fp)
+
+	    /* look at entire horizontal line */
+	    for (i = 0; i < PLOT_SIZE_X; i++)  {
+   21f44:	e03ffd15 	stw	zero,-12(fp)
+   21f48:	00002d06 	br	22000 <set_display_scale+0x138>
+	        /* check if this point is on or off (need to look at bits) */
+		if ((saved_axis_x[j + Y_TICK_CNT][i / 8] & (0x80 >> (i % 8))) == 0)
+   21f4c:	e0bffe17 	ldw	r2,-8(fp)
+   21f50:	10c00044 	addi	r3,r2,1
+   21f54:	e0bffd17 	ldw	r2,-12(fp)
+   21f58:	1000010e 	bge	r2,zero,21f60 <set_display_scale+0x98>
+   21f5c:	108001c4 	addi	r2,r2,7
+   21f60:	1005d0fa 	srai	r2,r2,3
+   21f64:	1023883a 	mov	r17,r2
+   21f68:	040000b4 	movhi	r16,2
+   21f6c:	84124804 	addi	r16,r16,18720
+   21f70:	1809883a 	mov	r4,r3
+   21f74:	01400f04 	movi	r5,60
+   21f78:	0022dbc0 	call	22dbc <__mulsi3>
+   21f7c:	1445883a 	add	r2,r2,r17
+   21f80:	8085883a 	add	r2,r16,r2
+   21f84:	10800003 	ldbu	r2,0(r2)
+   21f88:	10c03fcc 	andi	r3,r2,255
+   21f8c:	e13ffd17 	ldw	r4,-12(fp)
+   21f90:	00a00034 	movhi	r2,32768
+   21f94:	108001c4 	addi	r2,r2,7
+   21f98:	2084703a 	and	r2,r4,r2
+   21f9c:	1000040e 	bge	r2,zero,21fb0 <set_display_scale+0xe8>
+   21fa0:	10bfffc4 	addi	r2,r2,-1
+   21fa4:	013ffe04 	movi	r4,-8
+   21fa8:	1104b03a 	or	r2,r2,r4
+   21fac:	10800044 	addi	r2,r2,1
+   21fb0:	01002004 	movi	r4,128
+   21fb4:	2085d83a 	sra	r2,r4,r2
+   21fb8:	1884703a 	and	r2,r3,r2
+   21fbc:	1000071e 	bne	r2,zero,21fdc <set_display_scale+0x114>
+		    /* saved pixel is off */
+		    plot_pixel(i, p, PIXEL_WHITE);
+   21fc0:	e0fffd17 	ldw	r3,-12(fp)
+   21fc4:	e0bffc17 	ldw	r2,-16(fp)
+   21fc8:	1809883a 	mov	r4,r3
+   21fcc:	100b883a 	mov	r5,r2
+   21fd0:	000d883a 	mov	r6,zero
+   21fd4:	0021b200 	call	21b20 <plot_pixel>
+   21fd8:	00000606 	br	21ff4 <set_display_scale+0x12c>
+		else
+		    /* saved pixel is on */
+		    plot_pixel(i, p, PIXEL_BLACK);
+   21fdc:	e0fffd17 	ldw	r3,-12(fp)
+   21fe0:	e0bffc17 	ldw	r2,-16(fp)
+   21fe4:	1809883a 	mov	r4,r3
+   21fe8:	100b883a 	mov	r5,r2
+   21fec:	01800044 	movi	r6,1
+   21ff0:	0021b200 	call	21b20 <plot_pixel>
+	        p = PLOT_SIZE_Y - 1;
+	    if (p < 0)
+	        p = 0;
+
+	    /* look at entire horizontal line */
+	    for (i = 0; i < PLOT_SIZE_X; i++)  {
+   21ff4:	e0bffd17 	ldw	r2,-12(fp)
+   21ff8:	10800044 	addi	r2,r2,1
+   21ffc:	e0bffd15 	stw	r2,-12(fp)
+   22000:	e0bffd17 	ldw	r2,-12(fp)
+   22004:	10807810 	cmplti	r2,r2,480
+   22008:	103fd01e 	bne	r2,zero,21f4c <set_display_scale+0x84>
+    if ((scale != SCALE_GRID) && (cur_scale != SCALE_NONE) && (scale != cur_scale))  {
+
+        /* need to restore the trace under the lines (tick, grid, or axis) */
+
+	/* go through all points on horizontal lines */
+	for (j = -Y_TICK_CNT; j <= Y_TICK_CNT; j++)  {
+   2200c:	e0bffe17 	ldw	r2,-8(fp)
+   22010:	10800044 	addi	r2,r2,1
+   22014:	e0bffe15 	stw	r2,-8(fp)
+   22018:	e0bffe17 	ldw	r2,-8(fp)
+   2201c:	10800090 	cmplti	r2,r2,2
+   22020:	103fbb1e 	bne	r2,zero,21f10 <set_display_scale+0x48>
+		    plot_pixel(i, p, PIXEL_BLACK);
+	    }
+	}
+
+	/* go through all points on vertical lines */
+	for (j = -X_TICK_CNT; j <= X_TICK_CNT; j++)  {
+   22024:	00bffec4 	movi	r2,-5
+   22028:	e0bffe15 	stw	r2,-8(fp)
+   2202c:	00003f06 	br	2212c <set_display_scale+0x264>
+
+	    /* get x position of the line */
+	    p = Y_AXIS_POS + j * X_TICK_SIZE;
+   22030:	e13ffe17 	ldw	r4,-8(fp)
+   22034:	01400c04 	movi	r5,48
+   22038:	0022dbc0 	call	22dbc <__mulsi3>
+   2203c:	10803c04 	addi	r2,r2,240
+   22040:	e0bffc15 	stw	r2,-16(fp)
+	    /* make sure it is in range */
+	    if (p >= PLOT_SIZE_X)
+   22044:	e0bffc17 	ldw	r2,-16(fp)
+   22048:	10807810 	cmplti	r2,r2,480
+   2204c:	1000021e 	bne	r2,zero,22058 <set_display_scale+0x190>
+	        p = PLOT_SIZE_X - 1;
+   22050:	008077c4 	movi	r2,479
+   22054:	e0bffc15 	stw	r2,-16(fp)
+	    if (p < 0)
+   22058:	e0bffc17 	ldw	r2,-16(fp)
+   2205c:	1000010e 	bge	r2,zero,22064 <set_display_scale+0x19c>
+	        p = 0;
+   22060:	e03ffc15 	stw	zero,-16(fp)
+
+	    /* look at entire vertical line */
+	    for (i = 0; i < PLOT_SIZE_Y; i++)  {
+   22064:	e03ffd15 	stw	zero,-12(fp)
+   22068:	00002a06 	br	22114 <set_display_scale+0x24c>
+	        /* check if this point is on or off (need to look at bits) */
+		if ((saved_axis_y[j + X_TICK_CNT][i / 8] & (0x80 >> (i % 8))) == 0)
+   2206c:	e0bffe17 	ldw	r2,-8(fp)
+   22070:	11000144 	addi	r4,r2,5
+   22074:	e0bffd17 	ldw	r2,-12(fp)
+   22078:	1000010e 	bge	r2,zero,22080 <set_display_scale+0x1b8>
+   2207c:	108001c4 	addi	r2,r2,7
+   22080:	1005d0fa 	srai	r2,r2,3
+   22084:	00c000b4 	movhi	r3,2
+   22088:	18d21c04 	addi	r3,r3,18544
+   2208c:	2008913a 	slli	r4,r4,4
+   22090:	2085883a 	add	r2,r4,r2
+   22094:	1885883a 	add	r2,r3,r2
+   22098:	10800003 	ldbu	r2,0(r2)
+   2209c:	10c03fcc 	andi	r3,r2,255
+   220a0:	e13ffd17 	ldw	r4,-12(fp)
+   220a4:	00a00034 	movhi	r2,32768
+   220a8:	108001c4 	addi	r2,r2,7
+   220ac:	2084703a 	and	r2,r4,r2
+   220b0:	1000040e 	bge	r2,zero,220c4 <set_display_scale+0x1fc>
+   220b4:	10bfffc4 	addi	r2,r2,-1
+   220b8:	013ffe04 	movi	r4,-8
+   220bc:	1104b03a 	or	r2,r2,r4
+   220c0:	10800044 	addi	r2,r2,1
+   220c4:	01002004 	movi	r4,128
+   220c8:	2085d83a 	sra	r2,r4,r2
+   220cc:	1884703a 	and	r2,r3,r2
+   220d0:	1000071e 	bne	r2,zero,220f0 <set_display_scale+0x228>
+		    /* saved pixel is off */
+		    plot_pixel(p, i, PIXEL_WHITE);
+   220d4:	e0fffc17 	ldw	r3,-16(fp)
+   220d8:	e0bffd17 	ldw	r2,-12(fp)
+   220dc:	1809883a 	mov	r4,r3
+   220e0:	100b883a 	mov	r5,r2
+   220e4:	000d883a 	mov	r6,zero
+   220e8:	0021b200 	call	21b20 <plot_pixel>
+   220ec:	00000606 	br	22108 <set_display_scale+0x240>
+		else
+		    /* saved pixel is on */
+		    plot_pixel(p, i, PIXEL_BLACK);
+   220f0:	e0fffc17 	ldw	r3,-16(fp)
+   220f4:	e0bffd17 	ldw	r2,-12(fp)
+   220f8:	1809883a 	mov	r4,r3
+   220fc:	100b883a 	mov	r5,r2
+   22100:	01800044 	movi	r6,1
+   22104:	0021b200 	call	21b20 <plot_pixel>
+	        p = PLOT_SIZE_X - 1;
+	    if (p < 0)
+	        p = 0;
+
+	    /* look at entire vertical line */
+	    for (i = 0; i < PLOT_SIZE_Y; i++)  {
+   22108:	e0bffd17 	ldw	r2,-12(fp)
+   2210c:	10800044 	addi	r2,r2,1
+   22110:	e0bffd15 	stw	r2,-12(fp)
+   22114:	e0bffd17 	ldw	r2,-12(fp)
+   22118:	10802010 	cmplti	r2,r2,128
+   2211c:	103fd31e 	bne	r2,zero,2206c <set_display_scale+0x1a4>
+		    plot_pixel(i, p, PIXEL_BLACK);
+	    }
+	}
+
+	/* go through all points on vertical lines */
+	for (j = -X_TICK_CNT; j <= X_TICK_CNT; j++)  {
+   22120:	e0bffe17 	ldw	r2,-8(fp)
+   22124:	10800044 	addi	r2,r2,1
+   22128:	e0bffe15 	stw	r2,-8(fp)
+   2212c:	e0bffe17 	ldw	r2,-8(fp)
+   22130:	10800190 	cmplti	r2,r2,6
+   22134:	103fbe1e 	bne	r2,zero,22030 <set_display_scale+0x168>
+	}
+    }
+
+
+    /* now handle the scale type appropriately */
+    switch (scale)  {
+   22138:	e0bfff17 	ldw	r2,-4(fp)
+   2213c:	10005526 	beq	r2,zero,22294 <set_display_scale+0x3cc>
+   22140:	108000e8 	cmpgeui	r2,r2,3
+   22144:	1000541e 	bne	r2,zero,22298 <set_display_scale+0x3d0>
+
+    	case SCALE_AXES:    /* axes for the scale */
+    	case SCALE_GRID:    /* grid for the scale */
+
+		            /* draw x lines (grid or tick marks) */
+			    for (i = -Y_TICK_CNT; i <= Y_TICK_CNT; i++)  {
+   22148:	00bfffc4 	movi	r2,-1
+   2214c:	e0bffd15 	stw	r2,-12(fp)
+   22150:	00002306 	br	221e0 <set_display_scale+0x318>
+
+				/* get y position of the line */
+				p = X_AXIS_POS + i * Y_TICK_SIZE;
+   22154:	e13ffd17 	ldw	r4,-12(fp)
+   22158:	01400c04 	movi	r5,48
+   2215c:	0022dbc0 	call	22dbc <__mulsi3>
+   22160:	10801004 	addi	r2,r2,64
+   22164:	e0bffc15 	stw	r2,-16(fp)
+				/* make sure it is in range */
+				if (p >= PLOT_SIZE_Y)
+   22168:	e0bffc17 	ldw	r2,-16(fp)
+   2216c:	10802010 	cmplti	r2,r2,128
+   22170:	1000021e 	bne	r2,zero,2217c <set_display_scale+0x2b4>
+				    p = PLOT_SIZE_Y - 1;
+   22174:	00801fc4 	movi	r2,127
+   22178:	e0bffc15 	stw	r2,-16(fp)
+				if (p < 0)
+   2217c:	e0bffc17 	ldw	r2,-16(fp)
+   22180:	1000010e 	bge	r2,zero,22188 <set_display_scale+0x2c0>
+				    p = 0;
+   22184:	e03ffc15 	stw	zero,-16(fp)
+
+				/* should we draw a grid, an axis, or a tick mark */
+				if (scale == SCALE_GRID)
+   22188:	e0bfff17 	ldw	r2,-4(fp)
+   2218c:	10800098 	cmpnei	r2,r2,2
+   22190:	1000051e 	bne	r2,zero,221a8 <set_display_scale+0x2e0>
+				    /* drawing a grid line */
+			            plot_hline(X_GRID_START, p, (X_GRID_END - X_GRID_START));
+   22194:	0009883a 	mov	r4,zero
+   22198:	e17ffc17 	ldw	r5,-16(fp)
+   2219c:	018077c4 	movi	r6,479
+   221a0:	00202140 	call	20214 <plot_hline>
+   221a4:	00000b06 	br	221d4 <set_display_scale+0x30c>
+				else if (i == 0)
+   221a8:	e0bffd17 	ldw	r2,-12(fp)
+   221ac:	1000051e 	bne	r2,zero,221c4 <set_display_scale+0x2fc>
+				    /* drawing the x axis */
+			            plot_hline(X_AXIS_START, p, (X_AXIS_END - X_AXIS_START));
+   221b0:	0009883a 	mov	r4,zero
+   221b4:	e17ffc17 	ldw	r5,-16(fp)
+   221b8:	018077c4 	movi	r6,479
+   221bc:	00202140 	call	20214 <plot_hline>
+   221c0:	00000406 	br	221d4 <set_display_scale+0x30c>
+				else
+				    /* must be drawing a tick mark */
+			            plot_hline((Y_AXIS_POS - (TICK_LEN / 2)), p, TICK_LEN);
+   221c4:	01003b84 	movi	r4,238
+   221c8:	e17ffc17 	ldw	r5,-16(fp)
+   221cc:	01800144 	movi	r6,5
+   221d0:	00202140 	call	20214 <plot_hline>
+
+    	case SCALE_AXES:    /* axes for the scale */
+    	case SCALE_GRID:    /* grid for the scale */
+
+		            /* draw x lines (grid or tick marks) */
+			    for (i = -Y_TICK_CNT; i <= Y_TICK_CNT; i++)  {
+   221d4:	e0bffd17 	ldw	r2,-12(fp)
+   221d8:	10800044 	addi	r2,r2,1
+   221dc:	e0bffd15 	stw	r2,-12(fp)
+   221e0:	e0bffd17 	ldw	r2,-12(fp)
+   221e4:	10800090 	cmplti	r2,r2,2
+   221e8:	103fda1e 	bne	r2,zero,22154 <set_display_scale+0x28c>
+				    /* must be drawing a tick mark */
+			            plot_hline((Y_AXIS_POS - (TICK_LEN / 2)), p, TICK_LEN);
+			    }
+
+		            /* draw y lines (grid or tick marks) */
+			    for (i = -X_TICK_CNT; i <= X_TICK_CNT; i++)  {
+   221ec:	00bffec4 	movi	r2,-5
+   221f0:	e0bffd15 	stw	r2,-12(fp)
+   221f4:	00002306 	br	22284 <set_display_scale+0x3bc>
+
+				/* get x position of the line */
+				p = Y_AXIS_POS + i * X_TICK_SIZE;
+   221f8:	e13ffd17 	ldw	r4,-12(fp)
+   221fc:	01400c04 	movi	r5,48
+   22200:	0022dbc0 	call	22dbc <__mulsi3>
+   22204:	10803c04 	addi	r2,r2,240
+   22208:	e0bffc15 	stw	r2,-16(fp)
+				/* make sure it is in range */
+				if (p >= PLOT_SIZE_X)
+   2220c:	e0bffc17 	ldw	r2,-16(fp)
+   22210:	10807810 	cmplti	r2,r2,480
+   22214:	1000021e 	bne	r2,zero,22220 <set_display_scale+0x358>
+				    p = PLOT_SIZE_X - 1;
+   22218:	008077c4 	movi	r2,479
+   2221c:	e0bffc15 	stw	r2,-16(fp)
+			        if (p < 0)
+   22220:	e0bffc17 	ldw	r2,-16(fp)
+   22224:	1000010e 	bge	r2,zero,2222c <set_display_scale+0x364>
+				    p = 0;
+   22228:	e03ffc15 	stw	zero,-16(fp)
+
+				/* should we draw a grid, an axis, or a tick mark */
+				if (scale == SCALE_GRID)
+   2222c:	e0bfff17 	ldw	r2,-4(fp)
+   22230:	10800098 	cmpnei	r2,r2,2
+   22234:	1000051e 	bne	r2,zero,2224c <set_display_scale+0x384>
+				    /* drawing a grid line */
+			            plot_vline(p, Y_GRID_START, (Y_GRID_END - Y_GRID_START));
+   22238:	e13ffc17 	ldw	r4,-16(fp)
+   2223c:	000b883a 	mov	r5,zero
+   22240:	01801fc4 	movi	r6,127
+   22244:	00202c00 	call	202c0 <plot_vline>
+   22248:	00000b06 	br	22278 <set_display_scale+0x3b0>
+				else if (i == 0)
+   2224c:	e0bffd17 	ldw	r2,-12(fp)
+   22250:	1000051e 	bne	r2,zero,22268 <set_display_scale+0x3a0>
+				    /* drawing the y axis */
+			            plot_vline(p, Y_AXIS_START, (Y_AXIS_END - Y_AXIS_START));
+   22254:	e13ffc17 	ldw	r4,-16(fp)
+   22258:	000b883a 	mov	r5,zero
+   2225c:	01801fc4 	movi	r6,127
+   22260:	00202c00 	call	202c0 <plot_vline>
+   22264:	00000406 	br	22278 <set_display_scale+0x3b0>
+				else
+				    /* must be drawing a tick mark */
+			            plot_vline(p, (X_AXIS_POS - (TICK_LEN / 2)), TICK_LEN);
+   22268:	e13ffc17 	ldw	r4,-16(fp)
+   2226c:	01400f84 	movi	r5,62
+   22270:	01800144 	movi	r6,5
+   22274:	00202c00 	call	202c0 <plot_vline>
+				    /* must be drawing a tick mark */
+			            plot_hline((Y_AXIS_POS - (TICK_LEN / 2)), p, TICK_LEN);
+			    }
+
+		            /* draw y lines (grid or tick marks) */
+			    for (i = -X_TICK_CNT; i <= X_TICK_CNT; i++)  {
+   22278:	e0bffd17 	ldw	r2,-12(fp)
+   2227c:	10800044 	addi	r2,r2,1
+   22280:	e0bffd15 	stw	r2,-12(fp)
+   22284:	e0bffd17 	ldw	r2,-12(fp)
+   22288:	10800190 	cmplti	r2,r2,6
+   2228c:	103fda1e 	bne	r2,zero,221f8 <set_display_scale+0x330>
+				    /* must be drawing a tick mark */
+			            plot_vline(p, (X_AXIS_POS - (TICK_LEN / 2)), TICK_LEN);
+			    }
+
+			    /* done with the axes */
+			    break;
+   22290:	00000106 	br	22298 <set_display_scale+0x3d0>
+
+        case SCALE_NONE:    /* there is no scale */
+			    /* already restored plot so nothing to do */
+			    break;
+   22294:	0001883a 	nop
+
+    }
+
+
+    /* now remember the new (now current) scale type */
+    cur_scale = scale;
+   22298:	e0bfff17 	ldw	r2,-4(fp)
+   2229c:	d0a01015 	stw	r2,-32704(gp)
+
+
+    /* scale is taken care of, return */
+    return;
+   222a0:	0001883a 	nop
+
+}
+   222a4:	e037883a 	mov	sp,fp
+   222a8:	dfc00317 	ldw	ra,12(sp)
+   222ac:	df000217 	ldw	fp,8(sp)
+   222b0:	dc400117 	ldw	r17,4(sp)
+   222b4:	dc000017 	ldw	r16,0(sp)
+   222b8:	dec00404 	addi	sp,sp,16
+   222bc:	f800283a 	ret
+
+000222c0 <clear_saved_areas>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  clear_saved_areas()
+{
+   222c0:	defffb04 	addi	sp,sp,-20
+   222c4:	dfc00415 	stw	ra,16(sp)
+   222c8:	df000315 	stw	fp,12(sp)
+   222cc:	dc000215 	stw	r16,8(sp)
+   222d0:	df000204 	addi	fp,sp,8
+    int  j;
+
+
+
+    /* clear x-axis and y-axis save areas */
+    for (j = 0; j <= (2 * Y_TICK_CNT); j++)
+   222d4:	e03fff15 	stw	zero,-4(fp)
+   222d8:	00001506 	br	22330 <clear_saved_areas+0x70>
+        for (i = 0; i < (SIZE_X / 8); i++)
+   222dc:	e03ffe15 	stw	zero,-8(fp)
+   222e0:	00000d06 	br	22318 <clear_saved_areas+0x58>
+            saved_axis_x[j][i] = 0;
+   222e4:	040000b4 	movhi	r16,2
+   222e8:	84124804 	addi	r16,r16,18720
+   222ec:	e0bfff17 	ldw	r2,-4(fp)
+   222f0:	1009883a 	mov	r4,r2
+   222f4:	01400f04 	movi	r5,60
+   222f8:	0022dbc0 	call	22dbc <__mulsi3>
+   222fc:	e0fffe17 	ldw	r3,-8(fp)
+   22300:	10c5883a 	add	r2,r2,r3
+   22304:	8085883a 	add	r2,r16,r2
+   22308:	10000005 	stb	zero,0(r2)
+
+
+
+    /* clear x-axis and y-axis save areas */
+    for (j = 0; j <= (2 * Y_TICK_CNT); j++)
+        for (i = 0; i < (SIZE_X / 8); i++)
+   2230c:	e0bffe17 	ldw	r2,-8(fp)
+   22310:	10800044 	addi	r2,r2,1
+   22314:	e0bffe15 	stw	r2,-8(fp)
+   22318:	e0bffe17 	ldw	r2,-8(fp)
+   2231c:	10800f10 	cmplti	r2,r2,60
+   22320:	103ff01e 	bne	r2,zero,222e4 <clear_saved_areas+0x24>
+    int  j;
+
+
+
+    /* clear x-axis and y-axis save areas */
+    for (j = 0; j <= (2 * Y_TICK_CNT); j++)
+   22324:	e0bfff17 	ldw	r2,-4(fp)
+   22328:	10800044 	addi	r2,r2,1
+   2232c:	e0bfff15 	stw	r2,-4(fp)
+   22330:	e0bfff17 	ldw	r2,-4(fp)
+   22334:	108000d0 	cmplti	r2,r2,3
+   22338:	103fe81e 	bne	r2,zero,222dc <clear_saved_areas+0x1c>
+        for (i = 0; i < (SIZE_X / 8); i++)
+            saved_axis_x[j][i] = 0;
+    for (j = 0; j <= (2 * X_TICK_CNT); j++)
+   2233c:	e03fff15 	stw	zero,-4(fp)
+   22340:	00001306 	br	22390 <clear_saved_areas+0xd0>
+        for (i = 0; i < (SIZE_Y / 8); i++)
+   22344:	e03ffe15 	stw	zero,-8(fp)
+   22348:	00000b06 	br	22378 <clear_saved_areas+0xb8>
+            saved_axis_y[j][i] = 0;
+   2234c:	00c000b4 	movhi	r3,2
+   22350:	18d21c04 	addi	r3,r3,18544
+   22354:	e0bfff17 	ldw	r2,-4(fp)
+   22358:	1008913a 	slli	r4,r2,4
+   2235c:	e0bffe17 	ldw	r2,-8(fp)
+   22360:	2085883a 	add	r2,r4,r2
+   22364:	1885883a 	add	r2,r3,r2
+   22368:	10000005 	stb	zero,0(r2)
+    /* clear x-axis and y-axis save areas */
+    for (j = 0; j <= (2 * Y_TICK_CNT); j++)
+        for (i = 0; i < (SIZE_X / 8); i++)
+            saved_axis_x[j][i] = 0;
+    for (j = 0; j <= (2 * X_TICK_CNT); j++)
+        for (i = 0; i < (SIZE_Y / 8); i++)
+   2236c:	e0bffe17 	ldw	r2,-8(fp)
+   22370:	10800044 	addi	r2,r2,1
+   22374:	e0bffe15 	stw	r2,-8(fp)
+   22378:	e0bffe17 	ldw	r2,-8(fp)
+   2237c:	10800410 	cmplti	r2,r2,16
+   22380:	103ff21e 	bne	r2,zero,2234c <clear_saved_areas+0x8c>
+
+    /* clear x-axis and y-axis save areas */
+    for (j = 0; j <= (2 * Y_TICK_CNT); j++)
+        for (i = 0; i < (SIZE_X / 8); i++)
+            saved_axis_x[j][i] = 0;
+    for (j = 0; j <= (2 * X_TICK_CNT); j++)
+   22384:	e0bfff17 	ldw	r2,-4(fp)
+   22388:	10800044 	addi	r2,r2,1
+   2238c:	e0bfff15 	stw	r2,-4(fp)
+   22390:	e0bfff17 	ldw	r2,-4(fp)
+   22394:	108002d0 	cmplti	r2,r2,11
+   22398:	103fea1e 	bne	r2,zero,22344 <clear_saved_areas+0x84>
+        for (i = 0; i < (SIZE_Y / 8); i++)
+            saved_axis_y[j][i] = 0;
+
+    /* clear the menu save ares */
+    for (i = 0; i < MENU_SIZE_Y; i++)
+   2239c:	e03ffe15 	stw	zero,-8(fp)
+   223a0:	00001506 	br	223f8 <clear_saved_areas+0x138>
+        for (j = 0; j < ((MENU_SIZE_X + 7) / 8); j++)
+   223a4:	e03fff15 	stw	zero,-4(fp)
+   223a8:	00000d06 	br	223e0 <clear_saved_areas+0x120>
+	    saved_menu[i][j] = 0;
+   223ac:	040000b4 	movhi	r16,2
+   223b0:	84117404 	addi	r16,r16,17872
+   223b4:	e0bffe17 	ldw	r2,-8(fp)
+   223b8:	1009883a 	mov	r4,r2
+   223bc:	01400304 	movi	r5,12
+   223c0:	0022dbc0 	call	22dbc <__mulsi3>
+   223c4:	e0ffff17 	ldw	r3,-4(fp)
+   223c8:	10c5883a 	add	r2,r2,r3
+   223cc:	8085883a 	add	r2,r16,r2
+   223d0:	10000005 	stb	zero,0(r2)
+        for (i = 0; i < (SIZE_Y / 8); i++)
+            saved_axis_y[j][i] = 0;
+
+    /* clear the menu save ares */
+    for (i = 0; i < MENU_SIZE_Y; i++)
+        for (j = 0; j < ((MENU_SIZE_X + 7) / 8); j++)
+   223d4:	e0bfff17 	ldw	r2,-4(fp)
+   223d8:	10800044 	addi	r2,r2,1
+   223dc:	e0bfff15 	stw	r2,-4(fp)
+   223e0:	e0bfff17 	ldw	r2,-4(fp)
+   223e4:	10800310 	cmplti	r2,r2,12
+   223e8:	103ff01e 	bne	r2,zero,223ac <clear_saved_areas+0xec>
+    for (j = 0; j <= (2 * X_TICK_CNT); j++)
+        for (i = 0; i < (SIZE_Y / 8); i++)
+            saved_axis_y[j][i] = 0;
+
+    /* clear the menu save ares */
+    for (i = 0; i < MENU_SIZE_Y; i++)
+   223ec:	e0bffe17 	ldw	r2,-8(fp)
+   223f0:	10800044 	addi	r2,r2,1
+   223f4:	e0bffe15 	stw	r2,-8(fp)
+   223f8:	e0bffe17 	ldw	r2,-8(fp)
+   223fc:	10800e10 	cmplti	r2,r2,56
+   22400:	103fe81e 	bne	r2,zero,223a4 <clear_saved_areas+0xe4>
+        for (j = 0; j < ((MENU_SIZE_X + 7) / 8); j++)
+	    saved_menu[i][j] = 0;
+
+    /* clear general save area */
+    for (i = 0; i < SAVE_SIZE_Y; i++)
+   22404:	e03ffe15 	stw	zero,-8(fp)
+   22408:	00001506 	br	22460 <clear_saved_areas+0x1a0>
+        for (j = 0; j < (SAVE_SIZE_X / 8); j++)
+   2240c:	e03fff15 	stw	zero,-4(fp)
+   22410:	00000d06 	br	22448 <clear_saved_areas+0x188>
+	    saved_area[i][j] = 0;
+   22414:	040000b4 	movhi	r16,2
+   22418:	84127504 	addi	r16,r16,18900
+   2241c:	e0bffe17 	ldw	r2,-8(fp)
+   22420:	1009883a 	mov	r4,r2
+   22424:	014003c4 	movi	r5,15
+   22428:	0022dbc0 	call	22dbc <__mulsi3>
+   2242c:	e0ffff17 	ldw	r3,-4(fp)
+   22430:	10c5883a 	add	r2,r2,r3
+   22434:	8085883a 	add	r2,r16,r2
+   22438:	10000005 	stb	zero,0(r2)
+        for (j = 0; j < ((MENU_SIZE_X + 7) / 8); j++)
+	    saved_menu[i][j] = 0;
+
+    /* clear general save area */
+    for (i = 0; i < SAVE_SIZE_Y; i++)
+        for (j = 0; j < (SAVE_SIZE_X / 8); j++)
+   2243c:	e0bfff17 	ldw	r2,-4(fp)
+   22440:	10800044 	addi	r2,r2,1
+   22444:	e0bfff15 	stw	r2,-4(fp)
+   22448:	e0bfff17 	ldw	r2,-4(fp)
+   2244c:	108003d0 	cmplti	r2,r2,15
+   22450:	103ff01e 	bne	r2,zero,22414 <clear_saved_areas+0x154>
+    for (i = 0; i < MENU_SIZE_Y; i++)
+        for (j = 0; j < ((MENU_SIZE_X + 7) / 8); j++)
+	    saved_menu[i][j] = 0;
+
+    /* clear general save area */
+    for (i = 0; i < SAVE_SIZE_Y; i++)
+   22454:	e0bffe17 	ldw	r2,-8(fp)
+   22458:	10800044 	addi	r2,r2,1
+   2245c:	e0bffe15 	stw	r2,-8(fp)
+   22460:	e0bffe17 	ldw	r2,-8(fp)
+   22464:	10800410 	cmplti	r2,r2,16
+   22468:	103fe81e 	bne	r2,zero,2240c <clear_saved_areas+0x14c>
+        for (j = 0; j < (SAVE_SIZE_X / 8); j++)
+	    saved_area[i][j] = 0;
+
+
+    /* done clearing the saved areas - return */
+    return;
+   2246c:	0001883a 	nop
+
+}
+   22470:	e037883a 	mov	sp,fp
+   22474:	dfc00217 	ldw	ra,8(sp)
+   22478:	df000117 	ldw	fp,4(sp)
+   2247c:	dc000017 	ldw	r16,0(sp)
+   22480:	dec00304 	addi	sp,sp,12
+   22484:	f800283a 	ret
+
+00022488 <restore_menu_trace>:
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  restore_menu_trace()
+{
+   22488:	defff904 	addi	sp,sp,-28
+   2248c:	dfc00615 	stw	ra,24(sp)
+   22490:	df000515 	stw	fp,20(sp)
+   22494:	dc000415 	stw	r16,16(sp)
+   22498:	df000404 	addi	fp,sp,16
+    int  y;
+
+
+
+    /* loop, restoring the trace under the menu */
+    for (y = MENU_UL_Y; y < (MENU_UL_Y + MENU_SIZE_Y); y++)  {
+   2249c:	e03fff15 	stw	zero,-4(fp)
+   224a0:	00003406 	br	22574 <restore_menu_trace+0xec>
+
+        /* starting a row - initialize bit position */
+	bit_position = 0x80;	/* start at high-order bit in the byte */
+   224a4:	00802004 	movi	r2,128
+   224a8:	e0bffc15 	stw	r2,-16(fp)
+	bit_offset = 0;		/* first byte of the row */
+   224ac:	e03ffd15 	stw	zero,-12(fp)
+
+        for (x = MENU_UL_X; x < (MENU_UL_X + MENU_SIZE_X); x++)  {
+   224b0:	00805e84 	movi	r2,378
+   224b4:	e0bffe15 	stw	r2,-8(fp)
+   224b8:	00002806 	br	2255c <restore_menu_trace+0xd4>
+
+	    /* check if this point is on or off (need to look at bits) */
+	    if ((saved_menu[y - MENU_UL_Y][bit_offset] & bit_position) == 0)
+   224bc:	040000b4 	movhi	r16,2
+   224c0:	84117404 	addi	r16,r16,17872
+   224c4:	e0bfff17 	ldw	r2,-4(fp)
+   224c8:	1009883a 	mov	r4,r2
+   224cc:	01400304 	movi	r5,12
+   224d0:	0022dbc0 	call	22dbc <__mulsi3>
+   224d4:	e0fffd17 	ldw	r3,-12(fp)
+   224d8:	10c5883a 	add	r2,r2,r3
+   224dc:	8085883a 	add	r2,r16,r2
+   224e0:	10800003 	ldbu	r2,0(r2)
+   224e4:	10c03fcc 	andi	r3,r2,255
+   224e8:	e0bffc17 	ldw	r2,-16(fp)
+   224ec:	1884703a 	and	r2,r3,r2
+   224f0:	1000071e 	bne	r2,zero,22510 <restore_menu_trace+0x88>
+	        /* saved pixel is off */
+		plot_pixel(x, y, PIXEL_WHITE);
+   224f4:	e0fffe17 	ldw	r3,-8(fp)
+   224f8:	e0bfff17 	ldw	r2,-4(fp)
+   224fc:	1809883a 	mov	r4,r3
+   22500:	100b883a 	mov	r5,r2
+   22504:	000d883a 	mov	r6,zero
+   22508:	0021b200 	call	21b20 <plot_pixel>
+   2250c:	00000606 	br	22528 <restore_menu_trace+0xa0>
+	    else
+	        /* saved pixel is on */
+		plot_pixel(x, y, PIXEL_BLACK);
+   22510:	e0fffe17 	ldw	r3,-8(fp)
+   22514:	e0bfff17 	ldw	r2,-4(fp)
+   22518:	1809883a 	mov	r4,r3
+   2251c:	100b883a 	mov	r5,r2
+   22520:	01800044 	movi	r6,1
+   22524:	0021b200 	call	21b20 <plot_pixel>
+
+	    /* move to the next bit position */
+	    bit_position >>= 1;
+   22528:	e0bffc17 	ldw	r2,-16(fp)
+   2252c:	1005d07a 	srai	r2,r2,1
+   22530:	e0bffc15 	stw	r2,-16(fp)
+	    /* check if moving to next byte */
+	    if (bit_position == 0)  {
+   22534:	e0bffc17 	ldw	r2,-16(fp)
+   22538:	1000051e 	bne	r2,zero,22550 <restore_menu_trace+0xc8>
+	        /* now on high bit of next byte */
+		bit_position = 0x80;
+   2253c:	00802004 	movi	r2,128
+   22540:	e0bffc15 	stw	r2,-16(fp)
+		bit_offset++;
+   22544:	e0bffd17 	ldw	r2,-12(fp)
+   22548:	10800044 	addi	r2,r2,1
+   2254c:	e0bffd15 	stw	r2,-12(fp)
+
+        /* starting a row - initialize bit position */
+	bit_position = 0x80;	/* start at high-order bit in the byte */
+	bit_offset = 0;		/* first byte of the row */
+
+        for (x = MENU_UL_X; x < (MENU_UL_X + MENU_SIZE_X); x++)  {
+   22550:	e0bffe17 	ldw	r2,-8(fp)
+   22554:	10800044 	addi	r2,r2,1
+   22558:	e0bffe15 	stw	r2,-8(fp)
+   2255c:	e0bffe17 	ldw	r2,-8(fp)
+   22560:	10807690 	cmplti	r2,r2,474
+   22564:	103fd51e 	bne	r2,zero,224bc <restore_menu_trace+0x34>
+    int  y;
+
+
+
+    /* loop, restoring the trace under the menu */
+    for (y = MENU_UL_Y; y < (MENU_UL_Y + MENU_SIZE_Y); y++)  {
+   22568:	e0bfff17 	ldw	r2,-4(fp)
+   2256c:	10800044 	addi	r2,r2,1
+   22570:	e0bfff15 	stw	r2,-4(fp)
+   22574:	e0bfff17 	ldw	r2,-4(fp)
+   22578:	10800e10 	cmplti	r2,r2,56
+   2257c:	103fc91e 	bne	r2,zero,224a4 <restore_menu_trace+0x1c>
+        }
+    }
+
+
+    /* restored menu area - return */
+    return;
+   22580:	0001883a 	nop
+
+}
+   22584:	e037883a 	mov	sp,fp
+   22588:	dfc00217 	ldw	ra,8(sp)
+   2258c:	df000117 	ldw	fp,4(sp)
+   22590:	dc000017 	ldw	r16,0(sp)
+   22594:	dec00304 	addi	sp,sp,12
+   22598:	f800283a 	ret
+
+0002259c <set_save_area>:
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  set_save_area(int pos_x, int pos_y, int size_x, int size_y)
+{
+   2259c:	defff704 	addi	sp,sp,-36
+   225a0:	dfc00815 	stw	ra,32(sp)
+   225a4:	df000715 	stw	fp,28(sp)
+   225a8:	dc000615 	stw	r16,24(sp)
+   225ac:	df000604 	addi	fp,sp,24
+   225b0:	e13ffc15 	stw	r4,-16(fp)
+   225b4:	e17ffd15 	stw	r5,-12(fp)
+   225b8:	e1bffe15 	stw	r6,-8(fp)
+   225bc:	e1ffff15 	stw	r7,-4(fp)
+    int  y;
+
+
+
+    /* just setup all the locally global variables from the passed values */
+    saved_pos_x = pos_x;
+   225c0:	e0bffc17 	ldw	r2,-16(fp)
+   225c4:	d0a01615 	stw	r2,-32680(gp)
+    saved_pos_y = pos_y;
+   225c8:	e0bffd17 	ldw	r2,-12(fp)
+   225cc:	d0a01315 	stw	r2,-32692(gp)
+    saved_end_x = pos_x + size_x;
+   225d0:	e0fffc17 	ldw	r3,-16(fp)
+   225d4:	e0bffe17 	ldw	r2,-8(fp)
+   225d8:	1885883a 	add	r2,r3,r2
+   225dc:	d0a01515 	stw	r2,-32684(gp)
+    saved_end_y = pos_y + size_y;
+   225e0:	e0fffd17 	ldw	r3,-12(fp)
+   225e4:	e0bfff17 	ldw	r2,-4(fp)
+   225e8:	1885883a 	add	r2,r3,r2
+   225ec:	d0a01215 	stw	r2,-32696(gp)
+
+
+    /* clear the save area */
+    for (y = 0; y < SAVE_SIZE_Y; y++)  {
+   225f0:	e03ffb15 	stw	zero,-20(fp)
+   225f4:	00001506 	br	2264c <set_save_area+0xb0>
+        for (x = 0; x < (SAVE_SIZE_X / 8); x++)  {
+   225f8:	e03ffa15 	stw	zero,-24(fp)
+   225fc:	00000d06 	br	22634 <set_save_area+0x98>
+	    saved_area[y][x] = 0;
+   22600:	040000b4 	movhi	r16,2
+   22604:	84127504 	addi	r16,r16,18900
+   22608:	e0bffb17 	ldw	r2,-20(fp)
+   2260c:	1009883a 	mov	r4,r2
+   22610:	014003c4 	movi	r5,15
+   22614:	0022dbc0 	call	22dbc <__mulsi3>
+   22618:	e0fffa17 	ldw	r3,-24(fp)
+   2261c:	10c5883a 	add	r2,r2,r3
+   22620:	8085883a 	add	r2,r16,r2
+   22624:	10000005 	stb	zero,0(r2)
+    saved_end_y = pos_y + size_y;
+
+
+    /* clear the save area */
+    for (y = 0; y < SAVE_SIZE_Y; y++)  {
+        for (x = 0; x < (SAVE_SIZE_X / 8); x++)  {
+   22628:	e0bffa17 	ldw	r2,-24(fp)
+   2262c:	10800044 	addi	r2,r2,1
+   22630:	e0bffa15 	stw	r2,-24(fp)
+   22634:	e0bffa17 	ldw	r2,-24(fp)
+   22638:	108003d0 	cmplti	r2,r2,15
+   2263c:	103ff01e 	bne	r2,zero,22600 <set_save_area+0x64>
+    saved_end_x = pos_x + size_x;
+    saved_end_y = pos_y + size_y;
+
+
+    /* clear the save area */
+    for (y = 0; y < SAVE_SIZE_Y; y++)  {
+   22640:	e0bffb17 	ldw	r2,-20(fp)
+   22644:	10800044 	addi	r2,r2,1
+   22648:	e0bffb15 	stw	r2,-20(fp)
+   2264c:	e0bffb17 	ldw	r2,-20(fp)
+   22650:	10800410 	cmplti	r2,r2,16
+   22654:	103fe81e 	bne	r2,zero,225f8 <set_save_area+0x5c>
+        }
+    }
+
+
+    /* setup the saved area - return */
+    return;
+   22658:	0001883a 	nop
+
+}
+   2265c:	e037883a 	mov	sp,fp
+   22660:	dfc00217 	ldw	ra,8(sp)
+   22664:	df000117 	ldw	fp,4(sp)
+   22668:	dc000017 	ldw	r16,0(sp)
+   2266c:	dec00304 	addi	sp,sp,12
+   22670:	f800283a 	ret
+
+00022674 <restore_trace>:
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  restore_trace()
+{
+   22674:	defff904 	addi	sp,sp,-28
+   22678:	dfc00615 	stw	ra,24(sp)
+   2267c:	df000515 	stw	fp,20(sp)
+   22680:	dc000415 	stw	r16,16(sp)
+   22684:	df000404 	addi	fp,sp,16
+    int  y;
+
+
+
+    /* loop, restoring the saved trace */
+    for (y = saved_pos_y; y < saved_end_y; y++)  {
+   22688:	d0a01317 	ldw	r2,-32692(gp)
+   2268c:	e0bfff15 	stw	r2,-4(fp)
+   22690:	00003606 	br	2276c <restore_trace+0xf8>
+
+        /* starting a row - initialize bit position */
+	bit_position = 0x80;	/* start at high-order bit in the byte */
+   22694:	00802004 	movi	r2,128
+   22698:	e0bffc15 	stw	r2,-16(fp)
+	bit_offset = 0;		/* first byte of the row */
+   2269c:	e03ffd15 	stw	zero,-12(fp)
+
+        for (x = saved_pos_x; x < saved_end_x; x++)  {
+   226a0:	d0a01617 	ldw	r2,-32680(gp)
+   226a4:	e0bffe15 	stw	r2,-8(fp)
+   226a8:	00002a06 	br	22754 <restore_trace+0xe0>
+
+	    /* check if this point is on or off (need to look at bits) */
+	    if ((saved_area[y - saved_pos_y][bit_offset] & bit_position) == 0)
+   226ac:	d0a01317 	ldw	r2,-32692(gp)
+   226b0:	e0ffff17 	ldw	r3,-4(fp)
+   226b4:	1885c83a 	sub	r2,r3,r2
+   226b8:	040000b4 	movhi	r16,2
+   226bc:	84127504 	addi	r16,r16,18900
+   226c0:	1009883a 	mov	r4,r2
+   226c4:	014003c4 	movi	r5,15
+   226c8:	0022dbc0 	call	22dbc <__mulsi3>
+   226cc:	e0fffd17 	ldw	r3,-12(fp)
+   226d0:	10c5883a 	add	r2,r2,r3
+   226d4:	8085883a 	add	r2,r16,r2
+   226d8:	10800003 	ldbu	r2,0(r2)
+   226dc:	10c03fcc 	andi	r3,r2,255
+   226e0:	e0bffc17 	ldw	r2,-16(fp)
+   226e4:	1884703a 	and	r2,r3,r2
+   226e8:	1000071e 	bne	r2,zero,22708 <restore_trace+0x94>
+	        /* saved pixel is off */
+		plot_pixel(x, y, PIXEL_WHITE);
+   226ec:	e0fffe17 	ldw	r3,-8(fp)
+   226f0:	e0bfff17 	ldw	r2,-4(fp)
+   226f4:	1809883a 	mov	r4,r3
+   226f8:	100b883a 	mov	r5,r2
+   226fc:	000d883a 	mov	r6,zero
+   22700:	0021b200 	call	21b20 <plot_pixel>
+   22704:	00000606 	br	22720 <restore_trace+0xac>
+	    else
+	        /* saved pixel is on */
+		plot_pixel(x, y, PIXEL_BLACK);
+   22708:	e0fffe17 	ldw	r3,-8(fp)
+   2270c:	e0bfff17 	ldw	r2,-4(fp)
+   22710:	1809883a 	mov	r4,r3
+   22714:	100b883a 	mov	r5,r2
+   22718:	01800044 	movi	r6,1
+   2271c:	0021b200 	call	21b20 <plot_pixel>
+
+	    /* move to the next bit position */
+	    bit_position >>= 1;
+   22720:	e0bffc17 	ldw	r2,-16(fp)
+   22724:	1005d07a 	srai	r2,r2,1
+   22728:	e0bffc15 	stw	r2,-16(fp)
+	    /* check if moving to next byte */
+	    if (bit_position == 0)  {
+   2272c:	e0bffc17 	ldw	r2,-16(fp)
+   22730:	1000051e 	bne	r2,zero,22748 <restore_trace+0xd4>
+	        /* now on high bit of next byte */
+		bit_position = 0x80;
+   22734:	00802004 	movi	r2,128
+   22738:	e0bffc15 	stw	r2,-16(fp)
+		bit_offset++;
+   2273c:	e0bffd17 	ldw	r2,-12(fp)
+   22740:	10800044 	addi	r2,r2,1
+   22744:	e0bffd15 	stw	r2,-12(fp)
+
+        /* starting a row - initialize bit position */
+	bit_position = 0x80;	/* start at high-order bit in the byte */
+	bit_offset = 0;		/* first byte of the row */
+
+        for (x = saved_pos_x; x < saved_end_x; x++)  {
+   22748:	e0bffe17 	ldw	r2,-8(fp)
+   2274c:	10800044 	addi	r2,r2,1
+   22750:	e0bffe15 	stw	r2,-8(fp)
+   22754:	d0a01517 	ldw	r2,-32684(gp)
+   22758:	e0fffe17 	ldw	r3,-8(fp)
+   2275c:	18bfd316 	blt	r3,r2,226ac <restore_trace+0x38>
+    int  y;
+
+
+
+    /* loop, restoring the saved trace */
+    for (y = saved_pos_y; y < saved_end_y; y++)  {
+   22760:	e0bfff17 	ldw	r2,-4(fp)
+   22764:	10800044 	addi	r2,r2,1
+   22768:	e0bfff15 	stw	r2,-4(fp)
+   2276c:	d0a01217 	ldw	r2,-32696(gp)
+   22770:	e0ffff17 	ldw	r3,-4(fp)
+   22774:	18bfc716 	blt	r3,r2,22694 <restore_trace+0x20>
+        }
+    }
+
+
+    /* restored the saved area - return */
+    return;
+   22778:	0001883a 	nop
+
+}
+   2277c:	e037883a 	mov	sp,fp
+   22780:	dfc00217 	ldw	ra,8(sp)
+   22784:	df000117 	ldw	fp,4(sp)
+   22788:	dc000017 	ldw	r16,0(sp)
+   2278c:	dec00304 	addi	sp,sp,12
+   22790:	f800283a 	ret
+
+00022794 <do_trace>:
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  do_trace()
+{
+   22794:	defffe04 	addi	sp,sp,-8
+   22798:	dfc00115 	stw	ra,4(sp)
+   2279c:	df000015 	stw	fp,0(sp)
+   227a0:	d839883a 	mov	fp,sp
+
+
+
+    /* start up the trace */
+    /* indicate whether using automatic triggering or not */
+    start_sample(get_trigger_mode() == AUTO_TRIGGER);
+   227a4:	0020de80 	call	20de8 <get_trigger_mode>
+   227a8:	10800060 	cmpeqi	r2,r2,1
+   227ac:	10803fcc 	andi	r2,r2,255
+   227b0:	1009883a 	mov	r4,r2
+   227b4:	0021bbc0 	call	21bbc <start_sample>
+
+    /* now not ready for another trace (currently doing one) */
+    trace_status = FALSE;
+   227b8:	d0201115 	stw	zero,-32700(gp)
+
+    /* and are currently sampling data */
+    sampling = TRUE;
+   227bc:	00800044 	movi	r2,1
+   227c0:	d0a01715 	stw	r2,-32676(gp)
+
+
+    /* trace is going, return */
+    return;
+   227c4:	0001883a 	nop
+
+}
+   227c8:	e037883a 	mov	sp,fp
+   227cc:	dfc00117 	ldw	ra,4(sp)
+   227d0:	df000017 	ldw	fp,0(sp)
+   227d4:	dec00204 	addi	sp,sp,8
+   227d8:	f800283a 	ret
+
+000227dc <plot_trace>:
+   Last Modified:    May 9, 2006
+
+*/
+
+void  plot_trace(unsigned char *sample)
+{
+   227dc:	defff304 	addi	sp,sp,-52
+   227e0:	dfc00c15 	stw	ra,48(sp)
+   227e4:	df000b15 	stw	fp,44(sp)
+   227e8:	dcc00a15 	stw	r19,40(sp)
+   227ec:	dc800915 	stw	r18,36(sp)
+   227f0:	dc400815 	stw	r17,32(sp)
+   227f4:	dc000715 	stw	r16,28(sp)
+   227f8:	df000704 	addi	fp,sp,28
+   227fc:	e13fff15 	stw	r4,-4(fp)
+    /* variables */
+    int  x = 0;				/* current x position to plot */
+   22800:	e03ff915 	stw	zero,-28(fp)
+    int  x_pos = (PLOT_SIZE_X / 2);	/* "fine" x position for multiple point plotting */
+   22804:	00803c04 	movi	r2,240
+   22808:	e0bffa15 	stw	r2,-24(fp)
+    int  j;
+
+
+
+    /* first, clear the display to get rid of old plots */
+    clear_display();
+   2280c:	0021b000 	call	21b00 <clear_display>
+
+    /* clear the saved areas too */
+    clear_saved_areas();
+   22810:	00222c00 	call	222c0 <clear_saved_areas>
+
+    /* re-display the menu (if it was on) */
+    refresh_menu();
+   22814:	00209440 	call	20944 <refresh_menu>
+
+
+    /* plot the sample */
+    for (i = 0; i < sample_size; i++)  {
+   22818:	e03ffc15 	stw	zero,-16(fp)
+   2281c:	00010b06 	br	22c4c <plot_trace+0x470>
+
+        /* determine y position of point (note: screen coordinates invert) */
+	y = (PLOT_SIZE_Y - 1) - ((sample[i] * (PLOT_SIZE_Y - 1)) / 255);
+   22820:	e0bffc17 	ldw	r2,-16(fp)
+   22824:	e0ffff17 	ldw	r3,-4(fp)
+   22828:	1885883a 	add	r2,r3,r2
+   2282c:	10800003 	ldbu	r2,0(r2)
+   22830:	10803fcc 	andi	r2,r2,255
+   22834:	1009883a 	mov	r4,r2
+   22838:	01401fc4 	movi	r5,127
+   2283c:	0022dbc0 	call	22dbc <__mulsi3>
+   22840:	1009883a 	mov	r4,r2
+   22844:	01403fc4 	movi	r5,255
+   22848:	0022d000 	call	22d00 <__divsi3>
+   2284c:	00c01fc4 	movi	r3,127
+   22850:	1885c83a 	sub	r2,r3,r2
+   22854:	e0bffe15 	stw	r2,-8(fp)
+
+        /* plot this point */
+	plot_pixel(x, y, PIXEL_BLACK);
+   22858:	e0fff917 	ldw	r3,-28(fp)
+   2285c:	e0bffe17 	ldw	r2,-8(fp)
+   22860:	1809883a 	mov	r4,r3
+   22864:	100b883a 	mov	r5,r2
+   22868:	01800044 	movi	r6,1
+   2286c:	0021b200 	call	21b20 <plot_pixel>
+
+
+	/* check if the point is in a save area */
+
+	/* check if in the menu area */
+	if ((x >= MENU_UL_X) && (x < (MENU_UL_X + MENU_SIZE_X)) &&
+   22870:	e0bff917 	ldw	r2,-28(fp)
+   22874:	10805e90 	cmplti	r2,r2,378
+   22878:	10002f1e 	bne	r2,zero,22938 <plot_trace+0x15c>
+   2287c:	e0bff917 	ldw	r2,-28(fp)
+   22880:	10807688 	cmpgei	r2,r2,474
+   22884:	10002c1e 	bne	r2,zero,22938 <plot_trace+0x15c>
+   22888:	e0bffe17 	ldw	r2,-8(fp)
+   2288c:	10002a16 	blt	r2,zero,22938 <plot_trace+0x15c>
+	    (y >= MENU_UL_Y) && (y < (MENU_UL_Y + MENU_SIZE_Y)))
+   22890:	e0bffe17 	ldw	r2,-8(fp)
+   22894:	10800e08 	cmpgei	r2,r2,56
+   22898:	1000271e 	bne	r2,zero,22938 <plot_trace+0x15c>
+	    /* point is in the menu area - save it */
+	    saved_menu[y - MENU_UL_Y][(x - MENU_UL_X)/8] |= (0x80 >> ((x - MENU_UL_X) % 8));
+   2289c:	e0bff917 	ldw	r2,-28(fp)
+   228a0:	10bfa184 	addi	r2,r2,-378
+   228a4:	1000010e 	bge	r2,zero,228ac <plot_trace+0xd0>
+   228a8:	108001c4 	addi	r2,r2,7
+   228ac:	1005d0fa 	srai	r2,r2,3
+   228b0:	1021883a 	mov	r16,r2
+   228b4:	044000b4 	movhi	r17,2
+   228b8:	8c517404 	addi	r17,r17,17872
+   228bc:	e0bffe17 	ldw	r2,-8(fp)
+   228c0:	1009883a 	mov	r4,r2
+   228c4:	01400304 	movi	r5,12
+   228c8:	0022dbc0 	call	22dbc <__mulsi3>
+   228cc:	1405883a 	add	r2,r2,r16
+   228d0:	8885883a 	add	r2,r17,r2
+   228d4:	10800003 	ldbu	r2,0(r2)
+   228d8:	1007883a 	mov	r3,r2
+   228dc:	e0bff917 	ldw	r2,-28(fp)
+   228e0:	113fa184 	addi	r4,r2,-378
+   228e4:	00a00034 	movhi	r2,32768
+   228e8:	108001c4 	addi	r2,r2,7
+   228ec:	2084703a 	and	r2,r4,r2
+   228f0:	1000040e 	bge	r2,zero,22904 <plot_trace+0x128>
+   228f4:	10bfffc4 	addi	r2,r2,-1
+   228f8:	013ffe04 	movi	r4,-8
+   228fc:	1104b03a 	or	r2,r2,r4
+   22900:	10800044 	addi	r2,r2,1
+   22904:	01002004 	movi	r4,128
+   22908:	2085d83a 	sra	r2,r4,r2
+   2290c:	1884b03a 	or	r2,r3,r2
+   22910:	1023883a 	mov	r17,r2
+   22914:	048000b4 	movhi	r18,2
+   22918:	94917404 	addi	r18,r18,17872
+   2291c:	e0bffe17 	ldw	r2,-8(fp)
+   22920:	1009883a 	mov	r4,r2
+   22924:	01400304 	movi	r5,12
+   22928:	0022dbc0 	call	22dbc <__mulsi3>
+   2292c:	1405883a 	add	r2,r2,r16
+   22930:	9085883a 	add	r2,r18,r2
+   22934:	14400005 	stb	r17,0(r2)
+
+	/* check if in the saved area */
+	if ((x >= saved_pos_x) && (x <= saved_end_x) && (y >= saved_pos_y) && (y <= saved_end_y))
+   22938:	d0a01617 	ldw	r2,-32680(gp)
+   2293c:	e0fff917 	ldw	r3,-28(fp)
+   22940:	18803616 	blt	r3,r2,22a1c <plot_trace+0x240>
+   22944:	d0e01517 	ldw	r3,-32684(gp)
+   22948:	e0bff917 	ldw	r2,-28(fp)
+   2294c:	18803316 	blt	r3,r2,22a1c <plot_trace+0x240>
+   22950:	d0a01317 	ldw	r2,-32692(gp)
+   22954:	e0fffe17 	ldw	r3,-8(fp)
+   22958:	18803016 	blt	r3,r2,22a1c <plot_trace+0x240>
+   2295c:	d0e01217 	ldw	r3,-32696(gp)
+   22960:	e0bffe17 	ldw	r2,-8(fp)
+   22964:	18802d16 	blt	r3,r2,22a1c <plot_trace+0x240>
+	    /* point is in the save area - save it */
+	    saved_area[y - saved_pos_y][(x - saved_pos_x)/8] |= (0x80 >> ((x - saved_pos_x) % 8));
+   22968:	d0a01317 	ldw	r2,-32692(gp)
+   2296c:	e0fffe17 	ldw	r3,-8(fp)
+   22970:	18a3c83a 	sub	r17,r3,r2
+   22974:	d0a01617 	ldw	r2,-32680(gp)
+   22978:	e0fff917 	ldw	r3,-28(fp)
+   2297c:	1885c83a 	sub	r2,r3,r2
+   22980:	1000010e 	bge	r2,zero,22988 <plot_trace+0x1ac>
+   22984:	108001c4 	addi	r2,r2,7
+   22988:	1005d0fa 	srai	r2,r2,3
+   2298c:	1021883a 	mov	r16,r2
+   22990:	d0a01317 	ldw	r2,-32692(gp)
+   22994:	e0fffe17 	ldw	r3,-8(fp)
+   22998:	1885c83a 	sub	r2,r3,r2
+   2299c:	048000b4 	movhi	r18,2
+   229a0:	94927504 	addi	r18,r18,18900
+   229a4:	1009883a 	mov	r4,r2
+   229a8:	014003c4 	movi	r5,15
+   229ac:	0022dbc0 	call	22dbc <__mulsi3>
+   229b0:	1405883a 	add	r2,r2,r16
+   229b4:	9085883a 	add	r2,r18,r2
+   229b8:	10800003 	ldbu	r2,0(r2)
+   229bc:	1007883a 	mov	r3,r2
+   229c0:	d0a01617 	ldw	r2,-32680(gp)
+   229c4:	e13ff917 	ldw	r4,-28(fp)
+   229c8:	2089c83a 	sub	r4,r4,r2
+   229cc:	00a00034 	movhi	r2,32768
+   229d0:	108001c4 	addi	r2,r2,7
+   229d4:	2084703a 	and	r2,r4,r2
+   229d8:	1000040e 	bge	r2,zero,229ec <plot_trace+0x210>
+   229dc:	10bfffc4 	addi	r2,r2,-1
+   229e0:	013ffe04 	movi	r4,-8
+   229e4:	1104b03a 	or	r2,r2,r4
+   229e8:	10800044 	addi	r2,r2,1
+   229ec:	01002004 	movi	r4,128
+   229f0:	2085d83a 	sra	r2,r4,r2
+   229f4:	1884b03a 	or	r2,r3,r2
+   229f8:	1025883a 	mov	r18,r2
+   229fc:	04c000b4 	movhi	r19,2
+   22a00:	9cd27504 	addi	r19,r19,18900
+   22a04:	8809883a 	mov	r4,r17
+   22a08:	014003c4 	movi	r5,15
+   22a0c:	0022dbc0 	call	22dbc <__mulsi3>
+   22a10:	1405883a 	add	r2,r2,r16
+   22a14:	9885883a 	add	r2,r19,r2
+   22a18:	14800005 	stb	r18,0(r2)
+
+	/* check if on a grid line */
+	/* go through all the horizontal lines */
+	for (j = -Y_TICK_CNT; j <= Y_TICK_CNT; j++)  {
+   22a1c:	00bfffc4 	movi	r2,-1
+   22a20:	e0bffd15 	stw	r2,-12(fp)
+   22a24:	00003a06 	br	22b10 <plot_trace+0x334>
+
+	    /* get y position of the line */
+	    p = X_AXIS_POS + j * Y_TICK_SIZE;
+   22a28:	e13ffd17 	ldw	r4,-12(fp)
+   22a2c:	01400c04 	movi	r5,48
+   22a30:	0022dbc0 	call	22dbc <__mulsi3>
+   22a34:	10801004 	addi	r2,r2,64
+   22a38:	e0bffb15 	stw	r2,-20(fp)
+	    /* make sure it is in range */
+	    if (p >= PLOT_SIZE_Y)
+   22a3c:	e0bffb17 	ldw	r2,-20(fp)
+   22a40:	10802010 	cmplti	r2,r2,128
+   22a44:	1000021e 	bne	r2,zero,22a50 <plot_trace+0x274>
+	        p = PLOT_SIZE_Y - 1;
+   22a48:	00801fc4 	movi	r2,127
+   22a4c:	e0bffb15 	stw	r2,-20(fp)
+	    if (p < 0)
+   22a50:	e0bffb17 	ldw	r2,-20(fp)
+   22a54:	1000010e 	bge	r2,zero,22a5c <plot_trace+0x280>
+	        p = 0;
+   22a58:	e03ffb15 	stw	zero,-20(fp)
+
+	    /* if the point is on this line, save it */
+	    if (y == p)
+   22a5c:	e0fffe17 	ldw	r3,-8(fp)
+   22a60:	e0bffb17 	ldw	r2,-20(fp)
+   22a64:	1880271e 	bne	r3,r2,22b04 <plot_trace+0x328>
+		saved_axis_x[j + Y_TICK_CNT][x / 8] |= (0x80 >> (x % 8));
+   22a68:	e0bffd17 	ldw	r2,-12(fp)
+   22a6c:	14400044 	addi	r17,r2,1
+   22a70:	e0bff917 	ldw	r2,-28(fp)
+   22a74:	1000010e 	bge	r2,zero,22a7c <plot_trace+0x2a0>
+   22a78:	108001c4 	addi	r2,r2,7
+   22a7c:	1005d0fa 	srai	r2,r2,3
+   22a80:	1021883a 	mov	r16,r2
+   22a84:	e0bffd17 	ldw	r2,-12(fp)
+   22a88:	10800044 	addi	r2,r2,1
+   22a8c:	048000b4 	movhi	r18,2
+   22a90:	94924804 	addi	r18,r18,18720
+   22a94:	1009883a 	mov	r4,r2
+   22a98:	01400f04 	movi	r5,60
+   22a9c:	0022dbc0 	call	22dbc <__mulsi3>
+   22aa0:	1405883a 	add	r2,r2,r16
+   22aa4:	9085883a 	add	r2,r18,r2
+   22aa8:	10800003 	ldbu	r2,0(r2)
+   22aac:	1007883a 	mov	r3,r2
+   22ab0:	e13ff917 	ldw	r4,-28(fp)
+   22ab4:	00a00034 	movhi	r2,32768
+   22ab8:	108001c4 	addi	r2,r2,7
+   22abc:	2084703a 	and	r2,r4,r2
+   22ac0:	1000040e 	bge	r2,zero,22ad4 <plot_trace+0x2f8>
+   22ac4:	10bfffc4 	addi	r2,r2,-1
+   22ac8:	013ffe04 	movi	r4,-8
+   22acc:	1104b03a 	or	r2,r2,r4
+   22ad0:	10800044 	addi	r2,r2,1
+   22ad4:	01002004 	movi	r4,128
+   22ad8:	2085d83a 	sra	r2,r4,r2
+   22adc:	1884b03a 	or	r2,r3,r2
+   22ae0:	1025883a 	mov	r18,r2
+   22ae4:	04c000b4 	movhi	r19,2
+   22ae8:	9cd24804 	addi	r19,r19,18720
+   22aec:	8809883a 	mov	r4,r17
+   22af0:	01400f04 	movi	r5,60
+   22af4:	0022dbc0 	call	22dbc <__mulsi3>
+   22af8:	1405883a 	add	r2,r2,r16
+   22afc:	9885883a 	add	r2,r19,r2
+   22b00:	14800005 	stb	r18,0(r2)
+	    /* point is in the save area - save it */
+	    saved_area[y - saved_pos_y][(x - saved_pos_x)/8] |= (0x80 >> ((x - saved_pos_x) % 8));
+
+	/* check if on a grid line */
+	/* go through all the horizontal lines */
+	for (j = -Y_TICK_CNT; j <= Y_TICK_CNT; j++)  {
+   22b04:	e0bffd17 	ldw	r2,-12(fp)
+   22b08:	10800044 	addi	r2,r2,1
+   22b0c:	e0bffd15 	stw	r2,-12(fp)
+   22b10:	e0bffd17 	ldw	r2,-12(fp)
+   22b14:	10800090 	cmplti	r2,r2,2
+   22b18:	103fc31e 	bne	r2,zero,22a28 <plot_trace+0x24c>
+	    if (y == p)
+		saved_axis_x[j + Y_TICK_CNT][x / 8] |= (0x80 >> (x % 8));
+	}
+
+	/* go through all the vertical lines */
+	for (j = -X_TICK_CNT; j <= X_TICK_CNT; j++)  {
+   22b1c:	00bffec4 	movi	r2,-5
+   22b20:	e0bffd15 	stw	r2,-12(fp)
+   22b24:	00003606 	br	22c00 <plot_trace+0x424>
+
+	    /* get x position of the line */
+	    p = Y_AXIS_POS + j * X_TICK_SIZE;
+   22b28:	e13ffd17 	ldw	r4,-12(fp)
+   22b2c:	01400c04 	movi	r5,48
+   22b30:	0022dbc0 	call	22dbc <__mulsi3>
+   22b34:	10803c04 	addi	r2,r2,240
+   22b38:	e0bffb15 	stw	r2,-20(fp)
+	    /* make sure it is in range */
+	    if (p >= PLOT_SIZE_X)
+   22b3c:	e0bffb17 	ldw	r2,-20(fp)
+   22b40:	10807810 	cmplti	r2,r2,480
+   22b44:	1000021e 	bne	r2,zero,22b50 <plot_trace+0x374>
+	        p = PLOT_SIZE_X - 1;
+   22b48:	008077c4 	movi	r2,479
+   22b4c:	e0bffb15 	stw	r2,-20(fp)
+	    if (p < 0)
+   22b50:	e0bffb17 	ldw	r2,-20(fp)
+   22b54:	1000010e 	bge	r2,zero,22b5c <plot_trace+0x380>
+	        p = 0;
+   22b58:	e03ffb15 	stw	zero,-20(fp)
+
+	    /* if the point is on this line, save it */
+	    if (x == p)
+   22b5c:	e0fff917 	ldw	r3,-28(fp)
+   22b60:	e0bffb17 	ldw	r2,-20(fp)
+   22b64:	1880231e 	bne	r3,r2,22bf4 <plot_trace+0x418>
+		saved_axis_y[j + X_TICK_CNT][y / 8] |= (0x80 >> (y % 8));
+   22b68:	e0bffd17 	ldw	r2,-12(fp)
+   22b6c:	11800144 	addi	r6,r2,5
+   22b70:	e0bffe17 	ldw	r2,-8(fp)
+   22b74:	1000010e 	bge	r2,zero,22b7c <plot_trace+0x3a0>
+   22b78:	108001c4 	addi	r2,r2,7
+   22b7c:	1005d0fa 	srai	r2,r2,3
+   22b80:	1007883a 	mov	r3,r2
+   22b84:	e0bffd17 	ldw	r2,-12(fp)
+   22b88:	10800144 	addi	r2,r2,5
+   22b8c:	010000b4 	movhi	r4,2
+   22b90:	21121c04 	addi	r4,r4,18544
+   22b94:	1004913a 	slli	r2,r2,4
+   22b98:	10c5883a 	add	r2,r2,r3
+   22b9c:	2085883a 	add	r2,r4,r2
+   22ba0:	10800003 	ldbu	r2,0(r2)
+   22ba4:	1009883a 	mov	r4,r2
+   22ba8:	e17ffe17 	ldw	r5,-8(fp)
+   22bac:	00a00034 	movhi	r2,32768
+   22bb0:	108001c4 	addi	r2,r2,7
+   22bb4:	2884703a 	and	r2,r5,r2
+   22bb8:	1000040e 	bge	r2,zero,22bcc <plot_trace+0x3f0>
+   22bbc:	10bfffc4 	addi	r2,r2,-1
+   22bc0:	017ffe04 	movi	r5,-8
+   22bc4:	1144b03a 	or	r2,r2,r5
+   22bc8:	10800044 	addi	r2,r2,1
+   22bcc:	01402004 	movi	r5,128
+   22bd0:	2885d83a 	sra	r2,r5,r2
+   22bd4:	2084b03a 	or	r2,r4,r2
+   22bd8:	1009883a 	mov	r4,r2
+   22bdc:	014000b4 	movhi	r5,2
+   22be0:	29521c04 	addi	r5,r5,18544
+   22be4:	3004913a 	slli	r2,r6,4
+   22be8:	10c5883a 	add	r2,r2,r3
+   22bec:	2885883a 	add	r2,r5,r2
+   22bf0:	11000005 	stb	r4,0(r2)
+	    if (y == p)
+		saved_axis_x[j + Y_TICK_CNT][x / 8] |= (0x80 >> (x % 8));
+	}
+
+	/* go through all the vertical lines */
+	for (j = -X_TICK_CNT; j <= X_TICK_CNT; j++)  {
+   22bf4:	e0bffd17 	ldw	r2,-12(fp)
+   22bf8:	10800044 	addi	r2,r2,1
+   22bfc:	e0bffd15 	stw	r2,-12(fp)
+   22c00:	e0bffd17 	ldw	r2,-12(fp)
+   22c04:	10800190 	cmplti	r2,r2,6
+   22c08:	103fc71e 	bne	r2,zero,22b28 <plot_trace+0x34c>
+		saved_axis_y[j + X_TICK_CNT][y / 8] |= (0x80 >> (y % 8));
+	}
+
+
+	/* update x position */
+	x_pos += PLOT_SIZE_X;
+   22c0c:	e0bffa17 	ldw	r2,-24(fp)
+   22c10:	10807804 	addi	r2,r2,480
+   22c14:	e0bffa15 	stw	r2,-24(fp)
+	/* check if at next horizontal position */
+	if (x_pos >= sample_size)  {
+   22c18:	d0a01417 	ldw	r2,-32688(gp)
+   22c1c:	e0fffa17 	ldw	r3,-24(fp)
+   22c20:	18800716 	blt	r3,r2,22c40 <plot_trace+0x464>
+	    /* at next position - update positions */
+	    x++;
+   22c24:	e0bff917 	ldw	r2,-28(fp)
+   22c28:	10800044 	addi	r2,r2,1
+   22c2c:	e0bff915 	stw	r2,-28(fp)
+	    x_pos -= sample_size;
+   22c30:	d0a01417 	ldw	r2,-32688(gp)
+   22c34:	e0fffa17 	ldw	r3,-24(fp)
+   22c38:	1885c83a 	sub	r2,r3,r2
+   22c3c:	e0bffa15 	stw	r2,-24(fp)
+    /* re-display the menu (if it was on) */
+    refresh_menu();
+
+
+    /* plot the sample */
+    for (i = 0; i < sample_size; i++)  {
+   22c40:	e0bffc17 	ldw	r2,-16(fp)
+   22c44:	10800044 	addi	r2,r2,1
+   22c48:	e0bffc15 	stw	r2,-16(fp)
+   22c4c:	d0a01417 	ldw	r2,-32688(gp)
+   22c50:	e0fffc17 	ldw	r3,-16(fp)
+   22c54:	18bef216 	blt	r3,r2,22820 <plot_trace+0x44>
+	}
+    }
+
+
+    /* finally, output the scale if need be */
+    set_display_scale(cur_scale);
+   22c58:	d0a01017 	ldw	r2,-32704(gp)
+   22c5c:	1009883a 	mov	r4,r2
+   22c60:	0021ec80 	call	21ec8 <set_display_scale>
+
+
+    /* done with plot, return */
+    return;
+   22c64:	0001883a 	nop
+
+}
+   22c68:	e037883a 	mov	sp,fp
+   22c6c:	dfc00517 	ldw	ra,20(sp)
+   22c70:	df000417 	ldw	fp,16(sp)
+   22c74:	dcc00317 	ldw	r19,12(sp)
+   22c78:	dc800217 	ldw	r18,8(sp)
+   22c7c:	dc400117 	ldw	r17,4(sp)
+   22c80:	dc000017 	ldw	r16,0(sp)
+   22c84:	dec00604 	addi	sp,sp,24
+   22c88:	f800283a 	ret
+
+00022c8c <udivmodsi4>:
+   22c8c:	2005883a 	mov	r2,r4
+   22c90:	2900182e 	bgeu	r5,r4,22cf4 <udivmodsi4+0x68>
+   22c94:	28001716 	blt	r5,zero,22cf4 <udivmodsi4+0x68>
+   22c98:	01000804 	movi	r4,32
+   22c9c:	00c00044 	movi	r3,1
+   22ca0:	00000206 	br	22cac <udivmodsi4+0x20>
+   22ca4:	20001126 	beq	r4,zero,22cec <udivmodsi4+0x60>
+   22ca8:	28000516 	blt	r5,zero,22cc0 <udivmodsi4+0x34>
+   22cac:	294b883a 	add	r5,r5,r5
+   22cb0:	213fffc4 	addi	r4,r4,-1
+   22cb4:	18c7883a 	add	r3,r3,r3
+   22cb8:	28bffa36 	bltu	r5,r2,22ca4 <udivmodsi4+0x18>
+   22cbc:	18000b26 	beq	r3,zero,22cec <udivmodsi4+0x60>
+   22cc0:	0009883a 	mov	r4,zero
+   22cc4:	11400236 	bltu	r2,r5,22cd0 <udivmodsi4+0x44>
+   22cc8:	1145c83a 	sub	r2,r2,r5
+   22ccc:	20c8b03a 	or	r4,r4,r3
+   22cd0:	1806d07a 	srli	r3,r3,1
+   22cd4:	280ad07a 	srli	r5,r5,1
+   22cd8:	183ffa1e 	bne	r3,zero,22cc4 <udivmodsi4+0x38>
+   22cdc:	3000021e 	bne	r6,zero,22ce8 <udivmodsi4+0x5c>
+   22ce0:	2005883a 	mov	r2,r4
+   22ce4:	f800283a 	ret
+   22ce8:	f800283a 	ret
+   22cec:	0009883a 	mov	r4,zero
+   22cf0:	003ffa06 	br	22cdc <udivmodsi4+0x50>
+   22cf4:	00c00044 	movi	r3,1
+   22cf8:	0009883a 	mov	r4,zero
+   22cfc:	003ff106 	br	22cc4 <udivmodsi4+0x38>
+
+00022d00 <__divsi3>:
+   22d00:	defffe04 	addi	sp,sp,-8
+   22d04:	dfc00115 	stw	ra,4(sp)
+   22d08:	dc000015 	stw	r16,0(sp)
+   22d0c:	20000a16 	blt	r4,zero,22d38 <__divsi3+0x38>
+   22d10:	0021883a 	mov	r16,zero
+   22d14:	28000b16 	blt	r5,zero,22d44 <__divsi3+0x44>
+   22d18:	000d883a 	mov	r6,zero
+   22d1c:	0022c8c0 	call	22c8c <udivmodsi4>
+   22d20:	80000126 	beq	r16,zero,22d28 <__divsi3+0x28>
+   22d24:	0085c83a 	sub	r2,zero,r2
+   22d28:	dfc00117 	ldw	ra,4(sp)
+   22d2c:	dc000017 	ldw	r16,0(sp)
+   22d30:	dec00204 	addi	sp,sp,8
+   22d34:	f800283a 	ret
+   22d38:	0109c83a 	sub	r4,zero,r4
+   22d3c:	04000044 	movi	r16,1
+   22d40:	283ff50e 	bge	r5,zero,22d18 <__divsi3+0x18>
+   22d44:	014bc83a 	sub	r5,zero,r5
+   22d48:	8400005c 	xori	r16,r16,1
+   22d4c:	003ff206 	br	22d18 <__divsi3+0x18>
+
+00022d50 <__modsi3>:
+   22d50:	deffff04 	addi	sp,sp,-4
+   22d54:	dfc00015 	stw	ra,0(sp)
+   22d58:	20000516 	blt	r4,zero,22d70 <__modsi3+0x20>
+   22d5c:	28000c16 	blt	r5,zero,22d90 <__modsi3+0x40>
+   22d60:	01800044 	movi	r6,1
+   22d64:	dfc00017 	ldw	ra,0(sp)
+   22d68:	dec00104 	addi	sp,sp,4
+   22d6c:	0022c8c1 	jmpi	22c8c <udivmodsi4>
+   22d70:	0109c83a 	sub	r4,zero,r4
+   22d74:	28000b16 	blt	r5,zero,22da4 <__modsi3+0x54>
+   22d78:	01800044 	movi	r6,1
+   22d7c:	0022c8c0 	call	22c8c <udivmodsi4>
+   22d80:	0085c83a 	sub	r2,zero,r2
+   22d84:	dfc00017 	ldw	ra,0(sp)
+   22d88:	dec00104 	addi	sp,sp,4
+   22d8c:	f800283a 	ret
+   22d90:	014bc83a 	sub	r5,zero,r5
+   22d94:	01800044 	movi	r6,1
+   22d98:	dfc00017 	ldw	ra,0(sp)
+   22d9c:	dec00104 	addi	sp,sp,4
+   22da0:	0022c8c1 	jmpi	22c8c <udivmodsi4>
+   22da4:	014bc83a 	sub	r5,zero,r5
+   22da8:	003ff306 	br	22d78 <__modsi3+0x28>
+
+00022dac <__udivsi3>:
+   22dac:	000d883a 	mov	r6,zero
+   22db0:	0022c8c1 	jmpi	22c8c <udivmodsi4>
+
+00022db4 <__umodsi3>:
+   22db4:	01800044 	movi	r6,1
+   22db8:	0022c8c1 	jmpi	22c8c <udivmodsi4>
+
+00022dbc <__mulsi3>:
+   22dbc:	0005883a 	mov	r2,zero
+   22dc0:	20000726 	beq	r4,zero,22de0 <__mulsi3+0x24>
+   22dc4:	20c0004c 	andi	r3,r4,1
+   22dc8:	2008d07a 	srli	r4,r4,1
+   22dcc:	18000126 	beq	r3,zero,22dd4 <__mulsi3+0x18>
+   22dd0:	1145883a 	add	r2,r2,r5
+   22dd4:	294b883a 	add	r5,r5,r5
+   22dd8:	203ffa1e 	bne	r4,zero,22dc4 <__mulsi3+0x8>
+   22ddc:	f800283a 	ret
+   22de0:	f800283a 	ret
+
+00022de4 <memcpy>:
+   22de4:	defffb04 	addi	sp,sp,-20
+   22de8:	dc000015 	stw	r16,0(sp)
+   22dec:	dfc00415 	stw	ra,16(sp)
+   22df0:	dcc00315 	stw	r19,12(sp)
+   22df4:	dc800215 	stw	r18,8(sp)
+   22df8:	dc400115 	stw	r17,4(sp)
+   22dfc:	00c003c4 	movi	r3,15
+   22e00:	2021883a 	mov	r16,r4
+   22e04:	3005883a 	mov	r2,r6
+   22e08:	1980032e 	bgeu	r3,r6,22e18 <memcpy+0x34>
+   22e0c:	2906b03a 	or	r3,r5,r4
+   22e10:	18c000cc 	andi	r3,r3,3
+   22e14:	18001026 	beq	r3,zero,22e58 <memcpy+0x74>
+   22e18:	8007883a 	mov	r3,r16
+   22e1c:	288f883a 	add	r7,r5,r2
+   22e20:	10000526 	beq	r2,zero,22e38 <memcpy+0x54>
+   22e24:	29800003 	ldbu	r6,0(r5)
+   22e28:	18c00044 	addi	r3,r3,1
+   22e2c:	29400044 	addi	r5,r5,1
+   22e30:	19bfffc5 	stb	r6,-1(r3)
+   22e34:	29fffb1e 	bne	r5,r7,22e24 <memcpy+0x40>
+   22e38:	8005883a 	mov	r2,r16
+   22e3c:	dfc00417 	ldw	ra,16(sp)
+   22e40:	dcc00317 	ldw	r19,12(sp)
+   22e44:	dc800217 	ldw	r18,8(sp)
+   22e48:	dc400117 	ldw	r17,4(sp)
+   22e4c:	dc000017 	ldw	r16,0(sp)
+   22e50:	dec00504 	addi	sp,sp,20
+   22e54:	f800283a 	ret
+   22e58:	32bffc04 	addi	r10,r6,-16
+   22e5c:	5014d13a 	srli	r10,r10,4
+   22e60:	20800404 	addi	r2,r4,16
+   22e64:	2007883a 	mov	r3,r4
+   22e68:	5008913a 	slli	r4,r10,4
+   22e6c:	280f883a 	mov	r7,r5
+   22e70:	1105883a 	add	r2,r2,r4
+   22e74:	3a000017 	ldw	r8,0(r7)
+   22e78:	18c00404 	addi	r3,r3,16
+   22e7c:	39c00404 	addi	r7,r7,16
+   22e80:	1a3ffc15 	stw	r8,-16(r3)
+   22e84:	3a3ffd17 	ldw	r8,-12(r7)
+   22e88:	1a3ffd15 	stw	r8,-12(r3)
+   22e8c:	3a3ffe17 	ldw	r8,-8(r7)
+   22e90:	1a3ffe15 	stw	r8,-8(r3)
+   22e94:	3a3fff17 	ldw	r8,-4(r7)
+   22e98:	1a3fff15 	stw	r8,-4(r3)
+   22e9c:	18bff51e 	bne	r3,r2,22e74 <memcpy+0x90>
+   22ea0:	52800044 	addi	r10,r10,1
+   22ea4:	5014913a 	slli	r10,r10,4
+   22ea8:	308003cc 	andi	r2,r6,15
+   22eac:	010000c4 	movi	r4,3
+   22eb0:	8287883a 	add	r3,r16,r10
+   22eb4:	2a95883a 	add	r10,r5,r10
+   22eb8:	2080182e 	bgeu	r4,r2,22f1c <memcpy+0x138>
+   22ebc:	147fff04 	addi	r17,r2,-4
+   22ec0:	8808d0ba 	srli	r4,r17,2
+   22ec4:	1a400104 	addi	r9,r3,4
+   22ec8:	180d883a 	mov	r6,r3
+   22ecc:	2105883a 	add	r2,r4,r4
+   22ed0:	1085883a 	add	r2,r2,r2
+   22ed4:	4893883a 	add	r9,r9,r2
+   22ed8:	500f883a 	mov	r7,r10
+   22edc:	3a000017 	ldw	r8,0(r7)
+   22ee0:	31800104 	addi	r6,r6,4
+   22ee4:	39c00104 	addi	r7,r7,4
+   22ee8:	323fff15 	stw	r8,-4(r6)
+   22eec:	327ffb1e 	bne	r6,r9,22edc <memcpy+0xf8>
+   22ef0:	20800044 	addi	r2,r4,1
+   22ef4:	1085883a 	add	r2,r2,r2
+   22ef8:	1085883a 	add	r2,r2,r2
+   22efc:	017fff04 	movi	r5,-4
+   22f00:	18a5883a 	add	r18,r3,r2
+   22f04:	50a7883a 	add	r19,r10,r2
+   22f08:	0022dbc0 	call	22dbc <__mulsi3>
+   22f0c:	1445883a 	add	r2,r2,r17
+   22f10:	980b883a 	mov	r5,r19
+   22f14:	9007883a 	mov	r3,r18
+   22f18:	003fc006 	br	22e1c <memcpy+0x38>
+   22f1c:	500b883a 	mov	r5,r10
+   22f20:	003fbe06 	br	22e1c <memcpy+0x38>
+
+00022f24 <alt_main>:
+ * devices/filesystems/components in the system; and call the entry point for
+ * the users application, i.e. main().
+ */
+
+void alt_main (void)
+{
+   22f24:	defffd04 	addi	sp,sp,-12
+   22f28:	dfc00215 	stw	ra,8(sp)
+   22f2c:	df000115 	stw	fp,4(sp)
+   22f30:	df000104 	addi	fp,sp,4
+#endif
+
+  /* ALT LOG - please see HAL/sys/alt_log_printf.h for details */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Entering alt_main, calling alt_irq_init.\r\n");
+  /* Initialize the interrupt controller. */
+  alt_irq_init (NULL);
+   22f34:	0009883a 	mov	r4,zero
+   22f38:	0022f800 	call	22f80 <alt_irq_init>
+
+  /* Initialize the operating system */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Done alt_irq_init, calling alt_os_init.\r\n");
+  ALT_OS_INIT();
+   22f3c:	0001883a 	nop
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Done OS Init, calling alt_sem_create.\r\n");
+  ALT_SEM_CREATE (&alt_fd_list_lock, 1);
+
+  /* Initialize the device drivers/software components. */
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling alt_sys_init.\r\n");
+  alt_sys_init();
+   22f40:	0022fb40 	call	22fb4 <alt_sys_init>
+  /* 
+   * Call the C++ constructors 
+   */
+
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling C++ constructors.\r\n");
+  _do_ctors ();
+   22f44:	002311c0 	call	2311c <_do_ctors>
+   * redefined as _exit()). This is in the interest of reducing code footprint,
+   * in that the atexit() overhead is removed when it's not needed.
+   */
+
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling atexit.\r\n");
+  atexit (_do_dtors);
+   22f48:	010000b4 	movhi	r4,2
+   22f4c:	210c5e04 	addi	r4,r4,12664
+   22f50:	00232740 	call	23274 <atexit>
+  ALT_LOG_PRINT_BOOT("[alt_main.c] Calling main.\r\n");
+
+#ifdef ALT_NO_EXIT
+  main (alt_argc, alt_argv, alt_envp);
+#else
+  result = main (alt_argc, alt_argv, alt_envp);
+   22f54:	d1201817 	ldw	r4,-32672(gp)
+   22f58:	d0e01917 	ldw	r3,-32668(gp)
+   22f5c:	d0a01a17 	ldw	r2,-32664(gp)
+   22f60:	180b883a 	mov	r5,r3
+   22f64:	100d883a 	mov	r6,r2
+   22f68:	002057c0 	call	2057c <main>
+   22f6c:	e0bfff15 	stw	r2,-4(fp)
+  close(STDOUT_FILENO);
+   22f70:	01000044 	movi	r4,1
+   22f74:	00230240 	call	23024 <close>
+  exit (result);
+   22f78:	e13fff17 	ldw	r4,-4(fp)
+   22f7c:	00232880 	call	23288 <exit>
+
+00022f80 <alt_irq_init>:
+ * The "base" parameter is ignored and only
+ * present for backwards-compatibility.
+ */
+
+void alt_irq_init ( const void* base )
+{
+   22f80:	defffd04 	addi	sp,sp,-12
+   22f84:	dfc00215 	stw	ra,8(sp)
+   22f88:	df000115 	stw	fp,4(sp)
+   22f8c:	df000104 	addi	fp,sp,4
+   22f90:	e13fff15 	stw	r4,-4(fp)
+    ALTERA_NIOS2_QSYS_IRQ_INIT ( PROC, PROC);
+   22f94:	00232540 	call	23254 <altera_nios2_qsys_irq_init>
+ * alt_irq_cpu_enable_interrupts() enables the CPU to start taking interrupts.
+ */
+static ALT_INLINE void ALT_ALWAYS_INLINE 
+       alt_irq_cpu_enable_interrupts ()
+{
+    NIOS2_WRITE_STATUS(NIOS2_STATUS_PIE_MSK
+   22f98:	00800044 	movi	r2,1
+   22f9c:	1001703a 	wrctl	status,r2
+    alt_irq_cpu_enable_interrupts();
+}
+   22fa0:	e037883a 	mov	sp,fp
+   22fa4:	dfc00117 	ldw	ra,4(sp)
+   22fa8:	df000017 	ldw	fp,0(sp)
+   22fac:	dec00204 	addi	sp,sp,8
+   22fb0:	f800283a 	ret
+
+00022fb4 <alt_sys_init>:
+ * Initialize the non-interrupt controller devices.
+ * Called after alt_irq_init().
+ */
+
+void alt_sys_init( void )
+{
+   22fb4:	deffff04 	addi	sp,sp,-4
+   22fb8:	df000015 	stw	fp,0(sp)
+   22fbc:	d839883a 	mov	fp,sp
+    ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID_QSYS_0, sysid_qsys_0);
+   22fc0:	0001883a 	nop
+}
+   22fc4:	e037883a 	mov	sp,fp
+   22fc8:	df000017 	ldw	fp,0(sp)
+   22fcc:	dec00104 	addi	sp,sp,4
+   22fd0:	f800283a 	ret
+
+00022fd4 <alt_get_errno>:
+#undef errno
+
+extern int errno;
+
+static ALT_INLINE int* alt_get_errno(void)
+{
+   22fd4:	defffe04 	addi	sp,sp,-8
+   22fd8:	dfc00115 	stw	ra,4(sp)
+   22fdc:	df000015 	stw	fp,0(sp)
+   22fe0:	d839883a 	mov	fp,sp
+  return ((alt_errno) ? alt_errno() : &errno);
+   22fe4:	008000b4 	movhi	r2,2
+   22fe8:	10915d04 	addi	r2,r2,17780
+   22fec:	10800017 	ldw	r2,0(r2)
+   22ff0:	10000526 	beq	r2,zero,23008 <alt_get_errno+0x34>
+   22ff4:	008000b4 	movhi	r2,2
+   22ff8:	10915d04 	addi	r2,r2,17780
+   22ffc:	10800017 	ldw	r2,0(r2)
+   23000:	103ee83a 	callr	r2
+   23004:	00000206 	br	23010 <alt_get_errno+0x3c>
+   23008:	008000b4 	movhi	r2,2
+   2300c:	10917304 	addi	r2,r2,17868
+}
+   23010:	e037883a 	mov	sp,fp
+   23014:	dfc00117 	ldw	ra,4(sp)
+   23018:	df000017 	ldw	fp,0(sp)
+   2301c:	dec00204 	addi	sp,sp,8
+   23020:	f800283a 	ret
+
+00023024 <close>:
+ *
+ * ALT_CLOSE is mapped onto the close() system call in alt_syscall.h
+ */
+ 
+int ALT_CLOSE (int fildes)
+{
+   23024:	defffb04 	addi	sp,sp,-20
+   23028:	dfc00415 	stw	ra,16(sp)
+   2302c:	df000315 	stw	fp,12(sp)
+   23030:	df000304 	addi	fp,sp,12
+   23034:	e13fff15 	stw	r4,-4(fp)
+   * A common error case is that when the file descriptor was created, the call
+   * to open() failed resulting in a negative file descriptor. This is trapped
+   * below so that we don't try and process an invalid file descriptor.
+   */
+
+  fd = (fildes < 0) ? NULL : &alt_fd_list[fildes];
+   23038:	e0bfff17 	ldw	r2,-4(fp)
+   2303c:	10000716 	blt	r2,zero,2305c <close+0x38>
+   23040:	e13fff17 	ldw	r4,-4(fp)
+   23044:	01400304 	movi	r5,12
+   23048:	0022dbc0 	call	22dbc <__mulsi3>
+   2304c:	00c000b4 	movhi	r3,2
+   23050:	18cff804 	addi	r3,r3,16352
+   23054:	10c5883a 	add	r2,r2,r3
+   23058:	00000106 	br	23060 <close+0x3c>
+   2305c:	0005883a 	mov	r2,zero
+   23060:	e0bffd15 	stw	r2,-12(fp)
+
+  if (fd)
+   23064:	e0bffd17 	ldw	r2,-12(fp)
+   23068:	10001826 	beq	r2,zero,230cc <close+0xa8>
+    /*
+     * If the associated file system/device has a close function, call it so 
+     * that any necessary cleanup code can run.
+     */
+
+    rval = (fd->dev->close) ? fd->dev->close(fd) : 0;
+   2306c:	e0bffd17 	ldw	r2,-12(fp)
+   23070:	10800017 	ldw	r2,0(r2)
+   23074:	10800417 	ldw	r2,16(r2)
+   23078:	10000626 	beq	r2,zero,23094 <close+0x70>
+   2307c:	e0bffd17 	ldw	r2,-12(fp)
+   23080:	10800017 	ldw	r2,0(r2)
+   23084:	10800417 	ldw	r2,16(r2)
+   23088:	e13ffd17 	ldw	r4,-12(fp)
+   2308c:	103ee83a 	callr	r2
+   23090:	00000106 	br	23098 <close+0x74>
+   23094:	0005883a 	mov	r2,zero
+   23098:	e0bffe15 	stw	r2,-8(fp)
+
+    /* Free the file descriptor structure and return. */
+
+    alt_release_fd (fildes);
+   2309c:	e13fff17 	ldw	r4,-4(fp)
+   230a0:	00231d40 	call	231d4 <alt_release_fd>
+    if (rval < 0)
+   230a4:	e0bffe17 	ldw	r2,-8(fp)
+   230a8:	1000060e 	bge	r2,zero,230c4 <close+0xa0>
+    {
+      ALT_ERRNO = -rval;
+   230ac:	0022fd40 	call	22fd4 <alt_get_errno>
+   230b0:	e0fffe17 	ldw	r3,-8(fp)
+   230b4:	00c7c83a 	sub	r3,zero,r3
+   230b8:	10c00015 	stw	r3,0(r2)
+      return -1;
+   230bc:	00bfffc4 	movi	r2,-1
+   230c0:	00000606 	br	230dc <close+0xb8>
+    }
+    return 0;
+   230c4:	0005883a 	mov	r2,zero
+   230c8:	00000406 	br	230dc <close+0xb8>
+  }
+  else
+  {
+    ALT_ERRNO = EBADFD;
+   230cc:	0022fd40 	call	22fd4 <alt_get_errno>
+   230d0:	00c01444 	movi	r3,81
+   230d4:	10c00015 	stw	r3,0(r2)
+    return -1;
+   230d8:	00bfffc4 	movi	r2,-1
+  }
+}
+   230dc:	e037883a 	mov	sp,fp
+   230e0:	dfc00117 	ldw	ra,4(sp)
+   230e4:	df000017 	ldw	fp,0(sp)
+   230e8:	dec00204 	addi	sp,sp,8
+   230ec:	f800283a 	ret
+
+000230f0 <alt_dev_null_write>:
+ * by the alt_dev_null device. It simple discards all data passed to it, and
+ * indicates that the data has been successfully transmitted.
+ */
+
+static int alt_dev_null_write (alt_fd* fd, const char* ptr, int len)
+{
+   230f0:	defffc04 	addi	sp,sp,-16
+   230f4:	df000315 	stw	fp,12(sp)
+   230f8:	df000304 	addi	fp,sp,12
+   230fc:	e13ffd15 	stw	r4,-12(fp)
+   23100:	e17ffe15 	stw	r5,-8(fp)
+   23104:	e1bfff15 	stw	r6,-4(fp)
+  return len;
+   23108:	e0bfff17 	ldw	r2,-4(fp)
+}
+   2310c:	e037883a 	mov	sp,fp
+   23110:	df000017 	ldw	fp,0(sp)
+   23114:	dec00104 	addi	sp,sp,4
+   23118:	f800283a 	ret
+
+0002311c <_do_ctors>:
+/*
+ * Run the C++ static constructors.
+ */
+
+void _do_ctors(void)
+{
+   2311c:	defffd04 	addi	sp,sp,-12
+   23120:	dfc00215 	stw	ra,8(sp)
+   23124:	df000115 	stw	fp,4(sp)
+   23128:	df000104 	addi	fp,sp,4
+  constructor* ctor;
+
+  for (ctor = &__CTOR_END__[-1]; ctor >= __CTOR_LIST__; ctor--)
+   2312c:	008000b4 	movhi	r2,2
+   23130:	108d7204 	addi	r2,r2,13768
+   23134:	e0bfff15 	stw	r2,-4(fp)
+   23138:	00000606 	br	23154 <_do_ctors+0x38>
+        (*ctor) (); 
+   2313c:	e0bfff17 	ldw	r2,-4(fp)
+   23140:	10800017 	ldw	r2,0(r2)
+   23144:	103ee83a 	callr	r2
+
+void _do_ctors(void)
+{
+  constructor* ctor;
+
+  for (ctor = &__CTOR_END__[-1]; ctor >= __CTOR_LIST__; ctor--)
+   23148:	e0bfff17 	ldw	r2,-4(fp)
+   2314c:	10bfff04 	addi	r2,r2,-4
+   23150:	e0bfff15 	stw	r2,-4(fp)
+   23154:	e0ffff17 	ldw	r3,-4(fp)
+   23158:	008000b4 	movhi	r2,2
+   2315c:	108d7304 	addi	r2,r2,13772
+   23160:	18bff62e 	bgeu	r3,r2,2313c <_do_ctors+0x20>
+        (*ctor) (); 
+}
+   23164:	e037883a 	mov	sp,fp
+   23168:	dfc00117 	ldw	ra,4(sp)
+   2316c:	df000017 	ldw	fp,0(sp)
+   23170:	dec00204 	addi	sp,sp,8
+   23174:	f800283a 	ret
+
+00023178 <_do_dtors>:
+/*
+ * Run the C++ static destructors.
+ */
+
+void _do_dtors(void)
+{
+   23178:	defffd04 	addi	sp,sp,-12
+   2317c:	dfc00215 	stw	ra,8(sp)
+   23180:	df000115 	stw	fp,4(sp)
+   23184:	df000104 	addi	fp,sp,4
+  destructor* dtor;
+
+  for (dtor = &__DTOR_END__[-1]; dtor >= __DTOR_LIST__; dtor--)
+   23188:	008000b4 	movhi	r2,2
+   2318c:	108d7204 	addi	r2,r2,13768
+   23190:	e0bfff15 	stw	r2,-4(fp)
+   23194:	00000606 	br	231b0 <_do_dtors+0x38>
+        (*dtor) (); 
+   23198:	e0bfff17 	ldw	r2,-4(fp)
+   2319c:	10800017 	ldw	r2,0(r2)
+   231a0:	103ee83a 	callr	r2
+
+void _do_dtors(void)
+{
+  destructor* dtor;
+
+  for (dtor = &__DTOR_END__[-1]; dtor >= __DTOR_LIST__; dtor--)
+   231a4:	e0bfff17 	ldw	r2,-4(fp)
+   231a8:	10bfff04 	addi	r2,r2,-4
+   231ac:	e0bfff15 	stw	r2,-4(fp)
+   231b0:	e0ffff17 	ldw	r3,-4(fp)
+   231b4:	008000b4 	movhi	r2,2
+   231b8:	108d7304 	addi	r2,r2,13772
+   231bc:	18bff62e 	bgeu	r3,r2,23198 <_do_dtors+0x20>
+        (*dtor) (); 
+}
+   231c0:	e037883a 	mov	sp,fp
+   231c4:	dfc00117 	ldw	ra,4(sp)
+   231c8:	df000017 	ldw	fp,0(sp)
+   231cc:	dec00204 	addi	sp,sp,8
+   231d0:	f800283a 	ret
+
+000231d4 <alt_release_fd>:
+ * File descriptors correcponding to standard in, standard out and standard 
+ * error cannont be released backed to the pool. They are always reserved.
+ */
+
+void alt_release_fd (int fd)
+{
+   231d4:	defffc04 	addi	sp,sp,-16
+   231d8:	dfc00315 	stw	ra,12(sp)
+   231dc:	df000215 	stw	fp,8(sp)
+   231e0:	dc000115 	stw	r16,4(sp)
+   231e4:	df000104 	addi	fp,sp,4
+   231e8:	e13fff15 	stw	r4,-4(fp)
+  if (fd > 2)
+   231ec:	e0bfff17 	ldw	r2,-4(fp)
+   231f0:	108000d0 	cmplti	r2,r2,3
+   231f4:	1000111e 	bne	r2,zero,2323c <alt_release_fd+0x68>
+  {
+    alt_fd_list[fd].fd_flags = 0;
+   231f8:	040000b4 	movhi	r16,2
+   231fc:	840ff804 	addi	r16,r16,16352
+   23200:	e0bfff17 	ldw	r2,-4(fp)
+   23204:	1009883a 	mov	r4,r2
+   23208:	01400304 	movi	r5,12
+   2320c:	0022dbc0 	call	22dbc <__mulsi3>
+   23210:	8085883a 	add	r2,r16,r2
+   23214:	10800204 	addi	r2,r2,8
+   23218:	10000015 	stw	zero,0(r2)
+    alt_fd_list[fd].dev      = 0;
+   2321c:	040000b4 	movhi	r16,2
+   23220:	840ff804 	addi	r16,r16,16352
+   23224:	e0bfff17 	ldw	r2,-4(fp)
+   23228:	1009883a 	mov	r4,r2
+   2322c:	01400304 	movi	r5,12
+   23230:	0022dbc0 	call	22dbc <__mulsi3>
+   23234:	8085883a 	add	r2,r16,r2
+   23238:	10000015 	stw	zero,0(r2)
+  }
+}
+   2323c:	e037883a 	mov	sp,fp
+   23240:	dfc00217 	ldw	ra,8(sp)
+   23244:	df000117 	ldw	fp,4(sp)
+   23248:	dc000017 	ldw	r16,0(sp)
+   2324c:	dec00304 	addi	sp,sp,12
+   23250:	f800283a 	ret
+
+00023254 <altera_nios2_qsys_irq_init>:
+/*
+ * To initialize the internal interrupt controller, just clear the IENABLE
+ * register so that all possible IRQs are disabled.
+ */
+void altera_nios2_qsys_irq_init(void) 
+{
+   23254:	deffff04 	addi	sp,sp,-4
+   23258:	df000015 	stw	fp,0(sp)
+   2325c:	d839883a 	mov	fp,sp
+    NIOS2_WRITE_IENABLE(0);
+   23260:	000170fa 	wrctl	ienable,zero
+}
+   23264:	e037883a 	mov	sp,fp
+   23268:	df000017 	ldw	fp,0(sp)
+   2326c:	dec00104 	addi	sp,sp,4
+   23270:	f800283a 	ret
+
+00023274 <atexit>:
+   23274:	200b883a 	mov	r5,r4
+   23278:	000d883a 	mov	r6,zero
+   2327c:	0009883a 	mov	r4,zero
+   23280:	000f883a 	mov	r7,zero
+   23284:	00232c01 	jmpi	232c0 <__register_exitproc>
+
+00023288 <exit>:
+   23288:	defffe04 	addi	sp,sp,-8
+   2328c:	000b883a 	mov	r5,zero
+   23290:	dc000015 	stw	r16,0(sp)
+   23294:	dfc00115 	stw	ra,4(sp)
+   23298:	2021883a 	mov	r16,r4
+   2329c:	00233f00 	call	233f0 <__call_exitprocs>
+   232a0:	008000b4 	movhi	r2,2
+   232a4:	10915e04 	addi	r2,r2,17784
+   232a8:	11000017 	ldw	r4,0(r2)
+   232ac:	20800f17 	ldw	r2,60(r4)
+   232b0:	10000126 	beq	r2,zero,232b8 <exit+0x30>
+   232b4:	103ee83a 	callr	r2
+   232b8:	8009883a 	mov	r4,r16
+   232bc:	00235900 	call	23590 <_exit>
+
+000232c0 <__register_exitproc>:
+   232c0:	defffa04 	addi	sp,sp,-24
+   232c4:	008000b4 	movhi	r2,2
+   232c8:	10915e04 	addi	r2,r2,17784
+   232cc:	dc000315 	stw	r16,12(sp)
+   232d0:	14000017 	ldw	r16,0(r2)
+   232d4:	dc400415 	stw	r17,16(sp)
+   232d8:	dfc00515 	stw	ra,20(sp)
+   232dc:	80805217 	ldw	r2,328(r16)
+   232e0:	2023883a 	mov	r17,r4
+   232e4:	10003e26 	beq	r2,zero,233e0 <__register_exitproc+0x120>
+   232e8:	10c00117 	ldw	r3,4(r2)
+   232ec:	020007c4 	movi	r8,31
+   232f0:	40c0180e 	bge	r8,r3,23354 <__register_exitproc+0x94>
+   232f4:	00800034 	movhi	r2,0
+   232f8:	10800004 	addi	r2,r2,0
+   232fc:	1000061e 	bne	r2,zero,23318 <__register_exitproc+0x58>
+   23300:	00bfffc4 	movi	r2,-1
+   23304:	dfc00517 	ldw	ra,20(sp)
+   23308:	dc400417 	ldw	r17,16(sp)
+   2330c:	dc000317 	ldw	r16,12(sp)
+   23310:	dec00604 	addi	sp,sp,24
+   23314:	f800283a 	ret
+   23318:	01006404 	movi	r4,400
+   2331c:	d9400015 	stw	r5,0(sp)
+   23320:	d9800115 	stw	r6,4(sp)
+   23324:	d9c00215 	stw	r7,8(sp)
+   23328:	00000000 	call	0 <__alt_mem_RAM_ctrl-0x20000>
+   2332c:	d9400017 	ldw	r5,0(sp)
+   23330:	d9800117 	ldw	r6,4(sp)
+   23334:	d9c00217 	ldw	r7,8(sp)
+   23338:	103ff126 	beq	r2,zero,23300 <__register_exitproc+0x40>
+   2333c:	80c05217 	ldw	r3,328(r16)
+   23340:	10000115 	stw	zero,4(r2)
+   23344:	10c00015 	stw	r3,0(r2)
+   23348:	80805215 	stw	r2,328(r16)
+   2334c:	10006215 	stw	zero,392(r2)
+   23350:	10006315 	stw	zero,396(r2)
+   23354:	10c00117 	ldw	r3,4(r2)
+   23358:	88000d1e 	bne	r17,zero,23390 <__register_exitproc+0xd0>
+   2335c:	19000084 	addi	r4,r3,2
+   23360:	2109883a 	add	r4,r4,r4
+   23364:	18c00044 	addi	r3,r3,1
+   23368:	2109883a 	add	r4,r4,r4
+   2336c:	1109883a 	add	r4,r2,r4
+   23370:	10c00115 	stw	r3,4(r2)
+   23374:	0005883a 	mov	r2,zero
+   23378:	21400015 	stw	r5,0(r4)
+   2337c:	dfc00517 	ldw	ra,20(sp)
+   23380:	dc400417 	ldw	r17,16(sp)
+   23384:	dc000317 	ldw	r16,12(sp)
+   23388:	dec00604 	addi	sp,sp,24
+   2338c:	f800283a 	ret
+   23390:	02400044 	movi	r9,1
+   23394:	12806217 	ldw	r10,392(r2)
+   23398:	48d2983a 	sll	r9,r9,r3
+   2339c:	19000804 	addi	r4,r3,32
+   233a0:	18d1883a 	add	r8,r3,r3
+   233a4:	2109883a 	add	r4,r4,r4
+   233a8:	4211883a 	add	r8,r8,r8
+   233ac:	2109883a 	add	r4,r4,r4
+   233b0:	1109883a 	add	r4,r2,r4
+   233b4:	1211883a 	add	r8,r2,r8
+   233b8:	5254b03a 	or	r10,r10,r9
+   233bc:	21c02215 	stw	r7,136(r4)
+   233c0:	41802215 	stw	r6,136(r8)
+   233c4:	12806215 	stw	r10,392(r2)
+   233c8:	01000084 	movi	r4,2
+   233cc:	893fe31e 	bne	r17,r4,2335c <__register_exitproc+0x9c>
+   233d0:	11006317 	ldw	r4,396(r2)
+   233d4:	2252b03a 	or	r9,r4,r9
+   233d8:	12406315 	stw	r9,396(r2)
+   233dc:	003fdf06 	br	2335c <__register_exitproc+0x9c>
+   233e0:	008000b4 	movhi	r2,2
+   233e4:	1092b104 	addi	r2,r2,19140
+   233e8:	80805215 	stw	r2,328(r16)
+   233ec:	003fbe06 	br	232e8 <__register_exitproc+0x28>
+
+000233f0 <__call_exitprocs>:
+   233f0:	008000b4 	movhi	r2,2
+   233f4:	10915e04 	addi	r2,r2,17784
+   233f8:	10800017 	ldw	r2,0(r2)
+   233fc:	defff304 	addi	sp,sp,-52
+   23400:	df000b15 	stw	fp,44(sp)
+   23404:	d8800015 	stw	r2,0(sp)
+   23408:	10805204 	addi	r2,r2,328
+   2340c:	dd400815 	stw	r21,32(sp)
+   23410:	dfc00c15 	stw	ra,48(sp)
+   23414:	ddc00a15 	stw	r23,40(sp)
+   23418:	dd800915 	stw	r22,36(sp)
+   2341c:	dd000715 	stw	r20,28(sp)
+   23420:	dcc00615 	stw	r19,24(sp)
+   23424:	dc800515 	stw	r18,20(sp)
+   23428:	dc400415 	stw	r17,16(sp)
+   2342c:	dc000315 	stw	r16,12(sp)
+   23430:	d9000115 	stw	r4,4(sp)
+   23434:	2839883a 	mov	fp,r5
+   23438:	d8800215 	stw	r2,8(sp)
+   2343c:	057fffc4 	movi	r21,-1
+   23440:	d8800017 	ldw	r2,0(sp)
+   23444:	ddc00217 	ldw	r23,8(sp)
+   23448:	14805217 	ldw	r18,328(r2)
+   2344c:	90001726 	beq	r18,zero,234ac <__call_exitprocs+0xbc>
+   23450:	94400117 	ldw	r17,4(r18)
+   23454:	8c3fffc4 	addi	r16,r17,-1
+   23458:	80001116 	blt	r16,zero,234a0 <__call_exitprocs+0xb0>
+   2345c:	8c400044 	addi	r17,r17,1
+   23460:	8427883a 	add	r19,r16,r16
+   23464:	8c63883a 	add	r17,r17,r17
+   23468:	95802204 	addi	r22,r18,136
+   2346c:	9ce7883a 	add	r19,r19,r19
+   23470:	8c63883a 	add	r17,r17,r17
+   23474:	b4e7883a 	add	r19,r22,r19
+   23478:	9463883a 	add	r17,r18,r17
+   2347c:	e0001726 	beq	fp,zero,234dc <__call_exitprocs+0xec>
+   23480:	8c87c83a 	sub	r3,r17,r18
+   23484:	b0c7883a 	add	r3,r22,r3
+   23488:	18c01e17 	ldw	r3,120(r3)
+   2348c:	1f001326 	beq	r3,fp,234dc <__call_exitprocs+0xec>
+   23490:	843fffc4 	addi	r16,r16,-1
+   23494:	9cffff04 	addi	r19,r19,-4
+   23498:	8c7fff04 	addi	r17,r17,-4
+   2349c:	857ff71e 	bne	r16,r21,2347c <__call_exitprocs+0x8c>
+   234a0:	00800034 	movhi	r2,0
+   234a4:	10800004 	addi	r2,r2,0
+   234a8:	10002a1e 	bne	r2,zero,23554 <__call_exitprocs+0x164>
+   234ac:	dfc00c17 	ldw	ra,48(sp)
+   234b0:	df000b17 	ldw	fp,44(sp)
+   234b4:	ddc00a17 	ldw	r23,40(sp)
+   234b8:	dd800917 	ldw	r22,36(sp)
+   234bc:	dd400817 	ldw	r21,32(sp)
+   234c0:	dd000717 	ldw	r20,28(sp)
+   234c4:	dcc00617 	ldw	r19,24(sp)
+   234c8:	dc800517 	ldw	r18,20(sp)
+   234cc:	dc400417 	ldw	r17,16(sp)
+   234d0:	dc000317 	ldw	r16,12(sp)
+   234d4:	dec00d04 	addi	sp,sp,52
+   234d8:	f800283a 	ret
+   234dc:	91000117 	ldw	r4,4(r18)
+   234e0:	88c00017 	ldw	r3,0(r17)
+   234e4:	213fffc4 	addi	r4,r4,-1
+   234e8:	24001526 	beq	r4,r16,23540 <__call_exitprocs+0x150>
+   234ec:	88000015 	stw	zero,0(r17)
+   234f0:	183fe726 	beq	r3,zero,23490 <__call_exitprocs+0xa0>
+   234f4:	00800044 	movi	r2,1
+   234f8:	1408983a 	sll	r4,r2,r16
+   234fc:	91406217 	ldw	r5,392(r18)
+   23500:	95000117 	ldw	r20,4(r18)
+   23504:	214a703a 	and	r5,r4,r5
+   23508:	28000b26 	beq	r5,zero,23538 <__call_exitprocs+0x148>
+   2350c:	91406317 	ldw	r5,396(r18)
+   23510:	2148703a 	and	r4,r4,r5
+   23514:	20000c1e 	bne	r4,zero,23548 <__call_exitprocs+0x158>
+   23518:	99400017 	ldw	r5,0(r19)
+   2351c:	d9000117 	ldw	r4,4(sp)
+   23520:	183ee83a 	callr	r3
+   23524:	90c00117 	ldw	r3,4(r18)
+   23528:	1d3fc51e 	bne	r3,r20,23440 <__call_exitprocs+0x50>
+   2352c:	b8c00017 	ldw	r3,0(r23)
+   23530:	1cbfd726 	beq	r3,r18,23490 <__call_exitprocs+0xa0>
+   23534:	003fc206 	br	23440 <__call_exitprocs+0x50>
+   23538:	183ee83a 	callr	r3
+   2353c:	003ff906 	br	23524 <__call_exitprocs+0x134>
+   23540:	94000115 	stw	r16,4(r18)
+   23544:	003fea06 	br	234f0 <__call_exitprocs+0x100>
+   23548:	99000017 	ldw	r4,0(r19)
+   2354c:	183ee83a 	callr	r3
+   23550:	003ff406 	br	23524 <__call_exitprocs+0x134>
+   23554:	90c00117 	ldw	r3,4(r18)
+   23558:	1800071e 	bne	r3,zero,23578 <__call_exitprocs+0x188>
+   2355c:	90c00017 	ldw	r3,0(r18)
+   23560:	18000926 	beq	r3,zero,23588 <__call_exitprocs+0x198>
+   23564:	9009883a 	mov	r4,r18
+   23568:	b8c00015 	stw	r3,0(r23)
+   2356c:	00000000 	call	0 <__alt_mem_RAM_ctrl-0x20000>
+   23570:	bc800017 	ldw	r18,0(r23)
+   23574:	003fb506 	br	2344c <__call_exitprocs+0x5c>
+   23578:	90c00017 	ldw	r3,0(r18)
+   2357c:	902f883a 	mov	r23,r18
+   23580:	1825883a 	mov	r18,r3
+   23584:	003fb106 	br	2344c <__call_exitprocs+0x5c>
+   23588:	0007883a 	mov	r3,zero
+   2358c:	003ffb06 	br	2357c <__call_exitprocs+0x18c>
+
+00023590 <_exit>:
+ *
+ * ALT_EXIT is mapped onto the _exit() system call in alt_syscall.h
+ */
+
+void ALT_EXIT (int exit_code)
+{
+   23590:	defffc04 	addi	sp,sp,-16
+   23594:	df000315 	stw	fp,12(sp)
+   23598:	df000304 	addi	fp,sp,12
+   2359c:	e13fff15 	stw	r4,-4(fp)
+  ALT_LOG_PRINT_BOOT("[alt_exit.c] Entering _exit() function.\r\n");
+  ALT_LOG_PRINT_BOOT("[alt_exit.c] Exit code from main was %d.\r\n",exit_code);
+  /* Stop all other threads */
+
+  ALT_LOG_PRINT_BOOT("[alt_exit.c] Calling ALT_OS_STOP().\r\n");
+  ALT_OS_STOP();
+   235a0:	0001883a 	nop
+   235a4:	e0bfff17 	ldw	r2,-4(fp)
+   235a8:	e0bffd15 	stw	r2,-12(fp)
+/*
+ * Routine called on exit.
+ */
+static ALT_INLINE ALT_ALWAYS_INLINE void alt_sim_halt(int exit_code)
+{
+  int r2 = exit_code;
+   235ac:	e0bffd17 	ldw	r2,-12(fp)
+   235b0:	e0bffe15 	stw	r2,-8(fp)
+  __asm__ volatile ("\n0:\n\taddi %0,%0, -1\n\tbgt %0,zero,0b" : : "r" (ALT_CPU_FREQ/100) ); /* Delay for >30ms */
+
+  __asm__ volatile ("break 2" : : "D02"(r2), "D03"(r3) ALT_GMON_DATA );
+
+#else /* !DEBUG_STUB */
+  if (r2) {
+   235b4:	e0bffe17 	ldw	r2,-8(fp)
+   235b8:	10000226 	beq	r2,zero,235c4 <_exit+0x34>
+    ALT_SIM_FAIL();
+   235bc:	002af070 	cmpltui	zero,zero,43969
+   235c0:	00000106 	br	235c8 <_exit+0x38>
+  } else {
+    ALT_SIM_PASS();
+   235c4:	002af0b0 	cmpltui	zero,zero,43970
+  ALT_SIM_HALT(exit_code);
+
+  /* spin forever, since there's no where to go back to */
+
+  ALT_LOG_PRINT_BOOT("[alt_exit.c] Spinning forever.\r\n");
+  while (1);
+   235c8:	003fff06 	br	235c8 <_exit+0x38>

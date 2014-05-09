@@ -1,0 +1,8 @@
+Info (10281): Verilog HDL Declaration information at NIOS_mm_interconnect_0_id_router.sv(48): object "DEFAULT_WR_CHANNEL" differs only in case from object "default_wr_channel" in the same scope
+Info (10281): Verilog HDL Declaration information at NIOS_mm_interconnect_0_id_router.sv(49): object "DEFAULT_RD_CHANNEL" differs only in case from object "default_rd_channel" in the same scope
+Info (10281): Verilog HDL Declaration information at NIOS_mm_interconnect_0_addr_router.sv(48): object "DEFAULT_WR_CHANNEL" differs only in case from object "default_wr_channel" in the same scope
+Info (10281): Verilog HDL Declaration information at NIOS_mm_interconnect_0_addr_router.sv(49): object "DEFAULT_RD_CHANNEL" differs only in case from object "default_rd_channel" in the same scope
+Warning (10037): Verilog HDL or VHDL warning at NIOS_nios2_qsys_0.v(1605): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at NIOS_nios2_qsys_0.v(1607): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at NIOS_nios2_qsys_0.v(1763): conditional expression evaluates to a constant
+Warning (10037): Verilog HDL or VHDL warning at NIOS_nios2_qsys_0.v(2587): conditional expression evaluates to a constant
