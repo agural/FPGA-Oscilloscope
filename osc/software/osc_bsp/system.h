@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Tue May 06 19:44:11 PDT 2014
+ * Generated: Wed May 14 03:19:57 PDT 2014
  */
 
 /*
@@ -124,6 +124,7 @@
  */
 
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
+#define __ALTERA_AVALON_PIO
 #define __ALTERA_AVALON_SYSID_QSYS
 #define __ALTERA_GENERIC_TRISTATE_CONTROLLER
 #define __ALTERA_NIOS2_QSYS
@@ -194,6 +195,7 @@
  */
 
 #define ALT_DEVICE_FAMILY "Cyclone III"
+#define ALT_ENHANCED_INTERRUPT_API_PRESENT
 #define ALT_IRQ_BASE NULL
 #define ALT_LOG_PORT "/dev/null"
 #define ALT_LOG_PORT_BASE 0x0
@@ -228,18 +230,45 @@
 
 
 /*
+ * key_input configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_key_input altera_avalon_pio
+#define KEY_INPUT_BASE 0x51010
+#define KEY_INPUT_BIT_CLEARING_EDGE_REGISTER 1
+#define KEY_INPUT_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define KEY_INPUT_CAPTURE 1
+#define KEY_INPUT_DATA_WIDTH 20
+#define KEY_INPUT_DO_TEST_BENCH_WIRING 0
+#define KEY_INPUT_DRIVEN_SIM_VALUE 0
+#define KEY_INPUT_EDGE_TYPE "RISING"
+#define KEY_INPUT_FREQ 36000000
+#define KEY_INPUT_HAS_IN 1
+#define KEY_INPUT_HAS_OUT 0
+#define KEY_INPUT_HAS_TRI 0
+#define KEY_INPUT_IRQ 5
+#define KEY_INPUT_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define KEY_INPUT_IRQ_TYPE "EDGE"
+#define KEY_INPUT_NAME "/dev/key_input"
+#define KEY_INPUT_RESET_VALUE 0
+#define KEY_INPUT_SPAN 16
+#define KEY_INPUT_TYPE "altera_avalon_pio"
+
+
+/*
  * sysid_qsys_0 configuration
  *
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x51008
+#define SYSID_QSYS_0_BASE 0x51028
 #define SYSID_QSYS_0_ID -1431655766
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1399430520
+#define SYSID_QSYS_0_TIMESTAMP 1400055391
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

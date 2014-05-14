@@ -4,7 +4,3 @@ Info (10281): Verilog HDL Declaration information at proc_mm_interconnect_0_id_r
 Info (10281): Verilog HDL Declaration information at proc_mm_interconnect_0_id_router.sv(49): object "DEFAULT_RD_CHANNEL" differs only in case from object "default_rd_channel" in the same scope
 Info (10281): Verilog HDL Declaration information at proc_mm_interconnect_0_addr_router.sv(48): object "DEFAULT_WR_CHANNEL" differs only in case from object "default_wr_channel" in the same scope
 Info (10281): Verilog HDL Declaration information at proc_mm_interconnect_0_addr_router.sv(49): object "DEFAULT_RD_CHANNEL" differs only in case from object "default_rd_channel" in the same scope
-Warning (10037): Verilog HDL or VHDL warning at proc_PROC.v(1605): conditional expression evaluates to a constant
-Warning (10037): Verilog HDL or VHDL warning at proc_PROC.v(1607): conditional expression evaluates to a constant
-Warning (10037): Verilog HDL or VHDL warning at proc_PROC.v(1763): conditional expression evaluates to a constant
-Warning (10037): Verilog HDL or VHDL warning at proc_PROC.v(2587): conditional expression evaluates to a constant

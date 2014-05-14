@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue May 06 19:42:50 2014
+Analysis & Synthesis Status : Successful - Wed May 14 03:42:52 2014
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : osc
 Top-level Entity Name : osc
 Family : Cyclone III
-Total logic elements : 2,117
-    Total combinational functions : 1,937
-    Dedicated logic registers : 1,083
-Total registers : 1083
-Total pins : 29
+Total logic elements : 2,505
+    Total combinational functions : 2,249
+    Dedicated logic registers : 1,318
+Total registers : 1318
+Total pins : 47
 Total virtual pins : 0
 Total memory bits : 272,384
 Embedded Multiplier 9-bit elements : 0

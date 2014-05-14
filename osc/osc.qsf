@@ -63,11 +63,6 @@ set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
 set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
-set_global_assignment -name QIP_FILE proc/synthesis/proc.qip
-set_global_assignment -name BDF_FILE osc.bdf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_93 -to AB[15]
 set_location_assignment PIN_94 -to AB[14]
 set_location_assignment PIN_95 -to AB[13]
@@ -124,5 +119,54 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[4]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[1]
+set_location_assignment PIN_240 -to gen_pb_0
+set_location_assignment PIN_160 -to debug_pin
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug_pin
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_0
+set_global_assignment -name QIP_FILE output_files/lpm_counter3.qip
+set_global_assignment -name QIP_FILE proc/synthesis/proc.qip
+set_global_assignment -name BDF_FILE osc.bdf
 set_global_assignment -name CDF_FILE output_files/Chain1.cdf
+set_global_assignment -name QIP_FILE lpm_counter0.qip
+set_global_assignment -name QIP_FILE lpm_compare0.qip
+set_global_assignment -name QIP_FILE lpm_counter1.qip
+set_global_assignment -name QIP_FILE lpm_compare1.qip
+set_global_assignment -name QIP_FILE lpm_compare2.qip
+set_global_assignment -name QIP_FILE lpm_counter2.qip
+set_global_assignment -name QIP_FILE lpm_compare3.qip
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_4
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_5
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_A0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_A1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_A2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_A3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_A4
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_B0
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_B1
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_B2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_B3
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_B4
+set_location_assignment PIN_234 -to gen_pb_1
+set_location_assignment PIN_235 -to gen_pb_2
+set_location_assignment PIN_236 -to gen_pb_3
+set_location_assignment PIN_237 -to gen_pb_4
+set_location_assignment PIN_238 -to gen_pb_5
+set_location_assignment PIN_38 -to rot_enc_A0
+set_location_assignment PIN_41 -to rot_enc_A1
+set_location_assignment PIN_44 -to rot_enc_A2
+set_location_assignment PIN_46 -to rot_enc_A3
+set_location_assignment PIN_50 -to rot_enc_A4
+set_location_assignment PIN_39 -to rot_enc_B0
+set_location_assignment PIN_43 -to rot_enc_B1
+set_location_assignment PIN_45 -to rot_enc_B2
+set_location_assignment PIN_49 -to rot_enc_B3
+set_location_assignment PIN_51 -to rot_enc_B4
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_6
+set_location_assignment PIN_239 -to gen_pb_6
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

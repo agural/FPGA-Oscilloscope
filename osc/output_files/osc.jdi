@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="e197b891982874042852"/>
+    <hash md5_digest_80b="6126d34a657bc527fbf4"/>
   </project>
   <file_info>
     <file device="EP3C25Q240C8" path="osc.sof" usercode="0xFFFFFFFF"/>
@@ -85,7 +85,7 @@
   <sld_infos>
     <sld_info hpath="proc:inst" name="inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME proc HAS_SOPCINFO 1 GENERATION_ID 1399430520"/>
+        <assignment_value text="QSYS_NAME proc HAS_SOPCINFO 1 GENERATION_ID 1400055391"/>
       </assignment_values>
       <parameters/>
     </sld_info>

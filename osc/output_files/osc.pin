@@ -27,13 +27,13 @@
  -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
  --                 of its bank.
  --					Bank 1:		3.3V
- --					Bank 2:		2.5V
+ --					Bank 2:		3.3V
  --					Bank 3:		2.5V
  --					Bank 4:		3.3V
  --					Bank 5:		3.3V
  --					Bank 6:		3.3V
  --					Bank 7:		2.5V
- --					Bank 8:		2.5V
+ --					Bank 8:		3.3V
  -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
  --					It can also be used to report unused dedicated pins. The connection
  --					on the board for unused dedicated pins depends on whether this will
@@ -102,23 +102,23 @@ clk                          : 31        : input  : 3.3-V LVCMOS      :         
 GND+                         : 32        :        :                   :         : 1         :                
 GND+                         : 33        :        :                   :         : 2         :                
 GND+                         : 34        :        :                   :         : 2         :                
-VCCIO2                       : 35        : power  :                   : 2.5V    : 2         :                
+VCCIO2                       : 35        : power  :                   : 3.3V    : 2         :                
 GND                          : 36        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 37        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 38        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 39        :        :                   :         : 2         :                
+rot_enc_A0                   : 38        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+rot_enc_B0                   : 39        : input  : 3.3-V LVCMOS      :         : 2         : Y              
 VCCINT                       : 40        : power  :                   : 1.2V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 41        :        :                   :         : 2         :                
+rot_enc_A1                   : 41        : input  : 3.3-V LVCMOS      :         : 2         : Y              
 GND                          : 42        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 43        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 44        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 45        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 46        :        :                   :         : 2         :                
-VCCIO2                       : 47        : power  :                   : 2.5V    : 2         :                
+rot_enc_B1                   : 43        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+rot_enc_A2                   : 44        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+rot_enc_B2                   : 45        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+rot_enc_A3                   : 46        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+VCCIO2                       : 47        : power  :                   : 3.3V    : 2         :                
 GND                          : 48        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 49        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 50        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 51        :        :                   :         : 2         :                
+rot_enc_B3                   : 49        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+rot_enc_A4                   : 50        : input  : 3.3-V LVCMOS      :         : 2         : Y              
+rot_enc_B4                   : 51        : input  : 3.3-V LVCMOS      :         : 2         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 52        :        :                   :         : 2         :                
 VCCINT                       : 53        : power  :                   : 1.2V    :           :                
 GND                          : 54        : gnd    :                   :         :           :                
@@ -227,7 +227,7 @@ GND                          : 156       : gnd    :                   :         
 MSEL1                        : 157       :        :                   :         : 6         :                
 MSEL2                        : 158       :        :                   :         : 6         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 159       :        :                   :         : 6         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 160       :        :                   :         : 6         :                
+debug_pin                    : 160       : output : 3.3-V LVCMOS      :         : 6         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 161       :        :                   :         : 6         :                
 data_dir                     : 162       : output : 3.3-V LVCMOS      :         : 6         : Y              
 VCCINT                       : 163       : power  :                   : 1.2V    :           :                
@@ -280,7 +280,7 @@ GND+                         : 209       :        :                   :         
 GND+                         : 210       :        :                   :         : 7         :                
 GND+                         : 211       :        :                   :         : 8         :                
 GND+                         : 212       :        :                   :         : 8         :                
-VCCIO8                       : 213       : power  :                   : 2.5V    : 8         :                
+VCCIO8                       : 213       : power  :                   : 3.3V    : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 214       :        :                   :         : 8         :                
 GND                          : 215       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 216       :        :                   :         : 8         :                
@@ -292,7 +292,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 221       :        :                   :      
 GND                          : 222       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 223       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 224       :        :                   :         : 8         :                
-VCCIO8                       : 225       : power  :                   : 2.5V    : 8         :                
+VCCIO8                       : 225       : power  :                   : 3.3V    : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 226       :        :                   :         : 8         :                
 GND                          : 227       : gnd    :                   :         :           :                
 VCCINT                       : 228       : power  :                   : 1.2V    :           :                
@@ -301,10 +301,10 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 230       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : 231       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 232       :        :                   :         : 8         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 233       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 234       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 235       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 236       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 237       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 238       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 239       :        :                   :         : 8         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 240       :        :                   :         : 8         :                
+gen_pb_1                     : 234       : input  : 3.3-V LVCMOS      :         : 8         : Y              
+gen_pb_2                     : 235       : input  : 3.3-V LVCMOS      :         : 8         : Y              
+gen_pb_3                     : 236       : input  : 3.3-V LVCMOS      :         : 8         : Y              
+gen_pb_4                     : 237       : input  : 3.3-V LVCMOS      :         : 8         : Y              
+gen_pb_5                     : 238       : input  : 3.3-V LVCMOS      :         : 8         : Y              
+gen_pb_6                     : 239       : input  : 3.3-V LVCMOS      :         : 8         : Y              
+gen_pb_0                     : 240       : input  : 3.3-V LVCMOS      :         : 8         : Y              
