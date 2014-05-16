@@ -55,8 +55,6 @@
 #include "../osc_bsp/HAL/inc/sys/alt_irq.h"
 
 
-
-
 /* local function declarations */
 enum keycode  key_lookup(void);      /* translate key values into keycodes */
 
@@ -121,12 +119,6 @@ int  main() {
 
 	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(0x00051010, 0x000fffff);
 	alt_ic_isr_register(0x0, 0x5, gen_pb_interrupt_handler, 0x0, 0x0);
-	//alt_ic_irq_enable(0x0, 0x5);
-
-	int x = 0;
-	while(1) {
-		x += 1;
-	}
 
 	/* variables */
     enum keycode        key;		    /* an input key */
