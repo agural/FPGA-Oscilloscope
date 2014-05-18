@@ -49,21 +49,21 @@ module proc_mm_interconnect_0_id_router_001_default_decode
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 1 
    )
-  (output [54 - 52 : 0] default_destination_id,
-   output [6-1 : 0] default_wr_channel,
-   output [6-1 : 0] default_rd_channel,
-   output [6-1 : 0] default_src_channel
+  (output [55 - 53 : 0] default_destination_id,
+   output [7-1 : 0] default_wr_channel,
+   output [7-1 : 0] default_rd_channel,
+   output [7-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[54 - 52 : 0];
+    DEFAULT_DESTID[55 - 53 : 0];
 
   generate begin : default_decode
     if (DEFAULT_CHANNEL == -1) begin
       assign default_src_channel = '0;
     end
     else begin
-      assign default_src_channel = 6'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 7'b1 << DEFAULT_CHANNEL;
     end
   end
   endgenerate
@@ -74,8 +74,8 @@ module proc_mm_interconnect_0_id_router_001_default_decode
       assign default_rd_channel = '0;
     end
     else begin
-      assign default_wr_channel = 6'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 6'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 7'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 7'b1 << DEFAULT_RD_CHANNEL;
     end
   end
   endgenerate
@@ -95,7 +95,7 @@ module proc_mm_interconnect_0_id_router_001
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [68-1 : 0]    sink_data,
+    input  [69-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -104,8 +104,8 @@ module proc_mm_interconnect_0_id_router_001
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [68-1    : 0] src_data,
-    output reg [6-1 : 0] src_channel,
+    output reg [69-1    : 0] src_data,
+    output reg [7-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -114,18 +114,18 @@ module proc_mm_interconnect_0_id_router_001
     // -------------------------------------------------------
     // Local parameters and variables
     // -------------------------------------------------------
-    localparam PKT_ADDR_H = 27;
+    localparam PKT_ADDR_H = 28;
     localparam PKT_ADDR_L = 9;
-    localparam PKT_DEST_ID_H = 54;
-    localparam PKT_DEST_ID_L = 52;
-    localparam PKT_PROTECTION_H = 58;
-    localparam PKT_PROTECTION_L = 56;
-    localparam ST_DATA_W = 68;
-    localparam ST_CHANNEL_W = 6;
+    localparam PKT_DEST_ID_H = 55;
+    localparam PKT_DEST_ID_L = 53;
+    localparam PKT_PROTECTION_H = 59;
+    localparam PKT_PROTECTION_L = 57;
+    localparam ST_DATA_W = 69;
+    localparam ST_CHANNEL_W = 7;
     localparam DECODER_TYPE = 1;
 
-    localparam PKT_TRANS_WRITE = 30;
-    localparam PKT_TRANS_READ  = 31;
+    localparam PKT_TRANS_WRITE = 31;
+    localparam PKT_TRANS_READ  = 32;
 
     localparam PKT_ADDR_W = PKT_ADDR_H-PKT_ADDR_L + 1;
     localparam PKT_DEST_ID_W = PKT_DEST_ID_H-PKT_DEST_ID_L + 1;
@@ -160,7 +160,7 @@ module proc_mm_interconnect_0_id_router_001
     assign src_valid         = sink_valid;
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
-    wire [6-1 : 0] default_src_channel;
+    wire [7-1 : 0] default_src_channel;
 
 
 
@@ -192,11 +192,11 @@ module proc_mm_interconnect_0_id_router_001
 
 
         if (destid == 1  && read_transaction) begin
-            src_channel = 6'b01;
+            src_channel = 7'b01;
         end
 
         if (destid == 0 ) begin
-            src_channel = 6'b10;
+            src_channel = 7'b10;
         end
 
 

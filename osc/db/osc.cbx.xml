@@ -1,34 +1,46 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="osc">
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare1:inst5|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare2:inst57|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare3:inst254|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_raj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_counter1:inst55|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_jmj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_counter3:inst251|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_n6i.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare1:inst68|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare1:inst200|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_counter1:inst43|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_jmj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_compare5:inst|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_dfj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_compare8:inst49|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_5ej.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|osc|proc:inst|proc_PROC:proc|proc_PROC_nios2_oci:the_proc_PROC_nios2_oci|proc_PROC_nios2_ocimem:the_proc_PROC_nios2_ocimem|proc_PROC_ociram_sp_ram_module:proc_PROC_ociram_sp_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_b481.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_counter1:inst4|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_jmj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_counter3:inst253|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_n6i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare2:inst201|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|osc|proc:inst|proc_ONCHIP_mem:onchip_mem|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_el91.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare1:inst44|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare2:inst69|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare2:inst7|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_counter1:inst67|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_jmj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare1:inst5|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare2:inst57|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare3:inst254|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_raj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_counter1:inst55|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_jmj.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|osc|proc:inst|proc_PROC:proc|proc_PROC_register_bank_a_module:proc_PROC_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_otf1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare3:inst232|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_raj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare1:inst68|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_counter3:inst270|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_n6i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_compare6:inst47|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_dcj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_counter1:inst4|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_jmj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_counter3:inst271|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_n6i.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare0:inst3|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_kfj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare1:inst200|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare2:inst45|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare3:inst233|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_raj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_counter1:inst43|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_jmj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_counter3:inst230|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_n6i.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|osc|proc:inst|proc_PROC:proc|proc_PROC_register_bank_b_module:proc_PROC_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_ptf1.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare1:inst56|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare3:inst252|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_raj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_counter1:inst79|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_jmj.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_counter3:inst231|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_n6i.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_compare2:inst201|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_counter4:VRAM_CLOCK|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_j6i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare1:inst44|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare2:inst69|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare2:inst7|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_counter1:inst67|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_jmj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_counter3:inst272|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_n6i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_compare7:inst48|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_5ej.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare3:inst232|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_raj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_counter3:inst273|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_n6i.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|osc|lpm_counter0:inst2|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_s9j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_counter6:HORIZONTAL_COUNTER|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_clj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare2:inst45|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare3:inst233|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_raj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_compare4:inst45|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_dfj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_counter5:ROW_TRANSFER_COUNTER|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_3kj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_counter7:VERTICAL_COUNTER|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_8kj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare1:inst56|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_7cj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_compare3:inst252|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_raj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|keys:inst199|lpm_counter1:inst79|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_jmj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_compare9:inst50|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_5bj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_constant0:SRT_COL_START|lpm_constant:LPM_CONSTANT_component" CBX_FILE_NAME="lpm_constant_bh6.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|osc|vramctrl:inst198|lpm_mux0:ADDR_MUX|LPM_MUX:LPM_MUX_component" CBX_FILE_NAME="mux_k6e.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

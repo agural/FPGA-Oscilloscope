@@ -2,7 +2,7 @@ set_global_assignment -entity "proc" -library "proc" -name IP_TOOL_NAME "Qsys"
 set_global_assignment -entity "proc" -library "proc" -name IP_TOOL_VERSION "13.1"
 set_global_assignment -entity "proc" -library "proc" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "proc" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../proc.sopcinfo"]
-set_global_assignment -entity "proc" -library "proc" -name SLD_INFO "QSYS_NAME proc HAS_SOPCINFO 1 GENERATION_ID 1400055391"
+set_global_assignment -entity "proc" -library "proc" -name SLD_INFO "QSYS_NAME proc HAS_SOPCINFO 1 GENERATION_ID 1400398260"
 set_global_assignment -library "proc" -name MISC_FILE [file join $::quartus(qip_path) "../../proc.cmp"]
 set_global_assignment -library "proc" -name SLD_FILE [file join $::quartus(qip_path) "proc.regmap"]
 set_global_assignment -library "proc" -name SLD_FILE [file join $::quartus(qip_path) "proc.debuginfo"]
@@ -24,6 +24,7 @@ set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::qua
 set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_mm_interconnect_0_cmd_xbar_mux.sv"]
 set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_mm_interconnect_0_cmd_xbar_demux.sv"]
 set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_burst_adapter.sv"]
+set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_mm_interconnect_0_id_router_006.sv"]
 set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_mm_interconnect_0_id_router_001.sv"]
 set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_mm_interconnect_0_id_router.sv"]
 set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_mm_interconnect_0_addr_router.sv"]
@@ -32,6 +33,9 @@ set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::qua
 set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_agent.sv"]
 set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
 set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
+set_global_assignment -library "proc" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_VRAM_ctrl.v"]
+set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_tristate_controller_aggregator.sv"]
+set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_tristate_controller_translator.sv"]
 set_global_assignment -library "proc" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_key_input.v"]
 set_global_assignment -library "proc" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_sysid_qsys_0.v"]
 set_global_assignment -library "proc" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/proc_ONCHIP_mem.hex"]
@@ -42,8 +46,6 @@ set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::qua
 set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_PIN_share_arbiter.sv"]
 set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_PIN_share_pin_sharer.sv"]
 set_global_assignment -library "proc" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_ROM_ctrl.v"]
-set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_tristate_controller_aggregator.sv"]
-set_global_assignment -library "proc" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_tristate_controller_translator.sv"]
 set_global_assignment -library "proc" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_RAM_ctrl.v"]
 set_global_assignment -library "proc" -name SDC_FILE [file join $::quartus(qip_path) "submodules/proc_PROC.sdc"]
 set_global_assignment -library "proc" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/proc_PROC.v"]
@@ -83,6 +85,9 @@ set_global_assignment -entity "proc_mm_interconnect_0_cmd_xbar_demux" -library "
 set_global_assignment -entity "altera_merlin_burst_adapter" -library "proc" -name IP_TOOL_NAME "altera_merlin_burst_adapter"
 set_global_assignment -entity "altera_merlin_burst_adapter" -library "proc" -name IP_TOOL_VERSION "13.1"
 set_global_assignment -entity "altera_merlin_burst_adapter" -library "proc" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "proc_mm_interconnect_0_id_router_006" -library "proc" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "proc_mm_interconnect_0_id_router_006" -library "proc" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "proc_mm_interconnect_0_id_router_006" -library "proc" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -entity "proc_mm_interconnect_0_id_router_001" -library "proc" -name IP_TOOL_NAME "altera_merlin_router"
 set_global_assignment -entity "proc_mm_interconnect_0_id_router_001" -library "proc" -name IP_TOOL_VERSION "13.1"
 set_global_assignment -entity "proc_mm_interconnect_0_id_router_001" -library "proc" -name IP_TOOL_ENV "Qsys"
@@ -107,6 +112,15 @@ set_global_assignment -entity "altera_merlin_slave_translator" -library "proc" -
 set_global_assignment -entity "altera_merlin_master_translator" -library "proc" -name IP_TOOL_NAME "altera_merlin_master_translator"
 set_global_assignment -entity "altera_merlin_master_translator" -library "proc" -name IP_TOOL_VERSION "13.1"
 set_global_assignment -entity "altera_merlin_master_translator" -library "proc" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "proc_VRAM_ctrl" -library "proc" -name IP_TOOL_NAME "altera_generic_tristate_controller"
+set_global_assignment -entity "proc_VRAM_ctrl" -library "proc" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "proc_VRAM_ctrl" -library "proc" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_tristate_controller_aggregator" -library "proc" -name IP_TOOL_NAME "altera_tristate_controller_aggregator"
+set_global_assignment -entity "altera_tristate_controller_aggregator" -library "proc" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "altera_tristate_controller_aggregator" -library "proc" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_tristate_controller_translator" -library "proc" -name IP_TOOL_NAME "altera_tristate_controller_translator"
+set_global_assignment -entity "altera_tristate_controller_translator" -library "proc" -name IP_TOOL_VERSION "13.1"
+set_global_assignment -entity "altera_tristate_controller_translator" -library "proc" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -entity "proc_key_input" -library "proc" -name IP_TOOL_NAME "altera_avalon_pio"
 set_global_assignment -entity "proc_key_input" -library "proc" -name IP_TOOL_VERSION "13.1"
 set_global_assignment -entity "proc_key_input" -library "proc" -name IP_TOOL_ENV "Qsys"
@@ -131,12 +145,6 @@ set_global_assignment -entity "proc_PIN_share_pin_sharer" -library "proc" -name 
 set_global_assignment -entity "proc_ROM_ctrl" -library "proc" -name IP_TOOL_NAME "altera_generic_tristate_controller"
 set_global_assignment -entity "proc_ROM_ctrl" -library "proc" -name IP_TOOL_VERSION "13.1"
 set_global_assignment -entity "proc_ROM_ctrl" -library "proc" -name IP_TOOL_ENV "Qsys"
-set_global_assignment -entity "altera_tristate_controller_aggregator" -library "proc" -name IP_TOOL_NAME "altera_tristate_controller_aggregator"
-set_global_assignment -entity "altera_tristate_controller_aggregator" -library "proc" -name IP_TOOL_VERSION "13.1"
-set_global_assignment -entity "altera_tristate_controller_aggregator" -library "proc" -name IP_TOOL_ENV "Qsys"
-set_global_assignment -entity "altera_tristate_controller_translator" -library "proc" -name IP_TOOL_NAME "altera_tristate_controller_translator"
-set_global_assignment -entity "altera_tristate_controller_translator" -library "proc" -name IP_TOOL_VERSION "13.1"
-set_global_assignment -entity "altera_tristate_controller_translator" -library "proc" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -entity "proc_RAM_ctrl" -library "proc" -name IP_TOOL_NAME "altera_generic_tristate_controller"
 set_global_assignment -entity "proc_RAM_ctrl" -library "proc" -name IP_TOOL_VERSION "13.1"
 set_global_assignment -entity "proc_RAM_ctrl" -library "proc" -name IP_TOOL_ENV "Qsys"

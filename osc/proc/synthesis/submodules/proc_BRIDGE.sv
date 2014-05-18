@@ -28,12 +28,16 @@ module proc_BRIDGE (
     ,input  logic reset
     ,input  logic request
     ,output logic grant
-    ,input  logic[ 15 :0 ] tcs_address
-    ,output  wire [ 15 :0 ] address
-    ,output logic[ 7 :0 ] tcs_data_in
-    ,input  logic[ 7 :0 ] tcs_data
+    ,input  logic[ 17 :0 ] tcs_address
+    ,output  wire [ 17 :0 ] address
+    ,output logic[ 0 :0 ] tcs_VRAM_ctrl_tcm_waitrequest_in
+    ,input  logic[ 0 :0 ] VRAM_ctrl_tcm_waitrequest_in
+    ,input  logic[ 0 :0 ] tcs_VRAM_ctrl_tcm_chipselect_n_out
+    ,output  wire [ 0 :0 ] VRAM_ctrl_tcm_chipselect_n_out
+    ,output logic[ 15 :0 ] tcs_data_in
+    ,input  logic[ 15 :0 ] tcs_data
     ,input  logic tcs_data_outen
-    ,inout  wire [ 7 :0 ]  data
+    ,inout  wire [ 15 :0 ]  data
     ,input  logic[ 0 :0 ] tcs_ROM_ctrl_tcm_chipselect_n_out
     ,output  wire [ 0 :0 ] ROM_ctrl_tcm_chipselect_n_out
     ,input  logic[ 0 :0 ] tcs_RAM_ctrl_tcm_chipselect_n_out
@@ -68,14 +72,52 @@ module proc_BRIDGE (
      end		     
    
  
-    reg [ 15 : 0 ] address_reg;   
+    reg [ 17 : 0 ] address_reg;   
 
      always@(posedge clk) begin
-	 address_reg   <= tcs_address[ 15 : 0 ];
+	 address_reg   <= tcs_address[ 17 : 0 ];
       end
           
  
-    assign 	address[ 15 : 0 ] = addressen_reg ? address_reg : 'z ;
+    assign 	address[ 17 : 0 ] = addressen_reg ? address_reg : 'z ;
+        
+
+
+ // ** Input Pin VRAM_ctrl_tcm_waitrequest_in 
+ 
+    reg [ 0 : 0 ] 	VRAM_ctrl_tcm_waitrequest_in_reg;
+								    
+    always@(posedge clk) begin
+	 VRAM_ctrl_tcm_waitrequest_in_reg <= VRAM_ctrl_tcm_waitrequest_in;
+    end
+           
+ 
+    assign      tcs_VRAM_ctrl_tcm_waitrequest_in[ 0 : 0 ] = VRAM_ctrl_tcm_waitrequest_in_reg[ 0 : 0 ];
+         
+
+
+ // ** Output Pin VRAM_ctrl_tcm_chipselect_n_out 
+ 
+    reg                       VRAM_ctrl_tcm_chipselect_n_outen_reg;     
+  
+    always@(posedge clk) begin
+	 if( reset ) begin
+	   VRAM_ctrl_tcm_chipselect_n_outen_reg <= 'b0;
+	 end
+	 else begin
+	   VRAM_ctrl_tcm_chipselect_n_outen_reg <= 'b1;
+	 end
+     end		     
+   
+ 
+    reg [ 0 : 0 ] VRAM_ctrl_tcm_chipselect_n_out_reg;   
+
+     always@(posedge clk) begin
+	 VRAM_ctrl_tcm_chipselect_n_out_reg   <= tcs_VRAM_ctrl_tcm_chipselect_n_out[ 0 : 0 ];
+      end
+          
+ 
+    assign 	VRAM_ctrl_tcm_chipselect_n_out[ 0 : 0 ] = VRAM_ctrl_tcm_chipselect_n_outen_reg ? VRAM_ctrl_tcm_chipselect_n_out_reg : 'z ;
         
 
 
@@ -88,24 +130,24 @@ module proc_BRIDGE (
      end
   
   
-    reg [ 7 : 0 ] data_reg;   
+    reg [ 15 : 0 ] data_reg;   
 
      always@(posedge clk) begin
-	 data_reg   <= tcs_data[ 7 : 0 ];
+	 data_reg   <= tcs_data[ 15 : 0 ];
       end
          
   
-    assign 	data[ 7 : 0 ] = data_outen_reg ? data_reg : 'z ;
+    assign 	data[ 15 : 0 ] = data_outen_reg ? data_reg : 'z ;
        
   
-    reg [ 7 : 0 ] 	data_in_reg;
+    reg [ 15 : 0 ] 	data_in_reg;
 								    
     always@(posedge clk) begin
-	 data_in_reg <= data[ 7 : 0 ];
+	 data_in_reg <= data[ 15 : 0 ];
     end
     
   
-    assign      tcs_data_in[ 7 : 0 ] = data_in_reg[ 7 : 0 ];
+    assign      tcs_data_in[ 15 : 0 ] = data_in_reg[ 15 : 0 ];
         
 
 

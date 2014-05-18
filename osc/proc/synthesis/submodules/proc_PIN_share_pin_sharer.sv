@@ -25,15 +25,32 @@ module proc_PIN_share_pin_sharer (
 
  // *** Arbiter Grant Interface
    ,output logic ack
-   ,input  logic [ 2 - 1 : 0 ] next_grant
+   ,input  logic [ 3 - 1 : 0 ] next_grant
 
 // *** Arbiter Request Interface
 
+    ,output logic arb_VRAM_ctrl_tcm 
     ,output logic arb_ROM_ctrl_tcm 
     ,output logic arb_RAM_ctrl_tcm 
 		
 		     // ** Avalon TC Slave Interfaces
 
+
+
+
+  // Slave Interface tcs2
+
+    ,input  logic tcs2_request 
+    ,output logic tcs2_grant   
+
+  //VRAM_ctrl.tcm signals
+    ,input  logic[ 17 :0 ] tcs2_tcm_address_out
+    ,output logic[ 0 :0 ] tcs2_tcm_waitrequest_in
+    ,input  logic[ 0 :0 ] tcs2_tcm_write_n_out
+    ,output logic[ 15 :0 ]  tcs2_tcm_data_in
+    ,input  logic[ 15 :0 ]  tcs2_tcm_data_out
+    ,input  logic tcs2_tcm_data_outen
+    ,input  logic[ 0 :0 ] tcs2_tcm_chipselect_n_out
 
 
 
@@ -71,45 +88,49 @@ module proc_PIN_share_pin_sharer (
 
 		     // *** Passthrough Signals
 		     
+    ,input   logic[ 0 :0 ] VRAM_ctrl_tcm_waitrequest_in
+    ,output  logic[ 0 :0 ] VRAM_ctrl_tcm_chipselect_n_out
     ,output  logic[ 0 :0 ] ROM_ctrl_tcm_chipselect_n_out
     ,output  logic[ 0 :0 ] RAM_ctrl_tcm_chipselect_n_out
 		     
                      // *** Shared Signals
 		      	     
-    ,output  logic[ 15 :0 ] address
-    ,input   logic[ 7  :0 ]  data_in
-    ,output  logic[ 7  :0 ]  data
+    ,output  logic[ 17 :0 ] address
+    ,input   logic[ 15  :0 ]  data_in
+    ,output  logic[ 15  :0 ]  data
     ,output  logic data_outen
     ,output  logic[ 0 :0 ] r_w
 
 		     );
 
-   function [2-1:0] getIndex;
+   function [3-1:0] getIndex;
       
-      input [2-1:0] select;
+      input [3-1:0] select;
       
       getIndex = 'h0;
       
-      for(int i=0; i < 2; i = i + 1) begin
+      for(int i=0; i < 3; i = i + 1) begin
 	 if( select[i] == 1'b1 )
            getIndex = i;
       end
       
    endfunction // getIndex
 
-   logic[ 2 - 1 : 0 ] selected_grant;
+   logic[ 3 - 1 : 0 ] selected_grant;
 
 
    // Request Assignments
 
+    assign arb_VRAM_ctrl_tcm = tcs2_request;
     assign arb_ROM_ctrl_tcm = tcs1_request;
     assign arb_RAM_ctrl_tcm = tcs0_request;
    
-   logic [ 2 - 1 : 0 ] concated_incoming_requests;
+   logic [ 3 - 1 : 0 ] concated_incoming_requests;
    
    
    assign 			      concated_incoming_requests = {						    
-         tcs1_request 
+         tcs2_request 
+        ,tcs1_request 
         ,tcs0_request 
 				};
    
@@ -117,6 +138,7 @@ module proc_PIN_share_pin_sharer (
    assign 			      request = | concated_incoming_requests;
   assign        tcs0_grant = selected_grant[0];
   assign        tcs1_grant = selected_grant[1];
+  assign        tcs2_grant = selected_grant[2];
 
    
     // Perform Grant Selection						  
@@ -143,50 +165,61 @@ module proc_PIN_share_pin_sharer (
 
 // Passthrough Signals
 
+    assign tcs2_tcm_waitrequest_in = VRAM_ctrl_tcm_waitrequest_in;
+    assign VRAM_ctrl_tcm_chipselect_n_out = tcs2_tcm_chipselect_n_out;
     assign ROM_ctrl_tcm_chipselect_n_out = tcs1_tcm_chipselect_n_out;
     assign RAM_ctrl_tcm_chipselect_n_out = tcs0_tcm_chipselect_n_out;
   
 // Renamed Signals
   
 // Shared Signals
-  proc_PIN_share_pin_sharer_multiplexor_2 #(.WIDTH(16) )
+  proc_PIN_share_pin_sharer_multiplexor_3 #(.WIDTH(18) )
     address_mux (
                               {
-                                tcs1_grant
+                                tcs2_grant
+                               ,tcs1_grant
                                ,tcs0_grant
                               }
-                              ,tcs1_tcm_address_out
-                              ,tcs0_tcm_address_out
+                              ,tcs2_tcm_address_out
+                              ,{2'h0,tcs1_tcm_address_out}
+                              ,{2'h0,tcs0_tcm_address_out}
                               , address
                              );
   assign tcs0_tcm_data_in = data_in[7:0]; 
+  assign tcs2_tcm_data_in = data_in[15:0]; 
   assign tcs1_tcm_data_in = data_in[7:0]; 
-  proc_PIN_share_pin_sharer_multiplexor_2 #(.WIDTH(1) )
+  proc_PIN_share_pin_sharer_multiplexor_3 #(.WIDTH(1) )
     data_outen_mux (
                               {
-                                tcs1_grant
+                                tcs2_grant
+                               ,tcs1_grant
                                ,tcs0_grant
                               }
+                              ,tcs2_tcm_data_outen
                               ,tcs1_tcm_data_outen
                               ,tcs0_tcm_data_outen
                               , data_outen
                              );
-  proc_PIN_share_pin_sharer_multiplexor_2 #(.WIDTH(8) )
+  proc_PIN_share_pin_sharer_multiplexor_3 #(.WIDTH(16) )
     data_mux (
                               {
-                                tcs1_grant
+                                tcs2_grant
+                               ,tcs1_grant
                                ,tcs0_grant
                               }
-                              ,tcs1_tcm_data_out
-                              ,tcs0_tcm_data_out
+                              ,tcs2_tcm_data_out
+                              ,{8'h0,tcs1_tcm_data_out}
+                              ,{8'h0,tcs0_tcm_data_out}
                               , data
                              );
-  proc_PIN_share_pin_sharer_multiplexor_2 #(.WIDTH(1) )
+  proc_PIN_share_pin_sharer_multiplexor_3 #(.WIDTH(1) )
     r_w_mux (
                               {
-                                tcs1_grant
+                                tcs2_grant
+                               ,tcs1_grant
                                ,tcs0_grant
                               }
+                              ,tcs2_tcm_write_n_out
                               ,tcs1_tcm_write_n_out
                               ,tcs0_tcm_write_n_out
                               , r_w
@@ -196,23 +229,24 @@ endmodule
 					    
 
   
-module proc_PIN_share_pin_sharer_multiplexor_2
+module proc_PIN_share_pin_sharer_multiplexor_3
   #( parameter WIDTH      = 8
     ) (
-    input logic  [ 2 -1 : 0]                       SelectVector,
+    input logic  [ 3 -1 : 0]                       SelectVector,
+    input logic  [ WIDTH - 1 : 0 ]                Input_2,
     input logic  [ WIDTH - 1 : 0 ]                Input_1,
     input logic  [ WIDTH - 1 : 0 ]                Input_0,
     output logic [ WIDTH - 1 : 0 ]                OutputSignal
        );
 
 
-function [2-1:0] getIndex;
+function [3-1:0] getIndex;
       
-    input [2-1:0] select;
+    input [3-1:0] select;
    
     getIndex = 'h0;
     
-    for(int i=0; i < 2; i = i + 1) begin
+    for(int i=0; i < 3; i = i + 1) begin
       if( select[i] == 1'b1 )
         getIndex = i;
     end
@@ -224,6 +258,7 @@ endfunction
        default: OutputSignal = Input_0;
        0 : OutputSignal = Input_0;									   
        1 : OutputSignal = Input_1;									   
+       2 : OutputSignal = Input_2;									   
      endcase
    end
    

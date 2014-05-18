@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Tue May 06 19:44:11 PDT 2014
+ * Generated: Sat May 17 19:35:38 PDT 2014
  */
 
 /*
@@ -50,16 +50,18 @@
 
 MEMORY
 {
-    RAM_ctrl : ORIGIN = 0x20000, LENGTH = 65536
-    ROM_ctrl : ORIGIN = 0x30000, LENGTH = 65536
-    reset : ORIGIN = 0x48000, LENGTH = 32
-    ONCHIP_mem : ORIGIN = 0x48020, LENGTH = 32736
+    VRAM_ctrl : ORIGIN = 0x40000, LENGTH = 262144
+    RAM_ctrl : ORIGIN = 0xa0000, LENGTH = 65536
+    ROM_ctrl : ORIGIN = 0xb0000, LENGTH = 65536
+    reset : ORIGIN = 0xc8000, LENGTH = 32
+    ONCHIP_mem : ORIGIN = 0xc8020, LENGTH = 32736
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_RAM_ctrl = 0x20000;
-__alt_mem_ROM_ctrl = 0x30000;
-__alt_mem_ONCHIP_mem = 0x48000;
+__alt_mem_VRAM_ctrl = 0x40000;
+__alt_mem_RAM_ctrl = 0xa0000;
+__alt_mem_ROM_ctrl = 0xb0000;
+__alt_mem_ONCHIP_mem = 0xc8000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -278,6 +280,16 @@ SECTIONS
      *
      */
 
+    .VRAM_ctrl :
+    {
+        PROVIDE (_alt_partition_VRAM_ctrl_start = ABSOLUTE(.));
+        *(.VRAM_ctrl .VRAM_ctrl. VRAM_ctrl.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_VRAM_ctrl_end = ABSOLUTE(.));
+    } > VRAM_ctrl
+
+    PROVIDE (_alt_partition_VRAM_ctrl_load_addr = LOADADDR(.VRAM_ctrl));
+
     .RAM_ctrl :
     {
         PROVIDE (_alt_partition_RAM_ctrl_start = ABSOLUTE(.));
@@ -358,7 +370,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x30000;
+__alt_data_end = 0xb0000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -374,4 +386,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x30000 );
+PROVIDE( __alt_heap_limit    = 0xb0000 );

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 14, 2014 3:44:12 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1400064252862</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>May 18, 2014 12:40:13 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1400398813151</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\software\osc_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\proc.sopcinfo</SopcDesignFile>
@@ -839,32 +839,38 @@
                 <Group>none</Group>
         </Setting>
         <MemoryMap>
+                <slaveDescriptor>VRAM_ctrl</slaveDescriptor>
+                <addressRange>0x00040000 - 0x0007FFFF</addressRange>
+                <addressSpan>262144</addressSpan>
+                <attributes>memory</attributes>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>RAM_ctrl</slaveDescriptor>
-                <addressRange>0x00020000 - 0x0002FFFF</addressRange>
+                <addressRange>0x000A0000 - 0x000AFFFF</addressRange>
                 <addressSpan>65536</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ROM_ctrl</slaveDescriptor>
-                <addressRange>0x00030000 - 0x0003FFFF</addressRange>
+                <addressRange>0x000B0000 - 0x000BFFFF</addressRange>
                 <addressSpan>65536</addressSpan>
                 <attributes>flash, memory, non-volatile</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ONCHIP_mem</slaveDescriptor>
-                <addressRange>0x00048000 - 0x0004FFFF</addressRange>
+                <addressRange>0x000C8000 - 0x000CFFFF</addressRange>
                 <addressSpan>32768</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>key_input</slaveDescriptor>
-                <addressRange>0x00051010 - 0x0005101F</addressRange>
+                <addressRange>0x000D1010 - 0x000D101F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
-                <addressRange>0x00051028 - 0x0005102F</addressRange>
+                <addressRange>0x000D1028 - 0x000D102F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>

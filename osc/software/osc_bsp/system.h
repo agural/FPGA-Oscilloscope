@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Wed May 14 03:19:57 PDT 2014
+ * Generated: Sun May 18 00:40:13 PDT 2014
  */
 
 /*
@@ -62,16 +62,16 @@
 
 #define ALT_CPU_ARCHITECTURE "altera_nios2_qsys"
 #define ALT_CPU_BIG_ENDIAN 0
-#define ALT_CPU_BREAK_ADDR 0x00050820
+#define ALT_CPU_BREAK_ADDR 0x000d0820
 #define ALT_CPU_CPU_FREQ 36000000u
 #define ALT_CPU_CPU_ID_SIZE 1
 #define ALT_CPU_CPU_ID_VALUE 0x00000000
 #define ALT_CPU_CPU_IMPLEMENTATION "tiny"
-#define ALT_CPU_DATA_ADDR_WIDTH 0x13
+#define ALT_CPU_DATA_ADDR_WIDTH 0x14
 #define ALT_CPU_DCACHE_LINE_SIZE 0
 #define ALT_CPU_DCACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_DCACHE_SIZE 0
-#define ALT_CPU_EXCEPTION_ADDR 0x00048020
+#define ALT_CPU_EXCEPTION_ADDR 0x000c8020
 #define ALT_CPU_FLUSHDA_SUPPORTED
 #define ALT_CPU_FREQ 36000000
 #define ALT_CPU_HARDWARE_DIVIDE_PRESENT 0
@@ -83,9 +83,9 @@
 #define ALT_CPU_ICACHE_LINE_SIZE 0
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_ICACHE_SIZE 0
-#define ALT_CPU_INST_ADDR_WIDTH 0x13
+#define ALT_CPU_INST_ADDR_WIDTH 0x14
 #define ALT_CPU_NAME "PROC"
-#define ALT_CPU_RESET_ADDR 0x00048000
+#define ALT_CPU_RESET_ADDR 0x000c8000
 
 
 /*
@@ -94,16 +94,16 @@
  */
 
 #define NIOS2_BIG_ENDIAN 0
-#define NIOS2_BREAK_ADDR 0x00050820
+#define NIOS2_BREAK_ADDR 0x000d0820
 #define NIOS2_CPU_FREQ 36000000u
 #define NIOS2_CPU_ID_SIZE 1
 #define NIOS2_CPU_ID_VALUE 0x00000000
 #define NIOS2_CPU_IMPLEMENTATION "tiny"
-#define NIOS2_DATA_ADDR_WIDTH 0x13
+#define NIOS2_DATA_ADDR_WIDTH 0x14
 #define NIOS2_DCACHE_LINE_SIZE 0
 #define NIOS2_DCACHE_LINE_SIZE_LOG2 0
 #define NIOS2_DCACHE_SIZE 0
-#define NIOS2_EXCEPTION_ADDR 0x00048020
+#define NIOS2_EXCEPTION_ADDR 0x000c8020
 #define NIOS2_FLUSHDA_SUPPORTED
 #define NIOS2_HARDWARE_DIVIDE_PRESENT 0
 #define NIOS2_HARDWARE_MULTIPLY_PRESENT 0
@@ -114,8 +114,8 @@
 #define NIOS2_ICACHE_LINE_SIZE 0
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 0
 #define NIOS2_ICACHE_SIZE 0
-#define NIOS2_INST_ADDR_WIDTH 0x13
-#define NIOS2_RESET_ADDR 0x00048000
+#define NIOS2_INST_ADDR_WIDTH 0x14
+#define NIOS2_RESET_ADDR 0x000c8000
 
 
 /*
@@ -138,7 +138,7 @@
 #define ALT_MODULE_CLASS_ONCHIP_mem altera_avalon_onchip_memory2
 #define ONCHIP_MEM_ALLOW_IN_SYSTEM_MEMORY_CONTENT_EDITOR 0
 #define ONCHIP_MEM_ALLOW_MRAM_SIM_CONTENTS_ONLY_FILE 0
-#define ONCHIP_MEM_BASE 0x48000
+#define ONCHIP_MEM_BASE 0xc8000
 #define ONCHIP_MEM_CONTENTS_INFO ""
 #define ONCHIP_MEM_DUAL_PORT 0
 #define ONCHIP_MEM_GUI_RAM_BLOCK_TYPE "AUTO"
@@ -165,7 +165,7 @@
  */
 
 #define ALT_MODULE_CLASS_RAM_ctrl altera_generic_tristate_controller
-#define RAM_CTRL_BASE 0x20000
+#define RAM_CTRL_BASE 0xa0000
 #define RAM_CTRL_IRQ -1
 #define RAM_CTRL_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define RAM_CTRL_NAME "/dev/RAM_ctrl"
@@ -180,7 +180,7 @@
  */
 
 #define ALT_MODULE_CLASS_ROM_ctrl altera_generic_tristate_controller
-#define ROM_CTRL_BASE 0x30000
+#define ROM_CTRL_BASE 0xb0000
 #define ROM_CTRL_IRQ -1
 #define ROM_CTRL_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define ROM_CTRL_NAME "/dev/ROM_ctrl"
@@ -220,6 +220,20 @@
 
 
 /*
+ * VRAM_ctrl configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_VRAM_ctrl altera_generic_tristate_controller
+#define VRAM_CTRL_BASE 0x40000
+#define VRAM_CTRL_IRQ -1
+#define VRAM_CTRL_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define VRAM_CTRL_NAME "/dev/VRAM_ctrl"
+#define VRAM_CTRL_SPAN 262144
+#define VRAM_CTRL_TYPE "altera_generic_tristate_controller"
+
+
+/*
  * hal configuration
  *
  */
@@ -235,7 +249,7 @@
  */
 
 #define ALT_MODULE_CLASS_key_input altera_avalon_pio
-#define KEY_INPUT_BASE 0x51010
+#define KEY_INPUT_BASE 0xd1010
 #define KEY_INPUT_BIT_CLEARING_EDGE_REGISTER 1
 #define KEY_INPUT_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define KEY_INPUT_CAPTURE 1
@@ -262,13 +276,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x51028
+#define SYSID_QSYS_0_BASE 0xd1028
 #define SYSID_QSYS_0_ID -1431655766
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1400055391
+#define SYSID_QSYS_0_TIMESTAMP 1400398260
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

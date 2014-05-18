@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="175" />
+   <connections preferredWidth="191" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
@@ -14,8 +14,8 @@
    <frequency preferredWidth="164" />
   </columns>
  </clocktable>
- <window width="1920" height="1170" x="0" y="0" />
+ <window width="1936" height="1216" x="1912" y="-8" />
  <library
-   expandedCategories="Library/Peripherals,Library,Library/Peripherals/Microcontroller Peripherals,Project" />
+   expandedCategories="Library/Qsys Interconnect/Tri-State Components,Project,Library/Qsys Interconnect,Library" />
  <generation simulation="NONE" synthesis="VHDL" />
 </preferences>

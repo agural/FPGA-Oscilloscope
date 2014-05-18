@@ -3,7 +3,7 @@
 # Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
 # SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
 #
-# Generated: Tue May 06 18:40:13 PDT 2014
+# Generated: Sat May 17 19:35:38 PDT 2014
 
 # DO NOT MODIFY THIS FILE
 #
@@ -46,11 +46,14 @@
 # The cache attribute is specified which improves GDB performance
 # by allowing GDB to cache memory contents on the host.
 
+# VRAM_ctrl
+memory 0x40000 0x80000 cache
+
 # RAM_ctrl
-memory 0x20000 0x30000 cache
+memory 0xa0000 0xb0000 cache
 
 # ROM_ctrl
-memory 0x30000 0x40000 cache
+memory 0xb0000 0xc0000 cache
 
 # ONCHIP_mem
-memory 0x48000 0x50000 cache
+memory 0xc8000 0xd0000 cache

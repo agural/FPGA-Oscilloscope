@@ -119,54 +119,120 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[4]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[1]
-set_location_assignment PIN_240 -to gen_pb_0
-set_location_assignment PIN_160 -to debug_pin
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug_pin
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_0
-set_global_assignment -name QIP_FILE output_files/lpm_counter3.qip
-set_global_assignment -name QIP_FILE proc/synthesis/proc.qip
-set_global_assignment -name BDF_FILE osc.bdf
-set_global_assignment -name CDF_FILE output_files/Chain1.cdf
-set_global_assignment -name QIP_FILE lpm_counter0.qip
-set_global_assignment -name QIP_FILE lpm_compare0.qip
-set_global_assignment -name QIP_FILE lpm_counter1.qip
-set_global_assignment -name QIP_FILE lpm_compare1.qip
-set_global_assignment -name QIP_FILE lpm_compare2.qip
-set_global_assignment -name QIP_FILE lpm_counter2.qip
-set_global_assignment -name QIP_FILE lpm_compare3.qip
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_1
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_2
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_3
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_4
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_5
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_A0
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_A1
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_A2
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_A3
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_A4
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_B0
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_B1
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_B2
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_B3
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rot_enc_B4
-set_location_assignment PIN_234 -to gen_pb_1
-set_location_assignment PIN_235 -to gen_pb_2
-set_location_assignment PIN_236 -to gen_pb_3
-set_location_assignment PIN_237 -to gen_pb_4
-set_location_assignment PIN_238 -to gen_pb_5
-set_location_assignment PIN_38 -to rot_enc_A0
-set_location_assignment PIN_41 -to rot_enc_A1
-set_location_assignment PIN_44 -to rot_enc_A2
-set_location_assignment PIN_46 -to rot_enc_A3
-set_location_assignment PIN_50 -to rot_enc_A4
-set_location_assignment PIN_39 -to rot_enc_B0
-set_location_assignment PIN_43 -to rot_enc_B1
-set_location_assignment PIN_45 -to rot_enc_B2
-set_location_assignment PIN_49 -to rot_enc_B3
-set_location_assignment PIN_51 -to rot_enc_B4
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to gen_pb_6
-set_location_assignment PIN_239 -to gen_pb_6
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EDA_DESIGN_ENTRY_SYNTHESIS_TOOL "<None>"
+set_global_assignment -name EDA_INPUT_DATA_FORMAT EDIF -section_id eda_design_synthesis
+set_global_assignment -name VHDL_FILE vramstates.vhd
+set_global_assignment -name QIP_FILE lpm_mux0.qip
+set_global_assignment -name QIP_FILE lpm_counter2.qip
+set_global_assignment -name QIP_FILE lpm_counter1.qip
+set_global_assignment -name QIP_FILE lpm_constant2.qip
+set_global_assignment -name QIP_FILE lpm_constant1.qip
+set_global_assignment -name QIP_FILE lpm_constant0.qip
+set_global_assignment -name QIP_FILE lpm_compare3.qip
+set_global_assignment -name QIP_FILE lpm_compare2.qip
+set_global_assignment -name QIP_FILE lpm_compare1.qip
+set_global_assignment -name BSF_FILE vramctrl.bsf
+set_global_assignment -name BSF_FILE keys.bsf
+set_global_assignment -name QIP_FILE proc/synthesis/proc.qip
+set_global_assignment -name BDF_FILE osc.bdf
+set_global_assignment -name QIP_FILE lpm_counter0.qip
+set_global_assignment -name QIP_FILE lpm_compare0.qip
+set_global_assignment -name QIP_FILE lpm_counter3.qip
+set_global_assignment -name QIP_FILE lpm_counter4.qip
+set_global_assignment -name QIP_FILE lpm_counter5.qip
+set_global_assignment -name QIP_FILE lpm_counter6.qip
+set_global_assignment -name QIP_FILE lpm_counter7.qip
+set_global_assignment -name QIP_FILE lpm_compare4.qip
+set_global_assignment -name QIP_FILE lpm_compare5.qip
+set_global_assignment -name QIP_FILE lpm_compare6.qip
+set_global_assignment -name QIP_FILE lpm_compare7.qip
+set_global_assignment -name QIP_FILE lpm_compare8.qip
+set_global_assignment -name QIP_FILE lpm_compare9.qip
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to button_sw[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to button_sw[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to button_sw[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to button_sw[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to button_sw[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to button_sw[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to button_sw[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to cas
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to dclk
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to hsync
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ras
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rotary_sw[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rotary_sw[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rotary_sw[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rotary_sw[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rotary_sw[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rotary_sw[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rotary_sw[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rotary_sw[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rotary_sw[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rotary_sw[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sc
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to trg
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vramab[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vramab[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vramab[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vramab[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vramab[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vramab[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vramab[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vramab[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vramab[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to vsync
+set_location_assignment PIN_239 -to button_sw[6]
+set_location_assignment PIN_238 -to button_sw[5]
+set_location_assignment PIN_237 -to button_sw[4]
+set_location_assignment PIN_236 -to button_sw[3]
+set_location_assignment PIN_235 -to button_sw[2]
+set_location_assignment PIN_234 -to button_sw[1]
+set_location_assignment PIN_240 -to button_sw[0]
+set_location_assignment PIN_181 -to DB[15]
+set_location_assignment PIN_182 -to DB[14]
+set_location_assignment PIN_183 -to DB[13]
+set_location_assignment PIN_184 -to DB[12]
+set_location_assignment PIN_185 -to DB[11]
+set_location_assignment PIN_186 -to DB[10]
+set_location_assignment PIN_187 -to DB[9]
+set_location_assignment PIN_188 -to DB[8]
+set_location_assignment PIN_51 -to rotary_sw[9]
+set_location_assignment PIN_50 -to rotary_sw[8]
+set_location_assignment PIN_49 -to rotary_sw[7]
+set_location_assignment PIN_46 -to rotary_sw[6]
+set_location_assignment PIN_45 -to rotary_sw[5]
+set_location_assignment PIN_44 -to rotary_sw[4]
+set_location_assignment PIN_43 -to rotary_sw[3]
+set_location_assignment PIN_41 -to rotary_sw[2]
+set_location_assignment PIN_39 -to rotary_sw[1]
+set_location_assignment PIN_38 -to rotary_sw[0]
+set_location_assignment PIN_131 -to cas
+set_location_assignment PIN_142 -to dclk
+set_location_assignment PIN_139 -to hsync
+set_location_assignment PIN_132 -to ras
+set_location_assignment PIN_143 -to sc
+set_location_assignment PIN_133 -to trg
+set_location_assignment PIN_160 -to vramab[8]
+set_location_assignment PIN_161 -to vramab[7]
+set_location_assignment PIN_230 -to vramab[6]
+set_location_assignment PIN_231 -to vramab[5]
+set_location_assignment PIN_232 -to vramab[4]
+set_location_assignment PIN_233 -to vramab[3]
+set_location_assignment PIN_148 -to vramab[2]
+set_location_assignment PIN_147 -to vramab[1]
+set_location_assignment PIN_146 -to vramab[0]
+set_location_assignment PIN_137 -to vsync
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

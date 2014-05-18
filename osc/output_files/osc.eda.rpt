@@ -1,5 +1,5 @@
 EDA Netlist Writer report for osc
-Wed May 14 03:43:33 2014
+Sun May 18 00:39:10 2014
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed May 14 03:43:33 2014 ;
+; EDA Netlist Writer Status ; Successful - Sun May 18 00:39:10 2014 ;
 ; Revision Name             ; osc                                   ;
 ; Top-level Entity Name     ; osc                                   ;
 ; Family                    ; Cyclone III                           ;
@@ -88,7 +88,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Wed May 14 03:43:28 2014
+    Info: Processing started: Sun May 18 00:39:04 2014
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off osc -c osc
 Info (204019): Generated file osc_8_1200mv_85c_slow.vho in folder "C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file osc_8_1200mv_0c_slow.vho in folder "C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/simulation/modelsim/" for EDA simulation tool
@@ -99,9 +99,9 @@ Info (204019): Generated file osc_8_1200mv_0c_vhd_slow.sdo in folder "C:/Users/A
 Info (204019): Generated file osc_min_1200mv_0c_vhd_fast.sdo in folder "C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file osc_vhd.sdo in folder "C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 455 megabytes
-    Info: Processing ended: Wed May 14 03:43:33 2014
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 463 megabytes
+    Info: Processing ended: Sun May 18 00:39:10 2014
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 

@@ -27,7 +27,7 @@
 // ------------------------------------------
 // Generation parameters:
 //   output_name:         proc_PIN_share_arbiter
-//   NUM_REQUESTERS:      2
+//   NUM_REQUESTERS:      3
 //   SCHEME:              "round-robin"
 //   ST_DATA_W:           8
 //   ST_CHANNEL_W:        1
@@ -40,6 +40,7 @@ module proc_PIN_share_arbiter
     // --------------------------------------
     input                       sink0_valid,
     input                       sink1_valid,
+    input                       sink2_valid,
 
     // --------------------------------------
     // Clock/reset
@@ -50,11 +51,11 @@ module proc_PIN_share_arbiter
     // --------------------------------------
     // Grant source
     // --------------------------------------
-    output [2-1:0] next_grant,    // st source data
+    output [3-1:0] next_grant,    // st source data
     input                       ack            // st source ready
 );
 
-    localparam NUM_REQUESTERS = 2;
+    localparam NUM_REQUESTERS = 3;
     localparam SCHEME         = "round-robin";
     localparam ST_DATA_W      = 8;
     localparam ST_CHANNEL_W   = 1;
@@ -65,6 +66,7 @@ module proc_PIN_share_arbiter
 
     assign request[0] = sink0_valid;
     assign request[1] = sink1_valid;
+    assign request[2] = sink2_valid;
 
     altera_merlin_std_arbitrator_core
     #(
