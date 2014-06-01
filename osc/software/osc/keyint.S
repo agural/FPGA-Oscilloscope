@@ -74,6 +74,12 @@
 key_int_installer:
 	SAVE
 
+	# asdf
+	movia	r8, adc_speed
+	movi	r9, 0x78
+	stw		r9, (r8)
+	# asdf
+
 	# Enable all switch interrupts.
 	movhi	r8, %hi(KEY_INPUT_BASE)
 	ori		r8, r8, %lo(KEY_INPUT_BASE)
@@ -171,6 +177,14 @@ key_lookup:
 	movia	r10, key_value
 	stb		r8, (r10)
 
+	# Remove later!!!
+	movi	r12, 10
+	beq		r11, r12, inc_speed
+	movi	r12, 11
+	beq		r11, r12, dec_speed
+key_lookup_cont:
+	# <END Remove later!!!>
+
 	# Clear the edge capture register (write 1 to clear).
 	movhi	r8, %hi(KEY_INPUT_BASE)
 	ori		r8, r8, %lo(KEY_INPUT_BASE)
@@ -188,6 +202,40 @@ key_lookup:
 key_hndler_done:
 	RESTORE
 	ret
+
+# hashtag
+dec_speed:
+	movia	r13, adc_speed
+	ldw		r14, (r13)
+	slli	r14, r14, 1
+	MOVWI	r15, 0x00FFFFFF
+	and		r14, r14, r15
+	beq		r14, r0, set_speed_2
+dec_speed_cont:
+	MOVWI	r15, ADC_RATE_BASE
+	stw		r14, (r15)
+	stw		r14, (r13)
+	br		key_lookup_cont
+
+inc_speed:
+	movia	r13, adc_speed
+	ldwio	r14, (r13)
+	srli	r14, r14, 1
+	beq		r14, r0, set_speed_1
+inc_speed_cont:
+	MOVWI	r15, ADC_RATE_BASE
+	stwio	r14, (r15)
+	stwio	r14, (r13)
+	br		key_lookup_cont
+
+set_speed_1:
+	movi	r14, 1
+	br		inc_speed_cont
+
+set_speed_2:
+	MOVWI	r14, 0x00800000
+	br		dec_speed_cont
+# hashtag
 
 
 /*
@@ -365,4 +413,6 @@ key_map:	.byte	KEY_MENU
 
 key_press:	.byte	0		# Gives whether a key has been pressed.
 key_value:	.byte	0		# Gives the value of the pressed key.
+			.align	4
+adc_speed:	.word	0		# Gives compare value for ADC clock speed.
 

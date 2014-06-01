@@ -213,3 +213,14 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+
+#############
+## Quartus
+#############
+osc/db/*
+osc/proc/*
+osc/simulation/*
+osc/output_files/*
+osc/incremental_db/*
+

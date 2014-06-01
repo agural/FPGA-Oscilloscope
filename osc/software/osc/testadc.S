@@ -24,9 +24,92 @@
 
  /*  Local Include Files   */
 #include "macros.m"
+#include "keyint.m"
 #include "../osc_bsp/system.h"
 
 .section  .text         #start code section
+
+
+/*
+ *  adc_int_installer
+ *
+ *  Description:
+ *
+ *  Operation:
+ *
+ *  Arguments:
+ *
+ *  Return Value:
+ *
+ *  Local Variables:
+ *
+ *  Shared Variables:
+ *
+ *  Global Variables:
+ *
+ *  Input:
+ *
+ *  Output:
+ *
+ *  Error Handling:
+ *
+ *  Limitations:
+ *
+ *  Algorithms:
+ *  Data Structures:
+ *
+ *  Registers Changed:
+ *
+ *  Revision History:
+ *      05/18/2014	Albert Gural	Initial revision.
+ *
+ */
+
+.global adc_int_installer
+.type	adc_int_installer, @function
+
+adc_int_installer:
+	SAVE
+
+	# Set FIFO speed
+	STWI	ADC_RATE_BASE, 0x000078
+
+	# Set Trigger default level (2's complement), delay
+	STWI	TRIG_LEVEL_BASE, 0
+	STWI	TRIG_DELAY_BASE, 0
+
+	# Install the interrupt handler
+	mov		r4, r0
+	movi	r5, 6
+	MOVWI	r6, test_adc2
+	mov		r7, r0
+	PUSH	r0
+	call	alt_ic_isr_register
+	POP		r0
+
+	# Clear the edge capture register (write 1 to clear).
+	MOVWI	r8, TRIG_INT_BASE
+	MOVWI	r9, 0xFFFFFFFF
+	stw		r9, PIO_EDGE_CAP(r8)
+
+	# Enable ADC interrupts.
+	MOVWI	r8, TRIG_INT_BASE
+	MOVWI	r9, 0x00000002
+	stw		r9, PIO_IRQ_MASK(r8)
+
+	# Turn on FIFO write
+	STWI	ADC_CTRL_BASE, 0x09
+	STWI	ADC_CTRL_BASE, 0x01
+
+	# Reset trigger counter [ch. A], [+ slope]
+	STWI	TRIG_CTRL_BASE, 0x04
+	STWI	TRIG_CTRL_BASE, 0x00
+
+key_int_installer_done:
+	RESTORE
+	ret
+
+
 
 /*
  *  test_adc2
@@ -67,24 +150,39 @@
 .type test_adc2, @function
 
 test_adc2:
-	# Turn on FIFO write, set up write speed 1MHz
-	STWI	ADC_CTRL_BASE, 0x09000078
-	STWI	ADC_CTRL_BASE, 0x01000078
-	mov		r10, r0
+	SAVE
 
-test_adc2_pause:
-	addi	r10, r10, 1
-	movi	r9, 100
-	bltu	r10, r9, test_adc2_pause
+	# Clear interrupts.
+	MOVWI	r8, TRIG_INT_BASE
+	stw		r0, PIO_IRQ_MASK(r8)
+
+	# Get the edge capture register.
+	MOVWI	r8, TRIG_INT_BASE
+	ldw		r8, PIO_EDGE_CAP(r8)
+
+	# Only ch A trigger interrupts for now.
+	andi	r8, r8, 0x02
+	beq		r8, r0, test_adc2_done
 
 	# Pause FIFO write, enable reading
-	STWI	ADC_CTRL_BASE, 0x02000078
+	STWI	ADC_CTRL_BASE, 0x02
+
+	mov		r10, r0
+test_adc2_clear_front:
+	# Bitbang clock pulse
+	STWI	ADC_CTRL_BASE, 0x06
+	STWI	ADC_CTRL_BASE, 0x02
+
+	addi	r10, r10, 1
+	movi	r13, 34
+	bltu	r10, r13, test_adc2_clear_front
+
 	mov		r10, r0
 
 test_adc2_loop:
 	# Bitbang clock pulse
-	STWI	ADC_CTRL_BASE, 0x06000078
-	STWI	ADC_CTRL_BASE, 0x02000078
+	STWI	ADC_CTRL_BASE, 0x06
+	STWI	ADC_CTRL_BASE, 0x02
 
 	MOVWI	r11, ADC_RAW_BASE
 	ldwio	r12, (r11)
@@ -101,8 +199,14 @@ test_adc2_draw_col:
 	mov		r11, r0
 
 test_adc2_draw_col_loop:
+	movi	r14, 240
+	beq		r10, r14, test_adc2_draw_vaxis
+
 	movui	r13, 0x003C
 	sthio 	r13, (r9)
+
+	movi	r14, 136
+	beq		r11, r14, test_adc2_draw_thresh
 	beq		r11, r12, test_adc2_draw_pt
 
 test_adc2_draw_col_loop_cont:
@@ -115,16 +219,42 @@ test_adc2_draw_col_loop_cont:
 	movi	r13, 480
 	bltu	r10, r13, test_adc2_loop
 
-	br		test_adc2
+test_adc2_done:
+	# Clear the edge capture register (write 1 to clear).
+	MOVWI	r8, TRIG_INT_BASE
+	MOVWI	r9, 0xFFFFFFFF
+	stw		r9, PIO_EDGE_CAP(r8)
+
+	# Re-enable interrupts.
+	MOVWI	r8, TRIG_INT_BASE
+	MOVWI	r9, 0x00000002
+	stw		r9, PIO_IRQ_MASK(r8)
+
+	# Turn on FIFO write
+	STWI	ADC_CTRL_BASE, 0x09
+	STWI	ADC_CTRL_BASE, 0x01
+
+	# Reset trigger counter [ch. A], [+ slope]
+	STWI	TRIG_CTRL_BASE, 0x04
+	STWI	TRIG_CTRL_BASE, 0x00
+
+	RESTORE
+	ret
 
 test_adc2_draw_pt:
 	movui	r13, 0xE003
 	sthio 	r13, (r9)
 	br		test_adc2_draw_col_loop_cont
 
+test_adc2_draw_thresh:
+	movui	r13, 0x1F00
+	sthio 	r13, (r9)
+	br		test_adc2_draw_col_loop_cont
 
-
-
+test_adc2_draw_vaxis:
+	movui	r13, 0x1F00
+	sthio 	r13, (r9)
+	br		test_adc2_draw_col_loop_cont
 
 
 
