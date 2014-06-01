@@ -16,6 +16,6 @@
  </clocktable>
  <window width="1936" height="1216" x="1912" y="-8" />
  <library
-   expandedCategories="Library/Qsys Interconnect/Tri-State Components,Project,Library/Qsys Interconnect,Library" />
+   expandedCategories="Library,Library/Peripherals/Microcontroller Peripherals,Library/Peripherals,Project" />
  <generation simulation="NONE" synthesis="VHDL" />
 </preferences>

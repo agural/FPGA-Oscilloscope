@@ -51,7 +51,7 @@
 
 /* keypad functions */
 
-unsigned char  key_available()
+/*unsigned char  key_available()
 {
     return  FALSE;
 }
@@ -59,7 +59,7 @@ unsigned char  key_available()
 int  getkey()
 {
     return  KEY_ILLEGAL;
-}
+}*/
 
 
 

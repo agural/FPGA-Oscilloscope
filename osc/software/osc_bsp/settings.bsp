@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 18, 2014 12:40:13 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1400398813151</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>May 30, 2014 12:16:36 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1401477396983</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\software\osc_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\proc.sopcinfo</SopcDesignFile>
@@ -840,37 +840,55 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>VRAM_ctrl</slaveDescriptor>
-                <addressRange>0x00040000 - 0x0007FFFF</addressRange>
-                <addressSpan>262144</addressSpan>
+                <addressRange>0x00080000 - 0x000FFFFF</addressRange>
+                <addressSpan>524288</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>RAM_ctrl</slaveDescriptor>
-                <addressRange>0x000A0000 - 0x000AFFFF</addressRange>
+                <addressRange>0x00120000 - 0x0012FFFF</addressRange>
                 <addressSpan>65536</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ROM_ctrl</slaveDescriptor>
-                <addressRange>0x000B0000 - 0x000BFFFF</addressRange>
+                <addressRange>0x00130000 - 0x0013FFFF</addressRange>
                 <addressSpan>65536</addressSpan>
                 <attributes>flash, memory, non-volatile</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ONCHIP_mem</slaveDescriptor>
-                <addressRange>0x000C8000 - 0x000CFFFF</addressRange>
+                <addressRange>0x00148000 - 0x0014FFFF</addressRange>
                 <addressSpan>32768</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>ADC_ctrl</slaveDescriptor>
+                <addressRange>0x00151040 - 0x0015105F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>ADC_int</slaveDescriptor>
+                <addressRange>0x00151060 - 0x0015107F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>ADC_raw</slaveDescriptor>
+                <addressRange>0x001510A0 - 0x001510AF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>key_input</slaveDescriptor>
-                <addressRange>0x000D1010 - 0x000D101F</addressRange>
+                <addressRange>0x001510B0 - 0x001510BF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
-                <addressRange>0x000D1028 - 0x000D102F</addressRange>
+                <addressRange>0x001510C8 - 0x001510CF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>

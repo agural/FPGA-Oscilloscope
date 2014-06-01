@@ -51,8 +51,6 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
-set_location_assignment PIN_162 -to data_dir
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to data_dir
 set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
 set_global_assignment -name ENABLE_NCE_PIN OFF
 set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
@@ -126,33 +124,6 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_DESIGN_ENTRY_SYNTHESIS_TOOL "<None>"
 set_global_assignment -name EDA_INPUT_DATA_FORMAT EDIF -section_id eda_design_synthesis
-set_global_assignment -name VHDL_FILE vramstates.vhd
-set_global_assignment -name QIP_FILE lpm_mux0.qip
-set_global_assignment -name QIP_FILE lpm_counter2.qip
-set_global_assignment -name QIP_FILE lpm_counter1.qip
-set_global_assignment -name QIP_FILE lpm_constant2.qip
-set_global_assignment -name QIP_FILE lpm_constant1.qip
-set_global_assignment -name QIP_FILE lpm_constant0.qip
-set_global_assignment -name QIP_FILE lpm_compare3.qip
-set_global_assignment -name QIP_FILE lpm_compare2.qip
-set_global_assignment -name QIP_FILE lpm_compare1.qip
-set_global_assignment -name BSF_FILE vramctrl.bsf
-set_global_assignment -name BSF_FILE keys.bsf
-set_global_assignment -name QIP_FILE proc/synthesis/proc.qip
-set_global_assignment -name BDF_FILE osc.bdf
-set_global_assignment -name QIP_FILE lpm_counter0.qip
-set_global_assignment -name QIP_FILE lpm_compare0.qip
-set_global_assignment -name QIP_FILE lpm_counter3.qip
-set_global_assignment -name QIP_FILE lpm_counter4.qip
-set_global_assignment -name QIP_FILE lpm_counter5.qip
-set_global_assignment -name QIP_FILE lpm_counter6.qip
-set_global_assignment -name QIP_FILE lpm_counter7.qip
-set_global_assignment -name QIP_FILE lpm_compare4.qip
-set_global_assignment -name QIP_FILE lpm_compare5.qip
-set_global_assignment -name QIP_FILE lpm_compare6.qip
-set_global_assignment -name QIP_FILE lpm_compare7.qip
-set_global_assignment -name QIP_FILE lpm_compare8.qip
-set_global_assignment -name QIP_FILE lpm_compare9.qip
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to button_sw[6]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to button_sw[5]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to button_sw[4]
@@ -235,4 +206,116 @@ set_location_assignment PIN_148 -to vramab[2]
 set_location_assignment PIN_147 -to vramab[1]
 set_location_assignment PIN_146 -to vramab[0]
 set_location_assignment PIN_137 -to vsync
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug_dir2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug_dir1
+set_location_assignment PIN_194 -to debug_dir1
+set_location_assignment PIN_226 -to debug_dir2
+set_location_assignment PIN_195 -to debug[7]
+set_location_assignment PIN_216 -to debug[6]
+set_location_assignment PIN_217 -to debug[5]
+set_location_assignment PIN_218 -to debug[4]
+set_location_assignment PIN_219 -to debug[3]
+set_location_assignment PIN_221 -to debug[2]
+set_location_assignment PIN_223 -to debug[1]
+set_location_assignment PIN_224 -to debug[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to data_dirA
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to data_dirB
+set_location_assignment PIN_162 -to data_dirA
+set_location_assignment PIN_189 -to data_dirB
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_a[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_a[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_a[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_a[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_a[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_a[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_a[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_a[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_b[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_b[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_b[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_b[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_b[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_b[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_b[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to adc_b[0]
+set_location_assignment PIN_65 -to adc_a[7]
+set_location_assignment PIN_68 -to adc_a[6]
+set_location_assignment PIN_69 -to adc_a[5]
+set_location_assignment PIN_70 -to adc_a[4]
+set_location_assignment PIN_71 -to adc_a[3]
+set_location_assignment PIN_72 -to adc_a[2]
+set_location_assignment PIN_73 -to adc_a[1]
+set_location_assignment PIN_76 -to adc_a[0]
+set_location_assignment PIN_88 -to adc_b[7]
+set_location_assignment PIN_87 -to adc_b[6]
+set_location_assignment PIN_84 -to adc_b[5]
+set_location_assignment PIN_83 -to adc_b[4]
+set_location_assignment PIN_82 -to adc_b[3]
+set_location_assignment PIN_81 -to adc_b[2]
+set_location_assignment PIN_80 -to adc_b[1]
+set_location_assignment PIN_78 -to adc_b[0]
+set_location_assignment PIN_126 -to adc_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to debug_sig
+set_location_assignment PIN_214 -to debug_sig
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to logic[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to logic[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to logic[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to logic[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to logic[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to logic[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to logic[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to logic[0]
+set_location_assignment PIN_4 -to logic[7]
+set_location_assignment PIN_5 -to logic[6]
+set_location_assignment PIN_6 -to logic[5]
+set_location_assignment PIN_9 -to logic[4]
+set_location_assignment PIN_13 -to logic[3]
+set_location_assignment PIN_18 -to logic[2]
+set_location_assignment PIN_21 -to logic[1]
+set_location_assignment PIN_22 -to logic[0]
+set_global_assignment -name VHDL_FILE scoptrig.vhd
+set_global_assignment -name VHDL_FILE fifo.vhd
+set_global_assignment -name VHDL_FILE vramstates.vhd
+set_global_assignment -name QIP_FILE lpm_mux0.qip
+set_global_assignment -name QIP_FILE lpm_counter2.qip
+set_global_assignment -name QIP_FILE lpm_counter1.qip
+set_global_assignment -name QIP_FILE lpm_constant2.qip
+set_global_assignment -name QIP_FILE lpm_constant1.qip
+set_global_assignment -name QIP_FILE lpm_constant0.qip
+set_global_assignment -name QIP_FILE lpm_compare3.qip
+set_global_assignment -name QIP_FILE lpm_compare2.qip
+set_global_assignment -name QIP_FILE lpm_compare1.qip
+set_global_assignment -name BSF_FILE vramctrl.bsf
+set_global_assignment -name BSF_FILE keys.bsf
+set_global_assignment -name QIP_FILE proc/synthesis/proc.qip
+set_global_assignment -name BDF_FILE osc.bdf
+set_global_assignment -name QIP_FILE lpm_counter0.qip
+set_global_assignment -name QIP_FILE lpm_compare0.qip
+set_global_assignment -name QIP_FILE lpm_counter3.qip
+set_global_assignment -name QIP_FILE lpm_counter4.qip
+set_global_assignment -name QIP_FILE lpm_counter5.qip
+set_global_assignment -name QIP_FILE lpm_counter6.qip
+set_global_assignment -name QIP_FILE lpm_counter7.qip
+set_global_assignment -name QIP_FILE lpm_compare4.qip
+set_global_assignment -name QIP_FILE lpm_compare5.qip
+set_global_assignment -name QIP_FILE lpm_compare6.qip
+set_global_assignment -name QIP_FILE lpm_compare7.qip
+set_global_assignment -name QIP_FILE lpm_compare8.qip
+set_global_assignment -name QIP_FILE lpm_compare9.qip
+set_global_assignment -name QIP_FILE lpm_counter8.qip
+set_global_assignment -name QIP_FILE altpll0.qip
+set_global_assignment -name QIP_FILE lpm_counter9.qip
+set_global_assignment -name QIP_FILE lpm_compare10.qip
+set_global_assignment -name QIP_FILE lpm_compare11.qip
+set_global_assignment -name QIP_FILE lpm_mux1.qip
+set_global_assignment -name QIP_FILE lpm_add_sub0.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

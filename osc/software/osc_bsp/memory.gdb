@@ -3,7 +3,7 @@
 # Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
 # SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
 #
-# Generated: Sat May 17 19:35:38 PDT 2014
+# Generated: Sun May 18 18:36:00 PDT 2014
 
 # DO NOT MODIFY THIS FILE
 #
@@ -47,13 +47,13 @@
 # by allowing GDB to cache memory contents on the host.
 
 # VRAM_ctrl
-memory 0x40000 0x80000 cache
+memory 0x80000 0x100000 cache
 
 # RAM_ctrl
-memory 0xa0000 0xb0000 cache
+memory 0x120000 0x130000 cache
 
 # ROM_ctrl
-memory 0xb0000 0xc0000 cache
+memory 0x130000 0x140000 cache
 
 # ONCHIP_mem
-memory 0xc8000 0xd0000 cache
+memory 0x148000 0x150000 cache

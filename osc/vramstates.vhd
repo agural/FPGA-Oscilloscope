@@ -68,32 +68,42 @@ architecture  assign_statebits  of  ScopeVRAM  is
     -- bits: [RAS][CAS][TRG][WE][AS<2>][ACK][BUSY]
     --       [type <000 IDLE, 010 READ, 011 WRITE, 100 REFRESH, 101 TRANSFER>]
     --       [number <00, 01, ...>]
-    constant  IDLE      : states := "1111001100000";  -- idle (can accept R/W)
-    constant  READ1     : states := "0111011101000";  -- read cycle
-    constant  READ2     : states := "0001001101000";  -- read cycle
-    constant  READ3     : states := "0001001101001";  -- read cycle
-    constant  READ4     : states := "0001001001010";  -- read cycle
-    constant  READ5     : states := "1111001101000";  -- read cycle
-    constant  READ6     : states := "1111001101001";  -- read cycle
-    constant  READ7     : states := "1111001101010";  -- read cycle
-    constant  WRITE1    : states := "0111011001100";  -- write cycle
-    constant  WRITE2    : states := "0000001101100";  -- write cycle
-    constant  WRITE3    : states := "0000001101101";  -- write cycle
-    constant  WRITE4    : states := "0000001101110";  -- write cycle
-    constant  WRITE5    : states := "1110001101100";  -- write cycle
-    constant  WRITE6    : states := "1111001101100";  -- write cycle
-    constant  WRITE7    : states := "1111001101101";  -- write cycle
+    constant  IDLE      : states := "1111011100000";  -- idle (can accept R/W)
+    constant  READ1     : states := "1111011101000";  -- read cycle
+    constant  READ2     : states := "0111011101000";  -- read cycle
+    constant  READ3     : states := "0101001101000";  -- read cycle
+    constant  READ4     : states := "0001001101000";  -- read cycle
+    constant  READ5     : states := "0001001101001";  -- read cycle
+    constant  READ6     : states := "0001001001010";  -- read cycle
+    constant  READ7     : states := "1111001101000";  -- read cycle
+    constant  READ8     : states := "1111001101001";  -- read cycle
+    constant  READ9     : states := "1111001101010";  -- read cycle
+    constant  WRITE1    : states := "0111011101100";  -- write cycle
+    constant  WRITE2    : states := "0110001101100";  -- write cycle
+    constant  WRITE3    : states := "0010001101100";  -- write cycle
+    constant  WRITE4    : states := "0010001001101";  -- write cycle
+    constant  WRITE5    : states := "1111001101100";  -- write cycle
+    constant  WRITE6    : states := "1111001101101";  -- write cycle
+    constant  WRITE7    : states := "1111001101110";  -- write cycle
     constant  TRANSFER1 : states := "1101101110100";  -- transfer cycle
     constant  TRANSFER2 : states := "0101101110100";  -- transfer cycle
-    constant  TRANSFER3 : states := "0001111110100";  -- transfer cycle
+    constant  TRANSFER3 : states := "0111111110100";  -- transfer cycle
     constant  TRANSFER4 : states := "0011111110100";  -- transfer cycle
-    constant  TRANSFER5 : states := "1111110110100";  -- transfer cycle
-    constant  REFRESH1  : states := "0111101110000";  -- refresh cycle
-    constant  REFRESH2  : states := "0111101110001";  -- refresh cycle
-    constant  REFRESH3  : states := "0111101110010";  -- refresh cycle
-    constant  REFRESH4  : states := "1111001110000";  -- refresh cycle
-    constant  REFRESH5  : states := "1111001110001";  -- refresh cycle
-    constant  REFRESH6  : states := "1111001110010";  -- refresh cycle
+    constant  TRANSFER5 : states := "1111010110100";  -- transfer cycle
+    constant  TRANSFER6 : states := "1111011110100";  -- transfer cycle
+    constant  REFRESH1  : states := "1111001110000";  -- refresh cycle
+    constant  REFRESH2  : states := "1111001110001";  -- refresh cycle
+    constant  REFRESH3  : states := "1011001110000";  -- refresh cycle
+    constant  REFRESH4  : states := "0011001110000";  -- refresh cycle
+    constant  REFRESH5  : states := "0011001110001";  -- refresh cycle
+    constant  REFRESH6  : states := "0011001110010";  -- refresh cycle
+    constant  REFRESH7  : states := "1111001110010";  -- refresh cycle
+    constant  REFRESH8  : states := "1111001110011";  -- refresh cycle
+    -- constant  REFRESH2  : states := "0111101110001";  -- refresh cycle
+    -- constant  REFRESH3  : states := "0111101110010";  -- refresh cycle
+    -- constant  REFRESH4  : states := "1111001110000";  -- refresh cycle
+    -- constant  REFRESH5  : states := "1111001110001";  -- refresh cycle
+    -- constant  REFRESH6  : states := "1111001110010";  -- refresh cycle
 
 
     signal  CurrentState  :  states;    -- current state
@@ -116,14 +126,14 @@ begin
     transition:  process (reset, cs, rw, srt, CurrentState)
     begin
 
-        case  CurrentState  is          -- do the state transition/output
-
-            when  IDLE =>               -- in idle state, do transition
+        case  CurrentState  is          -- do the state transition/output   
+					 
+            when  IDLE =>              -- in idle state, do transition
                 if  (cs = '0' and rw = '1')  then
                     NextState <= READ1;         -- start read cycle
                 elsif  (cs = '0' and rw = '0')  then
                     NextState <= WRITE1;        -- start write cycle
-                elsif  (srt = '0')  then
+                elsif  (srt = '1')  then
                     NextState <= TRANSFER1;     -- start serial row transfer
                 else
                     NextState <= REFRESH1;      -- start refresh cycle
@@ -148,6 +158,12 @@ begin
                 NextState <= READ7;     -- go to next part of read cycle
 
             when  READ7 =>              -- read cycle
+                NextState <= READ8;     -- go to next part of read cycle
+
+            when  READ8 =>              -- read cycle
+                NextState <= READ9;     -- go to next part of read cycle
+
+            when  READ9 =>              -- read cycle
                 NextState <= IDLE;      -- go back to idle
 
             when  WRITE1 =>             -- write cycle
@@ -184,6 +200,9 @@ begin
                 NextState <= TRANSFER5; -- go to next part of transfer cycle
 
             when  TRANSFER5 =>          -- transfer cycle
+                NextState <= TRANSFER6; -- go to next part of transfer cycle
+
+            when  TRANSFER6 =>          -- transfer cycle
                 NextState <= IDLE;      -- go back to idle
 
             when  REFRESH1 =>           -- refresh cycle
@@ -202,6 +221,12 @@ begin
                 NextState <= REFRESH6;  -- go to next part of refresh cycle
 
             when  REFRESH6 =>           -- refresh cycle
+                NextState <= REFRESH7;  -- go to next part of refresh cycle
+
+            when  REFRESH7 =>           -- refresh cycle
+                NextState <= REFRESH8;  -- go to next part of refresh cycle
+
+            when  REFRESH8 =>           -- refresh cycle
                 NextState <= IDLE;      -- go back to idle
 
             when others =>              -- default

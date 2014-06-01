@@ -152,7 +152,10 @@ C_SRCS += stubfncs.c
 C_SRCS += testcode.c
 C_SRCS += tracutil.c
 CXX_SRCS :=
-ASM_SRCS :=
+ASM_SRCS += keyint.S
+ASM_SRCS += testvram.S
+ASM_SRCS += testadc.S
+ASM_SRCS += testdisp.S
 
 
 # Path to root of object file tree.

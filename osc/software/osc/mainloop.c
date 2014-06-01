@@ -49,29 +49,10 @@
 #include  "menu.h"
 #include  "tracutil.h"
 
-#include "../osc_bsp/system.h"
-#include "../osc_bsp/HAL/inc/alt_types.h"
-#include "../osc_bsp/drivers/inc/altera_avalon_pio_regs.h"
-#include "../osc_bsp/HAL/inc/sys/alt_irq.h"
-
 
 /* local function declarations */
 enum keycode  key_lookup(void);      /* translate key values into keycodes */
-
-
-
-void gen_pb_interrupt_handler(void* isr_context) {
-	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(0x000d1010, 0);
-
-	int edge_cap = IORD_ALTERA_AVALON_PIO_EDGE_CAP(0x000d1010);
-	int x = (edge_cap & 0x0002) >> 1;
-	x *= 2;
-
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(0x000d1010, 0x000fffff);
-	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(0x000d1010, 0x000fffff);
-	return;
-}
-
+void key_int_installer(void);
 
 
 /*
@@ -101,8 +82,8 @@ void gen_pb_interrupt_handler(void* isr_context) {
 
    Author:           Glen George
    Last Modified:    May 27, 2008
-
 */
+
 int  main() {
     /*char* srampt = (char*)0x48000;
     char c = 0;
@@ -117,15 +98,9 @@ int  main() {
     	if(c >= 100) c = 0;
     }*/
 
-	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(0x000d1010, 0x000fffff);
-	alt_ic_isr_register(0x0, 0x5, gen_pb_interrupt_handler, 0x0, 0x0);
+	test_adc2();
 
-	int i;
-	alt_u16 *ptr = (alt_u16*)(0x00040000);
-	for(i = 0; i < 100000; i++) {
-		(*ptr) = (i % 0x10000);
-		ptr++;
-	}
+	key_int_installer();
 
 	/* variables */
     enum keycode        key;		    /* an input key */
