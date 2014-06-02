@@ -72,7 +72,7 @@ ARCHITECTURE SYN OF lpm_add_sub0 IS
 	END COMPONENT;
 
 BEGIN
-	sub_wire1_bv(15 DOWNTO 0) <= "0000000011110000";
+	sub_wire1_bv(15 DOWNTO 0) <= "0000000000000000";
 	sub_wire1    <= To_stdlogicvector(sub_wire1_bv);
 	result    <= sub_wire0(15 DOWNTO 0);
 
@@ -100,7 +100,7 @@ END SYN;
 -- Retrieval info: PRIVATE: CarryIn NUMERIC "0"
 -- Retrieval info: PRIVATE: CarryOut NUMERIC "0"
 -- Retrieval info: PRIVATE: ConstantA NUMERIC "0"
--- Retrieval info: PRIVATE: ConstantB NUMERIC "240"
+-- Retrieval info: PRIVATE: ConstantB NUMERIC "0"
 -- Retrieval info: PRIVATE: Function NUMERIC "0"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone III"
 -- Retrieval info: PRIVATE: LPM_PIPELINE NUMERIC "0"
@@ -126,7 +126,7 @@ END SYN;
 -- Retrieval info: USED_PORT: dataa 0 0 16 0 INPUT NODEFVAL "dataa[15..0]"
 -- Retrieval info: USED_PORT: result 0 0 16 0 OUTPUT NODEFVAL "result[15..0]"
 -- Retrieval info: CONNECT: @dataa 0 0 16 0 dataa 0 0 16 0
--- Retrieval info: CONNECT: @datab 0 0 16 0 240 0 0 16 0
+-- Retrieval info: CONNECT: @datab 0 0 16 0 0 0 0 16 0
 -- Retrieval info: CONNECT: result 0 0 16 0 @result 0 0 16 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_add_sub0.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_add_sub0.inc FALSE

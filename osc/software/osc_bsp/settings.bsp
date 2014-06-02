@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 30, 2014 12:16:36 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1401477396983</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>May 31, 2014 10:27:45 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1401600465862</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\software\osc_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\proc.sopcinfo</SopcDesignFile>
@@ -863,32 +863,56 @@
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>ADC_ctrl</slaveDescriptor>
-                <addressRange>0x00151040 - 0x0015105F</addressRange>
+                <slaveDescriptor>TRIG_delay</slaveDescriptor>
+                <addressRange>0x001510A0 - 0x001510BF</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>ADC_int</slaveDescriptor>
-                <addressRange>0x00151060 - 0x0015107F</addressRange>
+                <slaveDescriptor>TRIG_level</slaveDescriptor>
+                <addressRange>0x001510C0 - 0x001510DF</addressRange>
                 <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>TRIG_ctrl</slaveDescriptor>
+                <addressRange>0x001510E0 - 0x001510FF</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>ADC_ctrl</slaveDescriptor>
+                <addressRange>0x00151100 - 0x0015111F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>TRIG_int</slaveDescriptor>
+                <addressRange>0x00151120 - 0x0015113F</addressRange>
+                <addressSpan>32</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>ADC_rate</slaveDescriptor>
+                <addressRange>0x00151170 - 0x0015117F</addressRange>
+                <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ADC_raw</slaveDescriptor>
-                <addressRange>0x001510A0 - 0x001510AF</addressRange>
+                <addressRange>0x00151180 - 0x0015118F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>key_input</slaveDescriptor>
-                <addressRange>0x001510B0 - 0x001510BF</addressRange>
+                <addressRange>0x00151190 - 0x0015119F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
-                <addressRange>0x001510C8 - 0x001510CF</addressRange>
+                <addressRange>0x001511A8 - 0x001511AF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>

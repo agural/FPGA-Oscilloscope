@@ -76,7 +76,7 @@ key_int_installer:
 
 	# asdf
 	movia	r8, adc_speed
-	movi	r9, 0x78
+	movi	r9, 0x80
 	stw		r9, (r8)
 	# asdf
 

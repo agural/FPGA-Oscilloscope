@@ -39,7 +39,7 @@ applicable agreement for further details.
 	)
 	(drawing
 		(text "A+B" (rect 75 51 169 115)(font "Arial" (font_size 8)))
-		(text "240" (rect 8 59 32 131)(font "Arial" (font_size 8)))
+		(text "0" (rect 8 59 20 131)(font "Arial" (font_size 8)))
 		(text "A" (rect 64 35 134 83)(font "Arial" (font_size 8)))
 		(text "B" (rect 65 67 135 147)(font "Arial" (font_size 8)))
 		(line (pt 64 32)(pt 64 80))

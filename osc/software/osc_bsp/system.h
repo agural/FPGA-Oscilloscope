@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Fri May 30 12:16:37 PDT 2014
+ * Generated: Sat May 31 22:27:46 PDT 2014
  */
 
 /*
@@ -60,11 +60,11 @@
  *
  */
 
-#define ADC_CTRL_BASE 0x151040
+#define ADC_CTRL_BASE 0x151100
 #define ADC_CTRL_BIT_CLEARING_EDGE_REGISTER 0
 #define ADC_CTRL_BIT_MODIFYING_OUTPUT_REGISTER 1
 #define ADC_CTRL_CAPTURE 0
-#define ADC_CTRL_DATA_WIDTH 32
+#define ADC_CTRL_DATA_WIDTH 8
 #define ADC_CTRL_DO_TEST_BENCH_WIRING 0
 #define ADC_CTRL_DRIVEN_SIM_VALUE 0
 #define ADC_CTRL_EDGE_TYPE "NONE"
@@ -83,30 +83,30 @@
 
 
 /*
- * ADC_int configuration
+ * ADC_rate configuration
  *
  */
 
-#define ADC_INT_BASE 0x151060
-#define ADC_INT_BIT_CLEARING_EDGE_REGISTER 1
-#define ADC_INT_BIT_MODIFYING_OUTPUT_REGISTER 1
-#define ADC_INT_CAPTURE 1
-#define ADC_INT_DATA_WIDTH 16
-#define ADC_INT_DO_TEST_BENCH_WIRING 0
-#define ADC_INT_DRIVEN_SIM_VALUE 0
-#define ADC_INT_EDGE_TYPE "ANY"
-#define ADC_INT_FREQ 36000000
-#define ADC_INT_HAS_IN 1
-#define ADC_INT_HAS_OUT 0
-#define ADC_INT_HAS_TRI 0
-#define ADC_INT_IRQ 6
-#define ADC_INT_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define ADC_INT_IRQ_TYPE "EDGE"
-#define ADC_INT_NAME "/dev/ADC_int"
-#define ADC_INT_RESET_VALUE 0
-#define ADC_INT_SPAN 32
-#define ADC_INT_TYPE "altera_avalon_pio"
-#define ALT_MODULE_CLASS_ADC_int altera_avalon_pio
+#define ADC_RATE_BASE 0x151170
+#define ADC_RATE_BIT_CLEARING_EDGE_REGISTER 0
+#define ADC_RATE_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define ADC_RATE_CAPTURE 0
+#define ADC_RATE_DATA_WIDTH 24
+#define ADC_RATE_DO_TEST_BENCH_WIRING 0
+#define ADC_RATE_DRIVEN_SIM_VALUE 0
+#define ADC_RATE_EDGE_TYPE "NONE"
+#define ADC_RATE_FREQ 36000000
+#define ADC_RATE_HAS_IN 0
+#define ADC_RATE_HAS_OUT 1
+#define ADC_RATE_HAS_TRI 0
+#define ADC_RATE_IRQ -1
+#define ADC_RATE_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define ADC_RATE_IRQ_TYPE "NONE"
+#define ADC_RATE_NAME "/dev/ADC_rate"
+#define ADC_RATE_RESET_VALUE 0
+#define ADC_RATE_SPAN 16
+#define ADC_RATE_TYPE "altera_avalon_pio"
+#define ALT_MODULE_CLASS_ADC_rate altera_avalon_pio
 
 
 /*
@@ -114,7 +114,7 @@
  *
  */
 
-#define ADC_RAW_BASE 0x1510a0
+#define ADC_RAW_BASE 0x151180
 #define ADC_RAW_BIT_CLEARING_EDGE_REGISTER 0
 #define ADC_RAW_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define ADC_RAW_CAPTURE 0
@@ -301,6 +301,114 @@
 
 
 /*
+ * TRIG_ctrl configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_TRIG_ctrl altera_avalon_pio
+#define TRIG_CTRL_BASE 0x1510e0
+#define TRIG_CTRL_BIT_CLEARING_EDGE_REGISTER 0
+#define TRIG_CTRL_BIT_MODIFYING_OUTPUT_REGISTER 1
+#define TRIG_CTRL_CAPTURE 0
+#define TRIG_CTRL_DATA_WIDTH 8
+#define TRIG_CTRL_DO_TEST_BENCH_WIRING 0
+#define TRIG_CTRL_DRIVEN_SIM_VALUE 0
+#define TRIG_CTRL_EDGE_TYPE "NONE"
+#define TRIG_CTRL_FREQ 36000000
+#define TRIG_CTRL_HAS_IN 0
+#define TRIG_CTRL_HAS_OUT 1
+#define TRIG_CTRL_HAS_TRI 0
+#define TRIG_CTRL_IRQ -1
+#define TRIG_CTRL_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define TRIG_CTRL_IRQ_TYPE "NONE"
+#define TRIG_CTRL_NAME "/dev/TRIG_ctrl"
+#define TRIG_CTRL_RESET_VALUE 0
+#define TRIG_CTRL_SPAN 32
+#define TRIG_CTRL_TYPE "altera_avalon_pio"
+
+
+/*
+ * TRIG_delay configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_TRIG_delay altera_avalon_pio
+#define TRIG_DELAY_BASE 0x1510a0
+#define TRIG_DELAY_BIT_CLEARING_EDGE_REGISTER 0
+#define TRIG_DELAY_BIT_MODIFYING_OUTPUT_REGISTER 1
+#define TRIG_DELAY_CAPTURE 0
+#define TRIG_DELAY_DATA_WIDTH 16
+#define TRIG_DELAY_DO_TEST_BENCH_WIRING 0
+#define TRIG_DELAY_DRIVEN_SIM_VALUE 0
+#define TRIG_DELAY_EDGE_TYPE "NONE"
+#define TRIG_DELAY_FREQ 36000000
+#define TRIG_DELAY_HAS_IN 0
+#define TRIG_DELAY_HAS_OUT 1
+#define TRIG_DELAY_HAS_TRI 0
+#define TRIG_DELAY_IRQ -1
+#define TRIG_DELAY_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define TRIG_DELAY_IRQ_TYPE "NONE"
+#define TRIG_DELAY_NAME "/dev/TRIG_delay"
+#define TRIG_DELAY_RESET_VALUE 0
+#define TRIG_DELAY_SPAN 32
+#define TRIG_DELAY_TYPE "altera_avalon_pio"
+
+
+/*
+ * TRIG_int configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_TRIG_int altera_avalon_pio
+#define TRIG_INT_BASE 0x151120
+#define TRIG_INT_BIT_CLEARING_EDGE_REGISTER 1
+#define TRIG_INT_BIT_MODIFYING_OUTPUT_REGISTER 1
+#define TRIG_INT_CAPTURE 1
+#define TRIG_INT_DATA_WIDTH 16
+#define TRIG_INT_DO_TEST_BENCH_WIRING 0
+#define TRIG_INT_DRIVEN_SIM_VALUE 0
+#define TRIG_INT_EDGE_TYPE "RISING"
+#define TRIG_INT_FREQ 36000000
+#define TRIG_INT_HAS_IN 1
+#define TRIG_INT_HAS_OUT 0
+#define TRIG_INT_HAS_TRI 0
+#define TRIG_INT_IRQ 6
+#define TRIG_INT_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define TRIG_INT_IRQ_TYPE "EDGE"
+#define TRIG_INT_NAME "/dev/TRIG_int"
+#define TRIG_INT_RESET_VALUE 0
+#define TRIG_INT_SPAN 32
+#define TRIG_INT_TYPE "altera_avalon_pio"
+
+
+/*
+ * TRIG_level configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_TRIG_level altera_avalon_pio
+#define TRIG_LEVEL_BASE 0x1510c0
+#define TRIG_LEVEL_BIT_CLEARING_EDGE_REGISTER 0
+#define TRIG_LEVEL_BIT_MODIFYING_OUTPUT_REGISTER 1
+#define TRIG_LEVEL_CAPTURE 0
+#define TRIG_LEVEL_DATA_WIDTH 8
+#define TRIG_LEVEL_DO_TEST_BENCH_WIRING 0
+#define TRIG_LEVEL_DRIVEN_SIM_VALUE 0
+#define TRIG_LEVEL_EDGE_TYPE "NONE"
+#define TRIG_LEVEL_FREQ 36000000
+#define TRIG_LEVEL_HAS_IN 0
+#define TRIG_LEVEL_HAS_OUT 1
+#define TRIG_LEVEL_HAS_TRI 0
+#define TRIG_LEVEL_IRQ -1
+#define TRIG_LEVEL_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define TRIG_LEVEL_IRQ_TYPE "NONE"
+#define TRIG_LEVEL_NAME "/dev/TRIG_level"
+#define TRIG_LEVEL_RESET_VALUE 0
+#define TRIG_LEVEL_SPAN 32
+#define TRIG_LEVEL_TYPE "altera_avalon_pio"
+
+
+/*
  * VRAM_ctrl configuration
  *
  */
@@ -330,7 +438,7 @@
  */
 
 #define ALT_MODULE_CLASS_key_input altera_avalon_pio
-#define KEY_INPUT_BASE 0x1510b0
+#define KEY_INPUT_BASE 0x151190
 #define KEY_INPUT_BIT_CLEARING_EDGE_REGISTER 1
 #define KEY_INPUT_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define KEY_INPUT_CAPTURE 1
@@ -357,13 +465,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x1510c8
+#define SYSID_QSYS_0_BASE 0x1511a8
 #define SYSID_QSYS_0_ID -1431655766
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1401451324
+#define SYSID_QSYS_0_TIMESTAMP 1401600226
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

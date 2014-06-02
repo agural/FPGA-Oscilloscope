@@ -72,16 +72,16 @@ adc_int_installer:
 	SAVE
 
 	# Set FIFO speed
-	STWI	ADC_RATE_BASE, 0x000078
+	STWI	ADC_RATE_BASE, 0x000080
 
 	# Set Trigger default level (2's complement), delay
 	STWI	TRIG_LEVEL_BASE, 0
-	STWI	TRIG_DELAY_BASE, 0
+	STWI	TRIG_DELAY_BASE, 10
 
 	# Install the interrupt handler
 	mov		r4, r0
 	movi	r5, 6
-	MOVWI	r6, test_adc2
+	MOVWI	r6, adc_int_handler
 	mov		r7, r0
 	PUSH	r0
 	call	alt_ic_isr_register
@@ -92,7 +92,7 @@ adc_int_installer:
 	MOVWI	r9, 0xFFFFFFFF
 	stw		r9, PIO_EDGE_CAP(r8)
 
-	# Enable ADC interrupts.
+	# Enable ADC interrupts. [TYPEOFINTERUPT]
 	MOVWI	r8, TRIG_INT_BASE
 	MOVWI	r9, 0x00000002
 	stw		r9, PIO_IRQ_MASK(r8)
@@ -105,14 +105,13 @@ adc_int_installer:
 	STWI	TRIG_CTRL_BASE, 0x04
 	STWI	TRIG_CTRL_BASE, 0x00
 
-key_int_installer_done:
+adc_int_installer_done:
 	RESTORE
 	ret
 
 
-
 /*
- *  test_adc2
+ *  adc_int_handler
  *
  *  Description:
  *
@@ -146,10 +145,10 @@ key_int_installer_done:
  *
  */
 
-.global test_adc2
-.type test_adc2, @function
+.global adc_int_handler
+.type adc_int_handler, @function
 
-test_adc2:
+adc_int_handler:
 	SAVE
 
 	# Clear interrupts.
@@ -160,26 +159,26 @@ test_adc2:
 	MOVWI	r8, TRIG_INT_BASE
 	ldw		r8, PIO_EDGE_CAP(r8)
 
-	# Only ch A trigger interrupts for now.
+	# Only ch A trigger interrupts for now. [TYPEOFINTERRUPT]
 	andi	r8, r8, 0x02
-	beq		r8, r0, test_adc2_done
+	beq		r8, r0, adc_int_handler_done
 
 	# Pause FIFO write, enable reading
 	STWI	ADC_CTRL_BASE, 0x02
 
 	mov		r10, r0
-test_adc2_clear_front:
+adc_int_handler_clear_front:
 	# Bitbang clock pulse
 	STWI	ADC_CTRL_BASE, 0x06
 	STWI	ADC_CTRL_BASE, 0x02
 
 	addi	r10, r10, 1
-	movi	r13, 34
-	bltu	r10, r13, test_adc2_clear_front
+	movi	r13, 40
+	bltu	r10, r13, adc_int_handler_clear_front
 
 	mov		r10, r0
 
-test_adc2_loop:
+adc_int_handler_loop:
 	# Bitbang clock pulse
 	STWI	ADC_CTRL_BASE, 0x06
 	STWI	ADC_CTRL_BASE, 0x02
@@ -192,40 +191,40 @@ test_adc2_loop:
 	andi	r12, r12, 0xFF
 	addi	r12, r12, 8
 
-test_adc2_draw_col:
+adc_int_handler_draw_col:
 	MOVWI	r9, VRAM_CTRL_BASE
 	add		r9, r9, r10
 	add		r9, r9, r10
 	mov		r11, r0
 
-test_adc2_draw_col_loop:
+adc_int_handler_draw_col_loop:
 	movi	r14, 240
-	beq		r10, r14, test_adc2_draw_vaxis
+	beq		r10, r14, adc_int_handler_draw_vaxis
 
 	movui	r13, 0x003C
 	sthio 	r13, (r9)
 
 	movi	r14, 136
-	beq		r11, r14, test_adc2_draw_thresh
-	beq		r11, r12, test_adc2_draw_pt
+	beq		r11, r14, adc_int_handler_draw_thresh
+	beq		r11, r12, adc_int_handler_draw_pt
 
-test_adc2_draw_col_loop_cont:
+adc_int_handler_draw_col_loop_cont:
 	addi	r9, r9, 1024
 	addi	r11, r11, 1
 	movi	r13, 272
-	bltu	r11, r13, test_adc2_draw_col_loop
+	bltu	r11, r13, adc_int_handler_draw_col_loop
 
 	addi	r10, r10, 1
 	movi	r13, 480
-	bltu	r10, r13, test_adc2_loop
+	bltu	r10, r13, adc_int_handler_loop
 
-test_adc2_done:
+adc_int_handler_done:
 	# Clear the edge capture register (write 1 to clear).
 	MOVWI	r8, TRIG_INT_BASE
 	MOVWI	r9, 0xFFFFFFFF
 	stw		r9, PIO_EDGE_CAP(r8)
 
-	# Re-enable interrupts.
+	# Re-enable interrupts. [TYPEOFINTERRUPT]
 	MOVWI	r8, TRIG_INT_BASE
 	MOVWI	r9, 0x00000002
 	stw		r9, PIO_IRQ_MASK(r8)
@@ -241,26 +240,26 @@ test_adc2_done:
 	RESTORE
 	ret
 
-test_adc2_draw_pt:
+adc_int_handler_draw_pt:
 	movui	r13, 0xE003
 	sthio 	r13, (r9)
-	br		test_adc2_draw_col_loop_cont
+	br		adc_int_handler_draw_col_loop_cont
 
-test_adc2_draw_thresh:
+adc_int_handler_draw_thresh:
 	movui	r13, 0x1F00
 	sthio 	r13, (r9)
-	br		test_adc2_draw_col_loop_cont
+	br		adc_int_handler_draw_col_loop_cont
 
-test_adc2_draw_vaxis:
+adc_int_handler_draw_vaxis:
 	movui	r13, 0x1F00
 	sthio 	r13, (r9)
-	br		test_adc2_draw_col_loop_cont
+	br		adc_int_handler_draw_col_loop_cont
 
 
 
 
 
-
+/*
 .global test_adc
 .type test_adc, @function
 
@@ -334,7 +333,7 @@ draw_sig_loop_2:
 
 test_adc_done:
 	ret
-
+*/
 
 
 .section  .data     #start data section
