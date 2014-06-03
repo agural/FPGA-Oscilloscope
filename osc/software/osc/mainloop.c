@@ -98,11 +98,15 @@ int  main() {
     	if(c >= 100) c = 0;
     }*/
 
+	clear_display_x();
 	adc_int_installer();
 	key_int_installer();
 
 	//test_adc2();
-	while(1);
+	while(1) {
+		//clear_display_x();
+		//clear_display_y();
+	}
 
 	/* variables */
     enum keycode        key;		    /* an input key */

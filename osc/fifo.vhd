@@ -49,7 +49,8 @@ ENTITY fifo IS
 		wrclk		: IN STD_LOGIC ;
 		wrreq		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (23 DOWNTO 0);
-		wrfull		: OUT STD_LOGIC 
+		wrfull		: OUT STD_LOGIC ;
+		wrusedw		: OUT STD_LOGIC_VECTOR (8 DOWNTO 0)
 	);
 END fifo;
 
@@ -58,6 +59,7 @@ ARCHITECTURE SYN OF fifo IS
 
 	SIGNAL sub_wire0	: STD_LOGIC ;
 	SIGNAL sub_wire1	: STD_LOGIC_VECTOR (23 DOWNTO 0);
+	SIGNAL sub_wire2	: STD_LOGIC_VECTOR (8 DOWNTO 0);
 
 
 
@@ -78,20 +80,22 @@ ARCHITECTURE SYN OF fifo IS
 		wrsync_delaypipe		: NATURAL
 	);
 	PORT (
-			aclr	: IN STD_LOGIC ;
-			data	: IN STD_LOGIC_VECTOR (23 DOWNTO 0);
 			rdclk	: IN STD_LOGIC ;
-			rdreq	: IN STD_LOGIC ;
 			wrfull	: OUT STD_LOGIC ;
 			q	: OUT STD_LOGIC_VECTOR (23 DOWNTO 0);
 			wrclk	: IN STD_LOGIC ;
-			wrreq	: IN STD_LOGIC 
+			wrreq	: IN STD_LOGIC ;
+			wrusedw	: OUT STD_LOGIC_VECTOR (8 DOWNTO 0);
+			aclr	: IN STD_LOGIC ;
+			data	: IN STD_LOGIC_VECTOR (23 DOWNTO 0);
+			rdreq	: IN STD_LOGIC 
 	);
 	END COMPONENT;
 
 BEGIN
 	wrfull    <= sub_wire0;
 	q    <= sub_wire1(23 DOWNTO 0);
+	wrusedw    <= sub_wire2(8 DOWNTO 0);
 
 	dcfifo_component : dcfifo
 	GENERIC MAP (
@@ -110,14 +114,15 @@ BEGIN
 		wrsync_delaypipe => 5
 	)
 	PORT MAP (
-		aclr => aclr,
-		data => data,
 		rdclk => rdclk,
-		rdreq => rdreq,
 		wrclk => wrclk,
 		wrreq => wrreq,
+		aclr => aclr,
+		data => data,
+		rdreq => rdreq,
 		wrfull => sub_wire0,
-		q => sub_wire1
+		q => sub_wire1,
+		wrusedw => sub_wire2
 	);
 
 
@@ -158,7 +163,7 @@ END SYN;
 -- Retrieval info: PRIVATE: sc_sclr NUMERIC "0"
 -- Retrieval info: PRIVATE: wsEmpty NUMERIC "0"
 -- Retrieval info: PRIVATE: wsFull NUMERIC "1"
--- Retrieval info: PRIVATE: wsUsedW NUMERIC "0"
+-- Retrieval info: PRIVATE: wsUsedW NUMERIC "1"
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone III"
 -- Retrieval info: CONSTANT: LPM_NUMWORDS NUMERIC "512"
@@ -181,6 +186,7 @@ END SYN;
 -- Retrieval info: USED_PORT: wrclk 0 0 0 0 INPUT NODEFVAL "wrclk"
 -- Retrieval info: USED_PORT: wrfull 0 0 0 0 OUTPUT NODEFVAL "wrfull"
 -- Retrieval info: USED_PORT: wrreq 0 0 0 0 INPUT NODEFVAL "wrreq"
+-- Retrieval info: USED_PORT: wrusedw 0 0 9 0 OUTPUT NODEFVAL "wrusedw[8..0]"
 -- Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
 -- Retrieval info: CONNECT: @data 0 0 24 0 data 0 0 24 0
 -- Retrieval info: CONNECT: @rdclk 0 0 0 0 rdclk 0 0 0 0
@@ -189,6 +195,7 @@ END SYN;
 -- Retrieval info: CONNECT: @wrreq 0 0 0 0 wrreq 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 24 0 @q 0 0 24 0
 -- Retrieval info: CONNECT: wrfull 0 0 0 0 @wrfull 0 0 0 0
+-- Retrieval info: CONNECT: wrusedw 0 0 9 0 @wrusedw 0 0 9 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL fifo.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL fifo.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL fifo.cmp TRUE

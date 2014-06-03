@@ -21,7 +21,7 @@ applicable agreement for further details.
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 0 0 128 96)
-	(text "lpm_compare11" (rect 19 0 126 16)(font "Arial" (font_size 10)))
+	(text "lpm_compare14" (rect 18 0 126 16)(font "Arial" (font_size 10)))
 	(text "inst" (rect 8 80 25 92)(font "Arial" ))
 	(port
 		(pt 0 48)
@@ -38,18 +38,11 @@ applicable agreement for further details.
 		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port
-		(pt 128 48)
-		(output)
-		(text "aeb" (rect 0 0 21 14)(font "Arial" (font_size 8)))
-		(text "aeb" (rect 91 41 107 54)(font "Arial" (font_size 8)))
-		(line (pt 128 48)(pt 112 48))
-	)
-	(port
-		(pt 128 64)
+		(pt 128 56)
 		(output)
 		(text "alb" (rect 0 0 16 14)(font "Arial" (font_size 8)))
-		(text "alb" (rect 95 57 107 70)(font "Arial" (font_size 8)))
-		(line (pt 128 64)(pt 112 64))
+		(text "alb" (rect 95 49 107 62)(font "Arial" (font_size 8)))
+		(line (pt 128 56)(pt 112 56))
 	)
 	(drawing
 		(text "signed compare" (rect 46 26 156 63)(font "Arial" ))

@@ -73,6 +73,13 @@ applicable agreement for further details.
 		(line (pt 176 56)(pt 160 56))
 	)
 	(port
+		(pt 176 88)
+		(output)
+		(text "wrusedw[8..0]" (rect 0 0 84 14)(font "Arial" (font_size 8)))
+		(text "wrusedw[8..0]" (rect 85 81 155 94)(font "Arial" (font_size 8)))
+		(line (pt 176 88)(pt 160 88)(line_width 3))
+	)
+	(port
 		(pt 176 112)
 		(output)
 		(text "q[23..0]" (rect 0 0 42 14)(font "Arial" (font_size 8)))

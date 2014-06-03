@@ -72,11 +72,11 @@ adc_int_installer:
 	SAVE
 
 	# Set FIFO speed
-	STWI	ADC_RATE_BASE, 0x000080
+	STWI	ADC_RATE_BASE, 0x040000
 
 	# Set Trigger default level (2's complement), delay
 	STWI	TRIG_LEVEL_BASE, 0
-	STWI	TRIG_DELAY_BASE, 10
+	STWI	TRIG_DELAY_BASE, 240
 
 	# Install the interrupt handler
 	mov		r4, r0
@@ -156,12 +156,11 @@ adc_int_handler:
 	stw		r0, PIO_IRQ_MASK(r8)
 
 	# Get the edge capture register.
-	MOVWI	r8, TRIG_INT_BASE
-	ldw		r8, PIO_EDGE_CAP(r8)
+	ldw		r9, PIO_EDGE_CAP(r8)
 
 	# Only ch A trigger interrupts for now. [TYPEOFINTERRUPT]
-	andi	r8, r8, 0x02
-	beq		r8, r0, adc_int_handler_done
+	andi	r9, r9, 0x02
+	beq		r9, r0, adc_int_handler_done
 
 	# Pause FIFO write, enable reading
 	STWI	ADC_CTRL_BASE, 0x02
@@ -173,7 +172,7 @@ adc_int_handler_clear_front:
 	STWI	ADC_CTRL_BASE, 0x02
 
 	addi	r10, r10, 1
-	movi	r13, 40
+	movi	r13, 13
 	bltu	r10, r13, adc_int_handler_clear_front
 
 	mov		r10, r0
@@ -233,7 +232,7 @@ adc_int_handler_done:
 	STWI	ADC_CTRL_BASE, 0x09
 	STWI	ADC_CTRL_BASE, 0x01
 
-	# Reset trigger counter [ch. A], [+ slope]
+	# Restart trigger counter [ch. A], [+ slope]
 	STWI	TRIG_CTRL_BASE, 0x04
 	STWI	TRIG_CTRL_BASE, 0x00
 
@@ -257,6 +256,60 @@ adc_int_handler_draw_vaxis:
 
 
 
+.global clear_display_x
+.type clear_display_x, @function
+
+clear_display_x:
+	SAVE
+
+	movhi	r8, %hi(VRAM_CTRL_BASE)
+	ori		r8, r8, %lo(VRAM_CTRL_BASE)
+	movi	r12, 512
+	movi	r13, 272
+	mov		r10, r0
+
+loop_clr_x:
+	movui	r14, 0x003C
+	sthio 	r14, (r8)
+	addi	r8, r8, 2
+	addi	r11, r11, 1
+	bltu	r11, r12, loop_clr_x
+
+	mov		r11, r0
+	addi	r10, r10, 1
+	bltu	r10, r13, loop_clr_x
+
+	RESTORE
+	ret
+
+
+
+.global clear_display_y
+.type clear_display_y, @function
+
+clear_display_y:
+	SAVE
+
+	movhi	r8, %hi(VRAM_CTRL_BASE)
+	ori		r8, r8, %lo(VRAM_CTRL_BASE)
+	movi	r12, 512
+	movi	r13, 272
+	mov		r10, r0
+
+loop_clr_y:
+	movui	r14, 0x0000
+	sthio 	r14, (r8)
+	addi	r8, r8, 2
+	addi	r11, r11, 1
+	bltu	r11, r12, loop_clr_y
+
+	mov		r11, r0
+	addi	r10, r10, 1
+	bltu	r10, r13, loop_clr_y
+
+	RESTORE
+	ret
+
 
 
 /*
@@ -267,14 +320,14 @@ test_adc:
 	movhi	r9, %hi(ADC_RAW_BASE)
 	ori		r9, r9, %lo(ADC_RAW_BASE)
 
-clear_display:
+clear_displayx:
 	movhi	r8, %hi(VRAM_CTRL_BASE)
 	ori		r8, r8, %lo(VRAM_CTRL_BASE)
 	movi	r12, 512
 	movi	r13, 272
 	mov		r10, r0
 
-loop_clr:
+loop_clrx:
 	movui	r14, 0x003C
 	sthio 	r14, (r8)
 	addi	r8, r8, 2

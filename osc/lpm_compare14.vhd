@@ -4,7 +4,7 @@
 -- MODULE: LPM_COMPARE 
 
 -- ============================================================
--- File Name: lpm_compare11.vhd
+-- File Name: lpm_compare14.vhd
 -- Megafunction Name(s):
 -- 			LPM_COMPARE
 --
@@ -39,21 +39,19 @@ USE ieee.std_logic_1164.all;
 LIBRARY lpm;
 USE lpm.all;
 
-ENTITY lpm_compare11 IS
+ENTITY lpm_compare14 IS
 	PORT
 	(
 		dataa		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 		datab		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		aeb		: OUT STD_LOGIC ;
 		alb		: OUT STD_LOGIC 
 	);
-END lpm_compare11;
+END lpm_compare14;
 
 
-ARCHITECTURE SYN OF lpm_compare11 IS
+ARCHITECTURE SYN OF lpm_compare14 IS
 
 	SIGNAL sub_wire0	: STD_LOGIC ;
-	SIGNAL sub_wire1	: STD_LOGIC ;
 
 
 
@@ -64,7 +62,6 @@ ARCHITECTURE SYN OF lpm_compare11 IS
 		lpm_width		: NATURAL
 	);
 	PORT (
-			aeb	: OUT STD_LOGIC ;
 			alb	: OUT STD_LOGIC ;
 			dataa	: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 			datab	: IN STD_LOGIC_VECTOR (7 DOWNTO 0)
@@ -72,8 +69,7 @@ ARCHITECTURE SYN OF lpm_compare11 IS
 	END COMPONENT;
 
 BEGIN
-	aeb    <= sub_wire0;
-	alb    <= sub_wire1;
+	alb    <= sub_wire0;
 
 	LPM_COMPARE_component : LPM_COMPARE
 	GENERIC MAP (
@@ -84,8 +80,7 @@ BEGIN
 	PORT MAP (
 		dataa => dataa,
 		datab => datab,
-		aeb => sub_wire0,
-		alb => sub_wire1
+		alb => sub_wire0
 	);
 
 
@@ -95,7 +90,7 @@ END SYN;
 -- ============================================================
 -- CNX file retrieval info
 -- ============================================================
--- Retrieval info: PRIVATE: AeqB NUMERIC "1"
+-- Retrieval info: PRIVATE: AeqB NUMERIC "0"
 -- Retrieval info: PRIVATE: AgeB NUMERIC "0"
 -- Retrieval info: PRIVATE: AgtB NUMERIC "0"
 -- Retrieval info: PRIVATE: AleB NUMERIC "0"
@@ -117,17 +112,15 @@ END SYN;
 -- Retrieval info: CONSTANT: LPM_REPRESENTATION STRING "SIGNED"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COMPARE"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "8"
--- Retrieval info: USED_PORT: aeb 0 0 0 0 OUTPUT NODEFVAL "aeb"
 -- Retrieval info: USED_PORT: alb 0 0 0 0 OUTPUT NODEFVAL "alb"
 -- Retrieval info: USED_PORT: dataa 0 0 8 0 INPUT NODEFVAL "dataa[7..0]"
 -- Retrieval info: USED_PORT: datab 0 0 8 0 INPUT NODEFVAL "datab[7..0]"
 -- Retrieval info: CONNECT: @dataa 0 0 8 0 dataa 0 0 8 0
 -- Retrieval info: CONNECT: @datab 0 0 8 0 datab 0 0 8 0
--- Retrieval info: CONNECT: aeb 0 0 0 0 @aeb 0 0 0 0
 -- Retrieval info: CONNECT: alb 0 0 0 0 @alb 0 0 0 0
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare11.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare11.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare11.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare11.bsf TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare11_inst.vhd FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare14.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare14.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare14.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare14.bsf TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare14_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: lpm
