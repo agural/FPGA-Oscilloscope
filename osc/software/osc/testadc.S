@@ -238,7 +238,7 @@ draw_trace_loop:
 	movui	r13, 255
 	sub		r12, r13, r12
 	andi	r12, r12, 0xFF
-	addi	r12, r12, 8
+	addi	r12, r12, 5
 
 	push	r4
 	push	r5
@@ -247,6 +247,25 @@ draw_trace_loop:
 	mov		r4, r12
 	mov		r5, r10
 	movui	r6, 0x003C
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+
+	subi	r4, r4, 6
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+	addi	r4, r4, 1
 	call	draw_pixel
 	addi	r4, r4, 1
 	call	draw_pixel
