@@ -175,6 +175,7 @@ adc_int_handler_clear_front:
 	movi	r13, 13
 	bltu	r10, r13, adc_int_handler_clear_front
 
+	movia	r8, sample_buffer_A
 	mov		r10, r0
 
 adc_int_handler_loop:
@@ -184,38 +185,17 @@ adc_int_handler_loop:
 
 	MOVWI	r11, ADC_RAW_BASE
 	ldwio	r12, (r11)
+	movui	r13, 128
+	add		r12, r12, r13
 	andi	r12, r12, 0xFF
-	movui	r13, 127
-	sub		r12, r13, r12
-	andi	r12, r12, 0xFF
-	addi	r12, r12, 8
 
-adc_int_handler_draw_col:
-	MOVWI	r9, VRAM_CTRL_BASE
-	add		r9, r9, r10
-	add		r9, r9, r10
-	mov		r11, r0
-
-adc_int_handler_draw_col_loop:
-	movi	r14, 240
-	beq		r10, r14, adc_int_handler_draw_vaxis
-
-	movui	r13, 0x003C
-	sthio 	r13, (r9)
-
-	movi	r14, 136
-	beq		r11, r14, adc_int_handler_draw_thresh
-	beq		r11, r12, adc_int_handler_draw_pt
-
-adc_int_handler_draw_col_loop_cont:
-	addi	r9, r9, 1024
-	addi	r11, r11, 1
-	movi	r13, 272
-	bltu	r11, r13, adc_int_handler_draw_col_loop
-
+	stb		r12, (r8)
+	addi	r8, r8, 1
 	addi	r10, r10, 1
 	movi	r13, 480
 	bltu	r10, r13, adc_int_handler_loop
+
+	call	draw_trace
 
 adc_int_handler_done:
 	# Clear the edge capture register (write 1 to clear).
@@ -239,6 +219,155 @@ adc_int_handler_done:
 	RESTORE
 	ret
 
+
+
+
+
+
+.global draw_trace
+.type draw_trace, @function
+
+draw_trace:
+	SAVE
+
+	movia	r8, sample_buffer_A
+	movia	r9, sample_buffer_Ao
+	mov		r10, r0
+draw_trace_loop:
+	ldb		r12, (r9)
+	movui	r13, 255
+	sub		r12, r13, r12
+	andi	r12, r12, 0xFF
+	addi	r12, r12, 8
+
+	push	r4
+	push	r5
+	push	r6
+
+	mov		r4, r12
+	mov		r5, r10
+	movui	r6, 0x003C
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+
+	pop		r6
+	pop		r5
+	pop		r4
+
+
+	ldb		r12, (r8)
+	stb		r12, (r9)
+	movui	r13, 255
+	sub		r12, r13, r12
+	andi	r12, r12, 0xFF
+	addi	r12, r12, 8
+
+	push	r4
+	push	r5
+	push	r6
+
+	mov		r4, r12
+	mov		r5, r10
+	movui	r6, 0xE003
+	call	draw_pixel
+
+	pop		r6
+	pop		r5
+	pop		r4
+
+	addi	r8, r8, 1
+	addi	r9, r9, 1
+	addi	r10, r10, 1
+	movi	r13, 480
+	bltu	r10, r13, draw_trace_loop
+
+draw_trace_done:
+	RESTORE
+	ret
+
+
+
+
+
+
+.global draw_grid
+.type draw_grid, @function
+
+draw_grid:
+	SAVE
+	push	r4
+	push	r5
+	push	r6
+
+	movui	r6, 0x1F00
+
+	movui	r4, 136
+	mov		r5, r0
+draw_grid_horiz:
+	call	draw_pixel
+	movui	r6, 0x003C
+	addi	r4, r4, 1
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+	addi	r4, r4, 1
+	call	draw_pixel
+	movui	r6, 0x1F00
+	subi	r4, r4, 3
+
+	addi	r5, r5, 1
+	movi	r8, 480
+	bltu	r5, r8, draw_grid_horiz
+
+	mov		r4, r0
+	movui	r5, 240
+draw_grid_vert:
+	call	draw_pixel
+
+	addi	r4, r4, 1
+	movi	r8, 272
+	bltu	r4, r8, draw_grid_vert
+
+draw_grid_done:
+	pop		r6
+	pop		r5
+	pop		r4
+	RESTORE
+	ret
+
+
+
+
+
+
+draw_pixel:
+	SAVE
+
+	push	r4
+	push	r5
+
+	slli	r4, r4, 10
+	add		r4, r4, r5
+	add		r4, r4, r5
+	MOVWI	r5, VRAM_CTRL_BASE
+	add		r4, r4, r5
+	sthio	r6, (r4)
+
+	pop		r5
+	pop		r4
+
+draw_pixel_done:
+	RESTORE
+	ret
+
+/*
 adc_int_handler_draw_pt:
 	movui	r13, 0xE003
 	sthio 	r13, (r9)
@@ -253,6 +382,37 @@ adc_int_handler_draw_vaxis:
 	movui	r13, 0x1F00
 	sthio 	r13, (r9)
 	br		adc_int_handler_draw_col_loop_cont
+*/
+
+
+/*
+draw_trace_col:
+	MOVWI	r9, VRAM_CTRL_BASE
+	add		r9, r9, r10
+	add		r9, r9, r10
+	mov		r11, r0
+
+draw_trace_col_loop:
+	movi	r14, 240
+	beq		r10, r14, adc_int_handler_draw_vaxis
+
+	movui	r13, 0x003C
+	sthio 	r13, (r9)
+
+	movi	r14, 136
+	beq		r11, r14, adc_int_handler_draw_thresh
+	beq		r11, r12, adc_int_handler_draw_pt
+
+adc_int_handler_draw_col_loop_cont:
+	addi	r9, r9, 1024
+	addi	r11, r11, 1
+	movi	r13, 272
+	bltu	r11, r13, adc_int_handler_draw_col_loop
+
+	addi	r10, r10, 1
+	movi	r13, 480
+	bltu	r10, r13, adc_int_handler_loop
+*/
 
 
 
@@ -391,4 +551,5 @@ test_adc_done:
 
 .section  .data     #start data section
 
-#TODO
+sample_buffer_A:	.skip	480		# Buffer stores display-worth of ADC samples.
+sample_buffer_Ao:	.skip	480		# Buffer stores display-worth of ADC samples.

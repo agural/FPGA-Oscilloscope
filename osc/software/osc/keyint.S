@@ -80,10 +80,10 @@ key_int_installer:
 	stw		r9, (r8)
 	movia	r8, trig_level
 	movi	r9, 0
-	stw		r9, (r8)
+	stb		r9, (r8)
 	movia	r8, trig_delay
-	movi	r9, 0
-	stw		r9, (r8)
+	movi	r9, 240
+	sth		r9, (r8)
 	# asdf
 
 	# Enable all switch interrupts.
@@ -215,7 +215,7 @@ key_lookup_cont:
 	ori		r9, r9, %lo(SWITCH_ALL)
 	stw		r9, PIO_IRQ_MASK(r8)
 
-key_hndler_done:
+key_handler_done:
 	RESTORE
 	ret
 
@@ -266,14 +266,14 @@ set_speed_2:
 
 dec_level:
 	movia	r13, trig_level
-	ldw		r14, (r13)
+	ldb		r14, (r13)
 	subi	r14, r14, 5
 	movi	r15, -128
 	blt		r14, r15, set_level_2
 dec_level_cont:
 	MOVWI	r15, TRIG_LEVEL_BASE
 	stw		r14, (r15)
-	stw		r14, (r13)
+	stb		r14, (r13)
 
 	# Turn on FIFO write
 	STWI	ADC_CTRL_BASE, 0x09
@@ -283,14 +283,14 @@ dec_level_cont:
 
 inc_level:
 	movia	r13, trig_level
-	ldwio	r14, (r13)
+	ldb		r14, (r13)
 	addi	r14, r14, 5
 	movi	r15, 127
 	bgt		r14, r15, set_level_1
 inc_level_cont:
 	MOVWI	r15, TRIG_LEVEL_BASE
-	stwio	r14, (r15)
-	stwio	r14, (r13)
+	stw		r14, (r15)
+	stb		r14, (r13)
 
 	# Turn on FIFO write
 	STWI	ADC_CTRL_BASE, 0x09
@@ -310,13 +310,13 @@ set_level_2:
 
 dec_delay:
 	movia	r13, trig_delay
-	ldw		r14, (r13)
+	ldh		r14, (r13)
 	subi	r14, r14, 10
-	bleu	r14, r0, set_delay_2
+	ble		r14, r0, set_delay_2
 dec_delay_cont:
 	MOVWI	r15, TRIG_DELAY_BASE
 	stw		r14, (r15)
-	stw		r14, (r13)
+	sth		r14, (r13)
 
 	# Turn on FIFO write
 	STWI	ADC_CTRL_BASE, 0x09
@@ -326,14 +326,14 @@ dec_delay_cont:
 
 inc_delay:
 	movia	r13, trig_delay
-	ldwio	r14, (r13)
+	ldh		r14, (r13)
 	addi	r14, r14, 10
 	movi	r15, 1000
 	bgeu	r14, r15, set_delay_1
 inc_delay_cont:
 	MOVWI	r15, TRIG_DELAY_BASE
-	stwio	r14, (r15)
-	stwio	r14, (r13)
+	stw		r14, (r15)
+	sth		r14, (r13)
 
 	# Turn on FIFO write
 	STWI	ADC_CTRL_BASE, 0x09
@@ -342,7 +342,7 @@ inc_delay_cont:
 	br		key_lookup_cont
 
 set_delay_1:
-	movi	r14, 1000
+	MOVWI	r14, 50000
 	br		inc_delay_cont
 
 set_delay_2:
