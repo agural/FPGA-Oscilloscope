@@ -105,7 +105,7 @@ int  main() {
 	//test_adc2();
 	while(1) {
 		//clear_display_x();
-		draw_grid();
+		//draw_grid();
 		//clear_display_x();
 		//clear_display_y();
 	}

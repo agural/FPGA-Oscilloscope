@@ -229,10 +229,51 @@ adc_int_handler_done:
 
 draw_trace:
 	SAVE
+	push	r4
+	push	r5
+	push	r6
 
 	movia	r8, sample_buffer_A
-	movia	r9, sample_buffer_Ao
+	#movia	r9, sample_buffer_Ao
 	mov		r10, r0
+
+draw_trace_loop:
+	ldb		r12, (r8)
+	movui	r15, 255
+	sub		r12, r15, r12
+	andi	r12, r12, 0xFF
+	addi	r12, r12, 8
+
+	MOVWI	r9, VRAM_CTRL_BASE
+	add		r9, r9, r10
+	add		r9, r9, r10
+
+	mov		r11, r0
+draw_trace_col_loop:
+	MOVWI	r15, 0x001C
+	sthio	r15, (r9)
+
+	movi	r15, 136
+	beq		r11, r15, draw_grid_pt
+
+	movi	r15, 240
+	beq		r10, r15, draw_grid_pt
+
+	beq		r11, r12, draw_trace_pt
+
+draw_trace_col_loop_continue:
+	addi	r9, r9, 0x400
+	addi	r11, r11, 1
+	movi	r15, 272
+	bltu	r11, r15, draw_trace_col_loop
+
+	addi	r8, r8, 1
+	addi	r10, r10, 1
+	movi	r15, 480
+	bltu	r10, r15, draw_trace_loop
+
+
+/*
 draw_trace_loop:
 	ldb		r12, (r9)
 	movui	r13, 255
@@ -306,13 +347,24 @@ draw_trace_loop:
 	addi	r10, r10, 1
 	movi	r13, 480
 	bltu	r10, r13, draw_trace_loop
+*/
 
 draw_trace_done:
+	pop		r6
+	pop		r5
+	pop		r4
 	RESTORE
 	ret
 
+draw_grid_pt:
+	MOVWI	r15, 0x1F00
+	sthio	r15, (r9)
+	br		draw_trace_col_loop_continue
 
-
+draw_trace_pt:
+	MOVWI	r15, 0xE07F
+	sthio	r15, (r9)
+	br		draw_trace_col_loop_continue
 
 
 
@@ -377,7 +429,7 @@ draw_pixel:
 	add		r4, r4, r5
 	MOVWI	r5, VRAM_CTRL_BASE
 	add		r4, r4, r5
-	sthio	r6, (r4)
+	sth		r6, (r4)
 
 	pop		r5
 	pop		r4
@@ -448,7 +500,7 @@ clear_display_x:
 	mov		r10, r0
 
 loop_clr_x:
-	movui	r14, 0x003C
+	movui	r14, 0x001C
 	sthio 	r14, (r8)
 	addi	r8, r8, 2
 	addi	r11, r11, 1
