@@ -142,7 +142,6 @@ ACDS_VERSION := 13.1
 ELF := osc.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS += char712.c
 C_SRCS += keyproc.c
 C_SRCS += lcdout.c
 C_SRCS += mainloop.c
@@ -151,6 +150,7 @@ C_SRCS += menuact.c
 C_SRCS += stubfncs.c
 C_SRCS += testcode.c
 C_SRCS += tracutil.c
+C_SRCS += char57.c
 CXX_SRCS :=
 ASM_SRCS += keyint.S
 ASM_SRCS += testvram.S
