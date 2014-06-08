@@ -14,8 +14,8 @@
    <frequency preferredWidth="164" />
   </columns>
  </clocktable>
- <window width="1920" height="1170" x="0" y="0" />
+ <window width="1936" height="1186" x="-8" y="-8" />
  <library
-   expandedCategories="Library,Library/Peripherals/Microcontroller Peripherals,Library/Peripherals,Project" />
+   expandedCategories="Library,Project,Library/Peripherals/Microcontroller Peripherals,Library/Peripherals" />
  <generation simulation="NONE" synthesis="VHDL" />
 </preferences>

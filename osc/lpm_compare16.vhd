@@ -1,12 +1,12 @@
--- megafunction wizard: %LPM_ADD_SUB%
+-- megafunction wizard: %LPM_COMPARE%
 -- GENERATION: STANDARD
 -- VERSION: WM1.0
--- MODULE: LPM_ADD_SUB 
+-- MODULE: LPM_COMPARE 
 
 -- ============================================================
--- File Name: lpm_add_sub1.vhd
+-- File Name: lpm_compare16.vhd
 -- Megafunction Name(s):
--- 			LPM_ADD_SUB
+-- 			LPM_COMPARE
 --
 -- Simulation Library Files(s):
 -- 			lpm
@@ -39,52 +39,48 @@ USE ieee.std_logic_1164.all;
 LIBRARY lpm;
 USE lpm.all;
 
-ENTITY lpm_add_sub1 IS
+ENTITY lpm_compare16 IS
 	PORT
 	(
 		dataa		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 		datab		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		result		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		alb		: OUT STD_LOGIC 
 	);
-END lpm_add_sub1;
+END lpm_compare16;
 
 
-ARCHITECTURE SYN OF lpm_add_sub1 IS
+ARCHITECTURE SYN OF lpm_compare16 IS
 
-	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (7 DOWNTO 0);
+	SIGNAL sub_wire0	: STD_LOGIC ;
 
 
 
-	COMPONENT lpm_add_sub
+	COMPONENT lpm_compare
 	GENERIC (
-		lpm_direction		: STRING;
-		lpm_hint		: STRING;
 		lpm_representation		: STRING;
 		lpm_type		: STRING;
 		lpm_width		: NATURAL
 	);
 	PORT (
+			alb	: OUT STD_LOGIC ;
 			dataa	: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-			datab	: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-			result	: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+			datab	: IN STD_LOGIC_VECTOR (7 DOWNTO 0)
 	);
 	END COMPONENT;
 
 BEGIN
-	result    <= sub_wire0(7 DOWNTO 0);
+	alb    <= sub_wire0;
 
-	LPM_ADD_SUB_component : LPM_ADD_SUB
+	LPM_COMPARE_component : LPM_COMPARE
 	GENERIC MAP (
-		lpm_direction => "SUB",
-		lpm_hint => "ONE_INPUT_IS_CONSTANT=NO,CIN_USED=NO",
 		lpm_representation => "SIGNED",
-		lpm_type => "LPM_ADD_SUB",
+		lpm_type => "LPM_COMPARE",
 		lpm_width => 8
 	)
 	PORT MAP (
 		dataa => dataa,
 		datab => datab,
-		result => sub_wire0
+		alb => sub_wire0
 	);
 
 
@@ -94,41 +90,37 @@ END SYN;
 -- ============================================================
 -- CNX file retrieval info
 -- ============================================================
--- Retrieval info: PRIVATE: CarryIn NUMERIC "0"
--- Retrieval info: PRIVATE: CarryOut NUMERIC "0"
--- Retrieval info: PRIVATE: ConstantA NUMERIC "0"
--- Retrieval info: PRIVATE: ConstantB NUMERIC "3"
--- Retrieval info: PRIVATE: Function NUMERIC "1"
+-- Retrieval info: PRIVATE: AeqB NUMERIC "0"
+-- Retrieval info: PRIVATE: AgeB NUMERIC "0"
+-- Retrieval info: PRIVATE: AgtB NUMERIC "0"
+-- Retrieval info: PRIVATE: AleB NUMERIC "0"
+-- Retrieval info: PRIVATE: AltB NUMERIC "1"
+-- Retrieval info: PRIVATE: AneB NUMERIC "0"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone III"
 -- Retrieval info: PRIVATE: LPM_PIPELINE NUMERIC "0"
 -- Retrieval info: PRIVATE: Latency NUMERIC "0"
--- Retrieval info: PRIVATE: Overflow NUMERIC "0"
--- Retrieval info: PRIVATE: RadixA NUMERIC "10"
--- Retrieval info: PRIVATE: RadixB NUMERIC "10"
--- Retrieval info: PRIVATE: Representation NUMERIC "0"
+-- Retrieval info: PRIVATE: PortBValue NUMERIC "0"
+-- Retrieval info: PRIVATE: Radix NUMERIC "10"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
--- Retrieval info: PRIVATE: ValidCtA NUMERIC "0"
--- Retrieval info: PRIVATE: ValidCtB NUMERIC "1"
--- Retrieval info: PRIVATE: WhichConstant NUMERIC "0"
+-- Retrieval info: PRIVATE: SignedCompare NUMERIC "1"
 -- Retrieval info: PRIVATE: aclr NUMERIC "0"
 -- Retrieval info: PRIVATE: clken NUMERIC "0"
+-- Retrieval info: PRIVATE: isPortBConstant NUMERIC "0"
 -- Retrieval info: PRIVATE: nBit NUMERIC "8"
 -- Retrieval info: PRIVATE: new_diagram STRING "1"
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
--- Retrieval info: CONSTANT: LPM_DIRECTION STRING "SUB"
--- Retrieval info: CONSTANT: LPM_HINT STRING "ONE_INPUT_IS_CONSTANT=NO,CIN_USED=NO"
 -- Retrieval info: CONSTANT: LPM_REPRESENTATION STRING "SIGNED"
--- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_ADD_SUB"
+-- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COMPARE"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "8"
+-- Retrieval info: USED_PORT: alb 0 0 0 0 OUTPUT NODEFVAL "alb"
 -- Retrieval info: USED_PORT: dataa 0 0 8 0 INPUT NODEFVAL "dataa[7..0]"
 -- Retrieval info: USED_PORT: datab 0 0 8 0 INPUT NODEFVAL "datab[7..0]"
--- Retrieval info: USED_PORT: result 0 0 8 0 OUTPUT NODEFVAL "result[7..0]"
 -- Retrieval info: CONNECT: @dataa 0 0 8 0 dataa 0 0 8 0
 -- Retrieval info: CONNECT: @datab 0 0 8 0 datab 0 0 8 0
--- Retrieval info: CONNECT: result 0 0 8 0 @result 0 0 8 0
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_add_sub1.vhd TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_add_sub1.inc FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_add_sub1.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_add_sub1.bsf TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_add_sub1_inst.vhd FALSE
+-- Retrieval info: CONNECT: alb 0 0 0 0 @alb 0 0 0 0
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare16.vhd TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare16.inc FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare16.cmp TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare16.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare16_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: lpm

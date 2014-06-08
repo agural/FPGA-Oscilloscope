@@ -65,7 +65,7 @@ int  getkey()
 
 /* display functions  */
 
-void  clear_display()
+/*void  clear_display()
 {
     return;
 }
@@ -73,13 +73,13 @@ void  clear_display()
 void  plot_pixel(unsigned int x, unsigned int y, int p)
 {
     return;
-}
+}*/
 
 
 
 /* sampling parameter functions */
 
-int  set_sample_rate(long int rate)
+/*int  set_sample_rate(long int rate)
 {
     return  SIZE_X;
 }
@@ -92,13 +92,13 @@ void  set_trigger(int level, int slope)
 void  set_delay(long int delay)
 {
     return;
-}
+}*/
 
 
 
 /* sampling functions */
 
-void  start_sample(int auto_trigger)
+/*void  start_sample(int auto_trigger)
 {
     return;
 }
@@ -106,4 +106,4 @@ void  start_sample(int auto_trigger)
 unsigned char *sample_done()
 {
     return  NULL;
-}
+}*/

@@ -21,7 +21,7 @@ applicable agreement for further details.
 (header "symbol" (version "1.2"))
 (symbol
 	(rect 0 0 128 96)
-	(text "lpm_compare11" (rect 19 0 126 16)(font "Arial" (font_size 10)))
+	(text "lpm_compare16" (rect 18 0 126 16)(font "Arial" (font_size 10)))
 	(text "inst" (rect 8 80 25 92)(font "Arial" ))
 	(port
 		(pt 0 48)
@@ -40,8 +40,8 @@ applicable agreement for further details.
 	(port
 		(pt 128 56)
 		(output)
-		(text "agb" (rect 0 0 21 14)(font "Arial" (font_size 8)))
-		(text "agb" (rect 91 49 107 62)(font "Arial" (font_size 8)))
+		(text "alb" (rect 0 0 16 14)(font "Arial" (font_size 8)))
+		(text "alb" (rect 95 49 107 62)(font "Arial" (font_size 8)))
 		(line (pt 128 56)(pt 112 56))
 	)
 	(drawing

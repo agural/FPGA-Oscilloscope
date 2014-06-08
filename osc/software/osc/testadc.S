@@ -77,6 +77,7 @@ adc_int_installer:
 	# Set Trigger default level (2's complement), delay
 	STWI	TRIG_LEVEL_BASE, 0
 	STWI	TRIG_DELAY_BASE, 240
+	STWI	TRIG_ERROR_BASE, 3
 
 	# Install the interrupt handler
 	mov		r4, r0
@@ -92,18 +93,20 @@ adc_int_installer:
 	MOVWI	r9, 0xFFFFFFFF
 	stw		r9, PIO_EDGE_CAP(r8)
 
+	/*
 	# Enable ADC interrupts. [TYPEOFINTERUPT]
 	MOVWI	r8, TRIG_INT_BASE
 	MOVWI	r9, 0x00000002
 	stw		r9, PIO_IRQ_MASK(r8)
 
-	# Turn on FIFO write
-	STWI	ADC_CTRL_BASE, 0x09
-	STWI	ADC_CTRL_BASE, 0x01
+	# Clear FIFO, turn on FIFO write.
+	STWI	ADC_CTRL_BASE, 0x04
+	STWI	ADC_CTRL_BASE, 0x02
 
 	# Reset trigger counter [ch. A], [+ slope]
-	STWI	TRIG_CTRL_BASE, 0x04
+	STWI	TRIG_CTRL_BASE, 0x01
 	STWI	TRIG_CTRL_BASE, 0x00
+	*/
 
 adc_int_installer_done:
 	RESTORE
@@ -158,18 +161,14 @@ adc_int_handler:
 	# Get the edge capture register.
 	ldw		r9, PIO_EDGE_CAP(r8)
 
-	# Only ch A trigger interrupts for now. [TYPEOFINTERRUPT]
-	andi	r9, r9, 0x02
-	beq		r9, r0, adc_int_handler_done
-
-	# Pause FIFO write, enable reading
-	STWI	ADC_CTRL_BASE, 0x02
+	# Pause FIFO write
+	STWI	ADC_CTRL_BASE, 0x00
 
 	mov		r10, r0
 adc_int_handler_clear_front:
 	# Bitbang clock pulse
-	STWI	ADC_CTRL_BASE, 0x06
-	STWI	ADC_CTRL_BASE, 0x02
+	STWI	ADC_CTRL_BASE, 0x01
+	STWI	ADC_CTRL_BASE, 0x00
 
 	addi	r10, r10, 1
 	movi	r13, 13
@@ -180,8 +179,8 @@ adc_int_handler_clear_front:
 
 adc_int_handler_loop:
 	# Bitbang clock pulse
-	STWI	ADC_CTRL_BASE, 0x06
-	STWI	ADC_CTRL_BASE, 0x02
+	STWI	ADC_CTRL_BASE, 0x01
+	STWI	ADC_CTRL_BASE, 0x00
 
 	MOVWI	r11, ADC_RAW_BASE
 	ldwio	r12, (r11)
@@ -195,9 +194,14 @@ adc_int_handler_loop:
 	movi	r13, 480
 	bltu	r10, r13, adc_int_handler_loop
 
-	call	draw_trace
+	//call	draw_trace
+	# Sample done.
+	movia	r8, sample_complete
+	movi	r9, 1
+	stb		r9, (r8)
 
 adc_int_handler_done:
+	/*
 	# Clear the edge capture register (write 1 to clear).
 	MOVWI	r8, TRIG_INT_BASE
 	MOVWI	r9, 0xFFFFFFFF
@@ -208,13 +212,14 @@ adc_int_handler_done:
 	MOVWI	r9, 0x00000002
 	stw		r9, PIO_IRQ_MASK(r8)
 
-	# Turn on FIFO write
-	STWI	ADC_CTRL_BASE, 0x09
-	STWI	ADC_CTRL_BASE, 0x01
+	# Clear FIFO, turn on FIFO write.
+	STWI	ADC_CTRL_BASE, 0x04
+	STWI	ADC_CTRL_BASE, 0x02
 
 	# Restart trigger counter [ch. A], [+ slope]
-	STWI	TRIG_CTRL_BASE, 0x04
+	STWI	TRIG_CTRL_BASE, 0x01
 	STWI	TRIG_CTRL_BASE, 0x00
+	*/
 
 	RESTORE
 	ret
@@ -234,7 +239,6 @@ draw_trace:
 	push	r6
 
 	movia	r8, sample_buffer_A
-	#movia	r9, sample_buffer_Ao
 	mov		r10, r0
 
 draw_trace_loop:
@@ -271,83 +275,6 @@ draw_trace_col_loop_continue:
 	addi	r10, r10, 1
 	movi	r15, 480
 	bltu	r10, r15, draw_trace_loop
-
-
-/*
-draw_trace_loop:
-	ldb		r12, (r9)
-	movui	r13, 255
-	sub		r12, r13, r12
-	andi	r12, r12, 0xFF
-	addi	r12, r12, 5
-
-	push	r4
-	push	r5
-	push	r6
-
-	mov		r4, r12
-	mov		r5, r10
-	movui	r6, 0x003C
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-
-	subi	r4, r4, 6
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-	addi	r4, r4, 1
-	call	draw_pixel
-
-	pop		r6
-	pop		r5
-	pop		r4
-
-
-	ldb		r12, (r8)
-	stb		r12, (r9)
-	movui	r13, 255
-	sub		r12, r13, r12
-	andi	r12, r12, 0xFF
-	addi	r12, r12, 8
-
-	push	r4
-	push	r5
-	push	r6
-
-	mov		r4, r12
-	mov		r5, r10
-	movui	r6, 0xE003
-	call	draw_pixel
-
-	pop		r6
-	pop		r5
-	pop		r4
-
-	addi	r8, r8, 1
-	addi	r9, r9, 1
-	addi	r10, r10, 1
-	movi	r13, 480
-	bltu	r10, r13, draw_trace_loop
-*/
 
 draw_trace_done:
 	pop		r6
@@ -493,31 +420,73 @@ adc_int_handler_draw_col_loop_cont:
 clear_display_x:
 	SAVE
 
-	movhi	r8, %hi(VRAM_CTRL_BASE)
-	ori		r8, r8, %lo(VRAM_CTRL_BASE)
-	movi	r12, 512
-	movi	r13, 272
-	mov		r10, r0
+	MOVWI	r8, VRAM_CTRL_BASE
+	movui	r9, 272
+	slli	r9, r9, 10
+	add		r9, r8, r9
+	movui	r15, 0x001C
 
 loop_clr_x:
-	movui	r14, 0x001C
-	sthio 	r14, (r8)
+	sthio 	r15, (r8)
 	addi	r8, r8, 2
-	addi	r11, r11, 1
-	bltu	r11, r12, loop_clr_x
-
-	mov		r11, r0
-	addi	r10, r10, 1
-	bltu	r10, r13, loop_clr_x
+	bltu	r8, r9, loop_clr_x
 
 	RESTORE
 	ret
 
 
 
-.global clear_display_y
-.type clear_display_y, @function
+.global clear_display
+.type clear_display, @function
 
+clear_display:
+	SAVE
+
+	MOVWI	r8, VRAM_CTRL_BASE
+	movui	r9, 272
+	slli	r9, r9, 10
+	add		r9, r8, r9
+	movui	r15, 0x001C
+
+clear_display_loop:
+	sthio 	r15, (r8)
+	addi	r8, r8, 2
+	bltu	r8, r9, clear_display_loop
+
+clear_display_done:
+	RESTORE
+	ret
+
+
+
+.global plot_pixel
+.type plot_pixel, @function
+
+plot_pixel:
+	SAVE
+
+	push	r4
+	push	r5
+
+	slli	r5, r5, 10
+	add		r5, r5, r4
+	add		r5, r5, r4
+	MOVWI	r4, VRAM_CTRL_BASE
+	add		r5, r5, r4
+	sth		r6, (r5)
+
+	pop		r5
+	pop		r4
+
+plot_pixel_done:
+	RESTORE
+	ret
+
+
+
+
+
+/*
 clear_display_y:
 	SAVE
 
@@ -540,87 +509,146 @@ loop_clr_y:
 
 	RESTORE
 	ret
-
-
-
-/*
-.global test_adc
-.type test_adc, @function
-
-test_adc:
-	movhi	r9, %hi(ADC_RAW_BASE)
-	ori		r9, r9, %lo(ADC_RAW_BASE)
-
-clear_displayx:
-	movhi	r8, %hi(VRAM_CTRL_BASE)
-	ori		r8, r8, %lo(VRAM_CTRL_BASE)
-	movi	r12, 512
-	movi	r13, 272
-	mov		r10, r0
-
-loop_clrx:
-	movui	r14, 0x003C
-	sthio 	r14, (r8)
-	addi	r8, r8, 2
-	addi	r11, r11, 1
-	bltu	r11, r12, loop_clr
-
-	mov		r11, r0
-	addi	r10, r10, 1
-	bltu	r10, r13, loop_clr
-
-draw_sig:
-	mov		r11, r0
-	movi	r12, 480
-
-draw_sig_loop:
-	movhi	r8, %hi(VRAM_CTRL_BASE)
-	ori		r8, r8, %lo(VRAM_CTRL_BASE)
-
-	mov		r10, r0
-	ldwio	r10, (r9)
-	movui	r13, 127
-	sub		r10, r13, r10
-	andi	r10, r10, 0xFF
-	addi	r10, r10, 8
-
-	slli	r10, r10, 10
-	add		r8, r8, r10
-	add		r8, r8, r11
-	add		r8, r8, r11
-
-clear_col:
-	movhi	r14, %hi(VRAM_CTRL_BASE)
-	ori		r14, r14, %lo(VRAM_CTRL_BASE)
-	add		r14, r14, r11
-	add		r14, r14, r11
-	mov		r15, r0
-
-clear_col_loop:
-	movui	r16, 0x003C
-	sthio 	r16, (r14)
-	addi	r14, r14, 1024
-
-	addi	r15, r15, 1
-	movi	r16, 272
-	bltu	r15, r16, clear_col_loop
-
-draw_sig_loop_2:
-	movui	r13, 0xE003
-	sthio 	r13, (r8)
-
-	addi	r11, r11, 1
-	bltu	r11, r12, draw_sig_loop
-
-	mov		r11, r0
-	br		draw_sig_loop
-
-test_adc_done:
-	ret
 */
+
+
+
+.global set_sample_rate
+.type set_sample_rate, @function
+
+set_sample_rate:
+	SAVE
+
+	# Divide fastest sample rate by desired sample rate
+	# to get number of ticks to pause (not collect samples)
+	# between collecting samples.
+	MOVWI	r8, ADC_RATE_BASE
+	MOVWI	r9, 180000000
+	divu	r9, r9, r4
+	stw		r9, (r8)
+
+	# Always return 480 samples.
+	movui	r2, 480
+
+set_sample_rate_done:
+	RESTORE
+	ret
+
+
+
+.global set_trigger
+.type set_trigger, @function
+
+set_trigger:
+	SAVE
+
+	# Convert [0 to 127] to signed 8-bit [-127 to 127].
+	# Then update trigger level.
+	MOVWI	r8, TRIG_LEVEL_BASE
+	slli	r9, r4, 1
+	subi	r9, r9, 127
+	andi	r9, r9, 0xFF
+	stw		r9, (r8)
+
+	# Slope is second bit of TRIG_CTRL. Modify the given
+	# argument, then update slope.
+	beq		r5, r0, set_trigger_slope_pos
+	movi	r8, 0x02
+	MOVWI	r9, TRIG_CTRL_BASE
+	stw		r8, PIO_OUTSET(r9)
+	br		set_trigger_done
+
+set_trigger_slope_pos:
+	movi	r8, 0x02
+	MOVWI	r9, TRIG_CTRL_BASE
+	stw		r8, PIO_OUTCLR(r9)
+
+set_trigger_done:
+	RESTORE
+	ret
+
+
+
+.global set_delay
+.type set_delay, @function
+
+set_delay:
+	SAVE
+
+	# Simply set the delay...
+	MOVWI	r8, TRIG_DELAY_BASE
+	stw		r4, (r8)
+
+set_delay_done:
+	RESTORE
+	ret
+
+
+
+.global start_sample
+.type start_sample, @function
+
+start_sample:
+	SAVE
+
+	# Clear the edge capture register (write 1 to clear).
+	MOVWI	r8, TRIG_INT_BASE
+	MOVWI	r9, 0xFFFFFFFF
+	stw		r9, PIO_EDGE_CAP(r8)
+
+	# Enable trigger interrupts.
+	MOVWI	r9, 0x00000002
+	# If auto-trigger, enable time-outs as well.
+	slli	r8, r4, 2
+	add		r9, r8, r9
+
+	MOVWI	r8, TRIG_INT_BASE
+	stw		r9, PIO_IRQ_MASK(r8)
+
+	# Clear FIFO, turn on FIFO write.
+	STWI	ADC_CTRL_BASE, 0x04
+	STWI	ADC_CTRL_BASE, 0x02
+
+	# Restart trigger counter [ch. A], [+ slope]
+	MOVWI	r8, TRIG_CTRL_BASE
+	movi	r9, 1
+	stw		r9, PIO_OUTSET(r8)
+	stw		r9, PIO_OUTCLR(r8)
+
+start_sample_done:
+	RESTORE
+	ret
+
+
+
+.global sample_done
+.type sample_done, @function
+
+sample_done:
+	SAVE
+
+	# Test if sample occurred.
+	movia	r8, sample_complete
+	ldb		r9, (r8)
+	beq		r9, r0, sample_null
+
+	# If so, reset sample complete variable and return buffer start.
+	stb		r0, (r8)
+	movia	r2, sample_buffer_A
+	br		sample_done_done
+
+sample_null:
+	# Otherwise, return null.
+	mov		r2, r0
+
+sample_done_done:
+	RESTORE
+	ret
+
 
 
 .section  .data     #start data section
 
+sample_complete:	.byte			# 0 = still trying to get sample; 1 = sample done.
 sample_buffer_A:	.skip	480		# Buffer stores display-worth of ADC samples.
 sample_buffer_Ao:	.skip	480		# Buffer stores display-worth of ADC samples.

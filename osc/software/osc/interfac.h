@@ -47,10 +47,10 @@
 #define  KEY_ILLEGAL    6	/* illegal key */
 
 /* display constants */
-#define  SIZE_X         480	/* size in the x dimension */
-#define  SIZE_Y		128     /* size in the y dimension */
-#define  PIXEL_WHITE      0     /* pixel off */
-#define  PIXEL_BLACK      1     /* pixel on */
+#define  SIZE_X         480		/* size in the x dimension */
+#define  SIZE_Y			272     /* size in the y dimension */
+#define  PIXEL_WHITE    0x007F  /* pixel off */
+#define  PIXEL_BLACK    0x0000  /* pixel on */
 
 /* scope parameters */
 #define  MIN_DELAY	   0    /* minimum trigger delay */

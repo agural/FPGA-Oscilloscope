@@ -18,7 +18,6 @@ component lpm_compare11
 	(
 		dataa		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 		datab		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		aeb		: OUT STD_LOGIC ;
-		alb		: OUT STD_LOGIC 
+		agb		: OUT STD_LOGIC 
 	);
 end component;

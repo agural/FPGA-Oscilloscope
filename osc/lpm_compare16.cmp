@@ -13,11 +13,11 @@
 --applicable agreement for further details.
 
 
-component lpm_add_sub1
+component lpm_compare16
 	PORT
 	(
 		dataa		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 		datab		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		result		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
+		alb		: OUT STD_LOGIC 
 	);
 end component;

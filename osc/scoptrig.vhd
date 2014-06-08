@@ -18,6 +18,7 @@
 --      4 Nov 05  Glen George       Updated comments.
 --     17 Nov 07  Glen George       Updated comments.
 --     13 Feb 10  Glen George       Added more example architectures.
+--		 07 Jun 14	Albert Gural		Added basic hysterises to reject LSB noise issues.
 --
 ----------------------------------------------------------------------------
 
@@ -34,8 +35,8 @@ use  ieee.std_logic_1164.all;
 entity  ScopeTrigger  is
     port (
         TS         :  in  std_logic;      -- trigger slope (1 -> negative, 0 -> positive)
-        TEQ        :  in  std_logic;      -- signal and trigger levels equal
-        TLT        :  in  std_logic;      -- signal level < trigger level
+        TGT        :  in  std_logic;      -- signal level > trigger level + epsilon
+        TLT        :  in  std_logic;      -- signal level < trigger level - epsilon
         clk        :  in  std_logic;      -- clock
         Reset      :  in  std_logic;      -- reset the system
         TrigEvent  :  out  std_logic      -- a trigger event has occurred
@@ -76,33 +77,33 @@ begin
 
     -- compute the next state (function of current state and inputs)
 
-    transition:  process (Reset, TS, TEQ, TLT, CurrentState)
+    transition:  process (Reset, TS, TGT, TLT, CurrentState)
     begin
 
         case  CurrentState  is          -- do the state transition/output
 
             when  IDLE =>               -- in idle state, do transition
-                if  (TS = '0' and TLT = '1' and TEQ = '0')  then
+                if  (TS = '0' and TLT = '1')  then
                     NextState <= WAIT_POS;      -- below trigger and + slope
-                elsif  (TS = '1' and TLT = '0' and TEQ = '0')  then
+                elsif  (TS = '1' and TGT = '1')  then
                     NextState <= WAIT_NEG;      -- above trigger and - slope
                 else
                     NextState <= IDLE;          -- trigger not possible yet
                 end if;
 
             when  WAIT_POS =>           -- waiting for positive slope trigger
-                if  (TS = '0' and TLT = '1')  then
+                if  (TS = '0' and TGT = '0')  then
                     NextState <= WAIT_POS;      -- no trigger yet
-                elsif  (TS = '0' and TLT = '0')  then
+                elsif  (TS = '0' and TGT = '1')  then
                     NextState <= TRIGGER;       -- got a trigger
                 else
                     NextState <= IDLE;          -- trigger slope changed
                 end if;
 
             when  WAIT_NEG =>           -- waiting for negative slope trigger
-                if  (TS = '1' and TLT = '0' and TEQ = '0')  then
+                if  (TS = '1' and TLT = '0')  then
                     NextState <= WAIT_NEG;      -- no trigger yet
-                elsif  (TS = '1' and (TLT = '1' or TEQ = '1'))  then
+                elsif  (TS = '1' and TLT = '1')  then
                     NextState <= TRIGGER;       -- got a trigger
                 else
                     NextState <= IDLE;          -- trigger slope changed

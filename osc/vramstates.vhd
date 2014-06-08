@@ -16,6 +16,7 @@
 --  Revision History:
 --     2014/02/23 Albert Gural      Created file and updated with VRAM
 --                                  state machine.
+--		 2014/06/07 Albert Gural		Added idle states to improve r/w speeds.
 --
 ----------------------------------------------------------------------------
 
@@ -69,6 +70,9 @@ architecture  assign_statebits  of  ScopeVRAM  is
     --       [type <000 IDLE, 010 READ, 011 WRITE, 100 REFRESH, 101 TRANSFER>]
     --       [number <00, 01, ...>]
     constant  IDLE      : states := "1111011100000";  -- idle (can accept R/W)
+    constant  IDLE2     : states := "1111011100001";  -- idle (can accept R/W)
+    constant  IDLE3     : states := "1111011100010";  -- idle (can accept R/W)
+    constant  IDLE4     : states := "1111011100011";  -- idle (can accept R/W, srt, refresh)
     constant  READ1     : states := "1111011101000";  -- read cycle
     constant  READ2     : states := "0111011101000";  -- read cycle
     constant  READ3     : states := "0101001101000";  -- read cycle
@@ -99,11 +103,6 @@ architecture  assign_statebits  of  ScopeVRAM  is
     constant  REFRESH6  : states := "0011001110010";  -- refresh cycle
     constant  REFRESH7  : states := "1111001110010";  -- refresh cycle
     constant  REFRESH8  : states := "1111001110011";  -- refresh cycle
-    -- constant  REFRESH2  : states := "0111101110001";  -- refresh cycle
-    -- constant  REFRESH3  : states := "0111101110010";  -- refresh cycle
-    -- constant  REFRESH4  : states := "1111001110000";  -- refresh cycle
-    -- constant  REFRESH5  : states := "1111001110001";  -- refresh cycle
-    -- constant  REFRESH6  : states := "1111001110010";  -- refresh cycle
 
 
     signal  CurrentState  :  states;    -- current state
@@ -127,8 +126,35 @@ begin
     begin
 
         case  CurrentState  is          -- do the state transition/output   
-					 
-            when  IDLE =>              -- in idle state, do transition
+				
+				when  IDLE =>               -- in idle state, do transition
+                if  (cs = '0' and rw = '1')  then
+                    NextState <= READ1;         -- start read cycle
+                elsif  (cs = '0' and rw = '0')  then
+                    NextState <= WRITE1;        -- start write cycle
+                else
+                    NextState <= IDLE2;      -- start refresh cycle
+                end if;
+				
+				when  IDLE2 =>              -- in idle state, do transition
+                if  (cs = '0' and rw = '1')  then
+                    NextState <= READ1;         -- start read cycle
+                elsif  (cs = '0' and rw = '0')  then
+                    NextState <= WRITE1;        -- start write cycle
+                else
+                    NextState <= IDLE3;      -- start refresh cycle
+                end if;
+				
+				when  IDLE3 =>              -- in idle state, do transition
+                if  (cs = '0' and rw = '1')  then
+                    NextState <= READ1;         -- start read cycle
+                elsif  (cs = '0' and rw = '0')  then
+                    NextState <= WRITE1;        -- start write cycle
+                else
+                    NextState <= IDLE4;      -- start refresh cycle
+                end if;
+			
+            when  IDLE4 =>              -- in idle state, do transition
                 if  (cs = '0' and rw = '1')  then
                     NextState <= READ1;         -- start read cycle
                 elsif  (cs = '0' and rw = '0')  then

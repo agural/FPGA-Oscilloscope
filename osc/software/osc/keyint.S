@@ -233,8 +233,8 @@ dec_speed_cont:
 	stw		r14, (r13)
 
 	# Turn on FIFO write
-	STWI	ADC_CTRL_BASE, 0x09
-	STWI	ADC_CTRL_BASE, 0x01
+	STWI	ADC_CTRL_BASE, 0x04
+	STWI	ADC_CTRL_BASE, 0x02
 
 	br		key_lookup_cont
 
@@ -249,8 +249,8 @@ inc_speed_cont:
 	stwio	r14, (r13)
 
 	# Turn on FIFO write
-	STWI	ADC_CTRL_BASE, 0x09
-	STWI	ADC_CTRL_BASE, 0x01
+	STWI	ADC_CTRL_BASE, 0x04
+	STWI	ADC_CTRL_BASE, 0x02
 
 	br		key_lookup_cont
 
@@ -276,8 +276,8 @@ dec_level_cont:
 	stb		r14, (r13)
 
 	# Turn on FIFO write
-	STWI	ADC_CTRL_BASE, 0x09
-	STWI	ADC_CTRL_BASE, 0x01
+	STWI	ADC_CTRL_BASE, 0x04
+	STWI	ADC_CTRL_BASE, 0x02
 
 	br		key_lookup_cont
 
@@ -293,8 +293,8 @@ inc_level_cont:
 	stb		r14, (r13)
 
 	# Turn on FIFO write
-	STWI	ADC_CTRL_BASE, 0x09
-	STWI	ADC_CTRL_BASE, 0x01
+	STWI	ADC_CTRL_BASE, 0x04
+	STWI	ADC_CTRL_BASE, 0x02
 
 	br		key_lookup_cont
 
@@ -319,8 +319,8 @@ dec_delay_cont:
 	sth		r14, (r13)
 
 	# Turn on FIFO write
-	STWI	ADC_CTRL_BASE, 0x09
-	STWI	ADC_CTRL_BASE, 0x01
+	STWI	ADC_CTRL_BASE, 0x04
+	STWI	ADC_CTRL_BASE, 0x02
 
 	br		key_lookup_cont
 
@@ -336,8 +336,8 @@ inc_delay_cont:
 	sth		r14, (r13)
 
 	# Turn on FIFO write
-	STWI	ADC_CTRL_BASE, 0x09
-	STWI	ADC_CTRL_BASE, 0x01
+	STWI	ADC_CTRL_BASE, 0x04
+	STWI	ADC_CTRL_BASE, 0x02
 
 	br		key_lookup_cont
 

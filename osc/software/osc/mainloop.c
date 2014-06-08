@@ -98,6 +98,10 @@ int  main() {
     	if(c >= 100) c = 0;
     }*/
 
+	key_int_installer();
+	adc_int_installer();
+
+	/*
 	clear_display_x();
 	adc_int_installer();
 	key_int_installer();
@@ -108,7 +112,7 @@ int  main() {
 		//draw_grid();
 		//clear_display_x();
 		//clear_display_y();
-	}
+	}*/
 
 	/* variables */
     enum keycode        key;		    /* an input key */

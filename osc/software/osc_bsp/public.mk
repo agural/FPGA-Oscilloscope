@@ -113,12 +113,12 @@ CPU_NAME = PROC
 ELF_PATCH_FLAG  += --cpu_name $(CPU_NAME)
 
 # Hardware Divider present. 
-# setting HARDWARE_DIVIDE is false
-ALT_CFLAGS += -mno-hw-div
+# setting HARDWARE_DIVIDE is true
+ALT_CFLAGS += -mhw-div
 
 # Hardware Multiplier present. 
-# setting HARDWARE_MULTIPLY is false
-ALT_CFLAGS += -mno-hw-mul
+# setting HARDWARE_MULTIPLY is true
+ALT_CFLAGS += -mhw-mul
 
 # Hardware Mulx present. 
 # setting HARDWARE_MULX is false
@@ -147,14 +147,14 @@ SOPC_SYSID_FLAG += --id=2863311530
 ELF_PATCH_FLAG  += --id 2863311530
 
 # The SOPC System ID Base Address 
-# setting SOPC_SYSID_BASE_ADDRESS is 0x1511a8
-SOPC_SYSID_FLAG += --sidp=0x1511a8
-ELF_PATCH_FLAG  += --sidp 0x1511a8
+# setting SOPC_SYSID_BASE_ADDRESS is 0x1511c8
+SOPC_SYSID_FLAG += --sidp=0x1511c8
+ELF_PATCH_FLAG  += --sidp 0x1511c8
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1401600226
-SOPC_SYSID_FLAG += --timestamp=1401600226
-ELF_PATCH_FLAG  += --timestamp 1401600226
+# setting SOPC_TIMESTAMP is 1402193276
+SOPC_SYSID_FLAG += --timestamp=1402193276
+ELF_PATCH_FLAG  += --timestamp 1402193276
 
 # Build a custom version of newlib with the specified space-separated compiler 
 # flags. The custom newlib build will be placed in the &lt;bsp root>/newlib 
