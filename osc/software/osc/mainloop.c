@@ -141,34 +141,31 @@ int  main() {
     init_menu();		/* initialize the menu system */
 
 
-    /* infinite loop processing input */
+    // infinite loop processing input
+	//int x = 0;
     while(TRUE)  {
+    	//x += 1;
+		// if ready to do a trace, do it
+		if (trace_rdy()) do_trace();
 
-        /* check if ready to do a trace */
-	if (trace_rdy())
-	    /* ready for a trace - do it */
-	    do_trace();
+		//check if have a trace to display
+		if (is_sampling() && ((sample = sample_done()) != NULL))  {
 
+			//have a trace - output it
+			plot_trace(sample);
+			//done processing this trace
+			trace_done();
+		}
 
-	/* check if have a trace to display */
-	if (is_sampling() && ((sample = sample_done()) != NULL))  {
+		//now check for keypad input
+		if (key_available())  {
 
-	    /* have a trace - output it */
-	    plot_trace(sample);
-	    /* done processing this trace */
-	    trace_done();
-	}
+			//have keypad input - get the key
+			key = key_lookup();
 
-
-	/* now check for keypad input */
-	if (key_available())  {
-
-	    /* have keypad input - get the key */
-	    key = key_lookup();
-
-	    /* execute processing routine for that key */
-	    state = process_key[key][state](state);
-	}
+			//execute processing routine for that key
+			state = process_key[key][state](state);
+		}
     }
 
 
@@ -212,20 +209,20 @@ enum keycode  	key_lookup()
     const enum keycode  keycodes[] = /* array of keycodes */
         {		                    /* order must match keys array exactly */
            KEYCODE_MENU,      /* <Menu>     */   /* also need an extra element */
-	   KEYCODE_UP,        /* <Up>       */   /* for unknown key codes */
-	   KEYCODE_DOWN,      /* <Down>     */
-	   KEYCODE_LEFT,      /* <Left>     */
-	   KEYCODE_RIGHT,     /* <Right>    */
-	   KEYCODE_ILLEGAL    /* other keys */
+           KEYCODE_UP,        /* <Up>       */   /* for unknown key codes */
+           KEYCODE_DOWN,      /* <Down>     */
+           KEYCODE_LEFT,      /* <Left>     */
+           KEYCODE_RIGHT,     /* <Right>    */
+           KEYCODE_ILLEGAL    /* other keys */
         }; 
 
     const int  keys[] =   /* array of key values */
         {			 /* order must match keycodes array exactly */
            KEY_MENU,    /* <Menu>     */
-	   KEY_UP,      /* <Up>       */
-	   KEY_DOWN,    /* <Down>     */
-	   KEY_LEFT,    /* <Left>     */
-	   KEY_RIGHT,   /* <Right>    */
+           KEY_UP,      /* <Up>       */
+           KEY_DOWN,    /* <Down>     */
+           KEY_LEFT,    /* <Left>     */
+           KEY_RIGHT,   /* <Right>    */
         }; 
 
     int  key; 		/* an input key */

@@ -1049,7 +1049,7 @@ void  plot_trace(unsigned char *sample)
 	y = (PLOT_SIZE_Y - 1) - ((sample[i] * (PLOT_SIZE_Y - 1)) / 255);
 
         /* plot this point */
-	plot_pixel(x, y, PIXEL_BLACK);
+	plot_pixel(x, y, PIXEL_CYAN);
 
 
 	/* check if the point is in a save area */

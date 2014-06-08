@@ -49,8 +49,15 @@
 /* display constants */
 #define  SIZE_X         480		/* size in the x dimension */
 #define  SIZE_Y			272     /* size in the y dimension */
-#define  PIXEL_WHITE    0x007F  /* pixel off */
-#define  PIXEL_BLACK    0x0000  /* pixel on */
+#define  PIXEL_BLACK    0x0000
+#define  PIXEL_WHITE    0xFF7F
+#define  PIXEL_RED		0x1F00
+#define  PIXEL_ORANGE	0xFF01
+#define  PIXEL_YELLOW	0xFF03
+#define	 PIXEL_GREEN	0xE003
+#define	 PIXEL_CYAN		0x007F
+#define  PIXEL_BLUE		0x007C
+#define	 PIXEL_PURPLE	0x0F7C
 
 /* scope parameters */
 #define  MIN_DELAY	   0    /* minimum trigger delay */

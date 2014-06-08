@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Fri May 30 01:51:12 PDT 2014
+ * Generated: Sun Jun 08 02:33:39 PDT 2014
  */
 
 /*
@@ -84,8 +84,8 @@
 
 #define ALT_EXCEPTIONS_DEVICE ONCHIP_MEM
 #define ALT_RESET_DEVICE ONCHIP_MEM
-#define ALT_RODATA_DEVICE RAM_CTRL
-#define ALT_RWDATA_DEVICE RAM_CTRL
-#define ALT_TEXT_DEVICE RAM_CTRL
+#define ALT_RODATA_DEVICE ONCHIP_MEM
+#define ALT_RWDATA_DEVICE ONCHIP_MEM
+#define ALT_TEXT_DEVICE ONCHIP_MEM
 
 #endif /* __LINKER_H_ */

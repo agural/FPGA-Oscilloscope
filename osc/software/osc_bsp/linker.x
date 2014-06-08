@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Fri May 30 01:51:12 PDT 2014
+ * Generated: Sun Jun 08 02:33:39 PDT 2014
  */
 
 /*
@@ -210,7 +210,7 @@ SECTIONS
         PROVIDE (__DTOR_END__ = ABSOLUTE(.));
         KEEP (*(.jcr))
         . = ALIGN(4);
-    } > RAM_ctrl = 0x3a880100 /* NOP instruction (always in big-endian byte ordering) */
+    } > ONCHIP_mem = 0x3a880100 /* NOP instruction (always in big-endian byte ordering) */
 
     .rodata :
     {
@@ -220,7 +220,7 @@ SECTIONS
         *(.rodata1)
         . = ALIGN(4);
         PROVIDE (__ram_rodata_end = ABSOLUTE(.));
-    } > RAM_ctrl
+    } > ONCHIP_mem
 
     PROVIDE (__flash_rodata_start = LOADADDR(.rodata));
 
@@ -243,7 +243,7 @@ SECTIONS
         _edata = ABSOLUTE(.);
         PROVIDE (edata = ABSOLUTE(.));
         PROVIDE (__ram_rwdata_end = ABSOLUTE(.));
-    } > RAM_ctrl
+    } > ONCHIP_mem
 
     PROVIDE (__flash_rwdata_start = LOADADDR(.rwdata));
 
@@ -267,7 +267,7 @@ SECTIONS
 
         . = ALIGN(4);
         __bss_end = ABSOLUTE(.);
-    } > RAM_ctrl
+    } > ONCHIP_mem
 
     /*
      *
@@ -296,9 +296,6 @@ SECTIONS
         *(.RAM_ctrl .RAM_ctrl. RAM_ctrl.*)
         . = ALIGN(4);
         PROVIDE (_alt_partition_RAM_ctrl_end = ABSOLUTE(.));
-        _end = ABSOLUTE(.);
-        end = ABSOLUTE(.);
-        __alt_stack_base = ABSOLUTE(.);
     } > RAM_ctrl
 
     PROVIDE (_alt_partition_RAM_ctrl_load_addr = LOADADDR(.RAM_ctrl));
@@ -319,6 +316,9 @@ SECTIONS
         *(.ONCHIP_mem .ONCHIP_mem. ONCHIP_mem.*)
         . = ALIGN(4);
         PROVIDE (_alt_partition_ONCHIP_mem_end = ABSOLUTE(.));
+        _end = ABSOLUTE(.);
+        end = ABSOLUTE(.);
+        __alt_stack_base = ABSOLUTE(.);
     } > ONCHIP_mem
 
     PROVIDE (_alt_partition_ONCHIP_mem_load_addr = LOADADDR(.ONCHIP_mem));
@@ -370,7 +370,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x130000;
+__alt_data_end = 0x150000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -386,4 +386,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x130000 );
+PROVIDE( __alt_heap_limit    = 0x150000 );

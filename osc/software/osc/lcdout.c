@@ -91,7 +91,7 @@ void  clear_region(int x_ul, int y_ul, int x_size, int y_size)
         for (y = y_ul; y < (y_ul + y_size); y++)  {
 
 	    /* clear this pixel */
-	    plot_pixel(x, y, PIXEL_WHITE);
+	    plot_pixel(x, y, PIXEL_BLUE);
         }
     }
 
@@ -162,7 +162,7 @@ void  plot_hline(int start_x, int start_y, int length)
     /* loop, outputting points for the line (always draw to the "right") */
     for (x = init_x; x < end_x; x++)
         /* plot a point of the line */
-	plot_pixel(x, start_y, PIXEL_BLACK);
+	plot_pixel(x, start_y, PIXEL_RED);
 
 
     /* done plotting the line - return */
@@ -231,7 +231,7 @@ void  plot_vline(int start_x, int start_y, int length)
     /* loop, outputting points for the line (always draw "down") */
     for (y = init_y; y < end_y; y++)
         /* plot a point of the line */
-	plot_pixel(start_x, y, PIXEL_BLACK);
+	plot_pixel(start_x, y, PIXEL_RED);
 
 
     /* done plotting the line - return */
@@ -326,10 +326,10 @@ void  plot_char(int pos_x, int pos_y, char c, enum char_style style)
             /* output this pixel in the appropriate color */
 	    if ((bits & 0x80) == 0)
 	        /* blank pixel - output in PIXEL_WHITE */
-		plot_pixel(x + col, y, PIXEL_WHITE);
+		plot_pixel(x + col, y, PIXEL_BLACK);
 	    else
 	        /* black pixel - output in PIXEL_BLACK */
-		plot_pixel(x + col, y, PIXEL_BLACK);
+		plot_pixel(x + col, y, PIXEL_GREEN);
 
 	    /* shift the next bit into position */
 	    bits <<= 1;
