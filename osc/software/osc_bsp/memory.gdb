@@ -1,9 +1,9 @@
 # memory.gdb - GDB memory region definitions
 #
 # Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
-# SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
+# SOPC Builder design path: E:/agural/osc/proc.sopcinfo
 #
-# Generated: Fri Jun 13 09:34:06 PDT 2014
+# Generated: Fri Jun 13 10:17:52 GMT-08:00 2014
 
 # DO NOT MODIFY THIS FILE
 #

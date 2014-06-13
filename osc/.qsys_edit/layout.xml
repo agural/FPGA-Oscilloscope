@@ -553,14 +553,13 @@
 									</child>
 								</children>
 							</root>
-							<root name="ccontrol south">
+							<root name="external">
 								<layout factory="predefined">
-									<replacement id="rootccontrol south"/>
+									<replacement id="rootexternal"/>
 									<delegate id="delegate_CommonDockStationFactory">
-										<id>ccontrol south</id>
+										<id>external</id>
 										<root>true</root>
-										<content delegate="flap dock">
-											<window auto="true" direction="SOUTH"/>
+										<content delegate="screen dock">
 											<placeholders>
 												<version>0</version>
 												<format>dock.PlaceholderList</format>
@@ -570,7 +569,7 @@
 								</layout>
 								<adjacent>
 									<layout factory="dock.RootStationAdjacentFactory">
-										<type>dock.CContentArea.minimize</type>
+										<type>dock.CExternalizeArea</type>
 									</layout>
 								</adjacent>
 								<children ignore="false"/>
@@ -597,13 +596,14 @@
 								</adjacent>
 								<children ignore="false"/>
 							</root>
-							<root name="external">
+							<root name="ccontrol south">
 								<layout factory="predefined">
-									<replacement id="rootexternal"/>
+									<replacement id="rootccontrol south"/>
 									<delegate id="delegate_CommonDockStationFactory">
-										<id>external</id>
+										<id>ccontrol south</id>
 										<root>true</root>
-										<content delegate="screen dock">
+										<content delegate="flap dock">
+											<window auto="true" direction="SOUTH"/>
 											<placeholders>
 												<version>0</version>
 												<format>dock.PlaceholderList</format>
@@ -613,7 +613,7 @@
 								</layout>
 								<adjacent>
 									<layout factory="dock.RootStationAdjacentFactory">
-										<type>dock.CExternalizeArea</type>
+										<type>dock.CContentArea.minimize</type>
 									</layout>
 								</adjacent>
 								<children ignore="false"/>
@@ -761,7 +761,7 @@
 										<fullscreen-action>false</fullscreen-action>
 										<node nodeId="1372710005721" orientation="HORIZONTAL" divider="0.22181146025878004">
 											<node nodeId="1375985011088" orientation="VERTICAL" divider="0.504054054054054">
-												<leaf id="1" nodeId="1375985003630">
+												<leaf id="0" nodeId="1375985003630">
 													<placeholders>
 														<placeholder>dock.single.Library</placeholder>
 													</placeholders>
@@ -770,7 +770,7 @@
 														<format>dock.PlaceholderList</format>
 													</placeholder-map>
 												</leaf>
-												<leaf id="3" nodeId="1375985011087">
+												<leaf id="2" nodeId="1375985011087">
 													<placeholders>
 														<placeholder>dock.single.Hierarchy</placeholder>
 													</placeholders>
@@ -779,7 +779,7 @@
 											<node nodeId="1372710005725" orientation="VERTICAL" divider="0.75">
 												<node nodeId="1372710005727" orientation="HORIZONTAL" divider="0.75">
 													<node nodeId="1372710005733" orientation="VERTICAL" divider="0.75">
-														<leaf id="2" nodeId="1372710005735">
+														<leaf id="1" nodeId="1372710005735">
 															<placeholders>
 																<placeholder>dock.single.Clocks</placeholder>
 																<placeholder>dock.single.Project\ Settings</placeholder>
@@ -795,9 +795,9 @@
 																<placeholder>dock.single.Instance\ Parameters</placeholder>
 																<placeholder>dock.single.Clock\ Domains\ \-\ Beta</placeholder>
 																<placeholder>dock.single.Data\ Path</placeholder>
-																<placeholder>dock.single.Data\ Path\ \-\ Beta</placeholder>
-																<placeholder>dock.single.Instrumentation</placeholder>
 																<placeholder>dock.single.Domains</placeholder>
+																<placeholder>dock.single.Instrumentation</placeholder>
+																<placeholder>dock.single.Data\ Path\ \-\ Beta</placeholder>
 																<placeholder>dock.single.HDL\ Example</placeholder>
 															</placeholders>
 															<placeholder-map>
@@ -825,7 +825,7 @@
 														</leaf>
 													</node>
 												</node>
-												<leaf id="0" nodeId="1372710005745">
+												<leaf id="3" nodeId="1372710005745">
 													<placeholders>
 														<placeholder>dock.single.Messages</placeholder>
 													</placeholders>
@@ -845,16 +845,6 @@
 								</layout>
 							</adjacent>
 							<children ignore="false">
-								<child>
-									<layout factory="predefined" placeholder="dock.single.Messages">
-										<replacement id="dockablesingle Messages"/>
-										<delegate id="delegate_ccontrol backup factory id">
-											<id>Messages</id>
-											<area/>
-										</delegate>
-									</layout>
-									<children ignore="false"/>
-								</child>
 								<child>
 									<layout factory="predefined" placeholder="dock.single.Library">
 										<replacement id="dockablesingle Library"/>
@@ -993,6 +983,16 @@
 										<replacement id="dockablesingle Hierarchy"/>
 										<delegate id="delegate_ccontrol backup factory id">
 											<id>Hierarchy</id>
+											<area/>
+										</delegate>
+									</layout>
+									<children ignore="false"/>
+								</child>
+								<child>
+									<layout factory="predefined" placeholder="dock.single.Messages">
+										<replacement id="dockablesingle Messages"/>
+										<delegate id="delegate_ccontrol backup factory id">
+											<id>Messages</id>
 											<area/>
 										</delegate>
 									</layout>

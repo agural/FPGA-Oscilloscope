@@ -145,7 +145,7 @@ void  init_menu(void)
     set_sweep(0);			/* first sweep rate */
     set_trg_level((MIN_TRG_LEVEL_SET + MAX_TRG_LEVEL_SET) / 2);	/* middle trigger level */
     set_trg_slope(SLOPE_POSITIVE);	/* positive slope */
-    set_trg_delay(MIN_DELAY);		/* minimum delay */
+    set_trg_delay(0);		/* default delay */
 
 
     /* now display the menu */

@@ -103,7 +103,7 @@ ACDS_VERSION := 13.1
 # BUILD_NUMBER: 162
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
+SOPC_FILE := E:/agural/osc/proc.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS

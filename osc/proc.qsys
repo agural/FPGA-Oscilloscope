@@ -185,11 +185,11 @@
          type = "String";
       }
    }
-   element ADC_ctrl.s1
+   element TRIG_error.s1
    {
       datum baseAddress
       {
-         value = "1446144";
+         value = "1446272";
          type = "String";
       }
    }
@@ -201,11 +201,19 @@
          type = "String";
       }
    }
-   element TRIG_delay.s1
+   element ADC_raw.s1
    {
       datum baseAddress
       {
-         value = "1446048";
+         value = "1446304";
+         type = "String";
+      }
+   }
+   element ADC_rate.s1
+   {
+      datum baseAddress
+      {
+         value = "1446288";
          type = "String";
       }
    }
@@ -214,6 +222,30 @@
       datum baseAddress
       {
          value = "1446080";
+         type = "String";
+      }
+   }
+   element TRIG_delay.s1
+   {
+      datum baseAddress
+      {
+         value = "1446048";
+         type = "String";
+      }
+   }
+   element ADC_ctrl.s1
+   {
+      datum baseAddress
+      {
+         value = "1446144";
+         type = "String";
+      }
+   }
+   element key_input.s1
+   {
+      datum baseAddress
+      {
+         value = "1446320";
          type = "String";
       }
    }
@@ -233,44 +265,20 @@
          type = "String";
       }
    }
-   element key_input.s1
-   {
-      datum baseAddress
-      {
-         value = "1446320";
-         type = "String";
-      }
-   }
-   element ADC_raw.s1
-   {
-      datum baseAddress
-      {
-         value = "1446304";
-         type = "String";
-      }
-   }
-   element TRIG_error.s1
-   {
-      datum baseAddress
-      {
-         value = "1446272";
-         type = "String";
-      }
-   }
-   element ADC_rate.s1
-   {
-      datum baseAddress
-      {
-         value = "1446288";
-         type = "String";
-      }
-   }
    element sysid_qsys_0
    {
       datum _sortIndex
       {
          value = "7";
          type = "int";
+      }
+   }
+   element FLASH_ctrl.uas
+   {
+      datum baseAddress
+      {
+         value = "1245184";
+         type = "String";
       }
    }
    element RAM_ctrl.uas
@@ -291,14 +299,6 @@
       datum baseAddress
       {
          value = "524288";
-         type = "String";
-      }
-   }
-   element FLASH_ctrl.uas
-   {
-      datum baseAddress
-      {
-         value = "1245184";
          type = "String";
       }
    }
@@ -622,7 +622,7 @@
   <parameter name="NUM_INTERFACES" value="3" />
   <parameter name="MODULE_ORIGIN_LIST">VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm</parameter>
   <parameter name="SIGNAL_ORIGIN_LIST">address,waitrequest,write_n,data,chipselect_n,address,write_n,data,chipselect_n,address,write_n,data,chipselect_n</parameter>
-  <parameter name="SHARED_SIGNAL_LIST">,,,,,address,r_w,data,,address,r_w,data</parameter>
+  <parameter name="SHARED_SIGNAL_LIST">,,,,,address,r_w,data,,address,r_w,data,</parameter>
   <parameter name="AUTO_CLK_CLOCK_RATE" value="36000000" />
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />

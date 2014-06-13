@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
- * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
+ * SOPC Builder design path: E:/agural/osc/proc.sopcinfo
  *
- * Generated: Fri Jun 13 09:34:06 PDT 2014
+ * Generated: Fri Jun 13 10:17:52 GMT-08:00 2014
  */
 
 /*
@@ -498,7 +498,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1402677155
+#define SYSID_QSYS_0_TIMESTAMP 1402683214
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

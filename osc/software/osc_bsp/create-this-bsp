@@ -5,7 +5,7 @@
 BSP_TYPE=hal
 BSP_DIR=.
 SOPC_DIR=../../
-SOPC_FILE=C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
+SOPC_FILE=E:/agural/osc/proc.sopcinfo
 NIOS2_BSP_ARGS=""
 CPU_NAME=
 

@@ -6232,31 +6232,6 @@ applicable agreement for further details.
 	(pt 1992 1752)
 )
 (connector
-	(text "gen_pb_0_clk[8]" (rect 1386 568 1466 580)(font "Arial" ))
-	(pt 1344 584)
-	(pt 1752 584)
-)
-(connector
-	(text "gen_pb_1_clk[8]" (rect 1386 904 1466 916)(font "Arial" ))
-	(pt 1344 920)
-	(pt 1752 920)
-)
-(connector
-	(text "gen_pb_2_clk[8]" (rect 1386 1240 1466 1252)(font "Arial" ))
-	(pt 1344 1256)
-	(pt 1752 1256)
-)
-(connector
-	(text "gen_pb_3_clk[8]" (rect 1386 1576 1466 1588)(font "Arial" ))
-	(pt 1344 1592)
-	(pt 1752 1592)
-)
-(connector
-	(text "gen_pb_4_clk[8]" (rect 1386 1912 1466 1924)(font "Arial" ))
-	(pt 1344 1928)
-	(pt 1752 1928)
-)
-(connector
 	(pt 2680 536)
 	(pt 2680 696)
 )
@@ -8029,6 +8004,31 @@ applicable agreement for further details.
 (connector
 	(pt 928 2136)
 	(pt 928 2208)
+)
+(connector
+	(text "gen_pb_0_clk[6]" (rect 1386 568 1466 580)(font "Arial" ))
+	(pt 1344 584)
+	(pt 1752 584)
+)
+(connector
+	(text "gen_pb_1_clk[6]" (rect 1386 904 1466 916)(font "Arial" ))
+	(pt 1344 920)
+	(pt 1752 920)
+)
+(connector
+	(text "gen_pb_2_clk[6]" (rect 1386 1240 1466 1252)(font "Arial" ))
+	(pt 1344 1256)
+	(pt 1752 1256)
+)
+(connector
+	(text "gen_pb_3_clk[6]" (rect 1386 1576 1466 1588)(font "Arial" ))
+	(pt 1344 1592)
+	(pt 1752 1592)
+)
+(connector
+	(text "gen_pb_4_clk[6]" (rect 1386 1912 1466 1924)(font "Arial" ))
+	(pt 1344 1928)
+	(pt 1752 1928)
 )
 (junction (pt 1344 464))
 (junction (pt 1344 800))

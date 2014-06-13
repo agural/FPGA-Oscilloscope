@@ -52,22 +52,18 @@
 #define  PIXEL_BLACK    0x0000
 #define  PIXEL_WHITE    0xFF7F
 #define  PIXEL_RED		0x1F00
-#define  PIXEL_ORANGE	0xFF01
+#define  PIXEL_ORANGE	0x7F01
 #define  PIXEL_YELLOW	0xFF03
 #define	 PIXEL_GREEN	0xE003
 #define	 PIXEL_CYAN		0x007F
 #define  PIXEL_BLUE		0x007C
 #define	 PIXEL_PURPLE	0x0F7C
 #define	 PIXEL_BGND		0x001C
-#define	 PIXEL_A_0		0x007F
-#define	 PIXEL_A_1		0x005E
-#define	 PIXEL_A_2		0x003D
-#define	 PIXEL_B_0		0xFF01
-#define	 PIXEL_B_1		0xF004
-#define	 PIXEL_B_2		0x680C
+#define	 PIXEL_A		0x007F
+#define	 PIXEL_B		0x7F01
 
 /* scope parameters */
-#define  MIN_DELAY	   0		/* minimum trigger delay */
+#define  MIN_DELAY	   -240		/* minimum trigger delay */
 #define  MAX_DELAY     50000	/* maximum trigger delay */
 #define  MIN_LEVEL     0		/* minimum trigger level (in mV) */
 #define  MAX_LEVEL     5000		/* maximum trigger level (in mV) */

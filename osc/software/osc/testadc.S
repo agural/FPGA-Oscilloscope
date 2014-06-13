@@ -149,7 +149,21 @@ adc_int_handler:
 	# Pause FIFO write.
 	STWI	ADC_CTRL_BASE, 0x00
 
+	# Loop variable to clear front of fifo
 	mov		r10, r0
+
+	# Set specially-designed delay offsets based on which fifo source clock is being used.
+	movia	r8, fifo_clk_src
+	ldb		r9, (r8)
+	beq		r9, r0, adc_int_handler_fast_clk_offset
+
+adc_int_handler_1M_clk_offset:
+	movi	r13, 15
+	br		adc_int_handler_clear_front
+
+adc_int_handler_fast_clk_offset:
+	movi	r13, 22
+
 adc_int_handler_clear_front:
 	# Bitbang clock pulse.
 	STWI	ADC_CTRL_BASE, 0x01
@@ -157,7 +171,6 @@ adc_int_handler_clear_front:
 
 	# Keep going until 480 good remaining points (for display)
 	addi	r10, r10, 1
-	movi	r13, 13
 	bltu	r10, r13, adc_int_handler_clear_front
 
 	movia	r8, sample_buffer_A
@@ -525,18 +538,54 @@ plot_pixel_done:
 set_sample_rate:
 	SAVE
 
+	MOVWI	r9, 100000
+	bleu	r4, r9, slow_sample_rate
+
+fast_sample_rate:
 	# Divide fastest sample rate by desired sample rate
 	# to get number of ticks to pause (not collect samples)
 	# between collecting samples.
 	MOVWI	r8, ADC_RATE_BASE
-	MOVWI	r9, 180000000
+	MOVWI	r9, 400000000
 	divu	r9, r9, r4
+	subi	r9, r9, 1
 	stw		r9, (r8)
 
+	# Set fast clock for FIFO clock counter.
+	MOVWI	r8, TRIG_CTRL_BASE
+	MOVWI	r9, 0x00000080
+	stw		r9, PIO_OUTCLR(r8)
+
+	# Update fifo source flag.
+	movia	r8, fifo_clk_src
+	stb		r0, (r8)
+
+	br		set_sample_rate_done
+
+slow_sample_rate:
+	# Divide fastest sample rate by desired sample rate
+	# to get number of ticks to pause (not collect samples)
+	# between collecting samples.
+	MOVWI	r8, ADC_RATE_BASE
+	MOVWI	r9, 1000000
+	divu	r9, r9, r4
+	subi	r9, r9, 1
+	stw		r9, (r8)
+
+	# Set 1MHz clock for FIFO clock counter.
+	MOVWI	r8, TRIG_CTRL_BASE
+	MOVWI	r9, 0x00000080
+	stw		r9, PIO_OUTSET(r8)
+
+	# Update fifo source flag.
+	movia	r8, fifo_clk_src
+	movi	r9, 1
+	stb		r9, (r8)
+
+set_sample_rate_done:
 	# Always return 480 samples.
 	movui	r2, 480
 
-set_sample_rate_done:
 	RESTORE
 	ret
 
@@ -649,9 +698,10 @@ set_trigger_done:
 set_delay:
 	SAVE
 
-	# Simply set the delay...
+	# Simply set the delay (240 offset means delay 0 is in the middle).
+	addi	r9, r4, 240
 	MOVWI	r8, TRIG_DELAY_BASE
-	stw		r4, (r8)
+	stw		r9, (r8)
 
 set_delay_done:
 	RESTORE
@@ -796,7 +846,8 @@ sample_map:
 
 .section  .data     #start data section
 
-sample_complete:	.byte			# 0 = still trying to get sample; 1 = sample done.
+sample_complete:	.word	0		# 0 = still trying to get sample; 1 = sample done.
+fifo_clk_src:		.word	0		# 0 = fast_clk, 1 = 1M_clk. This is useful for fine-tuning the trigger delay.
 sample_buffer_A:	.skip	480		# Buffer stores display-worth of ADC samples (ch. A).
 sample_buffer_B:	.skip	480		# Buffer stores display-worth of ADC samples (ch. B).
 sample_buffer_L:	.skip	480		# Buffer stores display-worth of ADC samples (Logic).

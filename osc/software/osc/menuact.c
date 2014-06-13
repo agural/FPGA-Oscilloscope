@@ -119,7 +119,11 @@ long int	        delay;	 		/* current trigger delay */
 
 /* sweep rate information */
 const struct sweep_info  sweep_rates[] =
-    { { 10000000L, " 100 ns" },
+    { {200000000L, " 5 ns  " },
+      {100000000L, " 10 ns " },
+      { 50000000L, " 20 ns " },
+      { 20000000L, " 50 ns " },
+      { 10000000L, " 100 ns" },
       {  5000000L, " 200 ns" },
       {  2000000L, " 500 ns" },
       {  1000000L, " 1 \004s  " },
@@ -1493,45 +1497,49 @@ void  display_trg_delay(int x_pos, int y_pos, int style)
 
     /* compute the delay in the appropriate units */
     /* have to watch out for overflow, so be careful */
-    if (sweep_rates[sweep].sample_rate > 1000000L)  {
+    if (sweep_rates[sweep].sample_rate > 10000000L) {
+    	d = delay * (1000000000L / sweep_rates[sweep].sample_rate);
+    	/* need to divide by 1000000 to get milliseconds */
+    	units_adj = 1000000;
+    } else if (sweep_rates[sweep].sample_rate > 1000000L)  {
         /* have a fast sweep rate, could overflow */
         /* first compute in units of 100 ns */
         d = delay * (10000000L / sweep_rates[sweep].sample_rate);
-	/* now convert to nanoseconds */
-	d *= 100L;
-	/* need to divide by 1000 to get to microseconds */
-	units_adj = 1000;
-    }
-    else  {
+		/* now convert to nanoseconds */
+		d *= 100L;
+		/* need to divide by 1000 to get to microseconds */
+		units_adj = 1000;
+    } else  {
         /* slow sweep rate, don't have to worry about overflow */
         d = delay * (1000000L / sweep_rates[sweep].sample_rate);
-	/* already in microseconds, so adjustment is 1 */
-	units_adj = 1;
+		/* already in microseconds, so adjustment is 1 */
+		units_adj = 1;
     }
 
     /* convert it to the string (leave first character blank) */
     cvt_num_field(d, &delay_str[1]);
 
     /* add in the units */
-    if (((d / units_adj) < 1000) && ((d / units_adj) > -1000) && (units_adj == 1000)) {
+    if (units_adj == 1000000) {
+        /* delay is in nanoseconds */
+		delay_str[7] = '\004';
+		delay_str[8] = 's';
+    } else if (((d / units_adj) < 1000) && ((d / units_adj) > -1000) && (units_adj == 1000)) {
         /* delay is in microseconds */
-	delay_str[7] = '\004';
-	delay_str[8] = 's';
-    }
-    else if (((d / units_adj) < 1000000) && ((d / units_adj) > -1000000)) {
+		delay_str[7] = '\004';
+		delay_str[8] = 's';
+    } else if (((d / units_adj) < 1000000) && ((d / units_adj) > -1000000)) {
         /* delay is in milliseconds */
-	delay_str[7] = 'm';
-	delay_str[8] = 's';
-    }
-    else if (((d / units_adj) < 1000000000) && ((d / units_adj) > -1000000000))  {
+		delay_str[7] = 'm';
+		delay_str[8] = 's';
+    } else if (((d / units_adj) < 1000000000) && ((d / units_adj) > -1000000000))  {
         /* delay is in seconds */
-	delay_str[7] = 's';
-	delay_str[8] = ' ';
-    }
-    else  {
+		delay_str[7] = 's';
+		delay_str[8] = ' ';
+    } else  {
         /* delay is in kiloseconds */
-	delay_str[7] = 'k';
-	delay_str[8] = 's';
+		delay_str[7] = 'k';
+		delay_str[8] = 's';
     }
 
 

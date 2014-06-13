@@ -87,7 +87,7 @@ ACDS_VERSION := 13.1
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
+SOPCINFO_FILE := E:/agural/osc/proc.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false
@@ -152,9 +152,9 @@ SOPC_SYSID_FLAG += --sidp=0x1611c8
 ELF_PATCH_FLAG  += --sidp 0x1611c8
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1402677155
-SOPC_SYSID_FLAG += --timestamp=1402677155
-ELF_PATCH_FLAG  += --timestamp 1402677155
+# setting SOPC_TIMESTAMP is 1402683214
+SOPC_SYSID_FLAG += --timestamp=1402683214
+ELF_PATCH_FLAG  += --timestamp 1402683214
 
 # Build a custom version of newlib with the specified space-separated compiler 
 # flags. The custom newlib build will be placed in the &lt;bsp root>/newlib 
