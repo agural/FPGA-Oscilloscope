@@ -185,38 +185,6 @@
          type = "String";
       }
    }
-   element TRIG_delay.s1
-   {
-      datum baseAddress
-      {
-         value = "1380512";
-         type = "String";
-      }
-   }
-   element ADC_rate.s1
-   {
-      datum baseAddress
-      {
-         value = "1380752";
-         type = "String";
-      }
-   }
-   element TRIG_error.s1
-   {
-      datum baseAddress
-      {
-         value = "1380736";
-         type = "String";
-      }
-   }
-   element key_input.s1
-   {
-      datum baseAddress
-      {
-         value = "1380784";
-         type = "String";
-      }
-   }
    element TRIG_level.s1
    {
       datum baseAddress
@@ -225,11 +193,11 @@
          type = "String";
       }
    }
-   element TRIG_ctrl.s1
+   element ADC_ctrl.s1
    {
       datum baseAddress
       {
-         value = "1380576";
+         value = "1380608";
          type = "String";
       }
    }
@@ -241,11 +209,27 @@
          type = "String";
       }
    }
-   element ADC_ctrl.s1
+   element key_input.s1
    {
       datum baseAddress
       {
-         value = "1380608";
+         value = "1380784";
+         type = "String";
+      }
+   }
+   element ADC_rate.s1
+   {
+      datum baseAddress
+      {
+         value = "1380752";
+         type = "String";
+      }
+   }
+   element TRIG_delay.s1
+   {
+      datum baseAddress
+      {
+         value = "1380512";
          type = "String";
       }
    }
@@ -265,28 +249,28 @@
          type = "String";
       }
    }
+   element TRIG_error.s1
+   {
+      datum baseAddress
+      {
+         value = "1380736";
+         type = "String";
+      }
+   }
+   element TRIG_ctrl.s1
+   {
+      datum baseAddress
+      {
+         value = "1380576";
+         type = "String";
+      }
+   }
    element sysid_qsys_0
    {
       datum _sortIndex
       {
          value = "7";
          type = "int";
-      }
-   }
-   element ROM_ctrl.uas
-   {
-      datum baseAddress
-      {
-         value = "1245184";
-         type = "String";
-      }
-   }
-   element RAM_ctrl.uas
-   {
-      datum baseAddress
-      {
-         value = "1179648";
-         type = "String";
       }
    }
    element VRAM_ctrl.uas
@@ -299,6 +283,22 @@
       datum baseAddress
       {
          value = "524288";
+         type = "String";
+      }
+   }
+   element RAM_ctrl.uas
+   {
+      datum baseAddress
+      {
+         value = "1179648";
+         type = "String";
+      }
+   }
+   element ROM_ctrl.uas
+   {
+      datum baseAddress
+      {
+         value = "1245184";
          type = "String";
       }
    }
@@ -363,7 +363,7 @@
    type="conduit"
    dir="end" />
  <interface
-   name="trig_error"
+   name="trig_errorr"
    internal="TRIG_error.external_connection"
    type="conduit"
    dir="end" />

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Sun Jun 08 02:33:39 PDT 2014
+ * Generated: Tue Jun 10 20:22:39 PDT 2014
  */
 
 /*
@@ -87,5 +87,22 @@
 #define ALT_RODATA_DEVICE ONCHIP_MEM
 #define ALT_RWDATA_DEVICE ONCHIP_MEM
 #define ALT_TEXT_DEVICE ONCHIP_MEM
+
+
+/*
+ * Initialization code at the reset address is allowed (e.g. no external bootloader).
+ *
+ */
+
+#define ALT_ALLOW_CODE_AT_RESET
+
+
+/*
+ * The alt_load() facility is called from crt0 to copy sections into RAM.
+ *
+ */
+
+#define ALT_LOAD_COPY_EXCEPTIONS
+#define ALT_LOAD_COPY_RWDATA
 
 #endif /* __LINKER_H_ */

@@ -217,16 +217,6 @@ $(MEM_2)_CREATE_LANES := 0
 $(MEM_2)_CFI_FLAGS := --base=$($(MEM_2)_START) --end=$($(MEM_2)_END) --reset=$(RESET_ADDRESS)
 $(MEM_2)_BOOT_LOADER_FLAG := --boot="$(BOOT_LOADER_CFI)"
 
-$(HDL_SIM_DIR)/$(MEM_2).dat: $(MEM_2).flash
-	$(post-process-info)
-	$(MKDIR) -p $(@D)
-	bash -c '$(FLASH2DAT) --infile=$< --outfile=$@ \
-		--base=$(mem_start_address) --end=$(mem_end_address) --width=$(mem_width) \
-		--create-lanes=$(mem_create_lanes) $(flash2dat_extra_args)'
-
-
-FLASH_DAT_FILES += $(HDL_SIM_DIR)/$(MEM_2).dat
-
 .PHONY: ROM_ctrl
 ROM_ctrl: check_elf_exists $(HDL_SIM_DIR)/$(MEM_2).dat $(HDL_SIM_DIR)/$(MEM_2).sym $(MEM_2).flash
 

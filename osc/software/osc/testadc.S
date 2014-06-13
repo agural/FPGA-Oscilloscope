@@ -523,9 +523,13 @@ set_sample_rate:
 	# to get number of ticks to pause (not collect samples)
 	# between collecting samples.
 	MOVWI	r8, ADC_RATE_BASE
-	MOVWI	r9, 180000000
-	divu	r9, r9, r4
-	stw		r9, (r8)
+	#MOVWI	r9, 180000000
+	#divu	r9, r9, r4
+	#MOVWI	r9, 100000
+	stw		r4, (r8)
+
+	MOVWI	r8, TEST_INPUT_BASE
+	ldw		r9, (r8)
 
 	# Always return 480 samples.
 	movui	r2, 480

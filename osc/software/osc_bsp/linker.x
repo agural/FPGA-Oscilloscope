@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Sun Jun 08 02:33:39 PDT 2014
+ * Generated: Tue Jun 10 20:22:39 PDT 2014
  */
 
 /*
@@ -70,9 +70,12 @@ OUTPUT_ARCH( nios2 )
 ENTRY( _start )
 
 /*
- * The alt_load() facility is disabled. This typically happens when an
- * external bootloader is provided or the application runs in place.
- * The LMA (aka physical address) of each section defaults to its VMA.
+ * The alt_load() facility is enabled. This typically happens when there isn't
+ * an external bootloader (e.g. flash bootloader).
+ * The LMA (aka physical address) of each loaded section is
+ * set to the .text memory device.
+ * The HAL alt_load() routine called from crt0 copies sections from
+ * the .text memory to RAM as needed.
  */
 
 SECTIONS
@@ -87,7 +90,14 @@ SECTIONS
         KEEP (*(.entry))
     } > reset
 
-    .exceptions :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .exceptions 0x148020 : AT ( 0x148020 )
     {
         PROVIDE (__ram_exceptions_start = ABSOLUTE(.));
         . = ALIGN(0x20);
@@ -118,7 +128,14 @@ SECTIONS
 
     PROVIDE (__flash_exceptions_start = LOADADDR(.exceptions));
 
-    .text :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .text LOADADDR (.exceptions) + SIZEOF (.exceptions) : AT ( LOADADDR (.exceptions) + SIZEOF (.exceptions) )
     {
         /*
          * All code sections are merged into the text output section, along with
@@ -212,7 +229,14 @@ SECTIONS
         . = ALIGN(4);
     } > ONCHIP_mem = 0x3a880100 /* NOP instruction (always in big-endian byte ordering) */
 
-    .rodata :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .rodata LOADADDR (.text) + SIZEOF (.text) : AT ( LOADADDR (.text) + SIZEOF (.text) )
     {
         PROVIDE (__ram_rodata_start = ABSOLUTE(.));
         . = ALIGN(4);
@@ -224,7 +248,18 @@ SECTIONS
 
     PROVIDE (__flash_rodata_start = LOADADDR(.rodata));
 
-    .rwdata :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     * .rwdata region equals the .text region, and is set to be loaded into .text region.
+     * This requires two copies of .rwdata in the .text region. One read writable at VMA.
+     * and one read-only at LMA. crt0 will copy from LMA to VMA on reset
+     *
+     */
+
+    .rwdata LOADADDR (.rodata) + SIZEOF (.rodata) : AT ( LOADADDR (.rodata) + SIZEOF (.rodata)+ SIZEOF (.rwdata) )
     {
         PROVIDE (__ram_rwdata_start = ABSOLUTE(.));
         . = ALIGN(4);
@@ -247,7 +282,14 @@ SECTIONS
 
     PROVIDE (__flash_rwdata_start = LOADADDR(.rwdata));
 
-    .bss :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .bss LOADADDR (.rwdata) + SIZEOF (.rwdata) : AT ( LOADADDR (.rwdata) + SIZEOF (.rwdata) )
     {
         __bss_start = ABSOLUTE(.);
         PROVIDE (__sbss_start = ABSOLUTE(.));
@@ -278,9 +320,21 @@ SECTIONS
      * The output section used for the heap is treated in a special way,
      * i.e. the symbols "end" and "_end" are added to point to the heap start.
      *
+     * Because alt_load() is enabled, these sections have
+     * their LMA set to be loaded into the .text memory region.
+     * However, the alt_load() code will NOT automatically copy
+     * these sections into their mapped memory region.
+     *
      */
 
-    .VRAM_ctrl :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .VRAM_ctrl : AT ( LOADADDR (.bss) + SIZEOF (.bss) )
     {
         PROVIDE (_alt_partition_VRAM_ctrl_start = ABSOLUTE(.));
         *(.VRAM_ctrl .VRAM_ctrl. VRAM_ctrl.*)
@@ -290,7 +344,14 @@ SECTIONS
 
     PROVIDE (_alt_partition_VRAM_ctrl_load_addr = LOADADDR(.VRAM_ctrl));
 
-    .RAM_ctrl :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .RAM_ctrl : AT ( LOADADDR (.VRAM_ctrl) + SIZEOF (.VRAM_ctrl) )
     {
         PROVIDE (_alt_partition_RAM_ctrl_start = ABSOLUTE(.));
         *(.RAM_ctrl .RAM_ctrl. RAM_ctrl.*)
@@ -300,7 +361,14 @@ SECTIONS
 
     PROVIDE (_alt_partition_RAM_ctrl_load_addr = LOADADDR(.RAM_ctrl));
 
-    .ROM_ctrl :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .ROM_ctrl : AT ( LOADADDR (.RAM_ctrl) + SIZEOF (.RAM_ctrl) )
     {
         PROVIDE (_alt_partition_ROM_ctrl_start = ABSOLUTE(.));
         *(.ROM_ctrl .ROM_ctrl. ROM_ctrl.*)
@@ -310,7 +378,14 @@ SECTIONS
 
     PROVIDE (_alt_partition_ROM_ctrl_load_addr = LOADADDR(.ROM_ctrl));
 
-    .ONCHIP_mem :
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .ONCHIP_mem LOADADDR (.ROM_ctrl) + SIZEOF (.ROM_ctrl) : AT ( LOADADDR (.ROM_ctrl) + SIZEOF (.ROM_ctrl) )
     {
         PROVIDE (_alt_partition_ONCHIP_mem_start = ABSOLUTE(.));
         *(.ONCHIP_mem .ONCHIP_mem. ONCHIP_mem.*)

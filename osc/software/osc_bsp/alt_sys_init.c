@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Tue May 06 18:40:13 PDT 2014
+ * Generated: Tue Jun 10 20:21:41 PDT 2014
  */
 
 /*
