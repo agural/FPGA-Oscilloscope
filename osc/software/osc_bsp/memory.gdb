@@ -3,7 +3,7 @@
 # Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
 # SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
 #
-# Generated: Thu Jun 12 23:33:24 PDT 2014
+# Generated: Fri Jun 13 09:34:06 PDT 2014
 
 # DO NOT MODIFY THIS FILE
 #
@@ -56,4 +56,4 @@ memory 0x120000 0x130000 cache
 memory 0x130000 0x140000 cache
 
 # ONCHIP_mem
-memory 0x148000 0x150000 cache
+memory 0x150000 0x15c000 cache

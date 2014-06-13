@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Thu Jun 12 23:34:04 PDT 2014
+ * Generated: Fri Jun 13 09:34:06 PDT 2014
  */
 
 /*
@@ -53,15 +53,15 @@ MEMORY
     VRAM_ctrl : ORIGIN = 0x80000, LENGTH = 524288
     RAM_ctrl : ORIGIN = 0x120000, LENGTH = 65536
     FLASH_ctrl : ORIGIN = 0x130000, LENGTH = 65536
-    reset : ORIGIN = 0x148000, LENGTH = 32
-    ONCHIP_mem : ORIGIN = 0x148020, LENGTH = 32736
+    reset : ORIGIN = 0x150000, LENGTH = 32
+    ONCHIP_mem : ORIGIN = 0x150020, LENGTH = 49120
 }
 
 /* Define symbols for each memory base-address */
 __alt_mem_VRAM_ctrl = 0x80000;
 __alt_mem_RAM_ctrl = 0x120000;
 __alt_mem_FLASH_ctrl = 0x130000;
-__alt_mem_ONCHIP_mem = 0x148000;
+__alt_mem_ONCHIP_mem = 0x150000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -97,7 +97,7 @@ SECTIONS
      *
      */
 
-    .exceptions 0x148020 : AT ( 0x148020 )
+    .exceptions 0x150020 : AT ( 0x150020 )
     {
         PROVIDE (__ram_exceptions_start = ABSOLUTE(.));
         . = ALIGN(0x20);
@@ -445,7 +445,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x150000;
+__alt_data_end = 0x15c000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -461,4 +461,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x150000 );
+PROVIDE( __alt_heap_limit    = 0x15c000 );

@@ -147,14 +147,14 @@ SOPC_SYSID_FLAG += --id=2863311530
 ELF_PATCH_FLAG  += --id 2863311530
 
 # The SOPC System ID Base Address 
-# setting SOPC_SYSID_BASE_ADDRESS is 0x1511c8
-SOPC_SYSID_FLAG += --sidp=0x1511c8
-ELF_PATCH_FLAG  += --sidp 0x1511c8
+# setting SOPC_SYSID_BASE_ADDRESS is 0x1611c8
+SOPC_SYSID_FLAG += --sidp=0x1611c8
+ELF_PATCH_FLAG  += --sidp 0x1611c8
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1402639044
-SOPC_SYSID_FLAG += --timestamp=1402639044
-ELF_PATCH_FLAG  += --timestamp 1402639044
+# setting SOPC_TIMESTAMP is 1402677155
+SOPC_SYSID_FLAG += --timestamp=1402677155
+ELF_PATCH_FLAG  += --timestamp 1402677155
 
 # Build a custom version of newlib with the specified space-separated compiler 
 # flags. The custom newlib build will be placed in the &lt;bsp root>/newlib 

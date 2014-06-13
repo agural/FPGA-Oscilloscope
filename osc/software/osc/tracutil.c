@@ -125,7 +125,10 @@ int	      saved_pos_y;    /* starting y position of saved area */
 int	      saved_end_x;    /* ending x position of saved area */
 int	      saved_end_y;    /* ending y position of saved area */
 
-
+/* saved traces for quick redraw */
+unsigned char saved_trace_A[PLOT_SIZE_X];
+unsigned char saved_trace_B[PLOT_SIZE_X];
+unsigned char saved_trace_L[PLOT_SIZE_X];
 
 
 /*
@@ -1032,6 +1035,8 @@ void  plot_trace(unsigned char **sample)
 
     int i;							/* loop indices */
     int j;
+    int ii;
+    int jj;
 
 
 
@@ -1044,32 +1049,133 @@ void  plot_trace(unsigned char **sample)
     /* re-display the menu (if it was on) */
     //refresh_menu();
 
-    unsigned char *sample_A = sample[0];			/* MAGIC# */
-    unsigned char *sample_Ao = sample[1];
+    unsigned char *sample_A = sample[0];
     unsigned char *sample_B = sample[2];
-    unsigned char *sample_Bo = sample[3];
     unsigned char *sample_L = sample[4];
-    unsigned char *sample_Lo = sample[5];
 
-    /* plot the sample */
+    // Get the screen coordinates.
     for (i = 0; i < sample_size; i++)  {
+        // Determine y position of point (note: screen coordinates invert).
+        yA = (PLOT_SIZE_Y - 1) - ((sample_A[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
+        yB = (PLOT_SIZE_Y - 1) - ((sample_B[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
 
-        /* determine y position of point (note: screen coordinates invert) */
+        sample_A[i] = yA;
+        sample_B[i] = yB;
+    }
+
+    // Clear the last trace.
+    for (i = 0; i < sample_size - 1; i++) {
+    	for (j = min(saved_trace_A[i], saved_trace_A[i+1]); j <= max(saved_trace_A[i], saved_trace_A[i+1]); j++) {
+    		for (ii = -1; ii <= 1; ii++) {
+    			for (jj = -1; jj <= 1; jj++) {
+    				plot_pixel(i + ii, j + jj, PIXEL_BGND);
+    			}
+    		}
+    	}
+    	for (j = min(saved_trace_B[i], saved_trace_B[i+1]); j <= max(saved_trace_B[i], saved_trace_B[i+1]); j++) {
+    		for (ii = -1; ii <= 1; ii++) {
+    			for (jj = -1; jj <= 1; jj++) {
+    				plot_pixel(i + ii, j + jj, PIXEL_BGND);
+    			}
+    		}
+    	}
+    }
+
+    // Update the saved trace arrays.
+    for (i = 0; i < sample_size; i++) {
+    	saved_trace_A[i] = sample_A[i];
+    	saved_trace_B[i] = sample_B[i];
+    	saved_trace_L[i] = sample_L[i];
+    }
+/*
+    // Draw the glow.
+    for (i = 0; i < sample_size - 1; i++) {
+        for (j = min(saved_trace_A[i], saved_trace_A[i+1]); j <= max(saved_trace_A[i], saved_trace_A[i+1]); j++) {
+        	for (ii = -1; ii <= 1; ii++) {
+        		for (jj = -1; jj <= 1; jj++) {
+        			plot_pixel(i + ii, j + jj, PIXEL_A_2);
+        		}
+        	}
+        }
+        for (j = min(saved_trace_B[i], saved_trace_B[i+1]); j <= max(saved_trace_B[i], saved_trace_B[i+1]); j++) {
+        	for (ii = -1; ii <= 1; ii++) {
+        		for (jj = -1; jj <= 1; jj++) {
+        			plot_pixel(i + ii, j + jj, PIXEL_B_2);
+        		}
+       		}
+       	}
+    }
+
+    // Draw the line.
+    for (i = 0; i < sample_size - 1; i++) {
+        for (j = min(saved_trace_A[i], saved_trace_A[i+1]); j <= max(saved_trace_A[i], saved_trace_A[i+1]); j++) {
+        	plot_pixel(i, j, PIXEL_A_1);
+        }
+        for (j = min(saved_trace_B[i], saved_trace_B[i+1]); j <= max(saved_trace_B[i], saved_trace_B[i+1]); j++) {
+        	plot_pixel(i, j, PIXEL_B_1);
+       	}
+    }*/
+
+    // Draw the points.
+    for (i = 0; i < sample_size - 1; i++) {
+        plot_pixel(i, saved_trace_A[i], PIXEL_A_0);
+        plot_pixel(i, saved_trace_B[i], PIXEL_B_0);
+    }
+
+
+    /*// Plot the samples.
+    for (i = 0; i < sample_size; i++)  {
+         determine y position of point (note: screen coordinates invert)
     	yA = (PLOT_SIZE_Y - 1) - ((sample_A[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
     	yAo = (PLOT_SIZE_Y - 1) - ((sample_Ao[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
     	yB = (PLOT_SIZE_Y - 1) - ((sample_B[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
     	yBo = (PLOT_SIZE_Y - 1) - ((sample_Bo[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
 
-        /* plot this point */
+         plot this point
     	plot_pixel(x, yAo, PIXEL_BGND);
-    	plot_pixel(x, yA, PIXEL_CYAN);
+    	plot_pixel(x - 1, yAo, PIXEL_BGND);
+    	plot_pixel(x + 1, yAo, PIXEL_BGND);
+    	plot_pixel(x, yAo - 1, PIXEL_BGND);
+    	plot_pixel(x, yAo + 1, PIXEL_BGND);
+    	plot_pixel(x - 1, yAo - 1, PIXEL_BGND);
+    	plot_pixel(x - 1, yAo + 1, PIXEL_BGND);
+    	plot_pixel(x + 1, yAo - 1, PIXEL_BGND);
+    	plot_pixel(x + 1, yAo + 1, PIXEL_BGND);
+
+    	plot_pixel(x, yA, PIXEL_A_0);
+    	plot_pixel(x - 1, yA, PIXEL_A_1);
+    	plot_pixel(x + 1, yA, PIXEL_A_1);
+    	plot_pixel(x, yA - 1, PIXEL_A_1);
+    	plot_pixel(x, yA + 1, PIXEL_A_1);
+    	plot_pixel(x - 1, yA - 1, PIXEL_A_2);
+    	plot_pixel(x - 1, yA + 1, PIXEL_A_2);
+    	plot_pixel(x + 1, yA - 1, PIXEL_A_2);
+    	plot_pixel(x + 1, yA + 1, PIXEL_A_2);
+
     	plot_pixel(x, yBo, PIXEL_BGND);
-    	plot_pixel(x, yB, PIXEL_YELLOW);
+    	plot_pixel(x - 1, yBo, PIXEL_BGND);
+    	plot_pixel(x + 1, yBo, PIXEL_BGND);
+    	plot_pixel(x, yBo - 1, PIXEL_BGND);
+    	plot_pixel(x, yBo + 1, PIXEL_BGND);
+    	plot_pixel(x - 1, yBo - 1, PIXEL_BGND);
+    	plot_pixel(x - 1, yBo + 1, PIXEL_BGND);
+    	plot_pixel(x + 1, yBo - 1, PIXEL_BGND);
+    	plot_pixel(x + 1, yBo + 1, PIXEL_BGND);
+
+    	plot_pixel(x, yB, PIXEL_B_0);
+    	plot_pixel(x - 1, yB, PIXEL_B_1);
+    	plot_pixel(x + 1, yB, PIXEL_B_1);
+    	plot_pixel(x, yB - 1, PIXEL_B_1);
+    	plot_pixel(x, yB + 1, PIXEL_B_1);
+    	plot_pixel(x - 1, yB - 1, PIXEL_B_2);
+    	plot_pixel(x - 1, yB + 1, PIXEL_B_2);
+    	plot_pixel(x + 1, yB - 1, PIXEL_B_2);
+    	plot_pixel(x + 1, yB + 1, PIXEL_B_2);
 
 
-		/* check if the point is in a save area */
+		 check if the point is in a save area
 
-		/* check if in the menu area
+		 check if in the menu area
 		if ((x >= MENU_UL_X) && (x < (MENU_UL_X + MENU_SIZE_X)) &&
 			(y >= MENU_UL_Y) && (y < (MENU_UL_Y + MENU_SIZE_Y)))
 			 point is in the menu area - save it
@@ -1111,18 +1217,18 @@ void  plot_trace(unsigned char **sample)
 			 if the point is on this line, save it
 			if (x == p)
 			saved_axis_y[j + X_TICK_CNT][y / 8] |= (0x80 >> (y % 8));
-		}*/
+		}
 
 
-		/* update x position */
+		 update x position
 		x_pos += PLOT_SIZE_X;
-		/* check if at next horizontal position */
+		 check if at next horizontal position
 		if (x_pos >= sample_size)  {
-			/* at next position - update positions */
+			 at next position - update positions
 			x++;
 			x_pos -= sample_size;
 		}
-    }
+    }*/
 
 
     /* finally, output the scale if need be */

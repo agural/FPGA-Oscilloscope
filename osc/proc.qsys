@@ -149,7 +149,7 @@
    {
       datum baseAddress
       {
-         value = "1380808";
+         value = "1446344";
          type = "String";
       }
    }
@@ -157,7 +157,7 @@
    {
       datum baseAddress
       {
-         value = "1378304";
+         value = "1443840";
          type = "String";
       }
    }
@@ -189,23 +189,7 @@
    {
       datum baseAddress
       {
-         value = "1380608";
-         type = "String";
-      }
-   }
-   element TRIG_ctrl.s1
-   {
-      datum baseAddress
-      {
-         value = "1380576";
-         type = "String";
-      }
-   }
-   element TRIG_delay.s1
-   {
-      datum baseAddress
-      {
-         value = "1380512";
+         value = "1446144";
          type = "String";
       }
    }
@@ -213,47 +197,15 @@
    {
       datum baseAddress
       {
-         value = "1380640";
+         value = "1446176";
          type = "String";
       }
    }
-   element ADC_rate.s1
+   element TRIG_delay.s1
    {
       datum baseAddress
       {
-         value = "1380752";
-         type = "String";
-      }
-   }
-   element ADC_raw.s1
-   {
-      datum baseAddress
-      {
-         value = "1380768";
-         type = "String";
-      }
-   }
-   element key_input.s1
-   {
-      datum baseAddress
-      {
-         value = "1380784";
-         type = "String";
-      }
-   }
-   element TRIG_error.s1
-   {
-      datum baseAddress
-      {
-         value = "1380736";
-         type = "String";
-      }
-   }
-   element ONCHIP_mem.s1
-   {
-      datum baseAddress
-      {
-         value = "1343488";
+         value = "1446048";
          type = "String";
       }
    }
@@ -261,7 +213,55 @@
    {
       datum baseAddress
       {
-         value = "1380544";
+         value = "1446080";
+         type = "String";
+      }
+   }
+   element TRIG_ctrl.s1
+   {
+      datum baseAddress
+      {
+         value = "1446112";
+         type = "String";
+      }
+   }
+   element ONCHIP_mem.s1
+   {
+      datum baseAddress
+      {
+         value = "1376256";
+         type = "String";
+      }
+   }
+   element key_input.s1
+   {
+      datum baseAddress
+      {
+         value = "1446320";
+         type = "String";
+      }
+   }
+   element ADC_raw.s1
+   {
+      datum baseAddress
+      {
+         value = "1446304";
+         type = "String";
+      }
+   }
+   element TRIG_error.s1
+   {
+      datum baseAddress
+      {
+         value = "1446272";
+         type = "String";
+      }
+   }
+   element ADC_rate.s1
+   {
+      datum baseAddress
+      {
+         value = "1446288";
          type = "String";
       }
    }
@@ -271,14 +271,6 @@
       {
          value = "7";
          type = "int";
-      }
-   }
-   element FLASH_ctrl.uas
-   {
-      datum baseAddress
-      {
-         value = "1245184";
-         type = "String";
       }
    }
    element RAM_ctrl.uas
@@ -299,6 +291,14 @@
       datum baseAddress
       {
          value = "524288";
+         type = "String";
+      }
+   }
+   element FLASH_ctrl.uas
+   {
+      datum baseAddress
+      {
+         value = "1245184";
          type = "String";
       }
    }
@@ -483,8 +483,8 @@
   <parameter name="tightlyCoupledInstructionMaster1AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='FLASH_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x148000' end='0x150000' /><slave name='PROC.jtag_debug_module' start='0x150800' end='0x151000' /><slave name='TRIG_delay.s1' start='0x1510A0' end='0x1510C0' /><slave name='TRIG_level.s1' start='0x1510C0' end='0x1510E0' /><slave name='TRIG_ctrl.s1' start='0x1510E0' end='0x151100' /><slave name='ADC_ctrl.s1' start='0x151100' end='0x151120' /><slave name='TRIG_int.s1' start='0x151120' end='0x151140' /><slave name='TRIG_error.s1' start='0x151180' end='0x151190' /><slave name='ADC_rate.s1' start='0x151190' end='0x1511A0' /><slave name='ADC_raw.s1' start='0x1511A0' end='0x1511B0' /><slave name='key_input.s1' start='0x1511B0' end='0x1511C0' /><slave name='sysid_qsys_0.control_slave' start='0x1511C8' end='0x1511D0' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='FLASH_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x148000' end='0x150000' /><slave name='PROC.jtag_debug_module' start='0x150800' end='0x151000' /><slave name='TRIG_delay.s1' start='0x1510A0' end='0x1510C0' /><slave name='TRIG_level.s1' start='0x1510C0' end='0x1510E0' /><slave name='TRIG_ctrl.s1' start='0x1510E0' end='0x151100' /><slave name='ADC_ctrl.s1' start='0x151100' end='0x151120' /><slave name='TRIG_int.s1' start='0x151120' end='0x151140' /><slave name='TRIG_error.s1' start='0x151180' end='0x151190' /><slave name='ADC_rate.s1' start='0x151190' end='0x1511A0' /><slave name='ADC_raw.s1' start='0x1511A0' end='0x1511B0' /><slave name='key_input.s1' start='0x1511B0' end='0x1511C0' /><slave name='sysid_qsys_0.control_slave' start='0x1511C8' end='0x1511D0' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='FLASH_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x150000' end='0x15C000' /><slave name='PROC.jtag_debug_module' start='0x160800' end='0x161000' /><slave name='TRIG_delay.s1' start='0x1610A0' end='0x1610C0' /><slave name='TRIG_level.s1' start='0x1610C0' end='0x1610E0' /><slave name='TRIG_ctrl.s1' start='0x1610E0' end='0x161100' /><slave name='ADC_ctrl.s1' start='0x161100' end='0x161120' /><slave name='TRIG_int.s1' start='0x161120' end='0x161140' /><slave name='TRIG_error.s1' start='0x161180' end='0x161190' /><slave name='ADC_rate.s1' start='0x161190' end='0x1611A0' /><slave name='ADC_raw.s1' start='0x1611A0' end='0x1611B0' /><slave name='key_input.s1' start='0x1611B0' end='0x1611C0' /><slave name='sysid_qsys_0.control_slave' start='0x1611C8' end='0x1611D0' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='FLASH_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x150000' end='0x15C000' /><slave name='PROC.jtag_debug_module' start='0x160800' end='0x161000' /><slave name='TRIG_delay.s1' start='0x1610A0' end='0x1610C0' /><slave name='TRIG_level.s1' start='0x1610C0' end='0x1610E0' /><slave name='TRIG_ctrl.s1' start='0x1610E0' end='0x161100' /><slave name='ADC_ctrl.s1' start='0x161100' end='0x161120' /><slave name='TRIG_int.s1' start='0x161120' end='0x161140' /><slave name='TRIG_error.s1' start='0x161180' end='0x161190' /><slave name='ADC_rate.s1' start='0x161190' end='0x1611A0' /><slave name='ADC_raw.s1' start='0x1611A0' end='0x1611B0' /><slave name='key_input.s1' start='0x1611B0' end='0x1611C0' /><slave name='sysid_qsys_0.control_slave' start='0x1611C8' end='0x1611D0' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="36000000" />
   <parameter name="deviceFamilyName" value="Cyclone III" />
   <parameter name="internalIrqMaskSystemInfo" value="96" />
@@ -622,7 +622,7 @@
   <parameter name="NUM_INTERFACES" value="3" />
   <parameter name="MODULE_ORIGIN_LIST">VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm</parameter>
   <parameter name="SIGNAL_ORIGIN_LIST">address,waitrequest,write_n,data,chipselect_n,address,write_n,data,chipselect_n,address,write_n,data,chipselect_n</parameter>
-  <parameter name="SHARED_SIGNAL_LIST">,,,,,address,r_w,data,,address,r_w,data,</parameter>
+  <parameter name="SHARED_SIGNAL_LIST">,,,,,address,r_w,data,,address,r_w,data</parameter>
   <parameter name="AUTO_CLK_CLOCK_RATE" value="36000000" />
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
@@ -651,7 +651,7 @@
   <parameter name="initMemContent" value="true" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="32768" />
+  <parameter name="memorySize" value="49152" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
   <parameter name="simMemInitOnlyFilename" value="0" />
@@ -865,7 +865,7 @@
    start="PROC.instruction_master"
    end="PROC.jtag_debug_module">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00150800" />
+  <parameter name="baseAddress" value="0x00160800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -874,7 +874,7 @@
    start="PROC.data_master"
    end="PROC.jtag_debug_module">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00150800" />
+  <parameter name="baseAddress" value="0x00160800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -977,7 +977,7 @@
    start="PROC.data_master"
    end="ONCHIP_mem.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00148000" />
+  <parameter name="baseAddress" value="0x00150000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -986,7 +986,7 @@
    start="PROC.instruction_master"
    end="ONCHIP_mem.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00148000" />
+  <parameter name="baseAddress" value="0x00150000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1029,7 +1029,7 @@
    start="PROC.data_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001511c8" />
+  <parameter name="baseAddress" value="0x001611c8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1038,7 +1038,7 @@
    start="PROC.instruction_master"
    end="sysid_qsys_0.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001511c8" />
+  <parameter name="baseAddress" value="0x001611c8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1058,7 +1058,7 @@
    start="PROC.data_master"
    end="key_input.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001511b0" />
+  <parameter name="baseAddress" value="0x001611b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1067,7 +1067,7 @@
    start="PROC.instruction_master"
    end="key_input.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001511b0" />
+  <parameter name="baseAddress" value="0x001611b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1128,7 +1128,7 @@
    start="PROC.data_master"
    end="ADC_raw.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001511a0" />
+  <parameter name="baseAddress" value="0x001611a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1137,7 +1137,7 @@
    start="PROC.instruction_master"
    end="ADC_raw.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001511a0" />
+  <parameter name="baseAddress" value="0x001611a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1157,7 +1157,7 @@
    start="PROC.data_master"
    end="TRIG_int.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00151120" />
+  <parameter name="baseAddress" value="0x00161120" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1166,7 +1166,7 @@
    start="PROC.instruction_master"
    end="TRIG_int.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00151120" />
+  <parameter name="baseAddress" value="0x00161120" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1189,7 +1189,7 @@
    start="PROC.data_master"
    end="ADC_ctrl.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00151100" />
+  <parameter name="baseAddress" value="0x00161100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1198,7 +1198,7 @@
    start="PROC.instruction_master"
    end="ADC_ctrl.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00151100" />
+  <parameter name="baseAddress" value="0x00161100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1218,7 +1218,7 @@
    start="PROC.data_master"
    end="ADC_rate.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00151190" />
+  <parameter name="baseAddress" value="0x00161190" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1227,7 +1227,7 @@
    start="PROC.instruction_master"
    end="ADC_rate.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00151190" />
+  <parameter name="baseAddress" value="0x00161190" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1247,7 +1247,7 @@
    start="PROC.data_master"
    end="TRIG_ctrl.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001510e0" />
+  <parameter name="baseAddress" value="0x001610e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1261,7 +1261,7 @@
    start="PROC.instruction_master"
    end="TRIG_ctrl.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001510e0" />
+  <parameter name="baseAddress" value="0x001610e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="13.1" start="SYSCLK.clk" end="TRIG_level.clk" />
@@ -1276,7 +1276,7 @@
    start="PROC.data_master"
    end="TRIG_level.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001510c0" />
+  <parameter name="baseAddress" value="0x001610c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1285,7 +1285,7 @@
    start="PROC.instruction_master"
    end="TRIG_level.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001510c0" />
+  <parameter name="baseAddress" value="0x001610c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1304,7 +1304,7 @@
    start="PROC.instruction_master"
    end="TRIG_delay.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001510a0" />
+  <parameter name="baseAddress" value="0x001610a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1313,7 +1313,7 @@
    start="PROC.data_master"
    end="TRIG_delay.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x001510a0" />
+  <parameter name="baseAddress" value="0x001610a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1334,7 +1334,7 @@
    start="PROC.instruction_master"
    end="TRIG_error.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00151180" />
+  <parameter name="baseAddress" value="0x00161180" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1343,7 +1343,7 @@
    start="PROC.data_master"
    end="TRIG_error.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00151180" />
+  <parameter name="baseAddress" value="0x00161180" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection

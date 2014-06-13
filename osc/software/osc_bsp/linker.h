@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Thu Jun 12 23:34:04 PDT 2014
+ * Generated: Fri Jun 13 09:34:06 PDT 2014
  */
 
 /*
@@ -67,11 +67,11 @@
 
 #define FLASH_CTRL_REGION_BASE 0x130000
 #define FLASH_CTRL_REGION_SPAN 65536
-#define ONCHIP_MEM_REGION_BASE 0x148020
-#define ONCHIP_MEM_REGION_SPAN 32736
+#define ONCHIP_MEM_REGION_BASE 0x150020
+#define ONCHIP_MEM_REGION_SPAN 49120
 #define RAM_CTRL_REGION_BASE 0x120000
 #define RAM_CTRL_REGION_SPAN 65536
-#define RESET_REGION_BASE 0x148000
+#define RESET_REGION_BASE 0x150000
 #define RESET_REGION_SPAN 32
 #define VRAM_CTRL_REGION_BASE 0x80000
 #define VRAM_CTRL_REGION_SPAN 524288
