@@ -83,18 +83,18 @@ Info: merlin_mm_transform: After transform: 11 modules, 45 connections
 Info: merlin_interrupt_mapper_transform: After transform: 12 modules, 49 connections
 Info: reset_adaptation_transform: After transform: 14 modules, 51 connections
 Info: PROC: Starting RTL generation for module 'proc_PROC'
-Info: PROC:   Generation command is [exec C:/altera/13.1/quartus/bin/eperlcmd.exe -I C:/altera/13.1/quartus/bin/perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=proc_PROC --dir=D:/temp/alt6208_4514733183612632159.dir/0001_PROC_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=D:/temp/alt6208_4514733183612632159.dir/0001_PROC_gen//proc_PROC_processor_configuration.pl  --do_build_sim=0  ]
-Info: PROC: # 2014.05.18 12:18:07 (*) Starting Nios II generation
-Info: PROC: # 2014.05.18 12:18:07 (*)   Checking for plaintext license.
-Info: PROC: # 2014.05.18 12:18:08 (*)   Couldn't query license setup in Quartus directory C:/altera/13.1/quartus
-Info: PROC: # 2014.05.18 12:18:08 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: PROC: # 2014.05.18 12:18:08 (*)   Plaintext license not found.
-Info: PROC: # 2014.05.18 12:18:08 (*)   No license required to generate encrypted Nios II/e.
-Info: PROC: # 2014.05.18 12:18:08 (*)   Elaborating CPU configuration settings
-Info: PROC: # 2014.05.18 12:18:08 (*)   Creating all objects for CPU
-Info: PROC: # 2014.05.18 12:18:09 (*)   Generating RTL from CPU objects
-Info: PROC: # 2014.05.18 12:18:09 (*)   Creating plain-text RTL
-Info: PROC: # 2014.05.18 12:18:11 (*) Done Nios II generation
+Info: PROC:   Generation command is [exec C:/altera/13.1/quartus/bin/eperlcmd.exe -I C:/altera/13.1/quartus/bin/perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=proc_PROC --dir=D:/temp/alt6214_5684965964648436534.dir/0001_PROC_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=D:/temp/alt6214_5684965964648436534.dir/0001_PROC_gen//proc_PROC_processor_configuration.pl  --do_build_sim=0  ]
+Info: PROC: # 2014.05.23 23:21:07 (*) Starting Nios II generation
+Info: PROC: # 2014.05.23 23:21:07 (*)   Checking for plaintext license.
+Info: PROC: # 2014.05.23 23:21:08 (*)   Couldn't query license setup in Quartus directory C:/altera/13.1/quartus
+Info: PROC: # 2014.05.23 23:21:08 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: PROC: # 2014.05.23 23:21:08 (*)   Plaintext license not found.
+Info: PROC: # 2014.05.23 23:21:08 (*)   No license required to generate encrypted Nios II/e.
+Info: PROC: # 2014.05.23 23:21:08 (*)   Elaborating CPU configuration settings
+Info: PROC: # 2014.05.23 23:21:08 (*)   Creating all objects for CPU
+Info: PROC: # 2014.05.23 23:21:09 (*)   Generating RTL from CPU objects
+Info: PROC: # 2014.05.23 23:21:09 (*)   Creating plain-text RTL
+Info: PROC: # 2014.05.23 23:21:11 (*) Done Nios II generation
 Info: PROC: Done RTL generation for module 'proc_PROC'
 Info: PROC: "proc" instantiated altera_nios2_qsys "PROC"
 Info: pipeline_bridge_swap_transform: After transform: 5 modules, 10 connections
@@ -120,12 +120,12 @@ Info: No custom instruction connections, skipping transform
 Info: PIN_share: "proc" instantiated altera_tristate_conduit_pin_sharer "PIN_share"
 Info: BRIDGE: "proc" instantiated altera_tristate_conduit_bridge "BRIDGE"
 Info: ONCHIP_mem: Starting RTL generation for module 'proc_ONCHIP_mem'
-Info: ONCHIP_mem:   Generation command is [exec C:/altera/13.1/quartus/bin/perl/bin/perl.exe -I C:/altera/13.1/quartus/bin/perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=proc_ONCHIP_mem --dir=D:/temp/alt6208_4514733183612632159.dir/0003_ONCHIP_mem_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=D:/temp/alt6208_4514733183612632159.dir/0003_ONCHIP_mem_gen//proc_ONCHIP_mem_component_configuration.pl  --do_build_sim=0  ]
+Info: ONCHIP_mem:   Generation command is [exec C:/altera/13.1/quartus/bin/perl/bin/perl.exe -I C:/altera/13.1/quartus/bin/perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=proc_ONCHIP_mem --dir=D:/temp/alt6214_5684965964648436534.dir/0003_ONCHIP_mem_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=D:/temp/alt6214_5684965964648436534.dir/0003_ONCHIP_mem_gen//proc_ONCHIP_mem_component_configuration.pl  --do_build_sim=0  ]
 Info: ONCHIP_mem: Done RTL generation for module 'proc_ONCHIP_mem'
 Info: ONCHIP_mem: "proc" instantiated altera_avalon_onchip_memory2 "ONCHIP_mem"
 Info: sysid_qsys_0: "proc" instantiated altera_avalon_sysid_qsys "sysid_qsys_0"
 Info: key_input: Starting RTL generation for module 'proc_key_input'
-Info: key_input:   Generation command is [exec C:/altera/13.1/quartus/bin/perl/bin/perl.exe -I C:/altera/13.1/quartus/bin/perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=proc_key_input --dir=D:/temp/alt6208_4514733183612632159.dir/0005_key_input_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=D:/temp/alt6208_4514733183612632159.dir/0005_key_input_gen//proc_key_input_component_configuration.pl  --do_build_sim=0  ]
+Info: key_input:   Generation command is [exec C:/altera/13.1/quartus/bin/perl/bin/perl.exe -I C:/altera/13.1/quartus/bin/perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=proc_key_input --dir=D:/temp/alt6214_5684965964648436534.dir/0005_key_input_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=D:/temp/alt6214_5684965964648436534.dir/0005_key_input_gen//proc_key_input_component_configuration.pl  --do_build_sim=0  ]
 Info: key_input: Done RTL generation for module 'proc_key_input'
 Info: key_input: "proc" instantiated altera_avalon_pio "key_input"
 Info: pipeline_bridge_swap_transform: After transform: 5 modules, 10 connections
@@ -191,6 +191,6 @@ Info: Reusing file D:/downloads/FPGA-Oscilloscope-master/FPGA-Oscilloscope-maste
 Info: width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "width_adapter"
 Info: Reusing file D:/downloads/FPGA-Oscilloscope-master/FPGA-Oscilloscope-master/osc/proc/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: Reusing file D:/downloads/FPGA-Oscilloscope-master/FPGA-Oscilloscope-master/osc/proc/synthesis/submodules/altera_merlin_burst_uncompressor.sv
-Info: proc: Done "proc" with 32 modules, 48 files, 1711783 bytes
+Info: proc: Done "proc" with 32 modules, 48 files, 1716712 bytes
 Info: ip-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

@@ -108,7 +108,7 @@ void  set_display_scale(enum scale_type);
 /* setup and plot a trace */
 void  set_trace_size(int);              /* set the number of samples in a trace */
 void  do_trace(void);                   /* start a trace */
-void  plot_trace(unsigned char*);       /* plot a trace (sampled data) */
+void  plot_trace(unsigned char**);      /* plot a trace (sampled data) */
 
 
 #endif

@@ -59,13 +59,6 @@ applicable agreement for further details.
 		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
-		(pt 0 112)
-		(input)
-		(text "test_inp_export[31..0]" (rect 0 0 84 12)(font "Arial" ))
-		(text "test_inp_export[31..0]" (rect 21 107 105 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
-	)
-	(port
 		(pt 512 48)
 		(output)
 		(text "bridge_out_VRAM_ctrl_tcm_chipselect_n_out[0..0]" (rect 0 0 211 12)(font "Arial" ))
@@ -89,22 +82,22 @@ applicable agreement for further details.
 	(port
 		(pt 512 112)
 		(output)
-		(text "bridge_out_RAM_ctrl_tcm_chipselect_n_out[0..0]" (rect 0 0 202 12)(font "Arial" ))
-		(text "bridge_out_RAM_ctrl_tcm_chipselect_n_out[0..0]" (rect 289 107 491 119)(font "Arial" ))
+		(text "bridge_out_FLASH_ctrl_tcm_chipselect_n_out[0..0]" (rect 0 0 211 12)(font "Arial" ))
+		(text "bridge_out_FLASH_ctrl_tcm_chipselect_n_out[0..0]" (rect 280 107 491 119)(font "Arial" ))
 		(line (pt 512 112)(pt 496 112)(line_width 3))
 	)
 	(port
 		(pt 512 128)
 		(output)
-		(text "bridge_out_VRAM_ctrl_tcm_write_n_out[0..0]" (rect 0 0 191 12)(font "Arial" ))
-		(text "bridge_out_VRAM_ctrl_tcm_write_n_out[0..0]" (rect 300 123 491 135)(font "Arial" ))
+		(text "bridge_out_RAM_ctrl_tcm_chipselect_n_out[0..0]" (rect 0 0 202 12)(font "Arial" ))
+		(text "bridge_out_RAM_ctrl_tcm_chipselect_n_out[0..0]" (rect 289 123 491 135)(font "Arial" ))
 		(line (pt 512 128)(pt 496 128)(line_width 3))
 	)
 	(port
 		(pt 512 144)
 		(output)
-		(text "bridge_out_ROM_ctrl_tcm_chipselect_n_out[0..0]" (rect 0 0 201 12)(font "Arial" ))
-		(text "bridge_out_ROM_ctrl_tcm_chipselect_n_out[0..0]" (rect 290 139 491 151)(font "Arial" ))
+		(text "bridge_out_VRAM_ctrl_tcm_write_n_out[0..0]" (rect 0 0 191 12)(font "Arial" ))
+		(text "bridge_out_VRAM_ctrl_tcm_write_n_out[0..0]" (rect 300 139 491 151)(font "Arial" ))
 		(line (pt 512 144)(pt 496 144)(line_width 3))
 	)
 	(port
@@ -124,8 +117,8 @@ applicable agreement for further details.
 	(port
 		(pt 512 192)
 		(output)
-		(text "adc_rate_export[31..0]" (rect 0 0 89 12)(font "Arial" ))
-		(text "adc_rate_export[31..0]" (rect 402 187 491 199)(font "Arial" ))
+		(text "adc_rate_export[23..0]" (rect 0 0 90 12)(font "Arial" ))
+		(text "adc_rate_export[23..0]" (rect 401 187 491 199)(font "Arial" ))
 		(line (pt 512 192)(pt 496 192)(line_width 3))
 	)
 	(port
@@ -152,8 +145,8 @@ applicable agreement for further details.
 	(port
 		(pt 512 256)
 		(output)
-		(text "trig_errorr_export[7..0]" (rect 0 0 92 12)(font "Arial" ))
-		(text "trig_errorr_export[7..0]" (rect 399 251 491 263)(font "Arial" ))
+		(text "trig_error_export[7..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "trig_error_export[7..0]" (rect 403 251 491 263)(font "Arial" ))
 		(line (pt 512 256)(pt 496 256)(line_width 3))
 	)
 	(port

@@ -49,6 +49,14 @@
          type = "boolean";
       }
    }
+   element FLASH_ctrl
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
    element ONCHIP_mem
    {
       datum _sortIndex
@@ -78,14 +86,6 @@
       datum _sortIndex
       {
          value = "2";
-         type = "int";
-      }
-   }
-   element ROM_ctrl
-   {
-      datum _sortIndex
-      {
-         value = "3";
          type = "int";
       }
    }
@@ -185,75 +185,11 @@
          type = "String";
       }
    }
-   element TRIG_level.s1
-   {
-      datum baseAddress
-      {
-         value = "1380544";
-         type = "String";
-      }
-   }
    element ADC_ctrl.s1
    {
       datum baseAddress
       {
          value = "1380608";
-         type = "String";
-      }
-   }
-   element ONCHIP_mem.s1
-   {
-      datum baseAddress
-      {
-         value = "1343488";
-         type = "String";
-      }
-   }
-   element key_input.s1
-   {
-      datum baseAddress
-      {
-         value = "1380784";
-         type = "String";
-      }
-   }
-   element ADC_rate.s1
-   {
-      datum baseAddress
-      {
-         value = "1380752";
-         type = "String";
-      }
-   }
-   element TRIG_delay.s1
-   {
-      datum baseAddress
-      {
-         value = "1380512";
-         type = "String";
-      }
-   }
-   element ADC_raw.s1
-   {
-      datum baseAddress
-      {
-         value = "1380768";
-         type = "String";
-      }
-   }
-   element TRIG_int.s1
-   {
-      datum baseAddress
-      {
-         value = "1380640";
-         type = "String";
-      }
-   }
-   element TRIG_error.s1
-   {
-      datum baseAddress
-      {
-         value = "1380736";
          type = "String";
       }
    }
@@ -265,12 +201,92 @@
          type = "String";
       }
    }
+   element TRIG_delay.s1
+   {
+      datum baseAddress
+      {
+         value = "1380512";
+         type = "String";
+      }
+   }
+   element TRIG_int.s1
+   {
+      datum baseAddress
+      {
+         value = "1380640";
+         type = "String";
+      }
+   }
+   element ADC_rate.s1
+   {
+      datum baseAddress
+      {
+         value = "1380752";
+         type = "String";
+      }
+   }
+   element ADC_raw.s1
+   {
+      datum baseAddress
+      {
+         value = "1380768";
+         type = "String";
+      }
+   }
+   element key_input.s1
+   {
+      datum baseAddress
+      {
+         value = "1380784";
+         type = "String";
+      }
+   }
+   element TRIG_error.s1
+   {
+      datum baseAddress
+      {
+         value = "1380736";
+         type = "String";
+      }
+   }
+   element ONCHIP_mem.s1
+   {
+      datum baseAddress
+      {
+         value = "1343488";
+         type = "String";
+      }
+   }
+   element TRIG_level.s1
+   {
+      datum baseAddress
+      {
+         value = "1380544";
+         type = "String";
+      }
+   }
    element sysid_qsys_0
    {
       datum _sortIndex
       {
          value = "7";
          type = "int";
+      }
+   }
+   element FLASH_ctrl.uas
+   {
+      datum baseAddress
+      {
+         value = "1245184";
+         type = "String";
+      }
+   }
+   element RAM_ctrl.uas
+   {
+      datum baseAddress
+      {
+         value = "1179648";
+         type = "String";
       }
    }
    element VRAM_ctrl.uas
@@ -283,22 +299,6 @@
       datum baseAddress
       {
          value = "524288";
-         type = "String";
-      }
-   }
-   element RAM_ctrl.uas
-   {
-      datum baseAddress
-      {
-         value = "1179648";
-         type = "String";
-      }
-   }
-   element ROM_ctrl.uas
-   {
-      datum baseAddress
-      {
-         value = "1245184";
          type = "String";
       }
    }
@@ -363,7 +363,7 @@
    type="conduit"
    dir="end" />
  <interface
-   name="trig_errorr"
+   name="trig_error"
    internal="TRIG_error.external_connection"
    type="conduit"
    dir="end" />
@@ -483,8 +483,8 @@
   <parameter name="tightlyCoupledInstructionMaster1AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='ROM_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x148000' end='0x150000' /><slave name='PROC.jtag_debug_module' start='0x150800' end='0x151000' /><slave name='TRIG_delay.s1' start='0x1510A0' end='0x1510C0' /><slave name='TRIG_level.s1' start='0x1510C0' end='0x1510E0' /><slave name='TRIG_ctrl.s1' start='0x1510E0' end='0x151100' /><slave name='ADC_ctrl.s1' start='0x151100' end='0x151120' /><slave name='TRIG_int.s1' start='0x151120' end='0x151140' /><slave name='TRIG_error.s1' start='0x151180' end='0x151190' /><slave name='ADC_rate.s1' start='0x151190' end='0x1511A0' /><slave name='ADC_raw.s1' start='0x1511A0' end='0x1511B0' /><slave name='key_input.s1' start='0x1511B0' end='0x1511C0' /><slave name='sysid_qsys_0.control_slave' start='0x1511C8' end='0x1511D0' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='ROM_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x148000' end='0x150000' /><slave name='PROC.jtag_debug_module' start='0x150800' end='0x151000' /><slave name='TRIG_delay.s1' start='0x1510A0' end='0x1510C0' /><slave name='TRIG_level.s1' start='0x1510C0' end='0x1510E0' /><slave name='TRIG_ctrl.s1' start='0x1510E0' end='0x151100' /><slave name='ADC_ctrl.s1' start='0x151100' end='0x151120' /><slave name='TRIG_int.s1' start='0x151120' end='0x151140' /><slave name='TRIG_error.s1' start='0x151180' end='0x151190' /><slave name='ADC_rate.s1' start='0x151190' end='0x1511A0' /><slave name='ADC_raw.s1' start='0x1511A0' end='0x1511B0' /><slave name='key_input.s1' start='0x1511B0' end='0x1511C0' /><slave name='sysid_qsys_0.control_slave' start='0x1511C8' end='0x1511D0' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='FLASH_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x148000' end='0x150000' /><slave name='PROC.jtag_debug_module' start='0x150800' end='0x151000' /><slave name='TRIG_delay.s1' start='0x1510A0' end='0x1510C0' /><slave name='TRIG_level.s1' start='0x1510C0' end='0x1510E0' /><slave name='TRIG_ctrl.s1' start='0x1510E0' end='0x151100' /><slave name='ADC_ctrl.s1' start='0x151100' end='0x151120' /><slave name='TRIG_int.s1' start='0x151120' end='0x151140' /><slave name='TRIG_error.s1' start='0x151180' end='0x151190' /><slave name='ADC_rate.s1' start='0x151190' end='0x1511A0' /><slave name='ADC_raw.s1' start='0x1511A0' end='0x1511B0' /><slave name='key_input.s1' start='0x1511B0' end='0x1511C0' /><slave name='sysid_qsys_0.control_slave' start='0x1511C8' end='0x1511D0' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='FLASH_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x148000' end='0x150000' /><slave name='PROC.jtag_debug_module' start='0x150800' end='0x151000' /><slave name='TRIG_delay.s1' start='0x1510A0' end='0x1510C0' /><slave name='TRIG_level.s1' start='0x1510C0' end='0x1510E0' /><slave name='TRIG_ctrl.s1' start='0x1510E0' end='0x151100' /><slave name='ADC_ctrl.s1' start='0x151100' end='0x151120' /><slave name='TRIG_int.s1' start='0x151120' end='0x151140' /><slave name='TRIG_error.s1' start='0x151180' end='0x151190' /><slave name='ADC_rate.s1' start='0x151190' end='0x1511A0' /><slave name='ADC_raw.s1' start='0x1511A0' end='0x1511B0' /><slave name='key_input.s1' start='0x1511B0' end='0x1511C0' /><slave name='sysid_qsys_0.control_slave' start='0x1511C8' end='0x1511D0' /></address-map>]]></parameter>
   <parameter name="clockFrequency" value="36000000" />
   <parameter name="deviceFamilyName" value="Cyclone III" />
   <parameter name="internalIrqMaskSystemInfo" value="96" />
@@ -560,7 +560,7 @@
    kind="altera_generic_tristate_controller"
    version="13.1"
    enabled="1"
-   name="ROM_ctrl">
+   name="FLASH_ctrl">
   <parameter name="TCM_ADDRESS_W" value="16" />
   <parameter name="TCM_DATA_W" value="8" />
   <parameter name="TCM_BYTEENABLE_W" value="1" />
@@ -618,15 +618,15 @@
    version="13.1"
    enabled="1"
    name="PIN_share">
-  <parameter name="INTERFACE_INFO"><![CDATA[<info><slave name="tcs0"><master name="RAM_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="address" width="16" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave><slave name="tcs1"><master name="ROM_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="address" width="16" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave><slave name="tcs2"><master name="VRAM_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="waitrequest" width="1" type="Input" output_name="" output_enable_name="" input_name="tcm_waitrequest_in" /><pin role="address" width="19" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="16" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave></info>]]></parameter>
+  <parameter name="INTERFACE_INFO"><![CDATA[<info><slave name="tcs0"><master name="RAM_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="address" width="16" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave><slave name="tcs1"><master name="FLASH_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="address" width="16" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave><slave name="tcs2"><master name="VRAM_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="waitrequest" width="1" type="Input" output_name="" output_enable_name="" input_name="tcm_waitrequest_in" /><pin role="address" width="19" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="16" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave></info>]]></parameter>
   <parameter name="NUM_INTERFACES" value="3" />
-  <parameter name="MODULE_ORIGIN_LIST">VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,ROM_ctrl.tcm,ROM_ctrl.tcm,ROM_ctrl.tcm,ROM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm</parameter>
+  <parameter name="MODULE_ORIGIN_LIST">VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm</parameter>
   <parameter name="SIGNAL_ORIGIN_LIST">address,waitrequest,write_n,data,chipselect_n,address,write_n,data,chipselect_n,address,write_n,data,chipselect_n</parameter>
-  <parameter name="SHARED_SIGNAL_LIST">,,,,,address,r_w,data,,address,r_w,data</parameter>
+  <parameter name="SHARED_SIGNAL_LIST">,,,,,address,r_w,data,,address,r_w,data,</parameter>
   <parameter name="AUTO_CLK_CLOCK_RATE" value="36000000" />
   <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
-  <parameter name="AUTO_TRISTATECONDUIT_MASTERS"><![CDATA[<info><slave name="tcs0"><master name="RAM_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="16" /><port role="data_out" direction="output" width="8" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="8" /></master></slave><slave name="tcs1"><master name="ROM_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="16" /><port role="data_out" direction="output" width="8" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="8" /></master></slave><slave name="tcs2"><master name="VRAM_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="waitrequest_in" direction="input" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="19" /><port role="data_out" direction="output" width="16" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="16" /></master></slave></info>]]></parameter>
+  <parameter name="AUTO_TRISTATECONDUIT_MASTERS"><![CDATA[<info><slave name="tcs0"><master name="RAM_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="16" /><port role="data_out" direction="output" width="8" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="8" /></master></slave><slave name="tcs1"><master name="FLASH_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="16" /><port role="data_out" direction="output" width="8" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="8" /></master></slave><slave name="tcs2"><master name="VRAM_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="waitrequest_in" direction="input" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="19" /><port role="data_out" direction="output" width="16" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="16" /></master></slave></info>]]></parameter>
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone III" />
   <parameter name="AUTO_DEVICE" value="EP3C25Q240C8" />
  </module>
@@ -635,7 +635,7 @@
    version="13.1"
    enabled="1"
    name="BRIDGE">
-  <parameter name="INTERFACE_INFO"><![CDATA[<info><slave name="tcs"><master name="PIN_share.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="r_w" width="1" type="Output" output_name="r_w" output_enable_name="" input_name="" /><pin role="RAM_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="RAM_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_waitrequest_in" width="1" type="Input" output_name="" output_enable_name="" input_name="VRAM_ctrl_tcm_waitrequest_in" /><pin role="address" width="16" type="Output" output_name="address" output_enable_name="" input_name="" /><pin role="ROM_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="ROM_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_write_n_out" width="1" type="Output" output_name="VRAM_ctrl_tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="data" output_enable_name="data_outen" input_name="data_in" /><pin role="VRAM_ctrl_tcm_data_out" width="16" type="Bidirectional" output_name="VRAM_ctrl_tcm_data_out" output_enable_name="VRAM_ctrl_tcm_data_outen" input_name="VRAM_ctrl_tcm_data_in" /><pin role="VRAM_ctrl_tcm_address_out" width="19" type="Output" output_name="VRAM_ctrl_tcm_address_out" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="VRAM_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave></info>]]></parameter>
+  <parameter name="INTERFACE_INFO"><![CDATA[<info><slave name="tcs"><master name="PIN_share.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="r_w" width="1" type="Output" output_name="r_w" output_enable_name="" input_name="" /><pin role="RAM_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="RAM_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_waitrequest_in" width="1" type="Input" output_name="" output_enable_name="" input_name="VRAM_ctrl_tcm_waitrequest_in" /><pin role="address" width="16" type="Output" output_name="address" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_write_n_out" width="1" type="Output" output_name="VRAM_ctrl_tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="data" output_enable_name="data_outen" input_name="data_in" /><pin role="VRAM_ctrl_tcm_data_out" width="16" type="Bidirectional" output_name="VRAM_ctrl_tcm_data_out" output_enable_name="VRAM_ctrl_tcm_data_outen" input_name="VRAM_ctrl_tcm_data_in" /><pin role="VRAM_ctrl_tcm_address_out" width="19" type="Output" output_name="VRAM_ctrl_tcm_address_out" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="VRAM_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /><pin role="FLASH_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="FLASH_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave></info>]]></parameter>
   <parameter name="AUTO_CLK_CLOCK_RATE" value="36000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone III" />
  </module>
@@ -894,7 +894,7 @@
    end="PROC.reset_n" />
  <connection kind="clock" version="13.1" start="SYSCLK.clk" end="PROC.clk" />
  <connection kind="clock" version="13.1" start="SYSCLK.clk" end="RAM_ctrl.clk" />
- <connection kind="clock" version="13.1" start="SYSCLK.clk" end="ROM_ctrl.clk" />
+ <connection kind="clock" version="13.1" start="SYSCLK.clk" end="FLASH_ctrl.clk" />
  <connection
    kind="reset"
    version="13.1"
@@ -904,7 +904,7 @@
    kind="reset"
    version="13.1"
    start="SYSCLK.clk_reset"
-   end="ROM_ctrl.reset" />
+   end="FLASH_ctrl.reset" />
  <connection kind="clock" version="13.1" start="SYSCLK.clk" end="PIN_share.clk" />
  <connection
    kind="reset"
@@ -920,7 +920,7 @@
    kind="reset"
    version="13.1"
    start="PROC.jtag_debug_module_reset"
-   end="ROM_ctrl.reset" />
+   end="FLASH_ctrl.reset" />
  <connection
    kind="reset"
    version="13.1"
@@ -934,7 +934,7 @@
  <connection
    kind="tristate_conduit"
    version="13.1"
-   start="ROM_ctrl.tcm"
+   start="FLASH_ctrl.tcm"
    end="PIN_share.tcs1" />
  <connection kind="clock" version="13.1" start="SYSCLK.clk" end="BRIDGE.clk" />
  <connection
@@ -951,7 +951,7 @@
    kind="avalon"
    version="13.1"
    start="PROC.data_master"
-   end="ROM_ctrl.uas">
+   end="FLASH_ctrl.uas">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00130000" />
   <parameter name="defaultConnection" value="false" />
@@ -960,7 +960,7 @@
    kind="avalon"
    version="13.1"
    start="PROC.instruction_master"
-   end="ROM_ctrl.uas">
+   end="FLASH_ctrl.uas">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00130000" />
   <parameter name="defaultConnection" value="false" />

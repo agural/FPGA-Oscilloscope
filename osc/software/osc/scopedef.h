@@ -102,21 +102,21 @@ enum keycode  {  KEYCODE_MENU,      /* <Menu>     */
 /* function declarations */
 
 /* keypad functions */
-unsigned char  key_available(void);     /* key is available */
-int            getkey(void);  		/* get a key */
+unsigned char key_available(void);					// key is available
+int getkey(void);  									// get a key
 
 /* display functions  */
-void  clear_display(void);			      /* clear the display */
-void  plot_pixel(unsigned int, unsigned int, int);    /* output a pixel */
+void clear_display(void);			      			// clear the display
+void plot_pixel(unsigned int, unsigned int, int);   // output a pixel
 
 /* sampling parameter functions */
-int   set_sample_rate(long int);	/* set the sample rate */
-void  set_trigger(int, int);		/* set trigger level and slope */
-void  set_delay(long int);		/* set the trigger delay time */
+int set_sample_rate(long int);						// set the sample rate
+void set_trigger(int, int);							// set trigger level and slope
+void set_delay(long int);							// set the trigger delay time
 
 /* sampling functions */
-void                start_sample(int);	/* capture a sample */
-unsigned char      *sample_done(void);	/* sample captured status */
+void start_sample(int);								// capture a sample
+unsigned char **sample_done(void);					// sample captured status
 
 
 #endif

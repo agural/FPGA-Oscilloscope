@@ -93,21 +93,6 @@ adc_int_installer:
 	MOVWI	r9, 0xFFFFFFFF
 	stw		r9, PIO_EDGE_CAP(r8)
 
-	/*
-	# Enable ADC interrupts. [TYPEOFINTERUPT]
-	MOVWI	r8, TRIG_INT_BASE
-	MOVWI	r9, 0x00000002
-	stw		r9, PIO_IRQ_MASK(r8)
-
-	# Clear FIFO, turn on FIFO write.
-	STWI	ADC_CTRL_BASE, 0x04
-	STWI	ADC_CTRL_BASE, 0x02
-
-	# Reset trigger counter [ch. A], [+ slope]
-	STWI	TRIG_CTRL_BASE, 0x01
-	STWI	TRIG_CTRL_BASE, 0x00
-	*/
-
 adc_int_installer_done:
 	RESTORE
 	ret
@@ -161,15 +146,16 @@ adc_int_handler:
 	# Get the edge capture register.
 	ldw		r9, PIO_EDGE_CAP(r8)
 
-	# Pause FIFO write
+	# Pause FIFO write.
 	STWI	ADC_CTRL_BASE, 0x00
 
 	mov		r10, r0
 adc_int_handler_clear_front:
-	# Bitbang clock pulse
+	# Bitbang clock pulse.
 	STWI	ADC_CTRL_BASE, 0x01
 	STWI	ADC_CTRL_BASE, 0x00
 
+	# Keep going until 480 good remaining points (for display)
 	addi	r10, r10, 1
 	movi	r13, 13
 	bltu	r10, r13, adc_int_handler_clear_front
@@ -178,48 +164,74 @@ adc_int_handler_clear_front:
 	mov		r10, r0
 
 adc_int_handler_loop:
-	# Bitbang clock pulse
+	# Bitbang clock pulse.
 	STWI	ADC_CTRL_BASE, 0x01
 	STWI	ADC_CTRL_BASE, 0x00
 
+	# Get ch. A, ch. B, and logic data.
 	MOVWI	r11, ADC_RAW_BASE
 	ldwio	r12, (r11)
-	movui	r13, 128
-	add		r12, r12, r13
+
+	# r12 for ch. A, r13 for ch. B, r14 for logic.
+	srli	r13, r12, 8
+	srli	r14, r12, 16
+	movui	r15, 128
+
+	# Convert analog channels to non-signed values.
+	add		r12, r12, r15
+	add		r13, r13, r15
+
+	# Keep only the bottom byte.
 	andi	r12, r12, 0xFF
+	andi	r13, r13, 0xFF
+	andi	r14, r14, 0xFF
 
+	# CH. A
+	# Retrieve the current buffer contents.
+	# Then update the current buffer with the new value.
+	movia	r8, sample_buffer_A
+	add		r8, r8, r10
+	ldb		r9, (r8)
 	stb		r12, (r8)
-	addi	r8, r8, 1
-	addi	r10, r10, 1
-	movi	r13, 480
-	bltu	r10, r13, adc_int_handler_loop
+	# Update the old buffer contents with the old value.
+	movia	r8, sample_buffer_Ao
+	add		r8, r8, r10
+	stb		r9, (r8)
 
-	//call	draw_trace
+	# CH. B
+	# Retrieve the current buffer contents.
+	# Then update the current buffer with the new value.
+	movia	r8, sample_buffer_B
+	add		r8, r8, r10
+	ldb		r9, (r8)
+	stb		r13, (r8)
+	# Update the old buffer contents with the old value.
+	movia	r8, sample_buffer_Bo
+	add		r8, r8, r10
+	stb		r9, (r8)
+
+	# LOGIC ANALYZER
+	# Retrieve the current buffer contents.
+	# Then update the current buffer with the new value.
+	movia	r8, sample_buffer_L
+	add		r8, r8, r10
+	ldb		r9, (r8)
+	stb		r14, (r8)
+	# Update the old buffer contents with the old value.
+	movia	r8, sample_buffer_Lo
+	add		r8, r8, r10
+	stb		r9, (r8)
+
+	addi	r10, r10, 1
+	movi	r15, 480
+	bltu	r10, r15, adc_int_handler_loop
+
 	# Sample done.
 	movia	r8, sample_complete
 	movi	r9, 1
 	stb		r9, (r8)
 
 adc_int_handler_done:
-	/*
-	# Clear the edge capture register (write 1 to clear).
-	MOVWI	r8, TRIG_INT_BASE
-	MOVWI	r9, 0xFFFFFFFF
-	stw		r9, PIO_EDGE_CAP(r8)
-
-	# Re-enable interrupts. [TYPEOFINTERRUPT]
-	MOVWI	r8, TRIG_INT_BASE
-	MOVWI	r9, 0x00000002
-	stw		r9, PIO_IRQ_MASK(r8)
-
-	# Clear FIFO, turn on FIFO write.
-	STWI	ADC_CTRL_BASE, 0x04
-	STWI	ADC_CTRL_BASE, 0x02
-
-	# Restart trigger counter [ch. A], [+ slope]
-	STWI	TRIG_CTRL_BASE, 0x01
-	STWI	TRIG_CTRL_BASE, 0x00
-	*/
 
 	RESTORE
 	ret
@@ -341,10 +353,6 @@ draw_grid_done:
 	ret
 
 
-
-
-
-
 draw_pixel:
 	SAVE
 
@@ -365,76 +373,43 @@ draw_pixel_done:
 	RESTORE
 	ret
 
-/*
-adc_int_handler_draw_pt:
-	movui	r13, 0xE003
-	sthio 	r13, (r9)
-	br		adc_int_handler_draw_col_loop_cont
 
-adc_int_handler_draw_thresh:
-	movui	r13, 0x1F00
-	sthio 	r13, (r9)
-	br		adc_int_handler_draw_col_loop_cont
-
-adc_int_handler_draw_vaxis:
-	movui	r13, 0x1F00
-	sthio 	r13, (r9)
-	br		adc_int_handler_draw_col_loop_cont
-*/
 
 
 /*
-draw_trace_col:
-	MOVWI	r9, VRAM_CTRL_BASE
-	add		r9, r9, r10
-	add		r9, r9, r10
-	mov		r11, r0
-
-draw_trace_col_loop:
-	movi	r14, 240
-	beq		r10, r14, adc_int_handler_draw_vaxis
-
-	movui	r13, 0x003C
-	sthio 	r13, (r9)
-
-	movi	r14, 136
-	beq		r11, r14, adc_int_handler_draw_thresh
-	beq		r11, r12, adc_int_handler_draw_pt
-
-adc_int_handler_draw_col_loop_cont:
-	addi	r9, r9, 1024
-	addi	r11, r11, 1
-	movi	r13, 272
-	bltu	r11, r13, adc_int_handler_draw_col_loop
-
-	addi	r10, r10, 1
-	movi	r13, 480
-	bltu	r10, r13, adc_int_handler_loop
-*/
-
-
-
-.global clear_display_x
-.type clear_display_x, @function
-
-clear_display_x:
-	SAVE
-
-	MOVWI	r8, VRAM_CTRL_BASE
-	movui	r9, 272
-	slli	r9, r9, 10
-	add		r9, r8, r9
-	movui	r15, 0x001C
-
-loop_clr_x:
-	sthio 	r15, (r8)
-	addi	r8, r8, 2
-	bltu	r8, r9, loop_clr_x
-
-	RESTORE
-	ret
-
-
+ *  adc_int_handler
+ *
+ *  Description:
+ *
+ *  Operation:
+ *
+ *  Arguments:
+ *
+ *  Return Value:
+ *
+ *  Local Variables:
+ *
+ *  Shared Variables:
+ *
+ *  Global Variables:
+ *
+ *  Input:
+ *
+ *  Output:
+ *
+ *  Error Handling:
+ *
+ *  Limitations:
+ *
+ *  Algorithms:
+ *  Data Structures:
+ *
+ *  Registers Changed:
+ *
+ *  Revision History:
+ *      02/09/2012    Dan Pipe-Mazo     initial revision
+ *
+ */
 
 .global clear_display
 .type clear_display, @function
@@ -442,12 +417,14 @@ loop_clr_x:
 clear_display:
 	SAVE
 
+	# Get display address and background color.
 	MOVWI	r8, VRAM_CTRL_BASE
 	movui	r9, 272
 	slli	r9, r9, 10
 	add		r9, r8, r9
 	movui	r15, 0x001C
 
+	# Loop over all screen pixels, clearing them.
 clear_display_loop:
 	sthio 	r15, (r8)
 	addi	r8, r8, 2
@@ -459,6 +436,41 @@ clear_display_done:
 
 
 
+/*
+ *  adc_int_handler
+ *
+ *  Description:
+ *
+ *  Operation:
+ *
+ *  Arguments:
+ *
+ *  Return Value:
+ *
+ *  Local Variables:
+ *
+ *  Shared Variables:
+ *
+ *  Global Variables:
+ *
+ *  Input:
+ *
+ *  Output:
+ *
+ *  Error Handling:
+ *
+ *  Limitations:
+ *
+ *  Algorithms:
+ *  Data Structures:
+ *
+ *  Registers Changed:
+ *
+ *  Revision History:
+ *      02/09/2012    Dan Pipe-Mazo     initial revision
+ *
+ */
+
 .global plot_pixel
 .type plot_pixel, @function
 
@@ -468,11 +480,15 @@ plot_pixel:
 	push	r4
 	push	r5
 
+	# Each row takes 1024 bytes, so shift row var by 10 bits.
 	slli	r5, r5, 10
+	# Add twice to account for 16-bit VRAM storage.
 	add		r5, r5, r4
 	add		r5, r5, r4
+	# Now get the absolute address.
 	MOVWI	r4, VRAM_CTRL_BASE
 	add		r5, r5, r4
+	# Store the color.
 	sth		r6, (r5)
 
 	pop		r5
@@ -483,35 +499,40 @@ plot_pixel_done:
 	ret
 
 
-
-
-
 /*
-clear_display_y:
-	SAVE
-
-	movhi	r8, %hi(VRAM_CTRL_BASE)
-	ori		r8, r8, %lo(VRAM_CTRL_BASE)
-	movi	r12, 512
-	movi	r13, 272
-	mov		r10, r0
-
-loop_clr_y:
-	movui	r14, 0x0000
-	sthio 	r14, (r8)
-	addi	r8, r8, 2
-	addi	r11, r11, 1
-	bltu	r11, r12, loop_clr_y
-
-	mov		r11, r0
-	addi	r10, r10, 1
-	bltu	r10, r13, loop_clr_y
-
-	RESTORE
-	ret
-*/
-
-
+ *  adc_int_handler
+ *
+ *  Description:
+ *
+ *  Operation:
+ *
+ *  Arguments:
+ *
+ *  Return Value:
+ *
+ *  Local Variables:
+ *
+ *  Shared Variables:
+ *
+ *  Global Variables:
+ *
+ *  Input:
+ *
+ *  Output:
+ *
+ *  Error Handling:
+ *
+ *  Limitations:
+ *
+ *  Algorithms:
+ *  Data Structures:
+ *
+ *  Registers Changed:
+ *
+ *  Revision History:
+ *      02/09/2012    Dan Pipe-Mazo     initial revision
+ *
+ */
 
 .global set_sample_rate
 .type set_sample_rate, @function
@@ -523,13 +544,9 @@ set_sample_rate:
 	# to get number of ticks to pause (not collect samples)
 	# between collecting samples.
 	MOVWI	r8, ADC_RATE_BASE
-	#MOVWI	r9, 180000000
-	#divu	r9, r9, r4
-	#MOVWI	r9, 100000
-	stw		r4, (r8)
-
-	MOVWI	r8, TEST_INPUT_BASE
-	ldw		r9, (r8)
+	MOVWI	r9, 180000000
+	divu	r9, r9, r4
+	stw		r9, (r8)
 
 	# Always return 480 samples.
 	movui	r2, 480
@@ -539,6 +556,40 @@ set_sample_rate_done:
 	ret
 
 
+/*
+ *  adc_int_handler
+ *
+ *  Description:
+ *
+ *  Operation:
+ *
+ *  Arguments:
+ *
+ *  Return Value:
+ *
+ *  Local Variables:
+ *
+ *  Shared Variables:
+ *
+ *  Global Variables:
+ *
+ *  Input:
+ *
+ *  Output:
+ *
+ *  Error Handling:
+ *
+ *  Limitations:
+ *
+ *  Algorithms:
+ *  Data Structures:
+ *
+ *  Registers Changed:
+ *
+ *  Revision History:
+ *      02/09/2012    Dan Pipe-Mazo     initial revision
+ *
+ */
 
 .global set_trigger
 .type set_trigger, @function
@@ -572,6 +623,40 @@ set_trigger_done:
 	ret
 
 
+/*
+ *  adc_int_handler
+ *
+ *  Description:
+ *
+ *  Operation:
+ *
+ *  Arguments:
+ *
+ *  Return Value:
+ *
+ *  Local Variables:
+ *
+ *  Shared Variables:
+ *
+ *  Global Variables:
+ *
+ *  Input:
+ *
+ *  Output:
+ *
+ *  Error Handling:
+ *
+ *  Limitations:
+ *
+ *  Algorithms:
+ *  Data Structures:
+ *
+ *  Registers Changed:
+ *
+ *  Revision History:
+ *      02/09/2012    Dan Pipe-Mazo     initial revision
+ *
+ */
 
 .global set_delay
 .type set_delay, @function
@@ -588,6 +673,40 @@ set_delay_done:
 	ret
 
 
+/*
+ *  adc_int_handler
+ *
+ *  Description:
+ *
+ *  Operation:
+ *
+ *  Arguments:
+ *
+ *  Return Value:
+ *
+ *  Local Variables:
+ *
+ *  Shared Variables:
+ *
+ *  Global Variables:
+ *
+ *  Input:
+ *
+ *  Output:
+ *
+ *  Error Handling:
+ *
+ *  Limitations:
+ *
+ *  Algorithms:
+ *  Data Structures:
+ *
+ *  Registers Changed:
+ *
+ *  Revision History:
+ *      02/09/2012    Dan Pipe-Mazo     initial revision
+ *
+ */
 
 .global start_sample
 .type start_sample, @function
@@ -624,6 +743,40 @@ start_sample_done:
 	ret
 
 
+/*
+ *  adc_int_handler
+ *
+ *  Description:
+ *
+ *  Operation:
+ *
+ *  Arguments:
+ *
+ *  Return Value:
+ *
+ *  Local Variables:
+ *
+ *  Shared Variables:
+ *
+ *  Global Variables:
+ *
+ *  Input:
+ *
+ *  Output:
+ *
+ *  Error Handling:
+ *
+ *  Limitations:
+ *
+ *  Algorithms:
+ *  Data Structures:
+ *
+ *  Registers Changed:
+ *
+ *  Revision History:
+ *      02/09/2012    Dan Pipe-Mazo     initial revision
+ *
+ */
 
 .global sample_done
 .type sample_done, @function
@@ -636,9 +789,9 @@ sample_done:
 	ldb		r9, (r8)
 	beq		r9, r0, sample_null
 
-	# If so, reset sample complete variable and return buffer start.
+	# If so, reset sample complete variable and return map to buffers.
 	stb		r0, (r8)
-	movia	r2, sample_buffer_A
+	movia	r2, sample_map
 	br		sample_done_done
 
 sample_null:
@@ -650,9 +803,21 @@ sample_done_done:
 	ret
 
 
+sample_map:
+	.word	sample_buffer_A
+	.word	sample_buffer_Ao
+	.word	sample_buffer_B
+	.word	sample_buffer_Bo
+	.word	sample_buffer_L
+	.word	sample_buffer_Lo
+
 
 .section  .data     #start data section
 
 sample_complete:	.byte			# 0 = still trying to get sample; 1 = sample done.
-sample_buffer_A:	.skip	480		# Buffer stores display-worth of ADC samples.
-sample_buffer_Ao:	.skip	480		# Buffer stores display-worth of ADC samples.
+sample_buffer_A:	.skip	480		# Buffer stores display-worth of ADC samples (ch. A).
+sample_buffer_Ao:	.skip	480		# Buffer stores display-worth of ADC samples (past).
+sample_buffer_B:	.skip	480		# Buffer stores display-worth of ADC samples (ch. B).
+sample_buffer_Bo:	.skip	480		# Buffer stores display-worth of ADC samples (past).
+sample_buffer_L:	.skip	480		# Buffer stores display-worth of ADC samples (Logic).
+sample_buffer_Lo:	.skip	480		# Buffer stores display-worth of ADC samples (past).

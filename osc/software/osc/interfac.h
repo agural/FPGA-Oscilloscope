@@ -58,9 +58,10 @@
 #define	 PIXEL_CYAN		0x007F
 #define  PIXEL_BLUE		0x007C
 #define	 PIXEL_PURPLE	0x0F7C
+#define	 PIXEL_BGND		0x001C
 
 /* scope parameters */
-#define  MIN_DELAY	   0    /* minimum trigger delay */
+#define  MIN_DELAY	   0    	/* minimum trigger delay */
 #define  MAX_DELAY     50000    /* maximum trigger delay */
 #define  MIN_LEVEL         0    /* minimum trigger level (in mV) */
 #define  MAX_LEVEL      5000    /* maximum trigger level (in mV) */

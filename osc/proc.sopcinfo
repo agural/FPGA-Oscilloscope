@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="proc" kind="proc" version="1.0" fabric="QSYS">
  <!-- Format version 13.1 162 (Future versions may contain additional information.) -->
- <!-- 2014.06.12.20:04:47 -->
+ <!-- 2014.06.12.22:57:25 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1402628686</value>
+  <value>1402639044</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -322,9 +322,9 @@ parameters are a RESULT of the module parameters. -->
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
-    <moduleName>ROM_ctrl</moduleName>
+    <moduleName>FLASH_ctrl</moduleName>
     <slaveName>clk</slaveName>
-    <name>ROM_ctrl.clk</name>
+    <name>FLASH_ctrl.clk</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -1606,7 +1606,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='ROM_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x148000' end='0x150000' /><slave name='PROC.jtag_debug_module' start='0x150800' end='0x151000' /><slave name='TRIG_delay.s1' start='0x1510A0' end='0x1510C0' /><slave name='TRIG_level.s1' start='0x1510C0' end='0x1510E0' /><slave name='TRIG_ctrl.s1' start='0x1510E0' end='0x151100' /><slave name='ADC_ctrl.s1' start='0x151100' end='0x151120' /><slave name='TRIG_int.s1' start='0x151120' end='0x151140' /><slave name='TRIG_error.s1' start='0x151180' end='0x151190' /><slave name='ADC_rate.s1' start='0x151190' end='0x1511A0' /><slave name='ADC_raw.s1' start='0x1511A0' end='0x1511B0' /><slave name='key_input.s1' start='0x1511B0' end='0x1511C0' /><slave name='sysid_qsys_0.control_slave' start='0x1511C8' end='0x1511D0' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='FLASH_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x148000' end='0x150000' /><slave name='PROC.jtag_debug_module' start='0x150800' end='0x151000' /><slave name='TRIG_delay.s1' start='0x1510A0' end='0x1510C0' /><slave name='TRIG_level.s1' start='0x1510C0' end='0x1510E0' /><slave name='TRIG_ctrl.s1' start='0x1510E0' end='0x151100' /><slave name='ADC_ctrl.s1' start='0x151100' end='0x151120' /><slave name='TRIG_int.s1' start='0x151120' end='0x151140' /><slave name='TRIG_error.s1' start='0x151180' end='0x151190' /><slave name='ADC_rate.s1' start='0x151190' end='0x1511A0' /><slave name='ADC_raw.s1' start='0x1511A0' end='0x1511B0' /><slave name='key_input.s1' start='0x1511B0' end='0x1511C0' /><slave name='sysid_qsys_0.control_slave' start='0x1511C8' end='0x1511D0' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1614,7 +1614,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='ROM_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x148000' end='0x150000' /><slave name='PROC.jtag_debug_module' start='0x150800' end='0x151000' /><slave name='TRIG_delay.s1' start='0x1510A0' end='0x1510C0' /><slave name='TRIG_level.s1' start='0x1510C0' end='0x1510E0' /><slave name='TRIG_ctrl.s1' start='0x1510E0' end='0x151100' /><slave name='ADC_ctrl.s1' start='0x151100' end='0x151120' /><slave name='TRIG_int.s1' start='0x151120' end='0x151140' /><slave name='TRIG_error.s1' start='0x151180' end='0x151190' /><slave name='ADC_rate.s1' start='0x151190' end='0x1511A0' /><slave name='ADC_raw.s1' start='0x1511A0' end='0x1511B0' /><slave name='key_input.s1' start='0x1511B0' end='0x1511C0' /><slave name='sysid_qsys_0.control_slave' start='0x1511C8' end='0x1511D0' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='VRAM_ctrl.uas' start='0x80000' end='0x100000' /><slave name='RAM_ctrl.uas' start='0x120000' end='0x130000' /><slave name='FLASH_ctrl.uas' start='0x130000' end='0x140000' /><slave name='ONCHIP_mem.s1' start='0x148000' end='0x150000' /><slave name='PROC.jtag_debug_module' start='0x150800' end='0x151000' /><slave name='TRIG_delay.s1' start='0x1510A0' end='0x1510C0' /><slave name='TRIG_level.s1' start='0x1510C0' end='0x1510E0' /><slave name='TRIG_ctrl.s1' start='0x1510E0' end='0x151100' /><slave name='ADC_ctrl.s1' start='0x151100' end='0x151120' /><slave name='TRIG_int.s1' start='0x151120' end='0x151140' /><slave name='TRIG_error.s1' start='0x151180' end='0x151190' /><slave name='ADC_rate.s1' start='0x151190' end='0x1511A0' /><slave name='ADC_raw.s1' start='0x1511A0' end='0x1511B0' /><slave name='key_input.s1' start='0x1511B0' end='0x1511C0' /><slave name='sysid_qsys_0.control_slave' start='0x1511C8' end='0x1511D0' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -2176,9 +2176,9 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>ROM_ctrl</moduleName>
+    <moduleName>FLASH_ctrl</moduleName>
     <slaveName>uas</slaveName>
-    <name>ROM_ctrl.uas</name>
+    <name>FLASH_ctrl.uas</name>
     <baseAddress>1245184</baseAddress>
     <span>65536</span>
    </memoryBlock>
@@ -2589,9 +2589,9 @@ parameters are a RESULT of the module parameters. -->
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
-    <moduleName>ROM_ctrl</moduleName>
+    <moduleName>FLASH_ctrl</moduleName>
     <slaveName>uas</slaveName>
-    <name>ROM_ctrl.uas</name>
+    <name>FLASH_ctrl.uas</name>
     <baseAddress>1245184</baseAddress>
     <span>65536</span>
    </memoryBlock>
@@ -4471,10 +4471,10 @@ parameters are a RESULT of the module parameters. -->
   </interface>
  </module>
  <module
-   name="ROM_ctrl"
+   name="FLASH_ctrl"
    kind="altera_generic_tristate_controller"
    version="13.1"
-   path="ROM_ctrl">
+   path="FLASH_ctrl">
   <!-- Describes a single module. Module parameters are
 the requested settings for a module instance. -->
   <assignment>
@@ -5661,7 +5661,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>testbench.partner.pin_divider.parameter.MODULE_ORIGIN_LIST</name>
-   <value>VRAM_ctrl.tcm VRAM_ctrl.tcm VRAM_ctrl.tcm VRAM_ctrl.tcm VRAM_ctrl.tcm ROM_ctrl.tcm ROM_ctrl.tcm ROM_ctrl.tcm ROM_ctrl.tcm RAM_ctrl.tcm RAM_ctrl.tcm RAM_ctrl.tcm RAM_ctrl.tcm</value>
+   <value>VRAM_ctrl.tcm VRAM_ctrl.tcm VRAM_ctrl.tcm VRAM_ctrl.tcm VRAM_ctrl.tcm FLASH_ctrl.tcm FLASH_ctrl.tcm FLASH_ctrl.tcm FLASH_ctrl.tcm RAM_ctrl.tcm RAM_ctrl.tcm RAM_ctrl.tcm RAM_ctrl.tcm</value>
   </assignment>
   <assignment>
    <name>testbench.partner.pin_divider.parameter.SHARED_SIGNAL_LIST</name>
@@ -5669,7 +5669,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>testbench.partner.pin_divider.parameter.SIGNAL_ORIGIN_LIST</name>
-   <value>VRAM_ctrl_tcm_address_out VRAM_ctrl_tcm_waitrequest_in VRAM_ctrl_tcm_write_n_out VRAM_ctrl_tcm_data_out VRAM_ctrl_tcm_chipselect_n_out ROM_ctrl_tcm_address_out ROM_ctrl_tcm_write_n_out ROM_ctrl_tcm_data_out ROM_ctrl_tcm_chipselect_n_out RAM_ctrl_tcm_address_out RAM_ctrl_tcm_write_n_out RAM_ctrl_tcm_data_out RAM_ctrl_tcm_chipselect_n_out</value>
+   <value>VRAM_ctrl_tcm_address_out VRAM_ctrl_tcm_waitrequest_in VRAM_ctrl_tcm_write_n_out VRAM_ctrl_tcm_data_out VRAM_ctrl_tcm_chipselect_n_out FLASH_ctrl_tcm_address_out FLASH_ctrl_tcm_write_n_out FLASH_ctrl_tcm_data_out FLASH_ctrl_tcm_chipselect_n_out RAM_ctrl_tcm_address_out RAM_ctrl_tcm_write_n_out RAM_ctrl_tcm_data_out RAM_ctrl_tcm_chipselect_n_out</value>
   </assignment>
   <assignment>
    <name>testbench.partner.pin_divider.parameter.SIGNAL_ORIGIN_TYPE</name>
@@ -5681,7 +5681,7 @@ the requested settings for a module instance. -->
   </assignment>
   <parameter name="INTERFACE_INFO">
    <type>java.lang.String</type>
-   <value><![CDATA[<info><slave name="tcs0"><master name="RAM_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="address" width="16" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave><slave name="tcs1"><master name="ROM_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="address" width="16" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave><slave name="tcs2"><master name="VRAM_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="waitrequest" width="1" type="Input" output_name="" output_enable_name="" input_name="tcm_waitrequest_in" /><pin role="address" width="19" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="16" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave></info>]]></value>
+   <value><![CDATA[<info><slave name="tcs0"><master name="RAM_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="address" width="16" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave><slave name="tcs1"><master name="FLASH_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="address" width="16" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave><slave name="tcs2"><master name="VRAM_ctrl.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="waitrequest" width="1" type="Input" output_name="" output_enable_name="" input_name="tcm_waitrequest_in" /><pin role="address" width="19" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="16" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave></info>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -5697,7 +5697,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="MODULE_ORIGIN_LIST">
    <type>[Ljava.lang.String;</type>
-   <value>VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,ROM_ctrl.tcm,ROM_ctrl.tcm,ROM_ctrl.tcm,ROM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm</value>
+   <value>VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -5761,7 +5761,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="REALTIME_MODULE_ORIGIN_LIST">
    <type>[Ljava.lang.String;</type>
-   <value>VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,ROM_ctrl.tcm,ROM_ctrl.tcm,ROM_ctrl.tcm,ROM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm</value>
+   <value>VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,VRAM_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,FLASH_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm,RAM_ctrl.tcm</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -5809,7 +5809,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="AUTO_TRISTATECONDUIT_MASTERS">
    <type>java.lang.String</type>
-   <value><![CDATA[<info><slave name="tcs0"><master name="RAM_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="16" /><port role="data_out" direction="output" width="8" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="8" /></master></slave><slave name="tcs1"><master name="ROM_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="16" /><port role="data_out" direction="output" width="8" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="8" /></master></slave><slave name="tcs2"><master name="VRAM_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="waitrequest_in" direction="input" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="19" /><port role="data_out" direction="output" width="16" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="16" /></master></slave></info>]]></value>
+   <value><![CDATA[<info><slave name="tcs0"><master name="RAM_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="16" /><port role="data_out" direction="output" width="8" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="8" /></master></slave><slave name="tcs1"><master name="FLASH_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="16" /><port role="data_out" direction="output" width="8" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="8" /></master></slave><slave name="tcs2"><master name="VRAM_ctrl.tcm"><port role="write_n_out" direction="output" width="1" /><port role="chipselect_n_out" direction="output" width="1" /><port role="waitrequest_in" direction="input" width="1" /><port role="request" direction="output" width="1" /><port role="grant" direction="input" width="1" /><port role="address_out" direction="output" width="19" /><port role="data_out" direction="output" width="16" /><port role="data_outen" direction="output" width="1" /><port role="data_in" direction="input" width="16" /></master></slave></info>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -6038,10 +6038,10 @@ parameters are a RESULT of the module parameters. -->
     <role>VRAM_ctrl_tcm_chipselect_n_out_out</role>
    </port>
    <port>
-    <name>ROM_ctrl_tcm_chipselect_n_out</name>
+    <name>FLASH_ctrl_tcm_chipselect_n_out</name>
     <direction>Output</direction>
     <width>1</width>
-    <role>ROM_ctrl_tcm_chipselect_n_out_out</role>
+    <role>FLASH_ctrl_tcm_chipselect_n_out_out</role>
    </port>
    <port>
     <name>RAM_ctrl_tcm_chipselect_n_out</name>
@@ -6345,7 +6345,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>testbench.partner.tcb_translator.parameter.SIGNAL_ORIGIN_LIST</name>
-   <value>VRAM_ctrl_tcm_data_out VRAM_ctrl_tcm_chipselect_n_out VRAM_ctrl_tcm_waitrequest_in data VRAM_ctrl_tcm_address_out r_w RAM_ctrl_tcm_chipselect_n_out VRAM_ctrl_tcm_write_n_out ROM_ctrl_tcm_chipselect_n_out address</value>
+   <value>VRAM_ctrl_tcm_data_out VRAM_ctrl_tcm_chipselect_n_out VRAM_ctrl_tcm_waitrequest_in data VRAM_ctrl_tcm_address_out r_w FLASH_ctrl_tcm_chipselect_n_out RAM_ctrl_tcm_chipselect_n_out VRAM_ctrl_tcm_write_n_out address</value>
   </assignment>
   <assignment>
    <name>testbench.partner.tcb_translator.parameter.SIGNAL_ORIGIN_TYPE</name>
@@ -6357,7 +6357,7 @@ the requested settings for a module instance. -->
   </assignment>
   <parameter name="INTERFACE_INFO">
    <type>java.lang.String</type>
-   <value><![CDATA[<info><slave name="tcs"><master name="PIN_share.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="r_w" width="1" type="Output" output_name="r_w" output_enable_name="" input_name="" /><pin role="RAM_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="RAM_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_waitrequest_in" width="1" type="Input" output_name="" output_enable_name="" input_name="VRAM_ctrl_tcm_waitrequest_in" /><pin role="address" width="16" type="Output" output_name="address" output_enable_name="" input_name="" /><pin role="ROM_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="ROM_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_write_n_out" width="1" type="Output" output_name="VRAM_ctrl_tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="data" output_enable_name="data_outen" input_name="data_in" /><pin role="VRAM_ctrl_tcm_data_out" width="16" type="Bidirectional" output_name="VRAM_ctrl_tcm_data_out" output_enable_name="VRAM_ctrl_tcm_data_outen" input_name="VRAM_ctrl_tcm_data_in" /><pin role="VRAM_ctrl_tcm_address_out" width="19" type="Output" output_name="VRAM_ctrl_tcm_address_out" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="VRAM_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave></info>]]></value>
+   <value><![CDATA[<info><slave name="tcs"><master name="PIN_share.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="r_w" width="1" type="Output" output_name="r_w" output_enable_name="" input_name="" /><pin role="RAM_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="RAM_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_waitrequest_in" width="1" type="Input" output_name="" output_enable_name="" input_name="VRAM_ctrl_tcm_waitrequest_in" /><pin role="address" width="16" type="Output" output_name="address" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_write_n_out" width="1" type="Output" output_name="VRAM_ctrl_tcm_write_n_out" output_enable_name="" input_name="" /><pin role="data" width="8" type="Bidirectional" output_name="data" output_enable_name="data_outen" input_name="data_in" /><pin role="VRAM_ctrl_tcm_data_out" width="16" type="Bidirectional" output_name="VRAM_ctrl_tcm_data_out" output_enable_name="VRAM_ctrl_tcm_data_outen" input_name="VRAM_ctrl_tcm_data_in" /><pin role="VRAM_ctrl_tcm_address_out" width="19" type="Output" output_name="VRAM_ctrl_tcm_address_out" output_enable_name="" input_name="" /><pin role="VRAM_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="VRAM_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /><pin role="FLASH_ctrl_tcm_chipselect_n_out" width="1" type="Output" output_name="FLASH_ctrl_tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave></info>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -6604,6 +6604,12 @@ parameters are a RESULT of the module parameters. -->
     <role>r_w_out</role>
    </port>
    <port>
+    <name>tcs_FLASH_ctrl_tcm_chipselect_n_out</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>FLASH_ctrl_tcm_chipselect_n_out_out</role>
+   </port>
+   <port>
     <name>tcs_RAM_ctrl_tcm_chipselect_n_out</name>
     <direction>Input</direction>
     <width>1</width>
@@ -6614,12 +6620,6 @@ parameters are a RESULT of the module parameters. -->
     <direction>Input</direction>
     <width>1</width>
     <role>VRAM_ctrl_tcm_write_n_out_out</role>
-   </port>
-   <port>
-    <name>tcs_ROM_ctrl_tcm_chipselect_n_out</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>ROM_ctrl_tcm_chipselect_n_out_out</role>
    </port>
    <port>
     <name>tcs_address</name>
@@ -6703,6 +6703,12 @@ parameters are a RESULT of the module parameters. -->
     <role>r_w</role>
    </port>
    <port>
+    <name>FLASH_ctrl_tcm_chipselect_n_out</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>FLASH_ctrl_tcm_chipselect_n_out</role>
+   </port>
+   <port>
     <name>RAM_ctrl_tcm_chipselect_n_out</name>
     <direction>Output</direction>
     <width>1</width>
@@ -6713,12 +6719,6 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>1</width>
     <role>VRAM_ctrl_tcm_write_n_out</role>
-   </port>
-   <port>
-    <name>ROM_ctrl_tcm_chipselect_n_out</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>ROM_ctrl_tcm_chipselect_n_out</role>
    </port>
    <port>
     <name>address</name>
@@ -7520,7 +7520,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1402628686</value>
+   <value>1402639044</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -7540,7 +7540,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1402628686</value>
+   <value>1402639044</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -7556,7 +7556,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1402628686</value>
+   <value>1402639044</value>
    <derived>false</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -16478,11 +16478,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
-   name="SYSCLK.clk/ROM_ctrl.clk"
+   name="SYSCLK.clk/FLASH_ctrl.clk"
    kind="clock"
    version="13.1"
    start="SYSCLK.clk"
-   end="ROM_ctrl.clk">
+   end="FLASH_ctrl.clk">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -16501,7 +16501,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>SYSCLK</startModule>
   <startConnectionPoint>clk</startConnectionPoint>
-  <endModule>ROM_ctrl</endModule>
+  <endModule>FLASH_ctrl</endModule>
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
@@ -16532,11 +16532,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="SYSCLK.clk_reset/ROM_ctrl.reset"
+   name="SYSCLK.clk_reset/FLASH_ctrl.reset"
    kind="reset"
    version="13.1"
    start="SYSCLK.clk_reset"
-   end="ROM_ctrl.reset">
+   end="FLASH_ctrl.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -16555,7 +16555,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>SYSCLK</startModule>
   <startConnectionPoint>clk_reset</startConnectionPoint>
-  <endModule>ROM_ctrl</endModule>
+  <endModule>FLASH_ctrl</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
@@ -16640,11 +16640,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
-   name="PROC.jtag_debug_module_reset/ROM_ctrl.reset"
+   name="PROC.jtag_debug_module_reset/FLASH_ctrl.reset"
    kind="reset"
    version="13.1"
    start="PROC.jtag_debug_module_reset"
-   end="ROM_ctrl.reset">
+   end="FLASH_ctrl.reset">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
    <value>UNKNOWN</value>
@@ -16663,7 +16663,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>PROC</startModule>
   <startConnectionPoint>jtag_debug_module_reset</startConnectionPoint>
-  <endModule>ROM_ctrl</endModule>
+  <endModule>FLASH_ctrl</endModule>
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <connection
@@ -16721,10 +16721,10 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>tcs0</endConnectionPoint>
  </connection>
  <connection
-   name="ROM_ctrl.tcm/PIN_share.tcs1"
+   name="FLASH_ctrl.tcm/PIN_share.tcs1"
    kind="tristate_conduit"
    version="13.1"
-   start="ROM_ctrl.tcm"
+   start="FLASH_ctrl.tcm"
    end="PIN_share.tcs1">
   <parameter name="deviceFamily">
    <type>java.lang.String</type>
@@ -16742,7 +16742,7 @@ parameters are a RESULT of the module parameters. -->
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
-  <startModule>ROM_ctrl</startModule>
+  <startModule>FLASH_ctrl</startModule>
   <startConnectionPoint>tcm</startConnectionPoint>
   <endModule>PIN_share</endModule>
   <endConnectionPoint>tcs1</endConnectionPoint>
@@ -16829,11 +16829,11 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>tcs</endConnectionPoint>
  </connection>
  <connection
-   name="PROC.data_master/ROM_ctrl.uas"
+   name="PROC.data_master/FLASH_ctrl.uas"
    kind="avalon"
    version="13.1"
    start="PROC.data_master"
-   end="ROM_ctrl.uas">
+   end="FLASH_ctrl.uas">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -16876,15 +16876,15 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>PROC</startModule>
   <startConnectionPoint>data_master</startConnectionPoint>
-  <endModule>ROM_ctrl</endModule>
+  <endModule>FLASH_ctrl</endModule>
   <endConnectionPoint>uas</endConnectionPoint>
  </connection>
  <connection
-   name="PROC.instruction_master/ROM_ctrl.uas"
+   name="PROC.instruction_master/FLASH_ctrl.uas"
    kind="avalon"
    version="13.1"
    start="PROC.instruction_master"
-   end="ROM_ctrl.uas">
+   end="FLASH_ctrl.uas">
   <parameter name="arbitrationPriority">
    <type>int</type>
    <value>1</value>
@@ -16927,7 +16927,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <startModule>PROC</startModule>
   <startConnectionPoint>instruction_master</startConnectionPoint>
-  <endModule>ROM_ctrl</endModule>
+  <endModule>FLASH_ctrl</endModule>
   <endConnectionPoint>uas</endConnectionPoint>
  </connection>
  <connection
@@ -19353,30 +19353,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <plugin>
-  <instanceCount>1</instanceCount>
-  <name>reset_sink</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Reset Input</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
-  <instanceCount>35</instanceCount>
-  <name>reset</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IConnection</subtype>
-  <displayName>Reset Connection</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
-  <instanceCount>4</instanceCount>
-  <name>tristate_conduit</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IConnection</subtype>
-  <displayName>Tristate Conduit Connection</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
   <instanceCount>4</instanceCount>
   <name>tristate_conduit_slave</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
@@ -19393,43 +19369,19 @@ parameters are a RESULT of the module parameters. -->
   <version>13.1</version>
  </plugin>
  <plugin>
-  <instanceCount>17</instanceCount>
-  <name>clock_sink</name>
+  <instanceCount>2</instanceCount>
+  <name>avalon_master</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Clock Input</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
-  <instanceCount>2</instanceCount>
-  <name>interrupt</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IConnection</subtype>
-  <displayName>Interrupt Connection</displayName>
+  <displayName>Avalon Memory Mapped Master</displayName>
   <version>13.1</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
-  <name>clock_sink</name>
+  <name>clock_source</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Clock Input</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
-  <instanceCount>4</instanceCount>
-  <name>tristate_conduit_master</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Tristate Conduit Master</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
-  <instanceCount>17</instanceCount>
-  <name>clock</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IConnection</subtype>
-  <displayName>Clock Connection</displayName>
+  <displayName>Clock Output</displayName>
   <version>13.1</version>
  </plugin>
  <plugin>
@@ -19442,10 +19394,82 @@ parameters are a RESULT of the module parameters. -->
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
+  <name>reset_sink</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Reset Input</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>reset_source</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Reset Output</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>35</instanceCount>
+  <name>reset</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IConnection</subtype>
+  <displayName>Reset Connection</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>10</instanceCount>
+  <name>conduit_end</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Conduit</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>17</instanceCount>
+  <name>clock_sink</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Clock Input</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
   <name>altera_nios2_qsys</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>Nios II Processor</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>clock_source</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IModule</subtype>
+  <displayName>Clock Source</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>clock_sink</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Clock Input</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>nios_custom_instruction_master</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Custom Instruction Master</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>4</instanceCount>
+  <name>tristate_conduit_master</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Tristate Conduit Master</displayName>
   <version>13.1</version>
  </plugin>
  <plugin>
@@ -19465,19 +19489,27 @@ parameters are a RESULT of the module parameters. -->
   <version>13.1</version>
  </plugin>
  <plugin>
-  <instanceCount>10</instanceCount>
-  <name>conduit_end</name>
+  <instanceCount>30</instanceCount>
+  <name>avalon</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Conduit</displayName>
+  <subtype>com.altera.entityinterfaces.IConnection</subtype>
+  <displayName>Avalon Memory Mapped Connection</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>4</instanceCount>
+  <name>tristate_conduit</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IConnection</subtype>
+  <displayName>Tristate Conduit Connection</displayName>
   <version>13.1</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
-  <name>clock_source</name>
+  <name>altera_tristate_conduit_pin_sharer</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>Clock Source</displayName>
+  <displayName>Tri-State Conduit Pin Sharer</displayName>
   <version>13.1</version>
  </plugin>
  <plugin>
@@ -19490,58 +19522,34 @@ parameters are a RESULT of the module parameters. -->
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
-  <name>altera_tristate_conduit_bridge</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>Tri-State Conduit Bridge</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
-  <instanceCount>1</instanceCount>
   <name>reset_source</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Reset Output</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
-  <instanceCount>30</instanceCount>
-  <name>avalon</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IConnection</subtype>
-  <displayName>Avalon Memory Mapped Connection</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
-  <instanceCount>1</instanceCount>
-  <name>reset_source</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Reset Output</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
-  <instanceCount>1</instanceCount>
-  <name>nios_custom_instruction_master</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Custom Instruction Master</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
-  <instanceCount>1</instanceCount>
-  <name>altera_tristate_conduit_pin_sharer</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>Tri-State Conduit Pin Sharer</displayName>
   <version>13.1</version>
  </plugin>
  <plugin>
   <instanceCount>2</instanceCount>
-  <name>avalon_master</name>
+  <name>interrupt</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Avalon Memory Mapped Master</displayName>
+  <subtype>com.altera.entityinterfaces.IConnection</subtype>
+  <displayName>Interrupt Connection</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>3</instanceCount>
+  <name>altera_generic_tristate_controller</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IModule</subtype>
+  <displayName>Generic Tri-State Controller</displayName>
+  <version>13.1</version>
+ </plugin>
+ <plugin>
+  <instanceCount>17</instanceCount>
+  <name>clock</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IConnection</subtype>
+  <displayName>Clock Connection</displayName>
   <version>13.1</version>
  </plugin>
  <plugin>
@@ -19554,26 +19562,18 @@ parameters are a RESULT of the module parameters. -->
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
-  <name>altera_avalon_onchip_memory2</name>
+  <name>altera_tristate_conduit_bridge</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>On-Chip Memory (RAM or ROM)</displayName>
+  <displayName>Tri-State Conduit Bridge</displayName>
   <version>13.1</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
-  <name>clock_source</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Clock Output</displayName>
-  <version>13.1</version>
- </plugin>
- <plugin>
-  <instanceCount>3</instanceCount>
-  <name>altera_generic_tristate_controller</name>
+  <name>altera_avalon_onchip_memory2</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>Generic Tri-State Controller</displayName>
+  <displayName>On-Chip Memory (RAM or ROM)</displayName>
   <version>13.1</version>
  </plugin>
  <reportVersion>13.1 162</reportVersion>

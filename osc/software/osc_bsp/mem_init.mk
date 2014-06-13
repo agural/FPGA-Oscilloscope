@@ -161,64 +161,64 @@ RESET_ADDRESS ?= 0x00148000
 # Pre-Initialized Memory Descriptions
 #-------------------------------------
 
-# Memory: ONCHIP_mem
-MEM_0 := proc_ONCHIP_mem
-$(MEM_0)_NAME := ONCHIP_mem
+# Memory: FLASH_ctrl
+MEM_0 := FLASH_ctrl
+$(MEM_0)_NAME := FLASH_ctrl
 $(MEM_0)_MEM_INIT_FILE_PARAM_NAME := INIT_FILE
-HEX_FILES += $(MEM_INIT_DIR)/$(MEM_0).hex
-MEM_INIT_INSTALL_FILES += $(MEM_INIT_INSTALL_DIR)/$(MEM_0).hex
 DAT_FILES += $(HDL_SIM_DIR)/$(MEM_0).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_0).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_0).sym
-$(MEM_0)_START := 0x00148000
-$(MEM_0)_END := 0x0014ffff
-$(MEM_0)_HIERARCHICAL_PATH := ONCHIP_mem
+FLASH_FILES += $(MEM_0).flash
+$(MEM_0)_START := 0x00130000
+$(MEM_0)_END := 0x0013ffff
+$(MEM_0)_HIERARCHICAL_PATH := FLASH_ctrl
 $(MEM_0)_WIDTH := 8
 $(MEM_0)_ENDIANNESS := --little-endian-mem
 $(MEM_0)_CREATE_LANES := 0
+$(MEM_0)_CFI_FLAGS := --base=$($(MEM_0)_START) --end=$($(MEM_0)_END) --reset=$(RESET_ADDRESS)
+$(MEM_0)_BOOT_LOADER_FLAG := --boot="$(BOOT_LOADER_CFI)"
 
-.PHONY: ONCHIP_mem
-ONCHIP_mem: check_elf_exists $(MEM_INIT_DIR)/$(MEM_0).hex $(HDL_SIM_DIR)/$(MEM_0).dat $(HDL_SIM_DIR)/$(MEM_0).sym
+.PHONY: FLASH_ctrl
+FLASH_ctrl: check_elf_exists $(HDL_SIM_DIR)/$(MEM_0).dat $(HDL_SIM_DIR)/$(MEM_0).sym $(MEM_0).flash
 
-# Memory: RAM_ctrl
-MEM_1 := RAM_ctrl
-$(MEM_1)_NAME := RAM_ctrl
+# Memory: ONCHIP_mem
+MEM_1 := proc_ONCHIP_mem
+$(MEM_1)_NAME := ONCHIP_mem
 $(MEM_1)_MEM_INIT_FILE_PARAM_NAME := INIT_FILE
+HEX_FILES += $(MEM_INIT_DIR)/$(MEM_1).hex
+MEM_INIT_INSTALL_FILES += $(MEM_INIT_INSTALL_DIR)/$(MEM_1).hex
 DAT_FILES += $(HDL_SIM_DIR)/$(MEM_1).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_1).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_1).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_1).sym
-$(MEM_1)_START := 0x00120000
-$(MEM_1)_END := 0x0012ffff
-$(MEM_1)_HIERARCHICAL_PATH := RAM_ctrl
+$(MEM_1)_START := 0x00148000
+$(MEM_1)_END := 0x0014ffff
+$(MEM_1)_HIERARCHICAL_PATH := ONCHIP_mem
 $(MEM_1)_WIDTH := 8
 $(MEM_1)_ENDIANNESS := --little-endian-mem
 $(MEM_1)_CREATE_LANES := 0
 
-.PHONY: RAM_ctrl
-RAM_ctrl: check_elf_exists $(HDL_SIM_DIR)/$(MEM_1).dat $(HDL_SIM_DIR)/$(MEM_1).sym
+.PHONY: ONCHIP_mem
+ONCHIP_mem: check_elf_exists $(MEM_INIT_DIR)/$(MEM_1).hex $(HDL_SIM_DIR)/$(MEM_1).dat $(HDL_SIM_DIR)/$(MEM_1).sym
 
-# Memory: ROM_ctrl
-MEM_2 := ROM_ctrl
-$(MEM_2)_NAME := ROM_ctrl
+# Memory: RAM_ctrl
+MEM_2 := RAM_ctrl
+$(MEM_2)_NAME := RAM_ctrl
 $(MEM_2)_MEM_INIT_FILE_PARAM_NAME := INIT_FILE
 DAT_FILES += $(HDL_SIM_DIR)/$(MEM_2).dat
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_2).dat
 SYM_FILES += $(HDL_SIM_DIR)/$(MEM_2).sym
 HDL_SIM_INSTALL_FILES += $(HDL_SIM_INSTALL_DIR)/$(MEM_2).sym
-FLASH_FILES += $(MEM_2).flash
-$(MEM_2)_START := 0x00130000
-$(MEM_2)_END := 0x0013ffff
-$(MEM_2)_HIERARCHICAL_PATH := ROM_ctrl
+$(MEM_2)_START := 0x00120000
+$(MEM_2)_END := 0x0012ffff
+$(MEM_2)_HIERARCHICAL_PATH := RAM_ctrl
 $(MEM_2)_WIDTH := 8
 $(MEM_2)_ENDIANNESS := --little-endian-mem
 $(MEM_2)_CREATE_LANES := 0
-$(MEM_2)_CFI_FLAGS := --base=$($(MEM_2)_START) --end=$($(MEM_2)_END) --reset=$(RESET_ADDRESS)
-$(MEM_2)_BOOT_LOADER_FLAG := --boot="$(BOOT_LOADER_CFI)"
 
-.PHONY: ROM_ctrl
-ROM_ctrl: check_elf_exists $(HDL_SIM_DIR)/$(MEM_2).dat $(HDL_SIM_DIR)/$(MEM_2).sym $(MEM_2).flash
+.PHONY: RAM_ctrl
+RAM_ctrl: check_elf_exists $(HDL_SIM_DIR)/$(MEM_2).dat $(HDL_SIM_DIR)/$(MEM_2).sym
 
 # Memory: VRAM_ctrl
 MEM_3 := VRAM_ctrl

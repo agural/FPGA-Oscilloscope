@@ -53,6 +53,7 @@
 /* local function declarations */
 enum keycode  key_lookup(void);      /* translate key values into keycodes */
 void key_int_installer(void);
+void adc_int_installer(void);
 
 
 /*

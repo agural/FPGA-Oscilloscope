@@ -22,6 +22,10 @@ Progress: Adding key_input [altera_avalon_pio 13.1]
 Progress: Parameterizing module key_input
 Progress: Adding VRAM_ctrl [altera_generic_tristate_controller 13.1]
 Progress: Parameterizing module VRAM_ctrl
+Progress: Adding ADC_raw [altera_avalon_pio 13.1]
+Progress: Parameterizing module ADC_raw
+Progress: Adding ADC_ctrl [altera_avalon_pio 13.1]
+Progress: Parameterizing module ADC_ctrl
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
@@ -31,6 +35,8 @@ Warning: proc.ROM_ctrl: Properties (isFlash,isMemoryDevice,isNonVolatileStorage)
 Info: proc.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
 Info: proc.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
 Info: proc.key_input: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: proc.ADC_raw: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: proc.ADC_ctrl: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: ip-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
@@ -58,6 +64,10 @@ Progress: Adding key_input [altera_avalon_pio 13.1]
 Progress: Parameterizing module key_input
 Progress: Adding VRAM_ctrl [altera_generic_tristate_controller 13.1]
 Progress: Parameterizing module VRAM_ctrl
+Progress: Adding ADC_raw [altera_avalon_pio 13.1]
+Progress: Parameterizing module ADC_raw
+Progress: Adding ADC_ctrl [altera_avalon_pio 13.1]
+Progress: Parameterizing module ADC_ctrl
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
@@ -67,35 +77,37 @@ Warning: proc.ROM_ctrl: Properties (isFlash,isMemoryDevice,isNonVolatileStorage)
 Info: proc.sysid_qsys_0: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
 Info: proc.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
 Info: proc.key_input: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: proc.ADC_raw: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: proc.ADC_ctrl: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: proc: Generating proc "proc" for QUARTUS_SYNTH
-Info: pipeline_bridge_swap_transform: After transform: 10 modules, 47 connections
+Info: pipeline_bridge_swap_transform: After transform: 12 modules, 58 connections
 Info: No custom instruction connections, skipping transform 
-Info: merlin_initial_interconnect_transform: After transform: 8 modules, 35 connections
-Info: merlin_translator_transform: After transform: 17 modules, 71 connections
-Info: merlin_domain_transform: After transform: 34 modules, 180 connections
-Info: merlin_router_transform: After transform: 43 modules, 216 connections
-Info: merlin_burst_transform: After transform: 47 modules, 232 connections
-Info: merlin_network_to_switch_transform: After transform: 64 modules, 287 connections
-Info: merlin_width_transform: After transform: 72 modules, 319 connections
-Info: merlin_clock_and_reset_bridge_transform: After transform: 74 modules, 392 connections
-Info: merlin_hierarchy_transform: After transform: 11 modules, 45 connections
-Info: merlin_mm_transform: After transform: 11 modules, 45 connections
-Info: merlin_interrupt_mapper_transform: After transform: 12 modules, 49 connections
-Info: reset_adaptation_transform: After transform: 14 modules, 51 connections
+Info: merlin_initial_interconnect_transform: After transform: 10 modules, 45 connections
+Info: merlin_translator_transform: After transform: 21 modules, 89 connections
+Info: merlin_domain_transform: After transform: 42 modules, 224 connections
+Info: merlin_router_transform: After transform: 53 modules, 268 connections
+Info: merlin_burst_transform: After transform: 57 modules, 284 connections
+Info: merlin_network_to_switch_transform: After transform: 78 modules, 353 connections
+Info: merlin_width_transform: After transform: 86 modules, 385 connections
+Info: merlin_clock_and_reset_bridge_transform: After transform: 88 modules, 472 connections
+Info: merlin_hierarchy_transform: After transform: 13 modules, 54 connections
+Info: merlin_mm_transform: After transform: 13 modules, 54 connections
+Info: merlin_interrupt_mapper_transform: After transform: 14 modules, 58 connections
+Info: reset_adaptation_transform: After transform: 16 modules, 60 connections
 Info: PROC: Starting RTL generation for module 'proc_PROC'
-Info: PROC:   Generation command is [exec {D:/program files/quartus/bin/eperlcmd.exe} -I {D:/program files/quartus/bin/perl/lib} -I {D:/program files/quartus/sopc_builder/bin/europa} -I {D:/program files/quartus/sopc_builder/bin/perl_lib} -I {D:/program files/quartus/sopc_builder/bin} -I {D:/program files/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib} -I {D:/program files/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib} -I {D:/program files/quartus/../ip/altera/nios2_ip/altera_nios2} -I {D:/program files/quartus/../ip/altera/nios2_ip/altera_nios2} -- {D:/program files/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl} --name=proc_PROC --dir=C:/Users/Albert/AppData/Local/Temp/alt6207_6835147001504072502.dir/0024_PROC_gen/ {--quartus_dir=D:/program files/quartus} --verilog --config=C:/Users/Albert/AppData/Local/Temp/alt6207_6835147001504072502.dir/0024_PROC_gen//proc_PROC_processor_configuration.pl  --do_build_sim=0  ]
-Info: PROC: # 2014.05.18 00:31:09 (*) Starting Nios II generation
-Info: PROC: # 2014.05.18 00:31:09 (*)   Checking for plaintext license.
-Info: PROC: # 2014.05.18 00:31:11 (*)   Couldn't query license setup in Quartus directory D:/program files/quartus
-Info: PROC: # 2014.05.18 00:31:11 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: PROC: # 2014.05.18 00:31:11 (*)   LM_LICENSE_FILE environment variable is empty
-Info: PROC: # 2014.05.18 00:31:11 (*)   Plaintext license not found.
-Info: PROC: # 2014.05.18 00:31:11 (*)   No license required to generate encrypted Nios II/e.
-Info: PROC: # 2014.05.18 00:31:11 (*)   Elaborating CPU configuration settings
-Info: PROC: # 2014.05.18 00:31:11 (*)   Creating all objects for CPU
-Info: PROC: # 2014.05.18 00:31:13 (*)   Generating RTL from CPU objects
-Info: PROC: # 2014.05.18 00:31:13 (*)   Creating plain-text RTL
-Info: PROC: # 2014.05.18 00:31:16 (*) Done Nios II generation
+Info: PROC:   Generation command is [exec {D:/program files/quartus/bin/eperlcmd.exe} -I {D:/program files/quartus/bin/perl/lib} -I {D:/program files/quartus/sopc_builder/bin/europa} -I {D:/program files/quartus/sopc_builder/bin/perl_lib} -I {D:/program files/quartus/sopc_builder/bin} -I {D:/program files/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib} -I {D:/program files/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib} -I {D:/program files/quartus/../ip/altera/nios2_ip/altera_nios2} -I {D:/program files/quartus/../ip/altera/nios2_ip/altera_nios2} -- {D:/program files/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl} --name=proc_PROC --dir=C:/Users/Albert/AppData/Local/Temp/alt6220_7803932955897426276.dir/0025_PROC_gen/ {--quartus_dir=D:/program files/quartus} --verilog --config=C:/Users/Albert/AppData/Local/Temp/alt6220_7803932955897426276.dir/0025_PROC_gen//proc_PROC_processor_configuration.pl  --do_build_sim=0  ]
+Info: PROC: # 2014.05.30 04:58:29 (*) Starting Nios II generation
+Info: PROC: # 2014.05.30 04:58:29 (*)   Checking for plaintext license.
+Info: PROC: # 2014.05.30 04:58:30 (*)   Couldn't query license setup in Quartus directory D:/program files/quartus
+Info: PROC: # 2014.05.30 04:58:30 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: PROC: # 2014.05.30 04:58:30 (*)   LM_LICENSE_FILE environment variable is empty
+Info: PROC: # 2014.05.30 04:58:30 (*)   Plaintext license not found.
+Info: PROC: # 2014.05.30 04:58:30 (*)   No license required to generate encrypted Nios II/e.
+Info: PROC: # 2014.05.30 04:58:30 (*)   Elaborating CPU configuration settings
+Info: PROC: # 2014.05.30 04:58:30 (*)   Creating all objects for CPU
+Info: PROC: # 2014.05.30 04:58:32 (*)   Generating RTL from CPU objects
+Info: PROC: # 2014.05.30 04:58:32 (*)   Creating plain-text RTL
+Info: PROC: # 2014.05.30 04:58:35 (*) Done Nios II generation
 Info: PROC: Done RTL generation for module 'proc_PROC'
 Info: PROC: "proc" instantiated altera_nios2_qsys "PROC"
 Info: pipeline_bridge_swap_transform: After transform: 5 modules, 10 connections
@@ -121,12 +133,12 @@ Info: No custom instruction connections, skipping transform
 Info: PIN_share: "proc" instantiated altera_tristate_conduit_pin_sharer "PIN_share"
 Info: BRIDGE: "proc" instantiated altera_tristate_conduit_bridge "BRIDGE"
 Info: ONCHIP_mem: Starting RTL generation for module 'proc_ONCHIP_mem'
-Info: ONCHIP_mem:   Generation command is [exec {D:/program files/quartus/bin/perl/bin/perl.exe} -I {D:/program files/quartus/bin/perl/lib} -I {D:/program files/quartus/sopc_builder/bin/europa} -I {D:/program files/quartus/sopc_builder/bin/perl_lib} -I {D:/program files/quartus/sopc_builder/bin} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/common} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2} -- {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl} --name=proc_ONCHIP_mem --dir=C:/Users/Albert/AppData/Local/Temp/alt6207_6835147001504072502.dir/0026_ONCHIP_mem_gen/ {--quartus_dir=D:/program files/quartus} --verilog --config=C:/Users/Albert/AppData/Local/Temp/alt6207_6835147001504072502.dir/0026_ONCHIP_mem_gen//proc_ONCHIP_mem_component_configuration.pl  --do_build_sim=0  ]
+Info: ONCHIP_mem:   Generation command is [exec {D:/program files/quartus/bin/perl/bin/perl.exe} -I {D:/program files/quartus/bin/perl/lib} -I {D:/program files/quartus/sopc_builder/bin/europa} -I {D:/program files/quartus/sopc_builder/bin/perl_lib} -I {D:/program files/quartus/sopc_builder/bin} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/common} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2} -- {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl} --name=proc_ONCHIP_mem --dir=C:/Users/Albert/AppData/Local/Temp/alt6220_7803932955897426276.dir/0027_ONCHIP_mem_gen/ {--quartus_dir=D:/program files/quartus} --verilog --config=C:/Users/Albert/AppData/Local/Temp/alt6220_7803932955897426276.dir/0027_ONCHIP_mem_gen//proc_ONCHIP_mem_component_configuration.pl  --do_build_sim=0  ]
 Info: ONCHIP_mem: Done RTL generation for module 'proc_ONCHIP_mem'
 Info: ONCHIP_mem: "proc" instantiated altera_avalon_onchip_memory2 "ONCHIP_mem"
 Info: sysid_qsys_0: "proc" instantiated altera_avalon_sysid_qsys "sysid_qsys_0"
 Info: key_input: Starting RTL generation for module 'proc_key_input'
-Info: key_input:   Generation command is [exec {D:/program files/quartus/bin/perl/bin/perl.exe} -I {D:/program files/quartus/bin/perl/lib} -I {D:/program files/quartus/sopc_builder/bin/europa} -I {D:/program files/quartus/sopc_builder/bin/perl_lib} -I {D:/program files/quartus/sopc_builder/bin} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/common} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio} -- {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl} --name=proc_key_input --dir=C:/Users/Albert/AppData/Local/Temp/alt6207_6835147001504072502.dir/0028_key_input_gen/ {--quartus_dir=D:/program files/quartus} --verilog --config=C:/Users/Albert/AppData/Local/Temp/alt6207_6835147001504072502.dir/0028_key_input_gen//proc_key_input_component_configuration.pl  --do_build_sim=0  ]
+Info: key_input:   Generation command is [exec {D:/program files/quartus/bin/perl/bin/perl.exe} -I {D:/program files/quartus/bin/perl/lib} -I {D:/program files/quartus/sopc_builder/bin/europa} -I {D:/program files/quartus/sopc_builder/bin/perl_lib} -I {D:/program files/quartus/sopc_builder/bin} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/common} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio} -- {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl} --name=proc_key_input --dir=C:/Users/Albert/AppData/Local/Temp/alt6220_7803932955897426276.dir/0029_key_input_gen/ {--quartus_dir=D:/program files/quartus} --verilog --config=C:/Users/Albert/AppData/Local/Temp/alt6220_7803932955897426276.dir/0029_key_input_gen//proc_key_input_component_configuration.pl  --do_build_sim=0  ]
 Info: key_input: Done RTL generation for module 'proc_key_input'
 Info: key_input: "proc" instantiated altera_avalon_pio "key_input"
 Info: pipeline_bridge_swap_transform: After transform: 5 modules, 10 connections
@@ -138,35 +150,49 @@ Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 conne
 Info: No Avalon connections, skipping transform 
 Info: merlin_hierarchy_transform: After transform: 5 modules, 10 connections
 Info: VRAM_ctrl: "proc" instantiated altera_generic_tristate_controller "VRAM_ctrl"
-Info: pipeline_bridge_swap_transform: After transform: 66 modules, 226 connections
+Info: ADC_raw: Starting RTL generation for module 'proc_ADC_raw'
+Info: ADC_raw:   Generation command is [exec {D:/program files/quartus/bin/perl/bin/perl.exe} -I {D:/program files/quartus/bin/perl/lib} -I {D:/program files/quartus/sopc_builder/bin/europa} -I {D:/program files/quartus/sopc_builder/bin/perl_lib} -I {D:/program files/quartus/sopc_builder/bin} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/common} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio} -- {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl} --name=proc_ADC_raw --dir=C:/Users/Albert/AppData/Local/Temp/alt6220_7803932955897426276.dir/0030_ADC_raw_gen/ {--quartus_dir=D:/program files/quartus} --verilog --config=C:/Users/Albert/AppData/Local/Temp/alt6220_7803932955897426276.dir/0030_ADC_raw_gen//proc_ADC_raw_component_configuration.pl  --do_build_sim=0  ]
+Info: ADC_raw: Done RTL generation for module 'proc_ADC_raw'
+Info: ADC_raw: "proc" instantiated altera_avalon_pio "ADC_raw"
+Info: ADC_ctrl: Starting RTL generation for module 'proc_ADC_ctrl'
+Info: ADC_ctrl:   Generation command is [exec {D:/program files/quartus/bin/perl/bin/perl.exe} -I {D:/program files/quartus/bin/perl/lib} -I {D:/program files/quartus/sopc_builder/bin/europa} -I {D:/program files/quartus/sopc_builder/bin/perl_lib} -I {D:/program files/quartus/sopc_builder/bin} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/common} -I {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio} -- {D:/program files/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl} --name=proc_ADC_ctrl --dir=C:/Users/Albert/AppData/Local/Temp/alt6220_7803932955897426276.dir/0031_ADC_ctrl_gen/ {--quartus_dir=D:/program files/quartus} --verilog --config=C:/Users/Albert/AppData/Local/Temp/alt6220_7803932955897426276.dir/0031_ADC_ctrl_gen//proc_ADC_ctrl_component_configuration.pl  --do_build_sim=0  ]
+Info: ADC_ctrl: Done RTL generation for module 'proc_ADC_ctrl'
+Info: ADC_ctrl: "proc" instantiated altera_avalon_pio "ADC_ctrl"
+Info: pipeline_bridge_swap_transform: After transform: 78 modules, 272 connections
 Info: No custom instruction connections, skipping transform 
 Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
 Info: No Avalon connections, skipping transform 
-Info: merlin_hierarchy_transform: After transform: 66 modules, 226 connections
+Info: merlin_hierarchy_transform: After transform: 78 modules, 272 connections
 Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
 Info: No Avalon connections, skipping transform 
-Info: merlin_hierarchy_transform: After transform: 66 modules, 226 connections
+Info: merlin_hierarchy_transform: After transform: 78 modules, 272 connections
 Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
 Info: No Avalon connections, skipping transform 
-Info: merlin_hierarchy_transform: After transform: 66 modules, 226 connections
+Info: merlin_hierarchy_transform: After transform: 78 modules, 272 connections
 Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
 Info: No Avalon connections, skipping transform 
-Info: merlin_hierarchy_transform: After transform: 66 modules, 226 connections
+Info: merlin_hierarchy_transform: After transform: 78 modules, 272 connections
 Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
 Info: No Avalon connections, skipping transform 
-Info: merlin_hierarchy_transform: After transform: 66 modules, 226 connections
+Info: merlin_hierarchy_transform: After transform: 78 modules, 272 connections
 Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
 Info: No Avalon connections, skipping transform 
-Info: merlin_hierarchy_transform: After transform: 66 modules, 226 connections
+Info: merlin_hierarchy_transform: After transform: 78 modules, 272 connections
 Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
 Info: No Avalon connections, skipping transform 
-Info: merlin_hierarchy_transform: After transform: 66 modules, 226 connections
+Info: merlin_hierarchy_transform: After transform: 78 modules, 272 connections
 Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
 Info: No Avalon connections, skipping transform 
-Info: merlin_hierarchy_transform: After transform: 66 modules, 226 connections
+Info: merlin_hierarchy_transform: After transform: 78 modules, 272 connections
 Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
 Info: No Avalon connections, skipping transform 
-Info: merlin_hierarchy_transform: After transform: 66 modules, 226 connections
+Info: merlin_hierarchy_transform: After transform: 78 modules, 272 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 78 modules, 272 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 78 modules, 272 connections
 Info: mm_interconnect_0: "proc" instantiated altera_merlin_interconnect_wrapper "mm_interconnect_0"
 Info: irq_mapper: "proc" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "proc" instantiated altera_reset_controller "rst_controller"
@@ -192,6 +218,6 @@ Info: Reusing file C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc/s
 Info: width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "width_adapter"
 Info: Reusing file C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc/synthesis/submodules/altera_merlin_address_alignment.sv
 Info: Reusing file C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc/synthesis/submodules/altera_merlin_burst_uncompressor.sv
-Info: proc: Done "proc" with 32 modules, 48 files, 1711749 bytes
+Info: proc: Done "proc" with 34 modules, 50 files, 1817903 bytes
 Info: ip-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

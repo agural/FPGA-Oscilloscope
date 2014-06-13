@@ -1017,96 +1017,111 @@ void  do_trace()
 
 */
 
-void  plot_trace(unsigned char *sample)
+void  plot_trace(unsigned char **sample)
 {
     /* variables */
-    int  x = 0;				/* current x position to plot */
-    int  x_pos = (PLOT_SIZE_X / 2);	/* "fine" x position for multiple point plotting */
+    int x = 0;						/* current x position to plot */
+    int x_pos = (PLOT_SIZE_X / 2);	/* "fine" x position for multiple point plotting */
 
-    int  y;				/* y position of point to plot */
+    int yA;							/* y position of point to plot */
+    int	yAo;						/* y position of point to remove */
+    int yB;							/* y position of point to plot */
+    int	yBo;						/* y position of point to remove */
 
-    int  p;                             /* an x or y coordinate */
+    int p;                          /* an x or y coordinate */
 
-    int  i;				/* loop indices */
-    int  j;
+    int i;							/* loop indices */
+    int j;
 
 
 
     /* first, clear the display to get rid of old plots */
-    clear_display();
+    //clear_display();
 
     /* clear the saved areas too */
-    clear_saved_areas();
+    //clear_saved_areas();
 
     /* re-display the menu (if it was on) */
-    refresh_menu();
+    //refresh_menu();
 
+    unsigned char *sample_A = sample[0];			/* MAGIC# */
+    unsigned char *sample_Ao = sample[1];
+    unsigned char *sample_B = sample[2];
+    unsigned char *sample_Bo = sample[3];
+    unsigned char *sample_L = sample[4];
+    unsigned char *sample_Lo = sample[5];
 
     /* plot the sample */
     for (i = 0; i < sample_size; i++)  {
 
         /* determine y position of point (note: screen coordinates invert) */
-	y = (PLOT_SIZE_Y - 1) - ((sample[i] * (PLOT_SIZE_Y - 1)) / 255);
+    	yA = (PLOT_SIZE_Y - 1) - ((sample_A[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
+    	yAo = (PLOT_SIZE_Y - 1) - ((sample_Ao[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
+    	yB = (PLOT_SIZE_Y - 1) - ((sample_B[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
+    	yBo = (PLOT_SIZE_Y - 1) - ((sample_Bo[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
 
         /* plot this point */
-	plot_pixel(x, y, PIXEL_CYAN);
+    	plot_pixel(x, yAo, PIXEL_BGND);
+    	plot_pixel(x, yA, PIXEL_CYAN);
+    	plot_pixel(x, yBo, PIXEL_BGND);
+    	plot_pixel(x, yB, PIXEL_YELLOW);
 
 
-	/* check if the point is in a save area */
+		/* check if the point is in a save area */
 
-	/* check if in the menu area */
-	if ((x >= MENU_UL_X) && (x < (MENU_UL_X + MENU_SIZE_X)) &&
-	    (y >= MENU_UL_Y) && (y < (MENU_UL_Y + MENU_SIZE_Y)))
-	    /* point is in the menu area - save it */
-	    saved_menu[y - MENU_UL_Y][(x - MENU_UL_X)/8] |= (0x80 >> ((x - MENU_UL_X) % 8));
+		/* check if in the menu area
+		if ((x >= MENU_UL_X) && (x < (MENU_UL_X + MENU_SIZE_X)) &&
+			(y >= MENU_UL_Y) && (y < (MENU_UL_Y + MENU_SIZE_Y)))
+			 point is in the menu area - save it
+			saved_menu[y - MENU_UL_Y][(x - MENU_UL_X)/8] |= (0x80 >> ((x - MENU_UL_X) % 8));
 
-	/* check if in the saved area */
-	if ((x >= saved_pos_x) && (x <= saved_end_x) && (y >= saved_pos_y) && (y <= saved_end_y))
-	    /* point is in the save area - save it */
-	    saved_area[y - saved_pos_y][(x - saved_pos_x)/8] |= (0x80 >> ((x - saved_pos_x) % 8));
+		 check if in the saved area
+		if ((x >= saved_pos_x) && (x <= saved_end_x) && (y >= saved_pos_y) && (y <= saved_end_y))
+			 point is in the save area - save it
+			saved_area[y - saved_pos_y][(x - saved_pos_x)/8] |= (0x80 >> ((x - saved_pos_x) % 8));
 
-	/* check if on a grid line */
-	/* go through all the horizontal lines */
-	for (j = -Y_TICK_CNT; j <= Y_TICK_CNT; j++)  {
+		 check if on a grid line
+		 go through all the horizontal lines
+		for (j = -Y_TICK_CNT; j <= Y_TICK_CNT; j++)  {
 
-	    /* get y position of the line */
-	    p = X_AXIS_POS + j * Y_TICK_SIZE;
-	    /* make sure it is in range */
-	    if (p >= PLOT_SIZE_Y)
-	        p = PLOT_SIZE_Y - 1;
-	    if (p < 0)
-	        p = 0;
+			 get y position of the line
+			p = X_AXIS_POS + j * Y_TICK_SIZE;
+			 make sure it is in range
+			if (p >= PLOT_SIZE_Y)
+				p = PLOT_SIZE_Y - 1;
+			if (p < 0)
+				p = 0;
 
-	    /* if the point is on this line, save it */
-	    if (y == p)
-		saved_axis_x[j + Y_TICK_CNT][x / 8] |= (0x80 >> (x % 8));
-	}
+			 if the point is on this line, save it
+			if (y == p)
+			saved_axis_x[j + Y_TICK_CNT][x / 8] |= (0x80 >> (x % 8));
+		}
 
-	/* go through all the vertical lines */
-	for (j = -X_TICK_CNT; j <= X_TICK_CNT; j++)  {
+		 go through all the vertical lines
+		for (j = -X_TICK_CNT; j <= X_TICK_CNT; j++)  {
 
-	    /* get x position of the line */
-	    p = Y_AXIS_POS + j * X_TICK_SIZE;
-	    /* make sure it is in range */
-	    if (p >= PLOT_SIZE_X)
-	        p = PLOT_SIZE_X - 1;
-	    if (p < 0)
-	        p = 0;
+			 get x position of the line
+			p = Y_AXIS_POS + j * X_TICK_SIZE;
+			 make sure it is in range
+			if (p >= PLOT_SIZE_X)
+				p = PLOT_SIZE_X - 1;
+			if (p < 0)
+				p = 0;
 
-	    /* if the point is on this line, save it */
-	    if (x == p)
-		saved_axis_y[j + X_TICK_CNT][y / 8] |= (0x80 >> (y % 8));
-	}
+			 if the point is on this line, save it
+			if (x == p)
+			saved_axis_y[j + X_TICK_CNT][y / 8] |= (0x80 >> (y % 8));
+		}*/
 
 
-	/* update x position */
-	x_pos += PLOT_SIZE_X;
-	/* check if at next horizontal position */
-	if (x_pos >= sample_size)  {
-	    /* at next position - update positions */
-	    x++;
-	    x_pos -= sample_size;
-	}
+		/* update x position */
+		x_pos += PLOT_SIZE_X;
+		/* check if at next horizontal position */
+		if (x_pos >= sample_size)  {
+			/* at next position - update positions */
+			x++;
+			x_pos -= sample_size;
+		}
     }
 
 

@@ -16,6 +16,6 @@
  </clocktable>
  <window width="1936" height="1186" x="-8" y="-8" />
  <library
-   expandedCategories="Project,Library/Peripherals/Microcontroller Peripherals,Library,Library/Peripherals" />
- <generation simulation="NONE" synthesis="VHDL" block_symbol_file="1" />
+   expandedCategories="Library,Project,Library/Peripherals/Microcontroller Peripherals,Library/Peripherals" />
+ <generation simulation="NONE" synthesis="VHDL" />
 </preferences>

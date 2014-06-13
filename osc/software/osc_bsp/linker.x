@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: C:/Users/Albert/Documents/GitHub/FPGA-Oscilloscope/osc/proc.sopcinfo
  *
- * Generated: Tue Jun 10 20:22:39 PDT 2014
+ * Generated: Thu Jun 12 23:34:04 PDT 2014
  */
 
 /*
@@ -52,7 +52,7 @@ MEMORY
 {
     VRAM_ctrl : ORIGIN = 0x80000, LENGTH = 524288
     RAM_ctrl : ORIGIN = 0x120000, LENGTH = 65536
-    ROM_ctrl : ORIGIN = 0x130000, LENGTH = 65536
+    FLASH_ctrl : ORIGIN = 0x130000, LENGTH = 65536
     reset : ORIGIN = 0x148000, LENGTH = 32
     ONCHIP_mem : ORIGIN = 0x148020, LENGTH = 32736
 }
@@ -60,7 +60,7 @@ MEMORY
 /* Define symbols for each memory base-address */
 __alt_mem_VRAM_ctrl = 0x80000;
 __alt_mem_RAM_ctrl = 0x120000;
-__alt_mem_ROM_ctrl = 0x130000;
+__alt_mem_FLASH_ctrl = 0x130000;
 __alt_mem_ONCHIP_mem = 0x148000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
@@ -368,15 +368,15 @@ SECTIONS
      *
      */
 
-    .ROM_ctrl : AT ( LOADADDR (.RAM_ctrl) + SIZEOF (.RAM_ctrl) )
+    .FLASH_ctrl : AT ( LOADADDR (.RAM_ctrl) + SIZEOF (.RAM_ctrl) )
     {
-        PROVIDE (_alt_partition_ROM_ctrl_start = ABSOLUTE(.));
-        *(.ROM_ctrl .ROM_ctrl. ROM_ctrl.*)
+        PROVIDE (_alt_partition_FLASH_ctrl_start = ABSOLUTE(.));
+        *(.FLASH_ctrl .FLASH_ctrl. FLASH_ctrl.*)
         . = ALIGN(4);
-        PROVIDE (_alt_partition_ROM_ctrl_end = ABSOLUTE(.));
-    } > ROM_ctrl
+        PROVIDE (_alt_partition_FLASH_ctrl_end = ABSOLUTE(.));
+    } > FLASH_ctrl
 
-    PROVIDE (_alt_partition_ROM_ctrl_load_addr = LOADADDR(.ROM_ctrl));
+    PROVIDE (_alt_partition_FLASH_ctrl_load_addr = LOADADDR(.FLASH_ctrl));
 
     /*
      *
@@ -385,7 +385,7 @@ SECTIONS
      *
      */
 
-    .ONCHIP_mem LOADADDR (.ROM_ctrl) + SIZEOF (.ROM_ctrl) : AT ( LOADADDR (.ROM_ctrl) + SIZEOF (.ROM_ctrl) )
+    .ONCHIP_mem LOADADDR (.FLASH_ctrl) + SIZEOF (.FLASH_ctrl) : AT ( LOADADDR (.FLASH_ctrl) + SIZEOF (.FLASH_ctrl) )
     {
         PROVIDE (_alt_partition_ONCHIP_mem_start = ABSOLUTE(.));
         *(.ONCHIP_mem .ONCHIP_mem. ONCHIP_mem.*)
