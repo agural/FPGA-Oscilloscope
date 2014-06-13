@@ -191,36 +191,21 @@ adc_int_handler_loop:
 	# Then update the current buffer with the new value.
 	movia	r8, sample_buffer_A
 	add		r8, r8, r10
-	ldb		r9, (r8)
 	stb		r12, (r8)
-	# Update the old buffer contents with the old value.
-	movia	r8, sample_buffer_Ao
-	add		r8, r8, r10
-	stb		r9, (r8)
 
 	# CH. B
 	# Retrieve the current buffer contents.
 	# Then update the current buffer with the new value.
 	movia	r8, sample_buffer_B
 	add		r8, r8, r10
-	ldb		r9, (r8)
 	stb		r13, (r8)
-	# Update the old buffer contents with the old value.
-	movia	r8, sample_buffer_Bo
-	add		r8, r8, r10
-	stb		r9, (r8)
 
 	# LOGIC ANALYZER
 	# Retrieve the current buffer contents.
 	# Then update the current buffer with the new value.
 	movia	r8, sample_buffer_L
 	add		r8, r8, r10
-	ldb		r9, (r8)
 	stb		r14, (r8)
-	# Update the old buffer contents with the old value.
-	movia	r8, sample_buffer_Lo
-	add		r8, r8, r10
-	stb		r9, (r8)
 
 	addi	r10, r10, 1
 	movi	r15, 480
@@ -805,19 +790,13 @@ sample_done_done:
 
 sample_map:
 	.word	sample_buffer_A
-	.word	sample_buffer_Ao
 	.word	sample_buffer_B
-	.word	sample_buffer_Bo
 	.word	sample_buffer_L
-	.word	sample_buffer_Lo
 
 
 .section  .data     #start data section
 
 sample_complete:	.byte			# 0 = still trying to get sample; 1 = sample done.
 sample_buffer_A:	.skip	480		# Buffer stores display-worth of ADC samples (ch. A).
-sample_buffer_Ao:	.skip	480		# Buffer stores display-worth of ADC samples (past).
 sample_buffer_B:	.skip	480		# Buffer stores display-worth of ADC samples (ch. B).
-sample_buffer_Bo:	.skip	480		# Buffer stores display-worth of ADC samples (past).
 sample_buffer_L:	.skip	480		# Buffer stores display-worth of ADC samples (Logic).
-sample_buffer_Lo:	.skip	480		# Buffer stores display-worth of ADC samples (past).

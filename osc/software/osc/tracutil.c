@@ -1026,10 +1026,8 @@ void  plot_trace(unsigned char **sample)
     int x = 0;						/* current x position to plot */
     int x_pos = (PLOT_SIZE_X / 2);	/* "fine" x position for multiple point plotting */
 
-    int yA;							/* y position of point to plot */
-    int	yAo;						/* y position of point to remove */
-    int yB;							/* y position of point to plot */
-    int	yBo;						/* y position of point to remove */
+    char yA;						/* y position of point to plot */
+    char yB;						/* y position of point to plot */
 
     int p;                          /* an x or y coordinate */
 
@@ -1050,14 +1048,15 @@ void  plot_trace(unsigned char **sample)
     //refresh_menu();
 
     unsigned char *sample_A = sample[0];
-    unsigned char *sample_B = sample[2];
-    unsigned char *sample_L = sample[4];
+    unsigned char *sample_B = sample[1];
+    unsigned char *sample_L = sample[2];
+
 
     // Get the screen coordinates.
     for (i = 0; i < sample_size; i++)  {
         // Determine y position of point (note: screen coordinates invert).
-        yA = (PLOT_SIZE_Y - 1) - ((sample_A[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
-        yB = (PLOT_SIZE_Y - 1) - ((sample_B[i] * (PLOT_SIZE_Y - 1)) / 255) + 8;
+    	yA = 255 - sample_A[i] + 8;
+    	yB = 255 - sample_B[i] + 8;
 
         sample_A[i] = yA;
         sample_B[i] = yB;
@@ -1104,7 +1103,7 @@ void  plot_trace(unsigned char **sample)
         		}
        		}
        	}
-    }
+    }*/
 
     // Draw the line.
     for (i = 0; i < sample_size - 1; i++) {
@@ -1114,10 +1113,10 @@ void  plot_trace(unsigned char **sample)
         for (j = min(saved_trace_B[i], saved_trace_B[i+1]); j <= max(saved_trace_B[i], saved_trace_B[i+1]); j++) {
         	plot_pixel(i, j, PIXEL_B_1);
        	}
-    }*/
+    }
 
     // Draw the points.
-    for (i = 0; i < sample_size - 1; i++) {
+    for (i = 0; i < sample_size; i++) {
         plot_pixel(i, saved_trace_A[i], PIXEL_A_0);
         plot_pixel(i, saved_trace_B[i], PIXEL_B_0);
     }
