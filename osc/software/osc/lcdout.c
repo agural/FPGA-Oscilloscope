@@ -91,7 +91,7 @@ void  clear_region(int x_ul, int y_ul, int x_size, int y_size)
         for (y = y_ul; y < (y_ul + y_size); y++)  {
 
 	    /* clear this pixel */
-	    plot_pixel(x, y, PIXEL_BLUE);
+	    plot_pixel(x, y, PIXEL_BGND);
         }
     }
 
@@ -326,10 +326,10 @@ void  plot_char(int pos_x, int pos_y, char c, enum char_style style)
             /* output this pixel in the appropriate color */
 	    if ((bits & 0x80) == 0)
 	        /* blank pixel - output in PIXEL_WHITE */
-		plot_pixel(x + col, y, PIXEL_BLACK);
+		plot_pixel(x + col, y, PIXEL_BGND);
 	    else
 	        /* black pixel - output in PIXEL_BLACK */
-		plot_pixel(x + col, y, PIXEL_GREEN);
+		plot_pixel(x + col, y, PIXEL_RED);
 
 	    /* shift the next bit into position */
 	    bits <<= 1;

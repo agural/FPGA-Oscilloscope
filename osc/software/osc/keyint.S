@@ -27,6 +27,7 @@
 #include "macros.m"
 #include "keyint.m"
 #include "interfac.h"
+//#include "menuact.h"
 #include "../osc_bsp/system.h"
 
 
@@ -183,29 +184,43 @@ key_lookup:
 	movia	r10, key_value
 	stb		r8, (r10)
 
-	# Remove later!!!
-	movi	r12, 10
-	beq		r11, r12, inc_speed
-	movi	r12, 11
-	beq		r11, r12, dec_speed
-
-	movi	r12, 16
-	beq		r11, r12, inc_level
-	movi	r12, 17
-	beq		r11, r12, dec_level
-
-	movi	r12, 18
-	beq		r11, r12, inc_delay
-	movi	r12, 19
-	beq		r11, r12, dec_delay
-
+	# Do a lookup (can't figure out how to get it to work with a table...).
+	movia	r4, set_trigger_normal
 	movi	r12, 5
-	beq		r11, r12, change_scale_up
+	beq		r11, r12, call_action
+	movia	r4, set_trigger_single
 	movi	r12, 6
-	beq		r11, r12, change_scale_down
-key_lookup_cont:
-	# <END Remove later!!!>
+	beq		r11, r12, call_action
 
+	movia	r4, trg_slope_toggle
+	movi	r12, 7
+	beq		r11, r12, call_action
+	movia	r4, trg_slope_toggle
+	movi	r12, 8
+	beq		r11, r12, call_action
+
+	movia	r4, sweep_down
+	movi	r12, 10
+	beq		r11, r12, call_action
+	movia	r4, sweep_up
+	movi	r12, 11
+	beq		r11, r12, call_action
+
+	movia	r4, trg_level_up
+	movi	r12, 16
+	beq		r11, r12, call_action
+	movia	r4, trg_level_down
+	movi	r12, 17
+	beq		r11, r12, call_action
+
+	movia	r4, trg_delay_up
+	movi	r12, 18
+	beq		r11, r12, call_action
+	movia	r4, trg_delay_down
+	movi	r12, 19
+	beq		r11, r12, call_action
+
+key_lookup_cont:
 	# Clear the edge capture register (write 1 to clear).
 	movhi	r8, %hi(KEY_INPUT_BASE)
 	ori		r8, r8, %lo(KEY_INPUT_BASE)
@@ -224,7 +239,31 @@ key_handler_done:
 	RESTORE
 	ret
 
-# hashtag
+
+call_action:
+	PUSH	r8
+	PUSH	r9
+	PUSH	r10
+	PUSH	r11
+	PUSH	r12
+	PUSH	r13
+	PUSH	r14
+	PUSH	r15
+
+	callr	r4
+
+	POP		r15
+	POP		r14
+	POP		r13
+	POP		r12
+	POP		r11
+	POP		r10
+	POP		r9
+	POP		r8
+	br		key_lookup_cont
+
+
+/*
 dec_speed:
 	movia	r13, adc_speed
 	ldw		r14, (r13)
@@ -366,7 +405,7 @@ change_scale_down:
 	movi	r9, 1
 	stw		r9, PIO_OUTCLR(r8)
 	br		key_lookup_cont
-
+*/
 # hashtag
 
 
@@ -519,7 +558,8 @@ getkey_done:
  *
  */
 
-key_map:	.byte	KEY_MENU
+key_map:
+			.byte	KEY_MENU
 			.byte	KEY_UP
 			.byte	KEY_DOWN
 			.byte	KEY_LEFT
@@ -538,7 +578,34 @@ key_map:	.byte	KEY_MENU
 			.byte	KEY_MENU
 			.byte	KEY_MENU
 			.byte	KEY_MENU
+			.byte	KEY_MENU
 			.byte	KEY_ILLEGAL
+
+/*
+key_func:
+			.word	no_menu_action
+			.align	4
+			.word	no_menu_action
+			.word	no_menu_action
+			.word	no_menu_action
+			.word	no_menu_action
+			.word	clr_single_mode
+			.word	set_single_mode
+			.word	trg_slope_toggle
+			.word	trg_slope_toggle
+			.word	no_menu_action
+			.word	sweep_up
+			.word	sweep_down
+			.word	no_menu_action	# Vert sensitivity up (B)
+			.word	no_menu_action	# Vert sensitivity down (B)
+			.word	no_menu_action	# Vert sensitivity up (A)
+			.word	no_menu_action	# Vert sensitivity down (A)
+			.word	trig_level_up
+			.word	trig_level_down
+			.word	trig_delay_up
+			.word	trig_delay_down
+			.word	no_menu_action*/
+
 
 
 .section  .data     #start data section

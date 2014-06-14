@@ -55,12 +55,13 @@
 #define  PIXEL_ORANGE	0x7F01
 #define  PIXEL_YELLOW	0xFF03
 #define	 PIXEL_GREEN	0xE003
+#define	 PIXEL_DGREEN	0xE001
 #define	 PIXEL_CYAN		0x007F
 #define  PIXEL_BLUE		0x007C
 #define	 PIXEL_PURPLE	0x177C
 #define	 PIXEL_BGND		0x001C
 #define	 PIXEL_A		0x007F
-#define	 PIXEL_B		0x7F01
+#define	 PIXEL_B		0x177C
 
 /* scope parameters */
 #define  MIN_DELAY	   -240		/* minimum trigger delay */

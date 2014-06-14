@@ -108,6 +108,9 @@ enum trigger_type  get_trigger_mode(void);  /* get the current trigger mode */
 
 /* option initialization routines */
 void  set_trigger_mode(enum trigger_type);  /* set the trigger mode */
+void  set_trigger_normal(void);  			/* normal trigger mode */
+void  set_trigger_auto(void);  				/* auto trigger mode */
+void  set_trigger_single(void);  			/* single trigger mode */
 void  set_scale(enum scale_type);           /* set the scale type */
 void  set_sweep(int);         		    /* set the sweep rate */
 void  set_trg_level(int);     		    /* set the trigger level */

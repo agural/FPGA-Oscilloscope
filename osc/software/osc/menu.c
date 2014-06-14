@@ -196,11 +196,11 @@ void  clear_menu(void)
 
 
     /* check if the menu is currently being displayed */
-    if (menu_display)  {
-
-        /* menu is being displayed - turn it off and restore the trace in that area */
-	restore_menu_trace();
-    }
+//    if (menu_display)  {
+//
+//        /* menu is being displayed - turn it off and restore the trace in that area */
+//	restore_menu_trace();
+//    }
 
 
     /* no longer displaying the menu */

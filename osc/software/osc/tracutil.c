@@ -550,10 +550,10 @@ void  set_display_scale(enum scale_type scale)
 	        /* check if this point is on or off (need to look at bits) */
 		if ((saved_axis_x[j + Y_TICK_CNT][i / 8] & (0x80 >> (i % 8))) == 0)
 		    /* saved pixel is off */
-		    plot_pixel(i, p, PIXEL_WHITE);
+		    plot_pixel(i, p, PIXEL_BGND);
 		else
 		    /* saved pixel is on */
-		    plot_pixel(i, p, PIXEL_BLACK);
+		    plot_pixel(i, p, PIXEL_RED);
 	    }
 	}
 
@@ -573,10 +573,10 @@ void  set_display_scale(enum scale_type scale)
 	        /* check if this point is on or off (need to look at bits) */
 		if ((saved_axis_y[j + X_TICK_CNT][i / 8] & (0x80 >> (i % 8))) == 0)
 		    /* saved pixel is off */
-		    plot_pixel(p, i, PIXEL_WHITE);
+		    plot_pixel(p, i, PIXEL_BGND);
 		else
 		    /* saved pixel is on */
-		    plot_pixel(p, i, PIXEL_BLACK);
+		    plot_pixel(p, i, PIXEL_RED);
 	    }
 	}
     }
@@ -765,10 +765,10 @@ void  restore_menu_trace()
 	    /* check if this point is on or off (need to look at bits) */
 	    if ((saved_menu[y - MENU_UL_Y][bit_offset] & bit_position) == 0)
 	        /* saved pixel is off */
-		plot_pixel(x, y, PIXEL_WHITE);
+		plot_pixel(x, y, PIXEL_BGND);
 	    else
 	        /* saved pixel is on */
-		plot_pixel(x, y, PIXEL_BLACK);
+		plot_pixel(x, y, PIXEL_RED);
 
 	    /* move to the next bit position */
 	    bit_position >>= 1;
@@ -907,10 +907,10 @@ void  restore_trace()
 	    /* check if this point is on or off (need to look at bits) */
 	    if ((saved_area[y - saved_pos_y][bit_offset] & bit_position) == 0)
 	        /* saved pixel is off */
-		plot_pixel(x, y, PIXEL_WHITE);
+		plot_pixel(x, y, PIXEL_BGND);
 	    else
 	        /* saved pixel is on */
-		plot_pixel(x, y, PIXEL_BLACK);
+		plot_pixel(x, y, PIXEL_RED);
 
 	    /* move to the next bit position */
 	    bit_position >>= 1;
@@ -1039,50 +1039,63 @@ void  plot_trace(unsigned char **sample)
     int ii;
     int jj;
 
-
-
-    /* first, clear the display to get rid of old plots */
-    //clear_display();
-
-    /* clear the saved areas too */
-    //clear_saved_areas();
-
-    /* re-display the menu (if it was on) */
-    //refresh_menu();
-
     unsigned char *sample_A = sample[0];
     unsigned char *sample_B = sample[1];
     unsigned char *sample_L = sample[2];
 
-    // Get the screen coordinates.
-    for (i = 0; i < sample_size; i++)  {
-        // Determine y position of point (note: screen coordinates invert).
+    // Iterate through the points.
+    for (i = 0; i < sample_size; i++) {
+    	// Get the new screen coordinates.
     	trace_A[i] = 255 - sample_A[i] + 8;
     	trace_B[i] = 255 - sample_B[i] + 8;
     	trace_L[i] = sample_L[i];
-    }
 
-    // Clear the last trace.
-    for (i = 0; i < sample_size - 1; i++) {
-        for (j = min(saved_trace_A[i], saved_trace_A[i+1]); j <= max(saved_trace_A[i], saved_trace_A[i+1]); j++) {
-        	plot_pixel(i, j, PIXEL_BGND);
-        }
-        for (j = min(saved_trace_B[i], saved_trace_B[i+1]); j <= max(saved_trace_B[i], saved_trace_B[i+1]); j++) {
-        	plot_pixel(i, j, PIXEL_BGND);
-        }
-    }
+    	// Clear the analog trace.
+    	if (i > 0) {
+			for (j = min(saved_trace_A[i-1], saved_trace_A[i]); j <= max(saved_trace_A[i-1], saved_trace_A[i]); j++) {
+				plot_pixel(i, j, PIXEL_BGND);
+			}
+			for (j = min(saved_trace_B[i-1], saved_trace_B[i]); j <= max(saved_trace_B[i-1], saved_trace_B[i]); j++) {
+				plot_pixel(i, j, PIXEL_BGND);
+			}
+    	}
 
-    // Clear logic analyzer.
-    for (i = 0; i < sample_size; i++) {
+    	// Clear the logic analyzer trace.
     	unsigned char cur_log = saved_trace_L[i];
     	for (j = 0; j < 8; j++) {
-    		if (cur_log & 1) {
-    			plot_pixel(i, 270 - 5 * j - 3, PIXEL_BGND);
-    		} else {
-    			plot_pixel(i, 270 - 5 * j, PIXEL_BGND);
-    		}
-    		cur_log = cur_log >> 1;
+    	    if (cur_log & 1) {
+    	    	plot_pixel(i, 270 - 5 * j - 3, PIXEL_BGND);
+    	    } else {
+    	    	plot_pixel(i, 270 - 5 * j, PIXEL_BGND);
+    	    }
+    	    cur_log = cur_log >> 1;
     	}
+
+    	//Draw the analog trace.
+    	if (i > 1) {
+    		for (j = min(trace_A[i-1], trace_A[i]); j <= max(trace_A[i-1], trace_A[i]); j++) {
+    		    plot_pixel(i, j, PIXEL_A);
+    		}
+    		for (j = min(trace_B[i-1], trace_B[i]); j <= max(trace_B[i-1], trace_B[i]); j++) {
+    			plot_pixel(i, j, PIXEL_B);
+    		}
+    	}
+
+    	// Draw the logic analyzer trace.
+    	cur_log = trace_L[i];
+    	for (j = 0; j < 8; j++) {
+    		if (cur_log & 1) {
+    			if (j % 2) plot_pixel(i, 270 - 5 * j - 3, PIXEL_GREEN);
+    			else plot_pixel(i, 270 - 5 * j - 3, PIXEL_DGREEN);
+    	    } else {
+    	    	if (j % 2) plot_pixel(i, 270 - 5 * j, PIXEL_GREEN);
+    	    	else plot_pixel(i, 270 - 5 * j, PIXEL_DGREEN);
+    	    }
+    		plot_pixel(i, 270 - 5 * j - 1, PIXEL_BLUE);
+    		plot_pixel(i, 270 - 5 * j - 2, PIXEL_BLUE);
+    	    cur_log = cur_log >> 1;
+    	}
+
     }
 
     // Update the saved trace arrays.
@@ -1092,33 +1105,11 @@ void  plot_trace(unsigned char **sample)
     	saved_trace_L[i] = trace_L[i];
     }
 
-    // Draw the line.
-    for (i = 1; i < sample_size - 1; i++) {
-        for (j = min(saved_trace_A[i], saved_trace_A[i+1]); j <= max(saved_trace_A[i], saved_trace_A[i+1]); j++) {
-        	plot_pixel(i, j, PIXEL_A);
-        }
-        for (j = min(saved_trace_B[i], saved_trace_B[i+1]); j <= max(saved_trace_B[i], saved_trace_B[i+1]); j++) {
-        	plot_pixel(i, j, PIXEL_B);
-       	}
-    }
-
-    // Draw logic analyzer output.
-    for (i = 0; i < sample_size; i++) {
-    	unsigned char cur_log = saved_trace_L[i];
-    	for (j = 0; j < 8; j++) {
-    		if (cur_log & 1) {
-    			if (j % 2) plot_pixel(i, 270 - 5 * j - 3, PIXEL_GREEN);
-    			else plot_pixel(i, 270 - 5 * j - 3, PIXEL_PURPLE);
-    		} else {
-    			if (j % 2) plot_pixel(i, 270 - 5 * j, PIXEL_GREEN);
-    			else plot_pixel(i, 270 - 5 * j, PIXEL_PURPLE);
-    		}
-    		cur_log = cur_log >> 1;
-    	}
-    }
-
-    /* finally, output the scale if need be */
+    // Output the scale if need be.
     set_display_scale(cur_scale);
+
+    // Replace menu if need be.
+    refresh_menu();
 
     /* done with plot, return */
     return;

@@ -276,6 +276,141 @@ void  set_trigger_mode(enum trigger_type m)
 
 
 /*
+   set_trigger_normal
+
+   Description:      This function sets the triggering mode to normal.
+
+   Arguments:        None.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: trigger_mode - initialized to the passed value.
+
+   Author:           Albert Gural
+   Last Modified:    Jun. 13, 2014
+
+*/
+
+void  set_trigger_normal()
+{
+    /* variables */
+      /* none */
+
+
+
+    /* set the trigger mode */
+    trigger_mode = NORMAL_TRIGGER;
+
+    /* set the new mode */
+    set_mode(trigger_mode);
+
+
+    /* all done setting the trigger mode - return */
+    return;
+
+}
+
+
+
+
+/*
+   set_trigger_auto
+
+   Description:      This function sets the triggering mode to auto.
+
+   Arguments:        None.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: trigger_mode - initialized to the passed value.
+
+   Author:           Albert Gural
+   Last Modified:    Jun. 13, 2014
+
+*/
+
+void  set_trigger_auto()
+{
+    /* variables */
+      /* none */
+
+
+
+    /* set the trigger mode */
+    trigger_mode = AUTO_TRIGGER;
+
+    /* set the new mode */
+    set_mode(trigger_mode);
+
+
+    /* all done setting the trigger mode - return */
+    return;
+
+}
+
+
+
+
+/*
+   set_trigger_single
+
+   Description:      This function sets the triggering mode to single/one-shot.
+
+   Arguments:        None.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: trigger_mode - initialized to the passed value.
+
+   Author:           Albert Gural
+   Last Modified:    Jun. 13, 2014
+
+*/
+
+void  set_trigger_single()
+{
+    /* variables */
+      /* none */
+
+
+
+    /* set the trigger mode */
+    trigger_mode = ONESHOT_TRIGGER;
+
+    /* set the new mode */
+    set_mode(trigger_mode);
+
+
+    /* all done setting the trigger mode - return */
+    return;
+
+}
+
+
+
+
+/*
    get_trigger_mode
 
    Description:      This function returns the current triggering mode.
