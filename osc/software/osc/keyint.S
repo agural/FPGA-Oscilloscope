@@ -198,6 +198,11 @@ key_lookup:
 	beq		r11, r12, inc_delay
 	movi	r12, 19
 	beq		r11, r12, dec_delay
+
+	movi	r12, 5
+	beq		r11, r12, change_scale_up
+	movi	r12, 6
+	beq		r11, r12, change_scale_down
 key_lookup_cont:
 	# <END Remove later!!!>
 
@@ -348,6 +353,19 @@ set_delay_1:
 set_delay_2:
 	mov		r14, r0
 	br		dec_delay_cont
+
+
+change_scale_up:
+	MOVWI	r8, VSCALE_CTRL_BASE
+	movi	r9, 1
+	stw		r9, PIO_OUTSET(r8)
+	br		key_lookup_cont
+
+change_scale_down:
+	MOVWI	r8, VSCALE_CTRL_BASE
+	movi	r9, 1
+	stw		r9, PIO_OUTCLR(r8)
+	br		key_lookup_cont
 
 # hashtag
 

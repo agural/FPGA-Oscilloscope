@@ -57,7 +57,7 @@
 #define	 PIXEL_GREEN	0xE003
 #define	 PIXEL_CYAN		0x007F
 #define  PIXEL_BLUE		0x007C
-#define	 PIXEL_PURPLE	0x0F7C
+#define	 PIXEL_PURPLE	0x177C
 #define	 PIXEL_BGND		0x001C
 #define	 PIXEL_A		0x007F
 #define	 PIXEL_B		0x7F01

@@ -129,7 +129,7 @@ adc_int_installer_done:
  *  Registers Changed:
  *
  *  Revision History:
- *      02/09/2012    Dan Pipe-Mazo     initial revision
+ *      06/13/2014    Albert Gural     initial revision
  *
  */
 
@@ -187,7 +187,7 @@ adc_int_handler_loop:
 
 	# r12 for ch. A, r13 for ch. B, r14 for logic.
 	srli	r13, r12, 8
-	srli	r14, r12, 16
+	srli	r14, r13, 8
 	movui	r15, 128
 
 	# Convert analog channels to non-signed values.

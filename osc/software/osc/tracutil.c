@@ -1059,6 +1059,7 @@ void  plot_trace(unsigned char **sample)
         // Determine y position of point (note: screen coordinates invert).
     	trace_A[i] = 255 - sample_A[i] + 8;
     	trace_B[i] = 255 - sample_B[i] + 8;
+    	trace_L[i] = sample_L[i];
     }
 
     // Clear the last trace.
@@ -1072,6 +1073,17 @@ void  plot_trace(unsigned char **sample)
     }
 
     // Clear logic analyzer.
+    for (i = 0; i < sample_size; i++) {
+    	unsigned char cur_log = saved_trace_L[i];
+    	for (j = 0; j < 8; j++) {
+    		if (cur_log & 1) {
+    			plot_pixel(i, 270 - 5 * j - 3, PIXEL_BGND);
+    		} else {
+    			plot_pixel(i, 270 - 5 * j, PIXEL_BGND);
+    		}
+    		cur_log = cur_log >> 1;
+    	}
+    }
 
     // Update the saved trace arrays.
     for (i = 0; i < sample_size; i++) {
@@ -1091,6 +1103,19 @@ void  plot_trace(unsigned char **sample)
     }
 
     // Draw logic analyzer output.
+    for (i = 0; i < sample_size; i++) {
+    	unsigned char cur_log = saved_trace_L[i];
+    	for (j = 0; j < 8; j++) {
+    		if (cur_log & 1) {
+    			if (j % 2) plot_pixel(i, 270 - 5 * j - 3, PIXEL_GREEN);
+    			else plot_pixel(i, 270 - 5 * j - 3, PIXEL_PURPLE);
+    		} else {
+    			if (j % 2) plot_pixel(i, 270 - 5 * j, PIXEL_GREEN);
+    			else plot_pixel(i, 270 - 5 * j, PIXEL_PURPLE);
+    		}
+    		cur_log = cur_log >> 1;
+    	}
+    }
 
     /* finally, output the scale if need be */
     set_display_scale(cur_scale);
