@@ -16,6 +16,6 @@
  </clocktable>
  <window width="1408" height="1028" x="-4" y="-4" />
  <library
-   expandedCategories="Library/Peripherals,Library,Project,Library/Peripherals/Microcontroller Peripherals" />
+   expandedCategories="Library/Memories and Memory Controllers/External Memory Interfaces/Memory Interfaces,Library/Memories and Memory Controllers,Library,Project,Library/Memories and Memory Controllers/External Memory Interfaces/Memory Interfaces/Flash,Library/Memories and Memory Controllers/External Memory Interfaces" />
  <generation simulation="NONE" synthesis="VHDL" />
 </preferences>

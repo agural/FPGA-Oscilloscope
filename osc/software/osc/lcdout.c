@@ -162,7 +162,7 @@ void  plot_hline(int start_x, int start_y, int length)
     /* loop, outputting points for the line (always draw to the "right") */
     for (x = init_x; x < end_x; x++)
         /* plot a point of the line */
-	plot_pixel(x, start_y, PIXEL_RED);
+	plot_pixel(x, start_y, PIXEL_GREEN);
 
 
     /* done plotting the line - return */
@@ -231,7 +231,7 @@ void  plot_vline(int start_x, int start_y, int length)
     /* loop, outputting points for the line (always draw "down") */
     for (y = init_y; y < end_y; y++)
         /* plot a point of the line */
-	plot_pixel(start_x, y, PIXEL_RED);
+	plot_pixel(start_x, y, PIXEL_GREEN);
 
 
     /* done plotting the line - return */
@@ -329,7 +329,7 @@ void  plot_char(int pos_x, int pos_y, char c, enum char_style style)
 		plot_pixel(x + col, y, PIXEL_BGND);
 	    else
 	        /* black pixel - output in PIXEL_BLACK */
-		plot_pixel(x + col, y, PIXEL_RED);
+		plot_pixel(x + col, y, PIXEL_GREEN);
 
 	    /* shift the next bit into position */
 	    bits <<= 1;

@@ -3,7 +3,7 @@
 # Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
 # SOPC Builder design path: E:/agural/osc/proc.sopcinfo
 #
-# Generated: Fri Jun 13 10:17:52 GMT-08:00 2014
+# Generated: Fri Jun 13 21:36:02 GMT-08:00 2014
 
 # DO NOT MODIFY THIS FILE
 #
@@ -57,3 +57,6 @@ memory 0x130000 0x140000 cache
 
 # ONCHIP_mem
 memory 0x150000 0x15c000 cache
+
+# EPCS_ctrl
+memory 0x161000 0x161800 cache

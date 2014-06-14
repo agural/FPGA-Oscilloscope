@@ -5,16 +5,68 @@
    <void method="add"> 
     <object class="com.altera.embeddedsw.flash.model.internal.FileModel"> 
      <void property="baseAddress"> 
-      <string>0x30000</string> 
+      <string>0x130000</string> 
      </void> 
      <void property="bootloader"> 
-      <string>D:/program files/nios2eds/components/altera_nios2/boot_loader_cfi.srec</string> 
+      <string>C:/altera/13.1/nios2eds/components/altera_nios2/boot_loader_cfi.srec</string> 
      </void> 
      <void property="cpuResetAddress"> 
-      <string>0x30000</string> 
+      <string>0x161000</string> 
      </void> 
      <void property="endAddress"> 
-      <string>0x40000</string> 
+      <string>0x140000</string> 
+     </void> 
+     <void property="extraArgs"> 
+      <string></string> 
+     </void> 
+     <void property="fileType"> 
+      <object id="IMemoryFilesModel$FileType0" class="com.altera.embeddedsw.flash.model.IMemoryFilesModel$FileType" method="valueOf"> 
+       <string>SOF</string> 
+      </object> 
+     </void> 
+     <void property="filename"> 
+      <string>E:\agural\osc\output_files\osc.sof</string> 
+     </void> 
+     <void property="memoryName"> 
+      <string>FLASH_ctrl</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="com.altera.embeddedsw.flash.model.internal.FileModel"> 
+     <void property="baseAddress"> 
+      <string>0x161000</string> 
+     </void> 
+     <void property="cpuResetAddress"> 
+      <string>0x161000</string> 
+     </void> 
+     <void property="endAddress"> 
+      <string>0x161800</string> 
+     </void> 
+     <void property="extraArgs"> 
+      <string></string> 
+     </void> 
+     <void property="fileType"> 
+      <object idref="IMemoryFilesModel$FileType0"/> 
+     </void> 
+     <void property="filename"> 
+      <string>E:\agural\osc\output_files\osc.sof</string> 
+     </void> 
+     <void property="memoryName"> 
+      <string>EPCS_ctrl</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="com.altera.embeddedsw.flash.model.internal.FileModel"> 
+     <void property="baseAddress"> 
+      <string>0x161000</string> 
+     </void> 
+     <void property="cpuResetAddress"> 
+      <string>0x161000</string> 
+     </void> 
+     <void property="endAddress"> 
+      <string>0x161800</string> 
      </void> 
      <void property="extraArgs"> 
       <string></string> 
@@ -25,10 +77,10 @@
       </object> 
      </void> 
      <void property="filename"> 
-      <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\software\osc\osc.elf</string> 
+      <string>E:\agural\osc\software\osc\osc.elf</string> 
      </void> 
      <void property="memoryName"> 
-      <string>ROM_ctrl</string> 
+      <string>EPCS_ctrl</string> 
      </void> 
     </object> 
    </void> 
@@ -44,7 +96,7 @@
    </void> 
    <void method="put"> 
     <string>sopcinfoFile</string> 
-    <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\proc.sopcinfo</string> 
+    <string>E:\agural\osc\proc.sopcinfo</string> 
    </void> 
    <void method="put"> 
     <string>physicalCpuName</string> 
@@ -60,15 +112,15 @@
    </void> 
    <void method="put"> 
     <string>bspFile</string> 
-    <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\software\osc_bsp\settings.bsp</string> 
+    <string>E:\agural\osc\software\osc_bsp\settings.bsp</string> 
    </void> 
    <void method="put"> 
     <string>flashFilesDir</string> 
-    <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\software\osc_bsp\flash</string> 
+    <string>E:\agural\osc\software\osc_bsp\flash</string> 
    </void> 
    <void method="put"> 
     <string>scriptDir</string> 
-    <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\software\osc_bsp\script</string> 
+    <string>E:\agural\osc\software\osc_bsp\script</string> 
    </void> 
    <void method="put"> 
     <string>eraseAllEnabled</string> 
@@ -100,7 +152,7 @@
    </void> 
    <void method="put"> 
     <string>userQpfFile</string> 
-    <string>C:\Users\Albert\Documents\GitHub\FPGA-Oscilloscope\osc\osc.qpf</string> 
+    <string>E:\agural\osc\osc.qpf</string> 
    </void> 
   </void> 
   <void property="map"> 

@@ -1085,14 +1085,14 @@ void  plot_trace(unsigned char **sample)
     	cur_log = trace_L[i];
     	for (j = 0; j < 8; j++) {
     		if (cur_log & 1) {
-    			if (j % 2) plot_pixel(i, 270 - 5 * j - 3, PIXEL_GREEN);
-    			else plot_pixel(i, 270 - 5 * j - 3, PIXEL_DGREEN);
+    			if (j % 2) plot_pixel(i, 270 - 5 * j - 3, PIXEL_L1);
+    			else plot_pixel(i, 270 - 5 * j - 3, PIXEL_L2);
     	    } else {
-    	    	if (j % 2) plot_pixel(i, 270 - 5 * j, PIXEL_GREEN);
-    	    	else plot_pixel(i, 270 - 5 * j, PIXEL_DGREEN);
+    	    	if (j % 2) plot_pixel(i, 270 - 5 * j, PIXEL_L1);
+    	    	else plot_pixel(i, 270 - 5 * j, PIXEL_L2);
     	    }
-    		plot_pixel(i, 270 - 5 * j - 1, PIXEL_BLUE);
-    		plot_pixel(i, 270 - 5 * j - 2, PIXEL_BLUE);
+    		plot_pixel(i, 270 - 5 * j - 1, PIXEL_L3);
+    		plot_pixel(i, 270 - 5 * j - 2, PIXEL_L3);
     	    cur_log = cur_log >> 1;
     	}
 

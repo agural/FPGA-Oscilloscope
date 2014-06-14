@@ -54,7 +54,7 @@ set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
 set_global_assignment -name ENABLE_NCE_PIN OFF
 set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
-set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
 set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
 set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
 set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
@@ -87,7 +87,6 @@ set_location_assignment PIN_173 -to DB[2]
 set_location_assignment PIN_176 -to DB[1]
 set_location_assignment PIN_177 -to DB[0]
 set_location_assignment PIN_134 -to ram_cs
-set_location_assignment PIN_135 -to rom_cs
 set_location_assignment PIN_128 -to rw
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rw
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to clk
@@ -100,7 +99,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[2]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to DB[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ram_cs
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to rom_cs
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[15]
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to AB[14]
@@ -282,6 +280,14 @@ set_location_assignment PIN_13 -to logic[3]
 set_location_assignment PIN_18 -to logic[2]
 set_location_assignment PIN_21 -to logic[1]
 set_location_assignment PIN_22 -to logic[0]
+set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to | -entity fast_clk
+set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to | -entity fifo_clk
+set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to | -entity adc_clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to scale_B2
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to scale_A2
+set_location_assignment PIN_203 -to scale_A2
+set_location_assignment PIN_207 -to scale_B2
+set_global_assignment -name BSF_FILE sfl.bsf
 set_global_assignment -name VHDL_FILE scoptrig.vhd
 set_global_assignment -name VHDL_FILE fifo.vhd
 set_global_assignment -name VHDL_FILE vramstates.vhd
@@ -318,9 +324,6 @@ set_global_assignment -name QIP_FILE lpm_compare10.qip
 set_global_assignment -name QIP_FILE lpm_compare11.qip
 set_global_assignment -name QIP_FILE lpm_mux1.qip
 set_global_assignment -name QIP_FILE lpm_add_sub0.qip
-set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to | -entity fast_clk
-set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to | -entity fifo_clk
-set_instance_assignment -name GLOBAL_SIGNAL "GLOBAL CLOCK" -to | -entity adc_clk
 set_global_assignment -name QIP_FILE lpm_compare13.qip
 set_global_assignment -name QIP_FILE lpm_compare14.qip
 set_global_assignment -name QIP_FILE lpm_add_sub1.qip
@@ -329,8 +332,19 @@ set_global_assignment -name QIP_FILE lpm_compare15.qip
 set_global_assignment -name QIP_FILE lpm_compare16.qip
 set_global_assignment -name QIP_FILE parallel_add0.qip
 set_global_assignment -name QIP_FILE lpm_mux2.qip
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to scale_B2
-set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to scale_A2
-set_location_assignment PIN_203 -to scale_A2
-set_location_assignment PIN_207 -to scale_B2
+set_global_assignment -name QIP_FILE sfl.qip
+set_global_assignment -name CYCLONEIII_CONFIGURATION_DEVICE EPCS16
+set_global_assignment -name FORCE_CONFIGURATION_VCCIO ON
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_location_assignment PIN_24 -to epcs_data0
+set_location_assignment PIN_12 -to epcs_data1
+set_location_assignment PIN_23 -to epcs_dclk
+set_location_assignment PIN_14 -to epcs_nce
+set_location_assignment PIN_202 -to flash_oe
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to flash_oe
+set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to flash_cs
+set_location_assignment PIN_135 -to flash_cs
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

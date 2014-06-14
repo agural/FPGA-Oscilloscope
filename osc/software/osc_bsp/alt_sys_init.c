@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: E:/agural/osc/proc.sopcinfo
  *
- * Generated: Thu May 22 12:38:39 GMT-08:00 2014
+ * Generated: Fri Jun 13 21:36:02 GMT-08:00 2014
  */
 
 /*
@@ -59,6 +59,7 @@
  */
 
 #include "altera_nios2_qsys_irq.h"
+#include "altera_avalon_epcs_flash_controller.h"
 #include "altera_avalon_sysid_qsys.h"
 
 /*
@@ -66,6 +67,7 @@
  */
 
 ALTERA_NIOS2_QSYS_IRQ_INSTANCE ( PROC, PROC);
+ALTERA_AVALON_EPCS_FLASH_CONTROLLER_INSTANCE ( EPCS_CTRL, EPCS_ctrl);
 ALTERA_AVALON_SYSID_QSYS_INSTANCE ( SYSID_QSYS_0, sysid_qsys_0);
 
 /*
@@ -89,5 +91,6 @@ void alt_irq_init ( const void* base )
 
 void alt_sys_init( void )
 {
+    ALTERA_AVALON_EPCS_FLASH_CONTROLLER_INIT ( EPCS_CTRL, EPCS_ctrl);
     ALTERA_AVALON_SYSID_QSYS_INIT ( SYSID_QSYS_0, sysid_qsys_0);
 }

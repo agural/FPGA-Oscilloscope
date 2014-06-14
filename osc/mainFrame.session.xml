@@ -5,7 +5,7 @@
    <string>jTabbedPane1/log_tab_pane/JPanel1/JSplitPane0/MainWindow/null.contentPane/null.layeredPane/JRootPane0/mainFrame</string> 
    <object class="org.jdesktop.application.SessionStorage$TabbedPaneState"> 
     <void property="selectedIndex"> 
-     <int>0</int> 
+     <int>2</int> 
     </void> 
     <void property="tabCount"> 
      <int>3</int> 
@@ -17,38 +17,56 @@
    <object class="org.jdesktop.application.SessionStorage$WindowState"> 
     <void property="bounds"> 
      <object class="java.awt.Rectangle"> 
-      <int>451</int> 
-      <int>79</int> 
-      <int>913</int> 
-      <int>964</int> 
+      <int>351</int> 
+      <int>99</int> 
+      <int>768</int> 
+      <int>852</int> 
      </object> 
     </void> 
     <void property="graphicsConfigurationBounds"> 
      <object class="java.awt.Rectangle"> 
       <int>0</int> 
       <int>0</int> 
-      <int>1920</int> 
-      <int>1200</int> 
+      <int>1400</int> 
+      <int>1050</int> 
      </object> 
     </void> 
     <void property="screenCount"> 
-     <int>2</int> 
+     <int>1</int> 
     </void> 
    </object> 
   </void> 
   <void method="put"> 
-   <string>files_table/JViewport0/jScrollPane3/filesPanel/centerPanel/Flash: ROM_ctrl/MainTabbedPane/JPanel0/JSplitPane0/MainWindow/null.contentPane/null.layeredPane/JRootPane0/mainFrame</string> 
+   <string>files_table/JViewport0/jScrollPane3/filesPanel/centerPanel/Flash: EPCS_ctrl/MainTabbedPane/JPanel0/JSplitPane0/MainWindow/null.contentPane/null.layeredPane/JRootPane0/mainFrame</string> 
    <object class="org.jdesktop.application.SessionStorage$TableState"> 
     <void property="columnWidths"> 
      <array class="int" length="3"> 
       <void index="0"> 
-       <int>471</int> 
+       <int>426</int> 
       </void> 
       <void index="1"> 
-       <int>147</int> 
+       <int>101</int> 
       </void> 
       <void index="2"> 
-       <int>146</int> 
+       <int>100</int> 
+      </void> 
+     </array> 
+    </void> 
+   </object> 
+  </void> 
+  <void method="put"> 
+   <string>files_table/JViewport0/jScrollPane3/filesPanel/centerPanel/Flash: FLASH_ctrl/MainTabbedPane/JPanel0/JSplitPane0/MainWindow/null.contentPane/null.layeredPane/JRootPane0/mainFrame</string> 
+   <object class="org.jdesktop.application.SessionStorage$TableState"> 
+    <void property="columnWidths"> 
+     <array class="int" length="3"> 
+      <void index="0"> 
+       <int>426</int> 
+      </void> 
+      <void index="1"> 
+       <int>101</int> 
+      </void> 
+      <void index="2"> 
+       <int>100</int> 
       </void> 
      </array> 
     </void> 
@@ -58,10 +76,10 @@
    <string>MainTabbedPane/JPanel0/JSplitPane0/MainWindow/null.contentPane/null.layeredPane/JRootPane0/mainFrame</string> 
    <object class="org.jdesktop.application.SessionStorage$TabbedPaneState"> 
     <void property="selectedIndex"> 
-     <int>0</int> 
+     <int>1</int> 
     </void> 
     <void property="tabCount"> 
-     <int>1</int> 
+     <int>2</int> 
     </void> 
    </object> 
   </void> 

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: E:/agural/osc/proc.sopcinfo
  *
- * Generated: Fri Jun 13 10:17:52 GMT-08:00 2014
+ * Generated: Sat Jun 14 01:48:11 GMT-08:00 2014
  */
 
 /*
@@ -65,6 +65,8 @@
  *
  */
 
+#define EPCS_CTRL_REGION_BASE 0x161000
+#define EPCS_CTRL_REGION_SPAN 2048
 #define FLASH_CTRL_REGION_BASE 0x130000
 #define FLASH_CTRL_REGION_SPAN 65536
 #define ONCHIP_MEM_REGION_BASE 0x150020

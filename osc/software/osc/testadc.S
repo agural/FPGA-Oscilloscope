@@ -77,7 +77,7 @@ adc_int_installer:
 	# Set Trigger default level (2's complement), delay
 	STWI	TRIG_LEVEL_BASE, 0
 	STWI	TRIG_DELAY_BASE, 240
-	STWI	TRIG_ERROR_BASE, 5
+	STWI	TRIG_ERROR_BASE, 8
 
 	# Install the interrupt handler
 	mov		r4, r0

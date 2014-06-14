@@ -4,7 +4,7 @@
  * Machine generated for CPU 'PROC' in SOPC Builder design 'proc'
  * SOPC Builder design path: E:/agural/osc/proc.sopcinfo
  *
- * Generated: Fri Jun 13 10:17:52 GMT-08:00 2014
+ * Generated: Sat Jun 14 01:48:11 GMT-08:00 2014
  */
 
 /*
@@ -55,6 +55,7 @@ MEMORY
     FLASH_ctrl : ORIGIN = 0x130000, LENGTH = 65536
     reset : ORIGIN = 0x150000, LENGTH = 32
     ONCHIP_mem : ORIGIN = 0x150020, LENGTH = 49120
+    EPCS_ctrl : ORIGIN = 0x161000, LENGTH = 2048
 }
 
 /* Define symbols for each memory base-address */
@@ -62,6 +63,7 @@ __alt_mem_VRAM_ctrl = 0x80000;
 __alt_mem_RAM_ctrl = 0x120000;
 __alt_mem_FLASH_ctrl = 0x130000;
 __alt_mem_ONCHIP_mem = 0x150000;
+__alt_mem_EPCS_ctrl = 0x161000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -397,6 +399,23 @@ SECTIONS
     } > ONCHIP_mem
 
     PROVIDE (_alt_partition_ONCHIP_mem_load_addr = LOADADDR(.ONCHIP_mem));
+
+    /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .EPCS_ctrl : AT ( LOADADDR (.ONCHIP_mem) + SIZEOF (.ONCHIP_mem) )
+    {
+        PROVIDE (_alt_partition_EPCS_ctrl_start = ABSOLUTE(.));
+        *(.EPCS_ctrl .EPCS_ctrl. EPCS_ctrl.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_EPCS_ctrl_end = ABSOLUTE(.));
+    } > EPCS_ctrl
+
+    PROVIDE (_alt_partition_EPCS_ctrl_load_addr = LOADADDR(.EPCS_ctrl));
 
     /*
      * Stabs debugging sections.

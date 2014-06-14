@@ -51,6 +51,7 @@
 #define  SIZE_Y			272     /* size in the y dimension */
 #define  PIXEL_BLACK    0x0000
 #define  PIXEL_WHITE    0xFF7F
+#define  PIXEL_GRAY     0x1042
 #define  PIXEL_RED		0x1F00
 #define  PIXEL_ORANGE	0x7F01
 #define  PIXEL_YELLOW	0xFF03
@@ -58,10 +59,15 @@
 #define	 PIXEL_DGREEN	0xE001
 #define	 PIXEL_CYAN		0x007F
 #define  PIXEL_BLUE		0x007C
-#define	 PIXEL_PURPLE	0x177C
+#define	 PIXEL_PURPLE	0x147C
+#define	 PIXEL_VIOLET	0x1F7C
+
 #define	 PIXEL_BGND		0x001C
-#define	 PIXEL_A		0x007F
-#define	 PIXEL_B		0x177C
+#define	 PIXEL_A		0xFF7F
+#define	 PIXEL_B		0x007F
+#define	 PIXEL_L1		0x1F7C
+#define	 PIXEL_L2		0x147C
+#define	 PIXEL_L3		0x007C
 
 /* scope parameters */
 #define  MIN_DELAY	   -240		/* minimum trigger delay */
