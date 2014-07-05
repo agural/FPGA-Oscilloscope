@@ -14,7 +14,7 @@
    <frequency preferredWidth="164" />
   </columns>
  </clocktable>
- <window width="1408" height="1028" x="-4" y="-4" />
+ <window width="2578" height="1424" x="-9" y="-9" />
  <library
    expandedCategories="Library/Memories and Memory Controllers/External Memory Interfaces/Memory Interfaces,Library/Memories and Memory Controllers,Library,Project,Library/Memories and Memory Controllers/External Memory Interfaces/Memory Interfaces/Flash,Library/Memories and Memory Controllers/External Memory Interfaces" />
  <generation simulation="NONE" synthesis="VHDL" />

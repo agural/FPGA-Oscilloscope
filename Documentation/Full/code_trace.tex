@@ -1,0 +1,1760 @@
+\subsection{tracutil}
+\begin{lstlisting}[language=C]
+/****************************************************************************/
+/*                                                                          */
+/*                                TRACUTIL.H                                */
+/*                         Trace Utility Functions                          */
+/*                               Include File                               */
+/*                       Digital Oscilloscope Project                       */
+/*                                 EE/CS 52                                 */
+/*                                                                          */
+/****************************************************************************/
+
+/*
+   This file contains the constants and function prototypes for the trace
+   utility functions (defined in tracutil.c) for the Digital Oscilloscope
+   project.
+
+
+   Revision History:
+      3/8/94   Glen George       Initial revision.
+      3/13/94  Glen George       Updated comments.
+      3/13/94  Glen George       Changed name of set_axes function to
+      				 set_display_scale.
+      5/9/06   Glen George       Added the constants for grids and tick marks.
+      5/27/08  Glen George       Added is_sampling() function to be able to
+	                         tell if the system is currently taking a
+				 sample.
+      6/3/08   Glen George       Removed Y_SCALE_FACTOR - no longer used to 
+	                         fix problems with non-power of 2 display
+				 sizes.
+*/
+
+
+
+#ifndef  __TRACUTIL_H__
+    #define  __TRACUTIL_H__
+
+
+/* library include files */
+  /* none */
+
+/* local include files */
+#include  "interfac.h"
+#include  "menuact.h"
+
+
+
+
+/* constants */
+
+/* plot size */
+#define  PLOT_SIZE_X	SIZE_X		/* plot takes entire screen width */
+#define  PLOT_SIZE_Y	SIZE_Y		/* plot takes entire screen height */
+
+/* axes position and size */
+#define  X_AXIS_START   0		   /* starting x position of x-axis */
+#define  X_AXIS_END     (PLOT_SIZE_X - 1)  /* ending x position of x-axis */
+#define  X_AXIS_POS	(PLOT_SIZE_Y / 2)  /* y position of x-axis */
+#define  Y_AXIS_START   0		   /* starting y position of y-axis */
+#define  Y_AXIS_END     (PLOT_SIZE_Y - 1)  /* ending y position of y-axis */
+#define  Y_AXIS_POS	(PLOT_SIZE_X / 2)  /* x position of y-axis */
+
+/* tick mark and grid constants */
+#define  TICK_LEN       5    		/* length of axis tick mark */
+/* tick mark counts are for a single quadrant, thus total number of tick */
+/* marks or grids is twice this number */
+#define  X_TICK_CNT     5		/* always 5 tick marks on x axis */
+#define  X_TICK_SIZE    (PLOT_SIZE_X / (2 * X_TICK_CNT))   /* distance between tick marks */
+#define  Y_TICK_SIZE    X_TICK_SIZE     /* same size as x */
+#define  Y_TICK_CNT     (PLOT_SIZE_Y / (2 * Y_TICK_SIZE))  /* number of y tick marks */
+#define  X_GRID_START   0		   /* starting x position of x grid */
+#define  X_GRID_END     (PLOT_SIZE_X - 1)  /* ending x position of x grid */
+#define  Y_GRID_START   0		   /* starting y position of y-axis */
+#define  Y_GRID_END     (PLOT_SIZE_Y - 1)  /* ending y position of y-axis */
+
+/* maximum size of the save area (in pixels) */
+#define  SAVE_SIZE_X	120	/* maximum width */
+#define  SAVE_SIZE_Y	16	/* maximum height */
+
+
+
+
+/* structures, unions, and typedefs */
+    /* none */
+
+
+
+
+/* function declarations */
+
+/* initialize the trace utility routines */
+void  init_trace(void);
+
+/* trace status functions */
+void  set_mode(enum trigger_type);  /* set the triggering mode */
+int   is_sampling(void);	    /* currently trying to take a sample */
+int   trace_rdy(void);              /* determine if ready to start a trace */
+void  trace_done(void);             /* signal a trace has been completed */
+void  trace_rearm(void);            /* re-enable tracing */
+
+/* trace save area functions */
+void  clear_saved_areas(void);		  /* clears all saved areas */
+void  restore_menu_trace(void);           /* restore the trace under menus */
+void  set_save_area(int, int, int, int);  /* set an area of a trace to save */
+void  restore_trace(void);                /* restore saved area of a trace */
+
+/* set the scale type */
+void  set_display_scale(enum scale_type);
+
+/* setup and plot a trace */
+void  set_trace_size(int);              /* set the number of samples in a trace */
+void  do_trace(void);                   /* start a trace */
+void  plot_trace(unsigned char**);      /* plot a trace (sampled data) */
+
+
+#endif
+\end{lstlisting}
+
+\begin{lstlisting}[language=C]
+/****************************************************************************/
+/*                                                                          */
+/*                                 TRACUTIL                                 */
+/*                         Trace Utility Functions                          */
+/*                       Digital Oscilloscope Project                       */
+/*                                 EE/CS 52                                 */
+/*                                                                          */
+/****************************************************************************/
+
+/*
+   This file contains the utility functions for handling traces (capturing
+   and displaying data) for the Digital Oscilloscope project.  The functions
+   included are:
+      clear_saved_areas  - clear all the save areas
+      do_trace           - start a trace
+      init_trace         - initialize the trace routines
+      plot_trace         - plot a trace (sampled data)
+      restore_menu_trace - restore the saved area under the menus
+      restore_trace      - restore the saved area of a trace
+      set_display_scale  - set the type of displayed scale (and display it)
+      set_mode           - set the triggering mode
+      set_save_area      - determine an area of a trace to save
+      set_trace_size     - set the number of samples in a trace
+      trace_done         - inform this module that a trace has been completed
+      trace_rdy          - determine if system is ready to start another trace
+      trace_rearm        - re-enable tracing (in one-shot triggering mode)
+
+   The local functions included are:
+      none
+
+   The locally global variable definitions included are:
+      cur_scale    - current scale type
+      sample_size  - the size of the sample for the trace
+      sampling     - currently doing a sample
+      saved_area   - saved trace under a specified area
+      saved_axis_x - saved trace under the x lines (axes or grid)
+      saved_axis_y - saved trace under the y lines (axes or grid)
+      saved_menu   - saved trace under the menu
+      saved_pos_x  - starting position (x coorindate) of area to save
+      saved_pos_y  - starting position (y coorindate) of area to save
+      saved_end_x  - ending position (x coorindate) of area to save
+      saved_end_y  - ending position (y coorindate) of area to save
+      trace_status - whether or not ready to start another trace
+
+
+   Revision History
+      3/8/94   Glen George       Initial revision.
+      3/13/94  Glen George       Updated comments.
+      3/13/94  Glen George       Fixed inversion of signal in plot_trace.
+      3/13/94  Glen George       Added sampling flag and changed the functions
+      			    	 init_trace, do_trace and trace_done to update
+				 the flag.  Also the function trace_rdy now
+				 uses it.  The function set_mode was updated
+				 to always say a trace is ready for normal
+				 triggering.
+      3/13/94  Glen George       Fixed bug in trace restoring due to operator
+			         misuse (&& instead of &) in the functions
+				 set_axes, restore_menu_trace, and
+				 restore_trace.
+      3/13/94  Glen George       Fixed bug in trace restoring due to the clear
+			         function (clear_saved_areas) not clearing all
+				 of the menu area.
+      3/13/94  Glen George       Fixed comparison bug when saving traces in
+			         plot_trace.
+      3/13/94  Glen George       Changed name of set_axes to set_display_scale
+			         and the name of axes_state to cur_scale to
+				 more accurately reflect the function/variable
+				 use (especially if add scale display types).
+      3/17/97  Glen George       Updated comments.
+      3/17/97  Glen George       Changed set_display_scale to use plot_hline
+			         and plot_vline functions to output axes.
+      5/3/06   Glen George       Updated formatting.
+      5/9/06   Glen George       Updated do_trace function to match the new
+                                 definition of start_sample().
+      5/9/06   Glen George       Removed normal_trg variable, its use is now
+                                 handled by the get_trigger_mode() accessor.
+      5/9/06   Glen George       Added tick marks to the axes display.
+      5/9/06   Glen George       Added ability to display a grid.
+      5/27/08  Glen George       Added is_sampling() function to be able to
+	                         tell if the system is currently taking a
+				 sample.
+      5/27/08  Glen George       Changed set_mode() to always turn off the
+	                         sampling flag so samples with the old mode
+                                 setting are ignored.
+      6/3/08   Glen George       Fixed problems with non-power of 2 display
+				 sizes not working.
+*/
+
+
+
+/* library include files */
+  /* none */
+
+/* local include files */
+#include  "scopedef.h"
+#include  "lcdout.h"
+#include  "menu.h"
+#include  "menuact.h"
+#include  "tracutil.h"
+
+
+
+
+/* locally global variables */
+
+int  trace_status;	/* ready to start another trace */
+
+int  sampling;           /* currently sampling data */
+
+int  sample_size; 	/* number of data points in a sample */
+
+enum scale_type  cur_scale;	/* current display scale type */
+
+/* traces (sampled data) saved under the axes */
+unsigned char  saved_axis_x[2 * Y_TICK_CNT + 1][PLOT_SIZE_X/8];	/* saved trace under x lines */
+unsigned char  saved_axis_y[2 * X_TICK_CNT + 1][PLOT_SIZE_Y/8];	/* saved trace under y lines */
+
+/* traces (sampled data) saved under the menu */
+unsigned char  saved_menu[MENU_SIZE_Y][(MENU_SIZE_X + 7)/8];
+
+/* traces (sampled data) saved under any area */
+unsigned char  saved_area[SAVE_SIZE_Y][SAVE_SIZE_X/8]; /* saved trace under any area */
+int	      saved_pos_x;    /* starting x position of saved area */
+int	      saved_pos_y;    /* starting y position of saved area */
+int	      saved_end_x;    /* ending x position of saved area */
+int	      saved_end_y;    /* ending y position of saved area */
+
+/* saved traces for quick redraw */
+int trace_A[PLOT_SIZE_X];
+int trace_B[PLOT_SIZE_X];
+int trace_L[PLOT_SIZE_X];
+int saved_trace_A[PLOT_SIZE_X];
+int saved_trace_B[PLOT_SIZE_X];
+int saved_trace_L[PLOT_SIZE_X];
+
+
+/*
+   init_trace
+
+   Description:      This function initializes all of the locally global
+                     variables used by these routines.  The saved areas are
+		     set to non-existant with cleared saved data.  Normal
+		     normal triggering is set, the system is ready for a
+		     trace, the scale is turned off and the sample size is set
+		     to the screen size.
+
+   Arguments:        None.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: trace_status - set to TRUE.
+		     sampling     - set to FALSE.
+		     cur_scale    - set to SCALE_NONE (no displayed scale).
+		     sample_size  - set to screen size (SIZE_X).
+		     saved_axis_x - cleared.
+		     saved_axis_y - cleared.
+		     saved_menu   - cleared.
+		     saved_area   - cleared.
+		     saved_pos_x  - set to off-screen.
+		     saved_pos_y  - set to off-screen.
+		     saved_end_x  - set to off-screen.
+		     saved_end_y  - set to off-screen.
+
+   Author:           Glen George
+   Last Modified:    May 9, 2006
+
+*/
+
+void  init_trace()
+{
+    /* variables */
+      /* none */
+
+
+
+    /* initialize system status variables */
+
+    /* ready for a trace */
+    trace_status = TRUE;
+
+    /* not currently sampling data */
+    sampling = FALSE;
+
+    /* turn off the displayed scale */
+    cur_scale = SCALE_NONE;
+
+    /* sample size is the screen size */
+    sample_size = SIZE_X;
+
+
+    /* clear save areas */
+    clear_saved_areas();
+
+    /* also clear the general saved area location variables (off-screen) */
+    saved_pos_x = SIZE_X + 1;
+    saved_pos_y = SIZE_Y + 1;
+    saved_end_x = SIZE_X + 1;
+    saved_end_y = SIZE_Y + 1;
+
+
+    /* done initializing, return */
+    return;
+
+}
+
+
+
+
+/*
+   set_mode
+
+   Description:      This function sets the locally global triggering mode
+                     based on the passed value (one of the possible enumerated
+		     values).  The triggering mode is used to determine when
+		     the system is ready for another trace.  The sampling flag
+                     is also reset so a new sample will be started (if that is
+                     appropriate).
+
+   Arguments:        trigger_mode (enum trigger_type) - the mode with which to
+   							set the triggering.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: sampling     - set to FALSE to turn off sampling
+	             trace_status - set to TRUE if not one-shot triggering.
+
+   Author:           Glen George
+   Last Modified:    May 27, 2008
+
+*/
+
+void  set_mode(enum trigger_type trigger_mode)
+{
+    /* variables */
+      /* none */
+
+
+
+    /* if not one-shot triggering - ready for trace too */
+    trace_status = (trigger_mode != ONESHOT_TRIGGER);
+
+
+    /* turn off the sampling flag so will start a new sample */
+    sampling = FALSE;
+
+
+    /* all done, return */
+    return;
+
+}
+
+
+
+
+/*
+   is_sampling
+
+   Description:      This function determines whether the system is currently
+                     taking a sample or not.  This is just the value of the
+		     sampling flag.
+
+   Arguments:        None.
+   Return Value:     (int) - the current sampling status (TRUE if currently
+   		     trying to take a sample, FALSE otherwise).
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: sampling - determines if taking a sample or not.
+
+   Author:           Glen George
+   Last Modified:    May 27, 2008
+
+*/
+
+int  is_sampling()
+{
+    /* variables */
+      /* none */
+
+
+
+    /* currently sampling if sampling flag is set */
+    return  sampling;
+
+}
+
+
+
+
+/*
+   trace_rdy
+
+   Description:      This function determines whether the system is ready to
+                     start another trace.  This is determined by whether or
+		     not the system is still sampling (sampling flag) and if
+		     it is ready for another trace (trace_status flag).
+
+   Arguments:        None.
+   Return Value:     (int) - the current trace status (TRUE if ready to do
+   		     another trace, FALSE otherwise).
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: sampling     - determines if ready for another trace.
+   		     trace_status - determines if ready for another trace.
+
+   Author:           Glen George
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+int  trace_rdy()
+{
+    /* variables */
+      /* none */
+
+
+
+    /* ready for another trace if not sampling and trace is ready */
+    return  (!sampling && trace_status);
+
+}
+
+
+
+
+/*
+   trace_done
+
+   Description:      This function is called to indicate a trace has been
+                     completed.  If in normal triggering mode this means the
+		     system is ready for another trace.
+
+   Arguments:        None.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: trace_status - may be set to TRUE.
+   		     sampling     - set to FALSE.
+
+   Author:           Glen George
+   Last Modified:    May 9, 2006
+
+*/
+
+void  trace_done()
+{
+    /* variables */
+      /* none */
+
+
+
+    /* done with a trace - if retriggering, ready for another one */
+    if (get_trigger_mode() != ONESHOT_TRIGGER)
+        /* in a retriggering mode - set trace_status to TRUE (ready) */
+	trace_status = TRUE;
+
+    /* no longer sampling data */
+    sampling = FALSE;
+
+
+    /* done so return */
+    return;
+
+}
+
+
+
+
+/*
+   trace_rearm
+
+   Description:      This function is called to rearm the trace.  It sets the
+                     trace status to ready (TRUE).  It is used to rearm the
+		     trigger in one-shot mode.
+
+   Arguments:        None.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: trace_status - set to TRUE.
+
+   Author:           Glen George
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  trace_rearm()
+{
+    /* variables */
+      /* none */
+
+
+
+    /* rearm the trace - set status to ready (TRUE) */
+    trace_status = TRUE;
+
+
+    /* all done - return */
+    return;
+
+}
+
+
+
+
+/*
+   set_trace_size
+
+   Description:      This function sets the locally global sample size to the
+                     passed value.  This is used to scale the data when
+		     plotting a trace.
+
+   Arguments:        size (int) - the trace sample size.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: sample_size - set to the passed value.
+
+   Author:           Glen George
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  set_trace_size(int size)
+{
+    /* variables */
+      /* none */
+
+
+
+    /* set the locally global sample size */
+    sample_size = size;
+
+
+    /* all done, return */
+    return;
+
+}
+
+
+
+
+/*
+   set_display_scale
+
+   Description:      This function sets the displayed scale type to the passed
+   		     argument.  If the scale is turned on, it draws it.  If it
+		     is turned off (SCALE_NONE), it restores the saved trace
+		     under the scale.  Scales can be axes with tick marks
+                     (SCALE_AXES) or a grid (SCALE_GRID).
+
+   Arguments:        scale (scale_type) - new scale type.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           Either a scale is output or the trace under the old scale
+   		     is restored.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: cur_scale    - set to the passed value.
+   		     saved_axis_x - used to restore trace data under x-axis.
+   		     saved_axis_y - used to restore trace data under y-axis.
+
+   Author:           Glen George
+   Last Modified:    May 9, 2006
+
+*/
+
+void  set_display_scale(enum scale_type scale)
+{
+    /* variables */
+    int  p;             /* x or y coordinate */
+
+    int  i;		/* loop indices */
+    int  j;
+
+
+
+    /* whenever change scale type, need to clear out previous scale */
+    /* unnecessary if going to SCALE_GRID or from SCALE_NONE or not changing the scale */
+    if ((scale != SCALE_GRID) && (cur_scale != SCALE_NONE) && (scale != cur_scale))  {
+
+        /* need to restore the trace under the lines (tick, grid, or axis) */
+
+	/* go through all points on horizontal lines */
+	for (j = -Y_TICK_CNT; j <= Y_TICK_CNT; j++)  {
+
+	    /* get y position of the line */
+	    p = X_AXIS_POS + j * Y_TICK_SIZE;
+	    /* make sure it is in range */
+	    if (p >= PLOT_SIZE_Y)
+	        p = PLOT_SIZE_Y - 1;
+	    if (p < 0)
+	        p = 0;
+
+	    /* look at entire horizontal line */
+	    for (i = 0; i < PLOT_SIZE_X; i++)  {
+	        /* check if this point is on or off (need to look at bits) */
+		if ((saved_axis_x[j + Y_TICK_CNT][i / 8] & (0x80 >> (i % 8))) == 0)
+		    /* saved pixel is off */
+		    plot_pixel(i, p, PIXEL_BGND);
+		else
+		    /* saved pixel is on */
+		    plot_pixel(i, p, PIXEL_RED);
+	    }
+	}
+
+	/* go through all points on vertical lines */
+	for (j = -X_TICK_CNT; j <= X_TICK_CNT; j++)  {
+
+	    /* get x position of the line */
+	    p = Y_AXIS_POS + j * X_TICK_SIZE;
+	    /* make sure it is in range */
+	    if (p >= PLOT_SIZE_X)
+	        p = PLOT_SIZE_X - 1;
+	    if (p < 0)
+	        p = 0;
+
+	    /* look at entire vertical line */
+	    for (i = 0; i < PLOT_SIZE_Y; i++)  {
+	        /* check if this point is on or off (need to look at bits) */
+		if ((saved_axis_y[j + X_TICK_CNT][i / 8] & (0x80 >> (i % 8))) == 0)
+		    /* saved pixel is off */
+		    plot_pixel(p, i, PIXEL_BGND);
+		else
+		    /* saved pixel is on */
+		    plot_pixel(p, i, PIXEL_RED);
+	    }
+	}
+    }
+
+
+    /* now handle the scale type appropriately */
+    switch (scale)  {
+
+    	case SCALE_AXES:    /* axes for the scale */
+    	case SCALE_GRID:    /* grid for the scale */
+
+		            /* draw x lines (grid or tick marks) */
+			    for (i = -Y_TICK_CNT; i <= Y_TICK_CNT; i++)  {
+
+				/* get y position of the line */
+				p = X_AXIS_POS + i * Y_TICK_SIZE;
+				/* make sure it is in range */
+				if (p >= PLOT_SIZE_Y)
+				    p = PLOT_SIZE_Y - 1;
+				if (p < 0)
+				    p = 0;
+
+				/* should we draw a grid, an axis, or a tick mark */
+				if (scale == SCALE_GRID)
+				    /* drawing a grid line */
+			            plot_hline(X_GRID_START, p, (X_GRID_END - X_GRID_START));
+				else if (i == 0)
+				    /* drawing the x axis */
+			            plot_hline(X_AXIS_START, p, (X_AXIS_END - X_AXIS_START));
+				else
+				    /* must be drawing a tick mark */
+			            plot_hline((Y_AXIS_POS - (TICK_LEN / 2)), p, TICK_LEN);
+			    }
+
+		            /* draw y lines (grid or tick marks) */
+			    for (i = -X_TICK_CNT; i <= X_TICK_CNT; i++)  {
+
+				/* get x position of the line */
+				p = Y_AXIS_POS + i * X_TICK_SIZE;
+				/* make sure it is in range */
+				if (p >= PLOT_SIZE_X)
+				    p = PLOT_SIZE_X - 1;
+			        if (p < 0)
+				    p = 0;
+
+				/* should we draw a grid, an axis, or a tick mark */
+				if (scale == SCALE_GRID)
+				    /* drawing a grid line */
+			            plot_vline(p, Y_GRID_START, (Y_GRID_END - Y_GRID_START));
+				else if (i == 0)
+				    /* drawing the y axis */
+			            plot_vline(p, Y_AXIS_START, (Y_AXIS_END - Y_AXIS_START));
+				else
+				    /* must be drawing a tick mark */
+			            plot_vline(p, (X_AXIS_POS - (TICK_LEN / 2)), TICK_LEN);
+			    }
+
+			    /* done with the axes */
+			    break;
+
+        case SCALE_NONE:    /* there is no scale */
+			    /* already restored plot so nothing to do */
+			    break;
+
+    }
+
+
+    /* now remember the new (now current) scale type */
+    cur_scale = scale;
+
+
+    /* scale is taken care of, return */
+    return;
+
+}
+
+
+
+
+/*
+   clear_saved_areas
+
+   Description:      This function clears all the saved areas (for saving the
+                     trace under the axes, menus, and general areas).
+
+   Arguments:        None.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: saved_axis_x - cleared.
+		     saved_axis_y - cleared.
+		     saved_menu   - cleared.
+		     saved_area   - cleared.
+
+   Author:           Glen George
+   Last Modified:    May 9, 2006
+
+*/
+
+void  clear_saved_areas()
+{
+    /* variables */
+    int  i;		/* loop indices */
+    int  j;
+
+
+
+    /* clear x-axis and y-axis save areas */
+    for (j = 0; j <= (2 * Y_TICK_CNT); j++)
+        for (i = 0; i < (SIZE_X / 8); i++)
+            saved_axis_x[j][i] = 0;
+    for (j = 0; j <= (2 * X_TICK_CNT); j++)
+        for (i = 0; i < (SIZE_Y / 8); i++)
+            saved_axis_y[j][i] = 0;
+
+    /* clear the menu save ares */
+    for (i = 0; i < MENU_SIZE_Y; i++)
+        for (j = 0; j < ((MENU_SIZE_X + 7) / 8); j++)
+	    saved_menu[i][j] = 0;
+
+    /* clear general save area */
+    for (i = 0; i < SAVE_SIZE_Y; i++)
+        for (j = 0; j < (SAVE_SIZE_X / 8); j++)
+	    saved_area[i][j] = 0;
+
+
+    /* done clearing the saved areas - return */
+    return;
+
+}
+
+
+
+
+/*
+   restore_menu_trace
+
+   Description:      This function restores the trace under the menu when the
+                     menus are turned off.  (The trace was previously saved.)
+
+   Arguments:        None.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           The trace under the menu is restored to the LCD screen.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: saved_menu - used to restore trace data under the menu.
+
+   Author:           Glen George
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  restore_menu_trace()
+{
+    /* variables */
+    int  bit_position;	/* position of bit to restore (in saved data) */
+    int  bit_offset;    /* offset (in bytes) of bit within saved row */
+
+    int  x;		/* loop indices */
+    int  y;
+
+
+
+    /* loop, restoring the trace under the menu */
+    for (y = MENU_UL_Y; y < (MENU_UL_Y + MENU_SIZE_Y); y++)  {
+
+        /* starting a row - initialize bit position */
+	bit_position = 0x80;	/* start at high-order bit in the byte */
+	bit_offset = 0;		/* first byte of the row */
+
+        for (x = MENU_UL_X; x < (MENU_UL_X + MENU_SIZE_X); x++)  {
+
+	    /* check if this point is on or off (need to look at bits) */
+	    if ((saved_menu[y - MENU_UL_Y][bit_offset] & bit_position) == 0)
+	        /* saved pixel is off */
+		plot_pixel(x, y, PIXEL_BGND);
+	    else
+	        /* saved pixel is on */
+		plot_pixel(x, y, PIXEL_RED);
+
+	    /* move to the next bit position */
+	    bit_position >>= 1;
+	    /* check if moving to next byte */
+	    if (bit_position == 0)  {
+	        /* now on high bit of next byte */
+		bit_position = 0x80;
+		bit_offset++;
+	    }
+        }
+    }
+
+
+    /* restored menu area - return */
+    return;
+
+}
+
+
+
+
+/*
+   set_save_area
+
+   Description:      This function sets the position and size of the area to
+                     be saved when traces are drawn.  It also clears any data
+		     currently saved.
+
+   Arguments:        pos_x (int)  - x position of upper left corner of the
+   				    saved area.
+   		     pos_y (int)  - y position of upper left corner of the
+		     		    saved area.
+		     size_x (int) - horizontal size of the saved area.
+		     size_y (int) - vertical size of the saved area.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: saved_area  - cleared.
+   		     saved_pos_x - set to passed value.
+   		     saved_pos_y - set to passed value.
+		     saved_end_x - computed from passed values.
+		     saved_end_y - computed from passed values.
+
+   Author:           Glen George
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  set_save_area(int pos_x, int pos_y, int size_x, int size_y)
+{
+    /* variables */
+    int  x;		/* loop indices */
+    int  y;
+
+
+
+    /* just setup all the locally global variables from the passed values */
+    saved_pos_x = pos_x;
+    saved_pos_y = pos_y;
+    saved_end_x = pos_x + size_x;
+    saved_end_y = pos_y + size_y;
+
+
+    /* clear the save area */
+    for (y = 0; y < SAVE_SIZE_Y; y++)  {
+        for (x = 0; x < (SAVE_SIZE_X / 8); x++)  {
+	    saved_area[y][x] = 0;
+        }
+    }
+
+
+    /* setup the saved area - return */
+    return;
+
+}
+
+
+
+
+/*
+   restore_trace
+
+   Description:      This function restores the trace under the set saved
+                     area.  (The area was previously set and the trace was
+		     previously saved.)
+
+   Arguments:        None.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           The trace under the saved ares is restored to the LCD.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: saved_area  - used to restore trace data.
+   		     saved_pos_x - gives starting x position of saved area.
+   		     saved_pos_y - gives starting y position of saved area.
+		     saved_end_x - gives ending x position of saved area.
+		     saved_end_y - gives ending y position of saved area.
+
+   Author:           Glen George
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  restore_trace()
+{
+    /* variables */
+    int  bit_position;	/* position of bit to restore (in saved data) */
+    int  bit_offset;    /* offset (in bytes) of bit within saved row */
+
+    int  x;		/* loop indices */
+    int  y;
+
+
+
+    /* loop, restoring the saved trace */
+    for (y = saved_pos_y; y < saved_end_y; y++)  {
+
+        /* starting a row - initialize bit position */
+	bit_position = 0x80;	/* start at high-order bit in the byte */
+	bit_offset = 0;		/* first byte of the row */
+
+        for (x = saved_pos_x; x < saved_end_x; x++)  {
+
+	    /* check if this point is on or off (need to look at bits) */
+	    if ((saved_area[y - saved_pos_y][bit_offset] & bit_position) == 0)
+	        /* saved pixel is off */
+		plot_pixel(x, y, PIXEL_BGND);
+	    else
+	        /* saved pixel is on */
+		plot_pixel(x, y, PIXEL_RED);
+
+	    /* move to the next bit position */
+	    bit_position >>= 1;
+	    /* check if moving to next byte */
+	    if (bit_position == 0)  {
+	        /* now on high bit of next byte */
+		bit_position = 0x80;
+		bit_offset++;
+	    }
+        }
+    }
+
+
+    /* restored the saved area - return */
+    return;
+
+}
+
+
+
+
+/*
+   do_trace
+
+   Description:      This function starts a trace.  It starts the hardware
+                     sampling data (via a function call) and sets the trace
+		     ready flag (trace_status) to FALSE and the sampling flag
+		     (sampling) to TRUE.
+
+   Arguments:        None.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: trace_status - set to FALSE (not ready for another trace).
+   		     sampling     - set to TRUE (doing a sample now).
+
+   Author:           Glen George
+   Last Modified:    Mar. 13, 1994
+
+*/
+
+void  do_trace()
+{
+    /* variables */
+      /* none */
+
+
+
+    /* start up the trace */
+    /* indicate whether using automatic triggering or not */
+    start_sample(get_trigger_mode() == AUTO_TRIGGER);
+
+    /* now not ready for another trace (currently doing one) */
+    trace_status = FALSE;
+
+    /* and are currently sampling data */
+    sampling = TRUE;
+
+
+    /* trace is going, return */
+    return;
+
+}
+
+
+
+
+/*
+   plot_trace
+
+   Description:      This function plots the passed traces.  The traces are
+                     assumed to contain sample_size points of sampled data.
+		     Any points falling within any of the save areas are also
+		     saved by this routine.  The data is also scaled to be
+		     within the range of the entire screen. Function assumes 24-bits of
+				 trace data per sample (8 bits for each of the two analog inputs
+				 the logic analyzer).
+
+   Arguments:        sample (unsigned char **) - sample to plot.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           The sample is plotted on the screen.
+
+   Error Handling:   None.
+
+   Algorithms:       If there are more sample points than screen width the
+   		     sample is plotted with multiple points per horizontal
+		     position.
+   Data Structures:  None.
+
+   Global Variables: cur_scale    - determines type of scale to plot.
+		     sample_size  - determines size of passed sample.
+		     saved_axis_x - stores trace under x-axis.
+		     saved_axis_y - stores trace under y-axis.
+		     saved_menu   - stores trace under the menu.
+		     saved_area   - stores trace under the saved area.
+		     saved_pos_x  - determines location of saved area.
+		     saved_pos_y  - determines location of saved area.
+		     saved_end_x  - determines location of saved area.
+		     saved_end_y  - determines location of saved area.
+
+   Author:           Glen George
+   Last Modified:    May 9, 2006
+
+*/
+
+void  plot_trace(unsigned char **sample)
+{
+    /* variables */
+    int x = 0;						/* current x position to plot */
+    int x_pos = (PLOT_SIZE_X / 2);	/* "fine" x position for multiple point plotting */
+
+    int yA;							/* y position of point to plot */
+    int yB;							/* y position of point to plot */
+
+    int p;                          /* an x or y coordinate */
+
+    int i;							/* loop indices */
+    int j;
+    int ii;
+    int jj;
+
+    unsigned char *sample_A = sample[0];
+    unsigned char *sample_B = sample[1];
+    unsigned char *sample_L = sample[2];
+
+    // Iterate through the points.
+    for (i = 0; i < sample_size; i++) {
+    	// Get the new screen coordinates.
+    	trace_A[i] = 255 - sample_A[i] + 8;
+    	trace_B[i] = 255 - sample_B[i] + 8;
+    	trace_L[i] = sample_L[i];
+
+    	// Clear the analog trace.
+    	if (i > 0) {
+			for (j = min(saved_trace_A[i-1], saved_trace_A[i]); j <= max(saved_trace_A[i-1], saved_trace_A[i]); j++) {
+				plot_pixel(i, j, PIXEL_BGND);
+			}
+			for (j = min(saved_trace_B[i-1], saved_trace_B[i]); j <= max(saved_trace_B[i-1], saved_trace_B[i]); j++) {
+				plot_pixel(i, j, PIXEL_BGND);
+			}
+    	}
+
+    	// Clear the logic analyzer trace.
+    	unsigned char cur_log = saved_trace_L[i];
+    	for (j = 0; j < 8; j++) {
+    	    if (cur_log & 1) {
+    	    	plot_pixel(i, 270 - 5 * j - 3, PIXEL_BGND);
+    	    } else {
+    	    	plot_pixel(i, 270 - 5 * j, PIXEL_BGND);
+    	    }
+    	    cur_log = cur_log >> 1;
+    	}
+
+    	//Draw the analog trace.
+    	if (i > 1) {
+    		for (j = min(trace_A[i-1], trace_A[i]); j <= max(trace_A[i-1], trace_A[i]); j++) {
+    		    plot_pixel(i, j, PIXEL_A);
+    		}
+    		for (j = min(trace_B[i-1], trace_B[i]); j <= max(trace_B[i-1], trace_B[i]); j++) {
+    			plot_pixel(i, j, PIXEL_B);
+    		}
+    	}
+
+    	// Draw the logic analyzer trace.
+    	cur_log = trace_L[i];
+    	for (j = 0; j < 8; j++) {
+    		if (cur_log & 1) {
+    			if (j % 2) plot_pixel(i, 270 - 5 * j - 3, PIXEL_L1);
+    			else plot_pixel(i, 270 - 5 * j - 3, PIXEL_L2);
+    	    } else {
+    	    	if (j % 2) plot_pixel(i, 270 - 5 * j, PIXEL_L1);
+    	    	else plot_pixel(i, 270 - 5 * j, PIXEL_L2);
+    	    }
+    		plot_pixel(i, 270 - 5 * j - 1, PIXEL_L3);
+    		plot_pixel(i, 270 - 5 * j - 2, PIXEL_L3);
+    	    cur_log = cur_log >> 1;
+    	}
+
+    }
+
+    // Update the saved trace arrays.
+    for (i = 0; i < sample_size; i++) {
+    	saved_trace_A[i] = trace_A[i];
+    	saved_trace_B[i] = trace_B[i];
+    	saved_trace_L[i] = trace_L[i];
+    }
+
+    // Output the scale if need be.
+    set_display_scale(cur_scale);
+
+    // Replace menu if need be.
+    refresh_menu();
+
+    /* done with plot, return */
+    return;
+
+}
+\end{lstlisting}
+
+\subsection{sampleint}
+\lstset{language=[niosii]Assembler}
+\begin{lstlisting}
+################################################################################
+#                                                                              #
+#                                 sampleint.S                                  #
+#                      Handles new samples and triggering                      #
+#                                   EE/CS 52                                   #
+#                                                                              #
+################################################################################
+
+
+/*
+ *  Albert Gural
+ *  EE/CS 52
+ *  TA: Dan Pipe-Mazo
+ *
+ *  File Description:	This file contains functions for handling
+ *  interrupts generated by new triggered samples, and provides
+ *  the accessor functions for the main C code to access the sampled 
+ *  data. Samples are stored in a char** buffer first indexed by which
+ *  input (A, B, logic analyzer), then indexed by the samples.
+ *
+ *  Revision History:
+ *      02/09/2012  Dan Pipe-Mazo	Initial Revision.
+ *		05/14/2014	Albert Gural	Begain writing adc code assembly.
+ *		06/02/2014  Albert Gural 	Added accessor functions for C code interface.
+ *
+ */
+
+ /*  Local Include Files   */
+#include "macros.m"
+#include "pio.m"
+#include "../osc_bsp/system.h"
+
+.section  .text         #start code section
+
+
+/*
+ *  adc_int_installer
+ *
+ *  Description: Installs the interrupt handler for trigger interrupts.
+ *
+ *  Arguments: (none)
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.global adc_int_installer
+.type	adc_int_installer, @function
+
+adc_int_installer:
+	SAVE
+
+	# Install the interrupt handler
+	mov		r4, r0
+	movi	r5, 6
+	MOVWI	r6, adc_int_handler
+	mov		r7, r0
+	PUSH	r0
+	call	alt_ic_isr_register
+	POP		r0
+
+	# Clear the edge capture register (write 1 to clear).
+	MOVWI	r8, TRIG_INT_BASE
+	MOVWI	r9, 0xFFFFFFFF
+	stw		r9, PIO_EDGE_CAP(r8)
+
+adc_int_installer_done:
+	RESTORE
+	ret
+
+
+/*
+ *  adc_int_handler
+ *
+ *  Description: Handles a trigger interrupt. When a trigger occurs, we need
+ *  to move all the data from the FIFO onto a local buffer (which can then be
+ *	used by the C code in higher level functions).
+ *
+ *  Arguments: (none)
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.global adc_int_handler
+.type adc_int_handler, @function
+
+adc_int_handler:
+	SAVE
+
+	# Clear interrupts.
+	MOVWI	r8, TRIG_INT_BASE
+	stw		r0, PIO_IRQ_MASK(r8)
+
+	# Get the edge capture register.
+	ldw		r9, PIO_EDGE_CAP(r8)
+
+	# Pause FIFO write.
+	STWI	ADC_CTRL_BASE, 0x00
+
+	# Loop variable to clear front of fifo
+	mov		r10, r0
+
+	# Set specially-designed delay offsets based on which fifo source clock is being used.
+	movia	r8, fifo_clk_src
+	ldb		r9, (r8)
+	beq		r9, r0, adc_int_handler_fast_clk_offset
+
+adc_int_handler_1M_clk_offset:
+	movi	r13, 15
+	br		adc_int_handler_clear_front
+
+adc_int_handler_fast_clk_offset:
+	movi	r13, 22
+
+adc_int_handler_clear_front:
+	# Bitbang clock pulse.
+	STWI	ADC_CTRL_BASE, 0x01
+	STWI	ADC_CTRL_BASE, 0x00
+
+	# Keep going until 480 good remaining points (for display)
+	addi	r10, r10, 1
+	bltu	r10, r13, adc_int_handler_clear_front
+
+	movia	r8, sample_buffer_A
+	mov		r10, r0
+
+adc_int_handler_loop:
+	# Bitbang clock pulse.
+	STWI	ADC_CTRL_BASE, 0x01
+	STWI	ADC_CTRL_BASE, 0x00
+
+	# Get ch. A, ch. B, and logic data.
+	MOVWI	r11, ADC_RAW_BASE
+	ldwio	r12, (r11)
+
+	# r12 for ch. A, r13 for ch. B, r14 for logic.
+	srli	r13, r12, 8
+	srli	r14, r13, 8
+	movui	r15, 128
+
+	# Convert analog channels to non-signed values.
+	add		r12, r12, r15
+	add		r13, r13, r15
+
+	# Keep only the bottom byte.
+	andi	r12, r12, 0xFF
+	andi	r13, r13, 0xFF
+	andi	r14, r14, 0xFF
+
+	# CH. A
+	# Retrieve the current buffer contents.
+	# Then update the current buffer with the new value.
+	movia	r8, sample_buffer_A
+	add		r8, r8, r10
+	stb		r12, (r8)
+
+	# CH. B
+	# Retrieve the current buffer contents.
+	# Then update the current buffer with the new value.
+	movia	r8, sample_buffer_B
+	add		r8, r8, r10
+	stb		r13, (r8)
+
+	# LOGIC ANALYZER
+	# Retrieve the current buffer contents.
+	# Then update the current buffer with the new value.
+	movia	r8, sample_buffer_L
+	add		r8, r8, r10
+	stb		r14, (r8)
+
+	addi	r10, r10, 1
+	movi	r15, 480
+	bltu	r10, r15, adc_int_handler_loop
+
+	# Sample done.
+	movia	r8, sample_complete
+	movi	r9, 1
+	stb		r9, (r8)
+
+adc_int_handler_done:
+
+	RESTORE
+	ret
+
+
+
+/*
+ *  clear_display
+ *
+ *  Description: Clears the display.
+ *
+ *  Arguments: (none)
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.global clear_display
+.type clear_display, @function
+
+clear_display:
+	SAVE
+
+	# Get display address and background color.
+	MOVWI	r8, VRAM_CTRL_BASE
+	movui	r9, 272
+	slli	r9, r9, 10
+	add		r9, r8, r9
+	movui	r15, 0x001C
+
+	# Loop over all screen pixels, clearing them.
+clear_display_loop:
+	sthio 	r15, (r8)
+	addi	r8, r8, 2
+	bltu	r8, r9, clear_display_loop
+
+clear_display_done:
+	RESTORE
+	ret
+
+
+
+/*
+ *  plot_pixel
+ *
+ *  Description: Plots a pixel of the specified color at the specified location.
+ *
+ *  Arguments:
+ *  r4 - The x coordinate (from left)
+ *  r5 - The y coordinate (from top)
+ *  r6 - The color
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.global plot_pixel
+.type plot_pixel, @function
+
+plot_pixel:
+	SAVE
+
+	push	r4
+	push	r5
+
+	# Each row takes 1024 bytes, so shift row var by 10 bits.
+	slli	r5, r5, 10
+	# Add twice to account for 16-bit VRAM storage.
+	add		r5, r5, r4
+	add		r5, r5, r4
+	# Now get the absolute address.
+	MOVWI	r4, VRAM_CTRL_BASE
+	add		r5, r5, r4
+	# Store the color.
+	sth		r6, (r5)
+
+	pop		r5
+	pop		r4
+
+plot_pixel_done:
+	RESTORE
+	ret
+
+
+/*
+ *  set_sample_rate
+ *
+ *  Description: Given the desired sample frequency, computes what compare value
+ *  value would be needed on the FIFO sample clock to get that frequency. The
+ *  computed value is sent to the control register.
+ *
+ *  Arguments:
+ *  r4 - The desired frequency (Hz)
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.global set_sample_rate
+.type set_sample_rate, @function
+
+set_sample_rate:
+	SAVE
+
+	MOVWI	r9, 100000
+	bleu	r4, r9, slow_sample_rate
+
+fast_sample_rate:
+	# Divide fastest sample rate by desired sample rate
+	# to get number of ticks to pause (not collect samples)
+	# between collecting samples.
+	MOVWI	r8, ADC_RATE_BASE
+	MOVWI	r9, 400000000
+	divu	r9, r9, r4
+	subi	r9, r9, 1
+	stw		r9, (r8)
+
+	# Set fast clock for FIFO clock counter.
+	MOVWI	r8, TRIG_CTRL_BASE
+	MOVWI	r9, 0x00000080
+	stw		r9, PIO_OUTCLR(r8)
+
+	# Update fifo source flag.
+	movia	r8, fifo_clk_src
+	stb		r0, (r8)
+
+	br		set_sample_rate_done
+
+slow_sample_rate:
+	# Divide fastest sample rate by desired sample rate
+	# to get number of ticks to pause (not collect samples)
+	# between collecting samples.
+	MOVWI	r8, ADC_RATE_BASE
+	MOVWI	r9, 1000000
+	divu	r9, r9, r4
+	subi	r9, r9, 1
+	stw		r9, (r8)
+
+	# Set 1MHz clock for FIFO clock counter.
+	MOVWI	r8, TRIG_CTRL_BASE
+	MOVWI	r9, 0x00000080
+	stw		r9, PIO_OUTSET(r8)
+
+	# Update fifo source flag.
+	movia	r8, fifo_clk_src
+	movi	r9, 1
+	stb		r9, (r8)
+
+set_sample_rate_done:
+	# Always return 480 samples.
+	movui	r2, 480
+
+	RESTORE
+	ret
+
+
+/*
+ *  set_trigger
+ *
+ *  Description: Sets the trigger level (7 bit precision) and slope.
+ *
+ *  Arguments:
+ *  r4 - Trigger level
+ *  r5 - Slope
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.global set_trigger
+.type set_trigger, @function
+
+set_trigger:
+	SAVE
+
+	# Convert [0 to 127] to signed 8-bit [-127 to 127].
+	# Then update trigger level.
+	MOVWI	r8, TRIG_LEVEL_BASE
+	slli	r9, r4, 1
+	subi	r9, r9, 127
+	andi	r9, r9, 0xFF
+	stw		r9, (r8)
+
+	# Slope is second bit of TRIG_CTRL. Modify the given
+	# argument, then update slope.
+	beq		r5, r0, set_trigger_slope_pos
+	movi	r8, 0x02
+	MOVWI	r9, TRIG_CTRL_BASE
+	stw		r8, PIO_OUTSET(r9)
+	br		set_trigger_done
+
+set_trigger_slope_pos:
+	movi	r8, 0x02
+	MOVWI	r9, TRIG_CTRL_BASE
+	stw		r8, PIO_OUTCLR(r9)
+
+set_trigger_done:
+	RESTORE
+	ret
+
+
+/*
+ *  set_delay
+ *
+ *  Description: Sets the delay (positive or negative)
+ *
+ *  Arguments:
+ *  r4 - Delay in samples
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.global set_delay
+.type set_delay, @function
+
+set_delay:
+	SAVE
+
+	# Simply set the delay (240 offset means delay 0 is in the middle).
+	addi	r9, r4, 240
+	MOVWI	r8, TRIG_DELAY_BASE
+	stw		r9, (r8)
+
+set_delay_done:
+	RESTORE
+	ret
+
+
+/*
+ *  start_sample
+ *
+ *  Description: Prepares the FPGA logic for finding the next trigger event.
+ *
+ *  Arguments:
+ *  r4 - Type of trigger (0 for normal, 1 for auto-trigger)
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.global start_sample
+.type start_sample, @function
+
+start_sample:
+	SAVE
+
+	# Clear the edge capture register (write 1 to clear).
+	MOVWI	r8, TRIG_INT_BASE
+	MOVWI	r9, 0xFFFFFFFF
+	stw		r9, PIO_EDGE_CAP(r8)
+
+	# Enable trigger interrupts.
+	MOVWI	r9, 0x00000002
+	# If auto-trigger, enable time-outs as well.
+	slli	r8, r4, 2
+	add		r9, r8, r9
+
+	MOVWI	r8, TRIG_INT_BASE
+	stw		r9, PIO_IRQ_MASK(r8)
+
+	# Clear FIFO, turn on FIFO write.
+	STWI	ADC_CTRL_BASE, 0x04
+	STWI	ADC_CTRL_BASE, 0x02
+
+	# Restart trigger counter [ch. A], [+ slope]
+	MOVWI	r8, TRIG_CTRL_BASE
+	movi	r9, 1
+	stw		r9, PIO_OUTSET(r8)
+	stw		r9, PIO_OUTCLR(r8)
+
+start_sample_done:
+	RESTORE
+	ret
+
+
+/*
+ *  sample_done
+ *
+ *  Description: Returns a pointer to the sample buffer, which is an array
+ *  of an array of samples. If the sample is not done, returns null.
+ *
+ *  Arguments: (none)
+ *
+ *  Return Value: Pointer to the buffer, or null if the sample is not finished
+ *
+ */
+
+.global sample_done
+.type sample_done, @function
+
+sample_done:
+	SAVE
+
+	# Test if sample occurred.
+	movia	r8, sample_complete
+	ldb		r9, (r8)
+	beq		r9, r0, sample_null
+
+	# If so, reset sample complete variable and return map to buffers.
+	stb		r0, (r8)
+	movia	r2, sample_map
+	br		sample_done_done
+
+sample_null:
+	# Otherwise, return null.
+	mov		r2, r0
+
+sample_done_done:
+	RESTORE
+	ret
+
+
+/*
+ * Contains the three sample buffers. In this way, sample_map is an array of an array of samples,
+ * or a char**. The first index [0..2] gives which input we want, while the second index [0..479]
+ * gives which sample we want.
+ *
+ */
+
+sample_map:
+	.word	sample_buffer_A
+	.word	sample_buffer_B
+	.word	sample_buffer_L
+
+
+.section  .data     #start data section
+
+sample_complete:	.word	0		# 0 = still trying to get sample; 1 = sample done.
+fifo_clk_src:		.word	0		# 0 = fast_clk, 1 = 1M_clk. This is useful for fine-tuning the trigger delay.
+sample_buffer_A:	.skip	480		# Buffer stores display-worth of ADC samples (ch. A).
+sample_buffer_B:	.skip	480		# Buffer stores display-worth of ADC samples (ch. B).
+sample_buffer_L:	.skip	480		# Buffer stores display-worth of ADC samples (Logic).
+\end{lstlisting}
+
+

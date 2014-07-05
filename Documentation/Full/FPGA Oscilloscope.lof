@@ -1,14 +1,82 @@
 \select@language {USenglish}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces FPGA Oscilloscope}}{4}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Hardware buttons}}{6}{figure.1.2}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Full block diagram}}{8}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Display block diagram}}{9}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces FPGA and supporing components schematic diagram}}{10}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Analog section schematic diagram}}{11}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Analog frontend step response (input top; output bottom). The left is an underdamped response [C56] $= 0pF$, the middle is well-damped [C56] $= 2pF$, and the right is overdamped [C56] $= 5pF$.}}{12}{figure.2.5}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Analog input raw Bode plot}}{13}{figure.2.6}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Analog input Bode plot with annotations}}{13}{figure.2.7}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces ADC timing}}{14}{figure.2.8}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Memory schematic diagram}}{14}{figure.2.9}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces SRAM read timing}}{15}{figure.2.10}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces SRAM write timing}}{15}{figure.2.11}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Flash read timing}}{16}{figure.2.12}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces VRAM read timing}}{16}{figure.2.13}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces VRAM early write timing}}{17}{figure.2.14}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces VRAM refresh timing}}{17}{figure.2.15}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces VRAM serial row transfer timing}}{17}{figure.2.16}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Display timing}}{18}{figure.2.17}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Display timing values}}{18}{figure.2.18}
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Switches schematic diagram}}{19}{figure.2.19}
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Rotary encoder timing}}{19}{figure.2.20}
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Board layout (raw)}}{20}{figure.2.21}
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Board layout with annotations}}{21}{figure.2.22}
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Board layout with top part overlay}}{22}{figure.2.23}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces FPGA main components}}{23}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces FPGA main clocks}}{24}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces FPGA sample clock}}{24}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces FPGA overview of scope sample handling}}{25}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces FPGA sample input}}{25}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces FPGA sample FIFO}}{26}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces FPGA triggering}}{26}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces FPGA triggering state machine}}{27}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces FPGA overview of VRAM controller and display controller}}{28}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces FPGA VRAM addressing}}{28}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces FPGA VRAM controller state machine}}{29}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces FPGA display counter timers}}{30}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Display timing test, problematic start}}{30}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Display timing test, semi-successful start}}{31}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Display timing test, successful horizontal pulse}}{31}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Display timing test, successful horizontal cycle}}{31}{figure.3.16}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Display timing test, successful vertical pulse}}{31}{figure.3.17}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Display timing test, successful vertical cycle}}{31}{figure.3.18}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Display timing test, all tests successful}}{31}{figure.3.19}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces FPGA overview of key and rotary encoder input}}{32}{figure.3.20}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces FPGA momentary pushbutton input debouncing}}{33}{figure.3.21}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces FPGA latching pushbutton input debouncing}}{33}{figure.3.22}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Rotary encoder timing}}{34}{figure.3.23}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces FPGA rotary encoder decoding}}{34}{figure.3.24}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces FPGA NIOS II processor block}}{35}{figure.3.25}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces NIOS II soft core processor}}{35}{figure.3.26}
+\contentsline {figure}{\numberline {3.27}{\ignorespaces NIOS II core peripherals}}{36}{figure.3.27}
+\contentsline {figure}{\numberline {3.28}{\ignorespaces NIOS II core settings}}{37}{figure.3.28}
+\contentsline {figure}{\numberline {3.29}{\ignorespaces NIOS II address memory map}}{37}{figure.3.29}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Software main components}}{38}{figure.4.1}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Full block diagram}}{44}{figure.a.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Display block diagram}}{45}{figure.a.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces FPGA main components}}{45}{figure.a.A.3}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces FPGA and supporing components schematic diagram}}{47}{figure.a.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Analog section schematic diagram}}{48}{figure.a.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Memory schematic diagram}}{49}{figure.a.B.3}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Switches schematic diagram}}{50}{figure.a.B.4}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Board layout (raw)}}{52}{figure.a.C.1}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {D.1}{\ignorespaces FPGA main clocks}}{53}{figure.a.D.1}
+\contentsline {figure}{\numberline {D.2}{\ignorespaces FPGA NIOS II processor block}}{54}{figure.a.D.2}
+\contentsline {figure}{\numberline {D.3}{\ignorespaces FPGA overview of scope sample handling}}{54}{figure.a.D.3}
+\contentsline {figure}{\numberline {D.4}{\ignorespaces FPGA overview of VRAM controller and display controller}}{55}{figure.a.D.4}
+\contentsline {figure}{\numberline {D.5}{\ignorespaces FPGA overview of key and rotary encoder input}}{56}{figure.a.D.5}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {E.1}{\ignorespaces NIOS II address memory map}}{57}{figure.a.E.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

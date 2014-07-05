@@ -12,48 +12,27 @@
  *  EE/CS 52
  *  TA: Dan Pipe-Mazo
  *
- *  File Description:	TODO
- *
- *  Table of Contents:	TODO
+ *  File Description:	Provides macros for convenience.
  *
  *  Revision History:
  *		05/14/2014	Albert Gural	Wrote initial macros (PUSH, POP, SAVE, RESTORE).
+ *      06/02/2014  Albert Gural 	Updated with more macros (STWI, MOVWI).
  *
  */
 
 
 /*
- *  MOVWI
+ *  STWI
  *
- *  Description:
- *
- *  Operation:
+ *  Description: Acts like sthio, but for word-size values. Also, can be
+ *  directly supplied with the address and immediage value (no need for
+ *  the value to be passed in a register).
  *
  *  Arguments:
+ *  addr - immediate that gives the address of the memory to write to
+ *  val  - immediate that gives the value to write to that memory
  *
- *  Return Value:
- *
- *  Local Variables:
- *
- *  Shared Variables:
- *
- *  Global Variables:
- *
- *  Input:
- *
- *  Output:
- *
- *  Error Handling:
- *
- *  Limitations:
- *
- *  Algorithms:
- *  Data Structures:
- *
- *  Registers Changed:
- *
- *  Revision History:
- *      05/18/2014	Albert Gural	Initial revision.
+ *  Return Value: (none)
  *
  */
 
@@ -73,35 +52,13 @@
 /*
  *  MOVWI
  *
- *  Description:
- *
- *  Operation:
+ *  Description: Acts like movhi, but for word-size values.
  *
  *  Arguments:
+ *  reg - register to write value to
+ *  val - value to update register with
  *
- *  Return Value:
- *
- *  Local Variables:
- *
- *  Shared Variables:
- *
- *  Global Variables:
- *
- *  Input:
- *
- *  Output:
- *
- *  Error Handling:
- *
- *  Limitations:
- *
- *  Algorithms:
- *  Data Structures:
- *
- *  Registers Changed:
- *
- *  Revision History:
- *      05/18/2014	Albert Gural	Initial revision.
+ *  Return Value: (none)
  *
  */
 
@@ -114,35 +71,12 @@
 /*
  *  PUSH
  *
- *  Description:
- *
- *  Operation:
+ *  Description: Pushes the supplied register on to the stack.
  *
  *  Arguments:
+ *  reg - The register
  *
- *  Return Value:
- *
- *  Local Variables:
- *
- *  Shared Variables:
- *
- *  Global Variables:
- *
- *  Input:
- *
- *  Output:
- *
- *  Error Handling:
- *
- *  Limitations:
- *
- *  Algorithms:
- *  Data Structures:
- *
- *  Registers Changed:
- *
- *  Revision History:
- *      05/18/2014	Albert Gural	Initial revision.
+ *  Return Value: (none)
  *
  */
 
@@ -155,35 +89,12 @@
 /*
  *  POP
  *
- *  Description:
- *
- *  Operation:
+ *  Description: Pops from the stack to the supplied register
  *
  *  Arguments:
+ *  reg - The register
  *
- *  Return Value:
- *
- *  Local Variables:
- *
- *  Shared Variables:
- *
- *  Global Variables:
- *
- *  Input:
- *
- *  Output:
- *
- *  Error Handling:
- *
- *  Limitations:
- *
- *  Algorithms:
- *  Data Structures:
- *
- *  Registers Changed:
- *
- *  Revision History:
- *      05/18/2014	Albert Gural	Initial revision.
+ *  Return Value: (none)
  *
  */
 
@@ -196,35 +107,12 @@
 /*
  *  SAVE
  *
- *  Description:
+ *  Description: Sets up the stack frame correctly so that a function can use
+ *  the stack, then restore it to the same it was before the function was called.
  *
- *  Operation:
+ *  Arguments: (none)
  *
- *  Arguments:
- *
- *  Return Value:
- *
- *  Local Variables:
- *
- *  Shared Variables:
- *
- *  Global Variables:
- *
- *  Input:
- *
- *  Output:
- *
- *  Error Handling:
- *
- *  Limitations:
- *
- *  Algorithms:
- *  Data Structures:
- *
- *  Registers Changed:
- *
- *  Revision History:
- *      05/18/2014	Albert Gural	Initial revision.
+ *  Return Value: (none)
  *
  */
 
@@ -238,35 +126,14 @@
 /*
  *  RESTORE
  *
- *  Description:
+ *  Description: Restores the stack frame to the state it was in before the
+ *  matching SAVE was called. This requires that the stack pointer not be
+ *  tampered with in any non-trivial way (that is, in a way besides standard
+ *  push/pop). Also requires that pushes and pops are always balanced correctly.
  *
- *  Operation:
+ *  Arguments: (none)
  *
- *  Arguments:
- *
- *  Return Value:
- *
- *  Local Variables:
- *
- *  Shared Variables:
- *
- *  Global Variables:
- *
- *  Input:
- *
- *  Output:
- *
- *  Error Handling:
- *
- *  Limitations:
- *
- *  Algorithms:
- *  Data Structures:
- *
- *  Registers Changed:
- *
- *  Revision History:
- *      05/18/2014	Albert Gural	Initial revision.
+ *  Return Value: (none)
  *
  */
 

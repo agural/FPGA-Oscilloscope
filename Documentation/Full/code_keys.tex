@@ -1,0 +1,700 @@
+\subsection{keyproc}
+\begin{lstlisting}[language=C]
+/****************************************************************************/
+/*                                                                          */
+/*                                KEYPROC.H                                 */
+/*                         Key Processing Functions                         */
+/*                               Include File                               */
+/*                       Digital Oscilloscope Project                       */
+/*                                 EE/CS 52                                 */
+/*                                                                          */
+/****************************************************************************/
+
+/*
+   This file contains the constants and function prototypes for the key
+   processing functions (defined in keyproc.c) for the Digital Oscilloscope
+   project.
+
+
+   Revision History:
+      3/8/94   Glen George       Initial revision.
+      3/13/94  Glen George       Updated comments.
+*/
+
+
+
+#ifndef  __KEYPROC_H__
+    #define  __KEYPROC_H__
+
+
+/* library include files */
+  /* none */
+
+/* local include files */
+#include  "scopedef.h"
+
+
+
+
+/* constants */
+    /* none */
+
+
+
+
+/* structures, unions, and typedefs */
+    /* none */
+
+
+
+
+/* function declarations */
+
+enum status  no_action(enum status);      /* nothing to do */
+
+enum status  menu_key(enum status);	  /* process the <Menu> key */
+
+enum status  menu_up(enum status);	  /* <Up> key in a menu */
+enum status  menu_down(enum status);	  /* <Down> key in a menu */
+enum status  menu_left(enum status);	  /* <Left> key in a menu */
+enum status  menu_right(enum status);	  /* <Right> key in a menu */
+
+
+#endif
+\end{lstlisting}
+
+\begin{lstlisting}[language=C]
+/****************************************************************************/
+/*                                                                          */
+/*                                 KEYPROC                                  */
+/*                         Key Processing Functions                         */
+/*                       Digital Oscilloscope Project                       */
+/*                                 EE/CS 52                                 */
+/*                                                                          */
+/****************************************************************************/
+
+/*
+   This file contains the key processing functions for the Digital
+   Oscilloscope project.  These functions are called by the main loop of the
+   system.  The functions included are:
+      menu_down  - process the <Down> key while in a menu
+      menu_key   - process the <Menu> key
+      menu_left  - process the <Left> key while in a menu
+      menu_right - process the <Right> key while in a menu
+      menu_up    - process the <Up> key while in a menu
+      no_action  - nothing to do
+
+   The local functions included are:
+      none
+
+   The locally global variable definitions included are:
+      none
+
+
+   Revision History
+      3/8/94   Glen George       Initial revision.
+      3/13/94  Glen George       Updated comments.
+*/
+
+
+
+/* library include files */
+  /* none */
+
+/* local include files */
+#include  "scopedef.h"
+#include  "keyproc.h"
+#include  "menu.h"
+
+
+
+
+/*
+   no_action
+
+   Description:      This function handles a key when there is nothing to be
+                     done.  It just returns.
+
+   Arguments:        cur_state (enum status) - the current system state.
+   Return Value:     (enum status) - the new system state (same as current
+   		     state).
+
+   Input:            None.
+   Output:           None.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: None.
+
+   Author:           Glen George
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  no_action(enum status cur_state)
+{
+    /* variables */
+      /* none */
+
+
+
+    /* return the current state */
+    return  cur_state;
+
+}
+
+
+
+
+/*
+   menu_key
+
+   Description:      This function handles the <Menu> key.  If the passed
+                     state is MENU_ON, the menu is turned off.  If the passed
+		     state is MENU_OFF, the menu is turned on.  The returned
+		     state is the "opposite" of the passed state.
+
+   Arguments:        cur_state (enum status) - the current system state.
+   Return Value:     (enum status) - the new system state ("opposite" of the
+   		     as current state).
+
+   Input:            None.
+   Output:           The menu is either turned on or off.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: None.
+
+   Author:           Glen George
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  menu_key(enum status cur_state)
+{
+    /* variables */
+      /* none */
+
+
+
+    /* check if need to turn the menu on or off */
+    if (cur_state == MENU_ON)
+        /* currently the menu is on, turn it off */
+	clear_menu();
+    else
+        /* currently the menu is off, turn it on */
+	display_menu();
+
+
+    /* all done, return the "opposite" of the current state */
+    if (cur_state == MENU_ON)
+        /* state was MENU_ON, change it to MENU_OFF */
+        return  MENU_OFF;
+    else
+        /* state was MENU_OFF, change it to MENU_ON */
+        return  MENU_ON;
+
+}
+
+
+
+
+/*
+   menu_up
+
+   Description:      This function handles the <Up> key when in a menu.  It
+                     goes to the previous menu entry and leaves the system
+		     state unchanged.
+
+   Arguments:        cur_state (enum status) - the current system state.
+   Return Value:     (enum status) - the new system state (same as current
+   		     state).
+
+   Input:            None.
+   Output:           The menu display is updated.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: None.
+
+   Author:           Glen George
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  menu_up(enum status cur_state)
+{
+    /* variables */
+      /* none */
+
+
+
+    /* go to the previous menu entry */
+    previous_entry();
+
+
+    /* return the current state */
+    return  cur_state;
+
+}
+
+
+
+
+/*
+   menu_down
+
+   Description:      This function handles the <Down> key when in a menu.  It
+                     goes to the next menu entry and leaves the system state
+		     unchanged.
+
+   Arguments:        cur_state (enum status) - the current system state.
+   Return Value:     (enum status) - the new system state (same as current
+   		     state).
+
+   Input:            None.
+   Output:           The menu display is updated.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: None.
+
+   Author:           Glen George
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  menu_down(enum status cur_state)
+{
+    /* variables */
+      /* none */
+
+
+
+    /* go to the next menu entry */
+    next_entry();
+
+
+    /* return the current state */
+    return  cur_state;
+
+}
+
+
+
+
+/*
+   menu_left
+
+   Description:      This function handles the <Left> key when in a menu.  It
+                     invokes the left function for the current menu entry and
+		     leaves the system state unchanged.
+
+   Arguments:        cur_state (enum status) - the current system state.
+   Return Value:     (enum status) - the new system state (same as current
+   		     state).
+
+   Input:            None.
+   Output:           The menu display may be updated.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: None.
+
+   Author:           Glen George
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  menu_left(enum status cur_state)
+{
+    /* variables */
+      /* none */
+
+
+
+    /* invoke the <Left> key function for the current menu entry */
+    menu_entry_left();
+
+
+    /* return the current state */
+    return  cur_state;
+
+}
+
+
+
+
+/*
+   menu_right
+
+   Description:      This function handles the <Right> key when in a menu.  It
+                     invokes the right function for the current menu entry and
+		     leaves the system state unchanged.
+
+   Arguments:        cur_state (enum status) - the current system state.
+   Return Value:     (enum status) - the new system state (same as current
+   		     state).
+
+   Input:            None.
+   Output:           The menu display may be updated.
+
+   Error Handling:   None.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: None.
+
+   Author:           Glen George
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+enum status  menu_right(enum status cur_state)
+{
+    /* variables */
+      /* none */
+
+
+
+    /* invoke the <Right> key function for the current menu entry */
+    menu_entry_right();
+
+
+    /* return the current state */
+    return  cur_state;
+
+}
+\end{lstlisting}
+
+\subsection{keyint}
+\lstset{language=[niosii]Assembler}
+\begin{lstlisting}
+################################################################################
+#                                                                              #
+#                             Key Interrupt Handler                            #
+#                 	 Rotary Encoder and Menu Button Routines                   #
+#                                   EE/CS 52                                   #
+#                                                                              #
+################################################################################
+
+
+/*
+ *  Albert Gural
+ *  EE/CS 52
+ *  TA: Dan Pipe-Mazo
+ *
+ *  File Description:	TODO
+ *
+ *  Table of Contents:	TODO
+ *
+ *  Revision History:
+ *      02/09/2012  Dan Pipe-Mazo	Initial Revision.
+ *		05/14/2014	Albert Gural	Begain writing assembly functions to handle
+ *									keypress interrupts.
+ *
+ */
+
+ /*  Local Include Files   */
+#include "macros.m"
+#include "pio.m"
+#include "interfac.h"
+#include "../osc_bsp/system.h"
+
+
+.section  .text         #start code section
+
+
+/*
+ *  key_int_installer
+ *
+ *  Description: Installs a callback function for the key interrupts.
+ *
+ *  Arguments: (none)
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.global key_int_installer
+.type	key_int_installer, @function
+
+key_int_installer:
+	SAVE
+
+	# Enable all switch interrupts.
+	movhi	r8, %hi(KEY_INPUT_BASE)
+	ori		r8, r8, %lo(KEY_INPUT_BASE)
+	movhi	r9, %hi(SWITCH_ALL)
+	ori		r9, r9, %lo(SWITCH_ALL)
+	stw		r9, PIO_IRQ_MASK(r8)
+
+	# Install the interrupt handler
+	mov		r4, r0
+	movi	r5, KEY_INPUT_IRQ
+	movhi	r6, %hi(key_handler)
+	ori		r6, r6, %lo(key_handler)
+	mov		r7, r0
+	PUSH	r0
+	call	alt_ic_isr_register
+	POP		r0
+
+key_int_installer_done:
+	RESTORE
+	ret
+
+
+/*
+ *  key_handler
+ *
+ *  Description: Callback function for what should happen when a key interrupt occurs.
+ *  For menu keys, the key is saved until automatically requested by the main
+ *  loop code. For the hardware-mimic keys, the desired key action is taken immediately.
+ *
+ *  Arguments: (none)
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.type key_handler,@function
+
+key_handler:
+	SAVE
+
+	# Key should now be available. Update key_press.
+	movi	r8, 1
+	movia	r9, key_press
+	stb		r8, (r9)
+
+	# Clear interrupts.
+	movhi	r8, %hi(KEY_INPUT_BASE)
+	ori		r8, r8, %lo(KEY_INPUT_BASE)
+	stw		r0, PIO_IRQ_MASK(r8)
+
+	# Get the edge capture register.
+	movhi	r8, %hi(KEY_INPUT_BASE)
+	ori		r8, r8, %lo(KEY_INPUT_BASE)
+	ldw		r8, PIO_EDGE_CAP(r8)
+
+	# Check each bit (starting at 0) and see if set.
+	movi	r9, 1
+	movi	r11, 0
+
+loop_keys:
+	and		r10, r8, r9
+	bne		r10, r0, key_lookup
+	slli	r9, r9, 1
+	addi	r11, r11, 1
+	br		loop_keys
+
+	# Once the key is found (r11), use the lookup table to set key_value.
+key_lookup:
+	movia	r8, key_map
+	add		r8, r8, r11
+	ldb		r8,	(r8)
+
+	movia	r10, key_value
+	stb		r8, (r10)
+
+	# Do a lookup.
+	movia	r4, set_trigger_normal
+	movi	r12, 5
+	beq		r11, r12, call_action
+	movia	r4, set_trigger_single
+	movi	r12, 6
+	beq		r11, r12, call_action
+
+	movia	r4, trg_slope_toggle
+	movi	r12, 7
+	beq		r11, r12, call_action
+	movia	r4, trg_slope_toggle
+	movi	r12, 8
+	beq		r11, r12, call_action
+
+	movia	r4, sweep_down
+	movi	r12, 10
+	beq		r11, r12, call_action
+	movia	r4, sweep_up
+	movi	r12, 11
+	beq		r11, r12, call_action
+
+	movia	r4, trg_level_up
+	movi	r12, 16
+	beq		r11, r12, call_action
+	movia	r4, trg_level_down
+	movi	r12, 17
+	beq		r11, r12, call_action
+
+	movia	r4, trg_delay_up
+	movi	r12, 18
+	beq		r11, r12, call_action
+	movia	r4, trg_delay_down
+	movi	r12, 19
+	beq		r11, r12, call_action
+
+key_lookup_cont:
+	# Clear the edge capture register (write 1 to clear).
+	movhi	r8, %hi(KEY_INPUT_BASE)
+	ori		r8, r8, %lo(KEY_INPUT_BASE)
+	movhi	r9, %hi(SWITCH_ALL)
+	ori		r9, r9, %lo(SWITCH_ALL)
+	stw		r9, PIO_EDGE_CAP(r8)
+
+	# Re-enable interrupts.
+	movhi	r8, %hi(KEY_INPUT_BASE)
+	ori		r8, r8, %lo(KEY_INPUT_BASE)
+	movhi	r9, %hi(SWITCH_ALL)
+	ori		r9, r9, %lo(SWITCH_ALL)
+	stw		r9, PIO_IRQ_MASK(r8)
+
+key_handler_done:
+	RESTORE
+	ret
+
+/* For certain keys, no menu action is desired. In these cases, the action
+ * should be directly performed; not stored for later. This function calls a
+ * particular action, saving and restoring the necessary registers. */
+call_action:
+	PUSH	r8
+	PUSH	r9
+	PUSH	r10
+	PUSH	r11
+	PUSH	r12
+	PUSH	r13
+	PUSH	r14
+	PUSH	r15
+
+	callr	r4
+
+	POP		r15
+	POP		r14
+	POP		r13
+	POP		r12
+	POP		r11
+	POP		r10
+	POP		r9
+	POP		r8
+	br		key_lookup_cont
+
+
+/*
+ *  key_available
+ *
+ *  Description: Returns whether a key is available.
+ *
+ *  Arguments: (none)
+ *
+ *  Return Value:
+ *  0 - no key available
+ *  1 - key available
+ *
+ */
+
+.global key_available
+.type	key_available, @function
+
+key_available:
+	SAVE
+
+	# Simply return the value in key_press.
+	movia	r2, key_press
+	ldb		r2, (r2)
+
+key_available_done:
+	RESTORE
+	ret
+
+
+/*
+ *  get_key
+ *
+ *  Description: Waits until a key is available, then returns that key code.
+ *
+ *  Arguments: (none)
+ *
+ *  Return Value: key code value
+ *
+ */
+
+.global	getkey
+.type	getkey, @function
+
+getkey:
+	SAVE
+
+	# Block until legal key arrives (which is also when key_press = TRUE).
+	movia	r8, key_value
+	ldb		r8, (r8)
+	movi	r9, KEY_ILLEGAL
+	beq		r8, r9, getkey
+
+	# Get return value.
+	movia	r2, key_value
+	ldb		r2, (r2)
+
+	# Update key_value with KEY_ILLEGAL.
+	movia	r10, key_value
+	stb		r9, (r10)
+
+	# Update key_press with FALSE.
+	movia	r10, key_press
+	stb		r0, (r10)
+
+getkey_done:
+	RESTORE
+	ret
+
+
+/*
+ *  key_map
+ *
+ *  Description: Lookup table for the key I/O bit to a key code value.
+ *
+ */
+
+key_map:
+			.byte	KEY_MENU
+			.byte	KEY_UP
+			.byte	KEY_DOWN
+			.byte	KEY_LEFT
+			.byte	KEY_RIGHT
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_MENU
+			.byte	KEY_ILLEGAL
+
+
+.section  .data     #start data section
+
+key_press:	.byte	0		# Gives whether a key has been pressed.
+key_value:	.byte	0		# Gives the value of the pressed key.
+\end{lstlisting}

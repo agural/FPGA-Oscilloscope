@@ -1,0 +1,399 @@
+\subsection{macros}
+\lstset{language=[niosii]Assembler}
+\begin{lstlisting}
+################################################################################
+#                                                                              #
+#                               Convenient Macros                              #
+#                  Convenient assembly macros for general use                  #
+#                                   EE/CS 52                                   #
+#                                                                              #
+################################################################################
+
+
+/*
+ *  Albert Gural
+ *  EE/CS 52
+ *  TA: Dan Pipe-Mazo
+ *
+ *  File Description:	Provides macros for convenience.
+ *
+ *  Revision History:
+ *		05/14/2014	Albert Gural	Wrote initial macros (PUSH, POP, SAVE, RESTORE).
+ *      06/02/2014  Albert Gural 	Updated with more macros (STWI, MOVWI).
+ *
+ */
+
+
+/*
+ *  STWI
+ *
+ *  Description: Acts like sthio, but for word-size values. Also, can be
+ *  directly supplied with the address and immediage value (no need for
+ *  the value to be passed in a register).
+ *
+ *  Arguments:
+ *  addr - immediate that gives the address of the memory to write to
+ *  val  - immediate that gives the value to write to that memory
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.macro STWI	addr, val
+	PUSH	r9
+	PUSH	r10
+	
+	MOVWI	r9, \addr
+	MOVWI	r10, \val
+	stwio	r10, (r9)
+	
+	POP		r10
+	POP		r9
+.endm
+
+
+/*
+ *  MOVWI
+ *
+ *  Description: Acts like movhi, but for word-size values.
+ *
+ *  Arguments:
+ *  reg - register to write value to
+ *  val - value to update register with
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.macro MOVWI reg, val
+	movhi	\reg, %hi(\val)
+	ori		\reg, \reg, %lo(\val)
+.endm
+
+
+/*
+ *  PUSH
+ *
+ *  Description: Pushes the supplied register on to the stack.
+ *
+ *  Arguments:
+ *  reg - The register
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.macro PUSH reg
+	subi sp, sp, 4
+	stw \reg, 0(sp)
+.endm
+
+
+/*
+ *  POP
+ *
+ *  Description: Pops from the stack to the supplied register
+ *
+ *  Arguments:
+ *  reg - The register
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.macro POP reg
+	ldw \reg, 0(sp)
+	addi sp, sp, 4
+.endm
+
+
+/*
+ *  SAVE
+ *
+ *  Description: Sets up the stack frame correctly so that a function can use
+ *  the stack, then restore it to the same it was before the function was called.
+ *
+ *  Arguments: (none)
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.macro SAVE
+	PUSH	r31
+	PUSH	fp
+	mov		fp, sp
+.endm
+
+
+/*
+ *  RESTORE
+ *
+ *  Description: Restores the stack frame to the state it was in before the
+ *  matching SAVE was called. This requires that the stack pointer not be
+ *  tampered with in any non-trivial way (that is, in a way besides standard
+ *  push/pop). Also requires that pushes and pops are always balanced correctly.
+ *
+ *  Arguments: (none)
+ *
+ *  Return Value: (none)
+ *
+ */
+
+.macro RESTORE
+	mov		sp, fp
+	POP		fp
+	POP		r31
+.endm
+\end{lstlisting}
+
+\subsection{pio}
+\begin{lstlisting}
+################################################################################
+#                                                                              #
+#                                  pio.m                                       #
+#                            PIO Include File                                  #
+#                                EE/CS 52                                      #
+#                                                                              #
+################################################################################
+
+/*
+* Albert Gural
+* EE/CS 52
+* TA: Dan Pipe-Mazo
+*
+* File Description: 
+*
+* Revision History:
+* 		02/10/2011 		Dan Pipe-Mazo	Initial Revision.
+*		05/16/2014		Albert Gural	Modified descriptors.
+*
+*/
+
+.equ	PIO_IRQ_MASK, 8
+.equ	PIO_EDGE_CAP, 12
+.equ	PIO_OUTSET, 16
+.equ	PIO_OUTCLR, 20
+\end{lstlisting}
+
+\subsection{scopedef}
+\begin{lstlisting}[language=C]
+/****************************************************************************/
+/*                                                                          */
+/*                                SCOPEDEF.H                                */
+/*                           General Definitions                            */
+/*                               Include File                               */
+/*                       Digital Oscilloscope Project                       */
+/*                                 EE/CS 52                                 */
+/*                                                                          */
+/****************************************************************************/
+
+/*
+   This file contains the general definitions for the Digital Oscilloscope
+   project.  This includes constant and structure definitions along with the
+   function declarations for the assembly language functions.
+
+
+   Revision History:
+      3/8/94   Glen George       Initial revision.
+      3/13/94  Glen George       Updated comments.
+      3/17/97  Glen George       Removed KEYCODE_UNUSED (no longer used).
+      5/3/06   Glen George       Added conditional definitions for handling
+                                 different architectures.
+      5/9/06   Glen George       Updated declaration of start_sample() to
+                                 match the new specification.
+      5/27/08  Glen George       Added check for __nios__ definition to also
+                                 indicate the compilation is for an Altera
+			         NIOS CPU.
+*/
+
+
+
+#ifndef  __SCOPEDEF_H__
+    #define  __SCOPEDEF_H__
+
+
+/* library include files */
+  /* none */
+
+/* local include files */
+#include  "interfac.h"
+#include  "lcdout.h"
+
+
+
+
+/* constants */
+
+/* general constants */
+#define  FALSE       0
+#define  TRUE        !FALSE
+#define  NULL        (void *) 0
+
+/* display size (in characters) */
+#define  LCD_WIDTH   (SIZE_X / HORIZ_SIZE)
+#define  LCD_HEIGHT  (SIZE_Y / VERT_SIZE)
+
+
+
+
+/* macros */
+
+/* let __nios__ also mean a NIOS compilation */
+#ifdef  __nios__
+  #define  NIOS			/* use the standard NIOS defintion */
+#endif
+
+/* add the definitions necessary for the Altera NIOS chip */
+#ifdef  NIOS
+  #define  FLAT_MEMORY		/* use the flat memory model */
+#endif
+
+
+/* if a flat memory model don't need far pointers */
+#ifdef  FLAT_MEMORY
+  #define  far
+#endif
+
+
+
+
+/* structures, unions, and typedefs */
+
+/* program states */
+enum status  {  MENU_ON,	/* menu is displayed with the cursor in it */
+		MENU_OFF,	/* menu is not displayed - no cursor */
+		NUM_STATES	/* number of states */
+	     };
+
+/* key codes */
+enum keycode  {  KEYCODE_MENU,      /* <Menu>     */
+	         KEYCODE_UP,        /* <Up>       */
+	         KEYCODE_DOWN,      /* <Down>     */
+	         KEYCODE_LEFT,      /* <Left>     */
+	         KEYCODE_RIGHT,     /* <Right>    */
+	         KEYCODE_ILLEGAL,   /* other keys */
+		 NUM_KEYCODES       /* number of key codes */
+              }; 
+
+
+
+
+/* function declarations */
+
+/* keypad functions */
+unsigned char key_available(void);					// key is available
+int getkey(void);  									// get a key
+
+/* display functions  */
+void clear_display(void);			      			// clear the display
+void plot_pixel(unsigned int, unsigned int, int);   // output a pixel
+
+/* sampling parameter functions */
+int set_sample_rate(long int);						// set the sample rate
+void set_trigger(int, int);							// set trigger level and slope
+void set_delay(long int);							// set the trigger delay time
+
+/* sampling functions */
+void start_sample(int);								// capture a sample
+unsigned char **sample_done(void);					// sample captured status
+
+
+#endif
+\end{lstlisting}
+
+\subsection{interfac}
+\begin{lstlisting}[language=C]
+/****************************************************************************/
+/*                                                                          */
+/*                                INTERFAC.H                                */
+/*                           Interface Definitions                          */
+/*                               Include File                               */
+/*                       Digital Oscilloscope Project                       */
+/*                                 EE/CS 52                                 */
+/*                                                                          */
+/****************************************************************************/
+
+/*
+   This file contains the constants for interfacing between the C code and
+   the assembly code/hardware for the Digital Oscilloscope project.  This is
+   a sample interface file to allow compilation of the .c files.
+
+
+   Revision History:
+      3/8/94   Glen George       Initial revision.
+      3/13/94  Glen George       Updated comments.
+      3/17/97  Glen George       Added constant MAX_SAMPLE_SIZE and removed
+	                         KEY_UNUSED.
+*/
+
+
+
+#ifndef  __INTERFAC_H__
+    #define  __INTERFAC_H__
+
+
+/* library include files */
+  /* none */
+
+/* local include files */
+  /* none */
+
+
+
+
+/* constants */
+
+/* keypad constants */
+#define  KEY_MENU       0	/* <Menu>      */
+#define  KEY_UP         1	/* <Up>        */
+#define  KEY_DOWN       2	/* <Down>      */
+#define  KEY_LEFT       3	/* <Left>      */
+#define  KEY_RIGHT      4	/* <Right>     */
+#define  KEY_ILLEGAL    6	/* illegal key */
+
+/* display constants */
+#define  SIZE_X         480		/* size in the x dimension */
+#define  SIZE_Y			272     /* size in the y dimension */
+#define  PIXEL_BLACK    0x0000
+#define  PIXEL_WHITE    0xFF7F
+#define  PIXEL_GRAY     0x1042
+#define  PIXEL_RED		0x1F00
+#define  PIXEL_ORANGE	0x7F01
+#define  PIXEL_YELLOW	0xFF03
+#define	 PIXEL_GREEN	0xE003
+#define	 PIXEL_DGREEN	0xE001
+#define	 PIXEL_CYAN		0x007F
+#define  PIXEL_BLUE		0x007C
+#define	 PIXEL_PURPLE	0x147C
+#define	 PIXEL_VIOLET	0x1F7C
+
+#define	 PIXEL_BGND		0x001C
+#define	 PIXEL_A		0xFF7F
+#define	 PIXEL_B		0x007F
+#define	 PIXEL_L1		0x1F7C
+#define	 PIXEL_L2		0x147C
+#define	 PIXEL_L3		0x007C
+
+/* scope parameters */
+#define  MIN_DELAY	   -240		/* minimum trigger delay */
+#define  MAX_DELAY     50000	/* maximum trigger delay */
+#define  MIN_LEVEL     0		/* minimum trigger level (in mV) */
+#define  MAX_LEVEL     5000		/* maximum trigger level (in mV) */
+
+/* sampling parameters */
+#define  MAX_SAMPLE_SIZE   2400 /* maximum size of a sample (in samples) */
+
+/* useful macros */
+#define max(a,b) \
+   ({ __typeof__ (a) _a = (a); \
+       __typeof__ (b) _b = (b); \
+     _a > _b ? _a : _b; })
+#define min(a,b) \
+   ({ __typeof__ (a) _a = (a); \
+       __typeof__ (b) _b = (b); \
+     _a < _b ? _a : _b; })
+
+#endif
+\end{lstlisting}
+

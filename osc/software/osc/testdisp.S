@@ -12,9 +12,7 @@
  *  EE/CS 52
  *  TA: Dan Pipe-Mazo
  *
- *  File Description:	TODO
- *
- *  Table of Contents:	TODO
+ *  File Description:	Tests the display with a simple 4-square pattern and border
  *
  *  Revision History:
  *      02/09/2012  Dan Pipe-Mazo	Initial Revision.
@@ -25,42 +23,19 @@
  /*  Local Include Files   */
 #include "../osc_bsp/system.h"
 
-#.equ	VRAM_OFFSET, 0x00080000
-
 .section  .text         #start code section
 
 /*
- *  key_handler
+ *  test_disp
  *
- *  Description:
+ *  Description: Draws four rectangles in a 2x2 configuration, then draws a border.
+ *  This tests for correct color being displayed, as well as no display timing issues.
  *
- *  Operation:
+ *  This is a quick and dirty implementation, not meant to be well-commented.
  *
- *  Arguments:
+ *  Arguments: (none)
  *
- *  Return Value:
- *
- *  Local Variables:
- *
- *  Shared Variables:
- *
- *  Global Variables:
- *
- *  Input:
- *
- *  Output:
- *
- *  Error Handling:
- *
- *  Limitations:
- *
- *  Algorithms:
- *  Data Structures:
- *
- *  Registers Changed:
- *
- *  Revision History:
- *      02/09/2012    Dan Pipe-Mazo     initial revision
+ *  Return Value: (none)
  *
  */
 
@@ -179,9 +154,3 @@ disp_reset:
 
 test_disp_done:
 	ret
-
-
-
-.section  .data     #start data section
-
-#TODO

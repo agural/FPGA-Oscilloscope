@@ -1,43 +1,148 @@
 \begin{appendices}
 
-\chapter{Physical Diagrams} \label{App:physicaldiagrams}
-
-Text of Appendix A is Here
-
 \chapter{Block Diagrams} \label{App:blockdiagrams}
 
-Text of Appendix B is Here
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{block_diagrams/full.png}
+		\caption{Full block diagram}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=3in]{block_diagrams/video.png}
+		\caption{Display block diagram}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=3in]{block_diagrams/fpga.png}
+		\caption{FPGA main components}
+\end{figure}
 
 \chapter{Schematic Diagrams} \label{App:schematicdiagrams}
 
-Text of Appendix C is Here
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{circuit/main_fpga_page.png}
+		\caption{FPGA and supporing components schematic diagram}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{circuit/analog_page.png}
+		\caption{Analog section schematic diagram}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{circuit/memory_page.png}
+		\caption{Memory schematic diagram}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{circuit/switches_page.png}
+		\caption{Switches schematic diagram}
+\end{figure}
 
 \chapter{Board Layouts} \label{App:boardlayouts}
 
-Text of Appendix D is Here
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{circuit/board_page.png}
+		\caption{Board layout (raw)}
+\end{figure}
 
-\chapter{Timing Diagrams} \label{App:timingdiagrams}
+\chapter{FPGA Block Diagram Files} \label{App:fpgablockdiagrams}
 
-Text of Appendix E is Here
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{fpga_logic/clocks.png}
+		\caption{FPGA main clocks}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{fpga_logic/proc_overview.png}
+		\caption{FPGA NIOS II processor block}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{fpga_logic/adc_overview.png}
+		\caption{FPGA overview of scope sample handling}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{fpga_logic/vram_disp_overview.png}
+		\caption{FPGA overview of VRAM controller and display controller}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{fpga_logic/keys_overview.png}
+		\caption{FPGA overview of key and rotary encoder input}
+\end{figure}
 
 \chapter{Memory Maps} \label{App:memorymaps}
 
-Text of Appendix F is Here
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=6in]{fpga_logic/address_map.png}
+		\caption{NIOS II address memory map}
+\end{figure}
 
-\chapter{FPGA Block Diagrams} \label{App:fpgablockdiagrams}
+\chapter{Control Registers} \label{App:ctrlregs}
 
-Text of Appendix G is Here
+\input{code_ctrlregs}
 
 \chapter{VHDL Code} \label{App:vhdlcode}
 
-Text of Appendix H is Here
+\section{VRAM State Machine Code}
+\input{code_vstates}
+
+\newpage
+\section{Oscilloscope Trigger Code}
+\input{code_triggering}
 
 \chapter{NIOS II Code} \label{App:niosiicode}
 
-Text of Appendix I is Here
+\section{Main Loop}
+\input{code_mainloop}
 
-\chapter{Quartus 13.1 Minimum Development Setup Tutorial} \label{App:setuptutorial}
+\newpage
+\section{Menu}
+\input{code_menu}
 
-Text of Appendix J is Here
+\newpage
+\section{Interface and Definitions}
+\input{code_intf}
+
+\newpage
+\section{Key Processing}
+\input{code_keys}
+
+\newpage
+\section{Display Processing}
+\input{code_disp}
+
+\newpage
+\section{Trace Processing}
+\input{code_trace}
+
+\chapter{Test Code} \label{App:testcode}
+
+\section{Display Timing with ModelSim}
+\input{code_disptiming}
+
+\newpage
+\section{VRAM Testing}
+\input{code_testvram}
+
+\newpage
+\section{Display Testing}
+\input{code_testdisp}
 
 \end{appendices}

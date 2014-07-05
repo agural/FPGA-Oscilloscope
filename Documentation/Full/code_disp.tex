@@ -1,0 +1,656 @@
+\subsection{lcdout}
+\begin{lstlisting}[language=C]
+/****************************************************************************/
+/*                                                                          */
+/*                                 LCDOUT.H                                 */
+/*                           LCD Output Functions                           */
+/*                               Include File                               */
+/*                       Digital Oscilloscope Project                       */
+/*                                EE/CS  52                                 */
+/*                                                                          */
+/****************************************************************************/
+
+/*
+   This file contains the constants and function prototypes for the LCD output
+   functions used in the Digital Oscilloscope project and defined in lcdout.c.
+
+
+   Revision History:
+      3/8/94   Glen George       Initial revision.
+      3/13/94  Glen George       Updated comments.
+      3/17/97  Glen George       Added enumerated type char_style and updated
+                                    function prototypes.
+*/
+
+
+
+
+#ifndef  __LCDOUT_H__
+    #define  __LCDOUT_H__
+
+
+/* library include files */
+  /* none */
+
+/* local include files */
+  /* none */
+
+
+
+
+/* constants */
+
+/* character output styles */
+
+/* size of a character (includes 1 pixel space to the left and below character) */
+#define  VERT_SIZE    8         /* vertical size (in pixels -> 7+1) */
+#define  HORIZ_SIZE   6         /* horizontal size (in pixels -> 5+1) */
+
+
+
+
+/* structures, unions, and typedefs */
+
+/* character output styles */
+enum  char_style  {  NORMAL,    /* "normal video" */
+                     REVERSE	/* "reverse video" */
+	          };
+
+
+
+
+/* function declarations */
+
+void  clear_region(int, int, int, int);		  /* clear part of the display */
+
+void  plot_hline(int, int, int);		  /* draw a horizontal line */
+void  plot_vline(int, int, int);		  /* draw a vertical line */
+
+void  plot_char(int, int, char, enum char_style); /* output a character */
+void  plot_string(int, int, const char *, enum char_style);  /* output a string */
+
+
+#endif
+\end{lstlisting}
+
+\begin{lstlisting}[language=C]
+/****************************************************************************/
+/*                                                                          */
+/*                                  LCDOUT                                  */
+/*                           LCD Output Functions                           */
+/*                       Digital Oscilloscope Project                       */
+/*                                 EE/CS 52                                 */
+/*                                                                          */
+/****************************************************************************/
+
+/*
+   This file contains the functions for doing output to the LCD screen for the
+   Digital Oscilloscope project.  The functions included are:
+      clear_region - clear a region of the display
+      plot_char    - output a character
+      plot_hline   - draw a horizontal line
+      plot_string  - output a string
+      plot_vline   - draw a vertical line
+
+   The local functions included are:
+      none
+
+   The locally global variable definitions included are:
+      none
+
+
+   Revision History
+      3/8/94   Glen George       Initial revision.
+      3/13/94  Glen George       Updated comments.
+      3/13/94  Glen George       Simplified code in plot_string function.
+      3/17/97  Glen George       Updated comments.
+      3/17/97  Glen George       Change plot_char() and plot_string() to use
+			         enum char_style instead of an int value.
+      5/27/98  Glen George       Change plot_char() to explicitly declare the
+			         size of the external array to avoid linker
+			         errors.
+*/
+
+
+
+/* library include files */
+  /* none */
+
+/* local include files */
+#include  "interfac.h"
+#include  "scopedef.h"
+#include  "lcdout.h"
+
+
+
+
+/*
+   clear_region
+
+   Description:      This function clears the passed region of the display.
+                     The region is described by its upper left corner pixel
+                     coordinate and the size (in pixels) in each dimension.
+
+   Arguments:        x_ul (int)   - x coordinate of upper left corner of the
+   				    region to be cleared.
+   		     y_ul (int)   - y coordinate of upper left corner of the
+   				    region to be cleared.
+		     x_size (int) - horizontal size of the region.
+		     y_size (int) - vertical size of the region.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           A portion of the screen is cleared (set to PIXEL_WHITE).
+
+   Error Handling:   No error checking is done on the coordinates.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: None.
+
+   Author:           Glen George
+   Last Modified:    Mar. 8, 1994
+
+*/
+
+void  clear_region(int x_ul, int y_ul, int x_size, int y_size)
+{
+    /* variables */
+    int  x;		/* x coordinate to clear */
+    int  y;		/* y coordinate to clear */
+
+
+
+    /* loop, clearing the display */
+    for (x = x_ul; x < (x_ul + x_size); x++)  {
+        for (y = y_ul; y < (y_ul + y_size); y++)  {
+
+	    /* clear this pixel */
+	    plot_pixel(x, y, PIXEL_BGND);
+        }
+    }
+
+
+    /* done clearing the display region - return */
+    return;
+
+}
+
+
+
+
+/*
+   plot_hline
+
+   Description:      This function draws a horizontal line from the passed
+                     position for the passed length.  The line is always drawn
+                     with the color PIXEL_BLACK.  The position (0,0) is the
+		     upper left corner of the screen.
+
+   Arguments:        start_x (int) - starting x coordinate of the line.
+   		     start_y (int) - starting y coordinate of the line.
+		     length (int)  - length of the line (positive for a line
+		     		     to the "right" and negative for a line to
+				     the "left").
+   Return Value:     None.
+
+   Input:            None.
+   Output:           A horizontal line is drawn at the specified position.
+
+   Error Handling:   No error checking is done on the coordinates.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: None.
+
+   Author:           Glen George
+   Last Modified:    Mar. 7, 1994
+
+*/
+
+void  plot_hline(int start_x, int start_y, int length)
+{
+    /* variables */
+    int  x;		/* x position while plotting */
+
+    int  init_x;	/* starting x position to plot */
+    int  end_x;		/* ending x position to plot */
+
+
+
+    /* check if a line to the "right" or "left" */
+    if (length > 0)  {
+
+        /* line to the "right" - start at start_x, end at start_x + length */
+	init_x = start_x;
+	end_x = start_x + length;
+    }
+    else  {
+
+        /* line to the "left" - start at start_x + length, end at start_x */
+	init_x = start_x + length;
+	end_x = start_x;
+    }
+
+
+    /* loop, outputting points for the line (always draw to the "right") */
+    for (x = init_x; x < end_x; x++)
+        /* plot a point of the line */
+	plot_pixel(x, start_y, PIXEL_GREEN);
+
+
+    /* done plotting the line - return */
+    return;
+
+}
+
+
+
+
+/*
+   plot_vline
+
+   Description:      This function draws a vertical line from the passed
+                     position for the passed length.  The line is always drawn
+                     with the color PIXEL_BLACK.  The position (0,0) is the
+		     upper left corner of the screen.
+
+   Arguments:        start_x (int) - starting x coordinate of the line.
+   		     start_y (int) - starting y coordinate of the line.
+		     length (int)  - length of the line (positive for a line
+		     		     going "down" and negative for a line
+				     going "up").
+   Return Value:     None.
+
+   Input:            None.
+   Output:           A vertical line is drawn at the specified position.
+
+   Error Handling:   No error checking is done on the coordinates.
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: None.
+
+   Author:           Glen George
+   Last Modified:    Mar. 7, 1994
+
+*/
+
+void  plot_vline(int start_x, int start_y, int length)
+{
+    /* variables */
+    int  y;		/* y position while plotting */
+
+    int  init_y;	/* starting y position to plot */
+    int  end_y;		/* ending y position to plot */
+
+
+
+    /* check if an "up" or "down" line */
+    if (length > 0)  {
+
+        /* line going "down" - start at start_y, end at start_y + length */
+	init_y = start_y;
+	end_y = start_y + length;
+    }
+    else  {
+
+        /* line going "up" - start at start_y + length, end at start_y */
+	init_y = start_y + length;
+	end_y = start_y;
+    }
+
+
+    /* loop, outputting points for the line (always draw "down") */
+    for (y = init_y; y < end_y; y++)
+        /* plot a point of the line */
+	plot_pixel(start_x, y, PIXEL_GREEN);
+
+
+    /* done plotting the line - return */
+    return;
+
+}
+
+
+
+
+/*
+   plot_char
+
+   Description:      This function outputs the passed character to the LCD
+                     screen at passed location.  The passed location is given
+                     as a character position with (0,0) being the upper left
+		     corner of the screen.  The character can be drawn in
+		     "normal video" (black on white) or "reverse video" (white
+		     on black).
+
+   Arguments:        pos_x (int)             - x coordinate (in character
+   				               cells) of the character.
+		     pos_y (int)             - y coordinate (in character
+   				               cells) of the character.
+		     c (char)                - the character to plot.
+		     style (enum char_style) - style with which to plot the
+		     		               character (NORMAL or REVERSE).
+   Return Value:     None.
+
+   Input:            None.
+   Output:           A character is output to the LCD screen.
+
+   Error Handling:   No error checking is done on the coordinates or the
+   		     character (to ensure there is a bit pattern for it).
+
+   Algorithms:       None.
+   Data Structures:  The character bit patterns are stored in an external
+   		     array.
+
+   Global Variables: None.
+
+   Author:           Glen George
+   Last Modified:    May 27, 2008
+
+*/
+
+void  plot_char(int pos_x, int pos_y, char c, enum char_style style)
+{
+    /* variables */
+
+    /* pointer to array of character bit patterns */
+    extern const unsigned char   char_patterns[(VERT_SIZE - 1) * 128];
+
+    int  bits;          /* a character bit pattern */
+
+    int  col;		/* column loop index */
+    int  row;           /* character row loop index */
+
+    int  x;		/* x pixel position for the character */
+    int  y;		/* y pixel position for the character */
+
+
+
+    /* setup the pixel positions for the character */
+    x = pos_x * HORIZ_SIZE;
+    y = pos_y * VERT_SIZE;
+
+
+    /* loop outputting the bits to the screen */
+    for (row = 0; row < VERT_SIZE; row++)  {
+
+        /* get the character bits for this row from the character table */
+	if (row == (VERT_SIZE - 1))
+	    /* last row - blank it */
+	    bits = 0;
+	else
+	    /* in middle of character, get the row from the bit patterns */
+            bits = char_patterns[(c * (VERT_SIZE - 1)) + row];
+
+	/* take care of "normal/reverse video" */
+	if (style == REVERSE)
+	    /* invert the bits for "reverse video" */
+	    bits = ~bits;
+
+        /* get the bits "in position" (high bit is output first */
+	bits <<= (8 - HORIZ_SIZE);
+
+
+	/* now output the row of the character, pixel by pixel */
+	for (col = 0; col < HORIZ_SIZE; col++)  {
+
+            /* output this pixel in the appropriate color */
+	    if ((bits & 0x80) == 0)
+	        /* blank pixel - output in PIXEL_WHITE */
+		plot_pixel(x + col, y, PIXEL_BGND);
+	    else
+	        /* black pixel - output in PIXEL_BLACK */
+		plot_pixel(x + col, y, PIXEL_GREEN);
+
+	    /* shift the next bit into position */
+	    bits <<= 1;
+        }
+
+
+	/* next row - update the y position */
+	y++;
+    }
+
+
+    /* all done, return */
+    return;
+
+}
+
+
+
+
+/*
+   plot_string
+
+   Description:      This function outputs the passed string to the LCD screen
+                     at passed location.  The passed location is given as a
+                     character position with (0,0) being the upper left corner
+		     of the screen.  There is no line wrapping, so the entire
+		     string must fit on the passed line (pos_y).  The string
+		     can be drawn in "normal video" (black on white) or
+		     "reverse video" (white on black).
+
+   Arguments:        pos_x (int)             - x coordinate (in character
+   				               cells) of the start of the
+					       string.
+		     pos_y (int)             - y coordinate (in character
+   				               cells) of the start of the
+					       string.
+		     s (const char *)        - the string to output.
+		     style (enum char style) - style with which to plot
+		     		               characters of the string.
+   Return Value:     None.
+
+   Input:            None.
+   Output:           A string is output to the LCD screen.
+
+   Error Handling:   No checking is done to insure the string is fully on the
+   		     screen (the x and y coordinates and length of the string
+		     are not checked).
+
+   Algorithms:       None.
+   Data Structures:  None.
+
+   Global Variables: None.
+
+   Author:           Glen George
+   Last Modified:    Mar. 17, 1997
+
+*/
+
+void  plot_string(int pos_x, int pos_y, const char *s, enum char_style style)
+{
+    /* variables */
+      /* none */
+
+
+
+    /* loop, outputting characters from string s */
+    while (*s != '\0')
+
+        /* output this character and move to the next character and screen position */
+	plot_char(pos_x++, pos_y, *s++, style);
+
+
+    /* all done, return */
+    return;
+
+}
+\end{lstlisting}
+
+\subsection{char57}
+\begin{lstlisting}[language=C]
+/****************************************************************************/
+/*                                                                          */
+/*                                  CHAR57                                  */
+/*                           5x7 Dot Matrix Codes                           */
+/*                       Digital Oscilloscope Project                       */
+/*                                 EE/CS 52                                 */
+/*                                                                          */
+/****************************************************************************/
+
+/*
+   This file contains a table of dot matrix patterns for vertically scanned
+   5x7 characters.  The table entries are in ASCII order with 7 bytes per 
+   character.  The table starts with 32 special characters (mostly blank
+   characters) then space, the start of the printable ASCII character set.
+   The table is called char_patterns.  In each byte (horizontal row) the
+   leftmost pixel is given by bit 4 and the rightmost by bit 0.
+
+
+   Revision History
+      5/27/08  Glen George       Initial revision (from 3/10/95 version of
+                                 char57.asm).
+*/
+
+
+
+
+/* library include files */
+  /* none */
+
+/* local include files */
+  /* none */
+
+
+
+/* the character pattern table */
+const unsigned char  char_patterns[] = {
+
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x00)            */
+    0x04, 0x0E, 0x15, 0x04, 0x04, 0x04, 0x04,   /* up arrow (0x01)          */
+    0x04, 0x04, 0x04, 0x04, 0x15, 0x0E, 0x04,   /* down arrow (0x02)        */
+    0x00, 0x04, 0x08, 0x1F, 0x08, 0x04, 0x00,   /* left arrow (0x03)        */
+    0x00, 0x11, 0x11, 0x11, 0x1B, 0x14, 0x10,   /* greek u (mu) (0x04)      */
+    0x00, 0x04, 0x02, 0x1F, 0x02, 0x04, 0x00,   /* right arrow (0x05)       */
+    0x00, 0x11, 0x0A, 0x04, 0x0A, 0x11, 0x00,   /* multiply symbol (0x06)   */
+    0x00, 0x04, 0x00, 0x1F, 0x00, 0x04, 0x00,   /* divide symbol (0x07)     */
+    0x04, 0x04, 0x1F, 0x04, 0x04, 0x00, 0x1F,   /* plus/minus symbol (0x08) */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x09)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x0A)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x0B)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x0C)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x0D)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x0E)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x0F)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x10)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x11)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x12)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x13)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x14)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x15)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x16)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x17)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x18)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x19)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x1A)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x1B)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x1C)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x1D)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x1E)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* UNUSED (0x1F)            */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,   /* space (0x20)             */
+    0x04, 0x04, 0x04, 0x04, 0x04, 0x00, 0x04,   /* !                        */
+    0x0A, 0x0A, 0x0A, 0x00, 0x00, 0x00, 0x00,   /* "                        */
+    0x0A, 0x0A, 0x1F, 0x0A, 0x1F, 0x0A, 0x0A,   /* #                        */
+    0x04, 0x0F, 0x14, 0x0E, 0x05, 0x1E, 0x04,   /* $                        */
+    0x18, 0x19, 0x02, 0x04, 0x08, 0x13, 0x03,   /* %                        */
+    0x08, 0x14, 0x14, 0x08, 0x15, 0x12, 0x0D,   /* &                        */
+    0x0C, 0x0C, 0x08, 0x10, 0x00, 0x00, 0x00,   /* '                        */
+    0x02, 0x04, 0x08, 0x08, 0x08, 0x04, 0x02,   /* (                        */
+    0x08, 0x04, 0x02, 0x02, 0x02, 0x04, 0x08,   /* )                        */
+    0x04, 0x15, 0x0E, 0x1F, 0x0E, 0x15, 0x04,   /* *                        */
+    0x00, 0x04, 0x04, 0x1F, 0x04, 0x04, 0x00,   /* +                        */
+    0x00, 0x00, 0x00, 0x0C, 0x0C, 0x08, 0x10,   /* ,                        */
+    0x00, 0x00, 0x00, 0x1F, 0x00, 0x00, 0x00,   /* -                        */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x0C, 0x0C,   /* .                        */
+    0x00, 0x01, 0x02, 0x04, 0x08, 0x10, 0x00,   /* /                        */
+    0x0E, 0x11, 0x13, 0x15, 0x19, 0x11, 0x0E,   /* 0                        */
+    0x04, 0x0C, 0x04, 0x04, 0x04, 0x04, 0x0E,   /* 1                        */
+    0x0E, 0x11, 0x01, 0x0E, 0x10, 0x10, 0x1F,   /* 2                        */
+    0x0E, 0x11, 0x01, 0x06, 0x01, 0x11, 0x0E,   /* 3                        */
+    0x02, 0x06, 0x0A, 0x12, 0x1F, 0x02, 0x02,   /* 4                        */
+    0x1F, 0x10, 0x1E, 0x01, 0x01, 0x11, 0x0E,   /* 5                        */
+    0x06, 0x08, 0x10, 0x1E, 0x11, 0x11, 0x0E,   /* 6                        */
+    0x1F, 0x01, 0x02, 0x04, 0x08, 0x10, 0x10,   /* 7                        */
+    0x0E, 0x11, 0x11, 0x0E, 0x11, 0x11, 0x0E,   /* 8                        */
+    0x0E, 0x11, 0x11, 0x0F, 0x01, 0x02, 0x0C,   /* 9                        */
+    0x00, 0x0C, 0x0C, 0x00, 0x0C, 0x0C, 0x00,   /* :                        */
+    0x0C, 0x0C, 0x00, 0x0C, 0x0C, 0x08, 0x10,   /* ;                        */
+    0x02, 0x04, 0x08, 0x10, 0x08, 0x04, 0x02,   /* <                        */
+    0x00, 0x00, 0x1F, 0x00, 0x1F, 0x00, 0x00,   /* =                        */
+    0x08, 0x04, 0x02, 0x01, 0x02, 0x04, 0x08,   /* >                        */
+    0x0E, 0x11, 0x01, 0x02, 0x04, 0x00, 0x04,   /* ?                        */
+    0x0E, 0x11, 0x01, 0x0D, 0x15, 0x15, 0x0E,   /* @                        */
+    0x04, 0x0A, 0x11, 0x11, 0x1F, 0x11, 0x11,   /* A                        */
+    0x1E, 0x09, 0x09, 0x0E, 0x09, 0x09, 0x1E,   /* B                        */
+    0x0E, 0x11, 0x10, 0x10, 0x10, 0x11, 0x0E,   /* C                        */
+    0x1E, 0x09, 0x09, 0x09, 0x09, 0x09, 0x1E,   /* D                        */
+    0x1F, 0x10, 0x10, 0x1C, 0x10, 0x10, 0x1F,   /* E                        */
+    0x1F, 0x10, 0x10, 0x1C, 0x10, 0x10, 0x10,   /* F                        */
+    0x0F, 0x10, 0x10, 0x13, 0x11, 0x11, 0x0F,   /* G                        */
+    0x11, 0x11, 0x11, 0x1F, 0x11, 0x11, 0x11,   /* H                        */
+    0x0E, 0x04, 0x04, 0x04, 0x04, 0x04, 0x0E,   /* I                        */
+    0x01, 0x01, 0x01, 0x01, 0x01, 0x11, 0x0E,   /* J                        */
+    0x11, 0x12, 0x14, 0x18, 0x14, 0x12, 0x11,   /* K                        */
+    0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x1F,   /* L                        */
+    0x11, 0x1B, 0x15, 0x15, 0x11, 0x11, 0x11,   /* M                        */
+    0x11, 0x19, 0x15, 0x13, 0x11, 0x11, 0x11,   /* N                        */
+    0x0E, 0x11, 0x11, 0x11, 0x11, 0x11, 0x0E,   /* O                        */
+    0x1E, 0x11, 0x11, 0x1E, 0x10, 0x10, 0x10,   /* P                        */
+    0x0E, 0x11, 0x11, 0x11, 0x15, 0x12, 0x0D,   /* Q                        */
+    0x1E, 0x11, 0x11, 0x1E, 0x14, 0x12, 0x11,   /* R                        */
+    0x0E, 0x11, 0x10, 0x0E, 0x01, 0x11, 0x0E,   /* S                        */
+    0x1F, 0x04, 0x04, 0x04, 0x04, 0x04, 0x04,   /* T                        */
+    0x11, 0x11, 0x11, 0x11, 0x11, 0x11, 0x0E,   /* U                        */
+    0x11, 0x11, 0x11, 0x0A, 0x0A, 0x04, 0x04,   /* V                        */
+    0x11, 0x11, 0x11, 0x11, 0x15, 0x1B, 0x11,   /* W                        */
+    0x11, 0x11, 0x0A, 0x04, 0x0A, 0x11, 0x11,   /* X                        */
+    0x11, 0x11, 0x0A, 0x04, 0x04, 0x04, 0x04,   /* Y                        */
+    0x1F, 0x01, 0x02, 0x04, 0x08, 0x10, 0x1F,   /* Z                        */
+    0x0E, 0x08, 0x08, 0x08, 0x08, 0x08, 0x0E,   /* [                        */
+    0x00, 0x10, 0x08, 0x04, 0x02, 0x01, 0x00,   /* \                        */
+    0x0E, 0x02, 0x02, 0x02, 0x02, 0x02, 0x0E,   /* ]                        */
+    0x04, 0x0A, 0x11, 0x00, 0x00, 0x00, 0x00,   /* ^                        */
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F,   /* _                        */
+    0x06, 0x06, 0x04, 0x02, 0x00, 0x00, 0x00,   /* `                        */
+    0x00, 0x00, 0x0E, 0x01, 0x0F, 0x11, 0x0F,   /* a                        */
+    0x10, 0x10, 0x16, 0x19, 0x11, 0x19, 0x16,   /* b                        */
+    0x00, 0x00, 0x0E, 0x11, 0x10, 0x11, 0x0E,   /* c                        */
+    0x01, 0x01, 0x0D, 0x13, 0x11, 0x13, 0x0D,   /* d                        */
+    0x00, 0x00, 0x0E, 0x11, 0x1F, 0x10, 0x0E,   /* e                        */
+    0x02, 0x05, 0x04, 0x0E, 0x04, 0x04, 0x04,   /* f                        */
+    0x0D, 0x13, 0x13, 0x0D, 0x01, 0x11, 0x0E,   /* g                        */
+    0x10, 0x10, 0x16, 0x19, 0x11, 0x11, 0x11,   /* h                        */
+    0x04, 0x00, 0x0C, 0x04, 0x04, 0x04, 0x0E,   /* i                        */
+    0x01, 0x00, 0x01, 0x01, 0x01, 0x11, 0x0E,   /* j                        */
+    0x10, 0x10, 0x12, 0x14, 0x18, 0x14, 0x12,   /* k                        */
+    0x0C, 0x04, 0x04, 0x04, 0x04, 0x04, 0x0E,   /* l                        */
+    0x00, 0x00, 0x1A, 0x15, 0x15, 0x15, 0x15,   /* m                        */
+    0x00, 0x00, 0x16, 0x19, 0x11, 0x11, 0x11,   /* n                        */
+    0x00, 0x00, 0x0E, 0x11, 0x11, 0x11, 0x0E,   /* o                        */
+    0x16, 0x19, 0x11, 0x19, 0x16, 0x10, 0x10,   /* p                        */
+    0x0D, 0x13, 0x11, 0x13, 0x0D, 0x01, 0x01,   /* q                        */
+    0x00, 0x00, 0x16, 0x19, 0x10, 0x10, 0x10,   /* r                        */
+    0x00, 0x00, 0x0F, 0x10, 0x0E, 0x01, 0x1E,   /* s                        */
+    0x04, 0x04, 0x1F, 0x04, 0x04, 0x05, 0x02,   /* t                        */
+    0x00, 0x00, 0x11, 0x11, 0x11, 0x13, 0x0D,   /* u                        */
+    0x00, 0x00, 0x11, 0x11, 0x11, 0x0A, 0x04,   /* v                        */
+    0x00, 0x00, 0x11, 0x11, 0x15, 0x15, 0x0A,   /* w                        */
+    0x00, 0x00, 0x11, 0x0A, 0x04, 0x0A, 0x11,   /* x                        */
+    0x11, 0x11, 0x11, 0x0F, 0x01, 0x11, 0x0E,   /* y                        */
+    0x00, 0x00, 0x1F, 0x02, 0x04, 0x08, 0x1F,   /* z                        */
+    0x02, 0x04, 0x04, 0x08, 0x04, 0x04, 0x02,   /* {                        */
+    0x04, 0x04, 0x04, 0x00, 0x04, 0x04, 0x04,   /* |                        */
+    0x08, 0x04, 0x04, 0x02, 0x04, 0x04, 0x08,   /* }                        */
+    0x08, 0x15, 0x02, 0x00, 0x00, 0x00, 0x00,   /* ~                        */
+    0x0A, 0x15, 0x0A, 0x15, 0x0A, 0x15, 0x0A    /* DEL (0x7F)               */
+
+};
+\end{lstlisting}
